@@ -1,0 +1,12 @@
+requests==2.34.2
+pandas==3.0.1
+numpy==2.3.5
+lxml==6.1.1
+beautifulsoup4==4.15.0
+mootdx==0.11.7
+akshare==1.18.94
+tushare==1.4.29
+stockstats==0.6.8
+reportlab==5.0.1
+pypdf==6.16.2
+pdfplumber==0.11.10

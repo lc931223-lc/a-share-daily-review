@@ -20,6 +20,8 @@ Personal A-share research and data-analysis workspace for industry-chain researc
 - Scripts: `C:\Users\愚者\Documents\New project 3\scripts`
 - Reports: `C:\Users\愚者\Documents\New project 3\reports`
 - Current checkpoint: `C:\Users\愚者\Documents\New project 3\CHECKPOINT.md`
+- Project Python: `C:\Users\愚者\Documents\New project 3\.venv\Scripts\python.exe`
+- User-local uv: `C:\Users\愚者\.local\bin\uv.exe`
 
 ## Installed Finance Skills
 
@@ -65,6 +67,7 @@ Personal A-share research and data-analysis workspace for industry-chain researc
 - Tushare workflows require a configured token, preferably via `TUSHARE_TOKEN`.
 - AKShare can be used when public data is sufficient or Tushare token/permissions are unavailable.
 - Primary sources are preferred for company facts: exchange filings, CNINFO, annual reports, prospectuses, official announcements, and company investor relations records.
+- Use the project virtual environment for Python commands, for example `.venv\Scripts\python.exe tools\review_sentiment_20260824_20260828.py`.
 
 ## Trading Framework Foundation
 

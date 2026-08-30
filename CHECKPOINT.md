@@ -115,7 +115,18 @@ Regenerated a larger black Songti-style version:
   - `discipline_gate`
 - Intended validation command once Python is available in PATH:
   - `python tools/review_sentiment_20260824_20260828.py`
-- Current environment note: this shell currently has no callable `python` or `py` command, so runtime verification is blocked until the Python executable path is restored or configured.
+- Runtime status update: Python is now available through the project virtual environment:
+  - `C:\Users\愚者\Documents\New project 3\.venv\Scripts\python.exe`
+- Created the virtual environment with user-local uv:
+  - `C:\Users\愚者\.local\bin\uv.exe`
+- Installed A-share and PDF dependencies into `.venv`, including `akshare`, `pandas`, `reportlab`, `pypdf`, and `pdfplumber`.
+- Successful validation command:
+  - `.venv\Scripts\python.exe tools\review_sentiment_20260824_20260828.py`
+- Generated PDF report:
+  - `C:\Users\愚者\Documents\New project 3\reports\market_reviews\2026-08-30-sentiment-review-2026-08-24-to-2026-08-28.pdf`
+- PDF validation:
+  - `pypdf` extracted 7 pages and found the four core sections.
+  - Rendered page 1 with Poppler and visually confirmed Chinese tables are readable.
 
 ## 2026-08-30 Trading Framework And Market Review
 

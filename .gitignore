@@ -1,0 +1,15 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+node_modules/
+npm-debug.log*
+.local/
+tmp/
+
+# Local generated browser profiles and report output can be large.
+data/edge-profile*/
+data/pdfbuild*/
+output/

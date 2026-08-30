@@ -925,14 +925,235 @@ def write_markdown_report(result: dict, report_path: Path) -> None:
     report_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def chinese_font_name() -> str:
+    from reportlab.pdfbase import pdfmetrics
+    from reportlab.pdfbase.ttfonts import TTFont
+
+    candidates = [
+        Path("C:/Windows/Fonts/STSONG.TTF"),
+        Path("C:/Windows/Fonts/simsun.ttc"),
+        Path("C:/Windows/Fonts/msyh.ttc"),
+    ]
+    for font_path in candidates:
+        if font_path.exists():
+            font_name = "A股报告中文字体"
+            pdfmetrics.registerFont(TTFont(font_name, str(font_path)))
+            return font_name
+    return "Helvetica"
+
+
+def build_pdf_table(rows: list[list], widths: list[int], header_color, font_name: str):
+    from reportlab.lib import colors
+    from reportlab.platypus import Table, TableStyle
+
+    table = Table(rows, colWidths=widths, repeatRows=1)
+    table.setStyle(
+        TableStyle(
+            [
+                ("BACKGROUND", (0, 0), (-1, 0), header_color),
+                ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+                ("FONTNAME", (0, 0), (-1, -1), font_name),
+                ("FONTSIZE", (0, 0), (-1, -1), 8),
+                ("GRID", (0, 0), (-1, -1), 0.35, colors.HexColor("#D0D5DD")),
+                ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+                ("ALIGN", (1, 1), (-1, -1), "RIGHT"),
+                ("LEFTPADDING", (0, 0), (-1, -1), 4),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 4),
+                ("TOPPADDING", (0, 0), (-1, -1), 5),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 5),
+            ]
+        )
+    )
+    return table
+
+
+def write_pdf_report(result: dict, pdf_path: Path) -> None:
+    from reportlab.lib import colors
+    from reportlab.lib.pagesizes import A4, landscape
+    from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
+    from reportlab.lib.units import mm
+    from reportlab.platypus import (
+        PageBreak,
+        Paragraph,
+        SimpleDocTemplate,
+        Spacer,
+    )
+
+    pdf_path.parent.mkdir(parents=True, exist_ok=True)
+    font_name = chinese_font_name()
+    styles = getSampleStyleSheet()
+    title = ParagraphStyle(
+        "ChineseTitle",
+        parent=styles["Title"],
+        fontName=font_name,
+        fontSize=20,
+        leading=28,
+        textColor=colors.HexColor("#111827"),
+        spaceAfter=10,
+    )
+    heading = ParagraphStyle(
+        "ChineseHeading",
+        parent=styles["Heading2"],
+        fontName=font_name,
+        fontSize=13,
+        leading=18,
+        textColor=colors.HexColor("#1F2937"),
+        spaceBefore=8,
+        spaceAfter=6,
+    )
+    body = ParagraphStyle(
+        "ChineseBody",
+        parent=styles["BodyText"],
+        fontName=font_name,
+        fontSize=9,
+        leading=14,
+        textColor=colors.HexColor("#374151"),
+        spaceAfter=5,
+    )
+    small = ParagraphStyle(
+        "ChineseSmall",
+        parent=body,
+        fontSize=8,
+        leading=12,
+        textColor=colors.HexColor("#4B5563"),
+    )
+
+    story = [
+        Paragraph(f"{dashed_date(result['start_date'])} 至 {dashed_date(result['end_date'])} A股情绪复盘", title),
+        Paragraph(f"生成日期：{result['generated_at']}　数据目录：{result['data_dir']}", small),
+        Paragraph("本报告由 A 股情绪温度计、题材周期识别器、个股地位识别器和交易纪律熔断器生成。输出仅用于研究和决策支持，不构成买卖建议。", body),
+        Spacer(1, 4 * mm),
+        Paragraph("市场情绪仪表盘", heading),
+    ]
+
+    dashboard_rows = [
+        ["日期", "涨停", "炸板", "炸板率", "跌停", "最高板", "连板", "昨涨停均涨", "红盘率", "情绪分", "状态", "仓位上限", "纪律"]
+    ]
+    for day in result["daily"]:
+        dashboard = day["market_dashboard"]
+        gate = day["discipline_gate"]
+        dashboard_rows.append(
+            [
+                dashed_date(day["date"]),
+                day["limit_up_count"],
+                day["failed_limit_count"],
+                f"{day['failed_limit_rate']:.2f}%",
+                day["limit_down_count"],
+                day["highest_board"],
+                day["multi_board_count"],
+                f"{day['prev_limit_avg_pct']:+.2f}%",
+                f"{day['prev_limit_positive_rate']:.2f}%",
+                dashboard["sentiment_score"],
+                dashboard["sentiment_state"],
+                gate["max_position_band"],
+                gate["discipline_status"],
+            ]
+        )
+    story.append(
+        build_pdf_table(
+            dashboard_rows,
+            [22 * mm, 13 * mm, 13 * mm, 17 * mm, 13 * mm, 15 * mm, 13 * mm, 22 * mm, 17 * mm, 15 * mm, 19 * mm, 19 * mm, 16 * mm],
+            colors.HexColor("#243B53"),
+            font_name,
+        )
+    )
+
+    story.extend([Spacer(1, 5 * mm), Paragraph("题材强度排名", heading)])
+    for day in result["daily"]:
+        story.append(Paragraph(dashed_date(day["date"]), body))
+        theme_rows = [["排名", "题材", "综合分", "涨停", "炸板", "最高板", "持续", "阶段", "催化", "代表股"]]
+        for item in day["theme_ranking"][:8]:
+            top_names = "、".join(stock["name"] for stock in item["top_stocks"][:3])
+            theme_rows.append(
+                [
+                    item["rank"],
+                    item["theme_name"],
+                    f"{item['theme_score']:.2f}",
+                    item["limit_up_count"],
+                    item["failed_limit_count"],
+                    item["highest_board"],
+                    item["persistence_days"],
+                    item["cycle_phase"],
+                    item["catalyst_status"],
+                    top_names,
+                ]
+            )
+        story.append(
+            build_pdf_table(
+                theme_rows,
+                [12 * mm, 24 * mm, 17 * mm, 13 * mm, 13 * mm, 15 * mm, 13 * mm, 20 * mm, 18 * mm, 58 * mm],
+                colors.HexColor("#2563EB"),
+                font_name,
+            )
+        )
+        story.append(Spacer(1, 3 * mm))
+
+    story.extend([PageBreak(), Paragraph("个股地位识别", heading)])
+    for day in result["daily"]:
+        story.append(Paragraph(dashed_date(day["date"]), body))
+        role_rows = [["代码", "名称", "题材", "地位", "置信分", "风险标签"]]
+        key_roles = [
+            item
+            for item in day["stock_role_classification"]
+            if item["role"] in {"龙头", "容量中军", "低位补涨", "中位股", "风险票"}
+        ][:12]
+        for item in key_roles:
+            flags = "、".join(item["risk_flags"]) if item["risk_flags"] else ""
+            role_rows.append(
+                [
+                    item["code"],
+                    item["name"],
+                    item["theme_name"],
+                    item["role"],
+                    item["role_score"],
+                    flags,
+                ]
+            )
+        story.append(
+            build_pdf_table(
+                role_rows,
+                [22 * mm, 24 * mm, 28 * mm, 24 * mm, 18 * mm, 80 * mm],
+                colors.HexColor("#047857"),
+                font_name,
+            )
+        )
+        story.append(Spacer(1, 3 * mm))
+
+    story.extend([Spacer(1, 4 * mm), Paragraph("交易纪律熔断器", heading)])
+    for day in result["daily"]:
+        gate = day["discipline_gate"]
+        text = (
+            f"{dashed_date(day['date'])}：{gate['discipline_status']}，最高仓位 {gate['max_position_band']}；"
+            f"{'；'.join(gate['reason'])}"
+        )
+        story.append(Paragraph(text, body))
+
+    if result["data_gaps"]:
+        story.extend([Spacer(1, 3 * mm), Paragraph("数据缺口", heading)])
+        for gap in result["data_gaps"]:
+            story.append(Paragraph(f"- {gap}", small))
+
+    doc = SimpleDocTemplate(
+        str(pdf_path),
+        pagesize=landscape(A4),
+        rightMargin=10 * mm,
+        leftMargin=10 * mm,
+        topMargin=10 * mm,
+        bottomMargin=10 * mm,
+    )
+    doc.build(story)
+
+
 def run_engine(
     start: str,
     end: str,
     data_root: Path = Path("data/sentiment_reviews"),
     report_dir: Path | None = Path("reports/market_reviews"),
+    pdf_dir: Path | None = Path("reports/market_reviews"),
+    generate_pdf: bool = False,
     refresh: bool = False,
     generated_at: str | None = None,
-) -> tuple[dict, Path, Path | None]:
+) -> tuple[dict, Path, Path | None, Path | None]:
     start = normalize_date(start)
     end = normalize_date(end)
     output_dir = data_root / range_label(start, end)
@@ -985,7 +1206,14 @@ def run_engine(
         )
         write_markdown_report(result, report_path)
 
-    return result, json_path, report_path
+    pdf_path = None
+    if generate_pdf and pdf_dir is not None:
+        pdf_path = pdf_dir / (
+            f"{result['generated_at']}-sentiment-review-{dashed_date(start)}-to-{dashed_date(end)}.pdf"
+        )
+        write_pdf_report(result, pdf_path)
+
+    return result, json_path, report_path, pdf_path
 
 
 def parse_args() -> argparse.Namespace:
@@ -994,6 +1222,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--end", required=True, help="结束日期，格式 YYYYMMDD 或 YYYY-MM-DD")
     parser.add_argument("--data-root", default="data/sentiment_reviews", help="数据输出根目录")
     parser.add_argument("--report-dir", default="reports/market_reviews", help="报告输出目录")
+    parser.add_argument("--pdf-dir", default="reports/market_reviews", help="PDF 输出目录")
+    parser.add_argument("--pdf", action="store_true", help="生成 PDF 报告")
     parser.add_argument("--no-report", action="store_true", help="只输出 JSON 和 CSV，不生成 Markdown 报告")
     parser.add_argument("--refresh", action="store_true", help="忽略本地缓存，重新拉取数据")
     parser.add_argument("--generated-at", default=None, help="报告生成日期，默认使用当前日期")
@@ -1003,11 +1233,13 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
     report_dir = None if args.no_report else Path(args.report_dir)
-    result, json_path, report_path = run_engine(
+    result, json_path, report_path, pdf_path = run_engine(
         args.start,
         args.end,
         data_root=Path(args.data_root),
         report_dir=report_dir,
+        pdf_dir=Path(args.pdf_dir),
+        generate_pdf=args.pdf,
         refresh=args.refresh,
         generated_at=args.generated_at,
     )
@@ -1015,6 +1247,8 @@ def main() -> int:
     print(f"JSON saved to {json_path}")
     if report_path:
         print(f"Report saved to {report_path}")
+    if pdf_path:
+        print(f"PDF saved to {pdf_path}")
     return 0
 
 
