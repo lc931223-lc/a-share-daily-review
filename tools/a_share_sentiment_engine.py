@@ -942,28 +942,60 @@ def chinese_font_name() -> str:
     return "Helvetica"
 
 
-def build_pdf_table(rows: list[list], widths: list[int], header_color, font_name: str):
+def build_pdf_table(
+    rows: list[list],
+    widths: list[int],
+    header_color,
+    font_name: str,
+    body_style=None,
+    header_style=None,
+    extra_styles: list[tuple] | None = None,
+):
     from reportlab.lib import colors
+    from reportlab.lib.styles import ParagraphStyle
     from reportlab.platypus import Table, TableStyle
 
-    table = Table(rows, colWidths=widths, repeatRows=1)
-    table.setStyle(
-        TableStyle(
-            [
-                ("BACKGROUND", (0, 0), (-1, 0), header_color),
-                ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
-                ("FONTNAME", (0, 0), (-1, -1), font_name),
-                ("FONTSIZE", (0, 0), (-1, -1), 8),
-                ("GRID", (0, 0), (-1, -1), 0.35, colors.HexColor("#D0D5DD")),
-                ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
-                ("ALIGN", (1, 1), (-1, -1), "RIGHT"),
-                ("LEFTPADDING", (0, 0), (-1, -1), 4),
-                ("RIGHTPADDING", (0, 0), (-1, -1), 4),
-                ("TOPPADDING", (0, 0), (-1, -1), 5),
-                ("BOTTOMPADDING", (0, 0), (-1, -1), 5),
-            ]
+    if body_style is None:
+        body_style = ParagraphStyle(
+            "DefaultTableBody",
+            fontName=font_name,
+            fontSize=8,
+            leading=11,
+            textColor=colors.HexColor("#1F2937"),
         )
-    )
+    if header_style is None:
+        header_style = ParagraphStyle(
+            "DefaultTableHeader",
+            parent=body_style,
+            fontName=font_name,
+            textColor=colors.white,
+        )
+
+    def cell(value, style):
+        from reportlab.platypus import Paragraph
+
+        return Paragraph(str(value), style)
+
+    wrapped_rows = []
+    for row_index, row in enumerate(rows):
+        style = header_style if row_index == 0 else body_style
+        wrapped_rows.append([cell(value, style) for value in row])
+
+    table = Table(wrapped_rows, colWidths=widths, repeatRows=1, hAlign="LEFT")
+    commands = [
+        ("BACKGROUND", (0, 0), (-1, 0), header_color),
+        ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+        ("GRID", (0, 0), (-1, -1), 0.25, colors.HexColor("#E5E7EB")),
+        ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+        ("LEFTPADDING", (0, 0), (-1, -1), 5),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 5),
+        ("TOPPADDING", (0, 0), (-1, -1), 6),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 6),
+        ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#F8FAFC")]),
+    ]
+    if extra_styles:
+        commands.extend(extra_styles)
+    table.setStyle(TableStyle(commands))
     return table
 
 
@@ -977,35 +1009,41 @@ def write_pdf_report(result: dict, pdf_path: Path) -> None:
         Paragraph,
         SimpleDocTemplate,
         Spacer,
+        Table,
+        TableStyle,
     )
 
     pdf_path.parent.mkdir(parents=True, exist_ok=True)
     font_name = chinese_font_name()
     styles = getSampleStyleSheet()
+    page_width, page_height = landscape(A4)
+    content_width = page_width - 22 * mm
+
     title = ParagraphStyle(
         "ChineseTitle",
         parent=styles["Title"],
         fontName=font_name,
-        fontSize=20,
-        leading=28,
+        fontSize=22,
+        leading=30,
         textColor=colors.HexColor("#111827"),
-        spaceAfter=10,
+        alignment=0,
+        spaceAfter=8,
     )
     heading = ParagraphStyle(
         "ChineseHeading",
         parent=styles["Heading2"],
         fontName=font_name,
-        fontSize=13,
-        leading=18,
-        textColor=colors.HexColor("#1F2937"),
-        spaceBefore=8,
-        spaceAfter=6,
+        fontSize=15,
+        leading=20,
+        textColor=colors.HexColor("#111827"),
+        spaceBefore=4,
+        spaceAfter=8,
     )
     body = ParagraphStyle(
         "ChineseBody",
         parent=styles["BodyText"],
         fontName=font_name,
-        fontSize=9,
+        fontSize=9.5,
         leading=14,
         textColor=colors.HexColor("#374151"),
         spaceAfter=5,
@@ -1013,56 +1051,220 @@ def write_pdf_report(result: dict, pdf_path: Path) -> None:
     small = ParagraphStyle(
         "ChineseSmall",
         parent=body,
-        fontSize=8,
+        fontSize=8.2,
         leading=12,
         textColor=colors.HexColor("#4B5563"),
     )
+    label = ParagraphStyle(
+        "ChineseLabel",
+        parent=small,
+        fontSize=7.5,
+        leading=10,
+        textColor=colors.HexColor("#667085"),
+    )
+    value = ParagraphStyle(
+        "ChineseValue",
+        parent=body,
+        fontSize=16,
+        leading=21,
+        textColor=colors.HexColor("#111827"),
+    )
+    table_body = ParagraphStyle(
+        "ChineseTableBody",
+        parent=small,
+        fontSize=7.7,
+        leading=10.5,
+        textColor=colors.HexColor("#1F2937"),
+    )
+    table_header = ParagraphStyle(
+        "ChineseTableHeader",
+        parent=table_body,
+        textColor=colors.white,
+    )
+    note = ParagraphStyle(
+        "ChineseNote",
+        parent=small,
+        fontSize=8.5,
+        leading=13,
+        textColor=colors.HexColor("#475467"),
+    )
+
+    def P(text, style=body):
+        return Paragraph(str(text), style)
+
+    def status_label(status: str) -> str:
+        return {"allow": "允许", "reduce": "降级", "block": "拦截"}.get(status, status)
+
+    def state_color(state: str):
+        if state == "主升":
+            return colors.HexColor("#16A34A")
+        if state in {"分歧", "退潮", "冰点"}:
+            return colors.HexColor("#DC2626")
+        if state == "高潮过热":
+            return colors.HexColor("#EA580C")
+        return colors.HexColor("#2563EB")
+
+    def state_bg(state: str):
+        if state == "主升":
+            return colors.HexColor("#ECFDF3")
+        if state in {"分歧", "退潮", "冰点"}:
+            return colors.HexColor("#FEF2F2")
+        if state == "高潮过热":
+            return colors.HexColor("#FFF7ED")
+        return colors.HexColor("#EFF6FF")
+
+    def card(title_text: str, value_text: str, note_text: str, accent):
+        rows = [
+            [P(title_text, label)],
+            [P(value_text, value)],
+            [P(note_text, note)],
+        ]
+        table = Table(rows, colWidths=[content_width / 4 - 3 * mm], hAlign="LEFT")
+        table.setStyle(
+            TableStyle(
+                [
+                    ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#F8FAFC")),
+                    ("BOX", (0, 0), (-1, -1), 0.7, colors.HexColor("#E5E7EB")),
+                    ("LINEBEFORE", (0, 0), (0, -1), 3, accent),
+                    ("LEFTPADDING", (0, 0), (-1, -1), 8),
+                    ("RIGHTPADDING", (0, 0), (-1, -1), 8),
+                    ("TOPPADDING", (0, 0), (-1, -1), 6),
+                    ("BOTTOMPADDING", (0, 0), (-1, -1), 6),
+                ]
+            )
+        )
+        return table
+
+    def day_metric(day: dict, key: str):
+        return day.get(key, "")
+
+    def draw_page(canvas, doc):
+        canvas.saveState()
+        canvas.setFont(font_name, 8)
+        canvas.setFillColor(colors.HexColor("#667085"))
+        canvas.drawString(11 * mm, page_height - 7 * mm, "A股情绪复盘")
+        canvas.drawRightString(page_width - 11 * mm, 7 * mm, f"第 {doc.page} 页")
+        canvas.setStrokeColor(colors.HexColor("#E5E7EB"))
+        canvas.setLineWidth(0.4)
+        canvas.line(11 * mm, page_height - 9 * mm, page_width - 11 * mm, page_height - 9 * mm)
+        canvas.line(11 * mm, 10 * mm, page_width - 11 * mm, 10 * mm)
+        canvas.restoreState()
+
+    latest = result["daily"][-1] if result["daily"] else {}
+    latest_dashboard = latest.get("market_dashboard", {})
+    latest_gate = latest.get("discipline_gate", {})
+    latest_themes = latest.get("theme_ranking", [])
+    top_theme = latest_themes[0]["theme_name"] if latest_themes else "无"
+    top_risk = "；".join(latest_gate.get("reason", [])[:1]) or "暂无显著风险"
+    path_text = " -> ".join(
+        day["market_dashboard"]["sentiment_state"] for day in result["daily"]
+    )
 
     story = [
-        Paragraph(f"{dashed_date(result['start_date'])} 至 {dashed_date(result['end_date'])} A股情绪复盘", title),
-        Paragraph(f"生成日期：{result['generated_at']}　数据目录：{result['data_dir']}", small),
-        Paragraph("本报告由 A 股情绪温度计、题材周期识别器、个股地位识别器和交易纪律熔断器生成。输出仅用于研究和决策支持，不构成买卖建议。", body),
+        P(f"{dashed_date(result['start_date'])} 至 {dashed_date(result['end_date'])} A股情绪复盘", title),
+        P(f"生成日期：{result['generated_at']}　数据来源：AKShare / 东方财富短线情绪数据", small),
         Spacer(1, 4 * mm),
-        Paragraph("市场情绪仪表盘", heading),
+        Table(
+            [
+                [
+                    card("当前情绪", latest_dashboard.get("sentiment_state", "无"), path_text, state_color(latest_dashboard.get("sentiment_state", ""))),
+                    card("纪律后仓位", latest_gate.get("max_position_band", "无"), status_label(latest_gate.get("discipline_status", "")), colors.HexColor("#0F766E")),
+                    card("最强题材", top_theme, "按涨停、成交、持续性综合排序", colors.HexColor("#2563EB")),
+                    card("主要风险", status_label(latest_gate.get("discipline_status", "无")), top_risk, colors.HexColor("#EA580C")),
+                ]
+            ],
+            colWidths=[content_width / 4] * 4,
+        ),
+        Spacer(1, 8 * mm),
+        P("情绪路径", heading),
     ]
 
+    path_rows = [["日期", "状态", "情绪分", "涨停", "跌停", "最高板", "纪律"]]
+    path_styles = []
+    for idx, day in enumerate(result["daily"], start=1):
+        dashboard = day["market_dashboard"]
+        gate = day["discipline_gate"]
+        path_rows.append(
+            [
+                dashed_date(day["date"]),
+                dashboard["sentiment_state"],
+                dashboard["sentiment_score"],
+                day["limit_up_count"],
+                day["limit_down_count"],
+                day["highest_board"],
+                status_label(gate["discipline_status"]),
+            ]
+        )
+        path_styles.append(("BACKGROUND", (1, idx), (1, idx), state_bg(dashboard["sentiment_state"])))
+        path_styles.append(("TEXTCOLOR", (1, idx), (1, idx), state_color(dashboard["sentiment_state"])))
+    story.append(
+        build_pdf_table(
+            path_rows,
+            [28 * mm, 28 * mm, 18 * mm, 18 * mm, 18 * mm, 20 * mm, 22 * mm],
+            colors.HexColor("#1F2937"),
+            font_name,
+            table_body,
+            table_header,
+            path_styles,
+        )
+    )
+    story.extend(
+        [
+            Spacer(1, 6 * mm),
+            P("使用边界", heading),
+            P("本报告只做市场环境、题材阶段、个股地位和纪律风险判断，不执行交易，不连接券商账户，也不构成买卖建议。", body),
+            PageBreak(),
+            P("市场情绪仪表盘", heading),
+        ]
+    )
+
     dashboard_rows = [
-        ["日期", "涨停", "炸板", "炸板率", "跌停", "最高板", "连板", "昨涨停均涨", "红盘率", "情绪分", "状态", "仓位上限", "纪律"]
+        ["日期", "涨停", "炸板率", "跌停", "最高板", "昨涨停均涨", "红盘率", "情绪分", "状态", "纪律"]
     ]
+    dashboard_styles = []
     for day in result["daily"]:
         dashboard = day["market_dashboard"]
         gate = day["discipline_gate"]
+        row_idx = len(dashboard_rows)
         dashboard_rows.append(
             [
                 dashed_date(day["date"]),
                 day["limit_up_count"],
-                day["failed_limit_count"],
                 f"{day['failed_limit_rate']:.2f}%",
                 day["limit_down_count"],
                 day["highest_board"],
-                day["multi_board_count"],
                 f"{day['prev_limit_avg_pct']:+.2f}%",
                 f"{day['prev_limit_positive_rate']:.2f}%",
                 dashboard["sentiment_score"],
                 dashboard["sentiment_state"],
-                gate["max_position_band"],
-                gate["discipline_status"],
+                status_label(gate["discipline_status"]),
             ]
         )
+        dashboard_styles.append(("BACKGROUND", (8, row_idx), (8, row_idx), state_bg(dashboard["sentiment_state"])))
+        dashboard_styles.append(("TEXTCOLOR", (8, row_idx), (8, row_idx), state_color(dashboard["sentiment_state"])))
     story.append(
         build_pdf_table(
             dashboard_rows,
-            [22 * mm, 13 * mm, 13 * mm, 17 * mm, 13 * mm, 15 * mm, 13 * mm, 22 * mm, 17 * mm, 15 * mm, 19 * mm, 19 * mm, 16 * mm],
+            [25 * mm, 17 * mm, 22 * mm, 17 * mm, 20 * mm, 26 * mm, 22 * mm, 18 * mm, 24 * mm, 22 * mm],
             colors.HexColor("#243B53"),
             font_name,
+            table_body,
+            table_header,
+            dashboard_styles,
         )
     )
 
-    story.extend([Spacer(1, 5 * mm), Paragraph("题材强度排名", heading)])
+    story.extend([Spacer(1, 6 * mm), P("关键证据", heading)])
     for day in result["daily"]:
-        story.append(Paragraph(dashed_date(day["date"]), body))
-        theme_rows = [["排名", "题材", "综合分", "涨停", "炸板", "最高板", "持续", "阶段", "催化", "代表股"]]
-        for item in day["theme_ranking"][:8]:
+        evidence = "；".join(day["market_dashboard"].get("evidence", []))
+        warnings = "；".join(day["market_dashboard"].get("warnings", [])) or "无"
+        story.append(P(f"{dashed_date(day['date'])}：{evidence}。风险提示：{warnings}", note))
+
+    story.extend([PageBreak(), P("题材强度排名", heading)])
+    for day in result["daily"]:
+        story.append(P(dashed_date(day["date"]), body))
+        theme_rows = [["排名", "题材", "综合分", "涨停", "最高板", "持续", "阶段", "代表股"]]
+        for item in day["theme_ranking"][:5]:
             top_names = "、".join(stock["name"] for stock in item["top_stocks"][:3])
             theme_rows.append(
                 [
@@ -1070,34 +1272,36 @@ def write_pdf_report(result: dict, pdf_path: Path) -> None:
                     item["theme_name"],
                     f"{item['theme_score']:.2f}",
                     item["limit_up_count"],
-                    item["failed_limit_count"],
                     item["highest_board"],
                     item["persistence_days"],
                     item["cycle_phase"],
-                    item["catalyst_status"],
                     top_names,
                 ]
             )
         story.append(
             build_pdf_table(
                 theme_rows,
-                [12 * mm, 24 * mm, 17 * mm, 13 * mm, 13 * mm, 15 * mm, 13 * mm, 20 * mm, 18 * mm, 58 * mm],
+                [13 * mm, 30 * mm, 18 * mm, 14 * mm, 16 * mm, 14 * mm, 24 * mm, 84 * mm],
                 colors.HexColor("#2563EB"),
                 font_name,
+                table_body,
+                table_header,
             )
         )
-        story.append(Spacer(1, 3 * mm))
+        story.append(Spacer(1, 2.5 * mm))
 
-    story.extend([PageBreak(), Paragraph("个股地位识别", heading)])
+    story.extend([PageBreak(), P("个股地位识别", heading)])
     for day in result["daily"]:
-        story.append(Paragraph(dashed_date(day["date"]), body))
+        story.append(P(dashed_date(day["date"]), body))
         role_rows = [["代码", "名称", "题材", "地位", "置信分", "风险标签"]]
         key_roles = [
             item
             for item in day["stock_role_classification"]
             if item["role"] in {"龙头", "容量中军", "低位补涨", "中位股", "风险票"}
-        ][:12]
+        ][:8]
+        role_styles = []
         for item in key_roles:
+            row_idx = len(role_rows)
             flags = "、".join(item["risk_flags"]) if item["risk_flags"] else ""
             role_rows.append(
                 [
@@ -1109,39 +1313,63 @@ def write_pdf_report(result: dict, pdf_path: Path) -> None:
                     flags,
                 ]
             )
+            if item["role"] == "风险票":
+                role_styles.append(("BACKGROUND", (3, row_idx), (3, row_idx), colors.HexColor("#FEF2F2")))
+                role_styles.append(("TEXTCOLOR", (3, row_idx), (3, row_idx), colors.HexColor("#DC2626")))
+            elif item["role"] == "龙头":
+                role_styles.append(("BACKGROUND", (3, row_idx), (3, row_idx), colors.HexColor("#ECFDF3")))
+                role_styles.append(("TEXTCOLOR", (3, row_idx), (3, row_idx), colors.HexColor("#16A34A")))
         story.append(
             build_pdf_table(
                 role_rows,
-                [22 * mm, 24 * mm, 28 * mm, 24 * mm, 18 * mm, 80 * mm],
+                [22 * mm, 26 * mm, 30 * mm, 25 * mm, 18 * mm, 92 * mm],
                 colors.HexColor("#047857"),
                 font_name,
+                table_body,
+                table_header,
+                role_styles,
             )
         )
-        story.append(Spacer(1, 3 * mm))
+        story.append(Spacer(1, 2.5 * mm))
 
-    story.extend([Spacer(1, 4 * mm), Paragraph("交易纪律熔断器", heading)])
+    story.extend([PageBreak(), P("交易纪律熔断器", heading)])
+    discipline_rows = [["日期", "纪律", "最高仓位", "触发原因", "继续观察"]]
     for day in result["daily"]:
         gate = day["discipline_gate"]
-        text = (
-            f"{dashed_date(day['date'])}：{gate['discipline_status']}，最高仓位 {gate['max_position_band']}；"
-            f"{'；'.join(gate['reason'])}"
+        discipline_rows.append(
+            [
+                dashed_date(day["date"]),
+                status_label(gate["discipline_status"]),
+                gate["max_position_band"],
+                "；".join(gate["reason"]),
+                "；".join(gate["required_observation"][:2]),
+            ]
         )
-        story.append(Paragraph(text, body))
+    story.append(
+        build_pdf_table(
+            discipline_rows,
+            [24 * mm, 18 * mm, 22 * mm, 86 * mm, 86 * mm],
+            colors.HexColor("#7C2D12"),
+            font_name,
+            table_body,
+            table_header,
+        )
+    )
 
     if result["data_gaps"]:
-        story.extend([Spacer(1, 3 * mm), Paragraph("数据缺口", heading)])
+        story.extend([Spacer(1, 5 * mm), P("数据缺口", heading)])
         for gap in result["data_gaps"]:
-            story.append(Paragraph(f"- {gap}", small))
+            story.append(P(f"- {gap}", small))
 
     doc = SimpleDocTemplate(
         str(pdf_path),
         pagesize=landscape(A4),
-        rightMargin=10 * mm,
-        leftMargin=10 * mm,
-        topMargin=10 * mm,
-        bottomMargin=10 * mm,
+        rightMargin=11 * mm,
+        leftMargin=11 * mm,
+        topMargin=14 * mm,
+        bottomMargin=14 * mm,
     )
-    doc.build(story)
+    doc.build(story, onFirstPage=draw_page, onLaterPages=draw_page)
 
 
 def run_engine(
