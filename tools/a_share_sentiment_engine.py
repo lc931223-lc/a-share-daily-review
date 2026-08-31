@@ -925,21 +925,35 @@ def write_markdown_report(result: dict, report_path: Path) -> None:
     report_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def chinese_font_name() -> str:
+def chinese_font_names() -> dict[str, str]:
     from reportlab.pdfbase import pdfmetrics
     from reportlab.pdfbase.ttfonts import TTFont
 
-    candidates = [
+    source_han_fonts = {
+        "regular": Path("assets/fonts/SourceHanSansCN-Regular.ttf"),
+        "medium": Path("assets/fonts/SourceHanSansCN-Medium.ttf"),
+        "bold": Path("assets/fonts/SourceHanSansCN-Bold.ttf"),
+    }
+    if all(font_path.exists() for font_path in source_han_fonts.values()):
+        registered = {}
+        for weight, font_path in source_han_fonts.items():
+            font_name = f"SourceHanSansCN-{weight.title()}"
+            pdfmetrics.registerFont(TTFont(font_name, str(font_path)))
+            registered[weight] = font_name
+        return registered
+
+    fallback_candidates = [
+        Path("assets/fonts/SourceHanSansCN-VF.ttf"),
         Path("C:/Windows/Fonts/STSONG.TTF"),
         Path("C:/Windows/Fonts/simsun.ttc"),
         Path("C:/Windows/Fonts/msyh.ttc"),
     ]
-    for font_path in candidates:
+    for font_path in fallback_candidates:
         if font_path.exists():
-            font_name = "A股报告中文字体"
+            font_name = "SourceHanSansCN" if "SourceHanSans" in font_path.name else "A股报告中文字体"
             pdfmetrics.registerFont(TTFont(font_name, str(font_path)))
-            return font_name
-    return "Helvetica"
+            return {"regular": font_name, "medium": font_name, "bold": font_name}
+    return {"regular": "Helvetica", "medium": "Helvetica-Bold", "bold": "Helvetica-Bold"}
 
 
 def build_pdf_table(
@@ -959,9 +973,9 @@ def build_pdf_table(
         body_style = ParagraphStyle(
             "DefaultTableBody",
             fontName=font_name,
-            fontSize=8,
-            leading=11,
-            textColor=colors.HexColor("#1F2937"),
+            fontSize=11.5,
+            leading=16.5,
+            textColor=colors.HexColor("#111111"),
         )
     if header_style is None:
         header_style = ParagraphStyle(
@@ -989,8 +1003,8 @@ def build_pdf_table(
         ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
         ("LEFTPADDING", (0, 0), (-1, -1), 5),
         ("RIGHTPADDING", (0, 0), (-1, -1), 5),
-        ("TOPPADDING", (0, 0), (-1, -1), 6),
-        ("BOTTOMPADDING", (0, 0), (-1, -1), 6),
+        ("TOPPADDING", (0, 0), (-1, -1), 8),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
         ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#F8FAFC")]),
     ]
     if extra_styles:
@@ -1007,6 +1021,7 @@ def write_pdf_report(result: dict, pdf_path: Path) -> None:
     from reportlab.platypus import (
         PageBreak,
         Paragraph,
+        KeepTogether,
         SimpleDocTemplate,
         Spacer,
         Table,
@@ -1014,7 +1029,10 @@ def write_pdf_report(result: dict, pdf_path: Path) -> None:
     )
 
     pdf_path.parent.mkdir(parents=True, exist_ok=True)
-    font_name = chinese_font_name()
+    font_names = chinese_font_names()
+    font_regular = font_names["regular"]
+    font_medium = font_names["medium"]
+    font_bold = font_names["bold"]
     styles = getSampleStyleSheet()
     page_width, page_height = landscape(A4)
     content_width = page_width - 22 * mm
@@ -1022,71 +1040,75 @@ def write_pdf_report(result: dict, pdf_path: Path) -> None:
     title = ParagraphStyle(
         "ChineseTitle",
         parent=styles["Title"],
-        fontName=font_name,
-        fontSize=22,
-        leading=30,
-        textColor=colors.HexColor("#111827"),
+        fontName=font_bold,
+        fontSize=30,
+        leading=38,
+        textColor=colors.HexColor("#000000"),
         alignment=0,
         spaceAfter=8,
     )
     heading = ParagraphStyle(
         "ChineseHeading",
         parent=styles["Heading2"],
-        fontName=font_name,
-        fontSize=15,
-        leading=20,
-        textColor=colors.HexColor("#111827"),
+        fontName=font_medium,
+        fontSize=22,
+        leading=29,
+        textColor=colors.HexColor("#000000"),
         spaceBefore=4,
         spaceAfter=8,
     )
     body = ParagraphStyle(
         "ChineseBody",
         parent=styles["BodyText"],
-        fontName=font_name,
-        fontSize=9.5,
-        leading=14,
-        textColor=colors.HexColor("#374151"),
+        fontName=font_regular,
+        fontSize=14,
+        leading=21,
+        textColor=colors.HexColor("#111111"),
         spaceAfter=5,
     )
     small = ParagraphStyle(
         "ChineseSmall",
         parent=body,
-        fontSize=8.2,
-        leading=12,
-        textColor=colors.HexColor("#4B5563"),
+        fontSize=12,
+        leading=17.5,
+        textColor=colors.HexColor("#111111"),
     )
     label = ParagraphStyle(
         "ChineseLabel",
         parent=small,
-        fontSize=7.5,
-        leading=10,
-        textColor=colors.HexColor("#667085"),
+        fontName=font_medium,
+        fontSize=11.5,
+        leading=16.5,
+        textColor=colors.HexColor("#111111"),
     )
     value = ParagraphStyle(
         "ChineseValue",
         parent=body,
-        fontSize=16,
-        leading=21,
-        textColor=colors.HexColor("#111827"),
+        fontName=font_bold,
+        fontSize=24,
+        leading=31,
+        textColor=colors.HexColor("#000000"),
     )
     table_body = ParagraphStyle(
         "ChineseTableBody",
         parent=small,
-        fontSize=7.7,
-        leading=10.5,
-        textColor=colors.HexColor("#1F2937"),
+        fontName=font_regular,
+        fontSize=11.5,
+        leading=16.5,
+        textColor=colors.HexColor("#111111"),
     )
     table_header = ParagraphStyle(
         "ChineseTableHeader",
         parent=table_body,
+        fontName=font_medium,
         textColor=colors.white,
     )
     note = ParagraphStyle(
         "ChineseNote",
         parent=small,
-        fontSize=8.5,
-        leading=13,
-        textColor=colors.HexColor("#475467"),
+        fontSize=12.5,
+        leading=18.5,
+        textColor=colors.HexColor("#111111"),
     )
 
     def P(text, style=body):
@@ -1140,8 +1162,8 @@ def write_pdf_report(result: dict, pdf_path: Path) -> None:
 
     def draw_page(canvas, doc):
         canvas.saveState()
-        canvas.setFont(font_name, 8)
-        canvas.setFillColor(colors.HexColor("#667085"))
+        canvas.setFont(font_regular, 8)
+        canvas.setFillColor(colors.HexColor("#111111"))
         canvas.drawString(11 * mm, page_height - 7 * mm, "A股情绪复盘")
         canvas.drawRightString(page_width - 11 * mm, 7 * mm, f"第 {doc.page} 页")
         canvas.setStrokeColor(colors.HexColor("#E5E7EB"))
@@ -1202,7 +1224,7 @@ def write_pdf_report(result: dict, pdf_path: Path) -> None:
             path_rows,
             [28 * mm, 28 * mm, 18 * mm, 18 * mm, 18 * mm, 20 * mm, 22 * mm],
             colors.HexColor("#1F2937"),
-            font_name,
+            font_regular,
             table_body,
             table_header,
             path_styles,
@@ -1210,9 +1232,8 @@ def write_pdf_report(result: dict, pdf_path: Path) -> None:
     )
     story.extend(
         [
-            Spacer(1, 6 * mm),
-            P("使用边界", heading),
-            P("本报告只做市场环境、题材阶段、个股地位和纪律风险判断，不执行交易，不连接券商账户，也不构成买卖建议。", body),
+            Spacer(1, 3 * mm),
+            P("使用边界：本报告只做市场环境、题材阶段、个股地位和纪律风险判断，不执行交易，不连接券商账户，也不构成买卖建议。", small),
             PageBreak(),
             P("市场情绪仪表盘", heading),
         ]
@@ -1247,7 +1268,7 @@ def write_pdf_report(result: dict, pdf_path: Path) -> None:
             dashboard_rows,
             [25 * mm, 17 * mm, 22 * mm, 17 * mm, 20 * mm, 26 * mm, 22 * mm, 18 * mm, 24 * mm, 22 * mm],
             colors.HexColor("#243B53"),
-            font_name,
+            font_regular,
             table_body,
             table_header,
             dashboard_styles,
@@ -1261,8 +1282,9 @@ def write_pdf_report(result: dict, pdf_path: Path) -> None:
         story.append(P(f"{dashed_date(day['date'])}：{evidence}。风险提示：{warnings}", note))
 
     story.extend([PageBreak(), P("题材强度排名", heading)])
-    for day in result["daily"]:
-        story.append(P(dashed_date(day["date"]), body))
+    for day_index, day in enumerate(result["daily"]):
+        if day_index and day_index % 2 == 0:
+            story.extend([PageBreak(), P("题材强度排名", heading)])
         theme_rows = [["排名", "题材", "综合分", "涨停", "最高板", "持续", "阶段", "代表股"]]
         for item in day["theme_ranking"][:5]:
             top_names = "、".join(stock["name"] for stock in item["top_stocks"][:3])
@@ -1279,20 +1301,22 @@ def write_pdf_report(result: dict, pdf_path: Path) -> None:
                 ]
             )
         story.append(
-            build_pdf_table(
+            KeepTogether([
+                P(dashed_date(day["date"]), body),
+                build_pdf_table(
                 theme_rows,
                 [13 * mm, 30 * mm, 18 * mm, 14 * mm, 16 * mm, 14 * mm, 24 * mm, 84 * mm],
                 colors.HexColor("#2563EB"),
-                font_name,
+                font_regular,
                 table_body,
                 table_header,
-            )
+                ),
+                Spacer(1, 2.5 * mm),
+            ])
         )
-        story.append(Spacer(1, 2.5 * mm))
 
-    story.extend([PageBreak(), P("个股地位识别", heading)])
-    for day in result["daily"]:
-        story.append(P(dashed_date(day["date"]), body))
+    for day_index, day in enumerate(result["daily"]):
+        story.extend([PageBreak(), P("个股地位识别", heading), P(dashed_date(day["date"]), body)])
         role_rows = [["代码", "名称", "题材", "地位", "置信分", "风险标签"]]
         key_roles = [
             item
@@ -1324,13 +1348,12 @@ def write_pdf_report(result: dict, pdf_path: Path) -> None:
                 role_rows,
                 [22 * mm, 26 * mm, 30 * mm, 25 * mm, 18 * mm, 92 * mm],
                 colors.HexColor("#047857"),
-                font_name,
+                font_regular,
                 table_body,
                 table_header,
                 role_styles,
             )
         )
-        story.append(Spacer(1, 2.5 * mm))
 
     story.extend([PageBreak(), P("交易纪律熔断器", heading)])
     discipline_rows = [["日期", "纪律", "最高仓位", "触发原因", "继续观察"]]
@@ -1348,9 +1371,9 @@ def write_pdf_report(result: dict, pdf_path: Path) -> None:
     story.append(
         build_pdf_table(
             discipline_rows,
-            [24 * mm, 18 * mm, 22 * mm, 86 * mm, 86 * mm],
+            [28 * mm, 18 * mm, 22 * mm, 84 * mm, 84 * mm],
             colors.HexColor("#7C2D12"),
-            font_name,
+            font_regular,
             table_body,
             table_header,
         )

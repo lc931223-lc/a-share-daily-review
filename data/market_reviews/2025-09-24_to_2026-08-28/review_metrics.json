@@ -1,0 +1,241 @@
+{
+  "window": {
+    "start": "2025-09-24",
+    "end": "2026-08-28",
+    "trading_days": 224
+  },
+  "symbol_names": {
+    "sh000001": "上证指数",
+    "sz399001": "深证成指",
+    "sz399006": "创业板指",
+    "sh000300": "沪深300",
+    "sh000905": "中证500",
+    "sh000852": "中证1000",
+    "sh000688": "科创50"
+  },
+  "index_summary": [
+    {
+      "name": "上证指数",
+      "symbol": "sh000001",
+      "start_date": "2025-09-24",
+      "end_date": "2026-08-28",
+      "start_close": 3853.642,
+      "end_close": 3952.179,
+      "return_pct": 2.56,
+      "max_drawdown_pct": -11.28,
+      "drawdown_peak": "2026-05-13",
+      "drawdown_trough": "2026-07-17",
+      "period_high": 4242.572,
+      "period_high_date": "2026-05-13",
+      "period_low": 3764.155,
+      "period_low_date": "2026-07-17"
+    },
+    {
+      "name": "深证成指",
+      "symbol": "sz399001",
+      "start_date": "2025-09-24",
+      "end_date": "2026-08-28",
+      "start_close": 13356.143,
+      "end_close": 13953.065,
+      "return_pct": 4.47,
+      "max_drawdown_pct": -18.85,
+      "drawdown_peak": "2026-06-22",
+      "drawdown_trough": "2026-07-30",
+      "period_high": 16372.499,
+      "period_high_date": "2026-06-22",
+      "period_low": 12538.071,
+      "period_low_date": "2025-11-21"
+    },
+    {
+      "name": "创业板指",
+      "symbol": "sz399006",
+      "start_date": "2025-09-24",
+      "end_date": "2026-08-28",
+      "start_close": 3185.571,
+      "end_close": 3424.401,
+      "return_pct": 7.5,
+      "max_drawdown_pct": -25.79,
+      "drawdown_peak": "2026-06-25",
+      "drawdown_trough": "2026-07-30",
+      "period_high": 4371.989,
+      "period_high_date": "2026-06-25",
+      "period_low": 2920.078,
+      "period_low_date": "2025-11-21"
+    },
+    {
+      "name": "沪深300",
+      "symbol": "sh000300",
+      "start_date": "2025-09-24",
+      "end_date": "2026-08-28",
+      "start_close": 4566.071,
+      "end_close": 4609.176,
+      "return_pct": 0.94,
+      "max_drawdown_pct": -10.49,
+      "drawdown_peak": "2026-06-22",
+      "drawdown_trough": "2026-07-17",
+      "period_high": 5059.658,
+      "period_high_date": "2026-06-22",
+      "period_low": 4417.997,
+      "period_low_date": "2026-03-23"
+    },
+    {
+      "name": "中证500",
+      "symbol": "sh000905",
+      "start_date": "2025-09-24",
+      "end_date": "2026-08-28",
+      "start_close": 7323.709,
+      "end_close": 7895.451,
+      "return_pct": 7.81,
+      "max_drawdown_pct": -19.06,
+      "drawdown_peak": "2026-06-30",
+      "drawdown_trough": "2026-07-30",
+      "period_high": 9031.379,
+      "period_high_date": "2026-06-30",
+      "period_low": 6817.41,
+      "period_low_date": "2025-11-21"
+    },
+    {
+      "name": "中证1000",
+      "symbol": "sh000852",
+      "start_date": "2025-09-24",
+      "end_date": "2026-08-28",
+      "start_close": 7534.222,
+      "end_close": 7705.029,
+      "return_pct": 2.27,
+      "max_drawdown_pct": -22.94,
+      "drawdown_peak": "2026-05-13",
+      "drawdown_trough": "2026-07-30",
+      "period_high": 8955.447,
+      "period_high_date": "2026-05-13",
+      "period_low": 6900.658,
+      "period_low_date": "2026-07-30"
+    },
+    {
+      "name": "科创50",
+      "symbol": "sh000688",
+      "start_date": "2025-09-24",
+      "end_date": "2026-08-28",
+      "start_close": 1456.469,
+      "end_close": 1662.149,
+      "return_pct": 14.12,
+      "max_drawdown_pct": -29.67,
+      "drawdown_peak": "2026-06-30",
+      "drawdown_trough": "2026-08-03",
+      "period_high": 2207.865,
+      "period_high_date": "2026-06-30",
+      "period_low": 1256.21,
+      "period_low_date": "2026-04-03"
+    }
+  ],
+  "buy_and_hold": {
+    "sh000001": {
+      "return_pct": 2.56,
+      "max_drawdown_pct": -11.28,
+      "drawdown_peak": "2026-05-13",
+      "drawdown_trough": "2026-07-17"
+    },
+    "sz399001": {
+      "return_pct": 4.47,
+      "max_drawdown_pct": -18.85,
+      "drawdown_peak": "2026-06-22",
+      "drawdown_trough": "2026-07-30"
+    },
+    "sz399006": {
+      "return_pct": 7.5,
+      "max_drawdown_pct": -25.79,
+      "drawdown_peak": "2026-06-25",
+      "drawdown_trough": "2026-07-30"
+    },
+    "sh000300": {
+      "return_pct": 0.94,
+      "max_drawdown_pct": -10.49,
+      "drawdown_peak": "2026-06-22",
+      "drawdown_trough": "2026-07-17"
+    },
+    "sh000905": {
+      "return_pct": 7.81,
+      "max_drawdown_pct": -19.06,
+      "drawdown_peak": "2026-06-30",
+      "drawdown_trough": "2026-07-30"
+    },
+    "sh000852": {
+      "return_pct": 2.27,
+      "max_drawdown_pct": -22.94,
+      "drawdown_peak": "2026-05-13",
+      "drawdown_trough": "2026-07-30"
+    },
+    "sh000688": {
+      "return_pct": 14.12,
+      "max_drawdown_pct": -29.67,
+      "drawdown_peak": "2026-06-30",
+      "drawdown_trough": "2026-08-03"
+    }
+  },
+  "trend_filter_20_60": {
+    "sh000001": {
+      "return_pct": -6.98,
+      "max_drawdown_pct": -9.21,
+      "exposure_pct": 21.88,
+      "max_drawdown_peak": "2026-01-12",
+      "max_drawdown_trough": "2026-06-18"
+    },
+    "sz399001": {
+      "return_pct": -0.69,
+      "max_drawdown_pct": -8.42,
+      "exposure_pct": 31.7,
+      "max_drawdown_peak": "2026-01-23",
+      "max_drawdown_trough": "2026-04-28"
+    },
+    "sz399006": {
+      "return_pct": 3.66,
+      "max_drawdown_pct": -11.9,
+      "exposure_pct": 37.5,
+      "max_drawdown_peak": "2026-01-12",
+      "max_drawdown_trough": "2026-03-23"
+    },
+    "sh000300": {
+      "return_pct": -9.82,
+      "max_drawdown_pct": -11.2,
+      "exposure_pct": 26.34,
+      "max_drawdown_peak": "2026-01-06",
+      "max_drawdown_trough": "2026-07-02"
+    },
+    "sh000905": {
+      "return_pct": -1.17,
+      "max_drawdown_pct": -14.21,
+      "exposure_pct": 26.79,
+      "max_drawdown_peak": "2026-01-28",
+      "max_drawdown_trough": "2026-07-10"
+    },
+    "sh000852": {
+      "return_pct": -3.43,
+      "max_drawdown_pct": -11.6,
+      "exposure_pct": 26.79,
+      "max_drawdown_peak": "2026-01-23",
+      "max_drawdown_trough": "2026-07-06"
+    },
+    "sh000688": {
+      "return_pct": 12.41,
+      "max_drawdown_pct": -13.51,
+      "exposure_pct": 24.11,
+      "max_drawdown_peak": "2026-06-30",
+      "max_drawdown_trough": "2026-07-15"
+    }
+  },
+  "relative_strength_rotation": {
+    "return_pct": 11.65,
+    "max_drawdown_pct": -16.99,
+    "drawdown_peak": "2026-01-28",
+    "drawdown_trough": "2026-03-23",
+    "cash_days": 124,
+    "holding_days_by_symbol": {
+      "sz399006": 35,
+      "sh000905": 27,
+      "sh000688": 27,
+      "sz399001": 6,
+      "sh000852": 3,
+      "sh000001": 2
+    },
+    "last_signal": "cash"
+  }
+}

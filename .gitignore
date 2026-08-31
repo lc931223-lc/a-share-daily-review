@@ -6,6 +6,7 @@ __pycache__/
 .ruff_cache/
 node_modules/
 npm-debug.log*
+*.log
 .local/
 tmp/
 
@@ -13,3 +14,7 @@ tmp/
 data/edge-profile*/
 data/pdfbuild*/
 output/
+tools/bin/
+assets/fonts/*-VF.ttf
+reports/test-*.pdf
+research/skill-pdf-extract-*.txt

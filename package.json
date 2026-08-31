@@ -1,0 +1,15 @@
+{
+  "name": "a-share-investment-assistant",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local A-share investment research, data analysis, reporting, and alert workspace.",
+  "type": "commonjs",
+  "scripts": {
+    "check:env": "python tools/check_environment.py",
+    "fetch:69": "node tools/fetch_69_a_stock_data.js"
+  },
+  "engines": {
+    "node": ">=24",
+    "python": ">=3.12"
+  }
+}

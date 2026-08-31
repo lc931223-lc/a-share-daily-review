@@ -100,6 +100,25 @@ Regenerated a larger black Songti-style version:
 2. For future long tasks, read `CODEx_MEMORY.md` and `CHECKPOINT.md` first.
 3. Save large outputs into `research`, `data`, or `reports`.
 
+## 2026-08-31 PDF Typography Update
+
+- Replaced the report fallback font with the embedded Source Han Sans CN variable font:
+  - `C:\Users\愚者\Documents\New project 3\assets\fonts\SourceHanSansCN-VF.ttf`
+- Increased title, body, annotation, and table text sizes and expanded line spacing/padding.
+- Added explicit pagination so theme and stock-role tables are not split from their dates.
+- Regenerated and visually checked all 11 pages with Poppler; no clipping, overlap, or missing Chinese glyphs were found.
+- Final report:
+  - `C:\Users\愚者\Documents\New project 3\output\pdf\2026-08-30-sentiment-review-2026-08-24-to-2026-08-28.pdf`
+
+## 2026-09-01 Reference-Matched Font Weights
+
+- Inspected `D:\桌面\92科比淘股吧直播内容整理.pdf` strictly as a visual/font reference.
+- Identified its font hierarchy as Source Han Sans CN Regular, Medium, and Bold.
+- Generated static Regular/Medium/Bold TTF instances and mapped them to body text, headings/table headers, and primary emphasis respectively.
+- Regenerated the 11-page report and visually checked every page; text is solid black with no clipping or table overflow.
+- Final readability tuning kept the report at 11 pages while increasing narrative body text from 12pt to 14pt and table text from 10pt to 11.5pt.
+- This Source Han Sans CN font hierarchy and readable-size policy is now stored in `CODEx_MEMORY.md` as the default for future Chinese PDFs.
+
 ## 2026-08-30 A股情绪引擎集成
 
 - Wrote and committed the Chinese design spec:
@@ -165,3 +184,10 @@ Regenerated a larger black Songti-style version:
 - Wrote alert report: `C:\Users\愚者\Documents\New project 3\reports\alerts\2026-07-05-a-share-preopen-event-scan.md`.
 - Conclusion: no material new CXMT IPO / Hefei state-capital direct catalyst found after 2026-06-28. SSE project JSON still shows Changxin update time `2026-06-15 09:03:25`; latest attachment remains the 2026-06-12 registration approval.
 - Noted one indirect semiconductor equipment-chain financing signal: 拓荆科技(688072) 2026-07-03 private-placement issuance result / listing announcement; not treated as direct CXMT customer/order evidence.
+
+## 2026-09-01 Codex Cloud Migration
+
+- Prepared the project for `https://github.com/lc931223-lc/a-share-daily-review` on branch `main`.
+- Added a cross-platform `README.md`, cloud environment guidance, secret handling rules, and the Source Han Sans license.
+- Excluded `.env`, virtual environments, browser caches, temporary output, local Cloudflare binaries, and the unused variable font.
+- Verified Python compilation and regenerated the cached 2026-08-24 to 2026-08-28 PDF successfully before migration.

@@ -11,6 +11,8 @@ Personal A-share research and data-analysis workspace for industry-chain researc
 - Distinguish confirmed facts from inference and concept-only relationships.
 - Avoid dumping large raw data into chat; save raw data and long tables into files.
 - For current market, IPO, ownership, supplier/customer, regulation, price, and financial data, verify freshness before answering.
+- For future Chinese PDF reports, default to embedded Source Han Sans CN with Regular body text, Medium headings/table headers, and Bold primary titles or emphasis.
+- Use solid black reading text. Prefer approximately 14pt narrative body text and 11.5pt table text when the layout permits, maximizing readability without materially increasing page count.
 
 ## Workspace
 
@@ -93,3 +95,10 @@ Personal A-share research and data-analysis workspace for industry-chain researc
 For long tasks, update `CHECKPOINT.md` at phase boundaries and keep raw data or large outputs in `data`, `research`, or `reports` instead of the chat.
 
 For proactive A-share catalyst monitoring, use the watchlists under `research\watchlists` and save dated alert reports under `reports\alerts`.
+
+## Repository And Cloud
+
+- GitHub repository: `https://github.com/lc931223-lc/a-share-daily-review`
+- Default branch: `main`
+- `README.md` contains the local and Codex Cloud bootstrap commands.
+- Never commit `.env`, access tokens, browser profiles, local tunnel binaries, or temporary PDF output.
