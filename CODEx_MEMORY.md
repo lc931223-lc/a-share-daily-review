@@ -102,3 +102,11 @@ For proactive A-share catalyst monitoring, use the watchlists under `research\wa
 - Default branch: `main`
 - `README.md` contains the local and Codex Cloud bootstrap commands.
 - Never commit `.env`, access tokens, browser profiles, local tunnel binaries, or temporary PDF output.
+
+## Default Execution Mode
+
+- Default future development, data processing, testing, report generation, and repository analysis to independent Codex Cloud tasks.
+- Cloud repository: `lc931223-lc/a-share-daily-review`; start from the latest relevant working branch and verified commit.
+- Keep each substantial task isolated, verify commands and outputs in Cloud, and return reviewable commits or pull requests when changes are requested.
+- Use local execution only for files not yet synchronized to GitHub, desktop UI or local-device operations, local-only credentials/hardware, Cloud-unavailable workflows, or when the user explicitly requests local execution.
+- Never place API tokens or secrets in the repository; configure them through Codex Cloud environment secrets.
