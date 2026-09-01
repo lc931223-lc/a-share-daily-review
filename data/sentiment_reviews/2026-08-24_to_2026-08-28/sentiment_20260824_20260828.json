@@ -9,7 +9,7 @@
     "20260828"
   ],
   "generated_at": "2026-08-30",
-  "data_dir": "data\\sentiment_reviews\\2026-08-24_to_2026-08-28",
+  "data_dir": "data/sentiment_reviews/2026-08-24_to_2026-08-28",
   "data_sources": [
     "AKShare stock_zh_index_daily",
     "AKShare stock_zt_pool_em",
@@ -433,7 +433,7 @@
           "catalyst_status": "unknown",
           "rank": 1,
           "price_strength_rank": 1,
-          "emotion_strength_rank": 2,
+          "emotion_strength_rank": 3,
           "liquidity_strength_rank": 26
         },
         {
@@ -501,7 +501,7 @@
           "catalyst_status": "unknown",
           "rank": 3,
           "price_strength_rank": 6,
-          "emotion_strength_rank": 3,
+          "emotion_strength_rank": 2,
           "liquidity_strength_rank": 23
         },
         {
@@ -527,8 +527,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 4,
-          "price_strength_rank": 5,
-          "emotion_strength_rank": 9,
+          "price_strength_rank": 4,
+          "emotion_strength_rank": 8,
           "liquidity_strength_rank": 19
         },
         {
@@ -554,50 +554,9 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 5,
-          "price_strength_rank": 4,
-          "emotion_strength_rank": 6,
+          "price_strength_rank": 5,
+          "emotion_strength_rank": 9,
           "liquidity_strength_rank": 38
-        },
-        {
-          "theme_name": "电池",
-          "limit_up_count": 3,
-          "failed_limit_count": 0,
-          "failed_limit_rate": 0.0,
-          "turnover_amount": 1702104575.0,
-          "limit_up_amount": 1702104575.0,
-          "highest_board": 1,
-          "multi_board_count": 0,
-          "top_stocks": [
-            {
-              "code": "002580",
-              "name": "圣阳股份",
-              "board_count": 1,
-              "amount": 1205842672.0,
-              "open_times": 1
-            },
-            {
-              "code": "301152",
-              "name": "天力锂能",
-              "board_count": 1,
-              "amount": 324645248.0,
-              "open_times": 4
-            },
-            {
-              "code": "603032",
-              "name": "德新科技",
-              "board_count": 1,
-              "amount": 171616655.0,
-              "open_times": 0
-            }
-          ],
-          "persistence_days": 1,
-          "theme_score": 43.0,
-          "cycle_phase": "启动",
-          "catalyst_status": "unknown",
-          "rank": 6,
-          "price_strength_rank": 10,
-          "emotion_strength_rank": 4,
-          "liquidity_strength_rank": 9
         },
         {
           "theme_name": "电力",
@@ -635,10 +594,51 @@
           "theme_score": 43.0,
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
-          "rank": 7,
-          "price_strength_rank": 11,
-          "emotion_strength_rank": 5,
+          "rank": 6,
+          "price_strength_rank": 9,
+          "emotion_strength_rank": 4,
           "liquidity_strength_rank": 17
+        },
+        {
+          "theme_name": "电池",
+          "limit_up_count": 3,
+          "failed_limit_count": 0,
+          "failed_limit_rate": 0.0,
+          "turnover_amount": 1702104575.0,
+          "limit_up_amount": 1702104575.0,
+          "highest_board": 1,
+          "multi_board_count": 0,
+          "top_stocks": [
+            {
+              "code": "002580",
+              "name": "圣阳股份",
+              "board_count": 1,
+              "amount": 1205842672.0,
+              "open_times": 1
+            },
+            {
+              "code": "301152",
+              "name": "天力锂能",
+              "board_count": 1,
+              "amount": 324645248.0,
+              "open_times": 4
+            },
+            {
+              "code": "603032",
+              "name": "德新科技",
+              "board_count": 1,
+              "amount": 171616655.0,
+              "open_times": 0
+            }
+          ],
+          "persistence_days": 1,
+          "theme_score": 43.0,
+          "cycle_phase": "启动",
+          "catalyst_status": "unknown",
+          "rank": 7,
+          "price_strength_rank": 10,
+          "emotion_strength_rank": 5,
+          "liquidity_strength_rank": 9
         },
         {
           "theme_name": "塑料",
@@ -664,7 +664,7 @@
           "catalyst_status": "unknown",
           "rank": 8,
           "price_strength_rank": 7,
-          "emotion_strength_rank": 7,
+          "emotion_strength_rank": 6,
           "liquidity_strength_rank": 16
         },
         {
@@ -691,7 +691,7 @@
           "catalyst_status": "unknown",
           "rank": 9,
           "price_strength_rank": 8,
-          "emotion_strength_rank": 8,
+          "emotion_strength_rank": 7,
           "liquidity_strength_rank": 12
         },
         {
@@ -729,74 +729,6 @@
           "liquidity_strength_rank": 5
         },
         {
-          "theme_name": "电网设备",
-          "limit_up_count": 2,
-          "failed_limit_count": 0,
-          "failed_limit_rate": 0.0,
-          "turnover_amount": 1554308080.0,
-          "limit_up_amount": 1554308080.0,
-          "highest_board": 1,
-          "multi_board_count": 0,
-          "top_stocks": [
-            {
-              "code": "601700",
-              "name": "风范股份",
-              "board_count": 1,
-              "amount": 1221491328.0,
-              "open_times": 0
-            },
-            {
-              "code": "002882",
-              "name": "金龙羽",
-              "board_count": 1,
-              "amount": 332816752.0,
-              "open_times": 0
-            }
-          ],
-          "persistence_days": 1,
-          "theme_score": 37.0,
-          "cycle_phase": "启动",
-          "catalyst_status": "unknown",
-          "rank": 11,
-          "price_strength_rank": 12,
-          "emotion_strength_rank": 10,
-          "liquidity_strength_rank": 11
-        },
-        {
-          "theme_name": "航运港口",
-          "limit_up_count": 2,
-          "failed_limit_count": 0,
-          "failed_limit_rate": 0.0,
-          "turnover_amount": 1295237872.0,
-          "limit_up_amount": 1295237872.0,
-          "highest_board": 1,
-          "multi_board_count": 0,
-          "top_stocks": [
-            {
-              "code": "603565",
-              "name": "中谷物流",
-              "board_count": 1,
-              "amount": 731250400.0,
-              "open_times": 1
-            },
-            {
-              "code": "601083",
-              "name": "锦江航运",
-              "board_count": 1,
-              "amount": 563987472.0,
-              "open_times": 1
-            }
-          ],
-          "persistence_days": 1,
-          "theme_score": 37.0,
-          "cycle_phase": "启动",
-          "catalyst_status": "unknown",
-          "rank": 12,
-          "price_strength_rank": 14,
-          "emotion_strength_rank": 11,
-          "liquidity_strength_rank": 15
-        },
-        {
           "theme_name": "化学原料",
           "limit_up_count": 2,
           "failed_limit_count": 0,
@@ -825,9 +757,9 @@
           "theme_score": 37.0,
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
-          "rank": 13,
-          "price_strength_rank": 15,
-          "emotion_strength_rank": 12,
+          "rank": 11,
+          "price_strength_rank": 12,
+          "emotion_strength_rank": 10,
           "liquidity_strength_rank": 6
         },
         {
@@ -859,9 +791,9 @@
           "theme_score": 37.0,
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
-          "rank": 14,
-          "price_strength_rank": 16,
-          "emotion_strength_rank": 13,
+          "rank": 12,
+          "price_strength_rank": 13,
+          "emotion_strength_rank": 11,
           "liquidity_strength_rank": 10
         },
         {
@@ -893,10 +825,78 @@
           "theme_score": 37.0,
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
+          "rank": 13,
+          "price_strength_rank": 15,
+          "emotion_strength_rank": 12,
+          "liquidity_strength_rank": 13
+        },
+        {
+          "theme_name": "电网设备",
+          "limit_up_count": 2,
+          "failed_limit_count": 0,
+          "failed_limit_rate": 0.0,
+          "turnover_amount": 1554308080.0,
+          "limit_up_amount": 1554308080.0,
+          "highest_board": 1,
+          "multi_board_count": 0,
+          "top_stocks": [
+            {
+              "code": "601700",
+              "name": "风范股份",
+              "board_count": 1,
+              "amount": 1221491328.0,
+              "open_times": 0
+            },
+            {
+              "code": "002882",
+              "name": "金龙羽",
+              "board_count": 1,
+              "amount": 332816752.0,
+              "open_times": 0
+            }
+          ],
+          "persistence_days": 1,
+          "theme_score": 37.0,
+          "cycle_phase": "启动",
+          "catalyst_status": "unknown",
+          "rank": 14,
+          "price_strength_rank": 16,
+          "emotion_strength_rank": 13,
+          "liquidity_strength_rank": 11
+        },
+        {
+          "theme_name": "航运港口",
+          "limit_up_count": 2,
+          "failed_limit_count": 0,
+          "failed_limit_rate": 0.0,
+          "turnover_amount": 1295237872.0,
+          "limit_up_amount": 1295237872.0,
+          "highest_board": 1,
+          "multi_board_count": 0,
+          "top_stocks": [
+            {
+              "code": "603565",
+              "name": "中谷物流",
+              "board_count": 1,
+              "amount": 731250400.0,
+              "open_times": 1
+            },
+            {
+              "code": "601083",
+              "name": "锦江航运",
+              "board_count": 1,
+              "amount": 563987472.0,
+              "open_times": 1
+            }
+          ],
+          "persistence_days": 1,
+          "theme_score": 37.0,
+          "cycle_phase": "启动",
+          "catalyst_status": "unknown",
           "rank": 15,
           "price_strength_rank": 17,
           "emotion_strength_rank": 14,
-          "liquidity_strength_rank": 13
+          "liquidity_strength_rank": 15
         },
         {
           "theme_name": "医药商业",
@@ -921,8 +921,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 16,
-          "price_strength_rank": 21,
-          "emotion_strength_rank": 17,
+          "price_strength_rank": 24,
+          "emotion_strength_rank": 20,
           "liquidity_strength_rank": 20
         },
         {
@@ -948,8 +948,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 17,
-          "price_strength_rank": 25,
-          "emotion_strength_rank": 19,
+          "price_strength_rank": 18,
+          "emotion_strength_rank": 15,
           "liquidity_strength_rank": 21
         },
         {
@@ -975,8 +975,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 18,
-          "price_strength_rank": 26,
-          "emotion_strength_rank": 20,
+          "price_strength_rank": 27,
+          "emotion_strength_rank": 22,
           "liquidity_strength_rank": 24
         },
         {
@@ -1002,8 +1002,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 19,
-          "price_strength_rank": 18,
-          "emotion_strength_rank": 15,
+          "price_strength_rank": 21,
+          "emotion_strength_rank": 17,
           "liquidity_strength_rank": 25
         },
         {
@@ -1029,8 +1029,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 20,
-          "price_strength_rank": 31,
-          "emotion_strength_rank": 25,
+          "price_strength_rank": 23,
+          "emotion_strength_rank": 19,
           "liquidity_strength_rank": 28
         },
         {
@@ -1056,8 +1056,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 21,
-          "price_strength_rank": 30,
-          "emotion_strength_rank": 24,
+          "price_strength_rank": 29,
+          "emotion_strength_rank": 23,
           "liquidity_strength_rank": 29
         },
         {
@@ -1083,8 +1083,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 22,
-          "price_strength_rank": 28,
-          "emotion_strength_rank": 22,
+          "price_strength_rank": 22,
+          "emotion_strength_rank": 18,
           "liquidity_strength_rank": 30
         },
         {
@@ -1110,8 +1110,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 23,
-          "price_strength_rank": 29,
-          "emotion_strength_rank": 23,
+          "price_strength_rank": 30,
+          "emotion_strength_rank": 24,
           "liquidity_strength_rank": 32
         },
         {
@@ -1137,8 +1137,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 24,
-          "price_strength_rank": 22,
-          "emotion_strength_rank": 18,
+          "price_strength_rank": 20,
+          "emotion_strength_rank": 16,
           "liquidity_strength_rank": 33
         },
         {
@@ -1164,7 +1164,7 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 25,
-          "price_strength_rank": 9,
+          "price_strength_rank": 11,
           "emotion_strength_rank": 27,
           "liquidity_strength_rank": 1
         },
@@ -1191,8 +1191,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 26,
-          "price_strength_rank": 19,
-          "emotion_strength_rank": 16,
+          "price_strength_rank": 26,
+          "emotion_strength_rank": 21,
           "liquidity_strength_rank": 35
         },
         {
@@ -1218,8 +1218,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 27,
-          "price_strength_rank": 27,
-          "emotion_strength_rank": 21,
+          "price_strength_rank": 31,
+          "emotion_strength_rank": 25,
           "liquidity_strength_rank": 36
         },
         {
@@ -1252,7 +1252,7 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 28,
-          "price_strength_rank": 13,
+          "price_strength_rank": 14,
           "emotion_strength_rank": 28,
           "liquidity_strength_rank": 2
         },
@@ -1306,8 +1306,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 30,
-          "price_strength_rank": 20,
-          "emotion_strength_rank": 29,
+          "price_strength_rank": 28,
+          "emotion_strength_rank": 31,
           "liquidity_strength_rank": 27
         },
         {
@@ -1333,8 +1333,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 31,
-          "price_strength_rank": 23,
-          "emotion_strength_rank": 30,
+          "price_strength_rank": 19,
+          "emotion_strength_rank": 29,
           "liquidity_strength_rank": 31
         },
         {
@@ -1360,16 +1360,16 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 32,
-          "price_strength_rank": 24,
-          "emotion_strength_rank": 31,
+          "price_strength_rank": 25,
+          "emotion_strength_rank": 30,
           "liquidity_strength_rank": 34
         },
         {
-          "theme_name": "电机Ⅱ",
+          "theme_name": "光伏设备",
           "limit_up_count": 0,
           "failed_limit_count": 1,
           "failed_limit_rate": 100.0,
-          "turnover_amount": 104814169.0,
+          "turnover_amount": 2056392912.0,
           "limit_up_amount": 0.0,
           "highest_board": 0,
           "multi_board_count": 0,
@@ -1381,26 +1381,7 @@
           "rank": 33,
           "price_strength_rank": 33,
           "emotion_strength_rank": 33,
-          "liquidity_strength_rank": 37
-        },
-        {
-          "theme_name": "能源金属",
-          "limit_up_count": 0,
-          "failed_limit_count": 1,
-          "failed_limit_rate": 100.0,
-          "turnover_amount": 3897128528.0,
-          "limit_up_amount": 0.0,
-          "highest_board": 0,
-          "multi_board_count": 0,
-          "top_stocks": [],
-          "persistence_days": 1,
-          "theme_score": 0,
-          "cycle_phase": "启动",
-          "catalyst_status": "unknown",
-          "rank": 34,
-          "price_strength_rank": 34,
-          "emotion_strength_rank": 34,
-          "liquidity_strength_rank": 3
+          "liquidity_strength_rank": 8
         },
         {
           "theme_name": "小金属",
@@ -1416,9 +1397,9 @@
           "theme_score": 0,
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
-          "rank": 35,
-          "price_strength_rank": 35,
-          "emotion_strength_rank": 35,
+          "rank": 34,
+          "price_strength_rank": 34,
+          "emotion_strength_rank": 34,
           "liquidity_strength_rank": 4
         },
         {
@@ -1435,17 +1416,36 @@
           "theme_score": 0,
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
-          "rank": 36,
-          "price_strength_rank": 36,
-          "emotion_strength_rank": 36,
+          "rank": 35,
+          "price_strength_rank": 35,
+          "emotion_strength_rank": 35,
           "liquidity_strength_rank": 22
         },
         {
-          "theme_name": "光伏设备",
+          "theme_name": "电机Ⅱ",
           "limit_up_count": 0,
           "failed_limit_count": 1,
           "failed_limit_rate": 100.0,
-          "turnover_amount": 2056392912.0,
+          "turnover_amount": 104814169.0,
+          "limit_up_amount": 0.0,
+          "highest_board": 0,
+          "multi_board_count": 0,
+          "top_stocks": [],
+          "persistence_days": 1,
+          "theme_score": 0,
+          "cycle_phase": "启动",
+          "catalyst_status": "unknown",
+          "rank": 36,
+          "price_strength_rank": 36,
+          "emotion_strength_rank": 36,
+          "liquidity_strength_rank": 37
+        },
+        {
+          "theme_name": "能源金属",
+          "limit_up_count": 0,
+          "failed_limit_count": 1,
+          "failed_limit_rate": 100.0,
+          "turnover_amount": 3897128528.0,
           "limit_up_amount": 0.0,
           "highest_board": 0,
           "multi_board_count": 0,
@@ -1457,7 +1457,7 @@
           "rank": 37,
           "price_strength_rank": 37,
           "emotion_strength_rank": 37,
-          "liquidity_strength_rank": 8
+          "liquidity_strength_rank": 3
         },
         {
           "theme_name": "自动化设",
@@ -1623,13 +1623,13 @@
           "name": "红星发展",
           "theme_name": "化学原料",
           "role": "孤立票",
-          "role_score": 47,
+          "role_score": 48,
           "risk_flags": [
             "开板次数偏多"
           ],
           "evidence": [
             "连板 1，所属题材 化学原料",
-            "题材排名 13，题材涨停 2 只",
+            "题材排名 11，题材涨停 2 只",
             "成交额 27.81 亿，开板 10 次"
           ]
         },
@@ -1642,7 +1642,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 房地产开",
-            "题材排名 14，题材涨停 2 只",
+            "题材排名 12，题材涨停 2 只",
             "成交额 14.56 亿，开板 1 次"
           ]
         },
@@ -1651,11 +1651,11 @@
           "name": "风范股份",
           "theme_name": "电网设备",
           "role": "孤立票",
-          "role_score": 64,
+          "role_score": 63,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 电网设备",
-            "题材排名 11，题材涨停 2 只",
+            "题材排名 14，题材涨停 2 只",
             "成交额 12.21 亿，开板 0 次"
           ]
         },
@@ -1664,11 +1664,11 @@
           "name": "圣阳股份",
           "theme_name": "电池",
           "role": "容量中军",
-          "role_score": 76,
+          "role_score": 75,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 电池",
-            "题材排名 6，题材涨停 3 只",
+            "题材排名 7，题材涨停 3 只",
             "成交额 12.06 亿，开板 1 次"
           ]
         },
@@ -1681,7 +1681,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 煤炭开采",
-            "题材排名 15，题材涨停 2 只",
+            "题材排名 13，题材涨停 2 只",
             "成交额 10.40 亿，开板 0 次"
           ]
         },
@@ -1733,7 +1733,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 航运港口",
-            "题材排名 12，题材涨停 2 只",
+            "题材排名 15，题材涨停 2 只",
             "成交额 7.31 亿，开板 1 次"
           ]
         },
@@ -1755,11 +1755,11 @@
           "name": "中毅达",
           "theme_name": "化学原料",
           "role": "孤立票",
-          "role_score": 59,
+          "role_score": 60,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 化学原料",
-            "题材排名 13，题材涨停 2 只",
+            "题材排名 11，题材涨停 2 只",
             "成交额 6.97 亿，开板 0 次"
           ]
         },
@@ -1785,7 +1785,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 航运港口",
-            "题材排名 12，题材涨停 2 只",
+            "题材排名 15，题材涨停 2 只",
             "成交额 5.64 亿，开板 1 次"
           ]
         },
@@ -1820,11 +1820,11 @@
           "name": "协鑫能科",
           "theme_name": "电力",
           "role": "低位补涨",
-          "role_score": 72,
+          "role_score": 73,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 电力",
-            "题材排名 7，题材涨停 3 只",
+            "题材排名 6，题材涨停 3 只",
             "成交额 4.94 亿，开板 0 次"
           ]
         },
@@ -1833,11 +1833,11 @@
           "name": "南网能源",
           "theme_name": "电力",
           "role": "低位补涨",
-          "role_score": 69,
+          "role_score": 70,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 电力",
-            "题材排名 7，题材涨停 3 只",
+            "题材排名 6，题材涨停 3 只",
             "成交额 4.68 亿，开板 3 次"
           ]
         },
@@ -1863,7 +1863,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 煤炭开采",
-            "题材排名 15，题材涨停 2 只",
+            "题材排名 13，题材涨停 2 只",
             "成交额 3.47 亿，开板 2 次"
           ]
         },
@@ -1872,11 +1872,11 @@
           "name": "金龙羽",
           "theme_name": "电网设备",
           "role": "孤立票",
-          "role_score": 60,
+          "role_score": 59,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 电网设备",
-            "题材排名 11，题材涨停 2 只",
+            "题材排名 14，题材涨停 2 只",
             "成交额 3.33 亿，开板 0 次"
           ]
         },
@@ -1885,11 +1885,11 @@
           "name": "天力锂能",
           "theme_name": "电池",
           "role": "低位补涨",
-          "role_score": 69,
+          "role_score": 68,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 电池",
-            "题材排名 6，题材涨停 3 只",
+            "题材排名 7，题材涨停 3 只",
             "成交额 3.25 亿，开板 4 次"
           ]
         },
@@ -1937,11 +1937,11 @@
           "name": "芯能科技",
           "theme_name": "电力",
           "role": "低位补涨",
-          "role_score": 67,
+          "role_score": 68,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 电力",
-            "题材排名 7，题材涨停 3 只",
+            "题材排名 6，题材涨停 3 只",
             "成交额 2.49 亿，开板 1 次"
           ]
         },
@@ -1963,11 +1963,11 @@
           "name": "德新科技",
           "theme_name": "电池",
           "role": "低位补涨",
-          "role_score": 69,
+          "role_score": 68,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 电池",
-            "题材排名 6，题材涨停 3 只",
+            "题材排名 7，题材涨停 3 只",
             "成交额 1.72 亿，开板 0 次"
           ]
         },
@@ -1980,7 +1980,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 房地产开",
-            "题材排名 14，题材涨停 2 只",
+            "题材排名 12，题材涨停 2 只",
             "成交额 1.39 亿，开板 0 次"
           ]
         },
@@ -2651,47 +2651,6 @@
           "liquidity_strength_rank": 12
         },
         {
-          "theme_name": "汽车零部",
-          "limit_up_count": 3,
-          "failed_limit_count": 0,
-          "failed_limit_rate": 0.0,
-          "turnover_amount": 1875926191.0,
-          "limit_up_amount": 1875926191.0,
-          "highest_board": 1,
-          "multi_board_count": 0,
-          "top_stocks": [
-            {
-              "code": "002703",
-              "name": "浙江世宝",
-              "board_count": 1,
-              "amount": 1159846928.0,
-              "open_times": 5
-            },
-            {
-              "code": "603758",
-              "name": "秦安股份",
-              "board_count": 1,
-              "amount": 485242720.0,
-              "open_times": 5
-            },
-            {
-              "code": "600698",
-              "name": "湖南天雁",
-              "board_count": 1,
-              "amount": 230836543.0,
-              "open_times": 0
-            }
-          ],
-          "persistence_days": 1,
-          "theme_score": 43.0,
-          "cycle_phase": "启动",
-          "catalyst_status": "unknown",
-          "rank": 5,
-          "price_strength_rank": 8,
-          "emotion_strength_rank": 4,
-          "liquidity_strength_rank": 11
-        },
-        {
           "theme_name": "包装印刷",
           "limit_up_count": 3,
           "failed_limit_count": 0,
@@ -2727,10 +2686,51 @@
           "theme_score": 43.0,
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
-          "rank": 6,
+          "rank": 5,
           "price_strength_rank": 9,
           "emotion_strength_rank": 5,
           "liquidity_strength_rank": 17
+        },
+        {
+          "theme_name": "汽车零部",
+          "limit_up_count": 3,
+          "failed_limit_count": 0,
+          "failed_limit_rate": 0.0,
+          "turnover_amount": 1875926191.0,
+          "limit_up_amount": 1875926191.0,
+          "highest_board": 1,
+          "multi_board_count": 0,
+          "top_stocks": [
+            {
+              "code": "002703",
+              "name": "浙江世宝",
+              "board_count": 1,
+              "amount": 1159846928.0,
+              "open_times": 5
+            },
+            {
+              "code": "603758",
+              "name": "秦安股份",
+              "board_count": 1,
+              "amount": 485242720.0,
+              "open_times": 5
+            },
+            {
+              "code": "600698",
+              "name": "湖南天雁",
+              "board_count": 1,
+              "amount": 230836543.0,
+              "open_times": 0
+            }
+          ],
+          "persistence_days": 1,
+          "theme_score": 43.0,
+          "cycle_phase": "启动",
+          "catalyst_status": "unknown",
+          "rank": 6,
+          "price_strength_rank": 11,
+          "emotion_strength_rank": 6,
+          "liquidity_strength_rank": 11
         },
         {
           "theme_name": "装修装饰",
@@ -2769,8 +2769,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 7,
-          "price_strength_rank": 11,
-          "emotion_strength_rank": 6,
+          "price_strength_rank": 13,
+          "emotion_strength_rank": 7,
           "liquidity_strength_rank": 14
         },
         {
@@ -2810,8 +2810,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 8,
-          "price_strength_rank": 12,
-          "emotion_strength_rank": 7,
+          "price_strength_rank": 8,
+          "emotion_strength_rank": 4,
           "liquidity_strength_rank": 22
         },
         {
@@ -2837,7 +2837,7 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 9,
-          "price_strength_rank": 13,
+          "price_strength_rank": 12,
           "emotion_strength_rank": 10,
           "liquidity_strength_rank": 36
         },
@@ -2993,8 +2993,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 14,
-          "price_strength_rank": 16,
-          "emotion_strength_rank": 12,
+          "price_strength_rank": 14,
+          "emotion_strength_rank": 11,
           "liquidity_strength_rank": 1
         },
         {
@@ -3027,8 +3027,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 15,
-          "price_strength_rank": 19,
-          "emotion_strength_rank": 14,
+          "price_strength_rank": 18,
+          "emotion_strength_rank": 13,
           "liquidity_strength_rank": 19
         },
         {
@@ -3095,8 +3095,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 17,
-          "price_strength_rank": 15,
-          "emotion_strength_rank": 11,
+          "price_strength_rank": 19,
+          "emotion_strength_rank": 14,
           "liquidity_strength_rank": 23
         },
         {
@@ -3129,8 +3129,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 18,
-          "price_strength_rank": 17,
-          "emotion_strength_rank": 13,
+          "price_strength_rank": 15,
+          "emotion_strength_rank": 12,
           "liquidity_strength_rank": 38
         },
         {
@@ -3156,36 +3156,9 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 19,
-          "price_strength_rank": 34,
-          "emotion_strength_rank": 27,
+          "price_strength_rank": 37,
+          "emotion_strength_rank": 30,
           "liquidity_strength_rank": 42
-        },
-        {
-          "theme_name": "小家电",
-          "limit_up_count": 1,
-          "failed_limit_count": 0,
-          "failed_limit_rate": 0.0,
-          "turnover_amount": 2557389040.0,
-          "limit_up_amount": 2557389040.0,
-          "highest_board": 1,
-          "multi_board_count": 0,
-          "top_stocks": [
-            {
-              "code": "688169",
-              "name": "石头科技",
-              "board_count": 1,
-              "amount": 2557389040.0,
-              "open_times": 3
-            }
-          ],
-          "persistence_days": 1,
-          "theme_score": 31.0,
-          "cycle_phase": "启动",
-          "catalyst_status": "unknown",
-          "rank": 20,
-          "price_strength_rank": 28,
-          "emotion_strength_rank": 22,
-          "liquidity_strength_rank": 8
         },
         {
           "theme_name": "农产品加",
@@ -3209,10 +3182,37 @@
           "theme_score": 31.0,
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
-          "rank": 21,
-          "price_strength_rank": 38,
-          "emotion_strength_rank": 31,
+          "rank": 20,
+          "price_strength_rank": 23,
+          "emotion_strength_rank": 20,
           "liquidity_strength_rank": 7
+        },
+        {
+          "theme_name": "小家电",
+          "limit_up_count": 1,
+          "failed_limit_count": 0,
+          "failed_limit_rate": 0.0,
+          "turnover_amount": 2557389040.0,
+          "limit_up_amount": 2557389040.0,
+          "highest_board": 1,
+          "multi_board_count": 0,
+          "top_stocks": [
+            {
+              "code": "688169",
+              "name": "石头科技",
+              "board_count": 1,
+              "amount": 2557389040.0,
+              "open_times": 3
+            }
+          ],
+          "persistence_days": 1,
+          "theme_score": 31.0,
+          "cycle_phase": "启动",
+          "catalyst_status": "unknown",
+          "rank": 21,
+          "price_strength_rank": 30,
+          "emotion_strength_rank": 25,
+          "liquidity_strength_rank": 8
         },
         {
           "theme_name": "房地产服",
@@ -3237,8 +3237,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 22,
-          "price_strength_rank": 35,
-          "emotion_strength_rank": 28,
+          "price_strength_rank": 32,
+          "emotion_strength_rank": 27,
           "liquidity_strength_rank": 26
         },
         {
@@ -3264,8 +3264,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 23,
-          "price_strength_rank": 23,
-          "emotion_strength_rank": 19,
+          "price_strength_rank": 40,
+          "emotion_strength_rank": 32,
           "liquidity_strength_rank": 31
         },
         {
@@ -3291,8 +3291,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 24,
-          "price_strength_rank": 37,
-          "emotion_strength_rank": 30,
+          "price_strength_rank": 21,
+          "emotion_strength_rank": 18,
           "liquidity_strength_rank": 32
         },
         {
@@ -3319,7 +3319,7 @@
           "catalyst_status": "unknown",
           "rank": 25,
           "price_strength_rank": 39,
-          "emotion_strength_rank": 32,
+          "emotion_strength_rank": 31,
           "liquidity_strength_rank": 34
         },
         {
@@ -3345,8 +3345,8 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 26,
-          "price_strength_rank": 30,
-          "emotion_strength_rank": 23,
+          "price_strength_rank": 26,
+          "emotion_strength_rank": 22,
           "liquidity_strength_rank": 37
         },
         {
@@ -3372,8 +3372,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 27,
-          "price_strength_rank": 25,
-          "emotion_strength_rank": 20,
+          "price_strength_rank": 27,
+          "emotion_strength_rank": 23,
           "liquidity_strength_rank": 40
         },
         {
@@ -3399,8 +3399,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 28,
-          "price_strength_rank": 27,
-          "emotion_strength_rank": 21,
+          "price_strength_rank": 34,
+          "emotion_strength_rank": 28,
           "liquidity_strength_rank": 41
         },
         {
@@ -3426,8 +3426,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 29,
-          "price_strength_rank": 21,
-          "emotion_strength_rank": 18,
+          "price_strength_rank": 24,
+          "emotion_strength_rank": 21,
           "liquidity_strength_rank": 44
         },
         {
@@ -3453,8 +3453,8 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 30,
-          "price_strength_rank": 31,
-          "emotion_strength_rank": 24,
+          "price_strength_rank": 22,
+          "emotion_strength_rank": 19,
           "liquidity_strength_rank": 45
         },
         {
@@ -3480,8 +3480,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 31,
-          "price_strength_rank": 32,
-          "emotion_strength_rank": 25,
+          "price_strength_rank": 31,
+          "emotion_strength_rank": 26,
           "liquidity_strength_rank": 46
         },
         {
@@ -3507,8 +3507,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 32,
-          "price_strength_rank": 36,
-          "emotion_strength_rank": 29,
+          "price_strength_rank": 28,
+          "emotion_strength_rank": 24,
           "liquidity_strength_rank": 48
         },
         {
@@ -3534,8 +3534,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 33,
-          "price_strength_rank": 33,
-          "emotion_strength_rank": 26,
+          "price_strength_rank": 35,
+          "emotion_strength_rank": 29,
           "liquidity_strength_rank": 49
         },
         {
@@ -3595,7 +3595,7 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 35,
-          "price_strength_rank": 14,
+          "price_strength_rank": 17,
           "emotion_strength_rank": 34,
           "liquidity_strength_rank": 18
         },
@@ -3629,36 +3629,9 @@
           "cycle_phase": "轮动修复",
           "catalyst_status": "unknown",
           "rank": 36,
-          "price_strength_rank": 18,
+          "price_strength_rank": 16,
           "emotion_strength_rank": 36,
           "liquidity_strength_rank": 3
-        },
-        {
-          "theme_name": "电机Ⅱ",
-          "limit_up_count": 1,
-          "failed_limit_count": 1,
-          "failed_limit_rate": 50.0,
-          "turnover_amount": 2112187360.0,
-          "limit_up_amount": 416117024.0,
-          "highest_board": 1,
-          "multi_board_count": 0,
-          "top_stocks": [
-            {
-              "code": "003021",
-              "name": "兆威机电",
-              "board_count": 1,
-              "amount": 416117024.0,
-              "open_times": 0
-            }
-          ],
-          "persistence_days": 1,
-          "theme_score": 18.5,
-          "cycle_phase": "启动",
-          "catalyst_status": "unknown",
-          "rank": 37,
-          "price_strength_rank": 22,
-          "emotion_strength_rank": 37,
-          "liquidity_strength_rank": 10
         },
         {
           "theme_name": "医疗服务",
@@ -3682,10 +3655,37 @@
           "theme_score": 18.5,
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
-          "rank": 38,
-          "price_strength_rank": 40,
-          "emotion_strength_rank": 41,
+          "rank": 37,
+          "price_strength_rank": 25,
+          "emotion_strength_rank": 37,
           "liquidity_strength_rank": 4
+        },
+        {
+          "theme_name": "电机Ⅱ",
+          "limit_up_count": 1,
+          "failed_limit_count": 1,
+          "failed_limit_rate": 50.0,
+          "turnover_amount": 2112187360.0,
+          "limit_up_amount": 416117024.0,
+          "highest_board": 1,
+          "multi_board_count": 0,
+          "top_stocks": [
+            {
+              "code": "003021",
+              "name": "兆威机电",
+              "board_count": 1,
+              "amount": 416117024.0,
+              "open_times": 0
+            }
+          ],
+          "persistence_days": 1,
+          "theme_score": 18.5,
+          "cycle_phase": "启动",
+          "catalyst_status": "unknown",
+          "rank": 38,
+          "price_strength_rank": 36,
+          "emotion_strength_rank": 40,
+          "liquidity_strength_rank": 10
         },
         {
           "theme_name": "家电零部",
@@ -3711,7 +3711,7 @@
           "catalyst_status": "unknown",
           "rank": 39,
           "price_strength_rank": 29,
-          "emotion_strength_rank": 40,
+          "emotion_strength_rank": 38,
           "liquidity_strength_rank": 25
         },
         {
@@ -3737,8 +3737,8 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 40,
-          "price_strength_rank": 24,
-          "emotion_strength_rank": 38,
+          "price_strength_rank": 38,
+          "emotion_strength_rank": 41,
           "liquidity_strength_rank": 28
         },
         {
@@ -3764,180 +3764,9 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 41,
-          "price_strength_rank": 26,
+          "price_strength_rank": 33,
           "emotion_strength_rank": 39,
           "liquidity_strength_rank": 30
-        },
-        {
-          "theme_name": "综合Ⅱ",
-          "limit_up_count": 0,
-          "failed_limit_count": 1,
-          "failed_limit_rate": 100.0,
-          "turnover_amount": 462142224.0,
-          "limit_up_amount": 0.0,
-          "highest_board": 0,
-          "multi_board_count": 0,
-          "top_stocks": [],
-          "persistence_days": 1,
-          "theme_score": 0,
-          "cycle_phase": "启动",
-          "catalyst_status": "unknown",
-          "rank": 42,
-          "price_strength_rank": 42,
-          "emotion_strength_rank": 42,
-          "liquidity_strength_rank": 33
-        },
-        {
-          "theme_name": "软件开发",
-          "limit_up_count": 0,
-          "failed_limit_count": 1,
-          "failed_limit_rate": 100.0,
-          "turnover_amount": 654005632.0,
-          "limit_up_amount": 0.0,
-          "highest_board": 0,
-          "multi_board_count": 0,
-          "top_stocks": [],
-          "persistence_days": 1,
-          "theme_score": 0,
-          "cycle_phase": "启动",
-          "catalyst_status": "unknown",
-          "rank": 43,
-          "price_strength_rank": 43,
-          "emotion_strength_rank": 43,
-          "liquidity_strength_rank": 27
-        },
-        {
-          "theme_name": "食品加工",
-          "limit_up_count": 0,
-          "failed_limit_count": 1,
-          "failed_limit_rate": 100.0,
-          "turnover_amount": 1254883856.0,
-          "limit_up_amount": 0.0,
-          "highest_board": 0,
-          "multi_board_count": 0,
-          "top_stocks": [],
-          "persistence_days": 1,
-          "theme_score": 0,
-          "cycle_phase": "启动",
-          "catalyst_status": "unknown",
-          "rank": 44,
-          "price_strength_rank": 44,
-          "emotion_strength_rank": 44,
-          "liquidity_strength_rank": 16
-        },
-        {
-          "theme_name": "金属新材",
-          "limit_up_count": 0,
-          "failed_limit_count": 1,
-          "failed_limit_rate": 100.0,
-          "turnover_amount": 548382080.0,
-          "limit_up_amount": 0.0,
-          "highest_board": 0,
-          "multi_board_count": 0,
-          "top_stocks": [],
-          "persistence_days": 1,
-          "theme_score": 0,
-          "cycle_phase": "启动",
-          "catalyst_status": "unknown",
-          "rank": 45,
-          "price_strength_rank": 45,
-          "emotion_strength_rank": 45,
-          "liquidity_strength_rank": 29
-        },
-        {
-          "theme_name": "装修建材",
-          "limit_up_count": 0,
-          "failed_limit_count": 1,
-          "failed_limit_rate": 100.0,
-          "turnover_amount": 278675312.0,
-          "limit_up_amount": 0.0,
-          "highest_board": 0,
-          "multi_board_count": 0,
-          "top_stocks": [],
-          "persistence_days": 1,
-          "theme_score": 0,
-          "cycle_phase": "启动",
-          "catalyst_status": "unknown",
-          "rank": 46,
-          "price_strength_rank": 46,
-          "emotion_strength_rank": 46,
-          "liquidity_strength_rank": 43
-        },
-        {
-          "theme_name": "电子化学",
-          "limit_up_count": 0,
-          "failed_limit_count": 1,
-          "failed_limit_rate": 100.0,
-          "turnover_amount": 4943651328.0,
-          "limit_up_amount": 0.0,
-          "highest_board": 0,
-          "multi_board_count": 0,
-          "top_stocks": [],
-          "persistence_days": 1,
-          "theme_score": 0,
-          "cycle_phase": "启动",
-          "catalyst_status": "unknown",
-          "rank": 47,
-          "price_strength_rank": 47,
-          "emotion_strength_rank": 47,
-          "liquidity_strength_rank": 2
-        },
-        {
-          "theme_name": "元件",
-          "limit_up_count": 0,
-          "failed_limit_count": 1,
-          "failed_limit_rate": 100.0,
-          "turnover_amount": 3462995760.0,
-          "limit_up_amount": 0.0,
-          "highest_board": 0,
-          "multi_board_count": 0,
-          "top_stocks": [],
-          "persistence_days": 1,
-          "theme_score": 0,
-          "cycle_phase": "启动",
-          "catalyst_status": "unknown",
-          "rank": 48,
-          "price_strength_rank": 48,
-          "emotion_strength_rank": 48,
-          "liquidity_strength_rank": 5
-        },
-        {
-          "theme_name": "纺织制造",
-          "limit_up_count": 0,
-          "failed_limit_count": 1,
-          "failed_limit_rate": 100.0,
-          "turnover_amount": 154983985.0,
-          "limit_up_amount": 0.0,
-          "highest_board": 0,
-          "multi_board_count": 0,
-          "top_stocks": [],
-          "persistence_days": 1,
-          "theme_score": 0,
-          "cycle_phase": "启动",
-          "catalyst_status": "unknown",
-          "rank": 49,
-          "price_strength_rank": 49,
-          "emotion_strength_rank": 49,
-          "liquidity_strength_rank": 47
-        },
-        {
-          "theme_name": "房地产开",
-          "limit_up_count": 0,
-          "failed_limit_count": 1,
-          "failed_limit_rate": 100.0,
-          "turnover_amount": 828161824.0,
-          "limit_up_amount": 0.0,
-          "highest_board": 0,
-          "multi_board_count": 0,
-          "top_stocks": [],
-          "persistence_days": 1,
-          "theme_score": 0,
-          "cycle_phase": "退潮",
-          "catalyst_status": "unknown",
-          "rank": 50,
-          "price_strength_rank": 50,
-          "emotion_strength_rank": 50,
-          "liquidity_strength_rank": 21
         },
         {
           "theme_name": "休闲食品",
@@ -3953,10 +3782,181 @@
           "theme_score": 0,
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
+          "rank": 42,
+          "price_strength_rank": 42,
+          "emotion_strength_rank": 42,
+          "liquidity_strength_rank": 39
+        },
+        {
+          "theme_name": "元件",
+          "limit_up_count": 0,
+          "failed_limit_count": 1,
+          "failed_limit_rate": 100.0,
+          "turnover_amount": 3462995760.0,
+          "limit_up_amount": 0.0,
+          "highest_board": 0,
+          "multi_board_count": 0,
+          "top_stocks": [],
+          "persistence_days": 1,
+          "theme_score": 0,
+          "cycle_phase": "启动",
+          "catalyst_status": "unknown",
+          "rank": 43,
+          "price_strength_rank": 43,
+          "emotion_strength_rank": 43,
+          "liquidity_strength_rank": 5
+        },
+        {
+          "theme_name": "房地产开",
+          "limit_up_count": 0,
+          "failed_limit_count": 1,
+          "failed_limit_rate": 100.0,
+          "turnover_amount": 828161824.0,
+          "limit_up_amount": 0.0,
+          "highest_board": 0,
+          "multi_board_count": 0,
+          "top_stocks": [],
+          "persistence_days": 1,
+          "theme_score": 0,
+          "cycle_phase": "退潮",
+          "catalyst_status": "unknown",
+          "rank": 44,
+          "price_strength_rank": 44,
+          "emotion_strength_rank": 44,
+          "liquidity_strength_rank": 21
+        },
+        {
+          "theme_name": "电子化学",
+          "limit_up_count": 0,
+          "failed_limit_count": 1,
+          "failed_limit_rate": 100.0,
+          "turnover_amount": 4943651328.0,
+          "limit_up_amount": 0.0,
+          "highest_board": 0,
+          "multi_board_count": 0,
+          "top_stocks": [],
+          "persistence_days": 1,
+          "theme_score": 0,
+          "cycle_phase": "启动",
+          "catalyst_status": "unknown",
+          "rank": 45,
+          "price_strength_rank": 45,
+          "emotion_strength_rank": 45,
+          "liquidity_strength_rank": 2
+        },
+        {
+          "theme_name": "纺织制造",
+          "limit_up_count": 0,
+          "failed_limit_count": 1,
+          "failed_limit_rate": 100.0,
+          "turnover_amount": 154983985.0,
+          "limit_up_amount": 0.0,
+          "highest_board": 0,
+          "multi_board_count": 0,
+          "top_stocks": [],
+          "persistence_days": 1,
+          "theme_score": 0,
+          "cycle_phase": "启动",
+          "catalyst_status": "unknown",
+          "rank": 46,
+          "price_strength_rank": 46,
+          "emotion_strength_rank": 46,
+          "liquidity_strength_rank": 47
+        },
+        {
+          "theme_name": "综合Ⅱ",
+          "limit_up_count": 0,
+          "failed_limit_count": 1,
+          "failed_limit_rate": 100.0,
+          "turnover_amount": 462142224.0,
+          "limit_up_amount": 0.0,
+          "highest_board": 0,
+          "multi_board_count": 0,
+          "top_stocks": [],
+          "persistence_days": 1,
+          "theme_score": 0,
+          "cycle_phase": "启动",
+          "catalyst_status": "unknown",
+          "rank": 47,
+          "price_strength_rank": 47,
+          "emotion_strength_rank": 47,
+          "liquidity_strength_rank": 33
+        },
+        {
+          "theme_name": "装修建材",
+          "limit_up_count": 0,
+          "failed_limit_count": 1,
+          "failed_limit_rate": 100.0,
+          "turnover_amount": 278675312.0,
+          "limit_up_amount": 0.0,
+          "highest_board": 0,
+          "multi_board_count": 0,
+          "top_stocks": [],
+          "persistence_days": 1,
+          "theme_score": 0,
+          "cycle_phase": "启动",
+          "catalyst_status": "unknown",
+          "rank": 48,
+          "price_strength_rank": 48,
+          "emotion_strength_rank": 48,
+          "liquidity_strength_rank": 43
+        },
+        {
+          "theme_name": "软件开发",
+          "limit_up_count": 0,
+          "failed_limit_count": 1,
+          "failed_limit_rate": 100.0,
+          "turnover_amount": 654005632.0,
+          "limit_up_amount": 0.0,
+          "highest_board": 0,
+          "multi_board_count": 0,
+          "top_stocks": [],
+          "persistence_days": 1,
+          "theme_score": 0,
+          "cycle_phase": "启动",
+          "catalyst_status": "unknown",
+          "rank": 49,
+          "price_strength_rank": 49,
+          "emotion_strength_rank": 49,
+          "liquidity_strength_rank": 27
+        },
+        {
+          "theme_name": "金属新材",
+          "limit_up_count": 0,
+          "failed_limit_count": 1,
+          "failed_limit_rate": 100.0,
+          "turnover_amount": 548382080.0,
+          "limit_up_amount": 0.0,
+          "highest_board": 0,
+          "multi_board_count": 0,
+          "top_stocks": [],
+          "persistence_days": 1,
+          "theme_score": 0,
+          "cycle_phase": "启动",
+          "catalyst_status": "unknown",
+          "rank": 50,
+          "price_strength_rank": 50,
+          "emotion_strength_rank": 50,
+          "liquidity_strength_rank": 29
+        },
+        {
+          "theme_name": "食品加工",
+          "limit_up_count": 0,
+          "failed_limit_count": 1,
+          "failed_limit_rate": 100.0,
+          "turnover_amount": 1254883856.0,
+          "limit_up_amount": 0.0,
+          "highest_board": 0,
+          "multi_board_count": 0,
+          "top_stocks": [],
+          "persistence_days": 1,
+          "theme_score": 0,
+          "cycle_phase": "启动",
+          "catalyst_status": "unknown",
           "rank": 51,
           "price_strength_rank": 51,
           "emotion_strength_rank": 51,
-          "liquidity_strength_rank": 39
+          "liquidity_strength_rank": 16
         }
       ],
       "stock_role_classification": [
@@ -4103,7 +4103,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 医疗服务",
-            "题材排名 38，题材涨停 1 只",
+            "题材排名 37，题材涨停 1 只",
             "成交额 28.07 亿，开板 0 次"
           ]
         },
@@ -4116,7 +4116,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 农产品加",
-            "题材排名 21，题材涨停 1 只",
+            "题材排名 20，题材涨停 1 只",
             "成交额 27.15 亿，开板 7 次"
           ]
         },
@@ -4129,7 +4129,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 小家电",
-            "题材排名 20，题材涨停 1 只",
+            "题材排名 21，题材涨停 1 只",
             "成交额 25.57 亿，开板 3 次"
           ]
         },
@@ -4151,11 +4151,11 @@
           "name": "浙江世宝",
           "theme_name": "汽车零部",
           "role": "容量中军",
-          "role_score": 73,
+          "role_score": 72,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 汽车零部",
-            "题材排名 5，题材涨停 3 只",
+            "题材排名 6，题材涨停 3 只",
             "成交额 11.60 亿，开板 5 次"
           ]
         },
@@ -4177,11 +4177,11 @@
           "name": "金富科技",
           "theme_name": "包装印刷",
           "role": "容量中军",
-          "role_score": 73,
+          "role_score": 74,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 包装印刷",
-            "题材排名 6，题材涨停 3 只",
+            "题材排名 5，题材涨停 3 只",
             "成交额 8.83 亿，开板 0 次"
           ]
         },
@@ -4281,11 +4281,11 @@
           "name": "秦安股份",
           "theme_name": "汽车零部",
           "role": "低位补涨",
-          "role_score": 69,
+          "role_score": 68,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 汽车零部",
-            "题材排名 5，题材涨停 3 只",
+            "题材排名 6，题材涨停 3 只",
             "成交额 4.85 亿，开板 5 次"
           ]
         },
@@ -4337,7 +4337,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 电机Ⅱ",
-            "题材排名 37，题材涨停 1 只",
+            "题材排名 38，题材涨停 1 只",
             "成交额 4.16 亿，开板 0 次"
           ]
         },
@@ -4517,11 +4517,11 @@
           "name": "湖南天雁",
           "theme_name": "汽车零部",
           "role": "低位补涨",
-          "role_score": 70,
+          "role_score": 69,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 汽车零部",
-            "题材排名 5，题材涨停 3 只",
+            "题材排名 6，题材涨停 3 只",
             "成交额 2.31 亿，开板 0 次"
           ]
         },
@@ -4543,11 +4543,11 @@
           "name": "大胜达",
           "theme_name": "包装印刷",
           "role": "低位补涨",
-          "role_score": 69,
+          "role_score": 70,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 包装印刷",
-            "题材排名 6，题材涨停 3 只",
+            "题材排名 5，题材涨停 3 只",
             "成交额 2.14 亿，开板 0 次"
           ]
         },
@@ -4751,11 +4751,11 @@
           "name": "珠海中富",
           "theme_name": "包装印刷",
           "role": "低位补涨",
-          "role_score": 69,
+          "role_score": 70,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 包装印刷",
-            "题材排名 6，题材涨停 3 只",
+            "题材排名 5，题材涨停 3 只",
             "成交额 1.06 亿，开板 0 次"
           ]
         },
@@ -5335,7 +5335,7 @@
           "catalyst_status": "unknown",
           "rank": 1,
           "price_strength_rank": 2,
-          "emotion_strength_rank": 3,
+          "emotion_strength_rank": 2,
           "liquidity_strength_rank": 1
         },
         {
@@ -5376,7 +5376,7 @@
           "catalyst_status": "unknown",
           "rank": 2,
           "price_strength_rank": 1,
-          "emotion_strength_rank": 2,
+          "emotion_strength_rank": 3,
           "liquidity_strength_rank": 11
         },
         {
@@ -5498,7 +5498,7 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 5,
-          "price_strength_rank": 7,
+          "price_strength_rank": 5,
           "emotion_strength_rank": 4,
           "liquidity_strength_rank": 2
         },
@@ -5532,7 +5532,7 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 6,
-          "price_strength_rank": 5,
+          "price_strength_rank": 4,
           "emotion_strength_rank": 5,
           "liquidity_strength_rank": 19
         },
@@ -5566,50 +5566,9 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 7,
-          "price_strength_rank": 6,
+          "price_strength_rank": 7,
           "emotion_strength_rank": 6,
           "liquidity_strength_rank": 35
-        },
-        {
-          "theme_name": "电网设备",
-          "limit_up_count": 3,
-          "failed_limit_count": 0,
-          "failed_limit_rate": 0.0,
-          "turnover_amount": 3687590000.0,
-          "limit_up_amount": 3687590000.0,
-          "highest_board": 1,
-          "multi_board_count": 0,
-          "top_stocks": [
-            {
-              "code": "603618",
-              "name": "杭电股份",
-              "board_count": 1,
-              "amount": 2521501088.0,
-              "open_times": 2
-            },
-            {
-              "code": "000533",
-              "name": "顺钠股份",
-              "board_count": 1,
-              "amount": 872307984.0,
-              "open_times": 0
-            },
-            {
-              "code": "600468",
-              "name": "百利电气",
-              "board_count": 1,
-              "amount": 293780928.0,
-              "open_times": 1
-            }
-          ],
-          "persistence_days": 1,
-          "theme_score": 43.0,
-          "cycle_phase": "启动",
-          "catalyst_status": "unknown",
-          "rank": 8,
-          "price_strength_rank": 9,
-          "emotion_strength_rank": 8,
-          "liquidity_strength_rank": 4
         },
         {
           "theme_name": "电力",
@@ -5647,10 +5606,51 @@
           "theme_score": 43.0,
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
-          "rank": 9,
+          "rank": 8,
           "price_strength_rank": 11,
-          "emotion_strength_rank": 9,
+          "emotion_strength_rank": 8,
           "liquidity_strength_rank": 8
+        },
+        {
+          "theme_name": "电网设备",
+          "limit_up_count": 3,
+          "failed_limit_count": 0,
+          "failed_limit_rate": 0.0,
+          "turnover_amount": 3687590000.0,
+          "limit_up_amount": 3687590000.0,
+          "highest_board": 1,
+          "multi_board_count": 0,
+          "top_stocks": [
+            {
+              "code": "603618",
+              "name": "杭电股份",
+              "board_count": 1,
+              "amount": 2521501088.0,
+              "open_times": 2
+            },
+            {
+              "code": "000533",
+              "name": "顺钠股份",
+              "board_count": 1,
+              "amount": 872307984.0,
+              "open_times": 0
+            },
+            {
+              "code": "600468",
+              "name": "百利电气",
+              "board_count": 1,
+              "amount": 293780928.0,
+              "open_times": 1
+            }
+          ],
+          "persistence_days": 1,
+          "theme_score": 43.0,
+          "cycle_phase": "启动",
+          "catalyst_status": "unknown",
+          "rank": 9,
+          "price_strength_rank": 12,
+          "emotion_strength_rank": 9,
+          "liquidity_strength_rank": 4
         },
         {
           "theme_name": "汽车零部",
@@ -5682,7 +5682,7 @@
           "cycle_phase": "轮动修复",
           "catalyst_status": "unknown",
           "rank": 10,
-          "price_strength_rank": 4,
+          "price_strength_rank": 6,
           "emotion_strength_rank": 13,
           "liquidity_strength_rank": 9
         },
@@ -5709,7 +5709,7 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 11,
-          "price_strength_rank": 13,
+          "price_strength_rank": 10,
           "emotion_strength_rank": 10,
           "liquidity_strength_rank": 31
         },
@@ -5743,8 +5743,8 @@
           "cycle_phase": "轮动修复",
           "catalyst_status": "unknown",
           "rank": 12,
-          "price_strength_rank": 18,
-          "emotion_strength_rank": 12,
+          "price_strength_rank": 16,
+          "emotion_strength_rank": 11,
           "liquidity_strength_rank": 14
         },
         {
@@ -5777,8 +5777,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 13,
-          "price_strength_rank": 16,
-          "emotion_strength_rank": 11,
+          "price_strength_rank": 18,
+          "emotion_strength_rank": 12,
           "liquidity_strength_rank": 15
         },
         {
@@ -5804,8 +5804,8 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 14,
-          "price_strength_rank": 24,
-          "emotion_strength_rank": 18,
+          "price_strength_rank": 25,
+          "emotion_strength_rank": 19,
           "liquidity_strength_rank": 16
         },
         {
@@ -5831,8 +5831,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 15,
-          "price_strength_rank": 28,
-          "emotion_strength_rank": 22,
+          "price_strength_rank": 31,
+          "emotion_strength_rank": 24,
           "liquidity_strength_rank": 18
         },
         {
@@ -5858,8 +5858,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 16,
-          "price_strength_rank": 23,
-          "emotion_strength_rank": 17,
+          "price_strength_rank": 29,
+          "emotion_strength_rank": 23,
           "liquidity_strength_rank": 22
         },
         {
@@ -5885,8 +5885,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 17,
-          "price_strength_rank": 25,
-          "emotion_strength_rank": 19,
+          "price_strength_rank": 23,
+          "emotion_strength_rank": 17,
           "liquidity_strength_rank": 26
         },
         {
@@ -5912,8 +5912,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 18,
-          "price_strength_rank": 29,
-          "emotion_strength_rank": 23,
+          "price_strength_rank": 26,
+          "emotion_strength_rank": 20,
           "liquidity_strength_rank": 27
         },
         {
@@ -5939,8 +5939,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 19,
-          "price_strength_rank": 26,
-          "emotion_strength_rank": 20,
+          "price_strength_rank": 22,
+          "emotion_strength_rank": 16,
           "liquidity_strength_rank": 30
         },
         {
@@ -5966,8 +5966,8 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 20,
-          "price_strength_rank": 27,
-          "emotion_strength_rank": 21,
+          "price_strength_rank": 19,
+          "emotion_strength_rank": 14,
           "liquidity_strength_rank": 32
         },
         {
@@ -5993,8 +5993,8 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 21,
-          "price_strength_rank": 19,
-          "emotion_strength_rank": 14,
+          "price_strength_rank": 24,
+          "emotion_strength_rank": 18,
           "liquidity_strength_rank": 33
         },
         {
@@ -6020,36 +6020,9 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 22,
-          "price_strength_rank": 20,
-          "emotion_strength_rank": 15,
+          "price_strength_rank": 32,
+          "emotion_strength_rank": 25,
           "liquidity_strength_rank": 34
-        },
-        {
-          "theme_name": "造纸",
-          "limit_up_count": 1,
-          "failed_limit_count": 1,
-          "failed_limit_rate": 50.0,
-          "turnover_amount": 2038805792.0,
-          "limit_up_amount": 755668976.0,
-          "highest_board": 2,
-          "multi_board_count": 1,
-          "top_stocks": [
-            {
-              "code": "600103",
-              "name": "青山纸业",
-              "board_count": 2,
-              "amount": 755668976.0,
-              "open_times": 1
-            }
-          ],
-          "persistence_days": 1,
-          "theme_score": 29.5,
-          "cycle_phase": "退潮",
-          "catalyst_status": "unknown",
-          "rank": 23,
-          "price_strength_rank": 10,
-          "emotion_strength_rank": 27,
-          "liquidity_strength_rank": 7
         },
         {
           "theme_name": "种植业",
@@ -6073,10 +6046,37 @@
           "theme_score": 29.5,
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
+          "rank": 23,
+          "price_strength_rank": 13,
+          "emotion_strength_rank": 28,
+          "liquidity_strength_rank": 10
+        },
+        {
+          "theme_name": "造纸",
+          "limit_up_count": 1,
+          "failed_limit_count": 1,
+          "failed_limit_rate": 50.0,
+          "turnover_amount": 2038805792.0,
+          "limit_up_amount": 755668976.0,
+          "highest_board": 2,
+          "multi_board_count": 1,
+          "top_stocks": [
+            {
+              "code": "600103",
+              "name": "青山纸业",
+              "board_count": 2,
+              "amount": 755668976.0,
+              "open_times": 1
+            }
+          ],
+          "persistence_days": 1,
+          "theme_score": 29.5,
+          "cycle_phase": "退潮",
+          "catalyst_status": "unknown",
           "rank": 24,
           "price_strength_rank": 14,
           "emotion_strength_rank": 29,
-          "liquidity_strength_rank": 10
+          "liquidity_strength_rank": 7
         },
         {
           "theme_name": "化学制药",
@@ -6101,8 +6101,8 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 25,
-          "price_strength_rank": 12,
-          "emotion_strength_rank": 28,
+          "price_strength_rank": 9,
+          "emotion_strength_rank": 27,
           "liquidity_strength_rank": 17
         },
         {
@@ -6128,8 +6128,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 26,
-          "price_strength_rank": 21,
-          "emotion_strength_rank": 16,
+          "price_strength_rank": 28,
+          "emotion_strength_rank": 22,
           "liquidity_strength_rank": 37
         },
         {
@@ -6155,8 +6155,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 27,
-          "price_strength_rank": 31,
-          "emotion_strength_rank": 24,
+          "price_strength_rank": 21,
+          "emotion_strength_rank": 15,
           "liquidity_strength_rank": 39
         },
         {
@@ -6209,8 +6209,8 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 29,
-          "price_strength_rank": 32,
-          "emotion_strength_rank": 25,
+          "price_strength_rank": 27,
+          "emotion_strength_rank": 21,
           "liquidity_strength_rank": 40
         },
         {
@@ -6270,7 +6270,7 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 31,
-          "price_strength_rank": 22,
+          "price_strength_rank": 20,
           "emotion_strength_rank": 32,
           "liquidity_strength_rank": 6
         },
@@ -6302,44 +6302,6 @@
           "liquidity_strength_rank": 20
         },
         {
-          "theme_name": "物流",
-          "limit_up_count": 0,
-          "failed_limit_count": 1,
-          "failed_limit_rate": 100.0,
-          "turnover_amount": 556762688.0,
-          "limit_up_amount": 0.0,
-          "highest_board": 0,
-          "multi_board_count": 0,
-          "top_stocks": [],
-          "persistence_days": 1,
-          "theme_score": 0,
-          "cycle_phase": "启动",
-          "catalyst_status": "unknown",
-          "rank": 33,
-          "price_strength_rank": 33,
-          "emotion_strength_rank": 33,
-          "liquidity_strength_rank": 24
-        },
-        {
-          "theme_name": "通用设备",
-          "limit_up_count": 0,
-          "failed_limit_count": 4,
-          "failed_limit_rate": 100.0,
-          "turnover_amount": 3850657920.0,
-          "limit_up_amount": 0.0,
-          "highest_board": 0,
-          "multi_board_count": 0,
-          "top_stocks": [],
-          "persistence_days": 2,
-          "theme_score": 0,
-          "cycle_phase": "退潮",
-          "catalyst_status": "unknown",
-          "rank": 34,
-          "price_strength_rank": 34,
-          "emotion_strength_rank": 34,
-          "liquidity_strength_rank": 3
-        },
-        {
           "theme_name": "化学制品",
           "limit_up_count": 0,
           "failed_limit_count": 1,
@@ -6353,9 +6315,9 @@
           "theme_score": 0,
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
-          "rank": 35,
-          "price_strength_rank": 35,
-          "emotion_strength_rank": 35,
+          "rank": 33,
+          "price_strength_rank": 33,
+          "emotion_strength_rank": 33,
           "liquidity_strength_rank": 36
         },
         {
@@ -6372,10 +6334,29 @@
           "theme_score": 0,
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
-          "rank": 36,
-          "price_strength_rank": 36,
-          "emotion_strength_rank": 36,
+          "rank": 34,
+          "price_strength_rank": 34,
+          "emotion_strength_rank": 34,
           "liquidity_strength_rank": 29
+        },
+        {
+          "theme_name": "医疗服务",
+          "limit_up_count": 0,
+          "failed_limit_count": 1,
+          "failed_limit_rate": 100.0,
+          "turnover_amount": 1320653616.0,
+          "limit_up_amount": 0.0,
+          "highest_board": 0,
+          "multi_board_count": 0,
+          "top_stocks": [],
+          "persistence_days": 1,
+          "theme_score": 0,
+          "cycle_phase": "退潮",
+          "catalyst_status": "unknown",
+          "rank": 35,
+          "price_strength_rank": 35,
+          "emotion_strength_rank": 35,
+          "liquidity_strength_rank": 12
         },
         {
           "theme_name": "基础建设",
@@ -6391,9 +6372,9 @@
           "theme_score": 0,
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
-          "rank": 37,
-          "price_strength_rank": 37,
-          "emotion_strength_rank": 37,
+          "rank": 36,
+          "price_strength_rank": 36,
+          "emotion_strength_rank": 36,
           "liquidity_strength_rank": 38
         },
         {
@@ -6410,9 +6391,9 @@
           "theme_score": 0,
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
-          "rank": 38,
-          "price_strength_rank": 38,
-          "emotion_strength_rank": 38,
+          "rank": 37,
+          "price_strength_rank": 37,
+          "emotion_strength_rank": 37,
           "liquidity_strength_rank": 23
         },
         {
@@ -6429,29 +6410,48 @@
           "theme_score": 0,
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
-          "rank": 39,
-          "price_strength_rank": 39,
-          "emotion_strength_rank": 39,
+          "rank": 38,
+          "price_strength_rank": 38,
+          "emotion_strength_rank": 38,
           "liquidity_strength_rank": 13
         },
         {
-          "theme_name": "医疗服务",
+          "theme_name": "物流",
           "limit_up_count": 0,
           "failed_limit_count": 1,
           "failed_limit_rate": 100.0,
-          "turnover_amount": 1320653616.0,
+          "turnover_amount": 556762688.0,
           "limit_up_amount": 0.0,
           "highest_board": 0,
           "multi_board_count": 0,
           "top_stocks": [],
           "persistence_days": 1,
           "theme_score": 0,
+          "cycle_phase": "启动",
+          "catalyst_status": "unknown",
+          "rank": 39,
+          "price_strength_rank": 39,
+          "emotion_strength_rank": 39,
+          "liquidity_strength_rank": 24
+        },
+        {
+          "theme_name": "通用设备",
+          "limit_up_count": 0,
+          "failed_limit_count": 4,
+          "failed_limit_rate": 100.0,
+          "turnover_amount": 3850657920.0,
+          "limit_up_amount": 0.0,
+          "highest_board": 0,
+          "multi_board_count": 0,
+          "top_stocks": [],
+          "persistence_days": 2,
+          "theme_score": 0,
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 40,
           "price_strength_rank": 40,
           "emotion_strength_rank": 40,
-          "liquidity_strength_rank": 12
+          "liquidity_strength_rank": 3
         }
       ],
       "stock_role_classification": [
@@ -6518,7 +6518,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 2，所属题材 造纸",
-            "题材排名 23，题材涨停 1 只",
+            "题材排名 24，题材涨停 1 只",
             "成交额 7.56 亿，开板 1 次"
           ]
         },
@@ -6557,7 +6557,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 2，所属题材 种植业",
-            "题材排名 24，题材涨停 1 只",
+            "题材排名 23，题材涨停 1 只",
             "成交额 4.52 亿，开板 5 次"
           ]
         },
@@ -6671,12 +6671,12 @@
           "code": "603618",
           "name": "杭电股份",
           "theme_name": "电网设备",
-          "role": "容量中军",
-          "role_score": 73,
+          "role": "孤立票",
+          "role_score": 72,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 电网设备",
-            "题材排名 8，题材涨停 3 只",
+            "题材排名 9，题材涨停 3 只",
             "成交额 25.22 亿，开板 2 次"
           ]
         },
@@ -6710,12 +6710,12 @@
           "code": "001258",
           "name": "立新能源",
           "theme_name": "电力",
-          "role": "孤立票",
-          "role_score": 74,
+          "role": "容量中军",
+          "role_score": 75,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 电力",
-            "题材排名 9，题材涨停 3 只",
+            "题材排名 8，题材涨停 3 只",
             "成交额 15.86 亿，开板 0 次"
           ]
         },
@@ -6764,12 +6764,12 @@
           "code": "000533",
           "name": "顺钠股份",
           "theme_name": "电网设备",
-          "role": "低位补涨",
-          "role_score": 71,
+          "role": "孤立票",
+          "role_score": 70,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 电网设备",
-            "题材排名 8，题材涨停 3 只",
+            "题材排名 9，题材涨停 3 只",
             "成交额 8.72 亿，开板 0 次"
           ]
         },
@@ -6920,12 +6920,12 @@
           "code": "600468",
           "name": "百利电气",
           "theme_name": "电网设备",
-          "role": "低位补涨",
-          "role_score": 66,
+          "role": "孤立票",
+          "role_score": 65,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 电网设备",
-            "题材排名 8，题材涨停 3 只",
+            "题材排名 9，题材涨停 3 只",
             "成交额 2.94 亿，开板 1 次"
           ]
         },
@@ -6946,12 +6946,12 @@
           "code": "605162",
           "name": "新中港",
           "theme_name": "电力",
-          "role": "孤立票",
-          "role_score": 66,
+          "role": "低位补涨",
+          "role_score": 67,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 电力",
-            "题材排名 9，题材涨停 3 只",
+            "题材排名 8，题材涨停 3 只",
             "成交额 2.61 亿，开板 0 次"
           ]
         },
@@ -7050,12 +7050,12 @@
           "code": "600969",
           "name": "郴电国际",
           "theme_name": "电力",
-          "role": "孤立票",
-          "role_score": 66,
+          "role": "低位补涨",
+          "role_score": 67,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 电力",
-            "题材排名 9，题材涨停 3 只",
+            "题材排名 8，题材涨停 3 只",
             "成交额 1.52 亿，开板 0 次"
           ]
         },
@@ -7770,7 +7770,7 @@
           "cycle_phase": "主升",
           "catalyst_status": "unknown",
           "rank": 4,
-          "price_strength_rank": 6,
+          "price_strength_rank": 7,
           "emotion_strength_rank": 4,
           "liquidity_strength_rank": 11
         },
@@ -7825,7 +7825,7 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 5,
-          "price_strength_rank": 7,
+          "price_strength_rank": 6,
           "emotion_strength_rank": 3,
           "liquidity_strength_rank": 2
         },
@@ -7853,35 +7853,8 @@
           "catalyst_status": "unknown",
           "rank": 6,
           "price_strength_rank": 4,
-          "emotion_strength_rank": 15,
+          "emotion_strength_rank": 11,
           "liquidity_strength_rank": 47
-        },
-        {
-          "theme_name": "家电零部",
-          "limit_up_count": 1,
-          "failed_limit_count": 0,
-          "failed_limit_rate": 0.0,
-          "turnover_amount": 1227785888.0,
-          "limit_up_amount": 1227785888.0,
-          "highest_board": 3,
-          "multi_board_count": 1,
-          "top_stocks": [
-            {
-              "code": "002418",
-              "name": "康盛股份",
-              "board_count": 3,
-              "amount": 1227785888.0,
-              "open_times": 2
-            }
-          ],
-          "persistence_days": 2,
-          "theme_score": 49.0,
-          "cycle_phase": "退潮",
-          "catalyst_status": "unknown",
-          "rank": 7,
-          "price_strength_rank": 10,
-          "emotion_strength_rank": 13,
-          "liquidity_strength_rank": 23
         },
         {
           "theme_name": "塑料",
@@ -7926,10 +7899,37 @@
           "theme_score": 49.0,
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
-          "rank": 8,
-          "price_strength_rank": 12,
+          "rank": 7,
+          "price_strength_rank": 13,
           "emotion_strength_rank": 5,
           "liquidity_strength_rank": 5
+        },
+        {
+          "theme_name": "家电零部",
+          "limit_up_count": 1,
+          "failed_limit_count": 0,
+          "failed_limit_rate": 0.0,
+          "turnover_amount": 1227785888.0,
+          "limit_up_amount": 1227785888.0,
+          "highest_board": 3,
+          "multi_board_count": 1,
+          "top_stocks": [
+            {
+              "code": "002418",
+              "name": "康盛股份",
+              "board_count": 3,
+              "amount": 1227785888.0,
+              "open_times": 2
+            }
+          ],
+          "persistence_days": 2,
+          "theme_score": 49.0,
+          "cycle_phase": "退潮",
+          "catalyst_status": "unknown",
+          "rank": 8,
+          "price_strength_rank": 9,
+          "emotion_strength_rank": 12,
+          "liquidity_strength_rank": 23
         },
         {
           "theme_name": "证券Ⅱ",
@@ -7988,8 +7988,8 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 10,
-          "price_strength_rank": 11,
-          "emotion_strength_rank": 14,
+          "price_strength_rank": 10,
+          "emotion_strength_rank": 13,
           "liquidity_strength_rank": 48
         },
         {
@@ -8015,8 +8015,8 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 11,
-          "price_strength_rank": 9,
-          "emotion_strength_rank": 10,
+          "price_strength_rank": 11,
+          "emotion_strength_rank": 17,
           "liquidity_strength_rank": 34
         },
         {
@@ -8042,8 +8042,8 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 12,
-          "price_strength_rank": 21,
-          "emotion_strength_rank": 17,
+          "price_strength_rank": 19,
+          "emotion_strength_rank": 15,
           "liquidity_strength_rank": 38
         },
         {
@@ -8083,7 +8083,7 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 13,
-          "price_strength_rank": 19,
+          "price_strength_rank": 20,
           "emotion_strength_rank": 7,
           "liquidity_strength_rank": 7
         },
@@ -8124,8 +8124,8 @@
           "cycle_phase": "主升",
           "catalyst_status": "unknown",
           "rank": 14,
-          "price_strength_rank": 15,
-          "emotion_strength_rank": 25,
+          "price_strength_rank": 17,
+          "emotion_strength_rank": 26,
           "liquidity_strength_rank": 9
         },
         {
@@ -8151,8 +8151,8 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 15,
-          "price_strength_rank": 17,
-          "emotion_strength_rank": 12,
+          "price_strength_rank": 15,
+          "emotion_strength_rank": 9,
           "liquidity_strength_rank": 22
         },
         {
@@ -8178,8 +8178,8 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 16,
-          "price_strength_rank": 14,
-          "emotion_strength_rank": 9,
+          "price_strength_rank": 21,
+          "emotion_strength_rank": 16,
           "liquidity_strength_rank": 39
         },
         {
@@ -8205,8 +8205,8 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 17,
-          "price_strength_rank": 16,
-          "emotion_strength_rank": 11,
+          "price_strength_rank": 18,
+          "emotion_strength_rank": 14,
           "liquidity_strength_rank": 44
         },
         {
@@ -8232,8 +8232,8 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 18,
-          "price_strength_rank": 20,
-          "emotion_strength_rank": 16,
+          "price_strength_rank": 16,
+          "emotion_strength_rank": 10,
           "liquidity_strength_rank": 46
         },
         {
@@ -8280,33 +8280,33 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 19,
-          "price_strength_rank": 13,
+          "price_strength_rank": 12,
           "emotion_strength_rank": 24,
           "liquidity_strength_rank": 1
         },
         {
-          "theme_name": "食品加工",
+          "theme_name": "农产品加",
           "limit_up_count": 2,
           "failed_limit_count": 0,
           "failed_limit_rate": 0.0,
-          "turnover_amount": 1391431323.0,
-          "limit_up_amount": 1391431323.0,
+          "turnover_amount": 1537114577.0,
+          "limit_up_amount": 1537114577.0,
           "highest_board": 1,
           "multi_board_count": 0,
           "top_stocks": [
             {
-              "code": "002515",
-              "name": "金字火腿",
+              "code": "600127",
+              "name": "金健米业",
               "board_count": 1,
-              "amount": 1334343840.0,
-              "open_times": 9
+              "amount": 1367268928.0,
+              "open_times": 1
             },
             {
-              "code": "603237",
-              "name": "五芳斋",
+              "code": "002852",
+              "name": "道道全",
               "board_count": 1,
-              "amount": 57087483.0,
-              "open_times": 0
+              "amount": 169845649.0,
+              "open_times": 1
             }
           ],
           "persistence_days": 1,
@@ -8316,7 +8316,75 @@
           "rank": 20,
           "price_strength_rank": 22,
           "emotion_strength_rank": 18,
-          "liquidity_strength_rank": 21
+          "liquidity_strength_rank": 19
+        },
+        {
+          "theme_name": "化学制药",
+          "limit_up_count": 2,
+          "failed_limit_count": 3,
+          "failed_limit_rate": 60.0,
+          "turnover_amount": 5336680609.0,
+          "limit_up_amount": 733737377.0,
+          "highest_board": 3,
+          "multi_board_count": 1,
+          "top_stocks": [
+            {
+              "code": "002742",
+              "name": "冀衡医药",
+              "board_count": 3,
+              "amount": 56422737.0,
+              "open_times": 0
+            },
+            {
+              "code": "600613",
+              "name": "神奇制药",
+              "board_count": 1,
+              "amount": 677314640.0,
+              "open_times": 1
+            }
+          ],
+          "persistence_days": 1,
+          "theme_score": 37.0,
+          "cycle_phase": "高位分歧",
+          "catalyst_status": "unknown",
+          "rank": 21,
+          "price_strength_rank": 5,
+          "emotion_strength_rank": 40,
+          "liquidity_strength_rank": 6
+        },
+        {
+          "theme_name": "房地产开",
+          "limit_up_count": 2,
+          "failed_limit_count": 0,
+          "failed_limit_rate": 0.0,
+          "turnover_amount": 1093197632.0,
+          "limit_up_amount": 1093197632.0,
+          "highest_board": 1,
+          "multi_board_count": 0,
+          "top_stocks": [
+            {
+              "code": "600162",
+              "name": "香江控股",
+              "board_count": 1,
+              "amount": 634967808.0,
+              "open_times": 0
+            },
+            {
+              "code": "600683",
+              "name": "京投发展",
+              "board_count": 1,
+              "amount": 458229824.0,
+              "open_times": 1
+            }
+          ],
+          "persistence_days": 1,
+          "theme_score": 37.0,
+          "cycle_phase": "启动",
+          "catalyst_status": "unknown",
+          "rank": 22,
+          "price_strength_rank": 23,
+          "emotion_strength_rank": 19,
+          "liquidity_strength_rank": 24
         },
         {
           "theme_name": "计算机设",
@@ -8347,9 +8415,9 @@
           "theme_score": 37.0,
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
-          "rank": 21,
-          "price_strength_rank": 23,
-          "emotion_strength_rank": 19,
+          "rank": 23,
+          "price_strength_rank": 24,
+          "emotion_strength_rank": 20,
           "liquidity_strength_rank": 18
         },
         {
@@ -8381,102 +8449,34 @@
           "theme_score": 37.0,
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
-          "rank": 22,
-          "price_strength_rank": 24,
-          "emotion_strength_rank": 20,
+          "rank": 24,
+          "price_strength_rank": 26,
+          "emotion_strength_rank": 22,
           "liquidity_strength_rank": 8
         },
         {
-          "theme_name": "房地产开",
+          "theme_name": "食品加工",
           "limit_up_count": 2,
           "failed_limit_count": 0,
           "failed_limit_rate": 0.0,
-          "turnover_amount": 1093197632.0,
-          "limit_up_amount": 1093197632.0,
+          "turnover_amount": 1391431323.0,
+          "limit_up_amount": 1391431323.0,
           "highest_board": 1,
           "multi_board_count": 0,
           "top_stocks": [
             {
-              "code": "600162",
-              "name": "香江控股",
+              "code": "002515",
+              "name": "金字火腿",
               "board_count": 1,
-              "amount": 634967808.0,
+              "amount": 1334343840.0,
+              "open_times": 9
+            },
+            {
+              "code": "603237",
+              "name": "五芳斋",
+              "board_count": 1,
+              "amount": 57087483.0,
               "open_times": 0
-            },
-            {
-              "code": "600683",
-              "name": "京投发展",
-              "board_count": 1,
-              "amount": 458229824.0,
-              "open_times": 1
-            }
-          ],
-          "persistence_days": 1,
-          "theme_score": 37.0,
-          "cycle_phase": "启动",
-          "catalyst_status": "unknown",
-          "rank": 23,
-          "price_strength_rank": 25,
-          "emotion_strength_rank": 21,
-          "liquidity_strength_rank": 24
-        },
-        {
-          "theme_name": "化学制药",
-          "limit_up_count": 2,
-          "failed_limit_count": 3,
-          "failed_limit_rate": 60.0,
-          "turnover_amount": 5336680609.0,
-          "limit_up_amount": 733737377.0,
-          "highest_board": 3,
-          "multi_board_count": 1,
-          "top_stocks": [
-            {
-              "code": "002742",
-              "name": "冀衡医药",
-              "board_count": 3,
-              "amount": 56422737.0,
-              "open_times": 0
-            },
-            {
-              "code": "600613",
-              "name": "神奇制药",
-              "board_count": 1,
-              "amount": 677314640.0,
-              "open_times": 1
-            }
-          ],
-          "persistence_days": 1,
-          "theme_score": 37.0,
-          "cycle_phase": "高位分歧",
-          "catalyst_status": "unknown",
-          "rank": 24,
-          "price_strength_rank": 5,
-          "emotion_strength_rank": 40,
-          "liquidity_strength_rank": 6
-        },
-        {
-          "theme_name": "农产品加",
-          "limit_up_count": 2,
-          "failed_limit_count": 0,
-          "failed_limit_rate": 0.0,
-          "turnover_amount": 1537114577.0,
-          "limit_up_amount": 1537114577.0,
-          "highest_board": 1,
-          "multi_board_count": 0,
-          "top_stocks": [
-            {
-              "code": "600127",
-              "name": "金健米业",
-              "board_count": 1,
-              "amount": 1367268928.0,
-              "open_times": 1
-            },
-            {
-              "code": "002852",
-              "name": "道道全",
-              "board_count": 1,
-              "amount": 169845649.0,
-              "open_times": 1
             }
           ],
           "persistence_days": 1,
@@ -8484,9 +8484,9 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 25,
-          "price_strength_rank": 26,
-          "emotion_strength_rank": 22,
-          "liquidity_strength_rank": 19
+          "price_strength_rank": 27,
+          "emotion_strength_rank": 23,
+          "liquidity_strength_rank": 21
         },
         {
           "theme_name": "通用设备",
@@ -8518,8 +8518,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 26,
-          "price_strength_rank": 27,
-          "emotion_strength_rank": 23,
+          "price_strength_rank": 25,
+          "emotion_strength_rank": 21,
           "liquidity_strength_rank": 26
         },
         {
@@ -8559,8 +8559,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 27,
-          "price_strength_rank": 18,
-          "emotion_strength_rank": 26,
+          "price_strength_rank": 14,
+          "emotion_strength_rank": 25,
           "liquidity_strength_rank": 12
         },
         {
@@ -8586,8 +8586,8 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 28,
-          "price_strength_rank": 38,
-          "emotion_strength_rank": 34,
+          "price_strength_rank": 41,
+          "emotion_strength_rank": 38,
           "liquidity_strength_rank": 35
         },
         {
@@ -8613,36 +8613,9 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 29,
-          "price_strength_rank": 34,
-          "emotion_strength_rank": 32,
+          "price_strength_rank": 36,
+          "emotion_strength_rank": 34,
           "liquidity_strength_rank": 31
-        },
-        {
-          "theme_name": "炼化及贸",
-          "limit_up_count": 1,
-          "failed_limit_count": 0,
-          "failed_limit_rate": 0.0,
-          "turnover_amount": 1683373696.0,
-          "limit_up_amount": 1683373696.0,
-          "highest_board": 1,
-          "multi_board_count": 0,
-          "top_stocks": [
-            {
-              "code": "601233",
-              "name": "桐昆股份",
-              "board_count": 1,
-              "amount": 1683373696.0,
-              "open_times": 1
-            }
-          ],
-          "persistence_days": 1,
-          "theme_score": 31.0,
-          "cycle_phase": "启动",
-          "catalyst_status": "unknown",
-          "rank": 30,
-          "price_strength_rank": 33,
-          "emotion_strength_rank": 31,
-          "liquidity_strength_rank": 17
         },
         {
           "theme_name": "化学制品",
@@ -8666,10 +8639,37 @@
           "theme_score": 31.0,
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
-          "rank": 31,
-          "price_strength_rank": 37,
-          "emotion_strength_rank": 33,
+          "rank": 30,
+          "price_strength_rank": 28,
+          "emotion_strength_rank": 27,
           "liquidity_strength_rank": 20
+        },
+        {
+          "theme_name": "医疗服务",
+          "limit_up_count": 1,
+          "failed_limit_count": 0,
+          "failed_limit_rate": 0.0,
+          "turnover_amount": 2746713040.0,
+          "limit_up_amount": 2746713040.0,
+          "highest_board": 1,
+          "multi_board_count": 0,
+          "top_stocks": [
+            {
+              "code": "600721",
+              "name": "百花医药",
+              "board_count": 1,
+              "amount": 2746713040.0,
+              "open_times": 13
+            }
+          ],
+          "persistence_days": 1,
+          "theme_score": 31.0,
+          "cycle_phase": "启动",
+          "catalyst_status": "unknown",
+          "rank": 31,
+          "price_strength_rank": 30,
+          "emotion_strength_rank": 29,
+          "liquidity_strength_rank": 15
         },
         {
           "theme_name": "林业Ⅱ",
@@ -8694,26 +8694,26 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 32,
-          "price_strength_rank": 42,
-          "emotion_strength_rank": 38,
+          "price_strength_rank": 37,
+          "emotion_strength_rank": 35,
           "liquidity_strength_rank": 16
         },
         {
-          "theme_name": "医疗服务",
+          "theme_name": "炼化及贸",
           "limit_up_count": 1,
           "failed_limit_count": 0,
           "failed_limit_rate": 0.0,
-          "turnover_amount": 2746713040.0,
-          "limit_up_amount": 2746713040.0,
+          "turnover_amount": 1683373696.0,
+          "limit_up_amount": 1683373696.0,
           "highest_board": 1,
           "multi_board_count": 0,
           "top_stocks": [
             {
-              "code": "600721",
-              "name": "百花医药",
+              "code": "601233",
+              "name": "桐昆股份",
               "board_count": 1,
-              "amount": 2746713040.0,
-              "open_times": 13
+              "amount": 1683373696.0,
+              "open_times": 1
             }
           ],
           "persistence_days": 1,
@@ -8721,9 +8721,9 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 33,
-          "price_strength_rank": 43,
-          "emotion_strength_rank": 39,
-          "liquidity_strength_rank": 15
+          "price_strength_rank": 38,
+          "emotion_strength_rank": 36,
+          "liquidity_strength_rank": 17
         },
         {
           "theme_name": "多元金融",
@@ -8748,8 +8748,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 34,
-          "price_strength_rank": 40,
-          "emotion_strength_rank": 36,
+          "price_strength_rank": 34,
+          "emotion_strength_rank": 33,
           "liquidity_strength_rank": 28
         },
         {
@@ -8776,7 +8776,7 @@
           "catalyst_status": "unknown",
           "rank": 35,
           "price_strength_rank": 31,
-          "emotion_strength_rank": 29,
+          "emotion_strength_rank": 30,
           "liquidity_strength_rank": 29
         },
         {
@@ -8802,8 +8802,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 36,
-          "price_strength_rank": 32,
-          "emotion_strength_rank": 30,
+          "price_strength_rank": 29,
+          "emotion_strength_rank": 28,
           "liquidity_strength_rank": 32
         },
         {
@@ -8829,8 +8829,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 37,
-          "price_strength_rank": 39,
-          "emotion_strength_rank": 35,
+          "price_strength_rank": 33,
+          "emotion_strength_rank": 32,
           "liquidity_strength_rank": 36
         },
         {
@@ -8856,8 +8856,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 38,
-          "price_strength_rank": 29,
-          "emotion_strength_rank": 28,
+          "price_strength_rank": 43,
+          "emotion_strength_rank": 39,
           "liquidity_strength_rank": 40
         },
         {
@@ -8883,8 +8883,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 39,
-          "price_strength_rank": 28,
-          "emotion_strength_rank": 27,
+          "price_strength_rank": 32,
+          "emotion_strength_rank": 31,
           "liquidity_strength_rank": 42
         },
         {
@@ -8910,9 +8910,36 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 40,
-          "price_strength_rank": 41,
+          "price_strength_rank": 40,
           "emotion_strength_rank": 37,
           "liquidity_strength_rank": 45
+        },
+        {
+          "theme_name": "小金属",
+          "limit_up_count": 1,
+          "failed_limit_count": 1,
+          "failed_limit_rate": 50.0,
+          "turnover_amount": 10402448208.0,
+          "limit_up_amount": 1944087376.0,
+          "highest_board": 1,
+          "multi_board_count": 0,
+          "top_stocks": [
+            {
+              "code": "000962",
+              "name": "东方钽业",
+              "board_count": 1,
+              "amount": 1944087376.0,
+              "open_times": 1
+            }
+          ],
+          "persistence_days": 1,
+          "theme_score": 18.5,
+          "cycle_phase": "启动",
+          "catalyst_status": "unknown",
+          "rank": 41,
+          "price_strength_rank": 35,
+          "emotion_strength_rank": 41,
+          "liquidity_strength_rank": 4
         },
         {
           "theme_name": "自动化设",
@@ -8936,9 +8963,9 @@
           "theme_score": 18.5,
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
-          "rank": 41,
-          "price_strength_rank": 30,
-          "emotion_strength_rank": 41,
+          "rank": 42,
+          "price_strength_rank": 39,
+          "emotion_strength_rank": 42,
           "liquidity_strength_rank": 14
         },
         {
@@ -8963,37 +8990,48 @@
           "theme_score": 18.5,
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
-          "rank": 42,
-          "price_strength_rank": 35,
-          "emotion_strength_rank": 42,
+          "rank": 43,
+          "price_strength_rank": 42,
+          "emotion_strength_rank": 43,
           "liquidity_strength_rank": 10
         },
         {
-          "theme_name": "小金属",
-          "limit_up_count": 1,
+          "theme_name": "休闲食品",
+          "limit_up_count": 0,
           "failed_limit_count": 1,
-          "failed_limit_rate": 50.0,
-          "turnover_amount": 10402448208.0,
-          "limit_up_amount": 1944087376.0,
-          "highest_board": 1,
+          "failed_limit_rate": 100.0,
+          "turnover_amount": 140908927.0,
+          "limit_up_amount": 0.0,
+          "highest_board": 0,
           "multi_board_count": 0,
-          "top_stocks": [
-            {
-              "code": "000962",
-              "name": "东方钽业",
-              "board_count": 1,
-              "amount": 1944087376.0,
-              "open_times": 1
-            }
-          ],
+          "top_stocks": [],
           "persistence_days": 1,
-          "theme_score": 18.5,
+          "theme_score": 0,
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
-          "rank": 43,
-          "price_strength_rank": 36,
-          "emotion_strength_rank": 43,
-          "liquidity_strength_rank": 4
+          "rank": 44,
+          "price_strength_rank": 44,
+          "emotion_strength_rank": 44,
+          "liquidity_strength_rank": 43
+        },
+        {
+          "theme_name": "化学纤维",
+          "limit_up_count": 0,
+          "failed_limit_count": 1,
+          "failed_limit_rate": 100.0,
+          "turnover_amount": 557363680.0,
+          "limit_up_amount": 0.0,
+          "highest_board": 0,
+          "multi_board_count": 0,
+          "top_stocks": [],
+          "persistence_days": 1,
+          "theme_score": 0,
+          "cycle_phase": "启动",
+          "catalyst_status": "unknown",
+          "rank": 45,
+          "price_strength_rank": 45,
+          "emotion_strength_rank": 45,
+          "liquidity_strength_rank": 33
         },
         {
           "theme_name": "医疗器械",
@@ -9009,9 +9047,9 @@
           "theme_score": 0,
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
-          "rank": 44,
-          "price_strength_rank": 44,
-          "emotion_strength_rank": 44,
+          "rank": 46,
+          "price_strength_rank": 46,
+          "emotion_strength_rank": 46,
           "liquidity_strength_rank": 30
         },
         {
@@ -9028,29 +9066,10 @@
           "theme_score": 0,
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
-          "rank": 45,
-          "price_strength_rank": 45,
-          "emotion_strength_rank": 45,
+          "rank": 47,
+          "price_strength_rank": 47,
+          "emotion_strength_rank": 47,
           "liquidity_strength_rank": 37
-        },
-        {
-          "theme_name": "休闲食品",
-          "limit_up_count": 0,
-          "failed_limit_count": 1,
-          "failed_limit_rate": 100.0,
-          "turnover_amount": 140908927.0,
-          "limit_up_amount": 0.0,
-          "highest_board": 0,
-          "multi_board_count": 0,
-          "top_stocks": [],
-          "persistence_days": 1,
-          "theme_score": 0,
-          "cycle_phase": "启动",
-          "catalyst_status": "unknown",
-          "rank": 46,
-          "price_strength_rank": 46,
-          "emotion_strength_rank": 46,
-          "liquidity_strength_rank": 43
         },
         {
           "theme_name": "轨交设备",
@@ -9066,29 +9085,10 @@
           "theme_score": 0,
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
-          "rank": 47,
-          "price_strength_rank": 47,
-          "emotion_strength_rank": 47,
-          "liquidity_strength_rank": 41
-        },
-        {
-          "theme_name": "化学纤维",
-          "limit_up_count": 0,
-          "failed_limit_count": 1,
-          "failed_limit_rate": 100.0,
-          "turnover_amount": 557363680.0,
-          "limit_up_amount": 0.0,
-          "highest_board": 0,
-          "multi_board_count": 0,
-          "top_stocks": [],
-          "persistence_days": 1,
-          "theme_score": 0,
-          "cycle_phase": "启动",
-          "catalyst_status": "unknown",
           "rank": 48,
           "price_strength_rank": 48,
           "emotion_strength_rank": 48,
-          "liquidity_strength_rank": 33
+          "liquidity_strength_rank": 41
         }
       ],
       "stock_role_classification": [
@@ -9144,13 +9144,13 @@
           "name": "康盛股份",
           "theme_name": "家电零部",
           "role": "孤立票",
-          "role_score": 70,
+          "role_score": 69,
           "risk_flags": [
             "高位拥挤"
           ],
           "evidence": [
             "连板 3，所属题材 家电零部",
-            "题材排名 7，题材涨停 1 只",
+            "题材排名 8，题材涨停 1 只",
             "成交额 12.28 亿，开板 2 次"
           ]
         },
@@ -9197,7 +9197,7 @@
           ],
           "evidence": [
             "连板 3，所属题材 化学制药",
-            "题材排名 24，题材涨停 2 只",
+            "题材排名 21，题材涨停 2 只",
             "成交额 0.56 亿，开板 0 次"
           ]
         },
@@ -9359,11 +9359,11 @@
           "name": "东材科技",
           "theme_name": "塑料",
           "role": "容量中军",
-          "role_score": 73,
+          "role_score": 74,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 塑料",
-            "题材排名 8，题材涨停 4 只",
+            "题材排名 7，题材涨停 4 只",
             "成交额 37.75 亿，开板 2 次"
           ]
         },
@@ -9376,7 +9376,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 非金属材",
-            "题材排名 22，题材涨停 2 只",
+            "题材排名 24，题材涨停 2 只",
             "成交额 37.70 亿，开板 2 次"
           ]
         },
@@ -9456,7 +9456,7 @@
           ],
           "evidence": [
             "连板 1，所属题材 医疗服务",
-            "题材排名 33，题材涨停 1 只",
+            "题材排名 31，题材涨停 1 只",
             "成交额 27.47 亿，开板 13 次"
           ]
         },
@@ -9482,7 +9482,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 小金属",
-            "题材排名 43，题材涨停 1 只",
+            "题材排名 41，题材涨停 1 只",
             "成交额 19.44 亿，开板 1 次"
           ]
         },
@@ -9521,7 +9521,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 炼化及贸",
-            "题材排名 30，题材涨停 1 只",
+            "题材排名 33，题材涨停 1 只",
             "成交额 16.83 亿，开板 1 次"
           ]
         },
@@ -9534,7 +9534,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 化学制品",
-            "题材排名 31，题材涨停 1 只",
+            "题材排名 30，题材涨停 1 只",
             "成交额 14.37 亿，开板 2 次"
           ]
         },
@@ -9560,7 +9560,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 农产品加",
-            "题材排名 25，题材涨停 2 只",
+            "题材排名 20，题材涨停 2 只",
             "成交额 13.67 亿，开板 1 次"
           ]
         },
@@ -9573,7 +9573,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 食品加工",
-            "题材排名 20，题材涨停 2 只",
+            "题材排名 25，题材涨停 2 只",
             "成交额 13.34 亿，开板 9 次"
           ]
         },
@@ -9612,7 +9612,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 非金属材",
-            "题材排名 22，题材涨停 2 只",
+            "题材排名 24，题材涨停 2 只",
             "成交额 10.40 亿，开板 0 次"
           ]
         },
@@ -9638,7 +9638,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 计算机设",
-            "题材排名 21，题材涨停 2 只",
+            "题材排名 23，题材涨停 2 只",
             "成交额 9.62 亿，开板 0 次"
           ]
         },
@@ -9673,11 +9673,11 @@
           "name": "肯特股份",
           "theme_name": "塑料",
           "role": "低位补涨",
-          "role_score": 71,
+          "role_score": 72,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 塑料",
-            "题材排名 8，题材涨停 4 只",
+            "题材排名 7，题材涨停 4 只",
             "成交额 7.80 亿，开板 0 次"
           ]
         },
@@ -9686,11 +9686,11 @@
           "name": "沃特股份",
           "theme_name": "塑料",
           "role": "低位补涨",
-          "role_score": 66,
+          "role_score": 67,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 塑料",
-            "题材排名 8，题材涨停 4 只",
+            "题材排名 7，题材涨停 4 只",
             "成交额 7.78 亿，开板 5 次"
           ]
         },
@@ -9729,7 +9729,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 化学制药",
-            "题材排名 24，题材涨停 2 只",
+            "题材排名 21，题材涨停 2 只",
             "成交额 6.77 亿，开板 1 次"
           ]
         },
@@ -9738,11 +9738,11 @@
           "name": "艾艾精工",
           "theme_name": "塑料",
           "role": "低位补涨",
-          "role_score": 71,
+          "role_score": 72,
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 塑料",
-            "题材排名 8，题材涨停 4 只",
+            "题材排名 7，题材涨停 4 只",
             "成交额 6.57 亿，开板 0 次"
           ]
         },
@@ -9755,7 +9755,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 房地产开",
-            "题材排名 23，题材涨停 2 只",
+            "题材排名 22，题材涨停 2 只",
             "成交额 6.35 亿，开板 0 次"
           ]
         },
@@ -9768,7 +9768,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 计算机设",
-            "题材排名 21，题材涨停 2 只",
+            "题材排名 23，题材涨停 2 只",
             "成交额 6.07 亿，开板 1 次"
           ]
         },
@@ -9859,7 +9859,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 房地产开",
-            "题材排名 23，题材涨停 2 只",
+            "题材排名 22，题材涨停 2 只",
             "成交额 4.58 亿，开板 1 次"
           ]
         },
@@ -9898,7 +9898,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 贵金属",
-            "题材排名 42，题材涨停 1 只",
+            "题材排名 43，题材涨停 1 只",
             "成交额 3.84 亿，开板 0 次"
           ]
         },
@@ -10015,7 +10015,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 自动化设",
-            "题材排名 41，题材涨停 1 只",
+            "题材排名 42，题材涨停 1 只",
             "成交额 1.83 亿，开板 0 次"
           ]
         },
@@ -10041,7 +10041,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 农产品加",
-            "题材排名 25，题材涨停 2 只",
+            "题材排名 20，题材涨停 2 只",
             "成交额 1.70 亿，开板 1 次"
           ]
         },
@@ -10106,7 +10106,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 食品加工",
-            "题材排名 20，题材涨停 2 只",
+            "题材排名 25，题材涨停 2 只",
             "成交额 0.57 亿，开板 0 次"
           ]
         },
@@ -10812,7 +10812,7 @@
           "catalyst_status": "unknown",
           "rank": 6,
           "price_strength_rank": 3,
-          "emotion_strength_rank": 5,
+          "emotion_strength_rank": 4,
           "liquidity_strength_rank": 7
         },
         {
@@ -10867,7 +10867,7 @@
           "catalyst_status": "unknown",
           "rank": 7,
           "price_strength_rank": 6,
-          "emotion_strength_rank": 4,
+          "emotion_strength_rank": 5,
           "liquidity_strength_rank": 6
         },
         {
@@ -10942,7 +10942,7 @@
           "catalyst_status": "unknown",
           "rank": 9,
           "price_strength_rank": 8,
-          "emotion_strength_rank": 10,
+          "emotion_strength_rank": 9,
           "liquidity_strength_rank": 5
         },
         {
@@ -10976,7 +10976,7 @@
           "catalyst_status": "unknown",
           "rank": 10,
           "price_strength_rank": 12,
-          "emotion_strength_rank": 9,
+          "emotion_strength_rank": 10,
           "liquidity_strength_rank": 21
         },
         {
@@ -11003,7 +11003,7 @@
           "catalyst_status": "unknown",
           "rank": 11,
           "price_strength_rank": 10,
-          "emotion_strength_rank": 14,
+          "emotion_strength_rank": 13,
           "liquidity_strength_rank": 55
         },
         {
@@ -11030,49 +11030,8 @@
           "catalyst_status": "unknown",
           "rank": 12,
           "price_strength_rank": 11,
-          "emotion_strength_rank": 13,
+          "emotion_strength_rank": 14,
           "liquidity_strength_rank": 48
-        },
-        {
-          "theme_name": "化学原料",
-          "limit_up_count": 3,
-          "failed_limit_count": 0,
-          "failed_limit_rate": 0.0,
-          "turnover_amount": 3226131210.0,
-          "limit_up_amount": 3226131210.0,
-          "highest_board": 1,
-          "multi_board_count": 0,
-          "top_stocks": [
-            {
-              "code": "600722",
-              "name": "金牛化工",
-              "board_count": 1,
-              "amount": 2059541728.0,
-              "open_times": 0
-            },
-            {
-              "code": "600714",
-              "name": "金瑞矿业",
-              "board_count": 1,
-              "amount": 994709168.0,
-              "open_times": 0
-            },
-            {
-              "code": "600929",
-              "name": "雪天盐业",
-              "board_count": 1,
-              "amount": 171880314.0,
-              "open_times": 2
-            }
-          ],
-          "persistence_days": 1,
-          "theme_score": 43.0,
-          "cycle_phase": "启动",
-          "catalyst_status": "unknown",
-          "rank": 13,
-          "price_strength_rank": 14,
-          "emotion_strength_rank": 11,
-          "liquidity_strength_rank": 8
         },
         {
           "theme_name": "IT服务Ⅱ",
@@ -11110,10 +11069,51 @@
           "theme_score": 43.0,
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
-          "rank": 14,
-          "price_strength_rank": 17,
-          "emotion_strength_rank": 12,
+          "rank": 13,
+          "price_strength_rank": 13,
+          "emotion_strength_rank": 11,
           "liquidity_strength_rank": 15
+        },
+        {
+          "theme_name": "化学原料",
+          "limit_up_count": 3,
+          "failed_limit_count": 0,
+          "failed_limit_rate": 0.0,
+          "turnover_amount": 3226131210.0,
+          "limit_up_amount": 3226131210.0,
+          "highest_board": 1,
+          "multi_board_count": 0,
+          "top_stocks": [
+            {
+              "code": "600722",
+              "name": "金牛化工",
+              "board_count": 1,
+              "amount": 2059541728.0,
+              "open_times": 0
+            },
+            {
+              "code": "600714",
+              "name": "金瑞矿业",
+              "board_count": 1,
+              "amount": 994709168.0,
+              "open_times": 0
+            },
+            {
+              "code": "600929",
+              "name": "雪天盐业",
+              "board_count": 1,
+              "amount": 171880314.0,
+              "open_times": 2
+            }
+          ],
+          "persistence_days": 1,
+          "theme_score": 43.0,
+          "cycle_phase": "启动",
+          "catalyst_status": "unknown",
+          "rank": 14,
+          "price_strength_rank": 14,
+          "emotion_strength_rank": 12,
+          "liquidity_strength_rank": 8
         },
         {
           "theme_name": "电网设备",
@@ -11152,7 +11152,7 @@
           "cycle_phase": "主升",
           "catalyst_status": "unknown",
           "rank": 15,
-          "price_strength_rank": 13,
+          "price_strength_rank": 16,
           "emotion_strength_rank": 20,
           "liquidity_strength_rank": 1
         },
@@ -11213,8 +11213,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 17,
-          "price_strength_rank": 22,
-          "emotion_strength_rank": 19,
+          "price_strength_rank": 20,
+          "emotion_strength_rank": 17,
           "liquidity_strength_rank": 20
         },
         {
@@ -11281,8 +11281,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 19,
-          "price_strength_rank": 20,
-          "emotion_strength_rank": 17,
+          "price_strength_rank": 22,
+          "emotion_strength_rank": 19,
           "liquidity_strength_rank": 26
         },
         {
@@ -11342,7 +11342,7 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 21,
-          "price_strength_rank": 16,
+          "price_strength_rank": 17,
           "emotion_strength_rank": 46,
           "liquidity_strength_rank": 2
         },
@@ -11396,8 +11396,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 23,
-          "price_strength_rank": 26,
-          "emotion_strength_rank": 24,
+          "price_strength_rank": 25,
+          "emotion_strength_rank": 23,
           "liquidity_strength_rank": 16
         },
         {
@@ -11423,8 +11423,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 24,
-          "price_strength_rank": 33,
-          "emotion_strength_rank": 31,
+          "price_strength_rank": 32,
+          "emotion_strength_rank": 29,
           "liquidity_strength_rank": 23
         },
         {
@@ -11450,8 +11450,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 25,
-          "price_strength_rank": 42,
-          "emotion_strength_rank": 40,
+          "price_strength_rank": 45,
+          "emotion_strength_rank": 42,
           "liquidity_strength_rank": 24
         },
         {
@@ -11477,8 +11477,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 26,
-          "price_strength_rank": 37,
-          "emotion_strength_rank": 35,
+          "price_strength_rank": 33,
+          "emotion_strength_rank": 30,
           "liquidity_strength_rank": 25
         },
         {
@@ -11504,8 +11504,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 27,
-          "price_strength_rank": 35,
-          "emotion_strength_rank": 33,
+          "price_strength_rank": 34,
+          "emotion_strength_rank": 31,
           "liquidity_strength_rank": 27
         },
         {
@@ -11531,8 +11531,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 28,
-          "price_strength_rank": 46,
-          "emotion_strength_rank": 43,
+          "price_strength_rank": 41,
+          "emotion_strength_rank": 38,
           "liquidity_strength_rank": 28
         },
         {
@@ -11558,8 +11558,8 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 29,
-          "price_strength_rank": 40,
-          "emotion_strength_rank": 38,
+          "price_strength_rank": 29,
+          "emotion_strength_rank": 26,
           "liquidity_strength_rank": 30
         },
         {
@@ -11585,8 +11585,8 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 30,
-          "price_strength_rank": 28,
-          "emotion_strength_rank": 26,
+          "price_strength_rank": 39,
+          "emotion_strength_rank": 36,
           "liquidity_strength_rank": 31
         },
         {
@@ -11612,8 +11612,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 31,
-          "price_strength_rank": 38,
-          "emotion_strength_rank": 36,
+          "price_strength_rank": 23,
+          "emotion_strength_rank": 21,
           "liquidity_strength_rank": 32
         },
         {
@@ -11639,8 +11639,8 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 32,
-          "price_strength_rank": 24,
-          "emotion_strength_rank": 22,
+          "price_strength_rank": 37,
+          "emotion_strength_rank": 34,
           "liquidity_strength_rank": 33
         },
         {
@@ -11666,8 +11666,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 33,
-          "price_strength_rank": 25,
-          "emotion_strength_rank": 23,
+          "price_strength_rank": 47,
+          "emotion_strength_rank": 44,
           "liquidity_strength_rank": 34
         },
         {
@@ -11693,8 +11693,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 34,
-          "price_strength_rank": 43,
-          "emotion_strength_rank": 41,
+          "price_strength_rank": 31,
+          "emotion_strength_rank": 28,
           "liquidity_strength_rank": 36
         },
         {
@@ -11720,8 +11720,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 35,
-          "price_strength_rank": 39,
-          "emotion_strength_rank": 37,
+          "price_strength_rank": 27,
+          "emotion_strength_rank": 25,
           "liquidity_strength_rank": 38
         },
         {
@@ -11747,8 +11747,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 36,
-          "price_strength_rank": 27,
-          "emotion_strength_rank": 25,
+          "price_strength_rank": 38,
+          "emotion_strength_rank": 35,
           "liquidity_strength_rank": 39
         },
         {
@@ -11774,8 +11774,8 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 37,
-          "price_strength_rank": 45,
-          "emotion_strength_rank": 42,
+          "price_strength_rank": 44,
+          "emotion_strength_rank": 41,
           "liquidity_strength_rank": 40
         },
         {
@@ -11801,8 +11801,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 38,
-          "price_strength_rank": 47,
-          "emotion_strength_rank": 44,
+          "price_strength_rank": 40,
+          "emotion_strength_rank": 37,
           "liquidity_strength_rank": 42
         },
         {
@@ -11828,7 +11828,7 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 39,
-          "price_strength_rank": 29,
+          "price_strength_rank": 30,
           "emotion_strength_rank": 27,
           "liquidity_strength_rank": 44
         },
@@ -11855,8 +11855,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 40,
-          "price_strength_rank": 32,
-          "emotion_strength_rank": 30,
+          "price_strength_rank": 46,
+          "emotion_strength_rank": 43,
           "liquidity_strength_rank": 43
         },
         {
@@ -11882,8 +11882,8 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 41,
-          "price_strength_rank": 36,
-          "emotion_strength_rank": 34,
+          "price_strength_rank": 42,
+          "emotion_strength_rank": 39,
           "liquidity_strength_rank": 45
         },
         {
@@ -11909,8 +11909,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 42,
-          "price_strength_rank": 41,
-          "emotion_strength_rank": 39,
+          "price_strength_rank": 35,
+          "emotion_strength_rank": 32,
           "liquidity_strength_rank": 50
         },
         {
@@ -11936,8 +11936,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 43,
-          "price_strength_rank": 31,
-          "emotion_strength_rank": 29,
+          "price_strength_rank": 26,
+          "emotion_strength_rank": 24,
           "liquidity_strength_rank": 51
         },
         {
@@ -11963,8 +11963,8 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 44,
-          "price_strength_rank": 34,
-          "emotion_strength_rank": 32,
+          "price_strength_rank": 36,
+          "emotion_strength_rank": 33,
           "liquidity_strength_rank": 52
         },
         {
@@ -11990,8 +11990,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 45,
-          "price_strength_rank": 30,
-          "emotion_strength_rank": 28,
+          "price_strength_rank": 24,
+          "emotion_strength_rank": 22,
           "liquidity_strength_rank": 53
         },
         {
@@ -12017,8 +12017,8 @@
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
           "rank": 46,
-          "price_strength_rank": 23,
-          "emotion_strength_rank": 21,
+          "price_strength_rank": 43,
+          "emotion_strength_rank": 40,
           "liquidity_strength_rank": 54
         },
         {
@@ -12044,7 +12044,7 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 47,
-          "price_strength_rank": 44,
+          "price_strength_rank": 28,
           "emotion_strength_rank": 47,
           "liquidity_strength_rank": 12
         },
@@ -12063,9 +12063,28 @@
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
           "rank": 48,
-          "price_strength_rank": 51,
-          "emotion_strength_rank": 51,
+          "price_strength_rank": 50,
+          "emotion_strength_rank": 50,
           "liquidity_strength_rank": 11
+        },
+        {
+          "theme_name": "元件",
+          "limit_up_count": 0,
+          "failed_limit_count": 1,
+          "failed_limit_rate": 100.0,
+          "turnover_amount": 7075641856.0,
+          "limit_up_amount": 0.0,
+          "highest_board": 0,
+          "multi_board_count": 0,
+          "top_stocks": [],
+          "persistence_days": 1,
+          "theme_score": 0,
+          "cycle_phase": "退潮",
+          "catalyst_status": "unknown",
+          "rank": 49,
+          "price_strength_rank": 48,
+          "emotion_strength_rank": 48,
+          "liquidity_strength_rank": 3
         },
         {
           "theme_name": "医疗器械",
@@ -12081,10 +12100,48 @@
           "theme_score": 0,
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
-          "rank": 49,
-          "price_strength_rank": 48,
-          "emotion_strength_rank": 48,
+          "rank": 50,
+          "price_strength_rank": 49,
+          "emotion_strength_rank": 49,
           "liquidity_strength_rank": 46
+        },
+        {
+          "theme_name": "影视院线",
+          "limit_up_count": 0,
+          "failed_limit_count": 1,
+          "failed_limit_rate": 100.0,
+          "turnover_amount": 192411385.0,
+          "limit_up_amount": 0.0,
+          "highest_board": 0,
+          "multi_board_count": 0,
+          "top_stocks": [],
+          "persistence_days": 1,
+          "theme_score": 0,
+          "cycle_phase": "启动",
+          "catalyst_status": "unknown",
+          "rank": 51,
+          "price_strength_rank": 51,
+          "emotion_strength_rank": 51,
+          "liquidity_strength_rank": 47
+        },
+        {
+          "theme_name": "航空装备",
+          "limit_up_count": 0,
+          "failed_limit_count": 1,
+          "failed_limit_rate": 100.0,
+          "turnover_amount": 371137264.0,
+          "limit_up_amount": 0.0,
+          "highest_board": 0,
+          "multi_board_count": 0,
+          "top_stocks": [],
+          "persistence_days": 1,
+          "theme_score": 0,
+          "cycle_phase": "退潮",
+          "catalyst_status": "unknown",
+          "rank": 52,
+          "price_strength_rank": 52,
+          "emotion_strength_rank": 52,
+          "liquidity_strength_rank": 35
         },
         {
           "theme_name": "贸易Ⅱ",
@@ -12100,9 +12157,9 @@
           "theme_score": 0,
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
-          "rank": 50,
-          "price_strength_rank": 49,
-          "emotion_strength_rank": 49,
+          "rank": 53,
+          "price_strength_rank": 53,
+          "emotion_strength_rank": 53,
           "liquidity_strength_rank": 29
         },
         {
@@ -12119,48 +12176,10 @@
           "theme_score": 0,
           "cycle_phase": "退潮",
           "catalyst_status": "unknown",
-          "rank": 51,
-          "price_strength_rank": 50,
-          "emotion_strength_rank": 50,
+          "rank": 54,
+          "price_strength_rank": 54,
+          "emotion_strength_rank": 54,
           "liquidity_strength_rank": 10
-        },
-        {
-          "theme_name": "元件",
-          "limit_up_count": 0,
-          "failed_limit_count": 1,
-          "failed_limit_rate": 100.0,
-          "turnover_amount": 7075641856.0,
-          "limit_up_amount": 0.0,
-          "highest_board": 0,
-          "multi_board_count": 0,
-          "top_stocks": [],
-          "persistence_days": 1,
-          "theme_score": 0,
-          "cycle_phase": "退潮",
-          "catalyst_status": "unknown",
-          "rank": 52,
-          "price_strength_rank": 52,
-          "emotion_strength_rank": 52,
-          "liquidity_strength_rank": 3
-        },
-        {
-          "theme_name": "影视院线",
-          "limit_up_count": 0,
-          "failed_limit_count": 1,
-          "failed_limit_rate": 100.0,
-          "turnover_amount": 192411385.0,
-          "limit_up_amount": 0.0,
-          "highest_board": 0,
-          "multi_board_count": 0,
-          "top_stocks": [],
-          "persistence_days": 1,
-          "theme_score": 0,
-          "cycle_phase": "启动",
-          "catalyst_status": "unknown",
-          "rank": 53,
-          "price_strength_rank": 53,
-          "emotion_strength_rank": 53,
-          "liquidity_strength_rank": 47
         },
         {
           "theme_name": "饮料乳品",
@@ -12176,29 +12195,10 @@
           "theme_score": 0,
           "cycle_phase": "启动",
           "catalyst_status": "unknown",
-          "rank": 54,
-          "price_strength_rank": 54,
-          "emotion_strength_rank": 54,
-          "liquidity_strength_rank": 49
-        },
-        {
-          "theme_name": "航空装备",
-          "limit_up_count": 0,
-          "failed_limit_count": 1,
-          "failed_limit_rate": 100.0,
-          "turnover_amount": 371137264.0,
-          "limit_up_amount": 0.0,
-          "highest_board": 0,
-          "multi_board_count": 0,
-          "top_stocks": [],
-          "persistence_days": 1,
-          "theme_score": 0,
-          "cycle_phase": "退潮",
-          "catalyst_status": "unknown",
           "rank": 55,
           "price_strength_rank": 55,
           "emotion_strength_rank": 55,
-          "liquidity_strength_rank": 35
+          "liquidity_strength_rank": 49
         }
       ],
       "stock_role_classification": [
@@ -12494,7 +12494,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 化学原料",
-            "题材排名 13，题材涨停 3 只",
+            "题材排名 14，题材涨停 3 只",
             "成交额 20.60 亿，开板 0 次"
           ]
         },
@@ -12561,7 +12561,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 化学原料",
-            "题材排名 13，题材涨停 3 只",
+            "题材排名 14，题材涨停 3 只",
             "成交额 9.95 亿，开板 0 次"
           ]
         },
@@ -12587,7 +12587,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 IT服务Ⅱ",
-            "题材排名 14，题材涨停 3 只",
+            "题材排名 13，题材涨停 3 只",
             "成交额 9.69 亿，开板 1 次"
           ]
         },
@@ -12730,7 +12730,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 IT服务Ⅱ",
-            "题材排名 14，题材涨停 3 只",
+            "题材排名 13，题材涨停 3 只",
             "成交额 6.18 亿，开板 1 次"
           ]
         },
@@ -13120,7 +13120,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 化学原料",
-            "题材排名 13，题材涨停 3 只",
+            "题材排名 14，题材涨停 3 只",
             "成交额 1.72 亿，开板 2 次"
           ]
         },
@@ -13302,7 +13302,7 @@
           "risk_flags": [],
           "evidence": [
             "连板 1，所属题材 IT服务Ⅱ",
-            "题材排名 14，题材涨停 3 只",
+            "题材排名 13，题材涨停 3 只",
             "成交额 0.90 亿，开板 0 次"
           ]
         },

@@ -191,3 +191,14 @@ Regenerated a larger black Songti-style version:
 - Added a cross-platform `README.md`, cloud environment guidance, secret handling rules, and the Source Han Sans license.
 - Excluded `.env`, virtual environments, browser caches, temporary output, local Cloudflare binaries, and the unused variable font.
 - Verified Python compilation and regenerated the cached 2026-08-24 to 2026-08-28 PDF successfully before migration.
+
+## 2026-09-01 Codex Cloud Reproducibility Fix
+
+- Made cached sentiment outputs deterministic across operating systems and repeated runs.
+- Sorted theme names before aggregation and used theme name as the stable tiebreaker for equal scores.
+- Normalized the recorded data directory to POSIX separators on every platform.
+- Enabled invariant ReportLab output so identical inputs produce an identical PDF hash.
+- Added a regression test for equal-score theme ordering.
+- Verified Python compilation, dependency integrity, the regression test, and two consecutive cached report runs.
+- Both generated PDFs had SHA-256 `4486a02b1341578df861754011c4c7fd33b7b543cdd802cbb2f686ff2c382f33`.
+- Rendered and visually checked all 11 pages; Source Han Sans CN remained embedded and no layout defects were found.

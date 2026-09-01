@@ -465,7 +465,7 @@ def theme_stats(zt: pd.DataFrame, failed: pd.DataFrame) -> dict[str, dict]:
     industries.discard("")
     industries.discard("nan")
 
-    for industry in industries:
+    for industry in sorted(industries):
         zt_part = zt[zt["industry"].astype(str) == industry] if not zt.empty else pd.DataFrame()
         failed_part = (
             failed[failed["industry"].astype(str) == industry] if not failed.empty else pd.DataFrame()
@@ -535,7 +535,10 @@ def cycle_phase(item: dict, persistence_days: int, previous_limit_count: int | N
 
 def add_theme_ranks(items: list[dict]) -> list[dict]:
     def rank_by(key: str, reverse: bool = True) -> dict[str, int]:
-        ordered = sorted(items, key=lambda item: item[key], reverse=reverse)
+        if reverse:
+            ordered = sorted(items, key=lambda item: (-item[key], item["theme_name"]))
+        else:
+            ordered = sorted(items, key=lambda item: (item[key], item["theme_name"]))
         return {item["theme_name"]: idx + 1 for idx, item in enumerate(ordered)}
 
     price_rank = rank_by("price_proxy_score")
@@ -1014,6 +1017,7 @@ def build_pdf_table(
 
 
 def write_pdf_report(result: dict, pdf_path: Path) -> None:
+    from reportlab import rl_config
     from reportlab.lib import colors
     from reportlab.lib.pagesizes import A4, landscape
     from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
@@ -1028,6 +1032,8 @@ def write_pdf_report(result: dict, pdf_path: Path) -> None:
         TableStyle,
     )
 
+    # Keep PDF metadata and internal identifiers stable across identical runs.
+    rl_config.invariant = 1
     pdf_path.parent.mkdir(parents=True, exist_ok=True)
     font_names = chinese_font_names()
     font_regular = font_names["regular"]
@@ -1435,7 +1441,7 @@ def run_engine(
         "end_date": end,
         "dates": dates,
         "generated_at": generated_at or current_date.today().isoformat(),
-        "data_dir": str(output_dir),
+        "data_dir": output_dir.as_posix(),
         "data_sources": [
             "AKShare stock_zh_index_daily",
             "AKShare stock_zt_pool_em",
