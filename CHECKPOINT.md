@@ -191,3 +191,13 @@ Regenerated a larger black Songti-style version:
 - Added a cross-platform `README.md`, cloud environment guidance, secret handling rules, and the Source Han Sans license.
 - Excluded `.env`, virtual environments, browser caches, temporary output, local Cloudflare binaries, and the unused variable font.
 - Verified Python compilation and regenerated the cached 2026-08-24 to 2026-08-28 PDF successfully before migration.
+
+## 2026-09-01 CODEX_HOME Migration Verification
+
+- Migrated the effective Codex home to `D:\CodexData\codex-home` and preserved `C:\Users\愚者\.codex` as an untouched recovery source.
+- Verified both the active Codex process and the Windows user environment resolve `CODEX_HOME` to `D:\CodexData\codex-home`.
+- Verified `config.toml`, `sessions`, `skills`, `plugins`, and `CODEX_HOME_MIGRATION_COMPLETE.txt` in the new home.
+- Preserved Codex-managed junctions into `D:\CodexData\.codex-live` and `D:\CodexData\.codex-moved`.
+- Second-pass testing found that the browser service resolves the `plugins` junction to `D:\CodexData\.codex-live\plugins`; added junction targets to `NODE_REPL_TRUSTED_CODE_PATHS` and updated `tools\migrate_codex_home.ps1` to apply this rule on future runs.
+- Browser control must be retested after restarting Codex because restarting only the Node REPL closes the current MCP transport.
+- The Codex app project API currently lists the local project and the ChatGPT project `股海愚者`, but no repository-backed Cloud project. A Cloud ChatGPT Work task was queued as a connectivity probe; repository mounting remains unverified until browser control or the Cloud environment UI succeeds.

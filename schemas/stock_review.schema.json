@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "核心个股复盘",
+  "type": "object",
+  "required": [
+    "name",
+    "code",
+    "theme",
+    "role",
+    "drivers",
+    "logic_quality",
+    "expectation_gap",
+    "market_strength",
+    "risk_reward",
+    "rating"
+  ],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    },
+    "theme": {
+      "type": "string"
+    },
+    "role": {
+      "enum": [
+        "龙头",
+        "中军",
+        "补涨",
+        "跟风",
+        "情绪股"
+      ]
+    },
+    "drivers": {
+      "type": "array"
+    },
+    "logic_quality": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "expectation_gap": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "market_strength": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "risk_reward": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "rating": {
+      "type": "string"
+    }
+  }
+}

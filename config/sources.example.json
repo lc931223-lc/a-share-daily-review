@@ -1,0 +1,55 @@
+{
+  "market_data": {
+    "required_capabilities": [
+      "major_indices",
+      "market_turnover",
+      "advancers_decliners",
+      "limit_up_limit_down",
+      "daily_ohlcv",
+      "sector_performance",
+      "concept_performance",
+      "leaderboard"
+    ],
+    "preferred_frequency": "EOD",
+    "adapters": [
+      "commercial_api",
+      "public_api",
+      "local_csv_cache"
+    ]
+  },
+  "disclosure": {
+    "required_capabilities": [
+      "company_announcements",
+      "periodic_reports",
+      "earnings_forecasts",
+      "major_orders",
+      "shareholder_changes",
+      "investor_relations"
+    ],
+    "preferred_sources": [
+      "exchange",
+      "cninfo_like_official_source"
+    ]
+  },
+  "policy_news": {
+    "required_capabilities": [
+      "state_policy",
+      "ministry_policy",
+      "regulatory_updates",
+      "official_meetings",
+      "authoritative_financial_media"
+    ]
+  },
+  "industry_data": {
+    "required_capabilities": [
+      "prices",
+      "inventory",
+      "capacity",
+      "utilization",
+      "shipments",
+      "orders",
+      "capex",
+      "supply_chain_checks"
+    ]
+  }
+}

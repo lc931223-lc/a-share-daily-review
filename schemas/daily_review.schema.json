@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "A股每日复盘",
+  "type": "object",
+  "required": [
+    "date",
+    "market_regime",
+    "main_themes",
+    "stocks",
+    "changes_vs_previous_day"
+  ],
+  "properties": {
+    "date": {
+      "type": "string"
+    },
+    "market_regime": {
+      "type": "string"
+    },
+    "turnover": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "main_themes": {
+      "type": "array"
+    },
+    "stocks": {
+      "type": "array"
+    },
+    "changes_vs_previous_day": {
+      "type": "object",
+      "properties": {
+        "new": {
+          "type": "array"
+        },
+        "strengthened": {
+          "type": "array"
+        },
+        "weakened": {
+          "type": "array"
+        },
+        "expanded": {
+          "type": "array"
+        },
+        "realized": {
+          "type": "array"
+        },
+        "invalidated": {
+          "type": "array"
+        }
+      }
+    }
+  }
+}

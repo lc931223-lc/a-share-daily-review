@@ -1,0 +1,95 @@
+{
+  "version": "1.0",
+  "formula": "base_logic + realization + expectation_gap + persistence + market_confirmation + risk_penalty",
+  "dimensions": {
+    "base_logic": {
+      "min": 0,
+      "max": 40
+    },
+    "realization": {
+      "min": 0,
+      "max": 25
+    },
+    "expectation_gap": {
+      "min": 0,
+      "max": 15
+    },
+    "persistence": {
+      "min": 0,
+      "max": 10
+    },
+    "market_confirmation": {
+      "min": 0,
+      "max": 10
+    },
+    "risk_penalty": {
+      "min": -20,
+      "max": 0
+    }
+  },
+  "ratings": [
+    {
+      "rating": "S+",
+      "min": 90,
+      "max": 100
+    },
+    {
+      "rating": "S",
+      "min": 80,
+      "max": 89
+    },
+    {
+      "rating": "A",
+      "min": 70,
+      "max": 79
+    },
+    {
+      "rating": "B",
+      "min": 60,
+      "max": 69
+    },
+    {
+      "rating": "C",
+      "min": 45,
+      "max": 59
+    },
+    {
+      "rating": "D",
+      "min": -20,
+      "max": 44
+    }
+  ],
+  "lifecycle": [
+    "朦胧期",
+    "发酵期",
+    "验证期",
+    "主升期",
+    "扩散期",
+    "兑现期"
+  ],
+  "evidence_levels": {
+    "A": [
+      "公司公告",
+      "定期报告",
+      "官方政策",
+      "交易所文件",
+      "政府官网"
+    ],
+    "B": [
+      "投资者关系记录",
+      "权威财经媒体",
+      "行业协会",
+      "产业链公开数据"
+    ],
+    "C": [
+      "券商研报",
+      "专业机构观点"
+    ],
+    "D": [
+      "市场传闻",
+      "社交媒体",
+      "股吧",
+      "无法核实消息"
+    ]
+  }
+}
