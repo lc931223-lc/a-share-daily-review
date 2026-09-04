@@ -13,6 +13,7 @@ tmp/
 data/*.db
 data/**/*.db
 data/archive/
+data/reference/
 data/raw/market_packets/
 data/market_reviews/*/akshare_probe/
 data/market_reviews/*/tushare_probe/

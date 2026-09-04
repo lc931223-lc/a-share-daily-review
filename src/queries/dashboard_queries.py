@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 
 from src.storage.models import (
     AnalysisSnapshot,
+    MarketDaily,
     Stock,
     StockDailyScore,
     Theme,
@@ -33,6 +34,36 @@ def latest_day(session: Session) -> TradingDay | None:
 
 def get_day(session: Session, trade_date: date) -> TradingDay | None:
     return session.scalar(_formal_real_days().where(TradingDay.trade_date == trade_date))
+
+
+def latest_market_daily(session: Session) -> MarketDaily | None:
+    return session.scalar(select(MarketDaily).order_by(MarketDaily.trade_date.desc()).limit(1))
+
+
+def market_daily_for_date(session: Session, trade_date: date) -> MarketDaily | None:
+    return session.scalar(select(MarketDaily).where(MarketDaily.trade_date == trade_date))
+
+
+def objective_market_summary(market: MarketDaily | None) -> dict | None:
+    if market is None:
+        return None
+    return {
+        "trade_date": market.trade_date,
+        "data_quality_status": market.data_quality_status,
+        "data_quality_score": market.data_quality_score,
+        "missing_data": json.loads(market.missing_data),
+        "turnover": market.turnover,
+        "previous_turnover": market.previous_turnover,
+        "turnover_delta": market.turnover_delta,
+        "turnover_delta_pct": market.turnover_delta_pct,
+        "rise_count": market.rise_count,
+        "fall_count": market.fall_count,
+        "flat_count": market.flat_count,
+        "limit_up_count": market.limit_up_count,
+        "limit_down_count": market.limit_down_count,
+        "failed_limit_count": market.failed_limit_count,
+        "highest_board": market.highest_board,
+    }
 
 
 def market_summary(day: TradingDay | None) -> dict | None:

@@ -2,13 +2,14 @@ from __future__ import annotations
 
 import argparse
 import sys
-from datetime import date, timedelta
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from src.market_packet.packet_builder import build_market_packet, write_outputs
+from src.market_packet.trading_calendar import resolve_auto_trade_date
 
 
 def parse_args() -> argparse.Namespace:
@@ -19,13 +20,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def resolve_date(value: str) -> date:
-    if value == "auto":
-        today = date.today()
-        candidate = today - timedelta(days=1)
-        while candidate.weekday() >= 5:
-            candidate -= timedelta(days=1)
-        return candidate
-    return date.fromisoformat(value)
+    return resolve_auto_trade_date(value)
 
 
 def main() -> int:

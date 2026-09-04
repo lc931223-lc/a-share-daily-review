@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from jsonschema import Draft202012Validator
-from sqlalchemy import select
+from sqlalchemy import delete, select
 
 from src.market_packet.collector import MarketPacketCollector
 from src.market_packet.models import MarketPacket
@@ -15,7 +15,7 @@ from src.market_packet.normalizer import normalize_packet_data
 from src.market_packet.previous_review_loader import load_previous_review
 from src.market_packet.quality_gate import audit_packet
 from src.storage.database import create_db_engine, create_schema, session_factory
-from src.storage.models import MarketDaily, MarketPacketLog
+from src.storage.models import MarketDaily, MarketPacketLog, OfficialAnnouncement, OfficialPolicy
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -37,8 +37,8 @@ def build_market_packet(trade_date: date, *, refresh: bool = False) -> dict[str,
         },
         "data_quality": {"status": "INCOMPLETE", "score": 0, "checks": [], "sources": [], "conflicts": []},
         **normalized,
-        "announcements": [],
-        "policies": [],
+        "announcements": datasets.get("official_announcements").rows if datasets.get("official_announcements") else [],
+        "policies": datasets.get("official_policies").rows if datasets.get("official_policies") else [],
         "industry_events": [],
         "previous_review": previous_review,
         "tomorrow_check_context": tomorrow_context,
@@ -149,6 +149,41 @@ def log_packet_outputs(packet: dict[str, Any], paths: dict[str, Path], database_
                     data_quality_score=packet["data_quality"]["score"],
                     missing_data=json.dumps(packet["missing_data"], ensure_ascii=False),
                     generated_at=datetime.fromisoformat(packet["meta"]["generated_at"].replace("Z", "+00:00")),
+                )
+            )
+        session.execute(delete(OfficialAnnouncement).where(OfficialAnnouncement.trade_date == trade_date))
+        for item in packet["announcements"]:
+            session.add(
+                OfficialAnnouncement(
+                    trade_date=trade_date,
+                    stock_code=str(item.get("stock_code") or ""),
+                    stock_name=str(item.get("stock_name") or ""),
+                    title=str(item.get("title") or ""),
+                    published_at=item.get("published_at"),
+                    source=str(item.get("source") or ""),
+                    url=item.get("url"),
+                    category=str(item.get("category") or "other"),
+                    summary=str(item.get("summary") or ""),
+                    confirmed_fact=str(item.get("confirmed_fact") or ""),
+                    evidence_level=str(item.get("evidence_level") or ""),
+                    clarification_flags=json.dumps(item.get("clarification_flags") or [], ensure_ascii=False),
+                    risk_flags=json.dumps(item.get("risk_flags") or [], ensure_ascii=False),
+                )
+            )
+        session.execute(delete(OfficialPolicy).where(OfficialPolicy.trade_date == trade_date))
+        for item in packet["policies"]:
+            session.add(
+                OfficialPolicy(
+                    trade_date=trade_date,
+                    title=str(item.get("title") or ""),
+                    agency=str(item.get("agency") or ""),
+                    published_at=item.get("published_at"),
+                    url=item.get("url"),
+                    summary=str(item.get("summary") or ""),
+                    policy_level=str(item.get("policy_level") or ""),
+                    related_industries=json.dumps(item.get("related_industries") or [], ensure_ascii=False),
+                    related_themes=json.dumps(item.get("related_themes") or [], ensure_ascii=False),
+                    evidence_level=str(item.get("evidence_level") or ""),
                 )
             )
 

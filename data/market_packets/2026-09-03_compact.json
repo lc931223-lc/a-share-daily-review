@@ -2,7 +2,7 @@
   "meta": {
     "schema_version": "market_packet.1",
     "trade_date": "2026-09-03",
-    "generated_at": "2026-09-04T13:40:20.465186Z",
+    "generated_at": "2026-09-04T14:30:48.345455Z",
     "generated_by": "codex_market_packet_phase1",
     "codex_role": "data_engineer_data_validator_research_clerk",
     "final_judgement_owner": "chatgpt"
@@ -62,14 +62,14 @@
       {
         "item": "行业数据",
         "status": "PARTIAL",
-        "source": "Eastmoney limit pools via AKShare",
-        "detail": "54 industries derived from limit pools"
+        "source": "akshare.eastmoney_board_hist",
+        "detail": "54 industries; historical board coverage=no"
       },
       {
         "item": "题材数据",
         "status": "PARTIAL",
-        "source": "Eastmoney limit pools via AKShare",
-        "detail": "54 objective theme candidates derived"
+        "source": "akshare.eastmoney_board_hist",
+        "detail": "54 concepts/themes; historical board coverage=no"
       },
       {
         "item": "核心个股行情",
@@ -80,14 +80,14 @@
       {
         "item": "公告",
         "status": "FAIL",
-        "source": null,
-        "detail": "Phase 1 skeleton keeps announcement slots; remote batch collector not wired yet"
+        "source": "cninfo.stock_zh_a_disclosure_report_cninfo",
+        "detail": "remote announcement lookups disabled; set MARKET_PACKET_REMOTE_ANNOUNCEMENTS=1 or provide data/announcement_sources/YYYY-MM-DD.json"
       },
       {
         "item": "政策",
         "status": "FAIL",
-        "source": null,
-        "detail": "Phase 1 skeleton keeps policy slots; official policy crawler not wired yet"
+        "source": "official_policy_sources",
+        "detail": "official policy crawler not configured with stable historical source for this date"
       },
       {
         "item": "上一交易日review",
@@ -99,7 +99,7 @@
     "sources": [
       {
         "source": "akshare.stock_zt_pool_em",
-        "retrieved_at": "2026-09-04T13:40:20.265354Z",
+        "retrieved_at": "2026-09-04T14:30:48.197449Z",
         "data_date": "2026-09-03",
         "freshness": "historical",
         "quality": "PASS",
@@ -109,7 +109,7 @@
       },
       {
         "source": "akshare.stock_zt_pool_zbgc_em",
-        "retrieved_at": "2026-09-04T13:40:20.266351Z",
+        "retrieved_at": "2026-09-04T14:30:48.197449Z",
         "data_date": "2026-09-03",
         "freshness": "historical",
         "quality": "PASS",
@@ -119,7 +119,7 @@
       },
       {
         "source": "akshare.stock_zt_pool_dtgc_em",
-        "retrieved_at": "2026-09-04T13:40:20.266351Z",
+        "retrieved_at": "2026-09-04T14:30:48.198449Z",
         "data_date": "2026-09-03",
         "freshness": "historical",
         "quality": "PASS",
@@ -129,7 +129,7 @@
       },
       {
         "source": "akshare.stock_zt_pool_previous_em",
-        "retrieved_at": "2026-09-04T13:40:20.267348Z",
+        "retrieved_at": "2026-09-04T14:30:48.198449Z",
         "data_date": "2026-09-03",
         "freshness": "historical",
         "quality": "PASS",
@@ -139,7 +139,7 @@
       },
       {
         "source": "akshare.stock_lhb_detail_em",
-        "retrieved_at": "2026-09-04T13:40:20.268347Z",
+        "retrieved_at": "2026-09-04T14:30:48.199446Z",
         "data_date": "2026-09-03",
         "freshness": "historical",
         "quality": "PASS",
@@ -149,7 +149,7 @@
       },
       {
         "source": "akshare.stock_hsgt_hist_em",
-        "retrieved_at": "2026-09-04T13:40:20.293679Z",
+        "retrieved_at": "2026-09-04T14:30:48.219358Z",
         "data_date": null,
         "freshness": "historical",
         "quality": "PASS",
@@ -159,7 +159,7 @@
       },
       {
         "source": "akshare.stock_hsgt_fund_flow_summary_em",
-        "retrieved_at": "2026-09-04T13:40:20.294677Z",
+        "retrieved_at": "2026-09-04T14:30:48.220355Z",
         "data_date": null,
         "freshness": "current_only",
         "quality": "PASS",
@@ -169,7 +169,7 @@
       },
       {
         "source": "akshare.stock_margin_szse",
-        "retrieved_at": "2026-09-04T13:40:20.294677Z",
+        "retrieved_at": "2026-09-04T14:30:48.220355Z",
         "data_date": "2026-09-03",
         "freshness": "historical",
         "quality": "PASS",
@@ -179,7 +179,7 @@
       },
       {
         "source": "akshare.stock_margin_detail_szse",
-        "retrieved_at": "2026-09-04T13:40:20.301658Z",
+        "retrieved_at": "2026-09-04T14:30:48.227336Z",
         "data_date": "2026-09-03",
         "freshness": "historical",
         "quality": "PASS",
@@ -189,7 +189,7 @@
       },
       {
         "source": "akshare.stock_fund_flow_industry",
-        "retrieved_at": "2026-09-04T13:40:20.303653Z",
+        "retrieved_at": "2026-09-04T14:30:48.228334Z",
         "data_date": null,
         "freshness": "current_only",
         "quality": "PASS",
@@ -199,7 +199,7 @@
       },
       {
         "source": "akshare.stock_fund_flow_concept",
-        "retrieved_at": "2026-09-04T13:40:20.306645Z",
+        "retrieved_at": "2026-09-04T14:30:48.230329Z",
         "data_date": null,
         "freshness": "current_only",
         "quality": "PASS",
@@ -209,27 +209,27 @@
       },
       {
         "source": "tushare.trade_cal",
-        "retrieved_at": "2026-09-04T13:40:20.307642Z",
+        "retrieved_at": "2026-09-04T14:30:48.230329Z",
         "data_date": "2026-09-03",
         "freshness": "historical",
         "quality": "FAIL",
         "is_cached": true,
-        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-03\\tushare_trade_cal.json",
-        "error": "empty response"
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\reference\\tushare_trade_cal_2026.json",
+        "error": "Exception: 抱歉，您访问接口(trade_cal)频率超限(1次/小时)，具体频次详情：https://tushare.pro/document/1?doc_id=108。"
       },
       {
         "source": "tushare.stock_basic",
-        "retrieved_at": "2026-09-04T13:40:20.307642Z",
+        "retrieved_at": "2026-09-04T14:30:48.231326Z",
         "data_date": "2026-09-03",
         "freshness": "historical",
         "quality": "FAIL",
         "is_cached": true,
-        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-03\\tushare_stock_basic.json",
-        "error": "empty response"
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\reference\\tushare_stock_basic.json",
+        "error": "Exception: 抱歉，您访问接口(stock_basic)频率超限(1次/小时)，具体频次详情：https://tushare.pro/document/1?doc_id=108。"
       },
       {
         "source": "tushare.daily",
-        "retrieved_at": "2026-09-04T13:40:20.337943Z",
+        "retrieved_at": "2026-09-04T14:30:48.253330Z",
         "data_date": "2026-09-03",
         "freshness": "historical",
         "quality": "PASS",
@@ -239,7 +239,7 @@
       },
       {
         "source": "tushare.daily",
-        "retrieved_at": "2026-09-04T13:40:20.371712Z",
+        "retrieved_at": "2026-09-04T14:30:48.273947Z",
         "data_date": "2026-09-02",
         "freshness": "historical",
         "quality": "PASS",
@@ -249,7 +249,7 @@
       },
       {
         "source": "tushare.daily_basic",
-        "retrieved_at": "2026-09-04T13:40:20.372710Z",
+        "retrieved_at": "2026-09-04T14:30:48.274945Z",
         "data_date": "2026-09-03",
         "freshness": "historical",
         "quality": "FAIL",
@@ -259,7 +259,7 @@
       },
       {
         "source": "tushare.adj_factor",
-        "retrieved_at": "2026-09-04T13:40:20.372710Z",
+        "retrieved_at": "2026-09-04T14:30:48.274945Z",
         "data_date": "2026-09-03",
         "freshness": "historical",
         "quality": "FAIL",
@@ -269,7 +269,7 @@
       },
       {
         "source": "akshare.stock_zh_a_hist; fallback akshare.stock_zh_a_hist_tx/stock_zh_a_daily",
-        "retrieved_at": "2026-09-04T13:40:20.373707Z",
+        "retrieved_at": "2026-09-04T14:30:48.275942Z",
         "data_date": "2026-09-03",
         "freshness": "historical",
         "quality": "PASS",
@@ -278,8 +278,48 @@
         "error": null
       },
       {
+        "source": "cninfo.stock_zh_a_disclosure_report_cninfo",
+        "retrieved_at": "2026-09-04T14:30:48.275942Z",
+        "data_date": "2026-09-03",
+        "freshness": "historical",
+        "quality": "FAIL",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-03\\official_announcements.json",
+        "error": "remote announcement lookups disabled; set MARKET_PACKET_REMOTE_ANNOUNCEMENTS=1 or provide data/announcement_sources/YYYY-MM-DD.json"
+      },
+      {
+        "source": "official_policy_sources",
+        "retrieved_at": "2026-09-04T14:30:48.275942Z",
+        "data_date": "2026-09-03",
+        "freshness": "historical",
+        "quality": "FAIL",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-03\\official_policies.json",
+        "error": "official policy crawler not configured with stable historical source for this date"
+      },
+      {
+        "source": "akshare.eastmoney_board_hist",
+        "retrieved_at": "2026-09-04T14:30:48.276939Z",
+        "data_date": "2026-09-03",
+        "freshness": "historical",
+        "quality": "FAIL",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-03\\industry_board_daily.json",
+        "error": "board list failed: ProxyError: HTTPSConnectionPool(host='17.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90+t%3A2+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf26%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf124%2Cf107%2Cf104%2Cf105%2Cf140%2Cf141%2Cf207%2Cf208%2Cf209%2Cf222 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"
+      },
+      {
+        "source": "akshare.eastmoney_board_hist",
+        "retrieved_at": "2026-09-04T14:30:48.276939Z",
+        "data_date": "2026-09-03",
+        "freshness": "historical",
+        "quality": "FAIL",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-03\\concept_board_daily.json",
+        "error": "board list failed: ProxyError: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A90+t%3A3+f%3A%2150&fields=f2%2Cf3%2Cf4%2Cf8%2Cf12%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf24%2Cf25%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf124%2Cf107%2Cf104%2Cf105%2Cf136 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"
+      },
+      {
         "source": "akshare.stock_zh_index_daily",
-        "retrieved_at": "2026-09-04T13:40:20.393355Z",
+        "retrieved_at": "2026-09-04T14:30:48.294955Z",
         "data_date": "2026-09-03",
         "freshness": "historical",
         "quality": "PASS",
@@ -289,7 +329,7 @@
       },
       {
         "source": "akshare.stock_zh_index_daily",
-        "retrieved_at": "2026-09-04T13:40:20.415332Z",
+        "retrieved_at": "2026-09-04T14:30:48.312874Z",
         "data_date": "2026-09-03",
         "freshness": "historical",
         "quality": "PASS",
@@ -299,7 +339,7 @@
       },
       {
         "source": "akshare.stock_zh_index_daily",
-        "retrieved_at": "2026-09-04T13:40:20.426304Z",
+        "retrieved_at": "2026-09-04T14:30:48.321850Z",
         "data_date": "2026-09-03",
         "freshness": "historical",
         "quality": "PASS",
@@ -309,7 +349,7 @@
       },
       {
         "source": "akshare.stock_zh_index_daily",
-        "retrieved_at": "2026-09-04T13:40:20.433283Z",
+        "retrieved_at": "2026-09-04T14:30:48.324480Z",
         "data_date": "2026-09-03",
         "freshness": "historical",
         "quality": "PASS",
@@ -319,7 +359,7 @@
       },
       {
         "source": "akshare.stock_zh_index_daily",
-        "retrieved_at": "2026-09-04T13:40:20.438238Z",
+        "retrieved_at": "2026-09-04T14:30:48.327472Z",
         "data_date": "2026-09-03",
         "freshness": "historical",
         "quality": "PASS",
@@ -460,574 +500,363 @@
   },
   "top_industries": [
     {
-      "name": "汽车零部",
+      "name": "化学制品",
       "change_pct": null,
-      "amount": 9306594992.0,
+      "amount": null,
       "turnover_rate": null,
-      "rise_count": 4,
-      "fall_count": 2,
-      "limit_up_count": 4,
-      "main_net_inflow": null,
-      "main_net_inflow_pct": null,
-      "top_stocks": [
-        {
-          "stock_code": "002708",
-          "stock_name": "光洋股份",
-          "change_pct": 10.028247833251953,
-          "amount": 1444211184.0,
-          "board_count": 2.0
-        },
-        {
-          "stock_code": "002328",
-          "stock_name": "新朋股份",
-          "change_pct": 10.0217866897583,
-          "amount": 1451661776.0,
-          "board_count": 1.0
-        },
-        {
-          "stock_code": "605068",
-          "stock_name": "明新旭腾",
-          "change_pct": 10.018726348876953,
-          "amount": 286402240.0,
-          "board_count": 1.0
-        },
-        {
-          "stock_code": "605088",
-          "stock_name": "冠盛股份",
-          "change_pct": 10.025189399719238,
-          "amount": 189428800.0,
-          "board_count": 1.0
-        }
-      ],
-      "five_day_change_pct": null,
-      "twenty_day_change_pct": null,
-      "source": "Eastmoney limit pools via AKShare",
-      "quality": "PARTIAL"
-    },
-    {
-      "name": "通用设备",
-      "change_pct": null,
-      "amount": 8376169424.0,
-      "turnover_rate": null,
-      "rise_count": 3,
-      "fall_count": 2,
-      "limit_up_count": 3,
-      "main_net_inflow": null,
-      "main_net_inflow_pct": null,
-      "top_stocks": [
-        {
-          "stock_code": "603270",
-          "stock_name": "金帝股份",
-          "change_pct": 10.009443283081055,
-          "amount": 308765136.0,
-          "board_count": 2.0
-        },
-        {
-          "stock_code": "603757",
-          "stock_name": "大元泵业",
-          "change_pct": 9.997230529785156,
-          "amount": 1340144000.0,
-          "board_count": 1.0
-        },
-        {
-          "stock_code": "603090",
-          "stock_name": "宏盛股份",
-          "change_pct": 9.995039939880371,
-          "amount": 634840704.0,
-          "board_count": 1.0
-        }
-      ],
-      "five_day_change_pct": null,
-      "twenty_day_change_pct": null,
-      "source": "Eastmoney limit pools via AKShare",
-      "quality": "PARTIAL"
-    },
-    {
-      "name": "一般零售",
-      "change_pct": null,
-      "amount": 2523464979.0,
-      "turnover_rate": null,
-      "rise_count": 3,
-      "fall_count": null,
-      "limit_up_count": 3,
-      "main_net_inflow": null,
-      "main_net_inflow_pct": null,
-      "top_stocks": [
-        {
-          "stock_code": "601086",
-          "stock_name": "国芳集团",
-          "change_pct": 10.0,
-          "amount": 712550784.0,
-          "board_count": 5.0
-        },
-        {
-          "stock_code": "600693",
-          "stock_name": "东百集团",
-          "change_pct": 9.960159301757812,
-          "amount": 1563928144.0,
-          "board_count": 1.0
-        },
-        {
-          "stock_code": "600865",
-          "stock_name": "百大集团",
-          "change_pct": 10.021322250366211,
-          "amount": 246986051.0,
-          "board_count": 1.0
-        }
-      ],
-      "five_day_change_pct": null,
-      "twenty_day_change_pct": null,
-      "source": "Eastmoney limit pools via AKShare",
-      "quality": "PARTIAL"
-    },
-    {
-      "name": "包装印刷",
-      "change_pct": null,
-      "amount": 2190855344.0,
-      "turnover_rate": null,
-      "rise_count": 3,
-      "fall_count": null,
-      "limit_up_count": 3,
-      "main_net_inflow": null,
-      "main_net_inflow_pct": null,
-      "top_stocks": [
-        {
-          "stock_code": "003018",
-          "stock_name": "金富科技",
-          "change_pct": 10.0,
-          "amount": 1101025792.0,
-          "board_count": 1.0
-        },
-        {
-          "stock_code": "002787",
-          "stock_name": "华源控股",
-          "change_pct": 10.009016990661621,
-          "amount": 570590016.0,
-          "board_count": 1.0
-        },
-        {
-          "stock_code": "002969",
-          "stock_name": "嘉美包装",
-          "change_pct": 10.008203506469727,
-          "amount": 519239536.0,
-          "board_count": 1.0
-        }
-      ],
-      "five_day_change_pct": null,
-      "twenty_day_change_pct": null,
-      "source": "Eastmoney limit pools via AKShare",
-      "quality": "PARTIAL"
-    },
-    {
-      "name": "电网设备",
-      "change_pct": null,
-      "amount": 3680439216.0,
-      "turnover_rate": null,
-      "rise_count": 2,
-      "fall_count": 2,
-      "limit_up_count": 2,
-      "main_net_inflow": null,
-      "main_net_inflow_pct": null,
-      "top_stocks": [
-        {
-          "stock_code": "002300",
-          "stock_name": "太阳电缆",
-          "change_pct": 9.960680961608887,
-          "amount": 486964768.0,
-          "board_count": 2.0
-        },
-        {
-          "stock_code": "002980",
-          "stock_name": "华盛昌",
-          "change_pct": 10.004125595092773,
-          "amount": 1558886128.0,
-          "board_count": 1.0
-        }
-      ],
-      "five_day_change_pct": null,
-      "twenty_day_change_pct": null,
-      "source": "Eastmoney limit pools via AKShare",
-      "quality": "PARTIAL"
-    },
-    {
-      "name": "化学制药",
-      "change_pct": null,
-      "amount": 2201882144.0,
-      "turnover_rate": null,
-      "rise_count": 2,
-      "fall_count": 1,
-      "limit_up_count": 2,
-      "main_net_inflow": null,
-      "main_net_inflow_pct": null,
-      "top_stocks": [
-        {
-          "stock_code": "603538",
-          "stock_name": "美诺华",
-          "change_pct": 10.0,
-          "amount": 1798824928.0,
-          "board_count": 1.0
-        },
-        {
-          "stock_code": "000813",
-          "stock_name": "德展健康",
-          "change_pct": 10.060976028442383,
-          "amount": 403057216.0,
-          "board_count": 1.0
-        }
-      ],
-      "five_day_change_pct": null,
-      "twenty_day_change_pct": null,
-      "source": "Eastmoney limit pools via AKShare",
-      "quality": "PARTIAL"
-    },
-    {
-      "name": "IT服务Ⅱ",
-      "change_pct": null,
-      "amount": 1503558064.0,
-      "turnover_rate": null,
-      "rise_count": 2,
-      "fall_count": 1,
-      "limit_up_count": 2,
-      "main_net_inflow": null,
-      "main_net_inflow_pct": null,
-      "top_stocks": [
-        {
-          "stock_code": "603138",
-          "stock_name": "海量数据",
-          "change_pct": 10.015174865722656,
-          "amount": 137890507.0,
-          "board_count": 1.0
-        },
-        {
-          "stock_code": "605398",
-          "stock_name": "新炬网络",
-          "change_pct": 9.981851577758789,
-          "amount": 44250629.0,
-          "board_count": 1.0
-        }
-      ],
-      "five_day_change_pct": null,
-      "twenty_day_change_pct": null,
-      "source": "Eastmoney limit pools via AKShare",
-      "quality": "PARTIAL"
-    },
-    {
-      "name": "电力",
-      "change_pct": null,
-      "amount": 361475858.0,
-      "turnover_rate": null,
-      "rise_count": 2,
-      "fall_count": null,
-      "limit_up_count": 2,
-      "main_net_inflow": null,
-      "main_net_inflow_pct": null,
-      "top_stocks": [
-        {
-          "stock_code": "600969",
-          "stock_name": "郴电国际",
-          "change_pct": 9.969167709350586,
-          "amount": 201792173.0,
-          "board_count": 1.0
-        },
-        {
-          "stock_code": "605580",
-          "stock_name": "恒盛能源",
-          "change_pct": 10.016155242919922,
-          "amount": 159683685.0,
-          "board_count": 1.0
-        }
-      ],
-      "five_day_change_pct": null,
-      "twenty_day_change_pct": null,
-      "source": "Eastmoney limit pools via AKShare",
-      "quality": "PARTIAL"
-    },
-    {
-      "name": "工业金属",
-      "change_pct": null,
-      "amount": 4162293840.0,
-      "turnover_rate": null,
-      "rise_count": 1,
+      "rise_count": null,
       "fall_count": null,
       "limit_up_count": 1,
+      "limit_down_count": null,
+      "failed_limit_count": null,
       "main_net_inflow": null,
       "main_net_inflow_pct": null,
-      "top_stocks": [
-        {
-          "stock_code": "601212",
-          "stock_name": "白银有色",
-          "change_pct": 10.060060501098633,
-          "amount": 4162293840.0,
-          "board_count": 1.0
-        }
-      ],
+      "top_stocks": [],
       "five_day_change_pct": null,
       "twenty_day_change_pct": null,
-      "source": "Eastmoney limit pools via AKShare",
-      "quality": "PARTIAL"
-    },
-    {
-      "name": "航运港口",
-      "change_pct": null,
-      "amount": 3960581792.0,
-      "turnover_rate": null,
-      "rise_count": 1,
-      "fall_count": 2,
-      "limit_up_count": 1,
-      "main_net_inflow": null,
-      "main_net_inflow_pct": null,
-      "top_stocks": [
-        {
-          "stock_code": "603162",
-          "stock_name": "海通发展",
-          "change_pct": 10.0,
-          "amount": 1022411152.0,
-          "board_count": 1.0
-        }
-      ],
-      "five_day_change_pct": null,
-      "twenty_day_change_pct": null,
-      "source": "Eastmoney limit pools via AKShare",
-      "quality": "PARTIAL"
-    },
-    {
-      "name": "航空装备",
-      "change_pct": null,
-      "amount": 3809865792.0,
-      "turnover_rate": null,
-      "rise_count": 1,
-      "fall_count": null,
-      "limit_up_count": 1,
-      "main_net_inflow": null,
-      "main_net_inflow_pct": null,
-      "top_stocks": [
-        {
-          "stock_code": "002297",
-          "stock_name": "博云新材",
-          "change_pct": 10.0,
-          "amount": 3809865792.0,
-          "board_count": 2.0
-        }
-      ],
-      "five_day_change_pct": null,
-      "twenty_day_change_pct": null,
-      "source": "Eastmoney limit pools via AKShare",
-      "quality": "PARTIAL"
-    },
-    {
-      "name": "化学原料",
-      "change_pct": null,
-      "amount": 3731660976.0,
-      "turnover_rate": null,
-      "rise_count": 1,
-      "fall_count": 3,
-      "limit_up_count": 1,
-      "main_net_inflow": null,
-      "main_net_inflow_pct": null,
-      "top_stocks": [
-        {
-          "stock_code": "600610",
-          "stock_name": "中毅达",
-          "change_pct": 9.965237617492676,
-          "amount": 689142080.0,
-          "board_count": 1.0
-        }
-      ],
-      "five_day_change_pct": null,
-      "twenty_day_change_pct": null,
-      "source": "Eastmoney limit pools via AKShare",
-      "quality": "PARTIAL"
-    },
-    {
-      "name": "光学光电",
-      "change_pct": null,
-      "amount": 3458214352.0,
-      "turnover_rate": null,
-      "rise_count": 1,
-      "fall_count": null,
-      "limit_up_count": 1,
-      "main_net_inflow": null,
-      "main_net_inflow_pct": null,
-      "top_stocks": [
-        {
-          "stock_code": "600703",
-          "stock_name": "三安光电",
-          "change_pct": 9.97624683380127,
-          "amount": 3458214352.0,
-          "board_count": 1.0
-        }
-      ],
-      "five_day_change_pct": null,
-      "twenty_day_change_pct": null,
-      "source": "Eastmoney limit pools via AKShare",
-      "quality": "PARTIAL"
-    },
-    {
-      "name": "电子化学",
-      "change_pct": null,
-      "amount": 2094119072.0,
-      "turnover_rate": null,
-      "rise_count": 1,
-      "fall_count": null,
-      "limit_up_count": 1,
-      "main_net_inflow": null,
-      "main_net_inflow_pct": null,
-      "top_stocks": [
-        {
-          "stock_code": "301489",
-          "stock_name": "思泉新材",
-          "change_pct": 20.0,
-          "amount": 2094119072.0,
-          "board_count": 1.0
-        }
-      ],
-      "five_day_change_pct": null,
-      "twenty_day_change_pct": null,
-      "source": "Eastmoney limit pools via AKShare",
-      "quality": "PARTIAL"
-    },
-    {
-      "name": "中药Ⅱ",
-      "change_pct": null,
-      "amount": 1633855968.0,
-      "turnover_rate": null,
-      "rise_count": 1,
-      "fall_count": null,
-      "limit_up_count": 1,
-      "main_net_inflow": null,
-      "main_net_inflow_pct": null,
-      "top_stocks": [
-        {
-          "stock_code": "600479",
-          "stock_name": "千金药业",
-          "change_pct": 10.030863761901855,
-          "amount": 1633855968.0,
-          "board_count": 1.0
-        }
-      ],
-      "five_day_change_pct": null,
-      "twenty_day_change_pct": null,
-      "source": "Eastmoney limit pools via AKShare",
-      "quality": "PARTIAL"
-    },
-    {
-      "name": "电机Ⅱ",
-      "change_pct": null,
-      "amount": 1469254208.0,
-      "turnover_rate": null,
-      "rise_count": 1,
-      "fall_count": 1,
-      "limit_up_count": 1,
-      "main_net_inflow": null,
-      "main_net_inflow_pct": null,
-      "top_stocks": [
-        {
-          "stock_code": "603728",
-          "stock_name": "鸣志电器",
-          "change_pct": 10.0,
-          "amount": 461910496.0,
-          "board_count": 1.0
-        }
-      ],
-      "five_day_change_pct": null,
-      "twenty_day_change_pct": null,
-      "source": "Eastmoney limit pools via AKShare",
-      "quality": "PARTIAL"
-    },
-    {
-      "name": "元件",
-      "change_pct": null,
-      "amount": 1442052560.0,
-      "turnover_rate": null,
-      "rise_count": 1,
-      "fall_count": null,
-      "limit_up_count": 1,
-      "main_net_inflow": null,
-      "main_net_inflow_pct": null,
-      "top_stocks": [
-        {
-          "stock_code": "603989",
-          "stock_name": "艾华集团",
-          "change_pct": 9.993132591247559,
-          "amount": 1442052560.0,
-          "board_count": 1.0
-        }
-      ],
-      "five_day_change_pct": null,
-      "twenty_day_change_pct": null,
-      "source": "Eastmoney limit pools via AKShare",
+      "source": "Tushare stock_basic/daily and Eastmoney limit pools",
       "quality": "PARTIAL"
     },
     {
       "name": "旅游及景",
       "change_pct": null,
-      "amount": 1137929012.0,
+      "amount": null,
       "turnover_rate": null,
-      "rise_count": 1,
-      "fall_count": 2,
+      "rise_count": null,
+      "fall_count": null,
       "limit_up_count": 1,
+      "limit_down_count": null,
+      "failed_limit_count": 2,
       "main_net_inflow": null,
       "main_net_inflow_pct": null,
-      "top_stocks": [
-        {
-          "stock_code": "002059",
-          "stock_name": "云南旅游",
-          "change_pct": 10.095237731933594,
-          "amount": 144705028.0,
-          "board_count": 2.0
-        }
-      ],
+      "top_stocks": [],
       "five_day_change_pct": null,
       "twenty_day_change_pct": null,
-      "source": "Eastmoney limit pools via AKShare",
+      "source": "Tushare stock_basic/daily and Eastmoney limit pools",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "IT服务Ⅱ",
+      "change_pct": null,
+      "amount": null,
+      "turnover_rate": null,
+      "rise_count": null,
+      "fall_count": null,
+      "limit_up_count": 2,
+      "limit_down_count": null,
+      "failed_limit_count": 1,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Tushare stock_basic/daily and Eastmoney limit pools",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "一般零售",
+      "change_pct": null,
+      "amount": null,
+      "turnover_rate": null,
+      "rise_count": null,
+      "fall_count": null,
+      "limit_up_count": 3,
+      "limit_down_count": null,
+      "failed_limit_count": null,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Tushare stock_basic/daily and Eastmoney limit pools",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "电网设备",
+      "change_pct": null,
+      "amount": null,
+      "turnover_rate": null,
+      "rise_count": null,
+      "fall_count": null,
+      "limit_up_count": 2,
+      "limit_down_count": null,
+      "failed_limit_count": 2,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Tushare stock_basic/daily and Eastmoney limit pools",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "软件开发",
+      "change_pct": null,
+      "amount": null,
+      "turnover_rate": null,
+      "rise_count": null,
+      "fall_count": null,
+      "limit_up_count": 1,
+      "limit_down_count": null,
+      "failed_limit_count": null,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Tushare stock_basic/daily and Eastmoney limit pools",
       "quality": "PARTIAL"
     },
     {
       "name": "出版",
       "change_pct": null,
-      "amount": 991497600.0,
+      "amount": null,
       "turnover_rate": null,
-      "rise_count": 1,
-      "fall_count": 1,
+      "rise_count": null,
+      "fall_count": null,
       "limit_up_count": 1,
+      "limit_down_count": null,
+      "failed_limit_count": 1,
       "main_net_inflow": null,
       "main_net_inflow_pct": null,
-      "top_stocks": [
-        {
-          "stock_code": "605577",
-          "stock_name": "龙版传媒",
-          "change_pct": 10.038910865783691,
-          "amount": 675954656.0,
-          "board_count": 4.0
-        }
-      ],
+      "top_stocks": [],
       "five_day_change_pct": null,
       "twenty_day_change_pct": null,
-      "source": "Eastmoney limit pools via AKShare",
+      "source": "Tushare stock_basic/daily and Eastmoney limit pools",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "电机Ⅱ",
+      "change_pct": null,
+      "amount": null,
+      "turnover_rate": null,
+      "rise_count": null,
+      "fall_count": null,
+      "limit_up_count": 1,
+      "limit_down_count": null,
+      "failed_limit_count": 1,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Tushare stock_basic/daily and Eastmoney limit pools",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "通用设备",
+      "change_pct": null,
+      "amount": null,
+      "turnover_rate": null,
+      "rise_count": null,
+      "fall_count": null,
+      "limit_up_count": 3,
+      "limit_down_count": 1,
+      "failed_limit_count": 1,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Tushare stock_basic/daily and Eastmoney limit pools",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "航运港口",
+      "change_pct": null,
+      "amount": null,
+      "turnover_rate": null,
+      "rise_count": null,
+      "fall_count": null,
+      "limit_up_count": 1,
+      "limit_down_count": null,
+      "failed_limit_count": 2,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Tushare stock_basic/daily and Eastmoney limit pools",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "光学光电",
+      "change_pct": null,
+      "amount": null,
+      "turnover_rate": null,
+      "rise_count": null,
+      "fall_count": null,
+      "limit_up_count": 1,
+      "limit_down_count": null,
+      "failed_limit_count": null,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Tushare stock_basic/daily and Eastmoney limit pools",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "汽车零部",
+      "change_pct": null,
+      "amount": null,
+      "turnover_rate": null,
+      "rise_count": null,
+      "fall_count": null,
+      "limit_up_count": 4,
+      "limit_down_count": null,
+      "failed_limit_count": 2,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Tushare stock_basic/daily and Eastmoney limit pools",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "种植业",
+      "change_pct": null,
+      "amount": null,
+      "turnover_rate": null,
+      "rise_count": null,
+      "fall_count": null,
+      "limit_up_count": 1,
+      "limit_down_count": 1,
+      "failed_limit_count": null,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Tushare stock_basic/daily and Eastmoney limit pools",
       "quality": "PARTIAL"
     },
     {
       "name": "铁路公路",
       "change_pct": null,
-      "amount": 960893904.0,
+      "amount": null,
       "turnover_rate": null,
-      "rise_count": 1,
+      "rise_count": null,
       "fall_count": null,
       "limit_up_count": 1,
+      "limit_down_count": null,
+      "failed_limit_count": null,
       "main_net_inflow": null,
       "main_net_inflow_pct": null,
-      "top_stocks": [
-        {
-          "stock_code": "600611",
-          "stock_name": "大众交通",
-          "change_pct": 10.04273509979248,
-          "amount": 960893904.0,
-          "board_count": 1.0
-        }
-      ],
+      "top_stocks": [],
       "five_day_change_pct": null,
       "twenty_day_change_pct": null,
-      "source": "Eastmoney limit pools via AKShare",
+      "source": "Tushare stock_basic/daily and Eastmoney limit pools",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "电力",
+      "change_pct": null,
+      "amount": null,
+      "turnover_rate": null,
+      "rise_count": null,
+      "fall_count": null,
+      "limit_up_count": 2,
+      "limit_down_count": null,
+      "failed_limit_count": null,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Tushare stock_basic/daily and Eastmoney limit pools",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "旅游零售",
+      "change_pct": null,
+      "amount": null,
+      "turnover_rate": null,
+      "rise_count": null,
+      "fall_count": null,
+      "limit_up_count": 1,
+      "limit_down_count": null,
+      "failed_limit_count": null,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Tushare stock_basic/daily and Eastmoney limit pools",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "化学原料",
+      "change_pct": null,
+      "amount": null,
+      "turnover_rate": null,
+      "rise_count": null,
+      "fall_count": null,
+      "limit_up_count": 1,
+      "limit_down_count": 1,
+      "failed_limit_count": 2,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Tushare stock_basic/daily and Eastmoney limit pools",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "燃气Ⅱ",
+      "change_pct": null,
+      "amount": null,
+      "turnover_rate": null,
+      "rise_count": null,
+      "fall_count": null,
+      "limit_up_count": 1,
+      "limit_down_count": null,
+      "failed_limit_count": null,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Tushare stock_basic/daily and Eastmoney limit pools",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "包装印刷",
+      "change_pct": null,
+      "amount": null,
+      "turnover_rate": null,
+      "rise_count": null,
+      "fall_count": null,
+      "limit_up_count": 3,
+      "limit_down_count": null,
+      "failed_limit_count": null,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Tushare stock_basic/daily and Eastmoney limit pools",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "小家电",
+      "change_pct": null,
+      "amount": null,
+      "turnover_rate": null,
+      "rise_count": null,
+      "fall_count": null,
+      "limit_up_count": 1,
+      "limit_down_count": null,
+      "failed_limit_count": null,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Tushare stock_basic/daily and Eastmoney limit pools",
       "quality": "PARTIAL"
     }
   ],
@@ -1039,10 +868,12 @@
       "rise_count": 4,
       "fall_count": 2,
       "limit_up_count": 4,
-      "limit_down_count": 0,
+      "limit_down_count": null,
       "failed_limit_count": 2,
       "amount": 9306594992.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "002708",
@@ -1122,6 +953,8 @@
       "failed_limit_count": 1,
       "amount": 8376169424.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "603270",
@@ -1189,10 +1022,12 @@
       "rise_count": 3,
       "fall_count": null,
       "limit_up_count": 3,
-      "limit_down_count": 0,
-      "failed_limit_count": 0,
+      "limit_down_count": null,
+      "failed_limit_count": null,
       "amount": 2523464979.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "601086",
@@ -1254,10 +1089,12 @@
       "rise_count": 3,
       "fall_count": null,
       "limit_up_count": 3,
-      "limit_down_count": 0,
-      "failed_limit_count": 0,
+      "limit_down_count": null,
+      "failed_limit_count": null,
       "amount": 2190855344.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "003018",
@@ -1317,10 +1154,12 @@
       "rise_count": 2,
       "fall_count": 2,
       "limit_up_count": 2,
-      "limit_down_count": 0,
+      "limit_down_count": null,
       "failed_limit_count": 2,
       "amount": 3680439216.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "002300",
@@ -1368,9 +1207,11 @@
       "fall_count": 1,
       "limit_up_count": 2,
       "limit_down_count": 1,
-      "failed_limit_count": 0,
+      "failed_limit_count": null,
       "amount": 2201882144.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "603538",
@@ -1424,10 +1265,12 @@
       "rise_count": 2,
       "fall_count": 1,
       "limit_up_count": 2,
-      "limit_down_count": 0,
+      "limit_down_count": null,
       "failed_limit_count": 1,
       "amount": 1503558064.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "603138",
@@ -1473,10 +1316,12 @@
       "rise_count": 2,
       "fall_count": null,
       "limit_up_count": 2,
-      "limit_down_count": 0,
-      "failed_limit_count": 0,
+      "limit_down_count": null,
+      "failed_limit_count": null,
       "amount": 361475858.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "600969",
@@ -1522,10 +1367,12 @@
       "rise_count": 1,
       "fall_count": null,
       "limit_up_count": 1,
-      "limit_down_count": 0,
-      "failed_limit_count": 0,
+      "limit_down_count": null,
+      "failed_limit_count": null,
       "amount": 4162293840.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "601212",
@@ -1557,10 +1404,12 @@
       "rise_count": 1,
       "fall_count": 2,
       "limit_up_count": 1,
-      "limit_down_count": 0,
+      "limit_down_count": null,
       "failed_limit_count": 2,
       "amount": 3960581792.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "603162",
@@ -1592,10 +1441,12 @@
       "rise_count": 1,
       "fall_count": null,
       "limit_up_count": 1,
-      "limit_down_count": 0,
-      "failed_limit_count": 0,
+      "limit_down_count": null,
+      "failed_limit_count": null,
       "amount": 3809865792.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "002297",
@@ -1631,6 +1482,8 @@
       "failed_limit_count": 2,
       "amount": 3731660976.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "600610",
@@ -1669,10 +1522,12 @@
       "rise_count": 1,
       "fall_count": null,
       "limit_up_count": 1,
-      "limit_down_count": 0,
-      "failed_limit_count": 0,
+      "limit_down_count": null,
+      "failed_limit_count": null,
       "amount": 3458214352.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "600703",
@@ -1704,10 +1559,12 @@
       "rise_count": 1,
       "fall_count": null,
       "limit_up_count": 1,
-      "limit_down_count": 0,
-      "failed_limit_count": 0,
+      "limit_down_count": null,
+      "failed_limit_count": null,
       "amount": 2094119072.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "301489",
@@ -1739,10 +1596,12 @@
       "rise_count": 1,
       "fall_count": null,
       "limit_up_count": 1,
-      "limit_down_count": 0,
-      "failed_limit_count": 0,
+      "limit_down_count": null,
+      "failed_limit_count": null,
       "amount": 1633855968.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "600479",
@@ -1774,10 +1633,12 @@
       "rise_count": 1,
       "fall_count": 1,
       "limit_up_count": 1,
-      "limit_down_count": 0,
+      "limit_down_count": null,
       "failed_limit_count": 1,
       "amount": 1469254208.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "603728",
@@ -1809,10 +1670,12 @@
       "rise_count": 1,
       "fall_count": null,
       "limit_up_count": 1,
-      "limit_down_count": 0,
-      "failed_limit_count": 0,
+      "limit_down_count": null,
+      "failed_limit_count": null,
       "amount": 1442052560.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "603989",
@@ -1844,10 +1707,12 @@
       "rise_count": 1,
       "fall_count": 2,
       "limit_up_count": 1,
-      "limit_down_count": 0,
+      "limit_down_count": null,
       "failed_limit_count": 2,
       "amount": 1137929012.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "002059",
@@ -1879,10 +1744,12 @@
       "rise_count": 1,
       "fall_count": 1,
       "limit_up_count": 1,
-      "limit_down_count": 0,
+      "limit_down_count": null,
       "failed_limit_count": 1,
       "amount": 991497600.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "605577",
@@ -1914,10 +1781,12 @@
       "rise_count": 1,
       "fall_count": null,
       "limit_up_count": 1,
-      "limit_down_count": 0,
-      "failed_limit_count": 0,
+      "limit_down_count": null,
+      "failed_limit_count": null,
       "amount": 960893904.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "600611",
@@ -1951,10 +1820,12 @@
       "rise_count": 4,
       "fall_count": 2,
       "limit_up_count": 4,
-      "limit_down_count": 0,
+      "limit_down_count": null,
       "failed_limit_count": 2,
       "amount": 9306594992.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "002708",
@@ -2034,6 +1905,8 @@
       "failed_limit_count": 1,
       "amount": 8376169424.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "603270",
@@ -2101,10 +1974,12 @@
       "rise_count": 2,
       "fall_count": 2,
       "limit_up_count": 2,
-      "limit_down_count": 0,
+      "limit_down_count": null,
       "failed_limit_count": 2,
       "amount": 3680439216.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "002300",
@@ -2152,9 +2027,11 @@
       "fall_count": 1,
       "limit_up_count": 2,
       "limit_down_count": 1,
-      "failed_limit_count": 0,
+      "failed_limit_count": null,
       "amount": 2201882144.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "603538",
@@ -2208,10 +2085,12 @@
       "rise_count": 2,
       "fall_count": 1,
       "limit_up_count": 2,
-      "limit_down_count": 0,
+      "limit_down_count": null,
       "failed_limit_count": 1,
       "amount": 1503558064.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "603138",
@@ -2257,10 +2136,12 @@
       "rise_count": 1,
       "fall_count": 2,
       "limit_up_count": 1,
-      "limit_down_count": 0,
+      "limit_down_count": null,
       "failed_limit_count": 2,
       "amount": 3960581792.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "603162",
@@ -2296,6 +2177,8 @@
       "failed_limit_count": 2,
       "amount": 3731660976.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "600610",
@@ -2334,10 +2217,12 @@
       "rise_count": 1,
       "fall_count": 1,
       "limit_up_count": 1,
-      "limit_down_count": 0,
+      "limit_down_count": null,
       "failed_limit_count": 1,
       "amount": 1469254208.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "603728",
@@ -2369,10 +2254,12 @@
       "rise_count": 1,
       "fall_count": 2,
       "limit_up_count": 1,
-      "limit_down_count": 0,
+      "limit_down_count": null,
       "failed_limit_count": 2,
       "amount": 1137929012.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "002059",
@@ -2404,10 +2291,12 @@
       "rise_count": 1,
       "fall_count": 1,
       "limit_up_count": 1,
-      "limit_down_count": 0,
+      "limit_down_count": null,
       "failed_limit_count": 1,
       "amount": 991497600.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "605577",
@@ -2440,9 +2329,11 @@
       "fall_count": 1,
       "limit_up_count": 1,
       "limit_down_count": 1,
-      "failed_limit_count": 0,
+      "failed_limit_count": null,
       "amount": 731129552.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "600108",
@@ -2482,9 +2373,11 @@
       "fall_count": 1,
       "limit_up_count": 1,
       "limit_down_count": 1,
-      "failed_limit_count": 0,
+      "failed_limit_count": null,
       "amount": 441785520.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "002631",
@@ -2524,9 +2417,11 @@
       "fall_count": 1,
       "limit_up_count": 1,
       "limit_down_count": 1,
-      "failed_limit_count": 0,
+      "failed_limit_count": null,
       "amount": 281072528.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [
         {
           "stock_code": "603150",
@@ -2564,11 +2459,13 @@
       "change_pct": null,
       "rise_count": null,
       "fall_count": 1,
-      "limit_up_count": 0,
-      "limit_down_count": 0,
+      "limit_up_count": null,
+      "limit_down_count": null,
       "failed_limit_count": 1,
       "amount": 5389016832.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [],
       "top_losers": [],
       "leader_candidates": [],
@@ -2583,11 +2480,13 @@
       "change_pct": null,
       "rise_count": null,
       "fall_count": 3,
-      "limit_up_count": 0,
-      "limit_down_count": 0,
+      "limit_up_count": null,
+      "limit_down_count": null,
       "failed_limit_count": 3,
       "amount": 3536122688.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [],
       "top_losers": [],
       "leader_candidates": [],
@@ -2602,11 +2501,13 @@
       "change_pct": null,
       "rise_count": null,
       "fall_count": 2,
-      "limit_up_count": 0,
-      "limit_down_count": 0,
+      "limit_up_count": null,
+      "limit_down_count": null,
       "failed_limit_count": 2,
       "amount": 2063359968.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [],
       "top_losers": [],
       "leader_candidates": [],
@@ -2621,11 +2522,13 @@
       "change_pct": null,
       "rise_count": null,
       "fall_count": 1,
-      "limit_up_count": 0,
-      "limit_down_count": 0,
+      "limit_up_count": null,
+      "limit_down_count": null,
       "failed_limit_count": 1,
       "amount": 1957000400.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [],
       "top_losers": [],
       "leader_candidates": [],
@@ -2640,11 +2543,13 @@
       "change_pct": null,
       "rise_count": null,
       "fall_count": 1,
-      "limit_up_count": 0,
-      "limit_down_count": 0,
+      "limit_up_count": null,
+      "limit_down_count": null,
       "failed_limit_count": 1,
       "amount": 1397237248.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [],
       "top_losers": [],
       "leader_candidates": [],
@@ -2659,11 +2564,13 @@
       "change_pct": null,
       "rise_count": null,
       "fall_count": 1,
-      "limit_up_count": 0,
-      "limit_down_count": 0,
+      "limit_up_count": null,
+      "limit_down_count": null,
       "failed_limit_count": 1,
       "amount": 1345328016.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [],
       "top_losers": [],
       "leader_candidates": [],
@@ -2678,11 +2585,13 @@
       "change_pct": null,
       "rise_count": null,
       "fall_count": 1,
-      "limit_up_count": 0,
-      "limit_down_count": 0,
+      "limit_up_count": null,
+      "limit_down_count": null,
       "failed_limit_count": 1,
       "amount": 1264271936.0,
       "amount_change": null,
+      "turnover_rate": null,
+      "main_net_inflow": null,
       "top_gainers": [],
       "top_losers": [],
       "leader_candidates": [],

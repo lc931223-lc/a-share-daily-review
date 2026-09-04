@@ -264,6 +264,41 @@ CREATE TABLE market_packet_log (
     CONSTRAINT uq_market_packet_log UNIQUE(trade_date, packet_sha256)
 );
 
+CREATE TABLE official_announcement (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    trade_date DATE NOT NULL,
+    stock_code TEXT NOT NULL,
+    stock_name TEXT NOT NULL,
+    title TEXT NOT NULL,
+    published_at TEXT,
+    source TEXT NOT NULL,
+    url TEXT,
+    category TEXT NOT NULL,
+    summary TEXT NOT NULL,
+    confirmed_fact TEXT NOT NULL,
+    evidence_level TEXT NOT NULL,
+    clarification_flags TEXT NOT NULL,
+    risk_flags TEXT NOT NULL,
+    created_at DATETIME NOT NULL
+);
+CREATE INDEX idx_official_announcement_date_stock ON official_announcement(trade_date, stock_code);
+
+CREATE TABLE official_policy (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    trade_date DATE NOT NULL,
+    title TEXT NOT NULL,
+    agency TEXT NOT NULL,
+    published_at TEXT,
+    url TEXT,
+    summary TEXT NOT NULL,
+    policy_level TEXT NOT NULL,
+    related_industries TEXT NOT NULL,
+    related_themes TEXT NOT NULL,
+    evidence_level TEXT NOT NULL,
+    created_at DATETIME NOT NULL
+);
+CREATE INDEX idx_official_policy_date_agency ON official_policy(trade_date, agency);
+
 CREATE TABLE theme_relationship (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     trading_day_id INTEGER NOT NULL REFERENCES trading_day(id),

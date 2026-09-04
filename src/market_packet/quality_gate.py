@@ -40,8 +40,24 @@ def audit_packet(packet: dict, datasets: dict[str, CollectedDataset]) -> dict:
         add("上涨下跌家数", "PASS", packet["market_breadth"].get("source"), f"rise={packet['market_breadth'].get('rise_count')} fall={packet['market_breadth'].get('fall_count')} flat={packet['market_breadth'].get('flat_count')}", "market_breadth")
     else:
         add("上涨下跌家数", "FAIL", None, "AKShare 当前未提供目标历史日全市场涨跌家数稳定结构化接口，且 Tushare daily 未返回有效数据", "market_breadth")
-    add("行业数据", "PARTIAL" if packet["industries"] else "FAIL", "Eastmoney limit pools via AKShare", f"{len(packet['industries'])} industries derived from limit pools", "industries")
-    add("题材数据", "PARTIAL" if packet["themes"] else "FAIL", "Eastmoney limit pools via AKShare", f"{len(packet['themes'])} objective theme candidates derived", "themes")
+    industry_source = datasets.get("industry_board_daily")
+    industry_complete = len(packet["industries"]) >= 30 and any(item.get("change_pct") is not None for item in packet["industries"])
+    add(
+        "行业数据",
+        "PASS" if industry_complete else "PARTIAL" if packet["industries"] else "FAIL",
+        industry_source.source if industry_source else "Eastmoney limit pools via AKShare",
+        f"{len(packet['industries'])} industries; historical board coverage={'yes' if industry_complete else 'no'}",
+        "industries",
+    )
+    concept_source = datasets.get("concept_board_daily")
+    concept_complete = len(packet["themes"]) >= 50 and any(item.get("change_pct") is not None for item in packet["themes"])
+    add(
+        "题材数据",
+        "PASS" if concept_complete else "PARTIAL" if packet["themes"] else "FAIL",
+        concept_source.source if concept_source else "Eastmoney limit pools via AKShare",
+        f"{len(packet['themes'])} concepts/themes; historical board coverage={'yes' if concept_complete else 'no'}",
+        "themes",
+    )
     ohlcv_rows = len(datasets.get("stock_top_ohlcv").rows) if datasets.get("stock_top_ohlcv") else 0
     if ohlcv_rows >= min(80, len(packet["stocks"])):
         stock_status = "PASS"
@@ -54,8 +70,10 @@ def audit_packet(packet: dict, datasets: dict[str, CollectedDataset]) -> dict:
         stock_status = "FAIL"
         stock_detail = "no core stock universe available"
     add("核心个股行情", stock_status, "Eastmoney limit pools/LHB plus akshare.stock_zh_a_hist", stock_detail, "stocks")
-    add("公告", "PARTIAL" if packet["announcements"] else "FAIL", None, "Phase 1 skeleton keeps announcement slots; remote batch collector not wired yet", "announcements")
-    add("政策", "PARTIAL" if packet["policies"] else "FAIL", None, "Phase 1 skeleton keeps policy slots; official policy crawler not wired yet", "policies")
+    ann_source = datasets.get("official_announcements")
+    add("公告", "PASS" if packet["announcements"] else "FAIL", ann_source.source if ann_source else None, f"{len(packet['announcements'])} official/supplemental announcements collected" if packet["announcements"] else (ann_source.error if ann_source else "announcement collector unavailable"), "announcements")
+    policy_source = datasets.get("official_policies")
+    add("政策", "PASS" if packet["policies"] else "FAIL", policy_source.source if policy_source else None, f"{len(packet['policies'])} official policies collected" if packet["policies"] else (policy_source.error if policy_source else "official policy collector unavailable"), "policies")
     add("上一交易日review", "PASS" if packet["previous_review"] else "PARTIAL", "local review json/db", "previous review context found" if packet["previous_review"] else "no previous formal review found", "previous_review")
 
     score = _score(check["status"] for check in checks)

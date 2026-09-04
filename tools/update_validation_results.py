@@ -15,16 +15,11 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from src.storage.database import create_db_engine, create_schema, session_factory
 from src.storage.models import TomorrowCheck, TradingDay, ValidationResult
+from src.market_packet.trading_calendar import resolve_auto_trade_date
 
 
 def _resolve_date(value: str) -> date:
-    if value != "auto":
-        return date.fromisoformat(value)
-    packet_dir = PROJECT_ROOT / "data" / "market_packets"
-    candidates = sorted(packet_dir.glob("????-??-??.json"))
-    if not candidates:
-        raise SystemExit("No market packet exists for --date auto")
-    return date.fromisoformat(candidates[-1].stem)
+    return resolve_auto_trade_date(value)
 
 
 def main(argv: list[str] | None = None) -> int:

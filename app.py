@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 from sqlalchemy import select
 
-from src.queries.dashboard_queries import check_summary, core_stocks_by_theme, market_summary, top_themes
+from src.queries.dashboard_queries import check_summary, core_stocks_by_theme, latest_market_daily, market_daily_for_date, market_summary, objective_market_summary, top_themes
 from src.queries.theme_queries import theme_history
 from src.storage.database import create_db_engine, create_schema, session_factory
 from src.storage.models import AnalysisSnapshot
@@ -21,9 +21,29 @@ with session_factory(engine)() as session:
     with filter_col:
         day = choose_day(session, "home_day")
     if day is None:
-        empty_state()
+        objective = objective_market_summary(latest_market_daily(session))
+        if objective is None:
+            empty_state()
+            st.stop()
+        st.subheader("OBJECTIVE DATA")
+        st.caption(f"Market Packet {objective['trade_date'].isoformat()} · quality {objective['data_quality_score']} / {objective['data_quality_status']}")
+        metrics = st.columns(7)
+        values = [
+            ("两市成交额", f"{objective['turnover'] / 1000000000000:.2f}万亿" if objective["turnover"] is not None else "数据不足"),
+            ("成交额变化", format_number(objective["turnover_delta"], "元")),
+            ("成交额环比", f"{objective['turnover_delta_pct']:.2f}%" if objective["turnover_delta_pct"] is not None else "数据不足"),
+            ("上涨 / 下跌", f"{format_number(objective['rise_count'])} / {format_number(objective['fall_count'])}"),
+            ("涨停 / 跌停", f"{format_number(objective['limit_up_count'])} / {format_number(objective['limit_down_count'])}"),
+            ("炸板", format_number(objective["failed_limit_count"])),
+            ("最高板", format_number(objective["highest_board"], "板")),
+        ]
+        for column, (label, value) in zip(metrics, values):
+            column.metric(label, value)
+        st.subheader("CHATGPT OFFICIAL REVIEW")
+        st.info("ChatGPT正式复盘尚未导入")
         st.stop()
     summary = market_summary(day)
+    objective = objective_market_summary(market_daily_for_date(session, day.trade_date))
     snapshot = session.execute(
         select(AnalysisSnapshot)
         .where(AnalysisSnapshot.trade_date == day.trade_date, AnalysisSnapshot.status == "PASSED")
@@ -35,22 +55,18 @@ with session_factory(engine)() as session:
 
         snapshot_data = json.loads(snapshot.result_json)
     with note_col:
-        st.markdown(
-            f'<span class="status-real">正式真实数据快照</span>　完整度 {summary["completeness_score"]}%',
-            unsafe_allow_html=True,
-        )
-        st.caption(summary["market_regime"])
+        st.markdown(f'<span class="status-real">正式真实数据快照</span>　完整度 {summary["completeness_score"]}%', unsafe_allow_html=True)
 
-    st.subheader("今日市场")
+    st.subheader("OBJECTIVE DATA")
     metrics = st.columns(7)
     values = [
-        ("市场状态", summary["market_regime"].split("、")[0]),
-        ("两市成交额", f'{summary["turnover"] / 10000:.2f}万亿' if summary["turnover"] is not None else "数据不足"),
-        ("成交额变化", format_number(summary["turnover_delta"], "亿元")),
-        ("上涨 / 下跌", f'{format_number(summary["advancers"])} / {format_number(summary["decliners"])}'),
-        ("涨停 / 跌停", f'{format_number(summary["limit_up_count"])} / {format_number(summary["limit_down_count"])}'),
-        ("最高板", format_number(summary["max_board_height"], "板")),
-        ("仓位约束", f'{summary["position_min"]}—{summary["position_max"]}成'),
+        ("两市成交额", f"{objective['turnover'] / 1000000000000:.2f}万亿" if objective and objective["turnover"] is not None else "数据不足"),
+        ("成交额变化", format_number(objective["turnover_delta"], "元") if objective else "数据不足"),
+        ("成交额环比", f"{objective['turnover_delta_pct']:.2f}%" if objective and objective["turnover_delta_pct"] is not None else "数据不足"),
+        ("上涨 / 下跌", f"{format_number(objective['rise_count'])} / {format_number(objective['fall_count'])}" if objective else "数据不足"),
+        ("涨停 / 跌停", f"{format_number(objective['limit_up_count'])} / {format_number(objective['limit_down_count'])}" if objective else "数据不足"),
+        ("炸板", format_number(objective["failed_limit_count"]) if objective else "数据不足"),
+        ("最高板", format_number(objective["highest_board"], "板") if objective else "数据不足"),
     ]
     for column, (label, value) in zip(metrics, values):
         column.metric(label, value)
@@ -81,7 +97,10 @@ with session_factory(engine)() as session:
         sentiment_cols[2].metric("涨跌宽度", sentiment["breadth"])
         st.markdown(f'<div class="quality-warning"><b>亏钱效应</b><br>{sentiment["loss_feedback"]}</div>', unsafe_allow_html=True)
 
-    st.subheader("今日主线 TOP5")
+    st.subheader("CHATGPT OFFICIAL REVIEW")
+    st.caption(summary["market_regime"])
+    st.metric("仓位约束", f'{summary["position_min"]}—{summary["position_max"]}成')
+    st.subheader("正式主线 TOP5")
     themes = top_themes(session, day.id)
     stock_labels = core_stocks_by_theme(session, day.id)
     table = pd.DataFrame([{
@@ -135,7 +154,7 @@ with session_factory(engine)() as session:
     engine_detail = snapshot_data.get("sentiment_engine") or {}
     engine_metric = engine_detail.get("daily_metric") or {}
     if engine_metric:
-        st.subheader("东方财富情绪引擎校验")
+        st.subheader("量化参考指标")
         engine_cols = st.columns(5)
         engine_cols[0].metric("情绪分", engine_metric["sentiment_score"])
         engine_cols[1].metric("状态", engine_metric["sentiment_state"])

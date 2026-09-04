@@ -7,10 +7,11 @@ from sqlalchemy import func, select
 
 from src.services.import_service import import_review
 from src.storage.database import create_db_engine, create_schema, session_factory
-from src.storage.models import MarketDaily, MarketPacketLog, ScoreHistory, StockDailyReview, ThemeDailyReview, ValidationResult
+from src.storage.models import MarketDaily, MarketPacketLog, OfficialAnnouncement, OfficialPolicy, ScoreHistory, StockDailyReview, ThemeDailyReview, ValidationResult
 from tests.integration.test_import_daily_review import write_review
 from tests.unit.test_review_validation import valid_review
 from tools.update_validation_results import main as update_validation_results_main
+from tools.run_daily_pipeline import main as run_daily_pipeline_main
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -60,3 +61,21 @@ def test_market_packet_tables_exist_in_schema(tmp_path):
     with session_factory(engine)() as session:
         assert session.scalar(select(func.count()).select_from(MarketDaily)) == 0
         assert session.scalar(select(func.count()).select_from(MarketPacketLog)) == 0
+        assert session.scalar(select(func.count()).select_from(OfficialAnnouncement)) == 0
+        assert session.scalar(select(func.count()).select_from(OfficialPolicy)) == 0
+
+
+def test_daily_pipeline_waits_when_official_review_is_missing(monkeypatch, tmp_path, capsys):
+    import tools.run_daily_pipeline as pipeline
+
+    packet = {
+        "data_quality": {"status": "GOOD", "score": 91},
+        "meta": {"trade_date": "2026-09-02"},
+    }
+    monkeypatch.setattr(pipeline, "build_market_packet", lambda trade_date, refresh=False: packet)
+    monkeypatch.setattr(pipeline, "write_outputs", lambda packet: {"packet": tmp_path / "packet.json"})
+    code = run_daily_pipeline_main(["--date", "2026-09-02", "--database", str(tmp_path / "review.db")])
+    output = capsys.readouterr().out
+    assert code == 0
+    assert "packet_status=SUCCESS" in output
+    assert "official_review_status=WAITING" in output

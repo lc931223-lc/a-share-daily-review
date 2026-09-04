@@ -393,6 +393,43 @@ class MarketPacketLog(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utc_now)
 
 
+class OfficialAnnouncement(Base):
+    __tablename__ = "official_announcement"
+    __table_args__ = (Index("idx_official_announcement_date_stock", "trade_date", "stock_code"),)
+    id: Mapped[int] = mapped_column(primary_key=True)
+    trade_date: Mapped[date] = mapped_column(Date)
+    stock_code: Mapped[str] = mapped_column(String(6))
+    stock_name: Mapped[str] = mapped_column(String(100))
+    title: Mapped[str] = mapped_column(Text)
+    published_at: Mapped[str | None] = mapped_column(String(40))
+    source: Mapped[str] = mapped_column(String(100))
+    url: Mapped[str | None] = mapped_column(Text)
+    category: Mapped[str] = mapped_column(String(40))
+    summary: Mapped[str] = mapped_column(Text)
+    confirmed_fact: Mapped[str] = mapped_column(Text)
+    evidence_level: Mapped[str] = mapped_column(String(1))
+    clarification_flags: Mapped[str] = mapped_column(Text, default="[]")
+    risk_flags: Mapped[str] = mapped_column(Text, default="[]")
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utc_now)
+
+
+class OfficialPolicy(Base):
+    __tablename__ = "official_policy"
+    __table_args__ = (Index("idx_official_policy_date_agency", "trade_date", "agency"),)
+    id: Mapped[int] = mapped_column(primary_key=True)
+    trade_date: Mapped[date] = mapped_column(Date)
+    title: Mapped[str] = mapped_column(Text)
+    agency: Mapped[str] = mapped_column(String(100))
+    published_at: Mapped[str | None] = mapped_column(String(40))
+    url: Mapped[str | None] = mapped_column(Text)
+    summary: Mapped[str] = mapped_column(Text)
+    policy_level: Mapped[str] = mapped_column(String(40))
+    related_industries: Mapped[str] = mapped_column(Text, default="[]")
+    related_themes: Mapped[str] = mapped_column(Text, default="[]")
+    evidence_level: Mapped[str] = mapped_column(String(1))
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utc_now)
+
+
 class ThemeRelationship(Base):
     __tablename__ = "theme_relationship"
     id: Mapped[int] = mapped_column(primary_key=True)

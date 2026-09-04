@@ -4,6 +4,7 @@ import hashlib
 import json
 import math
 import os
+import re
 from dataclasses import dataclass
 from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
@@ -30,6 +31,29 @@ INDEX_SYMBOLS = {
     "sh000688": ("科创50", "000688.SH"),
     "bj899050": ("北证50", "899050.BJ"),
 }
+ANNOUNCEMENT_CATEGORIES = {
+    "业绩": "earnings",
+    "预告": "earnings",
+    "订单": "order",
+    "中标": "order",
+    "合同": "contract",
+    "客户": "customer",
+    "产品": "product",
+    "产能": "capacity",
+    "投产": "capacity",
+    "重组": "restructuring",
+    "收购": "restructuring",
+    "回购": "buyback",
+    "增持": "increase_holding",
+    "减持": "decrease_holding",
+    "澄清": "clarification",
+    "风险": "risk_warning",
+    "监管": "regulatory",
+    "问询": "regulatory",
+    "异常波动": "clarification",
+}
+CLARIFICATION_KEYWORDS = ("尚未形成订单", "未形成订单", "尚未形成收入", "业务占比低", "仍在研发", "尚未认证", "异常波动", "澄清")
+RISK_KEYWORDS = ("风险提示", "风险", "异常波动", "减持", "监管", "问询", "处罚")
 
 
 @dataclass(frozen=True)
@@ -70,6 +94,10 @@ class MarketPacketCollector:
             datasets[name] = self._collect_frame(name, source, fn, trade_date, data_date, freshness)
         self._collect_tushare_core(datasets, trade_date)
         datasets["stock_top_ohlcv"] = self._collect_stock_top_ohlcv(trade_date, datasets)
+        datasets["official_announcements"] = self._collect_announcements(trade_date, datasets)
+        datasets["official_policies"] = self._collect_policies(trade_date)
+        datasets["industry_board_daily"] = self._collect_board_daily(trade_date, "industry")
+        datasets["concept_board_daily"] = self._collect_board_daily(trade_date, "concept")
         for symbol, (label, ts_code) in INDEX_SYMBOLS.items():
             datasets[f"index_{ts_code}"] = self._collect_frame(
                 f"index_{ts_code}",
@@ -100,23 +128,9 @@ class MarketPacketCollector:
 
         pro = ts.pro_api(token)
         cal_start = trade_date - timedelta(days=14)
-        datasets["tushare_trade_cal"] = self._collect_frame(
-            "tushare_trade_cal",
-            "tushare.trade_cal",
-            lambda: pro.trade_cal(exchange="", start_date=_compact(cal_start), end_date=_compact(trade_date)),
-            trade_date,
-            trade_date,
-            "historical",
-        )
+        datasets["tushare_trade_cal"] = self._collect_tushare_trade_cal(pro, trade_date)
         previous_trade_date = _previous_trade_date(datasets["tushare_trade_cal"].rows, trade_date)
-        datasets["tushare_stock_basic"] = self._collect_frame(
-            "tushare_stock_basic",
-            "tushare.stock_basic",
-            lambda: pro.stock_basic(exchange="", list_status="L", fields="ts_code,symbol,name,area,industry,market,list_date"),
-            trade_date,
-            trade_date,
-            "historical",
-        )
+        datasets["tushare_stock_basic"] = self._collect_tushare_stock_basic(pro, trade_date)
         datasets["tushare_daily_all"] = self._collect_frame(
             "tushare_daily_all",
             "tushare.daily",
@@ -142,6 +156,64 @@ class MarketPacketCollector:
             trade_date,
             "historical",
         )
+
+    def _collect_tushare_trade_cal(self, pro, trade_date: date) -> CollectedDataset:
+        name = "tushare_trade_cal"
+        ref_path = PROJECT_ROOT / "data" / "reference" / f"{name}_{trade_date.year}.json"
+        if ref_path.exists() and not self.refresh:
+            payload = json.loads(ref_path.read_text(encoding="utf-8"))
+            rows = payload.get("rows", [])
+            return CollectedDataset(name, "tushare.trade_cal", trade_date, datetime.now(UTC), rows, "PASS" if rows else "FAIL", "historical", True, str(ref_path), payload.get("error"))
+        start = date(trade_date.year, 1, 1)
+        end = date(trade_date.year, 12, 31)
+        return self._collect_reference_frame(
+            name,
+            "tushare.trade_cal",
+            lambda: pro.trade_cal(exchange="", start_date=_compact(start), end_date=_compact(end)),
+            trade_date,
+            ref_path,
+        )
+
+    def _collect_tushare_stock_basic(self, pro, trade_date: date) -> CollectedDataset:
+        name = "tushare_stock_basic"
+        ref_path = PROJECT_ROOT / "data" / "reference" / f"{name}.json"
+        if ref_path.exists() and not self.refresh:
+            payload = json.loads(ref_path.read_text(encoding="utf-8"))
+            retrieved_date = _date_from_payload(str(payload.get("retrieved_at", ""))[:10])
+            if retrieved_date and retrieved_date >= datetime.now(UTC).date():
+                rows = payload.get("rows", [])
+                return CollectedDataset(name, "tushare.stock_basic", trade_date, datetime.now(UTC), rows, "PASS" if rows else "FAIL", "historical", True, str(ref_path), payload.get("error"))
+        return self._collect_reference_frame(
+            name,
+            "tushare.stock_basic",
+            lambda: pro.stock_basic(exchange="", list_status="L", fields="ts_code,symbol,name,area,industry,market,list_date"),
+            trade_date,
+            ref_path,
+        )
+
+    def _collect_reference_frame(
+        self,
+        name: str,
+        source: str,
+        fn: Callable[[], pd.DataFrame],
+        data_date: date,
+        path: Path,
+    ) -> CollectedDataset:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        try:
+            rows = _frame_to_rows(fn())
+            payload = {"source": source, "dataset": name, "retrieved_at": datetime.now(UTC).isoformat(), "data_date": data_date.isoformat(), "rows": rows, "error": None if rows else "empty response"}
+            path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+            return CollectedDataset(name, source, data_date, datetime.now(UTC), rows, "PASS" if rows else "FAIL", "historical", False, str(path), payload["error"])
+        except Exception as exc:
+            if path.exists():
+                payload = json.loads(path.read_text(encoding="utf-8"))
+                rows = payload.get("rows", [])
+                if rows:
+                    return CollectedDataset(name, source, data_date, datetime.now(UTC), rows, "PASS", "historical", True, str(path), f"refresh failed: {exc.__class__.__name__}: {exc}")
+            error = f"{exc.__class__.__name__}: {exc}"
+            path.write_text(json.dumps({"source": source, "dataset": name, "retrieved_at": datetime.now(UTC).isoformat(), "data_date": data_date.isoformat(), "rows": [], "error": error}, ensure_ascii=False, indent=2), encoding="utf-8")
+            return CollectedDataset(name, source, data_date, datetime.now(UTC), [], "FAIL", "historical", False, str(path), error)
 
     def _collect_tushare_previous_daily(self, pro, trade_date: date, previous_trade_date: date | None) -> CollectedDataset:
         name = "tushare_previous_daily_all"
@@ -226,6 +298,116 @@ class MarketPacketCollector:
             payload["requested_symbols"] = codes
             path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
         return CollectedDataset(name, source, trade_date, datetime.now(UTC), rows, quality, "historical", False, str(path), error)
+
+    def _collect_announcements(self, trade_date: date, datasets: dict[str, CollectedDataset], *, limit: int = 12) -> CollectedDataset:
+        name = "official_announcements"
+        cache = self._cache_path(trade_date, name)
+        if cache.exists() and not self.refresh:
+            payload = json.loads(cache.read_text(encoding="utf-8"))
+            rows = payload.get("rows", [])
+            return CollectedDataset(name, payload.get("source", "cninfo"), trade_date, datetime.now(UTC), rows, "PASS" if rows else "FAIL", "historical", True, str(cache), payload.get("error"))
+        seed_path = PROJECT_ROOT / "data" / "announcement_sources" / f"{trade_date.isoformat()}.json"
+        if seed_path.exists() and not self.refresh:
+            rows = json.loads(seed_path.read_text(encoding="utf-8"))
+            path = self._write_cache(trade_date, name, "local.official_announcement_sources", trade_date, rows)
+            return CollectedDataset(name, "local.official_announcement_sources", trade_date, datetime.now(UTC), rows, "PASS" if rows else "FAIL", "historical", False, str(path))
+        if os.environ.get("MARKET_PACKET_REMOTE_ANNOUNCEMENTS") != "1":
+            path = self._write_cache(trade_date, name, "cninfo.stock_zh_a_disclosure_report_cninfo", trade_date, [])
+            error = "remote announcement lookups disabled; set MARKET_PACKET_REMOTE_ANNOUNCEMENTS=1 or provide data/announcement_sources/YYYY-MM-DD.json"
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            payload["error"] = error
+            path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+            return CollectedDataset(name, "cninfo.stock_zh_a_disclosure_report_cninfo", trade_date, datetime.now(UTC), [], "FAIL", "historical", False, str(path), error)
+        if ak is None:
+            return CollectedDataset(name, "cninfo", trade_date, datetime.now(UTC), [], "FAIL", "missing", False, error="akshare import failed")
+        rows: list[dict[str, Any]] = []
+        errors: list[str] = []
+        stock_names = _stock_names_by_code(datasets)
+        for code in _stock_pool_codes(datasets, limit):
+            try:
+                frame = ak.stock_zh_a_disclosure_report_cninfo(symbol=code, start_date=_compact(trade_date), end_date=_compact(trade_date))
+                for raw in _frame_to_rows(frame):
+                    item = _normalize_announcement(raw, code, stock_names.get(code, ""))
+                    if item and item["title"] not in {row["title"] for row in rows}:
+                        rows.append(item)
+            except Exception as exc:
+                errors.append(f"{code}:{exc.__class__.__name__}")
+        path = self._write_cache(trade_date, name, "cninfo.stock_zh_a_disclosure_report_cninfo", trade_date, rows)
+        error = None
+        if errors:
+            error = f"{len(errors)} announcement lookups failed; sample={errors[:8]}"
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            payload["error"] = error
+            path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        quality = "PASS" if rows else "FAIL"
+        return CollectedDataset(name, "cninfo.stock_zh_a_disclosure_report_cninfo", trade_date, datetime.now(UTC), rows, quality, "historical", False, str(path), error if not rows else None)
+
+    def _collect_policies(self, trade_date: date) -> CollectedDataset:
+        name = "official_policies"
+        cache = self._cache_path(trade_date, name)
+        if cache.exists() and not self.refresh:
+            payload = json.loads(cache.read_text(encoding="utf-8"))
+            rows = payload.get("rows", [])
+            return CollectedDataset(name, payload.get("source", "official_policy_sources"), trade_date, datetime.now(UTC), rows, "PASS" if rows else "FAIL", "historical", True, str(cache), payload.get("error"))
+        seed_path = PROJECT_ROOT / "data" / "policy_sources" / f"{trade_date.isoformat()}.json"
+        rows = []
+        if seed_path.exists():
+            rows = json.loads(seed_path.read_text(encoding="utf-8"))
+        path = self._write_cache(trade_date, name, "official_policy_sources", trade_date, rows)
+        error = None if rows else "official policy crawler not configured with stable historical source for this date"
+        if error:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            payload["error"] = error
+            path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        return CollectedDataset(name, "official_policy_sources", trade_date, datetime.now(UTC), rows, "PASS" if rows else "FAIL", "historical", False, str(path), error)
+
+    def _collect_board_daily(self, trade_date: date, board_type: str, *, limit: int = 120) -> CollectedDataset:
+        name = f"{board_type}_board_daily"
+        cache = self._cache_path(trade_date, name)
+        if cache.exists() and not self.refresh:
+            payload = json.loads(cache.read_text(encoding="utf-8"))
+            rows = payload.get("rows", [])
+            return CollectedDataset(name, payload.get("source", "akshare.eastmoney_board_hist"), trade_date, datetime.now(UTC), rows, "PASS" if rows else "FAIL", "historical", True, str(cache), payload.get("error"))
+        if ak is None:
+            return CollectedDataset(name, "akshare.eastmoney_board_hist", trade_date, datetime.now(UTC), [], "FAIL", "missing", False, error="akshare import failed")
+        try:
+            board_list = ak.stock_board_industry_name_em() if board_type == "industry" else ak.stock_board_concept_name_em()
+        except Exception as exc:
+            path = self._write_cache(trade_date, name, "akshare.eastmoney_board_hist", trade_date, [])
+            error = f"board list failed: {exc.__class__.__name__}: {exc}"
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            payload["error"] = error
+            path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+            return CollectedDataset(name, "akshare.eastmoney_board_hist", trade_date, datetime.now(UTC), [], "FAIL", "historical", False, str(path), error)
+        rows: list[dict[str, Any]] = []
+        errors: list[str] = []
+        for board in _frame_to_rows(board_list)[:limit]:
+            board_name = _first_text(board, ["板块名称", "名称", "name", "板块"])
+            if not board_name:
+                continue
+            try:
+                hist_fn = ak.stock_board_industry_hist_em if board_type == "industry" else ak.stock_board_concept_hist_em
+                hist = hist_fn(symbol=board_name, start_date=_compact(trade_date), end_date=_compact(trade_date))
+                hist_rows = _frame_to_rows(hist)
+                if not hist_rows:
+                    continue
+                item = dict(hist_rows[-1])
+                item["board_type"] = board_type
+                item["board_name"] = board_name
+                item["board_code"] = _first_text(board, ["板块代码", "代码", "code"])
+                item["source_data_date"] = trade_date.isoformat()
+                rows.append(item)
+            except Exception as exc:
+                errors.append(f"{board_name}:{exc.__class__.__name__}")
+        path = self._write_cache(trade_date, name, "akshare.eastmoney_board_hist", trade_date, rows)
+        error = None
+        if errors:
+            error = f"{len(errors)} board history lookups failed; sample={errors[:8]}"
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            payload["error"] = error
+            path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        quality = "PASS" if len(rows) >= (30 if board_type == "industry" else 50) else "PARTIAL" if rows else "FAIL"
+        return CollectedDataset(name, "akshare.eastmoney_board_hist", trade_date, datetime.now(UTC), rows, quality, "historical", False, str(path), error)
 
     def _collect_frame(
         self,
@@ -356,6 +538,11 @@ def _stock_pool_codes(datasets: dict[str, CollectedDataset], limit: int) -> list
     return codes
 
 
+def _code(row: dict[str, Any]) -> str:
+    value = row.get("代码") or row.get("code") or row.get("股票代码") or row.get("ts_code") or ""
+    return str(value).split(".")[0].zfill(6) if value != "" else ""
+
+
 def _stock_ohlcv_from_tushare_daily(dataset: CollectedDataset | None, codes: list[str]) -> list[dict[str, Any]]:
     if not dataset or not dataset.rows or not codes:
         return []
@@ -369,6 +556,83 @@ def _stock_ohlcv_from_tushare_daily(dataset: CollectedDataset | None, codes: lis
             item["source_stock_code"] = code
             rows.append(item)
     return rows
+
+
+def _stock_names_by_code(datasets: dict[str, CollectedDataset]) -> dict[str, str]:
+    names: dict[str, str] = {}
+    for row in datasets.get("tushare_stock_basic", CollectedDataset("tushare_stock_basic", "", None, datetime.now(UTC), [], "FAIL", "missing", False)).rows:
+        ts_code = str(row.get("ts_code") or "")
+        code = ts_code.split(".")[0]
+        if code:
+            names[code] = str(row.get("name") or "")
+    for dataset_name in ("limit_up", "failed_limit", "limit_down", "previous_limit", "dragon_tiger_daily"):
+        for row in datasets.get(dataset_name, CollectedDataset(dataset_name, "", None, datetime.now(UTC), [], "FAIL", "missing", False)).rows:
+            code = _code(row)
+            if code and code not in names:
+                names[code] = str(row.get("名称") or row.get("name") or "")
+    return names
+
+
+def _normalize_announcement(row: dict[str, Any], code: str, fallback_name: str) -> dict[str, Any] | None:
+    title = _first_text(row, ["公告标题", "标题", "title", "announcementTitle"])
+    if not title:
+        return None
+    published = _first_text(row, ["公告时间", "公告日期", "发布时间", "published_at", "date"])
+    url = _first_text(row, ["公告链接", "url", "URL", "adjunctUrl", "announcementUrl"])
+    source = "巨潮资讯"
+    summary = _clean_summary(_first_text(row, ["摘要", "summary"]) or title)
+    category = _announcement_category(title)
+    clarification_flags = [keyword for keyword in CLARIFICATION_KEYWORDS if keyword in title or keyword in summary]
+    risk_flags = [keyword for keyword in RISK_KEYWORDS if keyword in title or keyword in summary]
+    return {
+        "stock_code": code,
+        "stock_name": _first_text(row, ["证券简称", "股票简称", "名称", "stock_name"]) or fallback_name,
+        "title": title,
+        "published_at": published,
+        "source": source,
+        "url": _normalize_cninfo_url(url),
+        "category": category,
+        "summary": summary,
+        "confirmed_fact": title,
+        "evidence_level": "A",
+        "clarification_flags": clarification_flags,
+        "risk_flags": risk_flags,
+    }
+
+
+def _announcement_category(title: str) -> str:
+    for keyword, category in ANNOUNCEMENT_CATEGORIES.items():
+        if keyword in title:
+            return category
+    return "other"
+
+
+def _normalize_cninfo_url(value: str | None) -> str | None:
+    if not value:
+        return None
+    text = str(value)
+    if text.startswith("http"):
+        return text
+    if text.startswith("/"):
+        return f"http://static.cninfo.com.cn{text}"
+    if re.match(r"finalpage/\d{4}-\d{2}-\d{2}/", text):
+        return f"http://static.cninfo.com.cn/{text}"
+    return text
+
+
+def _clean_summary(value: str) -> str:
+    text = re.sub(r"\s+", " ", str(value)).strip()
+    return text[:220]
+
+
+def _first_text(row: dict[str, Any] | None, keys: list[str]) -> str | None:
+    if not row:
+        return None
+    for key in keys:
+        value = row.get(key)
+        if value not in ("", None):
+            return str(value)
+    return None
 
 
 def _previous_trade_date(rows: list[dict[str, Any]], trade_date: date) -> date | None:

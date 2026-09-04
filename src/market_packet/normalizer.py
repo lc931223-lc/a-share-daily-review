@@ -18,10 +18,12 @@ def normalize_packet_data(trade_date: date, datasets: dict[str, CollectedDataset
     tushare_previous_daily = datasets.get("tushare_previous_daily_all").rows if datasets.get("tushare_previous_daily_all") else []
     tushare_daily_basic = datasets.get("tushare_daily_basic_all").rows if datasets.get("tushare_daily_basic_all") else []
     tushare_stock_basic = datasets.get("tushare_stock_basic").rows if datasets.get("tushare_stock_basic") else []
+    industry_board_daily = datasets.get("industry_board_daily").rows if datasets.get("industry_board_daily") else []
+    concept_board_daily = datasets.get("concept_board_daily").rows if datasets.get("concept_board_daily") else []
     indices = _indices(trade_date, datasets)
     stocks = _stocks(limit_up, failed, limit_down, previous, lhb, stock_ohlcv, tushare_daily, tushare_daily_basic, tushare_stock_basic)
-    themes = _themes(limit_up, failed, limit_down)
-    industries = _industries(themes)
+    themes = _themes(limit_up, failed, limit_down, concept_board_daily)
+    industries = _industries(limit_up, failed, limit_down, industry_board_daily, tushare_daily, tushare_stock_basic)
     capital_flow = _capital_flow(trade_date, datasets)
     highest_board = max((_number(row, "连板数") for row in limit_up), default=None)
     board_counts = {height: sum(1 for row in limit_up if _number(row, "连板数") == height) for height in (2, 3, 4)}
@@ -229,7 +231,7 @@ def _stocks(
     return sorted(rows.values(), key=lambda row: max(row["leader_candidate_score"], row["capacity_candidate_score"], row["catch_up_candidate_score"]), reverse=True)[:220]
 
 
-def _themes(limit_up: list[dict], failed: list[dict], limit_down: list[dict]) -> list[dict[str, Any]]:
+def _themes(limit_up: list[dict], failed: list[dict], limit_down: list[dict], concept_board_daily: list[dict]) -> list[dict[str, Any]]:
     grouped: dict[str, dict[str, Any]] = defaultdict(lambda: {"top_gainers": [], "top_losers": [], "leader_candidates": [], "capacity_candidates": [], "catch_up_candidates": [], "amount": 0, "limit_up_count": 0, "limit_down_count": 0, "failed_limit_count": 0})
     for row in limit_up:
         name = str(row.get("所属行业") or "未分类")
@@ -260,54 +262,129 @@ def _themes(limit_up: list[dict], failed: list[dict], limit_down: list[dict]) ->
         item["normalized_name"] = name
         item["limit_down_count"] += 1
         item["top_losers"].append({"stock_code": _code(row), "stock_name": row.get("名称"), "change_pct": _number(row, "涨跌幅"), "amount": _number(row, "成交额")})
-    rows = []
+    rows_by_name: dict[str, dict[str, Any]] = {}
+    for row in concept_board_daily:
+        name = str(row.get("board_name") or row.get("板块名称") or row.get("名称") or "")
+        if not name:
+            continue
+        rows_by_name[name] = {
+            "theme_name": name,
+            "normalized_name": name,
+            "change_pct": _first_number(row, ["涨跌幅", "change_pct", "pct_chg"]),
+            "rise_count": _first_number(row, ["上涨家数", "rise_count"]),
+            "fall_count": _first_number(row, ["下跌家数", "fall_count"]),
+            "limit_up_count": _first_number(row, ["涨停家数", "limit_up_count"]),
+            "limit_down_count": _first_number(row, ["跌停家数", "limit_down_count"]),
+            "failed_limit_count": None,
+            "amount": _first_number(row, ["成交额", "amount"]),
+            "amount_change": None,
+            "turnover_rate": _first_number(row, ["换手率", "turnover_rate"]),
+            "main_net_inflow": None,
+            "top_gainers": [],
+            "top_losers": [],
+            "leader_candidates": [],
+            "capacity_candidates": [],
+            "catch_up_candidates": [],
+            "source": "Eastmoney concept board historical via AKShare",
+            "quality": "PASS",
+        }
     for item in grouped.values():
         rise = item["limit_up_count"]
         fall = item["limit_down_count"] + item["failed_limit_count"]
-        rows.append(
+        row = rows_by_name.setdefault(
+            item["theme_name"],
             {
                 "theme_name": item["theme_name"],
                 "normalized_name": item["normalized_name"],
                 "change_pct": None,
                 "rise_count": rise or None,
                 "fall_count": fall or None,
-                "limit_up_count": item["limit_up_count"],
-                "limit_down_count": item["limit_down_count"],
-                "failed_limit_count": item["failed_limit_count"],
-                "amount": round(item["amount"], 2),
+                "limit_up_count": item["limit_up_count"] or None,
+                "limit_down_count": item["limit_down_count"] or None,
+                "failed_limit_count": item["failed_limit_count"] or None,
+                "amount": round(item["amount"], 2) if item["amount"] else None,
                 "amount_change": None,
-                "top_gainers": sorted(item["top_gainers"], key=lambda x: (x.get("board_count") or 0, x.get("amount") or 0), reverse=True)[:10],
-                "top_losers": sorted(item["top_losers"], key=lambda x: x.get("change_pct") or 0)[:10],
-                "leader_candidates": item["leader_candidates"][:10],
-                "capacity_candidates": item["capacity_candidates"][:10],
-                "catch_up_candidates": item["catch_up_candidates"][:10],
+                "turnover_rate": None,
+                "main_net_inflow": None,
+                "top_gainers": [],
+                "top_losers": [],
+                "leader_candidates": [],
+                "capacity_candidates": [],
+                "catch_up_candidates": [],
                 "source": "Eastmoney limit pools via AKShare",
                 "quality": "PARTIAL",
-            }
+            },
         )
-    return sorted(rows, key=lambda row: (row["limit_up_count"], row["amount"]), reverse=True)[:80]
+        row["limit_up_count"] = item["limit_up_count"] or row.get("limit_up_count")
+        row["limit_down_count"] = item["limit_down_count"] or row.get("limit_down_count")
+        row["failed_limit_count"] = item["failed_limit_count"] or row.get("failed_limit_count")
+        row["top_gainers"] = sorted(item["top_gainers"], key=lambda x: (x.get("board_count") or 0, x.get("amount") or 0), reverse=True)[:10]
+        row["top_losers"] = sorted(item["top_losers"], key=lambda x: x.get("change_pct") or 0)[:10]
+        row["leader_candidates"] = item["leader_candidates"][:10]
+        row["capacity_candidates"] = item["capacity_candidates"][:10]
+        row["catch_up_candidates"] = item["catch_up_candidates"][:10]
+    return sorted(rows_by_name.values(), key=lambda row: (row.get("change_pct") is not None, row.get("limit_up_count") or 0, row.get("amount") or 0), reverse=True)[:160]
 
 
-def _industries(themes: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    return [
-        {
-            "name": row["theme_name"],
-            "change_pct": row["change_pct"],
-            "amount": row["amount"],
-            "turnover_rate": None,
-            "rise_count": row["rise_count"],
-            "fall_count": row["fall_count"],
-            "limit_up_count": row["limit_up_count"],
+def _industries(
+    limit_up: list[dict],
+    failed: list[dict],
+    limit_down: list[dict],
+    industry_board_daily: list[dict],
+    tushare_daily: list[dict],
+    tushare_stock_basic: list[dict],
+) -> list[dict[str, Any]]:
+    counts = _industry_breadth_counts(tushare_daily, tushare_stock_basic)
+    limit_counts = _industry_limit_counts(limit_up, failed, limit_down)
+    rows_by_name: dict[str, dict[str, Any]] = {}
+    for row in industry_board_daily:
+        name = str(row.get("board_name") or row.get("板块名称") or row.get("名称") or "")
+        if not name:
+            continue
+        rows_by_name[name] = {
+            "name": name,
+            "change_pct": _first_number(row, ["涨跌幅", "change_pct", "pct_chg"]),
+            "amount": _first_number(row, ["成交额", "amount"]),
+            "turnover_rate": _first_number(row, ["换手率", "turnover_rate"]),
+            "rise_count": counts.get(name, {}).get("rise_count"),
+            "fall_count": counts.get(name, {}).get("fall_count"),
+            "limit_up_count": limit_counts.get(name, {}).get("limit_up_count"),
+            "limit_down_count": limit_counts.get(name, {}).get("limit_down_count"),
+            "failed_limit_count": limit_counts.get(name, {}).get("failed_limit_count"),
             "main_net_inflow": None,
             "main_net_inflow_pct": None,
-            "top_stocks": row["top_gainers"][:5],
+            "top_stocks": [],
             "five_day_change_pct": None,
             "twenty_day_change_pct": None,
-            "source": row["source"],
-            "quality": "PARTIAL",
+            "source": "Eastmoney industry board historical via AKShare",
+            "quality": "PASS",
         }
-        for row in themes
-    ]
+    for name, value in {**counts, **limit_counts}.items():
+        row = rows_by_name.setdefault(
+            name,
+            {
+                "name": name,
+                "change_pct": None,
+                "amount": None,
+                "turnover_rate": None,
+                "rise_count": None,
+                "fall_count": None,
+                "limit_up_count": None,
+                "limit_down_count": None,
+                "failed_limit_count": None,
+                "main_net_inflow": None,
+                "main_net_inflow_pct": None,
+                "top_stocks": [],
+                "five_day_change_pct": None,
+                "twenty_day_change_pct": None,
+                "source": "Tushare stock_basic/daily and Eastmoney limit pools",
+                "quality": "PARTIAL",
+            },
+        )
+        for key in ("rise_count", "fall_count", "limit_up_count", "limit_down_count", "failed_limit_count", "change_pct", "amount"):
+            if value.get(key) is not None:
+                row[key] = value[key]
+    return sorted(rows_by_name.values(), key=lambda row: (row.get("change_pct") is not None, row.get("amount") or 0), reverse=True)
 
 
 def _capital_flow(trade_date: date, datasets: dict[str, CollectedDataset]) -> dict[str, Any]:
@@ -328,6 +405,15 @@ def _capital_flow(trade_date: date, datasets: dict[str, CollectedDataset]) -> di
         },
         "industry_fund_flow": None,
         "concept_fund_flow": None,
+        "current_only_exclusions": [
+            {
+                "dataset": name,
+                "status": "not_historical_available",
+                "reason": "current-only source is not written into historical packet fields unless source_data_date equals requested trade_date",
+            }
+            for name in ("industry_fund_flow_current", "concept_fund_flow_current", "hsgt_summary")
+            if datasets.get(name) and datasets[name].freshness == "current_only"
+        ],
     }
 
 
@@ -455,6 +541,43 @@ def _apply_stock_basic(item: dict[str, Any], row: dict[str, Any] | None) -> None
         return
     item["stock_name"] = item["stock_name"] or str(row.get("name") or "")
     item["industry"] = item["industry"] or row.get("industry")
+
+
+def _industry_breadth_counts(tushare_daily: list[dict], tushare_stock_basic: list[dict]) -> dict[str, dict[str, int | None]]:
+    industry_by_code = {_ts_code(row): row.get("industry") for row in tushare_stock_basic if _ts_code(row) and row.get("industry")}
+    grouped: dict[str, dict[str, Any]] = defaultdict(lambda: {"rise_count": 0, "fall_count": 0, "change_values": [], "amount": 0.0})
+    for row in tushare_daily:
+        industry = industry_by_code.get(_ts_code(row))
+        change = _number(row, "pct_chg")
+        if not industry or change is None:
+            continue
+        grouped[str(industry)]["change_values"].append(change)
+        amount = _number(row, "amount")
+        if amount is not None:
+            grouped[str(industry)]["amount"] += amount * 1000
+        if change > 0:
+            grouped[str(industry)]["rise_count"] += 1
+        elif change < 0:
+            grouped[str(industry)]["fall_count"] += 1
+    return {
+        name: {
+            "rise_count": values["rise_count"] or None,
+            "fall_count": values["fall_count"] or None,
+            "change_pct": round(sum(values["change_values"]) / len(values["change_values"]), 2) if values["change_values"] else None,
+            "amount": round(values["amount"], 2) if values["amount"] else None,
+        }
+        for name, values in grouped.items()
+    }
+
+
+def _industry_limit_counts(limit_up: list[dict], failed: list[dict], limit_down: list[dict]) -> dict[str, dict[str, int | None]]:
+    grouped: dict[str, dict[str, int]] = defaultdict(lambda: {"limit_up_count": 0, "limit_down_count": 0, "failed_limit_count": 0})
+    for key, rows in (("limit_up_count", limit_up), ("failed_limit_count", failed), ("limit_down_count", limit_down)):
+        for row in rows:
+            industry = row.get("所属行业")
+            if industry:
+                grouped[str(industry)][key] += 1
+    return {name: {key: value or None for key, value in values.items()} for name, values in grouped.items()}
 
 
 def _number(row: dict[str, Any] | None, key: str) -> float | None:

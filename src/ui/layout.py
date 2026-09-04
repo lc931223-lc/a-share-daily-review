@@ -18,6 +18,8 @@ def setup_page(title: str) -> None:
     st.sidebar.page_link("pages/4_生命周期统计.py", label="生命周期统计")
     st.sidebar.page_link("pages/5_证据中心.py", label="证据中心")
     st.sidebar.page_link("pages/6_数据质量.py", label="数据质量")
+    st.sidebar.page_link("pages/7_验证中心.py", label="验证中心")
+    st.sidebar.page_link("pages/8_回测统计.py", label="回测统计")
 
 
 def choose_day(session, key: str = "trade_date"):
