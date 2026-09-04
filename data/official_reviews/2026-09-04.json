@@ -1,0 +1,179 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-09-04",
+  "data_kind": "real",
+  "strict_mode": true,
+  "completeness": {
+    "score": 82,
+    "missing_items": ["announcements", "policies"]
+  },
+  "market_regime": "分歧整理，短线情绪等待新主线确认",
+  "turnover": 17850.0,
+  "turnover_delta": -250.0,
+  "advancers": 2100,
+  "decliners": 3200,
+  "limit_up_count": 55,
+  "limit_down_count": 9,
+  "max_board_height": 5,
+  "position_min": 3,
+  "position_max": 5,
+  "market_commentary": [
+    "本文件是用于验证 official_review 导入链路的模拟 ChatGPT 输出。",
+    "Codex 不应修改本文件中的最终判断，只负责校验、归档和入库。"
+  ],
+  "indices": [
+    {
+      "name": "上证指数",
+      "close": 3920.0,
+      "change_pct": -0.2,
+      "turnover_yi": 8200.0
+    }
+  ],
+  "sentiment_dashboard": {
+    "temperature": "分歧",
+    "breadth": "下跌家数多于上涨家数",
+    "liquidity": "成交额仍在高位但边际收缩",
+    "risk_appetite": "中等偏谨慎",
+    "limit_pool": "涨停维持可交易热度",
+    "loss_feedback": "高位分歧仍需观察"
+  },
+  "sector_strength": [
+    {
+      "rank": 1,
+      "name": "算力基础设施",
+      "status": "局部延续",
+      "evidence": "成交额和涨停家数仍有支撑"
+    }
+  ],
+  "sector_weakness": [
+    {
+      "rank": 1,
+      "name": "高位补跌",
+      "status": "风险释放",
+      "evidence": "部分连板股分歧扩大"
+    }
+  ],
+  "limit_ladder": [
+    {
+      "height": "5板",
+      "stocks": "样例龙头",
+      "read": "高度仍在，但需要次日确认承接"
+    }
+  ],
+  "dragon_tiger": {
+    "date": "2026-09-04",
+    "amount_yi": 120.0,
+    "stock_count": 60,
+    "institution_net_buy_count": 8,
+    "read": "机构参与度中等"
+  },
+  "tomorrow_plan": [
+    {
+      "item": "算力基础设施",
+      "trigger": "板块成交额继续放大且核心股不破位",
+      "meaning": "主线延续概率提升"
+    }
+  ],
+  "data_quality_detail": {
+    "status": "PARTIAL",
+    "primary_source": "Market Packet + ChatGPT official review",
+    "resolved_gaps": ["market_breadth", "total_market_turnover", "previous_turnover", "stock_top100_full_ohlcv"],
+    "source_disagreements": [],
+    "known_gaps": ["announcements", "policies"],
+    "sources": ["tushare.daily", "AKShare/Eastmoney limit pools"]
+  },
+  "main_themes": [
+    {
+      "name": "算力基础设施",
+      "rank_no": 1,
+      "stage": "验证期",
+      "change_status": "strengthened",
+      "causal_chain": ["全市场成交额维持高位", "主题内核心股承接", "资金继续验证弹性方向"],
+      "drivers": [
+        {
+          "code": 21,
+          "name": "下游资本开支爆发",
+          "evidence_level": "B"
+        }
+      ],
+      "scores": {
+        "base_logic_score": 36,
+        "realization_score": 21,
+        "expectation_gap_score": 9,
+        "persistence_score": 8,
+        "market_confirmation_score": 8,
+        "risk_penalty": -3,
+        "total_score": 79,
+        "rating": "A",
+        "logic_quality": 86,
+        "market_strength": 80,
+        "risk_reward": 72,
+        "missing_reasons": {}
+      },
+      "delta_reason": "市场确认仍在，但政策和公告证据未完全补齐"
+    }
+  ],
+  "stocks": [
+    {
+      "name": "样例中军",
+      "code": "300308",
+      "theme": "算力基础设施",
+      "role": "中军",
+      "role_detail": "趋势承接样例",
+      "stage": "验证期",
+      "drivers": [
+        {
+          "code": 21,
+          "name": "下游资本开支爆发",
+          "evidence_level": "B"
+        }
+      ],
+      "catalyst": "成交额和趋势承接继续验证",
+      "benefit_path": ["资本开支", "订单预期", "利润弹性"],
+      "causal_chain": ["全市场流动性", "板块成交", "核心股承接"],
+      "scores": {
+        "realization_score": 78,
+        "expectation_gap": 65,
+        "logic_quality": 84,
+        "market_strength": 79,
+        "risk_reward": 70,
+        "total_score": 76,
+        "rating": "A",
+        "missing_reasons": {}
+      },
+      "delta_reason": "作为导入链路样例，保留可计算 delta 的完整评分"
+    }
+  ],
+  "evidence": [
+    {
+      "entity_type": "theme",
+      "entity_key": "算力基础设施",
+      "evidence_level": "B",
+      "evidence_type": "market_packet",
+      "title": "Market Packet 数据质量样例",
+      "source_name": "local market packet",
+      "source_url": null,
+      "published_at": null,
+      "excerpt": "用于验证 official review 导入、归档、入库和 Dashboard 展示链路。",
+      "verified": true
+    }
+  ],
+  "risk_events": [],
+  "tomorrow_checks": [
+    {
+      "entity_type": "theme",
+      "entity_key": "算力基础设施",
+      "check_type": "market_confirmation",
+      "description": "次日核心股是否继续维持成交额和趋势承接"
+    }
+  ],
+  "tomorrow_check_updates": [],
+  "changes_vs_previous_day": {
+    "new": [],
+    "strengthened": ["算力基础设施"],
+    "weakened": [],
+    "expanded": [],
+    "realized": [],
+    "invalidated": []
+  }
+}

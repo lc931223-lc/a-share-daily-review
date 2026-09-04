@@ -1,0 +1,268 @@
+{
+  "$defs": {
+    "DriverRef": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "maximum": 41,
+          "minimum": 1,
+          "title": "Code",
+          "type": "integer"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "evidence_level": {
+          "$ref": "#/$defs/EvidenceLevel"
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "evidence_level"
+      ],
+      "title": "DriverRef",
+      "type": "object"
+    },
+    "EvidenceLevel": {
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "title": "EvidenceLevel",
+      "type": "string"
+    },
+    "LifecycleStage": {
+      "enum": [
+        "朦胧期",
+        "发酵期",
+        "验证期",
+        "主升期",
+        "扩散期",
+        "兑现期"
+      ],
+      "title": "LifecycleStage",
+      "type": "string"
+    },
+    "StockRole": {
+      "enum": [
+        "龙头",
+        "中军",
+        "补涨",
+        "跟风",
+        "情绪股"
+      ],
+      "title": "StockRole",
+      "type": "string"
+    },
+    "StockScores": {
+      "additionalProperties": false,
+      "properties": {
+        "realization_score": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Realization Score"
+        },
+        "expectation_gap": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Expectation Gap"
+        },
+        "logic_quality": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Logic Quality"
+        },
+        "market_strength": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Market Strength"
+        },
+        "risk_reward": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Risk Reward"
+        },
+        "total_score": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Total Score"
+        },
+        "rating": {
+          "anyOf": [
+            {
+              "enum": [
+                "S+",
+                "S",
+                "A",
+                "B",
+                "C",
+                "D"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rating"
+        },
+        "missing_reasons": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Missing Reasons",
+          "type": "object"
+        }
+      },
+      "title": "StockScores",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "minLength": 1,
+      "title": "Name",
+      "type": "string"
+    },
+    "code": {
+      "pattern": "^(00|30|60|68|43|8[3-9]|92)\\d{4}$",
+      "title": "Code",
+      "type": "string"
+    },
+    "theme": {
+      "minLength": 1,
+      "title": "Theme",
+      "type": "string"
+    },
+    "role": {
+      "$ref": "#/$defs/StockRole"
+    },
+    "role_detail": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Role Detail"
+    },
+    "stage": {
+      "$ref": "#/$defs/LifecycleStage"
+    },
+    "drivers": {
+      "items": {
+        "$ref": "#/$defs/DriverRef"
+      },
+      "minItems": 1,
+      "title": "Drivers",
+      "type": "array"
+    },
+    "catalyst": {
+      "minLength": 1,
+      "title": "Catalyst",
+      "type": "string"
+    },
+    "benefit_path": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 2,
+      "title": "Benefit Path",
+      "type": "array"
+    },
+    "causal_chain": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 2,
+      "title": "Causal Chain",
+      "type": "array"
+    },
+    "scores": {
+      "$ref": "#/$defs/StockScores"
+    },
+    "delta_reason": {
+      "minLength": 1,
+      "title": "Delta Reason",
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "code",
+    "theme",
+    "role",
+    "stage",
+    "drivers",
+    "catalyst",
+    "benefit_path",
+    "causal_chain",
+    "scores",
+    "delta_reason"
+  ],
+  "title": "StockReview",
+  "type": "object"
+}

@@ -1,0 +1,27 @@
+{
+  "rule_version": "2026.09.02.1",
+  "primary_market_source": "eastmoney",
+  "tushare_role": "optional_cross_check",
+  "request_timeout_seconds": 15,
+  "max_retries": 2,
+  "major_indices": ["000001.SH", "399001.SZ", "399006.SZ", "000688.SH"],
+  "thresholds": {
+    "security_status_explained": 0.995,
+    "daily_quote_required_fields": 0.995,
+    "major_index_coverage": 1.0,
+    "limit_candidate_coverage": 0.98,
+    "supplemental_abs_diff": 2,
+    "supplemental_ratio_diff": 0.02,
+    "critical_conflicts": 0
+  },
+  "eastmoney_fallback_fields": [
+    "advancers",
+    "decliners",
+    "limit_up",
+    "limit_down",
+    "failed_limit",
+    "board_height",
+    "theme_name",
+    "theme_membership"
+  ]
+}

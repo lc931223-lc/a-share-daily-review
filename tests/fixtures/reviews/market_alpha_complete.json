@@ -1,0 +1,99 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-09-01",
+  "data_kind": "real",
+  "strict_mode": true,
+  "completeness": {"score": 80, "missing_items": ["炸板率"]},
+  "market_regime": "分歧修复",
+  "turnover": 20300.0,
+  "turnover_delta": null,
+  "advancers": 3386,
+  "decliners": 2040,
+  "limit_up_count": 94,
+  "limit_down_count": 2,
+  "max_board_height": 6,
+  "position_min": 3,
+  "position_max": 5,
+  "main_themes": [
+    {
+      "name": "主题甲",
+      "rank_no": 1,
+      "stage": "主升期",
+      "change_status": "strengthened",
+      "causal_chain": ["真实观测", "资金确认", "订单"],
+      "drivers": [{"code": 21, "name": "下游资本开支爆发", "evidence_level": "B"}],
+      "scores": {
+        "base_logic_score": 38,
+        "realization_score": 23,
+        "expectation_gap_score": 8,
+        "persistence_score": 9,
+        "market_confirmation_score": 9,
+        "risk_penalty": -3,
+        "total_score": 84,
+        "rating": "S",
+        "logic_quality": 88,
+        "market_strength": 86,
+        "risk_reward": 72,
+        "missing_reasons": {}
+      },
+      "delta_reason": "真实观测继续验证"
+    }
+  ],
+  "stocks": [
+    {
+      "name": "测试中军",
+      "code": "300308",
+      "theme": "主题甲",
+      "role": "中军",
+      "role_detail": "核心趋势股",
+      "stage": "主升期",
+      "drivers": [{"code": 21, "name": "下游资本开支爆发", "evidence_level": "B"}],
+      "catalyst": "资金确认",
+      "benefit_path": ["需求", "订单", "利润"],
+      "causal_chain": ["真实观测", "资金确认", "订单"],
+      "scores": {
+        "realization_score": 82,
+        "expectation_gap": 68,
+        "logic_quality": 88,
+        "market_strength": 84,
+        "risk_reward": 70,
+        "total_score": 79,
+        "rating": "A",
+        "missing_reasons": {}
+      },
+      "delta_reason": "趋势保持"
+    }
+  ],
+  "evidence": [
+    {
+      "entity_type": "theme",
+      "entity_key": "主题甲",
+      "evidence_level": "B",
+      "evidence_type": "industry_data",
+      "title": "真实观测数据",
+      "source_name": "公开产业数据",
+      "source_url": null,
+      "published_at": null,
+      "excerpt": "真实观测保持",
+      "verified": true
+    }
+  ],
+  "risk_events": [],
+  "tomorrow_checks": [
+    {
+      "entity_type": "theme",
+      "entity_key": "主题甲",
+      "check_type": "market_confirmation",
+      "description": "板块成交额是否继续扩大"
+    }
+  ],
+  "tomorrow_check_updates": [],
+  "changes_vs_previous_day": {
+    "new": [],
+    "strengthened": ["主题甲"],
+    "weakened": [],
+    "expanded": [],
+    "realized": [],
+    "invalidated": []
+  }
+}

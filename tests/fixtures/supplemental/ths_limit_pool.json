@@ -1,0 +1,12 @@
+{
+  "limit_up": [
+    {"code": "600001", "name": "测试银行", "board_height": 2, "theme_name": "主题甲"}
+  ],
+  "limit_down": [],
+  "failed_limit": [
+    {"code": "000001", "name": "测试平安", "theme_name": "主题乙"}
+  ],
+  "themes": [
+    {"theme_name": "主题甲", "members": ["600001"]}
+  ]
+}

@@ -1,0 +1,13 @@
+[
+  {
+    "ts_code": "600001.SH",
+    "symbol": "600001",
+    "name": "测试银行",
+    "area": "上海",
+    "industry": "银行",
+    "list_date": "19900101",
+    "market": "主板",
+    "exchange": "SSE",
+    "list_status": "L"
+  }
+]

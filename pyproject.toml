@@ -16,6 +16,12 @@ dependencies = [
   "reportlab==5.0.1",
   "pypdf==6.16.2",
   "pdfplumber==0.11.10",
+  "pydantic>=2.8",
+  "python-dotenv>=1.0",
+  "sqlalchemy>=2.0",
+  "streamlit>=1.49",
+  "pytest>=8.3",
+  "jsonschema>=4.23",
 ]
 
 [tool.ruff]
@@ -24,3 +30,6 @@ target-version = "py312"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+markers = [
+  "real_data: tests that require live external market-data credentials",
+]

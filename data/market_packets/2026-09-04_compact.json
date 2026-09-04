@@ -1,0 +1,6167 @@
+{
+  "meta": {
+    "schema_version": "market_packet.1",
+    "trade_date": "2026-09-04",
+    "generated_at": "2026-09-04T13:40:20.476158Z",
+    "generated_by": "codex_market_packet_phase1",
+    "codex_role": "data_engineer_data_validator_research_clerk",
+    "final_judgement_owner": "chatgpt"
+  },
+  "data_quality": {
+    "status": "PARTIAL",
+    "score": 79,
+    "checks": [
+      {
+        "item": "涨停池",
+        "status": "PASS",
+        "source": "akshare.stock_zt_pool_em",
+        "detail": "rows=39"
+      },
+      {
+        "item": "炸板池",
+        "status": "PASS",
+        "source": "akshare.stock_zt_pool_zbgc_em",
+        "detail": "rows=48"
+      },
+      {
+        "item": "跌停池",
+        "status": "PASS",
+        "source": "akshare.stock_zt_pool_dtgc_em",
+        "detail": "rows=9"
+      },
+      {
+        "item": "昨日涨停反馈",
+        "status": "PASS",
+        "source": "akshare.stock_zt_pool_previous_em",
+        "detail": "rows=44"
+      },
+      {
+        "item": "龙虎榜日明细",
+        "status": "PASS",
+        "source": "akshare.stock_lhb_detail_em",
+        "detail": "rows=66"
+      },
+      {
+        "item": "指数数据",
+        "status": "PASS",
+        "source": "akshare.stock_zh_index_daily",
+        "detail": "5/5 major indices available"
+      },
+      {
+        "item": "成交额",
+        "status": "PASS",
+        "source": "tushare.daily",
+        "detail": "全市场成交额来自 Tushare daily amount 汇总"
+      },
+      {
+        "item": "上涨下跌家数",
+        "status": "PASS",
+        "source": "tushare.daily",
+        "detail": "rise=2444 fall=2914 flat=190"
+      },
+      {
+        "item": "行业数据",
+        "status": "PARTIAL",
+        "source": "Eastmoney limit pools via AKShare",
+        "detail": "54 industries derived from limit pools"
+      },
+      {
+        "item": "题材数据",
+        "status": "PARTIAL",
+        "source": "Eastmoney limit pools via AKShare",
+        "detail": "54 objective theme candidates derived"
+      },
+      {
+        "item": "核心个股行情",
+        "status": "PASS",
+        "source": "Eastmoney limit pools/LHB plus akshare.stock_zh_a_hist",
+        "detail": "144 stocks covered; 120 target-day OHLCV rows added"
+      },
+      {
+        "item": "公告",
+        "status": "FAIL",
+        "source": null,
+        "detail": "Phase 1 skeleton keeps announcement slots; remote batch collector not wired yet"
+      },
+      {
+        "item": "政策",
+        "status": "FAIL",
+        "source": null,
+        "detail": "Phase 1 skeleton keeps policy slots; official policy crawler not wired yet"
+      },
+      {
+        "item": "上一交易日review",
+        "status": "PASS",
+        "source": "local review json/db",
+        "detail": "previous review context found"
+      }
+    ],
+    "sources": [
+      {
+        "source": "akshare.stock_zt_pool_em",
+        "retrieved_at": "2026-09-04T13:40:20.295674Z",
+        "data_date": "2026-09-04",
+        "freshness": "historical",
+        "quality": "PASS",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\limit_up.json",
+        "error": null
+      },
+      {
+        "source": "akshare.stock_zt_pool_zbgc_em",
+        "retrieved_at": "2026-09-04T13:40:20.296671Z",
+        "data_date": "2026-09-04",
+        "freshness": "historical",
+        "quality": "PASS",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\failed_limit.json",
+        "error": null
+      },
+      {
+        "source": "akshare.stock_zt_pool_dtgc_em",
+        "retrieved_at": "2026-09-04T13:40:20.296671Z",
+        "data_date": "2026-09-04",
+        "freshness": "historical",
+        "quality": "PASS",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\limit_down.json",
+        "error": null
+      },
+      {
+        "source": "akshare.stock_zt_pool_previous_em",
+        "retrieved_at": "2026-09-04T13:40:20.297668Z",
+        "data_date": "2026-09-04",
+        "freshness": "historical",
+        "quality": "PASS",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\previous_limit.json",
+        "error": null
+      },
+      {
+        "source": "akshare.stock_lhb_detail_em",
+        "retrieved_at": "2026-09-04T13:40:20.298666Z",
+        "data_date": "2026-09-04",
+        "freshness": "historical",
+        "quality": "PASS",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\dragon_tiger_daily.json",
+        "error": null
+      },
+      {
+        "source": "akshare.stock_hsgt_hist_em",
+        "retrieved_at": "2026-09-04T13:40:20.323526Z",
+        "data_date": null,
+        "freshness": "historical",
+        "quality": "PASS",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\northbound_hist.json",
+        "error": null
+      },
+      {
+        "source": "akshare.stock_hsgt_fund_flow_summary_em",
+        "retrieved_at": "2026-09-04T13:40:20.324527Z",
+        "data_date": null,
+        "freshness": "current_only",
+        "quality": "PASS",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\hsgt_summary.json",
+        "error": null
+      },
+      {
+        "source": "akshare.stock_margin_szse",
+        "retrieved_at": "2026-09-04T13:40:20.324527Z",
+        "data_date": "2026-09-04",
+        "freshness": "historical",
+        "quality": "FAIL",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\szse_margin.json",
+        "error": "ValueError: Length mismatch: Expected axis has 0 elements, new values have 6 elements"
+      },
+      {
+        "source": "akshare.stock_margin_detail_szse",
+        "retrieved_at": "2026-09-04T13:40:20.324527Z",
+        "data_date": "2026-09-04",
+        "freshness": "historical",
+        "quality": "FAIL",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\szse_margin_detail.json",
+        "error": "empty response"
+      },
+      {
+        "source": "akshare.stock_fund_flow_industry",
+        "retrieved_at": "2026-09-04T13:40:20.325525Z",
+        "data_date": null,
+        "freshness": "current_only",
+        "quality": "PASS",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\industry_fund_flow_current.json",
+        "error": null
+      },
+      {
+        "source": "akshare.stock_fund_flow_concept",
+        "retrieved_at": "2026-09-04T13:40:20.327519Z",
+        "data_date": null,
+        "freshness": "current_only",
+        "quality": "PASS",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\concept_fund_flow_current.json",
+        "error": null
+      },
+      {
+        "source": "tushare.trade_cal",
+        "retrieved_at": "2026-09-04T13:40:20.328640Z",
+        "data_date": "2026-09-04",
+        "freshness": "historical",
+        "quality": "FAIL",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\tushare_trade_cal.json",
+        "error": "Exception: 抱歉，您访问接口(trade_cal)频率超限(5次/天)，具体频次详情：https://tushare.pro/document/1?doc_id=108。"
+      },
+      {
+        "source": "tushare.stock_basic",
+        "retrieved_at": "2026-09-04T13:40:20.328640Z",
+        "data_date": "2026-09-04",
+        "freshness": "historical",
+        "quality": "FAIL",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\tushare_stock_basic.json",
+        "error": "Exception: 抱歉，您访问接口(stock_basic)频率超限(5次/天)，具体频次详情：https://tushare.pro/document/1?doc_id=108。"
+      },
+      {
+        "source": "tushare.daily",
+        "retrieved_at": "2026-09-04T13:40:20.351577Z",
+        "data_date": "2026-09-04",
+        "freshness": "historical",
+        "quality": "PASS",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\tushare_daily_all.json",
+        "error": null
+      },
+      {
+        "source": "tushare.daily",
+        "retrieved_at": "2026-09-04T13:40:20.378696Z",
+        "data_date": "2026-09-03",
+        "freshness": "historical",
+        "quality": "PASS",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\tushare_previous_daily_all.json",
+        "error": null
+      },
+      {
+        "source": "tushare.daily_basic",
+        "retrieved_at": "2026-09-04T13:40:20.378696Z",
+        "data_date": "2026-09-04",
+        "freshness": "historical",
+        "quality": "FAIL",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\tushare_daily_basic_all.json",
+        "error": "Exception: 抱歉，您访问接口(daily_basic)频率超限(5次/天)，具体频次详情：https://tushare.pro/document/1?doc_id=108。"
+      },
+      {
+        "source": "tushare.adj_factor",
+        "retrieved_at": "2026-09-04T13:40:20.378696Z",
+        "data_date": "2026-09-04",
+        "freshness": "historical",
+        "quality": "FAIL",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\tushare_adj_factor_all.json",
+        "error": "Exception: 抱歉，您访问接口(adj_factor)频率超限(5次/天)，具体频次详情：https://tushare.pro/document/1?doc_id=108。"
+      },
+      {
+        "source": "akshare.stock_zh_a_hist; fallback akshare.stock_zh_a_hist_tx/stock_zh_a_daily",
+        "retrieved_at": "2026-09-04T13:40:20.379693Z",
+        "data_date": "2026-09-04",
+        "freshness": "historical",
+        "quality": "PASS",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\stock_top_ohlcv.json",
+        "error": null
+      },
+      {
+        "source": "akshare.stock_zh_index_daily",
+        "retrieved_at": "2026-09-04T13:40:20.405357Z",
+        "data_date": "2026-09-04",
+        "freshness": "historical",
+        "quality": "PASS",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\index_000001.SH.json",
+        "error": null
+      },
+      {
+        "source": "akshare.stock_zh_index_daily",
+        "retrieved_at": "2026-09-04T13:40:20.433283Z",
+        "data_date": "2026-09-04",
+        "freshness": "historical",
+        "quality": "PASS",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\index_399001.SZ.json",
+        "error": null
+      },
+      {
+        "source": "akshare.stock_zh_index_daily",
+        "retrieved_at": "2026-09-04T13:40:20.444222Z",
+        "data_date": "2026-09-04",
+        "freshness": "historical",
+        "quality": "PASS",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\index_399006.SZ.json",
+        "error": null
+      },
+      {
+        "source": "akshare.stock_zh_index_daily",
+        "retrieved_at": "2026-09-04T13:40:20.447214Z",
+        "data_date": "2026-09-04",
+        "freshness": "historical",
+        "quality": "PASS",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\index_000688.SH.json",
+        "error": null
+      },
+      {
+        "source": "akshare.stock_zh_index_daily",
+        "retrieved_at": "2026-09-04T13:40:20.450206Z",
+        "data_date": "2026-09-04",
+        "freshness": "historical",
+        "quality": "PASS",
+        "is_cached": true,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\index_899050.BJ.json",
+        "error": null
+      }
+    ],
+    "conflicts": []
+  },
+  "market_overview": {
+    "trade_date": "2026-09-04",
+    "is_trading_day": true,
+    "market_closed": true,
+    "indices": {
+      "上证指数": {
+        "name": "上证指数",
+        "ts_code": "000001.SH",
+        "close": 3930.116,
+        "change_pct": null,
+        "open": 3955.549,
+        "high": 3980.202,
+        "low": 3915.221,
+        "volume": 53728616100.0,
+        "amount": null,
+        "source": "akshare.stock_zh_index_daily",
+        "quality": "PASS"
+      },
+      "深证成指": {
+        "name": "深证成指",
+        "ts_code": "399001.SZ",
+        "close": 13516.969,
+        "change_pct": null,
+        "open": 13725.65,
+        "high": 13798.358,
+        "low": 13448.793,
+        "volume": 67847537179.0,
+        "amount": null,
+        "source": "akshare.stock_zh_index_daily",
+        "quality": "PASS"
+      },
+      "创业板指": {
+        "name": "创业板指",
+        "ts_code": "399006.SZ",
+        "close": 3286.546,
+        "change_pct": null,
+        "open": 3344.621,
+        "high": 3370.468,
+        "low": 3266.796,
+        "volume": 19341304198.0,
+        "amount": null,
+        "source": "akshare.stock_zh_index_daily",
+        "quality": "PASS"
+      },
+      "科创50": {
+        "name": "科创50",
+        "ts_code": "000688.SH",
+        "close": 1577.361,
+        "change_pct": null,
+        "open": 1627.951,
+        "high": 1637.101,
+        "low": 1566.873,
+        "volume": 753925100.0,
+        "amount": null,
+        "source": "akshare.stock_zh_index_daily",
+        "quality": "PASS"
+      },
+      "北证50": {
+        "name": "北证50",
+        "ts_code": "899050.BJ",
+        "close": 1087.64,
+        "change_pct": null,
+        "open": 1097.009,
+        "high": 1107.536,
+        "low": 1080.988,
+        "volume": 1053152934.0,
+        "amount": null,
+        "source": "akshare.stock_zh_index_daily",
+        "quality": "PASS"
+      }
+    },
+    "sh_sz_turnover": null,
+    "total_market_turnover": 2051048681166.63,
+    "previous_turnover": 1780237627524.24,
+    "turnover_delta": 270811053642.39,
+    "turnover_delta_pct": 15.21,
+    "rise_count": 2444,
+    "fall_count": 2914,
+    "flat_count": 190,
+    "limit_up_count": 39,
+    "limit_down_count": 9,
+    "failed_limit_count": 48,
+    "seal_rate": 44.83,
+    "highest_board": 5.0,
+    "previous_limit_up_avg_change_pct": -0.57,
+    "previous_continuous_board_performance": {
+      "count": 9,
+      "avg_change_pct": -0.89,
+      "red_rate": 33.33
+    },
+    "st_limit_up_count": 0,
+    "st_limit_down_count": 0
+  },
+  "limit_up_down": {
+    "limit_up_count": 39,
+    "limit_down_count": 9,
+    "failed_limit_count": 48,
+    "failed_limit_rate": 55.17,
+    "seal_rate": 44.83,
+    "highest_board": 5.0,
+    "second_board_count": 6,
+    "third_board_count": 0,
+    "fourth_board_count": 0,
+    "five_plus_board_count": 1,
+    "promotion_rate": null,
+    "previous_limit_up_performance": {
+      "count": 44,
+      "avg_change_pct": -0.57,
+      "high_open_rate": null,
+      "red_rate": 34.09,
+      "limit_up_rate": 15.91,
+      "limit_down_rate": 6.82
+    },
+    "twenty_cm_limit_up_count": 0,
+    "bse_limit_up_count": 1,
+    "large_loss_count": null,
+    "sky_floor_count": null,
+    "floor_sky_count": null,
+    "source": "akshare Eastmoney limit pools"
+  },
+  "liquidity": {
+    "sh_sz_turnover": null,
+    "total_market_turnover": 2051048681166.63,
+    "previous_turnover": 1780237627524.24,
+    "turnover_delta": 270811053642.39,
+    "turnover_delta_pct": 15.21,
+    "source": "tushare.daily amount sum; index amount when available"
+  },
+  "top_industries": [
+    {
+      "name": "饲料",
+      "change_pct": null,
+      "amount": 2927073560.0,
+      "turnover_rate": null,
+      "rise_count": 4,
+      "fall_count": 3,
+      "limit_up_count": 4,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [
+        {
+          "stock_code": "000876",
+          "stock_name": "新 希 望",
+          "change_pct": 10.0,
+          "amount": 1360256304.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "001366",
+          "stock_name": "播恩集团",
+          "change_pct": 10.038313865661621,
+          "amount": 206619808.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "000702",
+          "stock_name": "正虹科技",
+          "change_pct": 10.017574310302734,
+          "amount": 110905654.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "603151",
+          "stock_name": "邦基科技",
+          "change_pct": 10.01213550567627,
+          "amount": 101315826.0,
+          "board_count": 1.0
+        }
+      ],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "养殖业",
+      "change_pct": null,
+      "amount": 1473276128.0,
+      "turnover_rate": null,
+      "rise_count": 3,
+      "fall_count": null,
+      "limit_up_count": 3,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [
+        {
+          "stock_code": "002124",
+          "stock_name": "天邦食品",
+          "change_pct": 10.0,
+          "amount": 686686384.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "000735",
+          "stock_name": "罗 牛 山",
+          "change_pct": 10.05385971069336,
+          "amount": 471560288.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "600975",
+          "stock_name": "新五丰",
+          "change_pct": 10.039369583129883,
+          "amount": 315029456.0,
+          "board_count": 1.0
+        }
+      ],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "汽车零部",
+      "change_pct": null,
+      "amount": 5639918882.0,
+      "turnover_rate": null,
+      "rise_count": 2,
+      "fall_count": 5,
+      "limit_up_count": 2,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [
+        {
+          "stock_code": "600698",
+          "stock_name": "湖南天雁",
+          "change_pct": 10.013908386230469,
+          "amount": 609261872.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "603390",
+          "stock_name": "通达电气",
+          "change_pct": 10.0,
+          "amount": 148595858.0,
+          "board_count": 1.0
+        }
+      ],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "种植业",
+      "change_pct": null,
+      "amount": 2184588656.0,
+      "turnover_rate": null,
+      "rise_count": 2,
+      "fall_count": null,
+      "limit_up_count": 2,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [
+        {
+          "stock_code": "600108",
+          "stock_name": "亚盛集团",
+          "change_pct": 10.1010103225708,
+          "amount": 944268800.0,
+          "board_count": 2.0
+        },
+        {
+          "stock_code": "600354",
+          "stock_name": "敦煌种业",
+          "change_pct": 10.038119316101074,
+          "amount": 1240319856.0,
+          "board_count": 1.0
+        }
+      ],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "出版",
+      "change_pct": null,
+      "amount": 1470911158.0,
+      "turnover_rate": null,
+      "rise_count": 2,
+      "fall_count": 2,
+      "limit_up_count": 2,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [
+        {
+          "stock_code": "605577",
+          "stock_name": "龙版传媒",
+          "change_pct": 9.971712112426758,
+          "amount": 495051040.0,
+          "board_count": 5.0
+        },
+        {
+          "stock_code": "601949",
+          "stock_name": "中国出版",
+          "change_pct": 10.0,
+          "amount": 306336544.0,
+          "board_count": 1.0
+        }
+      ],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "非白酒",
+      "change_pct": null,
+      "amount": 1246191287.0,
+      "turnover_rate": null,
+      "rise_count": 2,
+      "fall_count": 1,
+      "limit_up_count": 2,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [
+        {
+          "stock_code": "600059",
+          "stock_name": "古越龙山",
+          "change_pct": 10.059880256652832,
+          "amount": 655276944.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "601579",
+          "stock_name": "会稽山",
+          "change_pct": 10.009140968322754,
+          "amount": 399438320.0,
+          "board_count": 1.0
+        }
+      ],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "炼化及贸",
+      "change_pct": null,
+      "amount": 835515072.0,
+      "turnover_rate": null,
+      "rise_count": 2,
+      "fall_count": null,
+      "limit_up_count": 2,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [
+        {
+          "stock_code": "600506",
+          "stock_name": "统一股份",
+          "change_pct": 10.011919021606445,
+          "amount": 606529008.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "001316",
+          "stock_name": "润贝航科",
+          "change_pct": 9.98542308807373,
+          "amount": 228986064.0,
+          "board_count": 1.0
+        }
+      ],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "文娱用品",
+      "change_pct": null,
+      "amount": 365942817.0,
+      "turnover_rate": null,
+      "rise_count": 2,
+      "fall_count": null,
+      "limit_up_count": 2,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [
+        {
+          "stock_code": "002862",
+          "stock_name": "实丰文化",
+          "change_pct": 10.013717651367188,
+          "amount": 185258126.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "001222",
+          "stock_name": "源飞宠物",
+          "change_pct": 9.972677230834961,
+          "amount": 180684691.0,
+          "board_count": 1.0
+        }
+      ],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "通信设备",
+      "change_pct": null,
+      "amount": 3946636752.0,
+      "turnover_rate": null,
+      "rise_count": 1,
+      "fall_count": 1,
+      "limit_up_count": 1,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [
+        {
+          "stock_code": "003040",
+          "stock_name": "楚天龙",
+          "change_pct": 10.0,
+          "amount": 1040333104.0,
+          "board_count": 1.0
+        }
+      ],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "林业Ⅱ",
+      "change_pct": null,
+      "amount": 2471567696.0,
+      "turnover_rate": null,
+      "rise_count": 1,
+      "fall_count": null,
+      "limit_up_count": 1,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [
+        {
+          "stock_code": "000592",
+          "stock_name": "平潭发展",
+          "change_pct": 9.985315322875977,
+          "amount": 2471567696.0,
+          "board_count": 1.0
+        }
+      ],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "电力",
+      "change_pct": null,
+      "amount": 2152585452.0,
+      "turnover_rate": null,
+      "rise_count": 1,
+      "fall_count": 1,
+      "limit_up_count": 1,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [
+        {
+          "stock_code": "605580",
+          "stock_name": "恒盛能源",
+          "change_pct": 9.985315322875977,
+          "amount": 81332412.0,
+          "board_count": 2.0
+        }
+      ],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "工程咨询",
+      "change_pct": null,
+      "amount": 2011219584.0,
+      "turnover_rate": null,
+      "rise_count": 1,
+      "fall_count": 2,
+      "limit_up_count": 1,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [
+        {
+          "stock_code": "002949",
+          "stock_name": "华阳国际",
+          "change_pct": 10.007819175720215,
+          "amount": 252251728.0,
+          "board_count": 1.0
+        }
+      ],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "影视院线",
+      "change_pct": null,
+      "amount": 1660285776.0,
+      "turnover_rate": null,
+      "rise_count": 1,
+      "fall_count": null,
+      "limit_up_count": 1,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [
+        {
+          "stock_code": "000892",
+          "stock_name": "欢瑞世纪",
+          "change_pct": 10.039369583129883,
+          "amount": 1660285776.0,
+          "board_count": 1.0
+        }
+      ],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "航运港口",
+      "change_pct": null,
+      "amount": 1196908208.0,
+      "turnover_rate": null,
+      "rise_count": 1,
+      "fall_count": null,
+      "limit_up_count": 1,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [
+        {
+          "stock_code": "603162",
+          "stock_name": "海通发展",
+          "change_pct": 9.992486953735352,
+          "amount": 1196908208.0,
+          "board_count": 2.0
+        }
+      ],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "一般零售",
+      "change_pct": null,
+      "amount": 997587760.0,
+      "turnover_rate": null,
+      "rise_count": 1,
+      "fall_count": 1,
+      "limit_up_count": 1,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [
+        {
+          "stock_code": "600865",
+          "stock_name": "百大集团",
+          "change_pct": 9.980620384216309,
+          "amount": 602024512.0,
+          "board_count": 2.0
+        }
+      ],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "IT服务Ⅱ",
+      "change_pct": null,
+      "amount": 861312505.0,
+      "turnover_rate": null,
+      "rise_count": 1,
+      "fall_count": 2,
+      "limit_up_count": 1,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [
+        {
+          "stock_code": "605398",
+          "stock_name": "新炬网络",
+          "change_pct": 9.983498573303223,
+          "amount": 109420985.0,
+          "board_count": 2.0
+        }
+      ],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "化学制品",
+      "change_pct": null,
+      "amount": 852541999.0,
+      "turnover_rate": null,
+      "rise_count": 1,
+      "fall_count": 2,
+      "limit_up_count": 1,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [
+        {
+          "stock_code": "002827",
+          "stock_name": "高争民爆",
+          "change_pct": 9.993349075317383,
+          "amount": 632718592.0,
+          "board_count": 1.0
+        }
+      ],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "多元金融",
+      "change_pct": null,
+      "amount": 840063120.0,
+      "turnover_rate": null,
+      "rise_count": 1,
+      "fall_count": 1,
+      "limit_up_count": 1,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [
+        {
+          "stock_code": "603123",
+          "stock_name": "翠微股份",
+          "change_pct": 10.039369583129883,
+          "amount": 354857104.0,
+          "board_count": 1.0
+        }
+      ],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "调味发酵",
+      "change_pct": null,
+      "amount": 495599584.0,
+      "turnover_rate": null,
+      "rise_count": 1,
+      "fall_count": null,
+      "limit_up_count": 1,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [
+        {
+          "stock_code": "603696",
+          "stock_name": "安记食品",
+          "change_pct": 10.03636360168457,
+          "amount": 495599584.0,
+          "board_count": 1.0
+        }
+      ],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "name": "医疗服务",
+      "change_pct": null,
+      "amount": 449514144.0,
+      "turnover_rate": null,
+      "rise_count": 1,
+      "fall_count": null,
+      "limit_up_count": 1,
+      "main_net_inflow": null,
+      "main_net_inflow_pct": null,
+      "top_stocks": [
+        {
+          "stock_code": "603122",
+          "stock_name": "合富中国",
+          "change_pct": 9.975668907165527,
+          "amount": 449514144.0,
+          "board_count": 1.0
+        }
+      ],
+      "five_day_change_pct": null,
+      "twenty_day_change_pct": null,
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    }
+  ],
+  "top_themes": [
+    {
+      "theme_name": "饲料",
+      "normalized_name": "饲料",
+      "change_pct": null,
+      "rise_count": 4,
+      "fall_count": 3,
+      "limit_up_count": 4,
+      "limit_down_count": 0,
+      "failed_limit_count": 3,
+      "amount": 2927073560.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "000876",
+          "stock_name": "新 希 望",
+          "change_pct": 10.0,
+          "amount": 1360256304.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "001366",
+          "stock_name": "播恩集团",
+          "change_pct": 10.038313865661621,
+          "amount": 206619808.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "000702",
+          "stock_name": "正虹科技",
+          "change_pct": 10.017574310302734,
+          "amount": 110905654.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "603151",
+          "stock_name": "邦基科技",
+          "change_pct": 10.01213550567627,
+          "amount": 101315826.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "000876",
+          "stock_name": "新 希 望",
+          "change_pct": 10.0,
+          "amount": 1360256304.0,
+          "board_count": 1.0
+        }
+      ],
+      "catch_up_candidates": [
+        {
+          "stock_code": "001366",
+          "stock_name": "播恩集团",
+          "change_pct": 10.038313865661621,
+          "amount": 206619808.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "603151",
+          "stock_name": "邦基科技",
+          "change_pct": 10.01213550567627,
+          "amount": 101315826.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "000702",
+          "stock_name": "正虹科技",
+          "change_pct": 10.017574310302734,
+          "amount": 110905654.0,
+          "board_count": 1.0
+        }
+      ],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "养殖业",
+      "normalized_name": "养殖业",
+      "change_pct": null,
+      "rise_count": 3,
+      "fall_count": null,
+      "limit_up_count": 3,
+      "limit_down_count": 0,
+      "failed_limit_count": 0,
+      "amount": 1473276128.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "002124",
+          "stock_name": "天邦食品",
+          "change_pct": 10.0,
+          "amount": 686686384.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "000735",
+          "stock_name": "罗 牛 山",
+          "change_pct": 10.05385971069336,
+          "amount": 471560288.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "600975",
+          "stock_name": "新五丰",
+          "change_pct": 10.039369583129883,
+          "amount": 315029456.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "002124",
+          "stock_name": "天邦食品",
+          "change_pct": 10.0,
+          "amount": 686686384.0,
+          "board_count": 1.0
+        }
+      ],
+      "catch_up_candidates": [
+        {
+          "stock_code": "000735",
+          "stock_name": "罗 牛 山",
+          "change_pct": 10.05385971069336,
+          "amount": 471560288.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "600975",
+          "stock_name": "新五丰",
+          "change_pct": 10.039369583129883,
+          "amount": 315029456.0,
+          "board_count": 1.0
+        }
+      ],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "汽车零部",
+      "normalized_name": "汽车零部",
+      "change_pct": null,
+      "rise_count": 2,
+      "fall_count": 5,
+      "limit_up_count": 2,
+      "limit_down_count": 1,
+      "failed_limit_count": 4,
+      "amount": 5639918882.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "600698",
+          "stock_name": "湖南天雁",
+          "change_pct": 10.013908386230469,
+          "amount": 609261872.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "603390",
+          "stock_name": "通达电气",
+          "change_pct": 10.0,
+          "amount": 148595858.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [
+        {
+          "stock_code": "605068",
+          "stock_name": "明新旭腾",
+          "change_pct": -10.0,
+          "amount": 232201357.0
+        }
+      ],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "600698",
+          "stock_name": "湖南天雁",
+          "change_pct": 10.013908386230469,
+          "amount": 609261872.0,
+          "board_count": 1.0
+        }
+      ],
+      "catch_up_candidates": [
+        {
+          "stock_code": "603390",
+          "stock_name": "通达电气",
+          "change_pct": 10.0,
+          "amount": 148595858.0,
+          "board_count": 1.0
+        }
+      ],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "种植业",
+      "normalized_name": "种植业",
+      "change_pct": null,
+      "rise_count": 2,
+      "fall_count": null,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "failed_limit_count": 0,
+      "amount": 2184588656.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "600108",
+          "stock_name": "亚盛集团",
+          "change_pct": 10.1010103225708,
+          "amount": 944268800.0,
+          "board_count": 2.0
+        },
+        {
+          "stock_code": "600354",
+          "stock_name": "敦煌种业",
+          "change_pct": 10.038119316101074,
+          "amount": 1240319856.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [
+        {
+          "stock_code": "600108",
+          "stock_name": "亚盛集团",
+          "change_pct": 10.1010103225708,
+          "amount": 944268800.0,
+          "board_count": 2.0
+        }
+      ],
+      "capacity_candidates": [
+        {
+          "stock_code": "600354",
+          "stock_name": "敦煌种业",
+          "change_pct": 10.038119316101074,
+          "amount": 1240319856.0,
+          "board_count": 1.0
+        }
+      ],
+      "catch_up_candidates": [],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "出版",
+      "normalized_name": "出版",
+      "change_pct": null,
+      "rise_count": 2,
+      "fall_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "failed_limit_count": 2,
+      "amount": 1470911158.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "605577",
+          "stock_name": "龙版传媒",
+          "change_pct": 9.971712112426758,
+          "amount": 495051040.0,
+          "board_count": 5.0
+        },
+        {
+          "stock_code": "601949",
+          "stock_name": "中国出版",
+          "change_pct": 10.0,
+          "amount": 306336544.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [
+        {
+          "stock_code": "605577",
+          "stock_name": "龙版传媒",
+          "change_pct": 9.971712112426758,
+          "amount": 495051040.0,
+          "board_count": 5.0
+        }
+      ],
+      "capacity_candidates": [],
+      "catch_up_candidates": [
+        {
+          "stock_code": "601949",
+          "stock_name": "中国出版",
+          "change_pct": 10.0,
+          "amount": 306336544.0,
+          "board_count": 1.0
+        }
+      ],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "非白酒",
+      "normalized_name": "非白酒",
+      "change_pct": null,
+      "rise_count": 2,
+      "fall_count": 1,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "failed_limit_count": 1,
+      "amount": 1246191287.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "600059",
+          "stock_name": "古越龙山",
+          "change_pct": 10.059880256652832,
+          "amount": 655276944.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "601579",
+          "stock_name": "会稽山",
+          "change_pct": 10.009140968322754,
+          "amount": 399438320.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "600059",
+          "stock_name": "古越龙山",
+          "change_pct": 10.059880256652832,
+          "amount": 655276944.0,
+          "board_count": 1.0
+        }
+      ],
+      "catch_up_candidates": [
+        {
+          "stock_code": "601579",
+          "stock_name": "会稽山",
+          "change_pct": 10.009140968322754,
+          "amount": 399438320.0,
+          "board_count": 1.0
+        }
+      ],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "炼化及贸",
+      "normalized_name": "炼化及贸",
+      "change_pct": null,
+      "rise_count": 2,
+      "fall_count": null,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "failed_limit_count": 0,
+      "amount": 835515072.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "600506",
+          "stock_name": "统一股份",
+          "change_pct": 10.011919021606445,
+          "amount": 606529008.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "001316",
+          "stock_name": "润贝航科",
+          "change_pct": 9.98542308807373,
+          "amount": 228986064.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "600506",
+          "stock_name": "统一股份",
+          "change_pct": 10.011919021606445,
+          "amount": 606529008.0,
+          "board_count": 1.0
+        }
+      ],
+      "catch_up_candidates": [
+        {
+          "stock_code": "001316",
+          "stock_name": "润贝航科",
+          "change_pct": 9.98542308807373,
+          "amount": 228986064.0,
+          "board_count": 1.0
+        }
+      ],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "文娱用品",
+      "normalized_name": "文娱用品",
+      "change_pct": null,
+      "rise_count": 2,
+      "fall_count": null,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "failed_limit_count": 0,
+      "amount": 365942817.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "002862",
+          "stock_name": "实丰文化",
+          "change_pct": 10.013717651367188,
+          "amount": 185258126.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "001222",
+          "stock_name": "源飞宠物",
+          "change_pct": 9.972677230834961,
+          "amount": 180684691.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [],
+      "catch_up_candidates": [
+        {
+          "stock_code": "002862",
+          "stock_name": "实丰文化",
+          "change_pct": 10.013717651367188,
+          "amount": 185258126.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "001222",
+          "stock_name": "源飞宠物",
+          "change_pct": 9.972677230834961,
+          "amount": 180684691.0,
+          "board_count": 1.0
+        }
+      ],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "通信设备",
+      "normalized_name": "通信设备",
+      "change_pct": null,
+      "rise_count": 1,
+      "fall_count": 1,
+      "limit_up_count": 1,
+      "limit_down_count": 0,
+      "failed_limit_count": 1,
+      "amount": 3946636752.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "003040",
+          "stock_name": "楚天龙",
+          "change_pct": 10.0,
+          "amount": 1040333104.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "003040",
+          "stock_name": "楚天龙",
+          "change_pct": 10.0,
+          "amount": 1040333104.0,
+          "board_count": 1.0
+        }
+      ],
+      "catch_up_candidates": [],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "林业Ⅱ",
+      "normalized_name": "林业Ⅱ",
+      "change_pct": null,
+      "rise_count": 1,
+      "fall_count": null,
+      "limit_up_count": 1,
+      "limit_down_count": 0,
+      "failed_limit_count": 0,
+      "amount": 2471567696.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "000592",
+          "stock_name": "平潭发展",
+          "change_pct": 9.985315322875977,
+          "amount": 2471567696.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "000592",
+          "stock_name": "平潭发展",
+          "change_pct": 9.985315322875977,
+          "amount": 2471567696.0,
+          "board_count": 1.0
+        }
+      ],
+      "catch_up_candidates": [],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "电力",
+      "normalized_name": "电力",
+      "change_pct": null,
+      "rise_count": 1,
+      "fall_count": 1,
+      "limit_up_count": 1,
+      "limit_down_count": 0,
+      "failed_limit_count": 1,
+      "amount": 2152585452.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "605580",
+          "stock_name": "恒盛能源",
+          "change_pct": 9.985315322875977,
+          "amount": 81332412.0,
+          "board_count": 2.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [
+        {
+          "stock_code": "605580",
+          "stock_name": "恒盛能源",
+          "change_pct": 9.985315322875977,
+          "amount": 81332412.0,
+          "board_count": 2.0
+        }
+      ],
+      "capacity_candidates": [],
+      "catch_up_candidates": [],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "工程咨询",
+      "normalized_name": "工程咨询",
+      "change_pct": null,
+      "rise_count": 1,
+      "fall_count": 2,
+      "limit_up_count": 1,
+      "limit_down_count": 0,
+      "failed_limit_count": 2,
+      "amount": 2011219584.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "002949",
+          "stock_name": "华阳国际",
+          "change_pct": 10.007819175720215,
+          "amount": 252251728.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [],
+      "catch_up_candidates": [
+        {
+          "stock_code": "002949",
+          "stock_name": "华阳国际",
+          "change_pct": 10.007819175720215,
+          "amount": 252251728.0,
+          "board_count": 1.0
+        }
+      ],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "影视院线",
+      "normalized_name": "影视院线",
+      "change_pct": null,
+      "rise_count": 1,
+      "fall_count": null,
+      "limit_up_count": 1,
+      "limit_down_count": 0,
+      "failed_limit_count": 0,
+      "amount": 1660285776.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "000892",
+          "stock_name": "欢瑞世纪",
+          "change_pct": 10.039369583129883,
+          "amount": 1660285776.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "000892",
+          "stock_name": "欢瑞世纪",
+          "change_pct": 10.039369583129883,
+          "amount": 1660285776.0,
+          "board_count": 1.0
+        }
+      ],
+      "catch_up_candidates": [],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "航运港口",
+      "normalized_name": "航运港口",
+      "change_pct": null,
+      "rise_count": 1,
+      "fall_count": null,
+      "limit_up_count": 1,
+      "limit_down_count": 0,
+      "failed_limit_count": 0,
+      "amount": 1196908208.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "603162",
+          "stock_name": "海通发展",
+          "change_pct": 9.992486953735352,
+          "amount": 1196908208.0,
+          "board_count": 2.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [
+        {
+          "stock_code": "603162",
+          "stock_name": "海通发展",
+          "change_pct": 9.992486953735352,
+          "amount": 1196908208.0,
+          "board_count": 2.0
+        }
+      ],
+      "capacity_candidates": [],
+      "catch_up_candidates": [],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "一般零售",
+      "normalized_name": "一般零售",
+      "change_pct": null,
+      "rise_count": 1,
+      "fall_count": 1,
+      "limit_up_count": 1,
+      "limit_down_count": 0,
+      "failed_limit_count": 1,
+      "amount": 997587760.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "600865",
+          "stock_name": "百大集团",
+          "change_pct": 9.980620384216309,
+          "amount": 602024512.0,
+          "board_count": 2.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [
+        {
+          "stock_code": "600865",
+          "stock_name": "百大集团",
+          "change_pct": 9.980620384216309,
+          "amount": 602024512.0,
+          "board_count": 2.0
+        }
+      ],
+      "capacity_candidates": [],
+      "catch_up_candidates": [],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "IT服务Ⅱ",
+      "normalized_name": "IT服务Ⅱ",
+      "change_pct": null,
+      "rise_count": 1,
+      "fall_count": 2,
+      "limit_up_count": 1,
+      "limit_down_count": 1,
+      "failed_limit_count": 1,
+      "amount": 861312505.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "605398",
+          "stock_name": "新炬网络",
+          "change_pct": 9.983498573303223,
+          "amount": 109420985.0,
+          "board_count": 2.0
+        }
+      ],
+      "top_losers": [
+        {
+          "stock_code": "003005",
+          "stock_name": "竞业达",
+          "change_pct": -9.985387802124023,
+          "amount": 895051152.0
+        }
+      ],
+      "leader_candidates": [
+        {
+          "stock_code": "605398",
+          "stock_name": "新炬网络",
+          "change_pct": 9.983498573303223,
+          "amount": 109420985.0,
+          "board_count": 2.0
+        }
+      ],
+      "capacity_candidates": [],
+      "catch_up_candidates": [],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "化学制品",
+      "normalized_name": "化学制品",
+      "change_pct": null,
+      "rise_count": 1,
+      "fall_count": 2,
+      "limit_up_count": 1,
+      "limit_down_count": 1,
+      "failed_limit_count": 1,
+      "amount": 852541999.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "002827",
+          "stock_name": "高争民爆",
+          "change_pct": 9.993349075317383,
+          "amount": 632718592.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [
+        {
+          "stock_code": "002909",
+          "stock_name": "集泰股份",
+          "change_pct": -9.987516403198242,
+          "amount": 1135015040.0
+        }
+      ],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "002827",
+          "stock_name": "高争民爆",
+          "change_pct": 9.993349075317383,
+          "amount": 632718592.0,
+          "board_count": 1.0
+        }
+      ],
+      "catch_up_candidates": [],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "多元金融",
+      "normalized_name": "多元金融",
+      "change_pct": null,
+      "rise_count": 1,
+      "fall_count": 1,
+      "limit_up_count": 1,
+      "limit_down_count": 0,
+      "failed_limit_count": 1,
+      "amount": 840063120.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "603123",
+          "stock_name": "翠微股份",
+          "change_pct": 10.039369583129883,
+          "amount": 354857104.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [],
+      "catch_up_candidates": [
+        {
+          "stock_code": "603123",
+          "stock_name": "翠微股份",
+          "change_pct": 10.039369583129883,
+          "amount": 354857104.0,
+          "board_count": 1.0
+        }
+      ],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "调味发酵",
+      "normalized_name": "调味发酵",
+      "change_pct": null,
+      "rise_count": 1,
+      "fall_count": null,
+      "limit_up_count": 1,
+      "limit_down_count": 0,
+      "failed_limit_count": 0,
+      "amount": 495599584.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "603696",
+          "stock_name": "安记食品",
+          "change_pct": 10.03636360168457,
+          "amount": 495599584.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [],
+      "catch_up_candidates": [
+        {
+          "stock_code": "603696",
+          "stock_name": "安记食品",
+          "change_pct": 10.03636360168457,
+          "amount": 495599584.0,
+          "board_count": 1.0
+        }
+      ],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "医疗服务",
+      "normalized_name": "医疗服务",
+      "change_pct": null,
+      "rise_count": 1,
+      "fall_count": null,
+      "limit_up_count": 1,
+      "limit_down_count": 0,
+      "failed_limit_count": 0,
+      "amount": 449514144.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "603122",
+          "stock_name": "合富中国",
+          "change_pct": 9.975668907165527,
+          "amount": 449514144.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [],
+      "catch_up_candidates": [
+        {
+          "stock_code": "603122",
+          "stock_name": "合富中国",
+          "change_pct": 9.975668907165527,
+          "amount": 449514144.0,
+          "board_count": 1.0
+        }
+      ],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    }
+  ],
+  "weak_themes": [
+    {
+      "theme_name": "饲料",
+      "normalized_name": "饲料",
+      "change_pct": null,
+      "rise_count": 4,
+      "fall_count": 3,
+      "limit_up_count": 4,
+      "limit_down_count": 0,
+      "failed_limit_count": 3,
+      "amount": 2927073560.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "000876",
+          "stock_name": "新 希 望",
+          "change_pct": 10.0,
+          "amount": 1360256304.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "001366",
+          "stock_name": "播恩集团",
+          "change_pct": 10.038313865661621,
+          "amount": 206619808.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "000702",
+          "stock_name": "正虹科技",
+          "change_pct": 10.017574310302734,
+          "amount": 110905654.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "603151",
+          "stock_name": "邦基科技",
+          "change_pct": 10.01213550567627,
+          "amount": 101315826.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "000876",
+          "stock_name": "新 希 望",
+          "change_pct": 10.0,
+          "amount": 1360256304.0,
+          "board_count": 1.0
+        }
+      ],
+      "catch_up_candidates": [
+        {
+          "stock_code": "001366",
+          "stock_name": "播恩集团",
+          "change_pct": 10.038313865661621,
+          "amount": 206619808.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "603151",
+          "stock_name": "邦基科技",
+          "change_pct": 10.01213550567627,
+          "amount": 101315826.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "000702",
+          "stock_name": "正虹科技",
+          "change_pct": 10.017574310302734,
+          "amount": 110905654.0,
+          "board_count": 1.0
+        }
+      ],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "汽车零部",
+      "normalized_name": "汽车零部",
+      "change_pct": null,
+      "rise_count": 2,
+      "fall_count": 5,
+      "limit_up_count": 2,
+      "limit_down_count": 1,
+      "failed_limit_count": 4,
+      "amount": 5639918882.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "600698",
+          "stock_name": "湖南天雁",
+          "change_pct": 10.013908386230469,
+          "amount": 609261872.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "603390",
+          "stock_name": "通达电气",
+          "change_pct": 10.0,
+          "amount": 148595858.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [
+        {
+          "stock_code": "605068",
+          "stock_name": "明新旭腾",
+          "change_pct": -10.0,
+          "amount": 232201357.0
+        }
+      ],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "600698",
+          "stock_name": "湖南天雁",
+          "change_pct": 10.013908386230469,
+          "amount": 609261872.0,
+          "board_count": 1.0
+        }
+      ],
+      "catch_up_candidates": [
+        {
+          "stock_code": "603390",
+          "stock_name": "通达电气",
+          "change_pct": 10.0,
+          "amount": 148595858.0,
+          "board_count": 1.0
+        }
+      ],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "出版",
+      "normalized_name": "出版",
+      "change_pct": null,
+      "rise_count": 2,
+      "fall_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "failed_limit_count": 2,
+      "amount": 1470911158.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "605577",
+          "stock_name": "龙版传媒",
+          "change_pct": 9.971712112426758,
+          "amount": 495051040.0,
+          "board_count": 5.0
+        },
+        {
+          "stock_code": "601949",
+          "stock_name": "中国出版",
+          "change_pct": 10.0,
+          "amount": 306336544.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [
+        {
+          "stock_code": "605577",
+          "stock_name": "龙版传媒",
+          "change_pct": 9.971712112426758,
+          "amount": 495051040.0,
+          "board_count": 5.0
+        }
+      ],
+      "capacity_candidates": [],
+      "catch_up_candidates": [
+        {
+          "stock_code": "601949",
+          "stock_name": "中国出版",
+          "change_pct": 10.0,
+          "amount": 306336544.0,
+          "board_count": 1.0
+        }
+      ],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "非白酒",
+      "normalized_name": "非白酒",
+      "change_pct": null,
+      "rise_count": 2,
+      "fall_count": 1,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "failed_limit_count": 1,
+      "amount": 1246191287.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "600059",
+          "stock_name": "古越龙山",
+          "change_pct": 10.059880256652832,
+          "amount": 655276944.0,
+          "board_count": 1.0
+        },
+        {
+          "stock_code": "601579",
+          "stock_name": "会稽山",
+          "change_pct": 10.009140968322754,
+          "amount": 399438320.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "600059",
+          "stock_name": "古越龙山",
+          "change_pct": 10.059880256652832,
+          "amount": 655276944.0,
+          "board_count": 1.0
+        }
+      ],
+      "catch_up_candidates": [
+        {
+          "stock_code": "601579",
+          "stock_name": "会稽山",
+          "change_pct": 10.009140968322754,
+          "amount": 399438320.0,
+          "board_count": 1.0
+        }
+      ],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "通信设备",
+      "normalized_name": "通信设备",
+      "change_pct": null,
+      "rise_count": 1,
+      "fall_count": 1,
+      "limit_up_count": 1,
+      "limit_down_count": 0,
+      "failed_limit_count": 1,
+      "amount": 3946636752.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "003040",
+          "stock_name": "楚天龙",
+          "change_pct": 10.0,
+          "amount": 1040333104.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "003040",
+          "stock_name": "楚天龙",
+          "change_pct": 10.0,
+          "amount": 1040333104.0,
+          "board_count": 1.0
+        }
+      ],
+      "catch_up_candidates": [],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "电力",
+      "normalized_name": "电力",
+      "change_pct": null,
+      "rise_count": 1,
+      "fall_count": 1,
+      "limit_up_count": 1,
+      "limit_down_count": 0,
+      "failed_limit_count": 1,
+      "amount": 2152585452.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "605580",
+          "stock_name": "恒盛能源",
+          "change_pct": 9.985315322875977,
+          "amount": 81332412.0,
+          "board_count": 2.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [
+        {
+          "stock_code": "605580",
+          "stock_name": "恒盛能源",
+          "change_pct": 9.985315322875977,
+          "amount": 81332412.0,
+          "board_count": 2.0
+        }
+      ],
+      "capacity_candidates": [],
+      "catch_up_candidates": [],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "工程咨询",
+      "normalized_name": "工程咨询",
+      "change_pct": null,
+      "rise_count": 1,
+      "fall_count": 2,
+      "limit_up_count": 1,
+      "limit_down_count": 0,
+      "failed_limit_count": 2,
+      "amount": 2011219584.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "002949",
+          "stock_name": "华阳国际",
+          "change_pct": 10.007819175720215,
+          "amount": 252251728.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [],
+      "catch_up_candidates": [
+        {
+          "stock_code": "002949",
+          "stock_name": "华阳国际",
+          "change_pct": 10.007819175720215,
+          "amount": 252251728.0,
+          "board_count": 1.0
+        }
+      ],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "一般零售",
+      "normalized_name": "一般零售",
+      "change_pct": null,
+      "rise_count": 1,
+      "fall_count": 1,
+      "limit_up_count": 1,
+      "limit_down_count": 0,
+      "failed_limit_count": 1,
+      "amount": 997587760.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "600865",
+          "stock_name": "百大集团",
+          "change_pct": 9.980620384216309,
+          "amount": 602024512.0,
+          "board_count": 2.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [
+        {
+          "stock_code": "600865",
+          "stock_name": "百大集团",
+          "change_pct": 9.980620384216309,
+          "amount": 602024512.0,
+          "board_count": 2.0
+        }
+      ],
+      "capacity_candidates": [],
+      "catch_up_candidates": [],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "IT服务Ⅱ",
+      "normalized_name": "IT服务Ⅱ",
+      "change_pct": null,
+      "rise_count": 1,
+      "fall_count": 2,
+      "limit_up_count": 1,
+      "limit_down_count": 1,
+      "failed_limit_count": 1,
+      "amount": 861312505.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "605398",
+          "stock_name": "新炬网络",
+          "change_pct": 9.983498573303223,
+          "amount": 109420985.0,
+          "board_count": 2.0
+        }
+      ],
+      "top_losers": [
+        {
+          "stock_code": "003005",
+          "stock_name": "竞业达",
+          "change_pct": -9.985387802124023,
+          "amount": 895051152.0
+        }
+      ],
+      "leader_candidates": [
+        {
+          "stock_code": "605398",
+          "stock_name": "新炬网络",
+          "change_pct": 9.983498573303223,
+          "amount": 109420985.0,
+          "board_count": 2.0
+        }
+      ],
+      "capacity_candidates": [],
+      "catch_up_candidates": [],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "化学制品",
+      "normalized_name": "化学制品",
+      "change_pct": null,
+      "rise_count": 1,
+      "fall_count": 2,
+      "limit_up_count": 1,
+      "limit_down_count": 1,
+      "failed_limit_count": 1,
+      "amount": 852541999.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "002827",
+          "stock_name": "高争民爆",
+          "change_pct": 9.993349075317383,
+          "amount": 632718592.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [
+        {
+          "stock_code": "002909",
+          "stock_name": "集泰股份",
+          "change_pct": -9.987516403198242,
+          "amount": 1135015040.0
+        }
+      ],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "002827",
+          "stock_name": "高争民爆",
+          "change_pct": 9.993349075317383,
+          "amount": 632718592.0,
+          "board_count": 1.0
+        }
+      ],
+      "catch_up_candidates": [],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "多元金融",
+      "normalized_name": "多元金融",
+      "change_pct": null,
+      "rise_count": 1,
+      "fall_count": 1,
+      "limit_up_count": 1,
+      "limit_down_count": 0,
+      "failed_limit_count": 1,
+      "amount": 840063120.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "603123",
+          "stock_name": "翠微股份",
+          "change_pct": 10.039369583129883,
+          "amount": 354857104.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [],
+      "catch_up_candidates": [
+        {
+          "stock_code": "603123",
+          "stock_name": "翠微股份",
+          "change_pct": 10.039369583129883,
+          "amount": 354857104.0,
+          "board_count": 1.0
+        }
+      ],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "专用设备",
+      "normalized_name": "专用设备",
+      "change_pct": null,
+      "rise_count": 1,
+      "fall_count": 1,
+      "limit_up_count": 1,
+      "limit_down_count": 0,
+      "failed_limit_count": 1,
+      "amount": 304576214.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "002564",
+          "stock_name": "天沃科技",
+          "change_pct": 10.044642448425293,
+          "amount": 78292653.0,
+          "board_count": 1.0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [],
+      "catch_up_candidates": [
+        {
+          "stock_code": "002564",
+          "stock_name": "天沃科技",
+          "change_pct": 10.044642448425293,
+          "amount": 78292653.0,
+          "board_count": 1.0
+        }
+      ],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "元件",
+      "normalized_name": "元件",
+      "change_pct": null,
+      "rise_count": null,
+      "fall_count": 3,
+      "limit_up_count": 0,
+      "limit_down_count": 0,
+      "failed_limit_count": 3,
+      "amount": 14661614176.0,
+      "amount_change": null,
+      "top_gainers": [],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [],
+      "catch_up_candidates": [],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "航海装备",
+      "normalized_name": "航海装备",
+      "change_pct": null,
+      "rise_count": null,
+      "fall_count": 1,
+      "limit_up_count": 0,
+      "limit_down_count": 0,
+      "failed_limit_count": 1,
+      "amount": 12392923904.0,
+      "amount_change": null,
+      "top_gainers": [],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [],
+      "catch_up_candidates": [],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "广告营销",
+      "normalized_name": "广告营销",
+      "change_pct": null,
+      "rise_count": null,
+      "fall_count": 3,
+      "limit_up_count": 0,
+      "limit_down_count": 0,
+      "failed_limit_count": 3,
+      "amount": 12322290224.0,
+      "amount_change": null,
+      "top_gainers": [],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [],
+      "catch_up_candidates": [],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "软件开发",
+      "normalized_name": "软件开发",
+      "change_pct": null,
+      "rise_count": null,
+      "fall_count": 2,
+      "limit_up_count": 0,
+      "limit_down_count": 0,
+      "failed_limit_count": 2,
+      "amount": 4363777969.0,
+      "amount_change": null,
+      "top_gainers": [],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [],
+      "catch_up_candidates": [],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "化学原料",
+      "normalized_name": "化学原料",
+      "change_pct": null,
+      "rise_count": null,
+      "fall_count": 1,
+      "limit_up_count": 0,
+      "limit_down_count": 0,
+      "failed_limit_count": 1,
+      "amount": 3210338304.0,
+      "amount_change": null,
+      "top_gainers": [],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [],
+      "catch_up_candidates": [],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "房地产服",
+      "normalized_name": "房地产服",
+      "change_pct": null,
+      "rise_count": null,
+      "fall_count": 2,
+      "limit_up_count": 0,
+      "limit_down_count": 0,
+      "failed_limit_count": 2,
+      "amount": 2826264656.0,
+      "amount_change": null,
+      "top_gainers": [],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [],
+      "catch_up_candidates": [],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "电网设备",
+      "normalized_name": "电网设备",
+      "change_pct": null,
+      "rise_count": null,
+      "fall_count": 1,
+      "limit_up_count": 0,
+      "limit_down_count": 0,
+      "failed_limit_count": 1,
+      "amount": 1983750032.0,
+      "amount_change": null,
+      "top_gainers": [],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [],
+      "catch_up_candidates": [],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    },
+    {
+      "theme_name": "证券Ⅱ",
+      "normalized_name": "证券Ⅱ",
+      "change_pct": null,
+      "rise_count": null,
+      "fall_count": 1,
+      "limit_up_count": 0,
+      "limit_down_count": 0,
+      "failed_limit_count": 1,
+      "amount": 1739983504.0,
+      "amount_change": null,
+      "top_gainers": [],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [],
+      "catch_up_candidates": [],
+      "source": "Eastmoney limit pools via AKShare",
+      "quality": "PARTIAL"
+    }
+  ],
+  "core_stocks": [
+    {
+      "stock_code": "003040",
+      "stock_name": "楚天龙",
+      "industry": "通信设备",
+      "themes": [
+        "通信设备"
+      ],
+      "open": 20.86,
+      "high": 21.12,
+      "low": 20.86,
+      "close": 21.12,
+      "change_pct": 10.0,
+      "volume": 493368.75,
+      "amount": 1040333104.0,
+      "turnover_rate": 10.79935359954834,
+      "market_cap": 9739191644.16,
+      "float_market_cap": 9648677448.960001,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "dragon_tiger",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 50
+    },
+    {
+      "stock_code": "603162",
+      "stock_name": "海通发展",
+      "industry": "航运港口",
+      "themes": [
+        "航运港口"
+      ],
+      "open": 13.44,
+      "high": 14.64,
+      "low": 13.44,
+      "close": 14.64,
+      "change_pct": 9.992486953735352,
+      "volume": 837027.04,
+      "amount": 1196908208.0,
+      "turnover_rate": 19.81428337097168,
+      "market_cap": 20129731092.48,
+      "float_market_cap": 6184465587.360001,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 2.0,
+      "continuous_board_count": 2.0,
+      "opened_limit": true,
+      "failed_limit": false,
+      "previous_day_change": 9.992486953735352,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "previous_limit_up",
+        "dragon_tiger",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 59,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "000592",
+      "stock_name": "平潭发展",
+      "industry": "林业Ⅱ",
+      "themes": [
+        "林业Ⅱ"
+      ],
+      "open": 6.77,
+      "high": 7.49,
+      "low": 6.68,
+      "close": 7.49,
+      "change_pct": 9.985315322875977,
+      "volume": 3409678.74,
+      "amount": 2471567696.0,
+      "turnover_rate": 17.804250717163086,
+      "market_cap": 14469038911.04,
+      "float_market_cap": 14344042443.01,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": true,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "dragon_tiger",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "000876",
+      "stock_name": "新 希 望",
+      "industry": "饲料",
+      "themes": [
+        "饲料"
+      ],
+      "open": 7.0,
+      "high": 7.7,
+      "low": 6.98,
+      "close": 7.7,
+      "change_pct": 10.0,
+      "volume": 1808388.29,
+      "amount": 1360256304.0,
+      "turnover_rate": 4.0186333656311035,
+      "market_cap": 38208487116.8,
+      "float_market_cap": 34650063671.3,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": true,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "dragon_tiger",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "605577",
+      "stock_name": "龙版传媒",
+      "industry": "出版",
+      "themes": [
+        "出版"
+      ],
+      "open": 14.22,
+      "high": 15.55,
+      "low": 14.22,
+      "close": 15.55,
+      "change_pct": 9.971712112426758,
+      "volume": 323155.18,
+      "amount": 495051040.0,
+      "turnover_rate": 7.270991325378418,
+      "market_cap": 6911111166.400001,
+      "float_market_cap": 6911111119.75,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 5.0,
+      "continuous_board_count": 5.0,
+      "opened_limit": true,
+      "failed_limit": false,
+      "previous_day_change": 9.971712112426758,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "previous_limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 70,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "603123",
+      "stock_name": "翠微股份",
+      "industry": "多元金融",
+      "themes": [
+        "多元金融"
+      ],
+      "open": 11.18,
+      "high": 11.18,
+      "low": 11.17,
+      "close": 11.18,
+      "change_pct": 10.039369583129883,
+      "volume": 317403.51,
+      "amount": 354857104.0,
+      "turnover_rate": 4.866092681884766,
+      "market_cap": 8929875992.96,
+      "float_market_cap": 7292445109.82,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "dragon_tiger",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "001366",
+      "stock_name": "播恩集团",
+      "industry": "饲料",
+      "themes": [
+        "饲料"
+      ],
+      "open": 12.95,
+      "high": 14.36,
+      "low": 12.57,
+      "close": 14.36,
+      "change_pct": 10.038313865661621,
+      "volume": 150830.2,
+      "amount": 206619808.0,
+      "turnover_rate": 9.386992454528809,
+      "market_cap": 2307364800.0,
+      "float_market_cap": 2307364800.0,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "000798",
+      "stock_name": "中水渔业",
+      "industry": "渔业",
+      "themes": [
+        "渔业"
+      ],
+      "open": 9.24,
+      "high": 10.14,
+      "low": 9.15,
+      "close": 10.14,
+      "change_pct": 9.978307723999023,
+      "volume": 215884.33,
+      "amount": 213634474.0,
+      "turnover_rate": 5.901119709014893,
+      "market_cap": 3709807420.8,
+      "float_market_cap": 3709579189.6800003,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "601949",
+      "stock_name": "中国出版",
+      "industry": "出版",
+      "themes": [
+        "出版"
+      ],
+      "open": 5.29,
+      "high": 5.83,
+      "low": 5.27,
+      "close": 5.83,
+      "change_pct": 10.0,
+      "volume": 534542.59,
+      "amount": 306336544.0,
+      "turnover_rate": 2.807518720626831,
+      "market_cap": 11100133719.84,
+      "float_market_cap": 11100133754.82,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "002564",
+      "stock_name": "天沃科技",
+      "industry": "专用设备",
+      "themes": [
+        "专用设备"
+      ],
+      "open": 4.48,
+      "high": 4.93,
+      "low": 4.48,
+      "close": 4.93,
+      "change_pct": 10.044642448425293,
+      "volume": 162801.61,
+      "amount": 78292653.0,
+      "turnover_rate": 1.8954565525054932,
+      "market_cap": 4234399086.3999996,
+      "float_market_cap": 4234399071.6099997,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "920075",
+      "stock_name": "柏星龙",
+      "industry": "包装印刷",
+      "themes": [
+        "包装印刷"
+      ],
+      "open": 16.44,
+      "high": 21.32,
+      "low": 16.38,
+      "close": 21.32,
+      "change_pct": 30.000001907348633,
+      "volume": 60558.11,
+      "amount": 122264550.0,
+      "turnover_rate": 17.23892593383789,
+      "market_cap": 1381855800.0,
+      "float_market_cap": 748943905.32,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "dragon_tiger",
+        "dragon_tiger",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "000428",
+      "stock_name": "华天酒店",
+      "industry": "酒店餐饮",
+      "themes": [
+        "酒店餐饮"
+      ],
+      "open": 4.26,
+      "high": 4.69,
+      "low": 4.15,
+      "close": 4.69,
+      "change_pct": 10.093896865844727,
+      "volume": 621025.36,
+      "amount": 280402176.0,
+      "turnover_rate": 6.0949015617370605,
+      "market_cap": 4778762940.0,
+      "float_market_cap": 4778762940.0,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "603151",
+      "stock_name": "邦基科技",
+      "industry": "饲料",
+      "themes": [
+        "饲料"
+      ],
+      "open": 16.6,
+      "high": 18.13,
+      "low": 16.29,
+      "close": 18.13,
+      "change_pct": 10.01213550567627,
+      "volume": 57533.0,
+      "amount": 101315826.0,
+      "turnover_rate": 3.3589675426483154,
+      "market_cap": 3105339034.0,
+      "float_market_cap": 3105339034.0,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "600802",
+      "stock_name": "福建水泥",
+      "industry": "水泥",
+      "themes": [
+        "水泥"
+      ],
+      "open": 4.77,
+      "high": 5.21,
+      "low": 4.74,
+      "close": 5.21,
+      "change_pct": 9.91561222076416,
+      "volume": 246098.28,
+      "amount": 126192109.0,
+      "turnover_rate": 5.370412349700928,
+      "market_cap": 2387474164.0,
+      "float_market_cap": 2387474164.0,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "002702",
+      "stock_name": "海欣食品",
+      "industry": "食品加工",
+      "themes": [
+        "食品加工"
+      ],
+      "open": 5.09,
+      "high": 5.61,
+      "low": 5.05,
+      "close": 5.61,
+      "change_pct": 10.0,
+      "volume": 285594.2,
+      "amount": 153909626.0,
+      "turnover_rate": 6.225571632385254,
+      "market_cap": 3117813600.0,
+      "float_market_cap": 2573552437.5,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "000735",
+      "stock_name": "罗 牛 山",
+      "industry": "养殖业",
+      "themes": [
+        "养殖业"
+      ],
+      "open": 5.57,
+      "high": 6.13,
+      "low": 5.5,
+      "close": 6.13,
+      "change_pct": 10.05385971069336,
+      "volume": 795183.57,
+      "amount": 471560288.0,
+      "turnover_rate": 6.909247398376465,
+      "market_cap": 7058778269.92,
+      "float_market_cap": 7055001779.21,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "000702",
+      "stock_name": "正虹科技",
+      "industry": "饲料",
+      "themes": [
+        "饲料"
+      ],
+      "open": 5.7,
+      "high": 6.26,
+      "low": 5.6,
+      "close": 6.26,
+      "change_pct": 10.017574310302734,
+      "volume": 181379.84,
+      "amount": 110905654.0,
+      "turnover_rate": 5.23274040222168,
+      "market_cap": 2169872149.44,
+      "float_market_cap": 2169872174.48,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "002862",
+      "stock_name": "实丰文化",
+      "industry": "文娱用品",
+      "themes": [
+        "文娱用品"
+      ],
+      "open": 14.6,
+      "high": 16.04,
+      "low": 14.55,
+      "close": 16.04,
+      "change_pct": 10.013717651367188,
+      "volume": 119188.69,
+      "amount": 185258126.0,
+      "turnover_rate": 9.269853591918945,
+      "market_cap": 2718619600.0,
+      "float_market_cap": 2062369674.52,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "001222",
+      "stock_name": "源飞宠物",
+      "industry": "文娱用品",
+      "themes": [
+        "文娱用品"
+      ],
+      "open": 14.65,
+      "high": 16.1,
+      "low": 14.53,
+      "close": 16.1,
+      "change_pct": 9.972677230834961,
+      "volume": 115655.27,
+      "amount": 180684691.0,
+      "turnover_rate": 10.235098838806152,
+      "market_cap": 3073329000.0000005,
+      "float_market_cap": 1819278828.5000002,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "603256",
+      "stock_name": "宏和科技",
+      "industry": "玻璃玻纤",
+      "themes": [
+        "玻璃玻纤"
+      ],
+      "open": 134.9,
+      "high": 135.5,
+      "low": 120.69,
+      "close": 120.69,
+      "change_pct": -10.0,
+      "volume": 266533.5,
+      "amount": 3344578112.0,
+      "turnover_rate": 2.946467876434326,
+      "market_cap": 109174538409.12,
+      "float_market_cap": 109174538047.05,
+      "limit_up": false,
+      "limit_down": true,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_down",
+        "dragon_tiger",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "000977",
+      "stock_name": "浪潮信息",
+      "industry": "计算机设",
+      "themes": [
+        "计算机设"
+      ],
+      "open": 87.25,
+      "high": 87.47,
+      "low": 77.72,
+      "close": 77.72,
+      "change_pct": -9.994209289550781,
+      "volume": 1708892.55,
+      "amount": 13708426752.0,
+      "turnover_rate": 11.649561882019043,
+      "market_cap": 114130005704.31999,
+      "float_market_cap": 114008685406.08,
+      "limit_up": false,
+      "limit_down": true,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_down",
+        "dragon_tiger",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "002059",
+      "stock_name": "云南旅游",
+      "industry": "旅游及景",
+      "themes": [
+        "旅游及景"
+      ],
+      "open": 5.78,
+      "high": 6.35,
+      "low": 5.4,
+      "close": 5.67,
+      "change_pct": -1.9031140804290771,
+      "volume": 2073923.57,
+      "amount": 1224732736.0,
+      "turnover_rate": 20.940404891967773,
+      "market_cap": 5740505406.72,
+      "float_market_cap": 5615529704.82,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": -1.9031140804290771,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "previous_limit_up",
+        "dragon_tiger",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "002297",
+      "stock_name": "博云新材",
+      "industry": "航空装备",
+      "themes": [
+        "航空装备"
+      ],
+      "open": 22.01,
+      "high": 22.85,
+      "low": 21.16,
+      "close": 21.32,
+      "change_pct": -3.090909004211426,
+      "volume": 1876983.8,
+      "amount": 4123435024.0,
+      "turnover_rate": 32.75114440917969,
+      "market_cap": 12218594677.12,
+      "float_market_cap": 12218594741.08,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": -3.090909004211426,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "previous_limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "002300",
+      "stock_name": "太阳电缆",
+      "industry": "电网设备",
+      "themes": [
+        "电网设备"
+      ],
+      "open": 8.35,
+      "high": 8.7,
+      "low": 7.82,
+      "close": 8.03,
+      "change_pct": -4.290822505950928,
+      "volume": 1407184.13,
+      "amount": 1145841424.0,
+      "turnover_rate": 19.482210159301758,
+      "market_cap": 5800339578.879999,
+      "float_market_cap": 5800003234.299999,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": -4.290822505950928,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "previous_limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "002328",
+      "stock_name": "新朋股份",
+      "industry": "汽车零部",
+      "themes": [
+        "汽车零部"
+      ],
+      "open": 10.4,
+      "high": 10.61,
+      "low": 9.83,
+      "close": 9.96,
+      "change_pct": -1.3861385583877563,
+      "volume": 1646509.97,
+      "amount": 1663555200.0,
+      "turnover_rate": 28.851421356201172,
+      "market_cap": 7686829200.000001,
+      "float_market_cap": 5684031524.160001,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": -1.3861385583877563,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "previous_limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "002708",
+      "stock_name": "光洋股份",
+      "industry": "汽车零部",
+      "themes": [
+        "汽车零部"
+      ],
+      "open": 15.43,
+      "high": 16.0,
+      "low": 14.89,
+      "close": 15.27,
+      "change_pct": -1.9897304773330688,
+      "volume": 1004145.06,
+      "amount": 1549819504.0,
+      "turnover_rate": 19.703399658203125,
+      "market_cap": 8583235971.36,
+      "float_market_cap": 7782055459.7699995,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": -1.9897304773330688,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "previous_limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "002969",
+      "stock_name": "嘉美包装",
+      "industry": "包装印刷",
+      "themes": [
+        "包装印刷"
+      ],
+      "open": 13.73,
+      "high": 13.88,
+      "low": 13.08,
+      "close": 13.13,
+      "change_pct": -2.08799409866333,
+      "volume": 949976.7,
+      "amount": 1278453696.0,
+      "turnover_rate": 8.693578720092773,
+      "market_cap": 14423248698.560001,
+      "float_market_cap": 14347594058.720001,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": -2.08799409866333,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "previous_limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "003018",
+      "stock_name": "金富科技",
+      "industry": "包装印刷",
+      "themes": [
+        "包装印刷"
+      ],
+      "open": 56.45,
+      "high": 60.91,
+      "low": 55.03,
+      "close": 55.5,
+      "change_pct": -1.6480594873428345,
+      "volume": 345536.18,
+      "amount": 1978859904.0,
+      "turnover_rate": 12.144890785217285,
+      "market_cap": 17424224112.0,
+      "float_market_cap": 15790391191.5,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": -1.6480594873428345,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "previous_limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "301489",
+      "stock_name": "思泉新材",
+      "industry": "电子化学",
+      "themes": [
+        "电子化学"
+      ],
+      "open": 139.59,
+      "high": 141.51,
+      "low": 129.63,
+      "close": 131.0,
+      "change_pct": -6.695156574249268,
+      "volume": 138510.82,
+      "amount": 1868123584.0,
+      "turnover_rate": 19.90648078918457,
+      "market_cap": 15234464744.0,
+      "float_market_cap": 9115080477.0,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": -6.695156574249268,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "previous_limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "600479",
+      "stock_name": "千金药业",
+      "industry": "中药Ⅱ",
+      "themes": [
+        "中药Ⅱ"
+      ],
+      "open": 13.61,
+      "high": 13.92,
+      "low": 12.83,
+      "close": 13.15,
+      "change_pct": -7.784011363983154,
+      "volume": 1032054.12,
+      "amount": 1380256416.0,
+      "turnover_rate": 24.660371780395508,
+      "market_cap": 6472561710.400001,
+      "float_market_cap": 5503368588.55,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": -7.784011363983154,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "previous_limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "600693",
+      "stock_name": "东百集团",
+      "industry": "一般零售",
+      "themes": [
+        "一般零售"
+      ],
+      "open": 10.6,
+      "high": 11.9,
+      "low": 9.94,
+      "close": 10.93,
+      "change_pct": -0.9963768720626831,
+      "volume": 1882411.8,
+      "amount": 2059559200.0,
+      "turnover_rate": 21.662992477416992,
+      "market_cap": 9507419403.199999,
+      "float_market_cap": 9497653907.26,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": -0.9963768720626831,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "previous_limit_up",
+        "dragon_tiger",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "600703",
+      "stock_name": "三安光电",
+      "industry": "光学光电",
+      "themes": [
+        "光学光电"
+      ],
+      "open": 13.8,
+      "high": 13.89,
+      "low": 13.2,
+      "close": 13.23,
+      "change_pct": -4.751619815826416,
+      "volume": 2697873.89,
+      "amount": 3661856144.0,
+      "turnover_rate": 5.407624244689941,
+      "market_cap": 66004716395.520004,
+      "float_market_cap": 66004717758.21,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": -4.751619815826416,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "previous_limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "601086",
+      "stock_name": "国芳集团",
+      "industry": "一般零售",
+      "themes": [
+        "一般零售"
+      ],
+      "open": 11.78,
+      "high": 13.42,
+      "low": 10.99,
+      "close": 12.65,
+      "change_pct": 3.6036036014556885,
+      "volume": 1305575.83,
+      "amount": 1550122864.0,
+      "turnover_rate": 19.603240966796875,
+      "market_cap": 8424900000.0,
+      "float_market_cap": 8424900000.0,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": 3.6036036014556885,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "previous_limit_up",
+        "dragon_tiger",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "601212",
+      "stock_name": "白银有色",
+      "industry": "工业金属",
+      "themes": [
+        "工业金属"
+      ],
+      "open": 7.54,
+      "high": 7.55,
+      "low": 7.23,
+      "close": 7.3,
+      "change_pct": -0.40927693247795105,
+      "volume": 5191433.26,
+      "amount": 3820946032.0,
+      "turnover_rate": 7.010926723480225,
+      "market_cap": 54054853120.0,
+      "float_market_cap": 54054853930.299995,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": -0.40927693247795105,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "previous_limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "603538",
+      "stock_name": "美诺华",
+      "industry": "化学制药",
+      "themes": [
+        "化学制药"
+      ],
+      "open": 29.0,
+      "high": 29.2,
+      "low": 27.07,
+      "close": 27.32,
+      "change_pct": -4.106704235076904,
+      "volume": 614543.76,
+      "amount": 1720852208.0,
+      "turnover_rate": 18.240053176879883,
+      "market_cap": 9286838205.44,
+      "float_market_cap": 9204653061.32,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": -4.106704235076904,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "previous_limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "603757",
+      "stock_name": "大元泵业",
+      "industry": "通用设备",
+      "themes": [
+        "通用设备"
+      ],
+      "open": 78.73,
+      "high": 79.9,
+      "low": 71.5,
+      "close": 72.41,
+      "change_pct": -8.849446296691895,
+      "volume": 196943.23,
+      "amount": 1471635168.0,
+      "turnover_rate": 10.557283401489258,
+      "market_cap": 13507887024.189999,
+      "float_market_cap": 13507887024.189999,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": -8.849446296691895,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "previous_limit_up",
+        "tushare_daily"
+      ],
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "603989",
+      "stock_name": "艾华集团",
+      "industry": "元件",
+      "themes": [
+        "元件"
+      ],
+      "open": 32.18,
+      "high": 34.14,
+      "low": 31.13,
+      "close": 31.52,
+      "change_pct": -1.5922572612762451,
+      "volume": 490274.21,
+      "amount": 1592439136.0,
+      "turnover_rate": 12.294357299804688,
+      "market_cap": 12569541061.119999,
+      "float_market_cap": 12569541187.2,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": -1.5922572612762451,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "previous_limit_up",
+        "tushare_daily"
+      ],
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "002639",
+      "stock_name": "雪人集团",
+      "industry": null,
+      "themes": [],
+      "open": 13.99,
+      "high": 14.79,
+      "low": 13.7,
+      "close": 14.32,
+      "change_pct": 1.7768,
+      "volume": 1596845.13,
+      "amount": 2264632439.67,
+      "turnover_rate": 24.1908,
+      "market_cap": null,
+      "float_market_cap": 9452704401.92,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "dragon_tiger",
+        "tushare_daily"
+      ],
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "300189",
+      "stock_name": "神农种业",
+      "industry": null,
+      "themes": [],
+      "open": 6.63,
+      "high": 7.4,
+      "low": 6.5,
+      "close": 7.05,
+      "change_pct": 0.2845,
+      "volume": 3181323.86,
+      "amount": 2236414180.85,
+      "turnover_rate": 35.8964,
+      "market_cap": null,
+      "float_market_cap": 6248065489.2,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "dragon_tiger",
+        "tushare_daily"
+      ],
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "300300",
+      "stock_name": "海峡创新",
+      "industry": null,
+      "themes": [],
+      "open": 7.89,
+      "high": 9.35,
+      "low": 7.85,
+      "close": 9.13,
+      "change_pct": 16.0102,
+      "volume": 1563036.59,
+      "amount": 1366817058.26,
+      "turnover_rate": 23.4405,
+      "market_cap": null,
+      "float_market_cap": 6087971648.0,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "dragon_tiger",
+        "tushare_daily"
+      ],
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "600127",
+      "stock_name": "金健米业",
+      "industry": null,
+      "themes": [],
+      "open": 11.83,
+      "high": 13.02,
+      "low": 11.4,
+      "close": 12.3,
+      "change_pct": -2.9203,
+      "volume": 2615938.14,
+      "amount": 3217716926.0,
+      "turnover_rate": 40.7605,
+      "market_cap": null,
+      "float_market_cap": 7893933581.4,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "dragon_tiger",
+        "tushare_daily"
+      ],
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "600869",
+      "stock_name": "远东股份",
+      "industry": null,
+      "themes": [],
+      "open": 21.05,
+      "high": 21.97,
+      "low": 20.51,
+      "close": 21.2,
+      "change_pct": 0.7126,
+      "volume": 3427359.39,
+      "amount": 7271769491.0,
+      "turnover_rate": 15.4431,
+      "market_cap": null,
+      "float_market_cap": 47050278215.2,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "dragon_tiger",
+        "tushare_daily"
+      ],
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "600108",
+      "stock_name": "亚盛集团",
+      "industry": "种植业",
+      "themes": [
+        "种植业"
+      ],
+      "open": 4.0,
+      "high": 4.36,
+      "low": 3.82,
+      "close": 4.36,
+      "change_pct": 10.1010103225708,
+      "volume": 2275597.57,
+      "amount": 944268800.0,
+      "turnover_rate": 11.68822193145752,
+      "market_cap": 8488549923.200001,
+      "float_market_cap": 8488549927.56,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 2.0,
+      "continuous_board_count": 2.0,
+      "opened_limit": true,
+      "failed_limit": false,
+      "previous_day_change": 10.1010103225708,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "previous_limit_up",
+        "dragon_tiger",
+        "dragon_tiger",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 59,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "600865",
+      "stock_name": "百大集团",
+      "industry": "一般零售",
+      "themes": [
+        "一般零售"
+      ],
+      "open": 10.06,
+      "high": 11.35,
+      "low": 9.81,
+      "close": 11.35,
+      "change_pct": 9.980620384216309,
+      "volume": 575766.05,
+      "amount": 602024512.0,
+      "turnover_rate": 15.303146362304688,
+      "market_cap": 4270327632.0,
+      "float_market_cap": 4270327586.6,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 2.0,
+      "continuous_board_count": 2.0,
+      "opened_limit": true,
+      "failed_limit": false,
+      "previous_day_change": 9.980620384216309,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "previous_limit_up",
+        "dragon_tiger",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 59,
+      "capacity_candidate_score": 35,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "002827",
+      "stock_name": "高争民爆",
+      "industry": "化学制品",
+      "themes": [
+        "化学制品"
+      ],
+      "open": 62.0,
+      "high": 66.15,
+      "low": 61.34,
+      "close": 66.15,
+      "change_pct": 9.993349075317383,
+      "volume": 96607.0,
+      "amount": 632718592.0,
+      "turnover_rate": 3.50026798248291,
+      "market_cap": 18326592900.0,
+      "float_market_cap": 18257325581.25,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": true,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 45
+    },
+    {
+      "stock_code": "600059",
+      "stock_name": "古越龙山",
+      "industry": "非白酒",
+      "themes": [
+        "非白酒"
+      ],
+      "open": 8.59,
+      "high": 9.19,
+      "low": 8.55,
+      "close": 9.19,
+      "change_pct": 10.059880256652832,
+      "volume": 720826.31,
+      "amount": 655276944.0,
+      "turnover_rate": 7.907764911651611,
+      "market_cap": 8377074803.04,
+      "float_market_cap": 8377074775.469999,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": true,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "dragon_tiger",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 45
+    },
+    {
+      "stock_code": "600354",
+      "stock_name": "敦煌种业",
+      "industry": "种植业",
+      "themes": [
+        "种植业"
+      ],
+      "open": 7.67,
+      "high": 8.66,
+      "low": 7.5,
+      "close": 8.66,
+      "change_pct": 10.038119316101074,
+      "volume": 1474365.53,
+      "amount": 1240319856.0,
+      "turnover_rate": 27.93406105041504,
+      "market_cap": 4570766012.8,
+      "float_market_cap": 4570766012.8,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": true,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "dragon_tiger",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "000892",
+      "stock_name": "欢瑞世纪",
+      "industry": "影视院线",
+      "themes": [
+        "影视院线"
+      ],
+      "open": 4.77,
+      "high": 5.59,
+      "low": 4.77,
+      "close": 5.59,
+      "change_pct": 10.039369583129883,
+      "volume": 3116860.01,
+      "amount": 1660285776.0,
+      "turnover_rate": 43.850101470947266,
+      "market_cap": 5483680883.2,
+      "float_market_cap": 3973365314.36,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": true,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "dragon_tiger",
+        "dragon_tiger",
+        "dragon_tiger",
+        "dragon_tiger",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "600698",
+      "stock_name": "湖南天雁",
+      "industry": "汽车零部",
+      "themes": [
+        "汽车零部"
+      ],
+      "open": 7.22,
+      "high": 7.91,
+      "low": 7.19,
+      "close": 7.91,
+      "change_pct": 10.013908386230469,
+      "volume": 783853.72,
+      "amount": 609261872.0,
+      "turnover_rate": 9.438883781433105,
+      "market_cap": 8452924428.4800005,
+      "float_market_cap": 6568873271.31,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": true,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 45
+    },
+    {
+      "stock_code": "605398",
+      "stock_name": "新炬网络",
+      "industry": "IT服务Ⅱ",
+      "themes": [
+        "IT服务Ⅱ"
+      ],
+      "open": 26.66,
+      "high": 26.66,
+      "low": 26.66,
+      "close": 26.66,
+      "change_pct": 9.983498573303223,
+      "volume": 41043.13,
+      "amount": 109420985.0,
+      "turnover_rate": 2.5223724842071533,
+      "market_cap": 4338018664.14,
+      "float_market_cap": 4338018664.14,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 2.0,
+      "continuous_board_count": 2.0,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": 9.983498573303223,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "previous_limit_up",
+        "dragon_tiger",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 49,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "605580",
+      "stock_name": "恒盛能源",
+      "industry": "电力",
+      "themes": [
+        "电力"
+      ],
+      "open": 22.47,
+      "high": 22.47,
+      "low": 22.47,
+      "close": 22.47,
+      "change_pct": 9.985315322875977,
+      "volume": 36196.0,
+      "amount": 81332412.0,
+      "turnover_rate": 1.292714238166809,
+      "market_cap": 6291600000.0,
+      "float_market_cap": 6291600000.0,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 2.0,
+      "continuous_board_count": 2.0,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": 9.985315322875977,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "previous_limit_up",
+        "dragon_tiger",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 49,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "002403",
+      "stock_name": "爱仕达",
+      "industry": "小家电",
+      "themes": [
+        "小家电"
+      ],
+      "open": 11.18,
+      "high": 11.28,
+      "low": 10.53,
+      "close": 11.28,
+      "change_pct": 10.04878044128418,
+      "volume": 121442.5,
+      "amount": 134563284.0,
+      "turnover_rate": 4.086751461029053,
+      "market_cap": 3842403137.2799997,
+      "float_market_cap": 3351981201.12,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 2.0,
+      "continuous_board_count": 2.0,
+      "opened_limit": false,
+      "failed_limit": false,
+      "previous_day_change": 10.04878044128418,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "previous_limit_up",
+        "dragon_tiger",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 49,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "002124",
+      "stock_name": "天邦食品",
+      "industry": "养殖业",
+      "themes": [
+        "养殖业"
+      ],
+      "open": 2.26,
+      "high": 2.42,
+      "low": 2.24,
+      "close": 2.42,
+      "change_pct": 10.0,
+      "volume": 2886639.07,
+      "amount": 686686384.0,
+      "turnover_rate": 14.635340690612793,
+      "market_cap": 5377079892.8,
+      "float_market_cap": 4773149068.16,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": true,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 35,
+      "catch_up_candidate_score": 45
+    },
+    {
+      "stock_code": "600506",
+      "stock_name": "统一股份",
+      "industry": "炼化及贸",
+      "themes": [
+        "炼化及贸"
+      ],
+      "open": 16.99,
+      "high": 18.46,
+      "low": 16.73,
+      "close": 18.46,
+      "change_pct": 10.011919021606445,
+      "volume": 340921.23,
+      "amount": 606529008.0,
+      "turnover_rate": 13.657356262207031,
+      "market_cap": 4608070374.440001,
+      "float_market_cap": 4608070374.440001,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": true,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 35,
+      "catch_up_candidate_score": 45
+    },
+    {
+      "stock_code": "601579",
+      "stock_name": "会稽山",
+      "industry": "非白酒",
+      "themes": [
+        "非白酒"
+      ],
+      "open": 22.5,
+      "high": 24.07,
+      "low": 22.5,
+      "close": 24.07,
+      "change_pct": 10.009140968322754,
+      "volume": 168616.27,
+      "amount": 399438320.0,
+      "turnover_rate": 3.516770362854004,
+      "market_cap": 11540684230.56,
+      "float_market_cap": 11540684254.630001,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": true,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 45
+    },
+    {
+      "stock_code": "603390",
+      "stock_name": "通达电气",
+      "industry": "汽车零部",
+      "themes": [
+        "汽车零部"
+      ],
+      "open": 10.2,
+      "high": 11.11,
+      "low": 10.2,
+      "close": 11.11,
+      "change_pct": 10.0,
+      "volume": 136358.0,
+      "amount": 148595858.0,
+      "turnover_rate": 3.8840248584747314,
+      "market_cap": 3906653562.24,
+      "float_market_cap": 3900431784.48,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": true,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 45
+    },
+    {
+      "stock_code": "603122",
+      "stock_name": "合富中国",
+      "industry": "医疗服务",
+      "themes": [
+        "医疗服务"
+      ],
+      "open": 12.28,
+      "high": 13.56,
+      "low": 12.21,
+      "close": 13.56,
+      "change_pct": 9.975668907165527,
+      "volume": 341282.0,
+      "amount": 449514144.0,
+      "turnover_rate": 8.573790550231934,
+      "market_cap": 5397593798.400001,
+      "float_market_cap": 5397593703.4800005,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": true,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 45
+    },
+    {
+      "stock_code": "603696",
+      "stock_name": "安记食品",
+      "industry": "调味发酵",
+      "themes": [
+        "调味发酵"
+      ],
+      "open": 13.66,
+      "high": 15.13,
+      "low": 13.53,
+      "close": 15.13,
+      "change_pct": 10.03636360168457,
+      "volume": 334459.3,
+      "amount": 495599584.0,
+      "turnover_rate": 14.220208168029785,
+      "market_cap": 3558576000.0,
+      "float_market_cap": 3558576000.0,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": true,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 45
+    },
+    {
+      "stock_code": "002868",
+      "stock_name": "绿康生化",
+      "industry": "动物保健",
+      "themes": [
+        "动物保健"
+      ],
+      "open": 23.5,
+      "high": 25.83,
+      "low": 23.1,
+      "close": 25.83,
+      "change_pct": 10.008517265319824,
+      "volume": 138934.77,
+      "amount": 346250944.0,
+      "turnover_rate": 12.932198524475098,
+      "market_cap": 4014391069.7099996,
+      "float_market_cap": 2775000098.43,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": true,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 45
+    },
+    {
+      "stock_code": "001316",
+      "stock_name": "润贝航科",
+      "industry": "炼化及贸",
+      "themes": [
+        "炼化及贸"
+      ],
+      "open": 27.45,
+      "high": 30.18,
+      "low": 27.25,
+      "close": 30.18,
+      "change_pct": 9.98542308807373,
+      "volume": 78863.28,
+      "amount": 228986064.0,
+      "turnover_rate": 5.244685173034668,
+      "market_cap": 4863856725.84,
+      "float_market_cap": 4538106240.0,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": true,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 45
+    },
+    {
+      "stock_code": "600975",
+      "stock_name": "新五丰",
+      "industry": "养殖业",
+      "themes": [
+        "养殖业"
+      ],
+      "open": 5.1,
+      "high": 5.59,
+      "low": 5.04,
+      "close": 5.59,
+      "change_pct": 10.039369583129883,
+      "volume": 575947.51,
+      "amount": 315029456.0,
+      "turnover_rate": 4.608827114105225,
+      "market_cap": 6985609148.96,
+      "float_market_cap": 6985609126.599999,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": true,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "dragon_tiger",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 45
+    },
+    {
+      "stock_code": "002949",
+      "stock_name": "华阳国际",
+      "industry": "工程咨询",
+      "themes": [
+        "工程咨询"
+      ],
+      "open": 12.69,
+      "high": 14.07,
+      "low": 12.68,
+      "close": 14.07,
+      "change_pct": 10.007819175720215,
+      "volume": 184614.3,
+      "amount": 252251728.0,
+      "turnover_rate": 12.151622772216797,
+      "market_cap": 2758956556.02,
+      "float_market_cap": 2137593698.52,
+      "limit_up": true,
+      "limit_down": false,
+      "board_count": 1.0,
+      "continuous_board_count": 1.0,
+      "opened_limit": true,
+      "failed_limit": false,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 45
+    },
+    {
+      "stock_code": "600611",
+      "stock_name": "大众交通",
+      "industry": "铁路公路",
+      "themes": [
+        "铁路公路"
+      ],
+      "open": 5.67,
+      "high": 5.67,
+      "low": 5.0,
+      "close": 5.01,
+      "change_pct": -2.7184464931488037,
+      "volume": 3186623.23,
+      "amount": 1703308896.0,
+      "turnover_rate": 20.383739471435547,
+      "market_cap": 11844255548.64,
+      "float_market_cap": 7832214983.639999,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": true,
+      "failed_limit": true,
+      "previous_day_change": -2.7184464931488037,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "failed_limit",
+        "previous_limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 0,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "002472",
+      "stock_name": "双环传动",
+      "industry": "汽车零部",
+      "themes": [
+        "汽车零部"
+      ],
+      "open": 38.95,
+      "high": 38.96,
+      "low": 38.0,
+      "close": 38.05,
+      "change_pct": 7.4251837730407715,
+      "volume": 822694.52,
+      "amount": 3195893472.0,
+      "turnover_rate": 10.86828899383545,
+      "market_cap": 32342412332.8,
+      "float_market_cap": 28802627149.1,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": true,
+      "failed_limit": true,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "failed_limit",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 0,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "002980",
+      "stock_name": "华盛昌",
+      "industry": "电网设备",
+      "themes": [
+        "电网设备"
+      ],
+      "open": 114.53,
+      "high": 117.33,
+      "low": 106.56,
+      "close": 107.36,
+      "change_pct": 0.6562910079956055,
+      "volume": 178643.47,
+      "amount": 1983750032.0,
+      "turnover_rate": 17.637386322021484,
+      "market_cap": 20227829008.64,
+      "float_market_cap": 10874152887.84,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": true,
+      "failed_limit": true,
+      "previous_day_change": 0.6562910079956055,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "failed_limit",
+        "previous_limit_up",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 0,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "002104",
+      "stock_name": "恒宝股份",
+      "industry": "通信设备",
+      "themes": [
+        "通信设备"
+      ],
+      "open": 13.93,
+      "high": 14.36,
+      "low": 13.73,
+      "close": 14.05,
+      "change_pct": 7.662835121154785,
+      "volume": 2047779.29,
+      "amount": 2906303648.0,
+      "turnover_rate": 33.70155334472656,
+      "market_cap": 9952319748.0,
+      "float_market_cap": 8537084126.3,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": true,
+      "failed_limit": true,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "failed_limit",
+        "dragon_tiger",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 0,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "603124",
+      "stock_name": "江南新材",
+      "industry": "金属新材",
+      "themes": [
+        "金属新材"
+      ],
+      "open": 125.5,
+      "high": 135.14,
+      "low": 117.21,
+      "close": 119.21,
+      "change_pct": -2.9629628658294678,
+      "volume": 108159.68,
+      "amount": 1379048000.0,
+      "turnover_rate": 13.93652057647705,
+      "market_cap": 17374285172.79,
+      "float_market_cap": 9251746240.1,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": true,
+      "failed_limit": true,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "failed_limit",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 0,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "000560",
+      "stock_name": "我爱我家",
+      "industry": "房地产服",
+      "themes": [
+        "房地产服"
+      ],
+      "open": 2.88,
+      "high": 3.15,
+      "low": 2.88,
+      "close": 3.15,
+      "change_pct": 10.139860153198242,
+      "volume": 7807325.93,
+      "amount": 2428572960.0,
+      "turnover_rate": 33.32635498046875,
+      "market_cap": 7419827671.2,
+      "float_market_cap": 7379467574.849999,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": true,
+      "failed_limit": true,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "failed_limit",
+        "dragon_tiger",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 0,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "002922",
+      "stock_name": "伊戈尔",
+      "industry": "其他电子",
+      "themes": [
+        "其他电子"
+      ],
+      "open": 24.78,
+      "high": 27.05,
+      "low": 24.7,
+      "close": 25.27,
+      "change_pct": 2.7653517723083496,
+      "volume": 414132.84,
+      "amount": 1075352896.0,
+      "turnover_rate": 10.837631225585938,
+      "market_cap": 10678670590.56,
+      "float_market_cap": 9656295616.52,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": true,
+      "failed_limit": true,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "failed_limit",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 0,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "603067",
+      "stock_name": "振华股份",
+      "industry": "化学原料",
+      "themes": [
+        "化学原料"
+      ],
+      "open": 37.35,
+      "high": 39.04,
+      "low": 36.38,
+      "close": 36.95,
+      "change_pct": 4.113834857940674,
+      "volume": 838369.84,
+      "amount": 3210338304.0,
+      "turnover_rate": 11.096514701843262,
+      "market_cap": 27916663825.600002,
+      "float_market_cap": 27916663677.800003,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": true,
+      "failed_limit": true,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "failed_limit",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 0,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "600601",
+      "stock_name": "方正科技",
+      "industry": "元件",
+      "themes": [
+        "元件"
+      ],
+      "open": 12.84,
+      "high": 13.88,
+      "low": 12.84,
+      "close": 13.09,
+      "change_pct": 3.7242472171783447,
+      "volume": 4144114.07,
+      "amount": 5551176448.0,
+      "turnover_rate": 9.937224388122559,
+      "market_cap": 55943294299.2,
+      "float_market_cap": 54589139126.83,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": true,
+      "failed_limit": true,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "failed_limit",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 0,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "002579",
+      "stock_name": "中京电子",
+      "industry": "元件",
+      "themes": [
+        "元件"
+      ],
+      "open": 13.81,
+      "high": 15.11,
+      "low": 13.81,
+      "close": 14.1,
+      "change_pct": 2.6200873851776123,
+      "volume": 1171338.51,
+      "amount": 1696327008.0,
+      "turnover_rate": 20.07647705078125,
+      "market_cap": 8637922598.4,
+      "float_market_cap": 8226479423.7,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": true,
+      "failed_limit": true,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "failed_limit",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 0,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "603991",
+      "stock_name": "领先股份",
+      "industry": "半导体",
+      "themes": [
+        "半导体"
+      ],
+      "open": 147.8,
+      "high": 162.07,
+      "low": 147.8,
+      "close": 159.6,
+      "change_pct": 8.320890426635742,
+      "volume": 72734.65,
+      "amount": 1169179104.0,
+      "turnover_rate": 8.12346363067627,
+      "market_cap": 24372469716.0,
+      "float_market_cap": 14290025080.8,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": true,
+      "failed_limit": true,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "failed_limit",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 0,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "300468",
+      "stock_name": "四方精创",
+      "industry": "软件开发",
+      "themes": [
+        "软件开发"
+      ],
+      "open": 26.0,
+      "high": 28.8,
+      "low": 25.62,
+      "close": 27.5,
+      "change_pct": 14.583333015441895,
+      "volume": 1460944.32,
+      "amount": 4105487424.0,
+      "turnover_rate": 27.56492042541504,
+      "market_cap": 14592855200.0,
+      "float_market_cap": 14575035475.0,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": true,
+      "failed_limit": true,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "failed_limit",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 0,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "002354",
+      "stock_name": "天娱数科",
+      "industry": "广告营销",
+      "themes": [
+        "广告营销"
+      ],
+      "open": 7.88,
+      "high": 8.55,
+      "low": 7.83,
+      "close": 8.45,
+      "change_pct": 8.751608848571777,
+      "volume": 6196905.78,
+      "amount": 5219316992.0,
+      "turnover_rate": 38.08807373046875,
+      "market_cap": 13981250212.8,
+      "float_market_cap": 13748097432.55,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": true,
+      "failed_limit": true,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "failed_limit",
+        "dragon_tiger",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 0,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "301171",
+      "stock_name": "易点天下",
+      "industry": "广告营销",
+      "themes": [
+        "广告营销"
+      ],
+      "open": 35.44,
+      "high": 41.34,
+      "low": 35.2,
+      "close": 38.28,
+      "change_pct": 11.117562294006348,
+      "volume": 1596230.31,
+      "amount": 6314085120.0,
+      "turnover_rate": 31.804723739624023,
+      "market_cap": 23676983573.760002,
+      "float_market_cap": 19212144823.08,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": true,
+      "failed_limit": true,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "failed_limit",
+        "dragon_tiger",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 0,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "600095",
+      "stock_name": "湘财股份",
+      "industry": "证券Ⅱ",
+      "themes": [
+        "证券Ⅱ"
+      ],
+      "open": 9.46,
+      "high": 10.41,
+      "low": 9.38,
+      "close": 10.17,
+      "change_pct": 7.505285739898682,
+      "volume": 1719531.44,
+      "amount": 1739983504.0,
+      "turnover_rate": 6.0140557289123535,
+      "market_cap": 29077939356.48,
+      "float_market_cap": 29077939346.31,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": true,
+      "failed_limit": true,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "failed_limit",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 0,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "002721",
+      "stock_name": "金一文化",
+      "industry": "饰品",
+      "themes": [
+        "饰品"
+      ],
+      "open": 3.07,
+      "high": 3.31,
+      "low": 3.05,
+      "close": 3.15,
+      "change_pct": 4.651162624359131,
+      "volume": 3869479.37,
+      "amount": 1249229632.0,
+      "turnover_rate": 14.550313949584961,
+      "market_cap": 8377042615.2,
+      "float_market_cap": 8377042637.25,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": true,
+      "failed_limit": true,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "failed_limit",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 0,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "001258",
+      "stock_name": "立新能源",
+      "industry": "电力",
+      "themes": [
+        "电力"
+      ],
+      "open": 11.51,
+      "high": 12.77,
+      "low": 11.4,
+      "close": 12.29,
+      "change_pct": 5.857019901275635,
+      "volume": 1670678.51,
+      "amount": 2071253040.0,
+      "turnover_rate": 17.900352478027344,
+      "market_cap": 11470666601.119999,
+      "float_market_cap": 11470522574.609999,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": true,
+      "failed_limit": true,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "failed_limit",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 0,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "600629",
+      "stock_name": "华建集团",
+      "industry": "工程咨询",
+      "themes": [
+        "工程咨询"
+      ],
+      "open": 17.1,
+      "high": 18.48,
+      "low": 16.85,
+      "close": 18.37,
+      "change_pct": 9.345237731933594,
+      "volume": 745601.27,
+      "amount": 1348112816.0,
+      "turnover_rate": 6.484589576721191,
+      "market_cap": 21121915645.600002,
+      "float_market_cap": 21121915608.86,
+      "limit_up": false,
+      "limit_down": false,
+      "board_count": null,
+      "continuous_board_count": null,
+      "opened_limit": true,
+      "failed_limit": true,
+      "previous_day_change": null,
+      "five_day_change": null,
+      "twenty_day_change": null,
+      "five_day_amount_average": null,
+      "twenty_day_amount_average": null,
+      "relative_volume": null,
+      "sources": [
+        "failed_limit",
+        "tushare_daily",
+        "stock_top_ohlcv"
+      ],
+      "leader_candidate_score": 0,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 0
+    }
+  ],
+  "leader_candidates": [
+    {
+      "stock_code": "003040",
+      "stock_name": "楚天龙",
+      "industry": "通信设备",
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 50,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "603162",
+      "stock_name": "海通发展",
+      "industry": "航运港口",
+      "leader_candidate_score": 59,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 0,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "000592",
+      "stock_name": "平潭发展",
+      "industry": "林业Ⅱ",
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 35,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "000876",
+      "stock_name": "新 希 望",
+      "industry": "饲料",
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 35,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "605577",
+      "stock_name": "龙版传媒",
+      "industry": "出版",
+      "leader_candidate_score": 70,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 0,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "603123",
+      "stock_name": "翠微股份",
+      "industry": "多元金融",
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 60,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "001366",
+      "stock_name": "播恩集团",
+      "industry": "饲料",
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "000798",
+      "stock_name": "中水渔业",
+      "industry": "渔业",
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "601949",
+      "stock_name": "中国出版",
+      "industry": "出版",
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 60,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "002564",
+      "stock_name": "天沃科技",
+      "industry": "专用设备",
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "920075",
+      "stock_name": "柏星龙",
+      "industry": "包装印刷",
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "000428",
+      "stock_name": "华天酒店",
+      "industry": "酒店餐饮",
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "603151",
+      "stock_name": "邦基科技",
+      "industry": "饲料",
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "600802",
+      "stock_name": "福建水泥",
+      "industry": "水泥",
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "002702",
+      "stock_name": "海欣食品",
+      "industry": "食品加工",
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "000735",
+      "stock_name": "罗 牛 山",
+      "industry": "养殖业",
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 60,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "000702",
+      "stock_name": "正虹科技",
+      "industry": "饲料",
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "002862",
+      "stock_name": "实丰文化",
+      "industry": "文娱用品",
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "001222",
+      "stock_name": "源飞宠物",
+      "industry": "文娱用品",
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "603256",
+      "stock_name": "宏和科技",
+      "industry": "玻璃玻纤",
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "000977",
+      "stock_name": "浪潮信息",
+      "industry": "计算机设",
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "002059",
+      "stock_name": "云南旅游",
+      "industry": "旅游及景",
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "002297",
+      "stock_name": "博云新材",
+      "industry": "航空装备",
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "002300",
+      "stock_name": "太阳电缆",
+      "industry": "电网设备",
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "002328",
+      "stock_name": "新朋股份",
+      "industry": "汽车零部",
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "002708",
+      "stock_name": "光洋股份",
+      "industry": "汽车零部",
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "002969",
+      "stock_name": "嘉美包装",
+      "industry": "包装印刷",
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "003018",
+      "stock_name": "金富科技",
+      "industry": "包装印刷",
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "301489",
+      "stock_name": "思泉新材",
+      "industry": "电子化学",
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "600479",
+      "stock_name": "千金药业",
+      "industry": "中药Ⅱ",
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "600693",
+      "stock_name": "东百集团",
+      "industry": "一般零售",
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "600703",
+      "stock_name": "三安光电",
+      "industry": "光学光电",
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "601086",
+      "stock_name": "国芳集团",
+      "industry": "一般零售",
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "601212",
+      "stock_name": "白银有色",
+      "industry": "工业金属",
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "603538",
+      "stock_name": "美诺华",
+      "industry": "化学制药",
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "603757",
+      "stock_name": "大元泵业",
+      "industry": "通用设备",
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "603989",
+      "stock_name": "艾华集团",
+      "industry": "元件",
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "002639",
+      "stock_name": "雪人集团",
+      "industry": null,
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "300189",
+      "stock_name": "神农种业",
+      "industry": null,
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    },
+    {
+      "stock_code": "300300",
+      "stock_name": "海峡创新",
+      "industry": null,
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0,
+      "candidate_only": true,
+      "basis": "objective proxies: board height, limit status, amount, float market cap, failed-limit flags"
+    }
+  ],
+  "previous_review": {
+    "source_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\json\\reviews\\2026-09-02-dashboard-review.json",
+    "date": "2026-09-02",
+    "themes": [
+      {
+        "name": "军工装备",
+        "score": 70,
+        "rating": "A",
+        "stage": "验证期"
+      },
+      {
+        "name": "航空装备",
+        "score": 60,
+        "rating": "B",
+        "stage": "验证期"
+      },
+      {
+        "name": "玻璃玻纤",
+        "score": 52,
+        "rating": "C",
+        "stage": "发酵期"
+      },
+      {
+        "name": "培育钻石",
+        "score": 43,
+        "rating": "D",
+        "stage": "朦胧期"
+      },
+      {
+        "name": "农业回落",
+        "score": 25,
+        "rating": "D",
+        "stage": "兑现期"
+      }
+    ],
+    "stocks": [
+      {
+        "code": "301357",
+        "name": "北方长龙",
+        "theme": "军工装备",
+        "role": "龙头"
+      },
+      {
+        "code": "601606",
+        "name": "长城军工",
+        "theme": "军工装备",
+        "role": "中军"
+      },
+      {
+        "code": "600967",
+        "name": "内蒙一机",
+        "theme": "军工装备",
+        "role": "情绪股"
+      },
+      {
+        "code": "605006",
+        "name": "山东玻纤",
+        "theme": "玻璃玻纤",
+        "role": "龙头"
+      },
+      {
+        "code": "600354",
+        "name": "敦煌种业",
+        "theme": "农业回落",
+        "role": "情绪股"
+      }
+    ]
+  },
+  "tomorrow_check_context": {
+    "source_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\json\\reviews\\2026-09-02-dashboard-review.json",
+    "checks": [
+      {
+        "entity_type": "market",
+        "entity_key": "2026-09-02",
+        "check_type": "breadth_repair",
+        "description": "9月3日上涨家数能否回到3000家以上，确认是否从退潮转修复。"
+      },
+      {
+        "entity_type": "theme",
+        "entity_key": "军工装备",
+        "check_type": "theme_persistence",
+        "description": "军工装备能否继续出现连板晋级和板块扩散，而不是一日轮动。"
+      },
+      {
+        "entity_type": "theme",
+        "entity_key": "农业回落",
+        "check_type": "loss_feedback",
+        "description": "农业方向跌停股是否继续负反馈，判断亏钱效应是否扩散。"
+      }
+    ],
+    "changes_vs_previous_day": {
+      "new": [
+        "培育钻石"
+      ],
+      "strengthened": [
+        "军工装备",
+        "航空装备"
+      ],
+      "weakened": [
+        "农业回落"
+      ],
+      "expanded": [
+        "玻璃玻纤"
+      ],
+      "realized": [],
+      "invalidated": []
+    }
+  },
+  "announcements": [],
+  "policies": [],
+  "industry_events": [],
+  "missing_data": [
+    "announcements",
+    "policies"
+  ]
+}

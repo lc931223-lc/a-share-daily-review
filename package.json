@@ -6,10 +6,14 @@
   "type": "commonjs",
   "scripts": {
     "check:env": "python tools/check_environment.py",
-    "fetch:69": "node tools/fetch_69_a_stock_data.js"
+    "fetch:69": "node tools/fetch_69_a_stock_data.js",
+    "visual:dashboard": "node tools/visual_qa_dashboard.js"
   },
   "engines": {
     "node": ">=24",
     "python": ">=3.12"
+  },
+  "devDependencies": {
+    "playwright": "^1.55.0"
   }
 }

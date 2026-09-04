@@ -9,6 +9,14 @@ npm-debug.log*
 *.log
 .local/
 tmp/
+.superpowers/
+data/*.db
+data/**/*.db
+data/archive/
+data/raw/market_packets/
+data/market_reviews/*/akshare_probe/
+data/market_reviews/*/tushare_probe/
+data/market_reviews/*/engine/
 
 # Local generated browser profiles and report output can be large.
 data/edge-profile*/

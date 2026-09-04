@@ -16,6 +16,10 @@ Personal A-share research and data-analysis workspace for industry-chain researc
 
 ## Workspace
 
+- Active implementation repo: `D:\桌面\新建文件夹\a_share_daily_review_codex-sync`
+- Active branch: `codex/phase1-dashboard`
+- Approved real-data design: `D:\桌面\新建文件夹\a_share_daily_review_codex-sync\docs\superpowers\specs\2026-09-02-real-market-data-pipeline-design.md`
+- Approved implementation plan: `D:\桌面\新建文件夹\a_share_daily_review_codex-sync\docs\superpowers\plans\2026-09-02-real-market-data-pipeline-implementation.md`
 - Root: `C:\Users\愚者\Documents\New project 3`
 - Research notes: `C:\Users\愚者\Documents\New project 3\research`
 - Data files: `C:\Users\愚者\Documents\New project 3\data`
@@ -66,8 +70,11 @@ Personal A-share research and data-analysis workspace for industry-chain researc
 
 ## Data Source Notes
 
-- Tushare workflows require a configured token, preferably via `TUSHARE_TOKEN`.
-- AKShare can be used when public data is sufficient or Tushare token/permissions are unavailable.
+- Phase 1 responsibility boundary: Codex generates factual Market Research Packets only. Codex must not make final A-share review conclusions, final theme ranking, final S/A/B/C ratings, or buy/sell recommendations. ChatGPT owns final research judgment after reading the packet.
+- Production packet source order is Eastmoney/AKShare public structured data first, with Tencent/THS, exchange/CNINFO, official policy sources, and cached raw files as supplements. Tushare is optional and only used when the token has the required endpoint permissions.
+- Eastmoney/AKShare can be used for limit-up/down pools, failed-limit pools, previous limit-up feedback, dragon-tiger lists, northbound flow, SZSE margin, industry/concept fund flow, and objective candidate generation. Record source, retrieved_at, data_date, freshness, and quality for every module.
+- Tushare workflows require a configured token via `TUSHARE_TOKEN`; the token must never be committed or written to reports, logs, databases, or chat. The currently tested user token now has Pro `daily` access. Use `tushare.daily(trade_date=...)` to supplement Market Packet breadth, total turnover, previous turnover, and stock-universe OHLCV. `moneyflow`, `stk_limit`, and `limit_list_d` still returned permission errors in the latest probe; some other endpoints such as `trade_cal`, `daily_basic`, `adj_factor`, and `index_daily` can hit low per-minute frequency limits.
+- AKShare can be used when public data is sufficient or Tushare token/permissions are unavailable. Market Packet stock-universe OHLCV first uses Tushare full-market `daily` when available, then falls back to `akshare.stock_zh_a_hist`, `akshare.stock_zh_a_hist_tx`, and `akshare.stock_zh_a_daily` because the Eastmoney historical host can fail behind the current network/proxy.
 - Primary sources are preferred for company facts: exchange filings, CNINFO, annual reports, prospectuses, official announcements, and company investor relations records.
 - Use the project virtual environment for Python commands, for example `.venv\Scripts\python.exe tools\review_sentiment_20260824_20260828.py`.
 
@@ -93,6 +100,26 @@ Personal A-share research and data-analysis workspace for industry-chain researc
 ## Operating Rule
 
 For long tasks, update `CHECKPOINT.md` at phase boundaries and keep raw data or large outputs in `data`, `research`, or `reports` instead of the chat.
+
+For the production daily-review pipeline, never inject fixed example themes or stocks. AI算力 and 中际旭创 were discussion examples only. Production themes, leaders, capacity cores, catch-up stocks, middle-position stocks, isolated stocks, and risk stocks must be derived from the target trading day's real observations.
+
+Simulation data may exist only under automated-test fixtures. It must not appear in the production database, Dashboard, formal review, or PDF. A failed hard data gate may produce a quality report or clearly marked intraday draft, but never a formal conclusion.
+
+Market Packet outputs:
+- Full packet: `data/market_packets/YYYY-MM-DD.json`
+- Quality report: `data/market_packets/YYYY-MM-DD_quality.json`
+- ChatGPT input: `data/market_packets/YYYY-MM-DD_compact.json`
+- Human summary: `reports/market_packets/YYYY-MM-DD-summary.md`
+
+Three-layer architecture acceptance rule:
+- ChatGPT is the final researcher/analyst.
+- Codex is the data engineer, executor, storage layer, and display system.
+- Official review input path: `data/official_reviews/YYYY-MM-DD.json`.
+- Official review schema: `schemas/official_review.schema.json`.
+- Import command: `.venv\Scripts\python.exe tools\import_official_review.py data\official_reviews\YYYY-MM-DD.json`.
+- Daily pipeline command: `.venv\Scripts\python.exe tools\run_daily_pipeline.py --date YYYY-MM-DD`.
+- GitHub `main` is the only accepted delivery branch for this project. Feature branches are not final until merged and pushed to `origin/main`.
+- Do not track `data/raw/market_packets/`; it is local cache.
 
 For proactive A-share catalyst monitoring, use the watchlists under `research\watchlists` and save dated alert reports under `reports\alerts`.
 

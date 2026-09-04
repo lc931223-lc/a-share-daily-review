@@ -1,0 +1,1602 @@
+{
+  "$defs": {
+    "ChangesVsPreviousDay": {
+      "additionalProperties": false,
+      "properties": {
+        "new": {
+          "items": {
+            "type": "string"
+          },
+          "title": "New",
+          "type": "array"
+        },
+        "strengthened": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Strengthened",
+          "type": "array"
+        },
+        "weakened": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Weakened",
+          "type": "array"
+        },
+        "expanded": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Expanded",
+          "type": "array"
+        },
+        "realized": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Realized",
+          "type": "array"
+        },
+        "invalidated": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Invalidated",
+          "type": "array"
+        }
+      },
+      "title": "ChangesVsPreviousDay",
+      "type": "object"
+    },
+    "Completeness": {
+      "additionalProperties": false,
+      "properties": {
+        "score": {
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Score",
+          "type": "integer"
+        },
+        "missing_items": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing Items",
+          "type": "array"
+        }
+      },
+      "required": [
+        "score"
+      ],
+      "title": "Completeness",
+      "type": "object"
+    },
+    "DataQualityDetail": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "minLength": 1,
+          "title": "Status",
+          "type": "string"
+        },
+        "primary_source": {
+          "minLength": 1,
+          "title": "Primary Source",
+          "type": "string"
+        },
+        "resolved_gaps": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Resolved Gaps",
+          "type": "array"
+        },
+        "source_disagreements": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Disagreements",
+          "type": "array"
+        },
+        "known_gaps": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Known Gaps",
+          "type": "array"
+        },
+        "sources": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Sources",
+          "type": "array"
+        }
+      },
+      "required": [
+        "status",
+        "primary_source"
+      ],
+      "title": "DataQualityDetail",
+      "type": "object"
+    },
+    "DragonTigerSummary": {
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "format": "date",
+          "title": "Date",
+          "type": "string"
+        },
+        "amount_yi": {
+          "minimum": 0,
+          "title": "Amount Yi",
+          "type": "number"
+        },
+        "stock_count": {
+          "minimum": 0,
+          "title": "Stock Count",
+          "type": "integer"
+        },
+        "institution_net_buy_count": {
+          "minimum": 0,
+          "title": "Institution Net Buy Count",
+          "type": "integer"
+        },
+        "read": {
+          "minLength": 1,
+          "title": "Read",
+          "type": "string"
+        }
+      },
+      "required": [
+        "date",
+        "amount_yi",
+        "stock_count",
+        "institution_net_buy_count",
+        "read"
+      ],
+      "title": "DragonTigerSummary",
+      "type": "object"
+    },
+    "DriverRef": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "maximum": 41,
+          "minimum": 1,
+          "title": "Code",
+          "type": "integer"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "evidence_level": {
+          "$ref": "#/$defs/EvidenceLevel"
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "evidence_level"
+      ],
+      "title": "DriverRef",
+      "type": "object"
+    },
+    "EngineDailyMetric": {
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "minLength": 1,
+          "title": "Date",
+          "type": "string"
+        },
+        "limit_up_count": {
+          "minimum": 0,
+          "title": "Limit Up Count",
+          "type": "integer"
+        },
+        "failed_limit_count": {
+          "minimum": 0,
+          "title": "Failed Limit Count",
+          "type": "integer"
+        },
+        "failed_limit_rate": {
+          "minimum": 0,
+          "title": "Failed Limit Rate",
+          "type": "number"
+        },
+        "limit_down_count": {
+          "minimum": 0,
+          "title": "Limit Down Count",
+          "type": "integer"
+        },
+        "highest_board": {
+          "minimum": 0,
+          "title": "Highest Board",
+          "type": "integer"
+        },
+        "multi_board_count": {
+          "minimum": 0,
+          "title": "Multi Board Count",
+          "type": "integer"
+        },
+        "prev_limit_avg_pct": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Prev Limit Avg Pct"
+        },
+        "prev_limit_positive_rate": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Prev Limit Positive Rate"
+        },
+        "sentiment_score": {
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Sentiment Score",
+          "type": "integer"
+        },
+        "sentiment_state": {
+          "minLength": 1,
+          "title": "Sentiment State",
+          "type": "string"
+        },
+        "position_band": {
+          "minLength": 1,
+          "title": "Position Band",
+          "type": "string"
+        },
+        "discipline": {
+          "minLength": 1,
+          "title": "Discipline",
+          "type": "string"
+        }
+      },
+      "required": [
+        "date",
+        "limit_up_count",
+        "failed_limit_count",
+        "failed_limit_rate",
+        "limit_down_count",
+        "highest_board",
+        "multi_board_count",
+        "sentiment_score",
+        "sentiment_state",
+        "position_band",
+        "discipline"
+      ],
+      "title": "EngineDailyMetric",
+      "type": "object"
+    },
+    "EngineStockRole": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "minLength": 1,
+          "title": "Code",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "theme_name": {
+          "minLength": 1,
+          "title": "Theme Name",
+          "type": "string"
+        },
+        "role": {
+          "minLength": 1,
+          "title": "Role",
+          "type": "string"
+        },
+        "role_score": {
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Role Score",
+          "type": "integer"
+        },
+        "risk_flags": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Risk Flags",
+          "type": "array"
+        },
+        "evidence": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence",
+          "type": "array"
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "theme_name",
+        "role",
+        "role_score"
+      ],
+      "title": "EngineStockRole",
+      "type": "object"
+    },
+    "EngineThemeRank": {
+      "additionalProperties": false,
+      "properties": {
+        "rank": {
+          "minimum": 1,
+          "title": "Rank",
+          "type": "integer"
+        },
+        "theme_name": {
+          "minLength": 1,
+          "title": "Theme Name",
+          "type": "string"
+        },
+        "theme_score": {
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Theme Score",
+          "type": "number"
+        },
+        "limit_up_count": {
+          "minimum": 0,
+          "title": "Limit Up Count",
+          "type": "integer"
+        },
+        "failed_limit_count": {
+          "minimum": 0,
+          "title": "Failed Limit Count",
+          "type": "integer"
+        },
+        "failed_limit_rate": {
+          "minimum": 0,
+          "title": "Failed Limit Rate",
+          "type": "number"
+        },
+        "highest_board": {
+          "minimum": 0,
+          "title": "Highest Board",
+          "type": "integer"
+        },
+        "persistence_days": {
+          "minimum": 0,
+          "title": "Persistence Days",
+          "type": "integer"
+        },
+        "cycle_phase": {
+          "minLength": 1,
+          "title": "Cycle Phase",
+          "type": "string"
+        },
+        "top_stocks": {
+          "minLength": 1,
+          "title": "Top Stocks",
+          "type": "string"
+        }
+      },
+      "required": [
+        "rank",
+        "theme_name",
+        "theme_score",
+        "limit_up_count",
+        "failed_limit_count",
+        "failed_limit_rate",
+        "highest_board",
+        "persistence_days",
+        "cycle_phase",
+        "top_stocks"
+      ],
+      "title": "EngineThemeRank",
+      "type": "object"
+    },
+    "EvidenceLevel": {
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "title": "EvidenceLevel",
+      "type": "string"
+    },
+    "EvidenceReview": {
+      "additionalProperties": false,
+      "properties": {
+        "entity_type": {
+          "enum": [
+            "market",
+            "theme",
+            "stock",
+            "industry"
+          ],
+          "title": "Entity Type",
+          "type": "string"
+        },
+        "entity_key": {
+          "minLength": 1,
+          "title": "Entity Key",
+          "type": "string"
+        },
+        "evidence_level": {
+          "$ref": "#/$defs/EvidenceLevel"
+        },
+        "evidence_type": {
+          "minLength": 1,
+          "title": "Evidence Type",
+          "type": "string"
+        },
+        "title": {
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "source_name": {
+          "minLength": 1,
+          "title": "Source Name",
+          "type": "string"
+        },
+        "source_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Url"
+        },
+        "published_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Published At"
+        },
+        "excerpt": {
+          "minLength": 1,
+          "title": "Excerpt",
+          "type": "string"
+        },
+        "verified": {
+          "default": false,
+          "title": "Verified",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "entity_type",
+        "entity_key",
+        "evidence_level",
+        "evidence_type",
+        "title",
+        "source_name",
+        "excerpt"
+      ],
+      "title": "EvidenceReview",
+      "type": "object"
+    },
+    "IndexMetric": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "close": {
+          "title": "Close",
+          "type": "number"
+        },
+        "change_pct": {
+          "title": "Change Pct",
+          "type": "number"
+        },
+        "turnover_yi": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Turnover Yi"
+        }
+      },
+      "required": [
+        "name",
+        "close",
+        "change_pct"
+      ],
+      "title": "IndexMetric",
+      "type": "object"
+    },
+    "LifecycleStage": {
+      "enum": [
+        "朦胧期",
+        "发酵期",
+        "验证期",
+        "主升期",
+        "扩散期",
+        "兑现期"
+      ],
+      "title": "LifecycleStage",
+      "type": "string"
+    },
+    "LimitLadderRow": {
+      "additionalProperties": false,
+      "properties": {
+        "height": {
+          "minLength": 1,
+          "title": "Height",
+          "type": "string"
+        },
+        "stocks": {
+          "minLength": 1,
+          "title": "Stocks",
+          "type": "string"
+        },
+        "read": {
+          "minLength": 1,
+          "title": "Read",
+          "type": "string"
+        }
+      },
+      "required": [
+        "height",
+        "stocks",
+        "read"
+      ],
+      "title": "LimitLadderRow",
+      "type": "object"
+    },
+    "RiskEventReview": {
+      "additionalProperties": false,
+      "properties": {
+        "entity_type": {
+          "enum": [
+            "market",
+            "theme",
+            "stock"
+          ],
+          "title": "Entity Type",
+          "type": "string"
+        },
+        "entity_key": {
+          "minLength": 1,
+          "title": "Entity Key",
+          "type": "string"
+        },
+        "risk_type": {
+          "minLength": 1,
+          "title": "Risk Type",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "penalty": {
+          "maximum": 0,
+          "minimum": -20,
+          "title": "Penalty",
+          "type": "integer"
+        },
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "invalidation_condition": {
+          "minLength": 1,
+          "title": "Invalidation Condition",
+          "type": "string"
+        }
+      },
+      "required": [
+        "entity_type",
+        "entity_key",
+        "risk_type",
+        "severity",
+        "penalty",
+        "description",
+        "invalidation_condition"
+      ],
+      "title": "RiskEventReview",
+      "type": "object"
+    },
+    "SectorRow": {
+      "additionalProperties": false,
+      "properties": {
+        "rank": {
+          "minimum": 1,
+          "title": "Rank",
+          "type": "integer"
+        },
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "status": {
+          "minLength": 1,
+          "title": "Status",
+          "type": "string"
+        },
+        "evidence": {
+          "minLength": 1,
+          "title": "Evidence",
+          "type": "string"
+        }
+      },
+      "required": [
+        "rank",
+        "name",
+        "status",
+        "evidence"
+      ],
+      "title": "SectorRow",
+      "type": "object"
+    },
+    "SentimentDashboard": {
+      "additionalProperties": false,
+      "properties": {
+        "temperature": {
+          "minLength": 1,
+          "title": "Temperature",
+          "type": "string"
+        },
+        "breadth": {
+          "minLength": 1,
+          "title": "Breadth",
+          "type": "string"
+        },
+        "liquidity": {
+          "minLength": 1,
+          "title": "Liquidity",
+          "type": "string"
+        },
+        "risk_appetite": {
+          "minLength": 1,
+          "title": "Risk Appetite",
+          "type": "string"
+        },
+        "limit_pool": {
+          "minLength": 1,
+          "title": "Limit Pool",
+          "type": "string"
+        },
+        "loss_feedback": {
+          "minLength": 1,
+          "title": "Loss Feedback",
+          "type": "string"
+        }
+      },
+      "required": [
+        "temperature",
+        "breadth",
+        "liquidity",
+        "risk_appetite",
+        "limit_pool",
+        "loss_feedback"
+      ],
+      "title": "SentimentDashboard",
+      "type": "object"
+    },
+    "SentimentEngineDetail": {
+      "additionalProperties": false,
+      "properties": {
+        "data_dir": {
+          "minLength": 1,
+          "title": "Data Dir",
+          "type": "string"
+        },
+        "data_sources": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Data Sources",
+          "type": "array"
+        },
+        "daily_metric": {
+          "$ref": "#/$defs/EngineDailyMetric"
+        },
+        "theme_ranking": {
+          "items": {
+            "$ref": "#/$defs/EngineThemeRank"
+          },
+          "title": "Theme Ranking",
+          "type": "array"
+        },
+        "stock_role_classification": {
+          "items": {
+            "$ref": "#/$defs/EngineStockRole"
+          },
+          "title": "Stock Role Classification",
+          "type": "array"
+        },
+        "data_gaps": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Data Gaps",
+          "type": "array"
+        }
+      },
+      "required": [
+        "data_dir",
+        "daily_metric"
+      ],
+      "title": "SentimentEngineDetail",
+      "type": "object"
+    },
+    "StockReview": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "code": {
+          "pattern": "^(00|30|60|68|43|8[3-9]|92)\\d{4}$",
+          "title": "Code",
+          "type": "string"
+        },
+        "theme": {
+          "minLength": 1,
+          "title": "Theme",
+          "type": "string"
+        },
+        "role": {
+          "$ref": "#/$defs/StockRole"
+        },
+        "role_detail": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Role Detail"
+        },
+        "stage": {
+          "$ref": "#/$defs/LifecycleStage"
+        },
+        "drivers": {
+          "items": {
+            "$ref": "#/$defs/DriverRef"
+          },
+          "minItems": 1,
+          "title": "Drivers",
+          "type": "array"
+        },
+        "catalyst": {
+          "minLength": 1,
+          "title": "Catalyst",
+          "type": "string"
+        },
+        "benefit_path": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 2,
+          "title": "Benefit Path",
+          "type": "array"
+        },
+        "causal_chain": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 2,
+          "title": "Causal Chain",
+          "type": "array"
+        },
+        "scores": {
+          "$ref": "#/$defs/StockScores"
+        },
+        "delta_reason": {
+          "minLength": 1,
+          "title": "Delta Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "code",
+        "theme",
+        "role",
+        "stage",
+        "drivers",
+        "catalyst",
+        "benefit_path",
+        "causal_chain",
+        "scores",
+        "delta_reason"
+      ],
+      "title": "StockReview",
+      "type": "object"
+    },
+    "StockRole": {
+      "enum": [
+        "龙头",
+        "中军",
+        "补涨",
+        "跟风",
+        "情绪股"
+      ],
+      "title": "StockRole",
+      "type": "string"
+    },
+    "StockScores": {
+      "additionalProperties": false,
+      "properties": {
+        "realization_score": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Realization Score"
+        },
+        "expectation_gap": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Expectation Gap"
+        },
+        "logic_quality": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Logic Quality"
+        },
+        "market_strength": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Market Strength"
+        },
+        "risk_reward": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Risk Reward"
+        },
+        "total_score": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Total Score"
+        },
+        "rating": {
+          "anyOf": [
+            {
+              "enum": [
+                "S+",
+                "S",
+                "A",
+                "B",
+                "C",
+                "D"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rating"
+        },
+        "missing_reasons": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Missing Reasons",
+          "type": "object"
+        }
+      },
+      "title": "StockScores",
+      "type": "object"
+    },
+    "ThemeReview": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "rank_no": {
+          "minimum": 1,
+          "title": "Rank No",
+          "type": "integer"
+        },
+        "stage": {
+          "$ref": "#/$defs/LifecycleStage"
+        },
+        "change_status": {
+          "enum": [
+            "new",
+            "strengthened",
+            "weakened",
+            "expanded",
+            "realized",
+            "invalidated",
+            "unchanged"
+          ],
+          "title": "Change Status",
+          "type": "string"
+        },
+        "causal_chain": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 2,
+          "title": "Causal Chain",
+          "type": "array"
+        },
+        "drivers": {
+          "items": {
+            "$ref": "#/$defs/DriverRef"
+          },
+          "minItems": 1,
+          "title": "Drivers",
+          "type": "array"
+        },
+        "scores": {
+          "$ref": "#/$defs/ThemeScores"
+        },
+        "delta_reason": {
+          "minLength": 1,
+          "title": "Delta Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "rank_no",
+        "stage",
+        "change_status",
+        "causal_chain",
+        "drivers",
+        "scores",
+        "delta_reason"
+      ],
+      "title": "ThemeReview",
+      "type": "object"
+    },
+    "ThemeScores": {
+      "additionalProperties": false,
+      "properties": {
+        "base_logic_score": {
+          "anyOf": [
+            {
+              "maximum": 40,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Base Logic Score"
+        },
+        "realization_score": {
+          "anyOf": [
+            {
+              "maximum": 25,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Realization Score"
+        },
+        "expectation_gap_score": {
+          "anyOf": [
+            {
+              "maximum": 15,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Expectation Gap Score"
+        },
+        "persistence_score": {
+          "anyOf": [
+            {
+              "maximum": 10,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Persistence Score"
+        },
+        "market_confirmation_score": {
+          "anyOf": [
+            {
+              "maximum": 10,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Market Confirmation Score"
+        },
+        "risk_penalty": {
+          "anyOf": [
+            {
+              "maximum": 0,
+              "minimum": -20,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Risk Penalty"
+        },
+        "total_score": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": -20,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Total Score"
+        },
+        "rating": {
+          "anyOf": [
+            {
+              "enum": [
+                "S+",
+                "S",
+                "A",
+                "B",
+                "C",
+                "D"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rating"
+        },
+        "logic_quality": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Logic Quality"
+        },
+        "market_strength": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Market Strength"
+        },
+        "risk_reward": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Risk Reward"
+        },
+        "missing_reasons": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Missing Reasons",
+          "type": "object"
+        }
+      },
+      "title": "ThemeScores",
+      "type": "object"
+    },
+    "TomorrowCheckReview": {
+      "additionalProperties": false,
+      "properties": {
+        "entity_type": {
+          "enum": [
+            "market",
+            "theme",
+            "stock"
+          ],
+          "title": "Entity Type",
+          "type": "string"
+        },
+        "entity_key": {
+          "minLength": 1,
+          "title": "Entity Key",
+          "type": "string"
+        },
+        "check_type": {
+          "minLength": 1,
+          "title": "Check Type",
+          "type": "string"
+        },
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "entity_type",
+        "entity_key",
+        "check_type",
+        "description"
+      ],
+      "title": "TomorrowCheckReview",
+      "type": "object"
+    },
+    "TomorrowCheckUpdate": {
+      "additionalProperties": false,
+      "properties": {
+        "check_id": {
+          "exclusiveMinimum": 0,
+          "title": "Check Id",
+          "type": "integer"
+        },
+        "status": {
+          "enum": [
+            "confirmed",
+            "weakened",
+            "invalidated"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "result": {
+          "minLength": 1,
+          "title": "Result",
+          "type": "string"
+        }
+      },
+      "required": [
+        "check_id",
+        "status",
+        "result"
+      ],
+      "title": "TomorrowCheckUpdate",
+      "type": "object"
+    },
+    "TomorrowPlanRow": {
+      "additionalProperties": false,
+      "properties": {
+        "item": {
+          "minLength": 1,
+          "title": "Item",
+          "type": "string"
+        },
+        "trigger": {
+          "minLength": 1,
+          "title": "Trigger",
+          "type": "string"
+        },
+        "meaning": {
+          "minLength": 1,
+          "title": "Meaning",
+          "type": "string"
+        }
+      },
+      "required": [
+        "item",
+        "trigger",
+        "meaning"
+      ],
+      "title": "TomorrowPlanRow",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "2.0",
+      "default": "2.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "date": {
+      "format": "date",
+      "title": "Date",
+      "type": "string"
+    },
+    "data_kind": {
+      "const": "real",
+      "default": "real",
+      "title": "Data Kind",
+      "type": "string"
+    },
+    "strict_mode": {
+      "title": "Strict Mode",
+      "type": "boolean"
+    },
+    "completeness": {
+      "$ref": "#/$defs/Completeness"
+    },
+    "market_regime": {
+      "minLength": 1,
+      "title": "Market Regime",
+      "type": "string"
+    },
+    "turnover": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Turnover"
+    },
+    "turnover_delta": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Turnover Delta"
+    },
+    "advancers": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Advancers"
+    },
+    "decliners": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Decliners"
+    },
+    "limit_up_count": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Limit Up Count"
+    },
+    "limit_down_count": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Limit Down Count"
+    },
+    "max_board_height": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Max Board Height"
+    },
+    "position_min": {
+      "maximum": 10,
+      "minimum": 0,
+      "title": "Position Min",
+      "type": "integer"
+    },
+    "position_max": {
+      "maximum": 10,
+      "minimum": 0,
+      "title": "Position Max",
+      "type": "integer"
+    },
+    "market_commentary": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Market Commentary",
+      "type": "array"
+    },
+    "indices": {
+      "items": {
+        "$ref": "#/$defs/IndexMetric"
+      },
+      "title": "Indices",
+      "type": "array"
+    },
+    "sentiment_dashboard": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/SentimentDashboard"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "sector_strength": {
+      "items": {
+        "$ref": "#/$defs/SectorRow"
+      },
+      "title": "Sector Strength",
+      "type": "array"
+    },
+    "sector_weakness": {
+      "items": {
+        "$ref": "#/$defs/SectorRow"
+      },
+      "title": "Sector Weakness",
+      "type": "array"
+    },
+    "limit_ladder": {
+      "items": {
+        "$ref": "#/$defs/LimitLadderRow"
+      },
+      "title": "Limit Ladder",
+      "type": "array"
+    },
+    "dragon_tiger": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/DragonTigerSummary"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "tomorrow_plan": {
+      "items": {
+        "$ref": "#/$defs/TomorrowPlanRow"
+      },
+      "title": "Tomorrow Plan",
+      "type": "array"
+    },
+    "data_quality_detail": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/DataQualityDetail"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "sentiment_engine": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/SentimentEngineDetail"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "main_themes": {
+      "items": {
+        "$ref": "#/$defs/ThemeReview"
+      },
+      "minItems": 1,
+      "title": "Main Themes",
+      "type": "array"
+    },
+    "stocks": {
+      "items": {
+        "$ref": "#/$defs/StockReview"
+      },
+      "title": "Stocks",
+      "type": "array"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/EvidenceReview"
+      },
+      "title": "Evidence",
+      "type": "array"
+    },
+    "risk_events": {
+      "items": {
+        "$ref": "#/$defs/RiskEventReview"
+      },
+      "title": "Risk Events",
+      "type": "array"
+    },
+    "tomorrow_checks": {
+      "items": {
+        "$ref": "#/$defs/TomorrowCheckReview"
+      },
+      "title": "Tomorrow Checks",
+      "type": "array"
+    },
+    "tomorrow_check_updates": {
+      "items": {
+        "$ref": "#/$defs/TomorrowCheckUpdate"
+      },
+      "title": "Tomorrow Check Updates",
+      "type": "array"
+    },
+    "changes_vs_previous_day": {
+      "$ref": "#/$defs/ChangesVsPreviousDay"
+    }
+  },
+  "required": [
+    "date",
+    "strict_mode",
+    "completeness",
+    "market_regime",
+    "position_min",
+    "position_max",
+    "main_themes",
+    "changes_vs_previous_day"
+  ],
+  "title": "DailyReview",
+  "type": "object"
+}

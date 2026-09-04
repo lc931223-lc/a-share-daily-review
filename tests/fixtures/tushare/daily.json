@@ -1,0 +1,15 @@
+[
+  {
+    "ts_code": "600001.SH",
+    "trade_date": "20260901",
+    "open": 10.1,
+    "high": 10.5,
+    "low": 10.0,
+    "close": 10.4,
+    "pre_close": 10.0,
+    "change": 0.4,
+    "pct_chg": 4.0,
+    "vol": 120000.0,
+    "amount": 124800.0
+  }
+]
