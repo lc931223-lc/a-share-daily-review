@@ -2,7 +2,7 @@
 
 ## 2026-09-05 Phase 1.3 High-Value Data Gaps
 
-Checkpoint: 2026-09-05, implementation complete pending final test and Git delivery
+Checkpoint: 2026-09-05, implementation and Git delivery complete
 
 Task: Improve announcement reliability, daily board snapshots, precise official policy coverage, Tushare efficiency, official margin data, and compact Market Packet value without changing the architecture, Dashboard, PDF, research algorithms, or skills.
 
@@ -20,11 +20,11 @@ Completed:
 
 Current state: Announcements for 2026-09-02 through 2026-09-04 are all `PASS` with 120/120 pool coverage and 42/52/53 records. Tushare daily for 2026-09-04 is `PASS` with 5,548 rows. Policies are `PARTIAL`: zero same-day events, 41 background references, 10/11 sources available. The honest 2026-09-04 packet score is 63 (`PARTIAL`) because no full board snapshot was archived on the trading date and official margin/northbound data remain unavailable.
 
-Validation: `compileall` passes. The complete non-real-data suite passes with `188 passed, 1 deselected`. Final secret scan, Git commit/push, and `HEAD == origin/main` verification remain.
+Validation: `compileall` passes. The complete non-real-data suite passes with `188 passed, 1 deselected`. The staged secret scan found zero token matches, `.env` is ignored, and the implementation was pushed to `origin/main`.
 
 Blockers / risks: 2026-09-04 industry/concept full snapshots cannot be reconstructed after the date without violating the no-current-to-history rule. The new daily mechanism will archive the next trading day's primary or fallback snapshots.
 
-Next actions: Run final validation, commit, push to `origin/main`, and verify exact revision equality.
+Next actions: None for Phase 1.3. The next trading-day run will validate and archive the new primary/fallback board snapshot path.
 
 ## 2026-09-05 Phase 1.2 Truth Layer Design Gate
 
