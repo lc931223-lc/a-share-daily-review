@@ -71,13 +71,28 @@ class CollectedDataset:
     is_cached: bool
     path: str | None = None
     error: str | None = None
+    cache_created_at: datetime | None = None
+    last_attempt_at: datetime | None = None
+    error_type: str | None = None
+    retry_after: datetime | None = None
 
 
 class MarketPacketCollector:
-    def __init__(self, *, raw_root: Path | None = None, refresh: bool = False, as_of_time: datetime | None = None):
+    def __init__(
+        self,
+        *,
+        raw_root: Path | None = None,
+        refresh: bool = False,
+        refresh_datasets: set[str] | None = None,
+        as_of_time: datetime | None = None,
+    ):
         self.raw_root = raw_root or PROJECT_ROOT / "data" / "raw" / "market_packets"
         self.refresh = refresh
+        self.refresh_datasets = {item.strip().lower() for item in (refresh_datasets or set())}
         self.as_of_time = as_of_time
+
+    def _should_refresh(self, *names: str) -> bool:
+        return self.refresh or any(name.lower() in self.refresh_datasets for name in names)
 
     def collect(self, trade_date: date) -> dict[str, CollectedDataset]:
         datasets: dict[str, CollectedDataset] = {}
@@ -100,7 +115,10 @@ class MarketPacketCollector:
         datasets["stock_top_ohlcv"] = self._collect_stock_top_ohlcv(trade_date, datasets)
         datasets["industry_board_daily"] = self._collect_board_daily(trade_date, "industry")
         datasets["concept_board_daily"] = self._collect_board_daily(trade_date, "concept")
-        announcement_collection = AnnouncementCollector(raw_root=self.raw_root, refresh=self.refresh).collect(trade_date, datasets, as_of_time=self.as_of_time)
+        announcement_collection = AnnouncementCollector(
+            raw_root=self.raw_root,
+            refresh=self._should_refresh("announcements", "official_announcements"),
+        ).collect(trade_date, datasets, as_of_time=self.as_of_time)
         datasets["official_announcements"] = CollectedDataset(
             "official_announcements",
             "announcement_collector.cninfo_exchange_ir",
@@ -132,7 +150,10 @@ class MarketPacketCollector:
             False,
             announcement_collection.cache_dir,
         )
-        policy_collection = PolicyCollector(raw_root=self.raw_root, refresh=self.refresh).collect(trade_date, [], as_of_time=self.as_of_time)
+        policy_collection = PolicyCollector(
+            raw_root=self.raw_root,
+            refresh=self._should_refresh("policy", "policies", "official_policies"),
+        ).collect(trade_date, [], as_of_time=self.as_of_time)
         datasets["official_policies"] = CollectedDataset(
             "official_policies",
             "policy_collector.official_sources",
@@ -155,6 +176,9 @@ class MarketPacketCollector:
                 "failed_sources": policy_collection.failed_sources,
                 "quality": policy_collection.quality,
                 "cache_dir": policy_collection.cache_dir,
+                "background_reference": policy_collection.background_reference,
+                "rejected_records": policy_collection.rejected_records,
+                "invalid_reasons": policy_collection.invalid_reasons,
             }],
             policy_collection.quality,
             "historical",
@@ -176,16 +200,11 @@ class MarketPacketCollector:
         token = os.environ.get("TUSHARE_TOKEN")
         if ts is None or not token:
             for name in ("tushare_trade_cal", "tushare_stock_basic", "tushare_daily_all", "tushare_previous_daily_all", "tushare_daily_basic_all", "tushare_adj_factor_all"):
-                datasets[name] = CollectedDataset(
-                    name,
-                    "tushare.pro",
-                    trade_date,
-                    datetime.now(UTC),
-                    [],
-                    "FAIL",
-                    "missing",
-                    False,
-                    error="TUSHARE_TOKEN missing or tushare import failed",
+                cached = self._cached_tushare_dataset(name, trade_date)
+                datasets[name] = cached or CollectedDataset(
+                    name, "tushare.pro", trade_date, datetime.now(UTC), [], "UNAVAILABLE", "missing", False,
+                    error="TUSHARE_TOKEN missing or tushare import failed and no successful historical cache exists",
+                    error_type="credentials",
                 )
             return
 
@@ -219,6 +238,20 @@ class MarketPacketCollector:
             trade_date,
             "historical",
         )
+
+    def _cached_tushare_dataset(self, name: str, trade_date: date) -> CollectedDataset | None:
+        if name == "tushare_trade_cal":
+            path = PROJECT_ROOT / "data" / "reference" / f"{name}_{trade_date.year}.json"
+        elif name == "tushare_stock_basic":
+            path = PROJECT_ROOT / "data" / "reference" / f"{name}.json"
+        else:
+            path = self._cache_path(trade_date, name)
+        if not path.exists():
+            return None
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        if not payload.get("rows"):
+            return None
+        return self._dataset_from_cache(name, payload.get("source", "tushare.pro"), trade_date, "historical", path, payload)
 
     def _collect_tushare_trade_cal(self, pro, trade_date: date) -> CollectedDataset:
         name = "tushare_trade_cal"
@@ -427,10 +460,11 @@ class MarketPacketCollector:
     def _collect_board_daily(self, trade_date: date, board_type: str, *, limit: int = 120) -> CollectedDataset:
         name = f"{board_type}_board_daily"
         cache = self._cache_path(trade_date, name)
-        if cache.exists() and not self.refresh:
+        refresh = self._should_refresh(name, f"{board_type}_board", "industry_board" if board_type == "industry" else "concept_board")
+        if cache.exists() and not refresh:
             payload = json.loads(cache.read_text(encoding="utf-8"))
             rows = payload.get("rows", [])
-            return CollectedDataset(name, payload.get("source", "akshare.eastmoney_board_hist"), trade_date, datetime.now(UTC), rows, "PASS" if rows else "FAIL", "historical", True, str(cache), payload.get("error"))
+            return self._dataset_from_cache(name, payload.get("source", "akshare.eastmoney_board_hist"), trade_date, "historical", cache, payload)
         if ak is None:
             return CollectedDataset(name, "akshare.eastmoney_board_hist", trade_date, datetime.now(UTC), [], "FAIL", "missing", False, error="akshare import failed")
         try:
@@ -482,28 +516,25 @@ class MarketPacketCollector:
         freshness: str,
     ) -> CollectedDataset:
         cache = self._cache_path(trade_date, name)
-        if cache.exists() and not self.refresh:
+        if cache.exists() and not self._should_refresh(name, "northbound" if name in {"northbound_hist", "hsgt_summary"} else name):
             payload = json.loads(cache.read_text(encoding="utf-8"))
-            rows = payload["rows"]
-            error = payload.get("error")
-            if rows:
-                return CollectedDataset(name, source, data_date, datetime.now(UTC), rows, "PASS", freshness, True, str(cache))
-            if error and not self.refresh:
-                return CollectedDataset(name, source, data_date, datetime.now(UTC), rows, "FAIL", freshness, True, str(cache), error)
+            cached = self._dataset_from_cache(name, source, data_date, freshness, cache, payload)
+            if cached.rows or not cached.retry_after or datetime.now(UTC) < cached.retry_after:
+                return cached
         if ak is None:
             return CollectedDataset(name, source, data_date, datetime.now(UTC), [], "FAIL", "missing", False, error="akshare import failed")
         try:
             frame = fn()
             rows = _frame_to_rows(frame)
-            path = self._write_cache(trade_date, name, source, data_date, rows)
-            return CollectedDataset(name, source, data_date, datetime.now(UTC), rows, "PASS" if rows else "FAIL", freshness, False, str(path))
-        except Exception as exc:
-            path = self._write_cache(trade_date, name, source, data_date, [])
-            error = f"{exc.__class__.__name__}: {exc}"
+            error = None if rows else "empty response"
+            path = self._write_cache(trade_date, name, source, data_date, rows, error=error)
             payload = json.loads(path.read_text(encoding="utf-8"))
-            payload["error"] = error
-            path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-            return CollectedDataset(name, source, data_date, datetime.now(UTC), [], "FAIL", freshness, False, str(path), error)
+            return self._dataset_from_cache(name, source, data_date, freshness, path, payload, is_cached=False)
+        except Exception as exc:
+            error = f"{exc.__class__.__name__}: {exc}"
+            path = self._write_cache(trade_date, name, source, data_date, [], error=error)
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            return self._dataset_from_cache(name, source, data_date, freshness, path, payload, is_cached=False)
 
     def _cache_path(self, trade_date: date, name: str) -> Path:
         return self.raw_root / trade_date.isoformat() / f"{name}.json"
@@ -515,21 +546,58 @@ class MarketPacketCollector:
         source: str,
         data_date: date | None,
         rows: list[dict[str, Any]],
+        *,
+        error: str | None = None,
     ) -> Path:
         path = self._cache_path(trade_date, name)
         path.parent.mkdir(parents=True, exist_ok=True)
+        now = datetime.now(UTC)
+        resolved_error = error if error is not None else (None if rows else "empty response")
+        error_type, retry_after = _failure_policy(resolved_error, now)
         payload = {
             "source": source,
             "dataset": name,
-            "retrieved_at": datetime.now(UTC).isoformat(),
+            "retrieved_at": now.isoformat(),
+            "cache_created_at": now.isoformat(),
+            "last_attempt_at": now.isoformat(),
             "data_date": data_date.isoformat() if data_date else None,
             "rows": rows,
-            "error": None if rows else "empty response",
+            "quality": "PASS" if rows else "FAIL",
+            "error": resolved_error,
+            "error_type": error_type,
+            "retry_after": retry_after.isoformat() if retry_after else None,
         }
         text = json.dumps(payload, ensure_ascii=False, sort_keys=True, indent=2)
         payload["sha256"] = hashlib.sha256(text.encode("utf-8")).hexdigest()
         path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
         return path
+
+    def _dataset_from_cache(
+        self,
+        name: str,
+        source: str,
+        data_date: date | None,
+        freshness: str,
+        path: Path,
+        payload: dict[str, Any],
+        *,
+        is_cached: bool = True,
+    ) -> CollectedDataset:
+        rows = payload.get("rows", [])
+        retrieved_at = _datetime_from_payload(payload.get("retrieved_at")) or datetime.fromtimestamp(path.stat().st_mtime, UTC)
+        cache_created_at = _datetime_from_payload(payload.get("cache_created_at")) or retrieved_at
+        last_attempt_at = _datetime_from_payload(payload.get("last_attempt_at")) or retrieved_at
+        error = payload.get("error")
+        error_type = payload.get("error_type")
+        retry_after = _datetime_from_payload(payload.get("retry_after"))
+        if error and not retry_after:
+            error_type, retry_after = _failure_policy(error, last_attempt_at)
+        quality = payload.get("quality") or ("PASS" if rows else "FAIL")
+        cached_date = _date_from_payload(payload.get("data_date")) or data_date
+        return CollectedDataset(
+            name, source, cached_date, retrieved_at, rows, quality, freshness, is_cached,
+            str(path), error, cache_created_at, last_attempt_at, error_type, retry_after,
+        )
 
 
 def _compact(value: date) -> str:
@@ -721,6 +789,29 @@ def _date_from_payload(value: str | None) -> date | None:
         return date.fromisoformat(value)
     except ValueError:
         return None
+
+
+def _datetime_from_payload(value: Any) -> datetime | None:
+    if not value:
+        return None
+    try:
+        parsed = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+        return parsed if parsed.tzinfo else parsed.replace(tzinfo=UTC)
+    except (TypeError, ValueError):
+        return None
+
+
+def _failure_policy(error: str | None, attempted_at: datetime) -> tuple[str | None, datetime | None]:
+    if not error:
+        return None, None
+    normalized = error.lower()
+    if any(token in normalized for token in ("rate limit", "too many", "频率", "限流", "429")):
+        return "rate_limit", attempted_at + timedelta(hours=1)
+    if any(token in normalized for token in ("decode", "parse", "json", "schema", "column")):
+        return "parsing", attempted_at + timedelta(hours=6)
+    if "empty" in normalized or "无数据" in normalized:
+        return "empty", attempted_at + timedelta(minutes=30)
+    return "network", attempted_at + timedelta(minutes=15)
 
 
 def _frame_to_rows(frame: pd.DataFrame | None) -> list[dict[str, Any]]:

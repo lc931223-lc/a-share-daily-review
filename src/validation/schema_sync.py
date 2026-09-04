@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 
 from src.validation.review_models import DailyReview, StockReview
+from src.market_packet.models import MarketPacket
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -11,6 +12,7 @@ def write_schemas() -> None:
     targets = {
         "daily_review.schema.json": DailyReview.model_json_schema(),
         "stock_review.schema.json": StockReview.model_json_schema(),
+        "market_packet.schema.json": MarketPacket.model_json_schema(),
     }
     for filename, schema in targets.items():
         path = PROJECT_ROOT / "schemas" / filename

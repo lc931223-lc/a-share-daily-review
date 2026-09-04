@@ -17,22 +17,26 @@ from src.adapters.http import SafeHttpClient
 
 SHANGHAI_TZ = ZoneInfo("Asia/Shanghai")
 OFFICIAL_POLICY_SOURCES = [
-    {"agency": "中国政府网", "url": "https://www.gov.cn/zhengce/zuixin/", "policy_level": "national"},
-    {"agency": "国家发改委", "url": "https://www.ndrc.gov.cn/xxgk/zcfb/", "policy_level": "ministerial"},
-    {"agency": "工信部", "url": "https://zwgk.miit.gov.cn/", "policy_level": "ministerial"},
-    {"agency": "财政部", "url": "https://www.mof.gov.cn/zhengwuxinxi/zhengcefabu/", "policy_level": "ministerial"},
-    {"agency": "商务部", "url": "https://www.mofcom.gov.cn/zwgk/zcfb/", "policy_level": "ministerial"},
-    {"agency": "人民银行", "url": "https://www.pbc.gov.cn/tiaofasi/144941/144957/index.html", "policy_level": "ministerial"},
-    {"agency": "证监会", "url": "https://www.csrc.gov.cn/csrc/c100028/zfxxgk_zdgk.shtml", "policy_level": "ministerial"},
-    {"agency": "上交所", "url": "https://www.sse.com.cn/lawandrules/sselawsrules/", "policy_level": "ministerial"},
-    {"agency": "深交所", "url": "https://www.szse.cn/lawrules/rule/allrules/index.html", "policy_level": "ministerial"},
-    {"agency": "北交所", "url": "https://www.bseinfo.net/business/overview.html", "policy_level": "ministerial"},
-    {"agency": "国家能源局", "url": "https://www.nea.gov.cn/nyflfg/", "policy_level": "ministerial"},
-    {"agency": "科技部", "url": "https://www.most.gov.cn/xxgk/xinxifenlei/fdzdgknr/fgzc/", "policy_level": "ministerial"},
-    {"agency": "国家卫健委", "url": "https://www.nhc.gov.cn/wjw/gfxwj/list.shtml", "policy_level": "ministerial"},
-    {"agency": "农业农村部", "url": "https://www.moa.gov.cn/gk/zcfg/", "policy_level": "ministerial"},
-    {"agency": "住建部", "url": "https://www.mohurd.gov.cn/gongkai/zhengce/zhengcefilelib/", "policy_level": "ministerial"},
+    {"agency": "中国政府网", "url": "https://www.gov.cn/zhengce/zuixin/", "policy_level": "national", "allow_paths": ["/zhengce/"]},
+    {"agency": "国家发改委", "url": "https://www.ndrc.gov.cn/xxgk/zcfb/", "policy_level": "ministerial", "allow_paths": ["/xxgk/zcfb/"]},
+    {"agency": "工信部", "url": "https://zwgk.miit.gov.cn/", "policy_level": "ministerial", "allow_paths": ["/zcwj/", "/policy/", "/zwgk/"]},
+    {"agency": "财政部", "url": "https://www.mof.gov.cn/zhengwuxinxi/zhengcefabu/", "policy_level": "ministerial", "allow_paths": ["/zhengcefabu/"]},
+    {"agency": "商务部", "url": "https://www.mofcom.gov.cn/zwgk/zcfb/", "policy_level": "ministerial", "allow_paths": ["/zwgk/zcfb/"]},
+    {"agency": "人民银行", "url": "https://www.pbc.gov.cn/tiaofasi/144941/144957/index.html", "policy_level": "ministerial", "allow_paths": ["/tiaofasi/"]},
+    {"agency": "证监会", "url": "https://www.csrc.gov.cn/csrc/c100028/zfxxgk_zdgk.shtml", "policy_level": "ministerial", "allow_paths": ["/c100028/", "/zcfg/"]},
+    {"agency": "上交所", "url": "https://www.sse.com.cn/lawandrules/sselawsrules/", "policy_level": "ministerial", "allow_paths": ["/lawandrules/"]},
+    {"agency": "深交所", "url": "https://www.szse.cn/lawrules/rule/allrules/index.html", "policy_level": "ministerial", "allow_paths": ["/lawrules/"]},
+    {"agency": "北交所", "url": "https://www.bseinfo.net/business/overview.html", "policy_level": "ministerial", "allow_paths": ["/rule/", "/law/", "/business/"]},
+    {"agency": "国家能源局", "url": "https://www.nea.gov.cn/nyflfg/", "policy_level": "ministerial", "allow_paths": ["/nyflfg/", "/zcwj/"]},
+    {"agency": "科技部", "url": "https://www.most.gov.cn/xxgk/xinxifenlei/fdzdgknr/fgzc/", "policy_level": "ministerial", "allow_paths": ["/fgzc/"]},
+    {"agency": "国家卫健委", "url": "https://www.nhc.gov.cn/wjw/gfxwj/list.shtml", "policy_level": "ministerial", "allow_paths": ["/gfxwj/"]},
+    {"agency": "农业农村部", "url": "https://www.moa.gov.cn/gk/zcfg/", "policy_level": "ministerial", "allow_paths": ["/gk/zcfg/"]},
+    {"agency": "住建部", "url": "https://www.mohurd.gov.cn/gongkai/zhengce/zhengcefilelib/", "policy_level": "ministerial", "allow_paths": ["/gongkai/zhengce/"]},
 ]
+POLICY_SCHEMA_VERSION = "policy.2"
+NAVIGATION_TITLES = {"APP下载", "English", "English Version", "一网通办", "首页", "登录", "导航", "专题", "下载客户端", "友情链接", "更多", "【更多】", "hide"}
+DENY_URL_PARTS = ("/english", "_en/", "/app/", "/login", "javascript:", "mailto:")
+POLICY_TITLE_KEYWORDS = ("通知", "公告", "意见", "办法", "规定", "决定", "批复", "函", "规则", "指引", "政策", "条例", "法", "方案", "细则", "标准")
 THEME_KEYWORDS = {
     "机器人": ["机器人", "智能制造"],
     "AI": ["人工智能", "算力", "大模型"],
@@ -77,7 +81,8 @@ class OfficialPolicyAdapter:
             source=self.agency,
             dataset="policy_scan",
         )
-        response.encoding = response.encoding or "utf-8"
+        if not response.encoding or response.encoding.lower() in {"iso-8859-1", "latin-1"}:
+            response.encoding = response.apparent_encoding or "utf-8"
         return response.text
 
     def discover(self, html: str) -> list[dict[str, Any]]:
@@ -143,7 +148,9 @@ def _default_policy_adapters() -> list[OfficialPolicyAdapter]:
     }
     adapters: list[OfficialPolicyAdapter] = []
     for source in OFFICIAL_POLICY_SOURCES:
-        adapters.append(specialized.get(source["agency"]) or OfficialPolicyAdapter(source["agency"], source["url"], source["policy_level"]))
+        adapter = specialized.get(source["agency"]) or OfficialPolicyAdapter(source["agency"], source["url"], source["policy_level"])
+        adapter.source = dict(source)
+        adapters.append(adapter)
     return adapters
 
 
@@ -153,16 +160,21 @@ class PolicyCollection:
     scanned_sources: list[str]
     failed_sources: list[str]
     cache_dir: str
+    background_reference: list[dict[str, Any]] | None = None
+    rejected_records: list[dict[str, Any]] | None = None
+    invalid_reasons: list[str] | None = None
 
     @property
     def quality(self) -> str:
+        if self.invalid_reasons:
+            return "INVALID"
         if self.records and self.failed_sources:
             return "PARTIAL"
         if len(self.scanned_sources) < 3:
             return "FAIL"
         if self.failed_sources:
             return "PARTIAL"
-        return "PASS"
+        return "PASS" if self.records else "EMPTY_VALID"
 
 
 class PolicyCollector:
@@ -187,9 +199,15 @@ class PolicyCollector:
         aggregate = cache_dir / "policies.json"
         if aggregate.exists() and not self.refresh:
             payload = json.loads(aggregate.read_text(encoding="utf-8"))
-            return PolicyCollection(payload.get("records", []), payload.get("scanned_sources", []), payload.get("failed_sources", []), str(cache_dir))
+            if payload.get("schema_version") == POLICY_SCHEMA_VERSION:
+                return PolicyCollection(
+                    payload.get("records", []), payload.get("scanned_sources", []), payload.get("failed_sources", []), str(cache_dir),
+                    payload.get("background_reference", []), payload.get("rejected_records", []), payload.get("invalid_reasons", []),
+                )
         seed_path = Path("data") / "policy_sources" / f"{trade_date.isoformat()}.json"
         records: list[dict[str, Any]] = []
+        background: list[dict[str, Any]] = []
+        rejected: list[dict[str, Any]] = []
         scanned: list[str] = []
         failed: list[str] = []
         if seed_path.exists() and not self.refresh:
@@ -204,18 +222,33 @@ class PolicyCollector:
                 scanned.append(source["agency"])
                 for candidate in candidates:
                     item = self.normalize_policy(candidate, source, trade_date, keywords)
+                    rejection = _policy_rejection_reason(item, source)
+                    if rejection:
+                        rejected.append({"agency": source["agency"], "title": item.get("title"), "url": item.get("url"), "reason": rejection})
+                        continue
                     published = _parse_datetime(item.get("published_at"), trade_date)
-                    if published and published.astimezone(SHANGHAI_TZ) > as_of.astimezone(SHANGHAI_TZ):
+                    if published is None:
+                        rejected.append({"agency": source["agency"], "title": item.get("title"), "url": item.get("url"), "reason": "missing_published_at"})
+                        continue
+                    if published.astimezone(SHANGHAI_TZ) > as_of.astimezone(SHANGHAI_TZ):
+                        rejected.append({"agency": source["agency"], "title": item.get("title"), "url": item.get("url"), "reason": "future_published_at"})
                         continue
                     item["published_at"] = published.isoformat() if published else None
                     item["retrieved_at"] = datetime.now(UTC).isoformat()
-                    item["data_date"] = trade_date.isoformat()
+                    item["data_date"] = published.date().isoformat()
+                    if published.date() < trade_date:
+                        background.append(item)
+                        continue
+                    if published.date() > trade_date:
+                        rejected.append({"agency": source["agency"], "title": item.get("title"), "url": item.get("url"), "reason": "cross_date"})
+                        continue
                     records.append(item)
                     self._write_raw_record(cache_dir, item)
             except Exception as exc:
                 failed.append(f"{source['agency']}:{exc.__class__.__name__}")
         records = self.deduplicate_policies(records)
-        collection = PolicyCollection(records, scanned, failed, str(cache_dir))
+        invalid = _formal_policy_invalid_reasons(records, trade_date, as_of)
+        collection = PolicyCollection(records, scanned, failed, str(cache_dir), background, rejected, invalid)
         self._write_aggregate(aggregate, collection)
         return collection
 
@@ -306,8 +339,12 @@ class PolicyCollector:
     def _write_aggregate(self, path: Path, collection: PolicyCollection) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
         payload = {
+            "schema_version": POLICY_SCHEMA_VERSION,
             "retrieved_at": datetime.now(UTC).isoformat(),
             "records": collection.records,
+            "background_reference": collection.background_reference or [],
+            "rejected_records": collection.rejected_records or [],
+            "invalid_reasons": collection.invalid_reasons or [],
             "scanned_sources": collection.scanned_sources,
             "failed_sources": collection.failed_sources,
             "quality": collection.quality,
@@ -322,10 +359,14 @@ def build_policy_sections(records: list[dict[str, Any]], collection: PolicyColle
         "ministerial_policies": [row for row in records if row.get("policy_level") == "ministerial"],
         "local_policies": [row for row in records if row.get("policy_level") == "local"],
         "related_theme_policies": [row for row in records if row.get("related_themes")],
+        "daily_policy_events": records,
+        "background_reference": (collection.background_reference or []) if collection else [],
         "metadata": {
             "scanned_sources": collection.scanned_sources if collection else [],
             "failed_sources": collection.failed_sources if collection else [],
             "quality": collection.quality if collection else ("PASS" if records else "FAIL"),
+            "rejected_count": len(collection.rejected_records or []) if collection else 0,
+            "invalid_reasons": collection.invalid_reasons or [] if collection else [],
             "cache_dir": collection.cache_dir if collection else None,
         },
     }
@@ -360,10 +401,51 @@ def _discover_links_from_html(html: str, source: dict[str, str]) -> list[dict[st
         if not title or len(title) < 4:
             continue
         url = urljoin(source["url"], link["href"])
+        if not _url_allowed(url, source):
+            continue
         nearby = link.find_parent()
         text = nearby.get_text(" ", strip=True) if nearby else title
         rows.append({"title": title, "url": url, "summary": text, "published_at": _extract_date(text)})
     return rows[:80]
+
+
+def _url_allowed(url: str, source: dict[str, Any]) -> bool:
+    lowered = url.lower()
+    if any(part in lowered for part in DENY_URL_PARTS):
+        return False
+    allowed = source.get("allow_paths") or []
+    policy_path_markers = ("/policy", "/zhengce", "/zcfg", "/zcwj", "/law", "/rule")
+    return not allowed or any(part.lower() in lowered for part in allowed) or any(part in lowered for part in policy_path_markers)
+
+
+def _policy_rejection_reason(item: dict[str, Any], source: dict[str, Any]) -> str | None:
+    title = str(item.get("title") or "").strip()
+    if title in NAVIGATION_TITLES or title.strip("【】[] ") in NAVIGATION_TITLES:
+        return "navigation_title"
+    if len(title) < 4 or len(title) > 180:
+        return "abnormal_title_length"
+    if "�" in title or sum(title.count(ch) for ch in ("Ã", "Â", "å", "æ", "ç", "è", "é", "ä")) >= 3:
+        return "mojibake_title"
+    if not any(keyword in title for keyword in POLICY_TITLE_KEYWORDS):
+        return "not_policy_document"
+    if not _url_allowed(str(item.get("url") or ""), source):
+        return "url_not_allowed"
+    return None
+
+
+def _formal_policy_invalid_reasons(records: list[dict[str, Any]], trade_date: date, as_of: datetime) -> list[str]:
+    reasons: list[str] = []
+    for item in records:
+        published = _parse_datetime(item.get("published_at"), trade_date)
+        if published is None:
+            reasons.append("missing_published_at")
+        elif published.date() != trade_date:
+            reasons.append("cross_date_pollution")
+        elif published.astimezone(SHANGHAI_TZ) > as_of.astimezone(SHANGHAI_TZ):
+            reasons.append("future_pollution")
+        if _policy_rejection_reason(item, {"allow_paths": [], "agency": item.get("agency")}) in {"navigation_title", "mojibake_title", "not_policy_document"}:
+            reasons.append("content_pollution")
+    return sorted(set(reasons))
 
 
 def _extract_date(text: str) -> str | None:
@@ -388,7 +470,13 @@ def _parse_datetime(value: Any, fallback_date: date) -> datetime | None:
         return datetime.combine(value, time(0), SHANGHAI_TZ)
     if value in ("", None):
         return None
-    text = str(value).strip()[:19]
+    raw = str(value).strip()
+    try:
+        parsed = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+        return parsed if parsed.tzinfo else parsed.replace(tzinfo=SHANGHAI_TZ)
+    except ValueError:
+        pass
+    text = raw[:19]
     for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M", "%Y-%m-%d", "%Y%m%d"):
         try:
             return datetime.strptime(text, fmt).replace(tzinfo=SHANGHAI_TZ)

@@ -2,7 +2,7 @@
 
 ## 2026-09-05 Phase 1.2 Truth Layer Design Gate
 
-Checkpoint: 2026-09-05, design review pending
+Checkpoint: 2026-09-05, first implementation batch complete
 
 Task: Repair Market Packet truthfulness, auditability, historical replay, storage layout, and source routing in two separately accepted batches.
 
@@ -13,20 +13,26 @@ Completed:
 - Fixed the design interpretation that daily policy events default to the requested calendar date up to `as_of_time`; older records are background references only.
 - Self-reviewed the specification for placeholders, contradictions, ambiguity, and scope creep.
 
-Current state: No Phase 1.2 production code has been changed. The brainstorming design gate requires user review before implementation.
+Current state: The approved first batch is implemented. Policy events are date-strict, invalid/old/navigation records are excluded from formal daily evidence, quality is domain weighted with hard gates, northbound all-null values are unavailable, successful caches retain original timestamps, failed caches have retry TTLs, and dataset-scoped refresh is available.
 
-Validation: Design document passed placeholder scan and `git diff --check`.
+Validation:
+
+- `.venv\Scripts\python.exe -m pytest -m "not real_data" -q`: `164 passed, 1 deselected`.
+- 2026-09-01 replay: `66 FAIL`, missing `limit_pools,northbound`.
+- 2026-09-02 replay: `77 PARTIAL`, missing `northbound`.
+- 2026-09-03 replay: `77 PARTIAL`, missing `northbound`.
+- 2026-09-04 replay: `74 PARTIAL`, missing `margin,northbound`.
+- SQLite now records source batches/observations, quality runs/checks, fallbacks, and append-only fact versions.
 
 Pending:
 
-1. User reviews and approves the written specification.
-2. Create the first-batch implementation plan.
-3. Implement truthfulness and quality-gate repairs with tests.
-4. Regenerate and audit 2026-09-01 through 2026-09-04 before the first implementation push.
+1. Commit and push the first implementation batch.
+2. Implement Parquet/DuckDB storage, compressed JSONL source batches, and source routing.
+3. Run full validation and push the second batch.
 
 Blockers / risks: The repository is already one local commit ahead of cached `origin/main`; GitHub connectivity previously failed. Final acceptance still requires both implementation-stage pushes and `local HEAD == origin/main`.
 
-Next actions: After approval, begin only the first batch. Do not modify PDF, auction logic, research features, or skills.
+Next actions: Begin the approved second storage/routing batch. Do not modify PDF, auction logic, research features, or skills.
 
 ## 2026-09-05 GitHub Safe Sync Mechanism
 

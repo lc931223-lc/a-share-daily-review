@@ -70,6 +70,36 @@ def test_policy_future_pollution_is_filtered(tmp_path):
     assert result.records == []
 
 
+def test_policy_without_date_is_rejected(tmp_path):
+    collector = _collector(tmp_path, [_html("关于支持半导体产业发展的通知", "")])
+    result = collector.collect(date(2026, 9, 2), [], as_of_time=datetime(2026, 9, 2, 15, 30, tzinfo=TZ))
+    assert result.records == []
+    assert any(item["reason"] == "missing_published_at" for item in result.rejected_records)
+
+
+def test_old_policy_is_background_not_daily_event(tmp_path):
+    collector = _collector(tmp_path, [_html("关于支持半导体产业发展的通知", "2026-08-20")])
+    result = collector.collect(date(2026, 9, 2), [], as_of_time=datetime(2026, 9, 2, 15, 30, tzinfo=TZ))
+    assert result.records == []
+    assert result.background_reference
+    assert result.background_reference[0]["data_date"] == "2026-08-20"
+
+
+def test_navigation_and_mojibake_titles_are_rejected(tmp_path):
+    html = "<html><body><span>2026-09-02</span><a href='/policy.html'>友情链接</a><a href='/policy/b.html'>ÃÂåæç通知</a></body></html>"
+    collector = _collector(tmp_path, [html])
+    result = collector.collect(date(2026, 9, 2), [], as_of_time=datetime(2026, 9, 2, 15, 30, tzinfo=TZ))
+    assert result.records == []
+    assert {item["reason"] for item in result.rejected_records} >= {"navigation_title", "mojibake_title"}
+
+
+def test_successful_empty_official_scan_is_empty_valid(tmp_path):
+    collector = _collector(tmp_path, ["<html><body>no policy documents</body></html>"])
+    result = collector.collect(date(2026, 9, 2), [], as_of_time=datetime(2026, 9, 2, 15, 30, tzinfo=TZ))
+    assert result.records == []
+    assert result.quality == "EMPTY_VALID"
+
+
 def test_policy_no_related_content_is_allowed_as_official_scan(tmp_path):
     collector = _collector(tmp_path, [_html("关于公共服务事项的通知")])
     result = collector.collect(date(2026, 9, 2), [{"theme_name": "机器人"}], as_of_time=datetime(2026, 9, 2, 15, 30, tzinfo=TZ))

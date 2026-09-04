@@ -5,10 +5,13 @@
       "properties": {
         "status": {
           "enum": [
-            "EXCELLENT",
-            "GOOD",
+            "PASS",
             "PARTIAL",
-            "INCOMPLETE"
+            "FAIL",
+            "EMPTY_VALID",
+            "UNAVAILABLE",
+            "STALE",
+            "INVALID"
           ],
           "title": "Status",
           "type": "string"
@@ -40,6 +43,40 @@
           },
           "title": "Conflicts",
           "type": "array"
+        },
+        "domains": {
+          "additionalProperties": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Domains",
+          "type": "object"
+        },
+        "invalid_items": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Invalid Items",
+          "type": "array"
+        },
+        "stale_items": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Stale Items",
+          "type": "array"
+        },
+        "unavailable_items": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unavailable Items",
+          "type": "array"
+        },
+        "conflict_count": {
+          "default": 0,
+          "title": "Conflict Count",
+          "type": "integer"
         }
       },
       "required": [
@@ -107,7 +144,11 @@
           "enum": [
             "PASS",
             "PARTIAL",
-            "FAIL"
+            "FAIL",
+            "EMPTY_VALID",
+            "UNAVAILABLE",
+            "STALE",
+            "INVALID"
           ],
           "title": "Status",
           "type": "string"
@@ -127,6 +168,23 @@
         "detail": {
           "title": "Detail",
           "type": "string"
+        },
+        "domain": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Domain"
+        },
+        "hard_gate": {
+          "default": false,
+          "title": "Hard Gate",
+          "type": "boolean"
         }
       },
       "required": [
@@ -142,6 +200,10 @@
       "properties": {
         "source": {
           "title": "Source",
+          "type": "string"
+        },
+        "dataset": {
+          "title": "Dataset",
           "type": "string"
         },
         "retrieved_at": {
@@ -177,7 +239,11 @@
           "enum": [
             "PASS",
             "PARTIAL",
-            "FAIL"
+            "FAIL",
+            "EMPTY_VALID",
+            "UNAVAILABLE",
+            "STALE",
+            "INVALID"
           ],
           "title": "Quality",
           "type": "string"
@@ -210,10 +276,67 @@
           ],
           "default": null,
           "title": "Error"
+        },
+        "record_count": {
+          "default": 0,
+          "title": "Record Count",
+          "type": "integer"
+        },
+        "cache_created_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cache Created At"
+        },
+        "last_attempt_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Last Attempt At"
+        },
+        "error_type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Error Type"
+        },
+        "retry_after": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Retry After"
         }
       },
       "required": [
         "source",
+        "dataset",
         "retrieved_at",
         "freshness",
         "quality"

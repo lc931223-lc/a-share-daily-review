@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from jsonschema import Draft202012Validator
-from sqlalchemy import delete, select
+from sqlalchemy import select
 
 from src.market_packet.collector import MarketPacketCollector
 from src.market_packet.announcement_collector import AnnouncementCollection, build_announcement_sections
@@ -17,14 +17,31 @@ from src.market_packet.policy_collector import PolicyCollection, build_policy_se
 from src.market_packet.previous_review_loader import load_previous_review
 from src.market_packet.quality_gate import audit_packet
 from src.storage.database import create_db_engine, create_schema, session_factory
-from src.storage.models import MarketDaily, MarketPacketLog, OfficialAnnouncement, OfficialPolicy
+from src.storage.models import (
+    FactVersion,
+    MarketDaily,
+    MarketPacketLog,
+    OfficialAnnouncement,
+    OfficialPolicy,
+    QualityGateCheck,
+    QualityGateRun,
+    SourceBatch,
+    SourceFallback,
+    SourceObservation,
+)
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
-def build_market_packet(trade_date: date, *, refresh: bool = False, as_of_time: datetime | None = None) -> dict[str, Any]:
-    collector = MarketPacketCollector(refresh=refresh, as_of_time=as_of_time)
+def build_market_packet(
+    trade_date: date,
+    *,
+    refresh: bool = False,
+    refresh_datasets: set[str] | None = None,
+    as_of_time: datetime | None = None,
+) -> dict[str, Any]:
+    collector = MarketPacketCollector(refresh=refresh, refresh_datasets=refresh_datasets, as_of_time=as_of_time)
     datasets = collector.collect(trade_date)
     normalized = normalize_packet_data(trade_date, datasets)
     previous_review, tomorrow_context = load_previous_review(trade_date)
@@ -43,6 +60,9 @@ def build_market_packet(trade_date: date, *, refresh: bool = False, as_of_time: 
         scanned_sources=policy_meta.get("scanned_sources") or [],
         failed_sources=policy_meta.get("failed_sources") or [],
         cache_dir=policy_meta.get("cache_dir") or "",
+        background_reference=policy_meta.get("background_reference") or [],
+        rejected_records=policy_meta.get("rejected_records") or [],
+        invalid_reasons=policy_meta.get("invalid_reasons") or [],
     )
     packet = {
         "meta": {
@@ -53,7 +73,7 @@ def build_market_packet(trade_date: date, *, refresh: bool = False, as_of_time: 
             "codex_role": "data_engineer_data_validator_research_clerk",
             "final_judgement_owner": "chatgpt",
         },
-        "data_quality": {"status": "INCOMPLETE", "score": 0, "checks": [], "sources": [], "conflicts": []},
+        "data_quality": {"status": "FAIL", "score": 0, "checks": [], "sources": [], "conflicts": []},
         **normalized,
         "announcements": build_announcement_sections(announcement_collection.records, announcement_collection),
         "policies": build_policy_sections(policy_collection.records, policy_collection),
@@ -179,10 +199,19 @@ def log_packet_outputs(packet: dict[str, Any], paths: dict[str, Path], database_
                     generated_at=datetime.fromisoformat(packet["meta"]["generated_at"].replace("Z", "+00:00")),
                 )
             )
-        session.execute(delete(OfficialAnnouncement).where(OfficialAnnouncement.trade_date == trade_date))
+        batch_ids = _log_source_audit(session, packet, trade_date)
+        _log_quality_audit(session, packet, trade_date)
         for item in packet["announcements"].get("records", []):
-            session.add(
-                OfficialAnnouncement(
+            natural_key = "|".join((trade_date.isoformat(), str(item.get("stock_code") or ""), str(item.get("normalized_title") or item.get("title") or ""), str(item.get("published_at") or "")))
+            _version_fact(session, "announcement", natural_key, item, batch_ids.get("official_announcements"))
+            existing = session.scalar(select(OfficialAnnouncement).where(
+                OfficialAnnouncement.trade_date == trade_date,
+                OfficialAnnouncement.stock_code == str(item.get("stock_code") or ""),
+                OfficialAnnouncement.title == str(item.get("title") or ""),
+                OfficialAnnouncement.published_at == item.get("published_at"),
+            ))
+            if existing is None:
+                existing = OfficialAnnouncement(
                     trade_date=trade_date,
                     stock_code=str(item.get("stock_code") or ""),
                     stock_name=str(item.get("stock_name") or ""),
@@ -197,11 +226,23 @@ def log_packet_outputs(packet: dict[str, Any], paths: dict[str, Path], database_
                     clarification_flags=json.dumps(item.get("clarification_flags") or [], ensure_ascii=False),
                     risk_flags=json.dumps(item.get("risk_flags") or [], ensure_ascii=False),
                 )
-            )
-        session.execute(delete(OfficialPolicy).where(OfficialPolicy.trade_date == trade_date))
+                session.add(existing)
+            else:
+                existing.summary = str(item.get("summary") or "")
+                existing.confirmed_fact = str(item.get("confirmed_fact") or "")
+                existing.clarification_flags = json.dumps(item.get("clarification_flags") or [], ensure_ascii=False)
+                existing.risk_flags = json.dumps(item.get("risk_flags") or [], ensure_ascii=False)
         for item in packet["policies"].get("records", []):
-            session.add(
-                OfficialPolicy(
+            natural_key = "|".join((trade_date.isoformat(), str(item.get("agency") or ""), str(item.get("normalized_title") or item.get("title") or ""), str(item.get("published_at") or "")))
+            _version_fact(session, "policy", natural_key, item, batch_ids.get("official_policies"))
+            existing = session.scalar(select(OfficialPolicy).where(
+                OfficialPolicy.trade_date == trade_date,
+                OfficialPolicy.title == str(item.get("title") or ""),
+                OfficialPolicy.agency == str(item.get("agency") or ""),
+                OfficialPolicy.published_at == item.get("published_at"),
+            ))
+            if existing is None:
+                existing = OfficialPolicy(
                     trade_date=trade_date,
                     title=str(item.get("title") or ""),
                     agency=str(item.get("agency") or ""),
@@ -213,7 +254,97 @@ def log_packet_outputs(packet: dict[str, Any], paths: dict[str, Path], database_
                     related_themes=json.dumps(item.get("related_themes") or [], ensure_ascii=False),
                     evidence_level=str(item.get("evidence_level") or ""),
                 )
+                session.add(existing)
+            else:
+                existing.summary = str(item.get("summary") or "")
+                existing.related_industries = json.dumps(item.get("related_industries") or [], ensure_ascii=False)
+                existing.related_themes = json.dumps(item.get("related_themes") or [], ensure_ascii=False)
+
+
+def _log_source_audit(session, packet: dict[str, Any], trade_date: date) -> dict[str, int]:
+    batch_ids: dict[str, int] = {}
+    generated_at = datetime.fromisoformat(packet["meta"]["generated_at"].replace("Z", "+00:00"))
+    for source in packet["data_quality"].get("sources", []):
+        dataset = str(source.get("dataset") or source.get("source") or "unknown")
+        identity = json.dumps({"dataset": dataset, "generated_at": packet["meta"]["generated_at"], "source": source}, ensure_ascii=False, sort_keys=True)
+        batch_hash = hashlib.sha256(identity.encode("utf-8")).hexdigest()
+        archive_path = str(source.get("path") or f"unarchived:{dataset}:{packet['meta']['generated_at']}")
+        batch = session.scalar(select(SourceBatch).where(SourceBatch.sha256 == batch_hash, SourceBatch.archive_path == archive_path))
+        if batch is None:
+            batch = SourceBatch(
+                source_name=str(source.get("source") or "unknown"), dataset=dataset, trade_date=trade_date,
+                fetched_at=_parse_packet_datetime(source.get("retrieved_at"), generated_at), sha256=batch_hash,
+                archive_path=archive_path, record_count=int(source.get("record_count") or 0),
+                status=str(source.get("quality") or "FAIL"), error_category=source.get("error_type"),
             )
+            session.add(batch)
+            session.flush()
+            session.add(SourceObservation(
+                batch_id=batch.id, entity_type="dataset", entity_key=f"{trade_date.isoformat()}:{dataset}",
+                field_name="record_count", value_json=json.dumps(source.get("record_count") or 0),
+                unit="rows", selected=source.get("quality") in {"PASS", "EMPTY_VALID", "PARTIAL"},
+                selected_reason=str(source.get("quality") or "FAIL"), conflict_status="none",
+            ))
+            if "fallback" in str(source.get("source") or "").lower():
+                session.add(SourceFallback(
+                    trade_date=trade_date, primary_source="unknown", fallback_source=str(source.get("source")),
+                    dataset=dataset, reason=str(source.get("error") or "configured fallback"), fields_json="[]",
+                    fetched_at=_parse_packet_datetime(source.get("retrieved_at"), generated_at),
+                    coverage=None, cross_validation_status="not_available",
+                ))
+        batch_ids[dataset] = batch.id
+    return batch_ids
+
+
+def _log_quality_audit(session, packet: dict[str, Any], trade_date: date) -> None:
+    quality = packet["data_quality"]
+    run = QualityGateRun(
+        trade_date=trade_date, rule_version="market_packet.phase1.2", status=quality["status"],
+        confidence=int(quality["score"]), summary_json=json.dumps({"domains": quality.get("domains", {}), "conflicts": quality.get("conflicts", [])}, ensure_ascii=False),
+    )
+    session.add(run)
+    session.flush()
+    for index, check in enumerate(quality.get("checks", [])):
+        session.add(QualityGateCheck(
+            gate_run_id=run.id, check_name=f"{index:02d}:{check.get('domain') or 'general'}:{check.get('item')}",
+            actual_value=str(check.get("status")), threshold_value="PASS" if check.get("hard_gate") else "PARTIAL_OR_BETTER",
+            passed=check.get("status") in {"PASS", "EMPTY_VALID", "PARTIAL"}, reason=str(check.get("detail") or ""),
+        ))
+
+
+def _version_fact(session, fact_type: str, natural_key: str, payload: dict[str, Any], source_batch_id: int | None) -> None:
+    payload_json = json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    content_hash = hashlib.sha256(payload_json.encode("utf-8")).hexdigest()
+    now = datetime.now(UTC)
+    current = session.scalar(select(FactVersion).where(
+        FactVersion.fact_type == fact_type, FactVersion.natural_key == natural_key, FactVersion.is_current.is_(True),
+    ))
+    if current and current.content_hash == content_hash:
+        current.last_seen_at = now
+        return
+    exact = session.scalar(select(FactVersion).where(
+        FactVersion.fact_type == fact_type, FactVersion.natural_key == natural_key, FactVersion.content_hash == content_hash,
+    ))
+    if current:
+        current.is_current = False
+    if exact:
+        exact.is_current = True
+        exact.last_seen_at = now
+        exact.supersedes_id = current.id if current else exact.supersedes_id
+        exact.source_batch_id = source_batch_id or exact.source_batch_id
+        return
+    session.add(FactVersion(
+        fact_type=fact_type, natural_key=natural_key, content_hash=content_hash,
+        source_batch_id=source_batch_id, payload_json=payload_json, is_current=True,
+        supersedes_id=current.id if current else None, first_seen_at=now, last_seen_at=now,
+    ))
+
+
+def _parse_packet_datetime(value: Any, fallback: datetime) -> datetime:
+    if not value:
+        return fallback
+    parsed = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+    return parsed if parsed.tzinfo else parsed.replace(tzinfo=UTC)
 
 
 def validate_with_schema(packet_path: Path) -> None:

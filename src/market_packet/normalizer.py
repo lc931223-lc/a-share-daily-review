@@ -389,19 +389,38 @@ def _industries(
 
 def _capital_flow(trade_date: date, datasets: dict[str, CollectedDataset]) -> dict[str, Any]:
     nb = _row_by_date(datasets["northbound_hist"].rows, trade_date, "日期")
+    net_buy = _number(nb, "当日成交净买额") if nb else None
+    buy = _number(nb, "买入成交额") if nb else None
+    sell = _number(nb, "卖出成交额") if nb else None
+    amounts = (net_buy, buy, sell)
+    if not nb or all(value is None for value in amounts):
+        northbound_quality = "UNAVAILABLE"
+        northbound_reason = "目标日期未取得可验证的北向资金关键金额字段"
+    elif any(value is None for value in amounts):
+        northbound_quality = "PARTIAL"
+        northbound_reason = "北向资金金额字段仅部分可用"
+    else:
+        northbound_quality = "PASS"
+        northbound_reason = None
+    sse_margin = datasets.get("sse_margin")
+    szse_margin = datasets.get("szse_margin")
+    sse_row = sse_margin.rows[0] if sse_margin and sse_margin.rows else None
+    szse_row = szse_margin.rows[0] if szse_margin and szse_margin.rows else None
+    margin_quality = "PASS" if sse_row and szse_row else "PARTIAL" if sse_row or szse_row else "UNAVAILABLE"
     return {
         "northbound": {
-            "net_buy_amount": _number(nb, "当日成交净买额") if nb else None,
-            "buy_amount": _number(nb, "买入成交额") if nb else None,
-            "sell_amount": _number(nb, "卖出成交额") if nb else None,
+            "net_buy_amount": net_buy,
+            "buy_amount": buy,
+            "sell_amount": sell,
             "source": datasets["northbound_hist"].source,
-            "quality": "PASS" if nb else "FAIL",
+            "quality": northbound_quality,
+            "reason": northbound_reason,
         },
         "margin": {
-            "sse": None,
-            "szse": datasets["szse_margin"].rows[0] if datasets["szse_margin"].rows else None,
-            "source": "AKShare SZSE; SSE unavailable in this environment",
-            "quality": "PARTIAL" if datasets["szse_margin"].rows else "FAIL",
+            "sse": sse_row,
+            "szse": szse_row,
+            "source": "AKShare SSE/SZSE margin datasets",
+            "quality": margin_quality,
         },
         "industry_fund_flow": None,
         "concept_fund_flow": None,

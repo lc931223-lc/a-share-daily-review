@@ -6,34 +6,50 @@ from typing import Any, Literal
 from pydantic import BaseModel, ConfigDict, Field
 
 
+QualityStatus = Literal["PASS", "PARTIAL", "FAIL", "EMPTY_VALID", "UNAVAILABLE", "STALE", "INVALID"]
+
+
 class PacketModel(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
 
 class SourceMeta(PacketModel):
     source: str
+    dataset: str
     retrieved_at: datetime
     data_date: date | None = None
     freshness: Literal["same_day", "historical", "current_only", "missing", "unknown"]
-    quality: Literal["PASS", "PARTIAL", "FAIL"]
+    quality: QualityStatus
     is_cached: bool = False
     path: str | None = None
     error: str | None = None
+    record_count: int = 0
+    cache_created_at: datetime | None = None
+    last_attempt_at: datetime | None = None
+    error_type: str | None = None
+    retry_after: datetime | None = None
 
 
 class QualityCheck(PacketModel):
     item: str
-    status: Literal["PASS", "PARTIAL", "FAIL"]
+    status: QualityStatus
     source: str | None = None
     detail: str
+    domain: str | None = None
+    hard_gate: bool = False
 
 
 class DataQuality(PacketModel):
-    status: Literal["EXCELLENT", "GOOD", "PARTIAL", "INCOMPLETE"]
+    status: QualityStatus
     score: int = Field(ge=0, le=100)
     checks: list[QualityCheck]
     sources: list[SourceMeta]
     conflicts: list[dict[str, Any]] = Field(default_factory=list)
+    domains: dict[str, dict[str, Any]] = Field(default_factory=dict)
+    invalid_items: list[str] = Field(default_factory=list)
+    stale_items: list[str] = Field(default_factory=list)
+    unavailable_items: list[str] = Field(default_factory=list)
+    conflict_count: int = 0
 
 
 class PacketMeta(PacketModel):

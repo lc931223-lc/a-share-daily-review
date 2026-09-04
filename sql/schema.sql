@@ -264,6 +264,17 @@ CREATE TABLE market_packet_log (
     CONSTRAINT uq_market_packet_log UNIQUE(trade_date, packet_sha256)
 );
 
+CREATE TABLE fact_version (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fact_type TEXT NOT NULL, natural_key TEXT NOT NULL, content_hash TEXT NOT NULL,
+    source_batch_id INTEGER REFERENCES source_batch(id), payload_json TEXT NOT NULL,
+    is_current BOOLEAN NOT NULL, supersedes_id INTEGER REFERENCES fact_version(id),
+    first_seen_at DATETIME NOT NULL, last_seen_at DATETIME NOT NULL,
+    CONSTRAINT uq_fact_version_content UNIQUE(fact_type, natural_key, content_hash)
+);
+CREATE INDEX idx_fact_version_current
+    ON fact_version(fact_type, natural_key, is_current);
+
 CREATE TABLE official_announcement (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     trade_date DATE NOT NULL,

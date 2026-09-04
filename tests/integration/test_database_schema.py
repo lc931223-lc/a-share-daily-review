@@ -18,6 +18,7 @@ REQUIRED_PIPELINE_TABLES = {
     "quality_gate_check",
     "source_fallback",
     "analysis_snapshot",
+    "fact_version",
 }
 REQUIRED_TABLES = {
     "review_import", "trading_day", "theme", "theme_alias", "theme_daily_score",

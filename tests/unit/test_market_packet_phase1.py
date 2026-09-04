@@ -64,9 +64,10 @@ def test_quality_gate_marks_api_failure_without_silent_fill():
         for name in ("limit_up", "failed_limit", "limit_down", "previous_limit", "dragon_tiger_daily")
     }
     audited = audit_packet(packet, datasets)
-    assert audited["data_quality"]["status"] == "INCOMPLETE"
+    assert audited["data_quality"]["status"] == "FAIL"
+    assert audited["data_quality"]["score"] <= 69
     assert audited["limit_up_down"] if "limit_up_down" in audited else True
-    assert "limit_up" in audited["missing_data"]
+    assert "limit_pools" in audited["missing_data"]
 
 
 def test_cache_metadata_records_requested_data_date():
@@ -103,7 +104,8 @@ def test_official_announcements_and_policies_raise_quality_without_codex_judgeme
     }
     datasets["stock_top_ohlcv"] = CollectedDataset("stock_top_ohlcv", "tushare.daily", date(2026, 9, 2), __import__("datetime").datetime.now(__import__("datetime").UTC), [{"x": 1}] * 80, "PASS", "historical", False)
     audited = audit_packet(packet, datasets)
-    assert audited["data_quality"]["score"] >= 90
+    assert audited["data_quality"]["score"] <= 69
+    assert audited["data_quality"]["status"] == "FAIL"
     assert "rating" not in json.dumps(audited["themes"], ensure_ascii=False)
 
 

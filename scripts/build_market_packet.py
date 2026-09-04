@@ -17,6 +17,13 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Build A-share Market Research Packet.")
     parser.add_argument("--date", required=True, help="YYYY-MM-DD or auto")
     parser.add_argument("--refresh", action="store_true", help="Ignore packet raw cache and refetch")
+    parser.add_argument(
+        "--refresh-dataset",
+        action="append",
+        choices=("policy", "announcements", "industry_board", "concept_board", "northbound"),
+        default=[],
+        help="Refetch only the selected dataset; may be specified more than once",
+    )
     parser.add_argument("--as-of", default=None, help="Historical replay cutoff, e.g. 2026-09-04T15:30:00+08:00")
     return parser.parse_args()
 
@@ -35,7 +42,12 @@ def resolve_as_of(value: str | None) -> datetime | None:
 def main() -> int:
     args = parse_args()
     trade_date = resolve_date(args.date)
-    packet = build_market_packet(trade_date, refresh=args.refresh, as_of_time=resolve_as_of(args.as_of))
+    packet = build_market_packet(
+        trade_date,
+        refresh=args.refresh,
+        refresh_datasets=set(args.refresh_dataset),
+        as_of_time=resolve_as_of(args.as_of),
+    )
     paths = write_outputs(packet)
     print(f"market_packet={paths['packet']}")
     print(f"quality={paths['quality']}")

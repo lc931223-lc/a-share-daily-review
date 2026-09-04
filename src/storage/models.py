@@ -393,6 +393,24 @@ class MarketPacketLog(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utc_now)
 
 
+class FactVersion(Base):
+    __tablename__ = "fact_version"
+    __table_args__ = (
+        UniqueConstraint("fact_type", "natural_key", "content_hash", name="uq_fact_version_content"),
+        Index("idx_fact_version_current", "fact_type", "natural_key", "is_current"),
+    )
+    id: Mapped[int] = mapped_column(primary_key=True)
+    fact_type: Mapped[str] = mapped_column(String(40))
+    natural_key: Mapped[str] = mapped_column(Text)
+    content_hash: Mapped[str] = mapped_column(String(64))
+    source_batch_id: Mapped[int | None] = mapped_column(ForeignKey("source_batch.id"))
+    payload_json: Mapped[str] = mapped_column(Text)
+    is_current: Mapped[bool] = mapped_column(Boolean, default=True)
+    supersedes_id: Mapped[int | None] = mapped_column(ForeignKey("fact_version.id"))
+    first_seen_at: Mapped[datetime] = mapped_column(DateTime, default=utc_now)
+    last_seen_at: Mapped[datetime] = mapped_column(DateTime, default=utc_now)
+
+
 class OfficialAnnouncement(Base):
     __tablename__ = "official_announcement"
     __table_args__ = (Index("idx_official_announcement_date_stock", "trade_date", "stock_code"),)
