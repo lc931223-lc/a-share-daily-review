@@ -1,5 +1,49 @@
 # Checkpoint
 
+## 2026-09-05 GitHub Safe Sync Mechanism
+
+### Task
+
+为 A 股研究系统建立稳定的 GitHub 自动同步机制。GitHub `main` 是唯一正式验收版本；每日兜底任务只允许 push 已经 commit 的 `main` 提交，不允许自动 add、commit、pull、rebase、force push 或修改 Market Packet / Dashboard / PDF 业务逻辑。
+
+### Completed
+
+- Added independent sync checker:
+  - `tools/git_sync_check.py`
+- Added Windows wrapper:
+  - `scripts/run_git_sync_check.ps1`
+- Added unit tests:
+  - `tests/unit/test_git_sync_check.py`
+- Updated `README.md` with stage-completion push rules, return codes, log location, and Windows Task Scheduler setup.
+- Updated `.gitignore` to explicitly ignore `logs/` in addition to generated `.log` files.
+- Sync status model:
+  - `SYNCED`
+  - `LOCAL_AHEAD`
+  - `REMOTE_AHEAD`
+  - `DIVERGED`
+  - `DIRTY_WORKTREE`
+  - `NON_MAIN_BRANCH`
+- Safety behavior:
+  - dirty worktree is never committed or pushed
+  - non-main branches are never pushed to `origin/main` by the scheduled fallback
+  - remote-ahead and diverged states require manual/Codex handling
+  - push uses normal `git push origin main`; no force push path exists
+  - sensitive/generated path detection is available for commit-safety checks
+
+### Validation
+
+- Ran: `.venv\Scripts\python.exe -m pytest tests\unit\test_git_sync_check.py -q`
+- Result: `8 passed`
+- Ran PowerShell wrapper before commit while worktree was dirty.
+- Result: script returned `DIRTY_WORKTREE` and did not attempt push, as expected.
+
+### Next Actions
+
+1. Run `compileall`.
+2. Run all non-real-data tests.
+3. Commit and push this sync-mechanism stage to `origin/main`.
+4. Run `tools/git_sync_check.py` once after push and confirm `SYNCED` / no-op.
+
 ## 2026-09-04 Three-Layer Architecture Completion
 
 ### Task

@@ -158,6 +158,39 @@ python tools/visual_qa_pdf.py reports/2026-09-01-a-share-review.pdf
 
 有本地 Node Playwright 依赖时也可以运行 `node tools/visual_qa_dashboard.js`；两版脚本都支持通过 `DASHBOARD_URL` 指定非默认端口。
 
+## GitHub 同步
+
+GitHub `main` 是本项目唯一正式验收版本。每个明确开发阶段完成后，收尾流程固定为：运行相关测试，更新 `CHECKPOINT.md`，检查敏感文件和临时文件，选择性 `git add`，使用清晰 commit message 提交，`git fetch origin` 后推送到 `origin/main` 并确认本地 HEAD 与远端一致。
+
+禁止为同步使用 `git add .`、自动提交半成品、提交 `.env` / token / 本地数据库 / raw cache / 临时输出，除非文件明确属于版本化资源。禁止 `force push`，远端有新提交时先 rebase 并重新测试。
+
+每日 18:30 兜底同步只负责推送已经 commit 但尚未 push 的 `main` 提交，不会自动 add、commit、pull、rebase 或修改业务数据：
+
+```powershell
+python tools/git_sync_check.py
+scripts\run_git_sync_check.ps1
+```
+
+状态返回码：
+
+- `0`：已同步、无需操作或 push 成功
+- `1`：工作区存在未提交修改，未自动同步
+- `2`：远端领先，未自动 pull
+- `3`：本地与远端分叉，未自动处理
+- `4`：push 失败
+- `5`：Git 命令或仓库校验错误
+
+Windows Task Scheduler 建议配置：
+
+- 任务名称：`A股项目 GitHub 兜底同步`
+- 触发器：每日 `18:30`
+- 时区：Windows 本地北京时间 / Asia Shanghai
+- 操作：启动 PowerShell
+- 参数：`-NoProfile -ExecutionPolicy Bypass -File "D:\桌面\新建文件夹\a_share_daily_review_codex-sync\scripts\run_git_sync_check.ps1"`
+- 运行方式：仅在当前用户登录时运行，或按本机凭据策略选择合适方式
+
+同步日志写入 `logs/git_sync/YYYY-MM-DD.log`，只记录时间、分支、本地 HEAD、远端 main、工作区是否干净、同步状态和 push 结果。
+
 ## 2026-09-02 公开数据复盘
 
 当前环境未配置 `TUSHARE_TOKEN`，因此 2026-09-02 不能生成正式 `PASSED` 快照。已生成一份公开网页交叉核验复盘，明确标注为 `DRAFT_ONLY`：
