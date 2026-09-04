@@ -1,9 +1,9 @@
 {
   "trade_date": "2026-09-02",
-  "generated_at": "2026-09-04T14:22:19.012320Z",
+  "generated_at": "2026-09-04T15:34:04.440643Z",
   "data_quality": {
-    "status": "PARTIAL",
-    "score": 76,
+    "status": "GOOD",
+    "score": 90,
     "checks": [
       {
         "item": "涨停池",
@@ -73,15 +73,15 @@
       },
       {
         "item": "公告",
-        "status": "FAIL",
-        "source": "cninfo.stock_zh_a_disclosure_report_cninfo",
-        "detail": "remote announcement lookups disabled; set MARKET_PACKET_REMOTE_ANNOUNCEMENTS=1 or provide data/announcement_sources/YYYY-MM-DD.json"
+        "status": "PASS",
+        "source": "announcement_collector.cninfo_exchange_ir",
+        "detail": "coverage=1.0 records=67 failed=0"
       },
       {
         "item": "政策",
-        "status": "FAIL",
-        "source": "official_policy_sources",
-        "detail": "official policy crawler not configured with stable historical source for this date"
+        "status": "PARTIAL",
+        "source": "policy_collector.official_sources",
+        "detail": "records=363 scanned=9 failed=6"
       },
       {
         "item": "上一交易日review",
@@ -93,7 +93,7 @@
     "sources": [
       {
         "source": "akshare.stock_zt_pool_em",
-        "retrieved_at": "2026-09-04T14:21:57.259290Z",
+        "retrieved_at": "2026-09-04T15:34:04.274084Z",
         "data_date": "2026-09-02",
         "freshness": "historical",
         "quality": "PASS",
@@ -103,7 +103,7 @@
       },
       {
         "source": "akshare.stock_zt_pool_zbgc_em",
-        "retrieved_at": "2026-09-04T14:21:57.259290Z",
+        "retrieved_at": "2026-09-04T15:34:04.274084Z",
         "data_date": "2026-09-02",
         "freshness": "historical",
         "quality": "PASS",
@@ -113,7 +113,7 @@
       },
       {
         "source": "akshare.stock_zt_pool_dtgc_em",
-        "retrieved_at": "2026-09-04T14:21:57.259290Z",
+        "retrieved_at": "2026-09-04T15:34:04.275082Z",
         "data_date": "2026-09-02",
         "freshness": "historical",
         "quality": "PASS",
@@ -123,7 +123,7 @@
       },
       {
         "source": "akshare.stock_zt_pool_previous_em",
-        "retrieved_at": "2026-09-04T14:21:57.260287Z",
+        "retrieved_at": "2026-09-04T15:34:04.276079Z",
         "data_date": "2026-09-02",
         "freshness": "historical",
         "quality": "PASS",
@@ -133,7 +133,7 @@
       },
       {
         "source": "akshare.stock_lhb_detail_em",
-        "retrieved_at": "2026-09-04T14:21:57.262282Z",
+        "retrieved_at": "2026-09-04T15:34:04.277076Z",
         "data_date": "2026-09-02",
         "freshness": "historical",
         "quality": "PASS",
@@ -143,7 +143,7 @@
       },
       {
         "source": "akshare.stock_hsgt_hist_em",
-        "retrieved_at": "2026-09-04T14:21:57.280465Z",
+        "retrieved_at": "2026-09-04T15:34:04.295029Z",
         "data_date": null,
         "freshness": "historical",
         "quality": "PASS",
@@ -153,7 +153,7 @@
       },
       {
         "source": "akshare.stock_hsgt_fund_flow_summary_em",
-        "retrieved_at": "2026-09-04T14:21:57.280465Z",
+        "retrieved_at": "2026-09-04T15:34:04.296025Z",
         "data_date": null,
         "freshness": "current_only",
         "quality": "PASS",
@@ -163,7 +163,7 @@
       },
       {
         "source": "akshare.stock_margin_szse",
-        "retrieved_at": "2026-09-04T14:21:57.281464Z",
+        "retrieved_at": "2026-09-04T15:34:04.296025Z",
         "data_date": "2026-09-02",
         "freshness": "historical",
         "quality": "PASS",
@@ -173,7 +173,7 @@
       },
       {
         "source": "akshare.stock_margin_detail_szse",
-        "retrieved_at": "2026-09-04T14:21:57.292121Z",
+        "retrieved_at": "2026-09-04T15:34:04.304004Z",
         "data_date": "2026-09-02",
         "freshness": "historical",
         "quality": "PASS",
@@ -183,7 +183,7 @@
       },
       {
         "source": "akshare.stock_fund_flow_industry",
-        "retrieved_at": "2026-09-04T14:21:57.293118Z",
+        "retrieved_at": "2026-09-04T15:34:04.305003Z",
         "data_date": null,
         "freshness": "current_only",
         "quality": "PASS",
@@ -193,7 +193,7 @@
       },
       {
         "source": "akshare.stock_fund_flow_concept",
-        "retrieved_at": "2026-09-04T14:21:57.295113Z",
+        "retrieved_at": "2026-09-04T15:34:04.306996Z",
         "data_date": null,
         "freshness": "current_only",
         "quality": "PASS",
@@ -203,7 +203,7 @@
       },
       {
         "source": "tushare.trade_cal",
-        "retrieved_at": "2026-09-04T14:21:57.295113Z",
+        "retrieved_at": "2026-09-04T15:34:04.306996Z",
         "data_date": "2026-09-02",
         "freshness": "historical",
         "quality": "FAIL",
@@ -213,7 +213,7 @@
       },
       {
         "source": "tushare.stock_basic",
-        "retrieved_at": "2026-09-04T14:21:57.295113Z",
+        "retrieved_at": "2026-09-04T15:34:04.306996Z",
         "data_date": "2026-09-02",
         "freshness": "historical",
         "quality": "FAIL",
@@ -223,7 +223,7 @@
       },
       {
         "source": "tushare.daily",
-        "retrieved_at": "2026-09-04T14:21:57.317706Z",
+        "retrieved_at": "2026-09-04T15:34:04.328939Z",
         "data_date": "2026-09-02",
         "freshness": "historical",
         "quality": "PASS",
@@ -233,7 +233,7 @@
       },
       {
         "source": "tushare.daily",
-        "retrieved_at": "2026-09-04T14:21:57.341643Z",
+        "retrieved_at": "2026-09-04T15:34:04.350846Z",
         "data_date": "2026-09-01",
         "freshness": "historical",
         "quality": "PASS",
@@ -243,7 +243,7 @@
       },
       {
         "source": "tushare.daily_basic",
-        "retrieved_at": "2026-09-04T14:21:57.341643Z",
+        "retrieved_at": "2026-09-04T15:34:04.351844Z",
         "data_date": "2026-09-02",
         "freshness": "historical",
         "quality": "FAIL",
@@ -253,7 +253,7 @@
       },
       {
         "source": "tushare.adj_factor",
-        "retrieved_at": "2026-09-04T14:21:57.342641Z",
+        "retrieved_at": "2026-09-04T15:34:04.351844Z",
         "data_date": "2026-09-02",
         "freshness": "historical",
         "quality": "FAIL",
@@ -263,7 +263,7 @@
       },
       {
         "source": "akshare.stock_zh_a_hist; fallback akshare.stock_zh_a_hist_tx/stock_zh_a_daily",
-        "retrieved_at": "2026-09-04T14:21:57.343639Z",
+        "retrieved_at": "2026-09-04T15:34:04.352841Z",
         "data_date": "2026-09-02",
         "freshness": "historical",
         "quality": "PASS",
@@ -272,48 +272,68 @@
         "error": null
       },
       {
-        "source": "cninfo.stock_zh_a_disclosure_report_cninfo",
-        "retrieved_at": "2026-09-04T14:21:57.344667Z",
-        "data_date": "2026-09-02",
-        "freshness": "historical",
-        "quality": "FAIL",
-        "is_cached": false,
-        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-02\\official_announcements.json",
-        "error": "remote announcement lookups disabled; set MARKET_PACKET_REMOTE_ANNOUNCEMENTS=1 or provide data/announcement_sources/YYYY-MM-DD.json"
-      },
-      {
-        "source": "official_policy_sources",
-        "retrieved_at": "2026-09-04T14:21:57.347881Z",
-        "data_date": "2026-09-02",
-        "freshness": "historical",
-        "quality": "FAIL",
-        "is_cached": false,
-        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-02\\official_policies.json",
-        "error": "official policy crawler not configured with stable historical source for this date"
-      },
-      {
         "source": "akshare.eastmoney_board_hist",
-        "retrieved_at": "2026-09-04T14:22:02.883340Z",
+        "retrieved_at": "2026-09-04T15:34:04.352841Z",
         "data_date": "2026-09-02",
         "freshness": "historical",
         "quality": "FAIL",
-        "is_cached": false,
+        "is_cached": true,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-02\\industry_board_daily.json",
         "error": "board list failed: ProxyError: HTTPSConnectionPool(host='17.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90+t%3A2+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf26%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf124%2Cf107%2Cf104%2Cf105%2Cf140%2Cf141%2Cf207%2Cf208%2Cf209%2Cf222 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"
       },
       {
         "source": "akshare.eastmoney_board_hist",
-        "retrieved_at": "2026-09-04T14:22:18.923912Z",
+        "retrieved_at": "2026-09-04T15:34:04.353870Z",
         "data_date": "2026-09-02",
         "freshness": "historical",
         "quality": "FAIL",
-        "is_cached": false,
+        "is_cached": true,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-02\\concept_board_daily.json",
         "error": "board list failed: ProxyError: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A90+t%3A3+f%3A%2150&fields=f2%2Cf3%2Cf4%2Cf8%2Cf12%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf24%2Cf25%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf124%2Cf107%2Cf104%2Cf105%2Cf136 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"
       },
       {
+        "source": "announcement_collector.cninfo_exchange_ir",
+        "retrieved_at": "2026-09-04T15:34:04.354837Z",
+        "data_date": "2026-09-02",
+        "freshness": "historical",
+        "quality": "PASS",
+        "is_cached": false,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-02\\announcements",
+        "error": null
+      },
+      {
+        "source": "announcement_collector",
+        "retrieved_at": "2026-09-04T15:34:04.354837Z",
+        "data_date": "2026-09-02",
+        "freshness": "historical",
+        "quality": "PASS",
+        "is_cached": false,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-02\\announcements",
+        "error": null
+      },
+      {
+        "source": "policy_collector.official_sources",
+        "retrieved_at": "2026-09-04T15:34:04.357862Z",
+        "data_date": "2026-09-02",
+        "freshness": "historical",
+        "quality": "PARTIAL",
+        "is_cached": false,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-02\\policies",
+        "error": "工信部:AdapterPermissionError;证监会:AdapterPermissionError;北交所:AdapterPermissionError;国家能源局:AdapterError;国家卫健委:AdapterError;住建部:AdapterError"
+      },
+      {
+        "source": "policy_collector",
+        "retrieved_at": "2026-09-04T15:34:04.357862Z",
+        "data_date": "2026-09-02",
+        "freshness": "historical",
+        "quality": "PARTIAL",
+        "is_cached": false,
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-02\\policies",
+        "error": null
+      },
+      {
         "source": "akshare.stock_zh_index_daily",
-        "retrieved_at": "2026-09-04T14:22:18.956469Z",
+        "retrieved_at": "2026-09-04T15:34:04.376812Z",
         "data_date": "2026-09-02",
         "freshness": "historical",
         "quality": "PASS",
@@ -323,7 +343,7 @@
       },
       {
         "source": "akshare.stock_zh_index_daily",
-        "retrieved_at": "2026-09-04T14:22:18.974387Z",
+        "retrieved_at": "2026-09-04T15:34:04.394760Z",
         "data_date": "2026-09-02",
         "freshness": "historical",
         "quality": "PASS",
@@ -333,7 +353,7 @@
       },
       {
         "source": "akshare.stock_zh_index_daily",
-        "retrieved_at": "2026-09-04T14:22:18.983396Z",
+        "retrieved_at": "2026-09-04T15:34:04.404734Z",
         "data_date": "2026-09-02",
         "freshness": "historical",
         "quality": "PASS",
@@ -343,7 +363,7 @@
       },
       {
         "source": "akshare.stock_zh_index_daily",
-        "retrieved_at": "2026-09-04T14:22:18.986387Z",
+        "retrieved_at": "2026-09-04T15:34:04.407726Z",
         "data_date": "2026-09-02",
         "freshness": "historical",
         "quality": "PASS",
@@ -353,7 +373,7 @@
       },
       {
         "source": "akshare.stock_zh_index_daily",
-        "retrieved_at": "2026-09-04T14:22:18.989371Z",
+        "retrieved_at": "2026-09-04T15:34:04.410718Z",
         "data_date": "2026-09-02",
         "freshness": "historical",
         "quality": "PASS",
@@ -364,9 +384,6 @@
     ],
     "conflicts": []
   },
-  "missing_data": [
-    "announcements",
-    "policies"
-  ],
+  "missing_data": [],
   "note": "PASS means usable factual source. PARTIAL/FAIL fields must remain null or be judged by ChatGPT with caveats."
 }

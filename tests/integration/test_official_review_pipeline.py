@@ -72,7 +72,7 @@ def test_daily_pipeline_waits_when_official_review_is_missing(monkeypatch, tmp_p
         "data_quality": {"status": "GOOD", "score": 91},
         "meta": {"trade_date": "2026-09-02"},
     }
-    monkeypatch.setattr(pipeline, "build_market_packet", lambda trade_date, refresh=False: packet)
+    monkeypatch.setattr(pipeline, "build_market_packet", lambda trade_date, refresh=False, as_of_time=None: packet)
     monkeypatch.setattr(pipeline, "write_outputs", lambda packet: {"packet": tmp_path / "packet.json"})
     code = run_daily_pipeline_main(["--date", "2026-09-02", "--database", str(tmp_path / "review.db")])
     output = capsys.readouterr().out

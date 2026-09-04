@@ -12,6 +12,9 @@ from typing import Any, Callable
 
 import pandas as pd
 
+from src.market_packet.announcement_collector import AnnouncementCollector
+from src.market_packet.policy_collector import PolicyCollector
+
 try:
     import akshare as ak
 except Exception:  # pragma: no cover - reported through source metadata
@@ -71,9 +74,10 @@ class CollectedDataset:
 
 
 class MarketPacketCollector:
-    def __init__(self, *, raw_root: Path | None = None, refresh: bool = False):
+    def __init__(self, *, raw_root: Path | None = None, refresh: bool = False, as_of_time: datetime | None = None):
         self.raw_root = raw_root or PROJECT_ROOT / "data" / "raw" / "market_packets"
         self.refresh = refresh
+        self.as_of_time = as_of_time
 
     def collect(self, trade_date: date) -> dict[str, CollectedDataset]:
         datasets: dict[str, CollectedDataset] = {}
@@ -94,10 +98,69 @@ class MarketPacketCollector:
             datasets[name] = self._collect_frame(name, source, fn, trade_date, data_date, freshness)
         self._collect_tushare_core(datasets, trade_date)
         datasets["stock_top_ohlcv"] = self._collect_stock_top_ohlcv(trade_date, datasets)
-        datasets["official_announcements"] = self._collect_announcements(trade_date, datasets)
-        datasets["official_policies"] = self._collect_policies(trade_date)
         datasets["industry_board_daily"] = self._collect_board_daily(trade_date, "industry")
         datasets["concept_board_daily"] = self._collect_board_daily(trade_date, "concept")
+        announcement_collection = AnnouncementCollector(raw_root=self.raw_root, refresh=self.refresh).collect(trade_date, datasets, as_of_time=self.as_of_time)
+        datasets["official_announcements"] = CollectedDataset(
+            "official_announcements",
+            "announcement_collector.cninfo_exchange_ir",
+            trade_date,
+            datetime.now(UTC),
+            announcement_collection.records,
+            announcement_collection.quality,
+            "historical",
+            False,
+            announcement_collection.cache_dir,
+            ";".join(announcement_collection.failed_sources) if announcement_collection.failed_sources else None,
+        )
+        datasets["official_announcements_meta"] = CollectedDataset(
+            "official_announcements_meta",
+            "announcement_collector",
+            trade_date,
+            datetime.now(UTC),
+            [{
+                "core_stock_count": announcement_collection.core_stock_count,
+                "covered_stock_count": announcement_collection.covered_stock_count,
+                "coverage_rate": announcement_collection.coverage_rate,
+                "failed_sources": announcement_collection.failed_sources,
+                "official_source_available": announcement_collection.official_source_available,
+                "quality": announcement_collection.quality,
+                "cache_dir": announcement_collection.cache_dir,
+            }],
+            announcement_collection.quality,
+            "historical",
+            False,
+            announcement_collection.cache_dir,
+        )
+        policy_collection = PolicyCollector(raw_root=self.raw_root, refresh=self.refresh).collect(trade_date, [], as_of_time=self.as_of_time)
+        datasets["official_policies"] = CollectedDataset(
+            "official_policies",
+            "policy_collector.official_sources",
+            trade_date,
+            datetime.now(UTC),
+            policy_collection.records,
+            policy_collection.quality,
+            "historical",
+            False,
+            policy_collection.cache_dir,
+            ";".join(policy_collection.failed_sources) if policy_collection.failed_sources else None,
+        )
+        datasets["official_policies_meta"] = CollectedDataset(
+            "official_policies_meta",
+            "policy_collector",
+            trade_date,
+            datetime.now(UTC),
+            [{
+                "scanned_sources": policy_collection.scanned_sources,
+                "failed_sources": policy_collection.failed_sources,
+                "quality": policy_collection.quality,
+                "cache_dir": policy_collection.cache_dir,
+            }],
+            policy_collection.quality,
+            "historical",
+            False,
+            policy_collection.cache_dir,
+        )
         for symbol, (label, ts_code) in INDEX_SYMBOLS.items():
             datasets[f"index_{ts_code}"] = self._collect_frame(
                 f"index_{ts_code}",

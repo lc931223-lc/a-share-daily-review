@@ -1,0 +1,98 @@
+from __future__ import annotations
+
+from datetime import date, datetime
+from pathlib import Path
+from zoneinfo import ZoneInfo
+
+import pandas as pd
+import pytest
+
+from src.market_packet.announcement_collector import AnnouncementCandidate, AnnouncementCollector, build_announcement_sections
+
+
+TZ = ZoneInfo("Asia/Shanghai")
+
+
+def _collector(tmp_path: Path, rows: list[dict] | Exception) -> AnnouncementCollector:
+    def fetcher(_code, _start, _end):
+        if isinstance(rows, Exception):
+            raise rows
+        return pd.DataFrame(rows)
+
+    return AnnouncementCollector(raw_root=tmp_path, fetcher=fetcher, max_stocks=1)
+
+
+class Dataset:
+    def __init__(self, rows):
+        self.rows = rows
+
+
+def _datasets():
+    return {"limit_up": Dataset([{"代码": "000001", "名称": "平安银行"}])}
+
+
+def test_announcement_normal_return(tmp_path):
+    collector = _collector(tmp_path, [{"公告标题": "关于重大合同的公告", "公告时间": "2026-09-02 10:00:00", "公告链接": "finalpage/2026-09-02/a.PDF"}])
+    result = collector.collect(date(2026, 9, 2), _datasets(), as_of_time=datetime(2026, 9, 2, 15, 30, tzinfo=TZ))
+    assert result.records[0]["category"] == "contract"
+    assert result.records[0]["evidence_level"] == "A"
+    assert result.quality == "PASS"
+
+
+def test_announcement_timeout_is_fail_without_fake_empty_values(tmp_path):
+    collector = _collector(tmp_path, TimeoutError("slow"))
+    result = collector.collect(date(2026, 9, 2), _datasets(), as_of_time=datetime(2026, 9, 2, 15, 30, tzinfo=TZ))
+    assert result.records == []
+    assert result.failed_sources
+    assert result.quality == "FAIL"
+
+
+def test_announcement_duplicate_and_multi_source_prefers_official(tmp_path):
+    collector = AnnouncementCollector(raw_root=tmp_path, fetcher=lambda *_: pd.DataFrame(), max_stocks=1)
+    official = collector.normalize_announcement(AnnouncementCandidate("000001", "平安银行", "巨潮资讯", {"公告标题": "关于重大合同的公告", "公告时间": "2026-09-02"}))
+    media = dict(official)
+    media["source"] = "权威媒体"
+    media["source_type"] = "media"
+    media["is_official"] = False
+    media["evidence_level"] = "B"
+    result = collector.deduplicate_announcements([media, official])
+    assert len(result) == 1
+    assert result[0]["source"] == "巨潮资讯"
+    assert result[0]["supplemental_sources"] == ["权威媒体"]
+
+
+def test_announcement_future_pollution_is_filtered(tmp_path):
+    collector = _collector(tmp_path, [{"公告标题": "关于重大合同的公告", "公告时间": "2026-09-05 09:00:00"}])
+    result = collector.collect(date(2026, 9, 4), _datasets(), as_of_time=datetime(2026, 9, 4, 15, 30, tzinfo=TZ))
+    assert result.records == []
+
+
+@pytest.mark.parametrize(
+    ("title", "category", "field", "expected"),
+    [
+        ("关于尚未形成订单的风险提示公告", "risk_warning", "clarification_flags", "尚未形成订单"),
+        ("关于股东减持计划的公告", "decrease_holding", "risk_flags", "减持"),
+        ("2026年半年度业绩预告", "earnings", "category", "earnings"),
+        ("关于签署重大合同的公告", "contract", "category", "contract"),
+    ],
+)
+def test_announcement_key_phrase_classification(tmp_path, title, category, field, expected):
+    collector = AnnouncementCollector(raw_root=tmp_path, fetcher=lambda *_: pd.DataFrame(), max_stocks=1)
+    item = collector.normalize_announcement(AnnouncementCandidate("000001", "平安银行", "巨潮资讯", {"公告标题": title, "公告时间": "2026-09-02"}))
+    assert item["category"] == category
+    if field == "category":
+        assert item[field] == expected
+    else:
+        assert expected in item[field]
+
+
+def test_announcement_sections_group_records(tmp_path):
+    records = [
+        {"category": "contract", "risk_flags": [], "clarification_flags": []},
+        {"category": "risk_warning", "risk_flags": ["风险提示"], "clarification_flags": []},
+        {"category": "earnings", "risk_flags": [], "clarification_flags": []},
+    ]
+    sections = build_announcement_sections(records)
+    assert len(sections["orders_contracts"]) == 1
+    assert len(sections["risk_announcements"]) == 1
+    assert len(sections["earnings_updates"]) == 1

@@ -10,8 +10,10 @@ from jsonschema import Draft202012Validator
 from sqlalchemy import delete, select
 
 from src.market_packet.collector import MarketPacketCollector
+from src.market_packet.announcement_collector import AnnouncementCollection, build_announcement_sections
 from src.market_packet.models import MarketPacket
 from src.market_packet.normalizer import normalize_packet_data
+from src.market_packet.policy_collector import PolicyCollection, build_policy_sections
 from src.market_packet.previous_review_loader import load_previous_review
 from src.market_packet.quality_gate import audit_packet
 from src.storage.database import create_db_engine, create_schema, session_factory
@@ -21,11 +23,27 @@ from src.storage.models import MarketDaily, MarketPacketLog, OfficialAnnouncemen
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
-def build_market_packet(trade_date: date, *, refresh: bool = False) -> dict[str, Any]:
-    collector = MarketPacketCollector(refresh=refresh)
+def build_market_packet(trade_date: date, *, refresh: bool = False, as_of_time: datetime | None = None) -> dict[str, Any]:
+    collector = MarketPacketCollector(refresh=refresh, as_of_time=as_of_time)
     datasets = collector.collect(trade_date)
     normalized = normalize_packet_data(trade_date, datasets)
     previous_review, tomorrow_context = load_previous_review(trade_date)
+    ann_meta = datasets.get("official_announcements_meta").rows[0] if datasets.get("official_announcements_meta") and datasets["official_announcements_meta"].rows else {}
+    policy_meta = datasets.get("official_policies_meta").rows[0] if datasets.get("official_policies_meta") and datasets["official_policies_meta"].rows else {}
+    announcement_collection = AnnouncementCollection(
+        records=datasets.get("official_announcements").rows if datasets.get("official_announcements") else [],
+        core_stock_count=ann_meta.get("core_stock_count") or 0,
+        covered_stock_count=ann_meta.get("covered_stock_count") or 0,
+        failed_sources=ann_meta.get("failed_sources") or [],
+        official_source_available=bool(ann_meta.get("official_source_available")),
+        cache_dir=ann_meta.get("cache_dir") or "",
+    )
+    policy_collection = PolicyCollection(
+        records=datasets.get("official_policies").rows if datasets.get("official_policies") else [],
+        scanned_sources=policy_meta.get("scanned_sources") or [],
+        failed_sources=policy_meta.get("failed_sources") or [],
+        cache_dir=policy_meta.get("cache_dir") or "",
+    )
     packet = {
         "meta": {
             "schema_version": "market_packet.1",
@@ -37,8 +55,8 @@ def build_market_packet(trade_date: date, *, refresh: bool = False) -> dict[str,
         },
         "data_quality": {"status": "INCOMPLETE", "score": 0, "checks": [], "sources": [], "conflicts": []},
         **normalized,
-        "announcements": datasets.get("official_announcements").rows if datasets.get("official_announcements") else [],
-        "policies": datasets.get("official_policies").rows if datasets.get("official_policies") else [],
+        "announcements": build_announcement_sections(announcement_collection.records, announcement_collection),
+        "policies": build_policy_sections(policy_collection.records, policy_collection),
         "industry_events": [],
         "previous_review": previous_review,
         "tomorrow_check_context": tomorrow_context,
@@ -49,6 +67,8 @@ def build_market_packet(trade_date: date, *, refresh: bool = False) -> dict[str,
 
 
 def compact_packet(packet: dict[str, Any]) -> dict[str, Any]:
+    announcements = _section(packet.get("announcements"))
+    policies = _section(packet.get("policies"))
     return {
         "meta": packet["meta"],
         "data_quality": packet["data_quality"],
@@ -62,8 +82,8 @@ def compact_packet(packet: dict[str, Any]) -> dict[str, Any]:
         "leader_candidates": packet["leader_candidates"][:40],
         "previous_review": packet["previous_review"],
         "tomorrow_check_context": packet["tomorrow_check_context"],
-        "announcements": packet["announcements"][:50],
-        "policies": packet["policies"][:30],
+        "announcements": {**announcements, "records": announcements["records"][:20], "important_announcements": announcements.get("important_announcements", announcements["records"])[:20]},
+        "policies": {**policies, "records": policies["records"][:20]},
         "industry_events": packet["industry_events"][:50],
         "missing_data": packet["missing_data"],
     }
@@ -77,6 +97,14 @@ def quality_report(packet: dict[str, Any]) -> dict[str, Any]:
         "missing_data": packet["missing_data"],
         "note": "PASS means usable factual source. PARTIAL/FAIL fields must remain null or be judged by ChatGPT with caveats.",
     }
+
+
+def _section(value: Any) -> dict[str, Any]:
+    if isinstance(value, dict):
+        return value
+    if isinstance(value, list):
+        return {"records": value, "important_announcements": value, "metadata": {}}
+    return {"records": [], "important_announcements": [], "metadata": {}}
 
 
 def write_outputs(packet: dict[str, Any], output_root: Path | None = None) -> dict[str, Path]:
@@ -152,7 +180,7 @@ def log_packet_outputs(packet: dict[str, Any], paths: dict[str, Path], database_
                 )
             )
         session.execute(delete(OfficialAnnouncement).where(OfficialAnnouncement.trade_date == trade_date))
-        for item in packet["announcements"]:
+        for item in packet["announcements"].get("records", []):
             session.add(
                 OfficialAnnouncement(
                     trade_date=trade_date,
@@ -171,7 +199,7 @@ def log_packet_outputs(packet: dict[str, Any], paths: dict[str, Path], database_
                 )
             )
         session.execute(delete(OfficialPolicy).where(OfficialPolicy.trade_date == trade_date))
-        for item in packet["policies"]:
+        for item in packet["policies"].get("records", []):
             session.add(
                 OfficialPolicy(
                     trade_date=trade_date,

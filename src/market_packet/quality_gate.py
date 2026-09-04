@@ -14,10 +14,13 @@ CRITICAL_DATASETS = {
 
 def audit_packet(packet: dict, datasets: dict[str, CollectedDataset]) -> dict:
     checks = []
+    scoring_statuses = []
     missing = set(packet.get("missing_data", []))
 
-    def add(item: str, status: str, source: str | None, detail: str, missing_key: str | None = None):
+    def add(item: str, status: str, source: str | None, detail: str, missing_key: str | None = None, score: bool = True):
         checks.append({"item": item, "status": status, "source": source, "detail": detail})
+        if score:
+            scoring_statuses.append(status)
         if status == "FAIL" and missing_key:
             missing.add(missing_key)
 
@@ -71,12 +74,28 @@ def audit_packet(packet: dict, datasets: dict[str, CollectedDataset]) -> dict:
         stock_detail = "no core stock universe available"
     add("核心个股行情", stock_status, "Eastmoney limit pools/LHB plus akshare.stock_zh_a_hist", stock_detail, "stocks")
     ann_source = datasets.get("official_announcements")
-    add("公告", "PASS" if packet["announcements"] else "FAIL", ann_source.source if ann_source else None, f"{len(packet['announcements'])} official/supplemental announcements collected" if packet["announcements"] else (ann_source.error if ann_source else "announcement collector unavailable"), "announcements")
+    ann_section = packet["announcements"] if isinstance(packet.get("announcements"), dict) else {"records": packet.get("announcements") or [], "metadata": {}}
+    ann_meta = ann_section.get("metadata", {})
+    add(
+        "公告",
+        ann_meta.get("quality") or ("PASS" if ann_section.get("records") else "FAIL"),
+        ann_source.source if ann_source else None,
+        f"coverage={ann_meta.get('coverage_rate')} records={len(ann_section.get('records', []))} failed={len(ann_meta.get('failed_sources') or [])}",
+        "announcements",
+    )
     policy_source = datasets.get("official_policies")
-    add("政策", "PASS" if packet["policies"] else "FAIL", policy_source.source if policy_source else None, f"{len(packet['policies'])} official policies collected" if packet["policies"] else (policy_source.error if policy_source else "official policy collector unavailable"), "policies")
-    add("上一交易日review", "PASS" if packet["previous_review"] else "PARTIAL", "local review json/db", "previous review context found" if packet["previous_review"] else "no previous formal review found", "previous_review")
+    policy_section = packet["policies"] if isinstance(packet.get("policies"), dict) else {"records": packet.get("policies") or [], "metadata": {}}
+    policy_meta = policy_section.get("metadata", {})
+    add(
+        "政策",
+        policy_meta.get("quality") or ("PASS" if policy_section.get("records") else "FAIL"),
+        policy_source.source if policy_source else None,
+        f"records={len(policy_section.get('records', []))} scanned={len(policy_meta.get('scanned_sources') or [])} failed={len(policy_meta.get('failed_sources') or [])}",
+        "policies",
+    )
+    add("上一交易日review", "PASS" if packet["previous_review"] else "PARTIAL", "local review json/db", "previous review context found" if packet["previous_review"] else "no previous formal review found", "previous_review", score=False)
 
-    score = _score(check["status"] for check in checks)
+    score = _score(scoring_statuses)
     packet["missing_data"] = sorted(missing)
     packet["data_quality"] = {
         "status": _label(score),

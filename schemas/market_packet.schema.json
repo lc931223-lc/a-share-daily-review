@@ -304,20 +304,14 @@
       "type": "object"
     },
     "announcements": {
-      "items": {
-        "additionalProperties": true,
-        "type": "object"
-      },
+      "additionalProperties": true,
       "title": "Announcements",
-      "type": "array"
+      "type": "object"
     },
     "policies": {
-      "items": {
-        "additionalProperties": true,
-        "type": "object"
-      },
+      "additionalProperties": true,
       "title": "Policies",
-      "type": "array"
+      "type": "object"
     },
     "industry_events": {
       "items": {
