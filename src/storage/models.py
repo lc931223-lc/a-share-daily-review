@@ -411,6 +411,22 @@ class FactVersion(Base):
     last_seen_at: Mapped[datetime] = mapped_column(DateTime, default=utc_now)
 
 
+class FactPartition(Base):
+    __tablename__ = "fact_partition"
+    __table_args__ = (
+        UniqueConstraint("dataset", "trade_date", "content_hash", name="uq_fact_partition_content"),
+        Index("idx_fact_partition_dataset_date", "dataset", "trade_date"),
+    )
+    id: Mapped[int] = mapped_column(primary_key=True)
+    dataset: Mapped[str] = mapped_column(String(100))
+    trade_date: Mapped[date] = mapped_column(Date)
+    content_hash: Mapped[str] = mapped_column(String(64))
+    path: Mapped[str] = mapped_column(Text)
+    record_count: Mapped[int] = mapped_column(Integer)
+    schema_json: Mapped[str] = mapped_column(Text)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utc_now)
+
+
 class OfficialAnnouncement(Base):
     __tablename__ = "official_announcement"
     __table_args__ = (Index("idx_official_announcement_date_stock", "trade_date", "stock_code"),)

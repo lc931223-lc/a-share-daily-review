@@ -9,11 +9,13 @@ from dataclasses import dataclass
 from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 from typing import Any, Callable
+from zoneinfo import ZoneInfo
 
 import pandas as pd
 
 from src.market_packet.announcement_collector import AnnouncementCollector
 from src.market_packet.policy_collector import PolicyCollector
+from src.market_packet.source_router import SourceRouter
 
 try:
     import akshare as ak
@@ -90,6 +92,7 @@ class MarketPacketCollector:
         self.refresh = refresh
         self.refresh_datasets = {item.strip().lower() for item in (refresh_datasets or set())}
         self.as_of_time = as_of_time
+        self.source_router = SourceRouter()
 
     def _should_refresh(self, *names: str) -> bool:
         return self.refresh or any(name.lower() in self.refresh_datasets for name in names)
@@ -459,52 +462,50 @@ class MarketPacketCollector:
 
     def _collect_board_daily(self, trade_date: date, board_type: str, *, limit: int = 120) -> CollectedDataset:
         name = f"{board_type}_board_daily"
+        route_name = f"{board_type}_board"
+        route = self.source_router.route(route_name)
+        source = str(route["primary"])
         cache = self._cache_path(trade_date, name)
         refresh = self._should_refresh(name, f"{board_type}_board", "industry_board" if board_type == "industry" else "concept_board")
         if cache.exists() and not refresh:
             payload = json.loads(cache.read_text(encoding="utf-8"))
             rows = payload.get("rows", [])
-            return self._dataset_from_cache(name, payload.get("source", "akshare.eastmoney_board_hist"), trade_date, "historical", cache, payload)
+            return self._dataset_from_cache(name, payload.get("source", source), trade_date, "historical", cache, payload)
+        shanghai_today = datetime.now(ZoneInfo("Asia/Shanghai")).date()
+        if trade_date != shanghai_today:
+            if cache.exists():
+                payload = json.loads(cache.read_text(encoding="utf-8"))
+                if payload.get("rows"):
+                    return self._dataset_from_cache(name, payload.get("source", source), trade_date, "historical", cache, payload)
+            error = "historical board snapshots are only available from archived daily snapshots; no N+1 reconstruction is attempted"
+            path = self._write_cache(trade_date, name, source, trade_date, [], error=error)
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            payload["quality"] = "UNAVAILABLE"
+            path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+            return self._dataset_from_cache(name, source, trade_date, "historical", path, payload, is_cached=False)
         if ak is None:
-            return CollectedDataset(name, "akshare.eastmoney_board_hist", trade_date, datetime.now(UTC), [], "FAIL", "missing", False, error="akshare import failed")
+            return CollectedDataset(name, source, trade_date, datetime.now(UTC), [], "UNAVAILABLE", "missing", False, error="akshare import failed")
         try:
             board_list = ak.stock_board_industry_name_em() if board_type == "industry" else ak.stock_board_concept_name_em()
         except Exception as exc:
-            path = self._write_cache(trade_date, name, "akshare.eastmoney_board_hist", trade_date, [])
+            path = self._write_cache(trade_date, name, source, trade_date, [], error=f"board list failed: {exc.__class__.__name__}: {exc}")
             error = f"board list failed: {exc.__class__.__name__}: {exc}"
-            payload = json.loads(path.read_text(encoding="utf-8"))
-            payload["error"] = error
-            path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-            return CollectedDataset(name, "akshare.eastmoney_board_hist", trade_date, datetime.now(UTC), [], "FAIL", "historical", False, str(path), error)
+            return CollectedDataset(name, source, trade_date, datetime.now(UTC), [], "FAIL", "historical", False, str(path), error)
         rows: list[dict[str, Any]] = []
-        errors: list[str] = []
         for board in _frame_to_rows(board_list)[:limit]:
             board_name = _first_text(board, ["板块名称", "名称", "name", "板块"])
             if not board_name:
                 continue
-            try:
-                hist_fn = ak.stock_board_industry_hist_em if board_type == "industry" else ak.stock_board_concept_hist_em
-                hist = hist_fn(symbol=board_name, start_date=_compact(trade_date), end_date=_compact(trade_date))
-                hist_rows = _frame_to_rows(hist)
-                if not hist_rows:
-                    continue
-                item = dict(hist_rows[-1])
-                item["board_type"] = board_type
-                item["board_name"] = board_name
-                item["board_code"] = _first_text(board, ["板块代码", "代码", "code"])
-                item["source_data_date"] = trade_date.isoformat()
-                rows.append(item)
-            except Exception as exc:
-                errors.append(f"{board_name}:{exc.__class__.__name__}")
-        path = self._write_cache(trade_date, name, "akshare.eastmoney_board_hist", trade_date, rows)
-        error = None
-        if errors:
-            error = f"{len(errors)} board history lookups failed; sample={errors[:8]}"
-            payload = json.loads(path.read_text(encoding="utf-8"))
-            payload["error"] = error
-            path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+            item = dict(board)
+            item["board_type"] = board_type
+            item["board_name"] = board_name
+            item["board_code"] = _first_text(board, ["板块代码", "代码", "code"])
+            item["source_data_date"] = trade_date.isoformat()
+            rows.append(item)
+        path = self._write_cache(trade_date, name, source, trade_date, rows)
+        error = None if rows else "empty board snapshot"
         quality = "PASS" if len(rows) >= (30 if board_type == "industry" else 50) else "PARTIAL" if rows else "FAIL"
-        return CollectedDataset(name, "akshare.eastmoney_board_hist", trade_date, datetime.now(UTC), rows, quality, "historical", False, str(path), error)
+        return CollectedDataset(name, source, trade_date, datetime.now(UTC), rows, quality, "historical", False, str(path), error)
 
     def _collect_frame(
         self,

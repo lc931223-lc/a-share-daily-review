@@ -16,6 +16,7 @@ data/**/*.db
 data/archive/
 data/reference/
 data/raw/market_packets/
+data/facts/
 data/market_reviews/*/akshare_probe/
 data/market_reviews/*/tushare_probe/
 data/market_reviews/*/engine/

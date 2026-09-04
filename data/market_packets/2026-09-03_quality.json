@@ -1,6 +1,6 @@
 {
   "trade_date": "2026-09-03",
-  "generated_at": "2026-09-04T16:50:11.245004Z",
+  "generated_at": "2026-09-04T17:02:06.908687Z",
   "data_quality": {
     "status": "PARTIAL",
     "score": 77,
@@ -314,7 +314,7 @@
       {
         "source": "tushare.pro",
         "dataset": "tushare_trade_cal",
-        "retrieved_at": "2026-09-04T16:50:07.337798Z",
+        "retrieved_at": "2026-09-04T17:02:06.778153Z",
         "data_date": "2026-09-03",
         "freshness": "missing",
         "quality": "UNAVAILABLE",
@@ -330,7 +330,7 @@
       {
         "source": "tushare.pro",
         "dataset": "tushare_stock_basic",
-        "retrieved_at": "2026-09-04T16:50:07.338795Z",
+        "retrieved_at": "2026-09-04T17:02:06.778153Z",
         "data_date": "2026-09-03",
         "freshness": "missing",
         "quality": "UNAVAILABLE",
@@ -378,7 +378,7 @@
       {
         "source": "tushare.pro",
         "dataset": "tushare_daily_basic_all",
-        "retrieved_at": "2026-09-04T16:50:07.383706Z",
+        "retrieved_at": "2026-09-04T17:02:06.822890Z",
         "data_date": "2026-09-03",
         "freshness": "missing",
         "quality": "UNAVAILABLE",
@@ -394,7 +394,7 @@
       {
         "source": "tushare.pro",
         "dataset": "tushare_adj_factor_all",
-        "retrieved_at": "2026-09-04T16:50:07.383706Z",
+        "retrieved_at": "2026-09-04T17:02:06.823888Z",
         "data_date": "2026-09-03",
         "freshness": "missing",
         "quality": "UNAVAILABLE",
@@ -410,7 +410,7 @@
       {
         "source": "akshare.stock_zh_a_hist; fallback akshare.stock_zh_a_hist_tx/stock_zh_a_daily",
         "dataset": "stock_top_ohlcv",
-        "retrieved_at": "2026-09-04T16:50:07.384704Z",
+        "retrieved_at": "2026-09-04T17:02:06.823888Z",
         "data_date": "2026-09-03",
         "freshness": "historical",
         "quality": "PASS",
@@ -458,7 +458,7 @@
       {
         "source": "announcement_collector.cninfo_exchange_ir",
         "dataset": "official_announcements",
-        "retrieved_at": "2026-09-04T16:50:07.385701Z",
+        "retrieved_at": "2026-09-04T17:02:06.825883Z",
         "data_date": "2026-09-03",
         "freshness": "historical",
         "quality": "PASS",
@@ -474,7 +474,7 @@
       {
         "source": "announcement_collector",
         "dataset": "official_announcements_meta",
-        "retrieved_at": "2026-09-04T16:50:07.385701Z",
+        "retrieved_at": "2026-09-04T17:02:06.825883Z",
         "data_date": "2026-09-03",
         "freshness": "historical",
         "quality": "PASS",
@@ -490,7 +490,7 @@
       {
         "source": "policy_collector.official_sources",
         "dataset": "official_policies",
-        "retrieved_at": "2026-09-04T16:50:11.166257Z",
+        "retrieved_at": "2026-09-04T17:02:06.826879Z",
         "data_date": "2026-09-03",
         "freshness": "historical",
         "quality": "PARTIAL",
@@ -506,7 +506,7 @@
       {
         "source": "policy_collector",
         "dataset": "official_policies_meta",
-        "retrieved_at": "2026-09-04T16:50:11.166257Z",
+        "retrieved_at": "2026-09-04T17:02:06.826879Z",
         "data_date": "2026-09-03",
         "freshness": "historical",
         "quality": "PARTIAL",

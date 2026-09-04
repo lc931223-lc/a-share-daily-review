@@ -63,6 +63,8 @@ python tools/build_market_packet.py --date 2026-09-03
 
 `*_compact.json` 是推荐交给 ChatGPT 做正式复盘的输入。Market Packet 只保存事实、候选和数据质量，不生成最终主线、最终评级或买卖建议。缺失字段使用 `null`，并同步写入 `missing_data` 和质量报告；禁止用 0、旧缓存或推测值冒充缺失事实。
 
+可使用 `--refresh-dataset policy|announcements|industry_board|concept_board|northbound` 定向刷新单个数据集；成功历史缓存保持原始 `retrieved_at`，失败缓存按错误类型设置 `retry_after`，不会永久粘住失败结果。
+
 当前 Market Packet 会优先用 Tushare `daily(trade_date=...)` 补齐全市场涨跌家数、总成交额、上一交易日成交额和股票池目标日 OHLCV；没有 `TUSHARE_TOKEN` 或 `daily` 不可用时，股票池 OHLCV 继续顺序尝试 `akshare.stock_zh_a_hist`、`akshare.stock_zh_a_hist_tx`、`akshare.stock_zh_a_daily`。政策和公告仍需要独立数据源。
 
 ### Review Import
@@ -103,7 +105,9 @@ python collect_daily_review.py --date 2026-09-01 --mode intraday
 
 ## 数据库
 
-默认使用 SQLite：`data/a_share_review.db`。原因是当前系统是本地单机数据包生成、official review 入库和 Streamlit Dashboard 展示，SQLite 的事务、唯一约束和零服务部署更适合 Phase 1；后续如果多人并发或云端长期服务化，再迁移 DuckDB/PostgreSQL。
+数据存储采用两层结构：SQLite `data/a_share_review.db` 保存目录、来源批次、质量门、事实版本和服务状态；中大规模规范化事实写入 `data/facts/dataset=<name>/trade_date=<date>/part-<hash>.parquet`。Parquet 使用 Zstandard 压缩和内容哈希幂等命名，DuckDB 负责跨日分析查询。公告和政策的原始输入按日保存为 `source_records.jsonl.gz`，不再逐条产生小 JSON 文件。
+
+板块数据源路由保存在 `config/market_packet_sources.json`。行业和概念板块在当日使用东方财富单次全量快照并归档；历史日期只读取已归档快照，缺失时返回 `UNAVAILABLE`，禁止用当前数据回填或逐板块 N+1 重建。公告优先使用巨潮按日期批量查询，批量接口失败后才按核心股票池走交易所正式来源回退。
 
 正式三层架构表包括：
 

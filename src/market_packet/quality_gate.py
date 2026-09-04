@@ -68,7 +68,7 @@ def audit_packet(packet: dict[str, Any], datasets: dict[str, CollectedDataset]) 
 
     domains = _domain_scores(checks)
     score = round(sum(domains[name]["score"] * weight for name, weight in DOMAIN_WEIGHTS.items()) / 100)
-    hard_fail = any(item["hard_gate"] and item["status"] == "FAIL" for item in checks)
+    hard_fail = any(item["hard_gate"] and item["status"] not in {"PASS", "EMPTY_VALID"} for item in checks)
     if hard_fail:
         score = min(score, 69)
     invalid_items = [item["item"] for item in checks if item["status"] == "INVALID"]

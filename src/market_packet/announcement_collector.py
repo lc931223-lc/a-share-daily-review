@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import gzip
 import json
 import re
 from dataclasses import dataclass
@@ -98,6 +99,31 @@ class CninfoAnnouncementAdapter(AnnouncementSourceAdapter):
 
     def fetch(self, code: str, start: date, end: date) -> list[dict[str, Any]]:
         return _frame_to_rows(self.fetcher(code, start, end))
+
+
+class CninfoBatchAnnouncementAdapter(CninfoAnnouncementAdapter):
+    def __init__(self, fetcher: Callable[[str, date, date], pd.DataFrame], client: SafeHttpClient):
+        super().__init__(fetcher)
+        self.client = client
+
+    def fetch_many(self, codes: list[str], start: date, end: date) -> list[dict[str, Any]]:
+        rows: list[dict[str, Any]] = []
+        for column in ("szse", "sse"):
+            response = self.client.post(
+                "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+                data={
+                    "pageNum": 1, "pageSize": 1000, "column": column, "tabName": "fulltext",
+                    "plate": "", "stock": "", "searchkey": "", "secid": "", "category": "",
+                    "trade": "", "seDate": f"{start.isoformat()}~{end.isoformat()}",
+                    "sortName": "", "sortType": "", "isHLtitle": "true",
+                },
+                headers={"Referer": "https://www.cninfo.com.cn/", "User-Agent": _USER_AGENT},
+                source=self.source,
+                dataset="official_announcements_batch",
+            )
+            rows.extend(_announcement_rows_from_response(response, self.source, "http://static.cninfo.com.cn/"))
+        code_set = set(codes)
+        return [row for row in rows if (_row_stock_code(row) in code_set)]
 
 
 class SseAnnouncementAdapter(AnnouncementSourceAdapter):
@@ -206,7 +232,7 @@ class AnnouncementCollection:
             return "FAIL"
         if self.coverage_rate < 0.90 or self.failed_sources:
             return "PARTIAL"
-        return "PASS"
+        return "PASS" if self.records else "EMPTY_VALID"
 
 
 class AnnouncementCollector:
@@ -231,7 +257,7 @@ class AnnouncementCollector:
             self.adapters = [CninfoAnnouncementAdapter(self.fetcher)]
         else:
             self.adapters = [
-                CninfoAnnouncementAdapter(self.fetcher),
+                CninfoBatchAnnouncementAdapter(self.fetcher, self.client),
                 SseAnnouncementAdapter(self.client),
                 SzseAnnouncementAdapter(self.client),
                 BseAnnouncementAdapter(self.client),
@@ -257,6 +283,10 @@ class AnnouncementCollector:
                 official_source_available=payload.get("official_source_available", False),
                 cache_dir=str(cache_dir),
             )
+        batch_path = cache_dir / "source_records.jsonl.gz"
+        if self.refresh and batch_path.exists():
+            batch_path.unlink()
+        self._batch_hashes = _read_batch_hashes(batch_path)
         candidates, failed_sources, core_count, covered_codes, fully_failed_codes = self.discover_announcements(trade_date, datasets)
         records = []
         for candidate in candidates:
@@ -287,8 +317,22 @@ class AnnouncementCollector:
         failed: list[str] = []
         covered_codes: set[str] = set()
         fully_failed_codes: set[str] = set()
-        if ak is None and any(isinstance(adapter, CninfoAnnouncementAdapter) for adapter in self.adapters):
+        if ak is None and any(isinstance(adapter, CninfoAnnouncementAdapter) and not hasattr(adapter, "fetch_many") for adapter in self.adapters):
             failed.append("巨潮资讯:akshare_import_failed")
+        batch_adapter = next((adapter for adapter in self.adapters if hasattr(adapter, "fetch_many")), None)
+        if batch_adapter is not None:
+            try:
+                batch_rows = batch_adapter.fetch_many(codes, start, trade_date)
+                for row in batch_rows:
+                    code = _row_stock_code(row)
+                    if not code:
+                        continue
+                    candidates.append(AnnouncementCandidate(code, stock_names.get(code, ""), batch_adapter.source, row))
+                    self._write_raw_record(cache_dir, code, row, batch_adapter.source)
+                covered_codes.update(codes)
+                return candidates, failed, len(codes), covered_codes, fully_failed_codes
+            except Exception as exc:
+                failed.append(f"{batch_adapter.source}:batch:{exc.__class__.__name__}")
         for code in codes:
             code_query_succeeded = False
             code_rows_found = False
@@ -422,7 +466,13 @@ class AnnouncementCollector:
             "content_hash": hashlib.sha256(text.encode("utf-8")).hexdigest(),
             "raw": row,
         }
-        (cache_dir / f"{code}-{payload['content_hash'][:16]}.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        content_hash = payload["content_hash"]
+        if content_hash in getattr(self, "_batch_hashes", set()):
+            return
+        self._batch_hashes.add(content_hash)
+        payload["stock_code"] = code
+        with gzip.open(cache_dir / "source_records.jsonl.gz", "at", encoding="utf-8") as stream:
+            stream.write(json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n")
 
     def _write_aggregate(self, path: Path, collection: AnnouncementCollection) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -615,6 +665,26 @@ def _announcement_rows_from_html(html: str, base_url: str) -> list[dict[str, Any
 
 def _filter_rows_by_code(rows: list[dict[str, Any]], code: str) -> list[dict[str, Any]]:
     return [row for row in rows if code in json.dumps(row, ensure_ascii=False)]
+
+
+def _row_stock_code(row: dict[str, Any]) -> str:
+    value = _first_text(row, ["证券代码", "股票代码", "代码", "secCode", "stockCode", "stock_code"])
+    return str(value).split(".")[0].zfill(6) if value else ""
+
+
+def _read_batch_hashes(path: Path) -> set[str]:
+    if not path.exists():
+        return set()
+    hashes: set[str] = set()
+    try:
+        with gzip.open(path, "rt", encoding="utf-8") as stream:
+            for line in stream:
+                value = json.loads(line).get("content_hash")
+                if value:
+                    hashes.add(str(value))
+    except (OSError, json.JSONDecodeError):
+        return set()
+    return hashes
 
 
 def _parse_datetime(value: Any, fallback_date: date) -> datetime | None:

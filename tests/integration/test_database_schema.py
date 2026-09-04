@@ -19,6 +19,7 @@ REQUIRED_PIPELINE_TABLES = {
     "source_fallback",
     "analysis_snapshot",
     "fact_version",
+    "fact_partition",
 }
 REQUIRED_TABLES = {
     "review_import", "trading_day", "theme", "theme_alias", "theme_daily_score",

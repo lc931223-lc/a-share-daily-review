@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 from datetime import date, datetime
+import gzip
+import json
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -11,6 +13,7 @@ from src.market_packet.announcement_collector import (
     AnnouncementCandidate,
     AnnouncementCollector,
     AnnouncementSourceAdapter,
+    CninfoBatchAnnouncementAdapter,
     build_announcement_sections,
 )
 
@@ -57,6 +60,12 @@ def test_announcement_normal_return(tmp_path):
     assert result.records[0]["category"] == "contract"
     assert result.records[0]["evidence_level"] == "A"
     assert result.quality == "PASS"
+    batch = tmp_path / "2026-09-02" / "announcements" / "source_records.jsonl.gz"
+    with gzip.open(batch, "rt", encoding="utf-8") as stream:
+        archived = [json.loads(line) for line in stream]
+    assert len(archived) == 1
+    assert archived[0]["content_hash"]
+    assert not list(batch.parent.glob("000001-*.json"))
 
 
 def test_announcement_timeout_is_fail_without_fake_empty_values(tmp_path):
@@ -83,6 +92,32 @@ def test_announcement_exchange_adapter_fallback_after_cninfo_failure(tmp_path):
     assert result.records[0]["evidence_level"] == "A"
     assert result.coverage_rate == 1
     assert result.quality == "PARTIAL"
+
+
+def test_cninfo_batch_adapter_queries_by_date_not_by_stock(tmp_path):
+    class Response:
+        def json(self):
+            return {"announcements": [
+                {"secCode": "000001", "announcementTitle": "关于重大合同的公告", "announcementTime": "2026-09-02", "adjunctUrl": "finalpage/a.pdf"},
+                {"secCode": "600000", "announcementTitle": "关于回购股份的公告", "announcementTime": "2026-09-02", "adjunctUrl": "finalpage/b.pdf"},
+            ]}
+
+    class Client:
+        def __init__(self):
+            self.calls = 0
+
+        def post(self, *_args, **_kwargs):
+            self.calls += 1
+            return Response()
+
+    client = Client()
+    adapter = CninfoBatchAnnouncementAdapter(lambda *_: pd.DataFrame(), client)
+    collector = AnnouncementCollector(raw_root=tmp_path, adapters=[adapter], max_stocks=2)
+    datasets = {"limit_up": Dataset([{"代码": "000001", "名称": "平安银行"}, {"代码": "600000", "名称": "浦发银行"}])}
+    result = collector.collect(date(2026, 9, 2), datasets, as_of_time=datetime(2026, 9, 2, 15, 30, tzinfo=TZ))
+    assert client.calls == 2
+    assert len(result.records) == 2
+    assert result.coverage_rate == 1
 
 
 def test_announcement_duplicate_and_multi_source_prefers_official(tmp_path):

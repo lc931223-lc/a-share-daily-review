@@ -1,6 +1,6 @@
 {
   "trade_date": "2026-09-04",
-  "generated_at": "2026-09-04T16:50:19.297445Z",
+  "generated_at": "2026-09-04T17:02:09.896349Z",
   "data_quality": {
     "status": "PARTIAL",
     "score": 74,
@@ -254,7 +254,7 @@
         "data_date": "2026-09-04",
         "freshness": "historical",
         "quality": "FAIL",
-        "is_cached": false,
+        "is_cached": true,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\szse_margin.json",
         "error": "ValueError: Length mismatch: Expected axis has 0 elements, new values have 6 elements",
         "record_count": 0,
@@ -270,7 +270,7 @@
         "data_date": "2026-09-04",
         "freshness": "historical",
         "quality": "FAIL",
-        "is_cached": false,
+        "is_cached": true,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-04\\szse_margin_detail.json",
         "error": "empty response",
         "record_count": 0,
@@ -314,7 +314,7 @@
       {
         "source": "tushare.pro",
         "dataset": "tushare_trade_cal",
-        "retrieved_at": "2026-09-04T16:50:14.905320Z",
+        "retrieved_at": "2026-09-04T17:02:09.765697Z",
         "data_date": "2026-09-04",
         "freshness": "missing",
         "quality": "UNAVAILABLE",
@@ -330,7 +330,7 @@
       {
         "source": "tushare.pro",
         "dataset": "tushare_stock_basic",
-        "retrieved_at": "2026-09-04T16:50:14.905320Z",
+        "retrieved_at": "2026-09-04T17:02:09.765697Z",
         "data_date": "2026-09-04",
         "freshness": "missing",
         "quality": "UNAVAILABLE",
@@ -378,7 +378,7 @@
       {
         "source": "tushare.pro",
         "dataset": "tushare_daily_basic_all",
-        "retrieved_at": "2026-09-04T16:50:14.950926Z",
+        "retrieved_at": "2026-09-04T17:02:09.810578Z",
         "data_date": "2026-09-04",
         "freshness": "missing",
         "quality": "UNAVAILABLE",
@@ -394,7 +394,7 @@
       {
         "source": "tushare.pro",
         "dataset": "tushare_adj_factor_all",
-        "retrieved_at": "2026-09-04T16:50:14.950926Z",
+        "retrieved_at": "2026-09-04T17:02:09.810578Z",
         "data_date": "2026-09-04",
         "freshness": "missing",
         "quality": "UNAVAILABLE",
@@ -410,7 +410,7 @@
       {
         "source": "akshare.stock_zh_a_hist; fallback akshare.stock_zh_a_hist_tx/stock_zh_a_daily",
         "dataset": "stock_top_ohlcv",
-        "retrieved_at": "2026-09-04T16:50:14.951923Z",
+        "retrieved_at": "2026-09-04T17:02:09.811610Z",
         "data_date": "2026-09-04",
         "freshness": "historical",
         "quality": "PASS",
@@ -458,7 +458,7 @@
       {
         "source": "announcement_collector.cninfo_exchange_ir",
         "dataset": "official_announcements",
-        "retrieved_at": "2026-09-04T16:50:14.953920Z",
+        "retrieved_at": "2026-09-04T17:02:09.813603Z",
         "data_date": "2026-09-04",
         "freshness": "historical",
         "quality": "PASS",
@@ -474,7 +474,7 @@
       {
         "source": "announcement_collector",
         "dataset": "official_announcements_meta",
-        "retrieved_at": "2026-09-04T16:50:14.953920Z",
+        "retrieved_at": "2026-09-04T17:02:09.813603Z",
         "data_date": "2026-09-04",
         "freshness": "historical",
         "quality": "PASS",
@@ -490,7 +490,7 @@
       {
         "source": "policy_collector.official_sources",
         "dataset": "official_policies",
-        "retrieved_at": "2026-09-04T16:50:19.216929Z",
+        "retrieved_at": "2026-09-04T17:02:09.814599Z",
         "data_date": "2026-09-04",
         "freshness": "historical",
         "quality": "PARTIAL",
@@ -506,7 +506,7 @@
       {
         "source": "policy_collector",
         "dataset": "official_policies_meta",
-        "retrieved_at": "2026-09-04T16:50:19.216929Z",
+        "retrieved_at": "2026-09-04T17:02:09.814599Z",
         "data_date": "2026-09-04",
         "freshness": "historical",
         "quality": "PARTIAL",

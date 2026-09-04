@@ -17,6 +17,7 @@ from src.market_packet.policy_collector import PolicyCollection, build_policy_se
 from src.market_packet.previous_review_loader import load_previous_review
 from src.market_packet.quality_gate import audit_packet
 from src.storage.database import create_db_engine, create_schema, session_factory
+from src.storage.fact_store import FactStore
 from src.storage.models import (
     FactVersion,
     MarketDaily,
@@ -129,6 +130,7 @@ def _section(value: Any) -> dict[str, Any]:
 
 def write_outputs(packet: dict[str, Any], output_root: Path | None = None) -> dict[str, Path]:
     root = output_root or PROJECT_ROOT
+    database_path = root / "data" / "a_share_review.db"
     trade_date = packet["meta"]["trade_date"]
     packet_dir = root / "data" / "market_packets"
     report_dir = root / "reports" / "market_packets"
@@ -145,7 +147,8 @@ def write_outputs(packet: dict[str, Any], output_root: Path | None = None) -> di
     paths["compact"].write_text(json.dumps(compact_packet(packet), ensure_ascii=False, indent=2), encoding="utf-8")
     paths["summary"].write_text(markdown_summary(packet), encoding="utf-8")
     validate_with_schema(paths["packet"])
-    log_packet_outputs(packet, paths)
+    log_packet_outputs(packet, paths, database_path)
+    FactStore(root / "data" / "facts").persist_packet(packet, database_path)
     return paths
 
 
@@ -305,10 +308,11 @@ def _log_quality_audit(session, packet: dict[str, Any], trade_date: date) -> Non
     session.add(run)
     session.flush()
     for index, check in enumerate(quality.get("checks", [])):
+        accepted = {"PASS", "EMPTY_VALID"} if check.get("hard_gate") else {"PASS", "EMPTY_VALID", "PARTIAL"}
         session.add(QualityGateCheck(
             gate_run_id=run.id, check_name=f"{index:02d}:{check.get('domain') or 'general'}:{check.get('item')}",
             actual_value=str(check.get("status")), threshold_value="PASS" if check.get("hard_gate") else "PARTIAL_OR_BETTER",
-            passed=check.get("status") in {"PASS", "EMPTY_VALID", "PARTIAL"}, reason=str(check.get("detail") or ""),
+            passed=check.get("status") in accepted, reason=str(check.get("detail") or ""),
         ))
 
 

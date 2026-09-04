@@ -2,7 +2,7 @@
 
 ## 2026-09-05 Phase 1.2 Truth Layer Design Gate
 
-Checkpoint: 2026-09-05, first implementation batch complete
+Checkpoint: 2026-09-05, Phase 1.2 implementation complete
 
 Task: Repair Market Packet truthfulness, auditability, historical replay, storage layout, and source routing in two separately accepted batches.
 
@@ -13,7 +13,7 @@ Completed:
 - Fixed the design interpretation that daily policy events default to the requested calendar date up to `as_of_time`; older records are background references only.
 - Self-reviewed the specification for placeholders, contradictions, ambiguity, and scope creep.
 
-Current state: The approved first batch is implemented. Policy events are date-strict, invalid/old/navigation records are excluded from formal daily evidence, quality is domain weighted with hard gates, northbound all-null values are unavailable, successful caches retain original timestamps, failed caches have retry TTLs, and dataset-scoped refresh is available.
+Current state: Both approved batches are implemented. The truth and quality rules from the first batch remain active. The second batch adds Parquet fact partitions, a DuckDB query layer, SQLite partition catalog, compressed daily JSONL source batches, explicit source routing, CNInfo date-batch announcement collection with official exchange fallback, and single-snapshot board collection without historical N+1 reconstruction.
 
 Validation:
 
@@ -23,16 +23,19 @@ Validation:
 - 2026-09-03 replay: `77 PARTIAL`, missing `northbound`.
 - 2026-09-04 replay: `74 PARTIAL`, missing `margin,northbound`.
 - SQLite now records source batches/observations, quality runs/checks, fallbacks, and append-only fact versions.
+- Final non-real-data suite after both batches: `171 passed, 1 deselected`.
+- Local production database after replay: 319 source batches, 319 observations, 11 quality runs, 11 fallback records, 131 fact versions, and 29 Parquet partition catalog rows.
+- Generated fact store: 29 Zstandard Parquet files, 559,849 bytes; generated data remains gitignored.
 
 Pending:
 
-1. Commit and push the first implementation batch.
-2. Implement Parquet/DuckDB storage, compressed JSONL source batches, and source routing.
-3. Run full validation and push the second batch.
+1. Commit the second implementation batch.
+2. Retry normal pushes to `origin/main` until GitHub connectivity succeeds.
+3. Confirm local `HEAD` equals `origin/main`.
 
-Blockers / risks: The repository is already one local commit ahead of cached `origin/main`; GitHub connectivity previously failed. Final acceptance still requires both implementation-stage pushes and `local HEAD == origin/main`.
+Blockers / risks: The first implementation push failed because GitHub reset the HTTPS connection. No force push or history rewrite is permitted; final acceptance still requires a successful normal push and `local HEAD == origin/main`.
 
-Next actions: Begin the approved second storage/routing batch. Do not modify PDF, auction logic, research features, or skills.
+Next actions: Commit and push the completed second batch. Do not modify PDF, auction logic, research features, or skills.
 
 ## 2026-09-05 GitHub Safe Sync Mechanism
 

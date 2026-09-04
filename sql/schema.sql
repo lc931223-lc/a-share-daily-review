@@ -275,6 +275,16 @@ CREATE TABLE fact_version (
 CREATE INDEX idx_fact_version_current
     ON fact_version(fact_type, natural_key, is_current);
 
+CREATE TABLE fact_partition (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dataset TEXT NOT NULL, trade_date DATE NOT NULL, content_hash TEXT NOT NULL,
+    path TEXT NOT NULL, record_count INTEGER NOT NULL, schema_json TEXT NOT NULL,
+    created_at DATETIME NOT NULL,
+    CONSTRAINT uq_fact_partition_content UNIQUE(dataset, trade_date, content_hash)
+);
+CREATE INDEX idx_fact_partition_dataset_date
+    ON fact_partition(dataset, trade_date);
+
 CREATE TABLE official_announcement (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     trade_date DATE NOT NULL,

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import gzip
 import json
 import re
 from dataclasses import dataclass
@@ -204,6 +205,10 @@ class PolicyCollector:
                     payload.get("records", []), payload.get("scanned_sources", []), payload.get("failed_sources", []), str(cache_dir),
                     payload.get("background_reference", []), payload.get("rejected_records", []), payload.get("invalid_reasons", []),
                 )
+        batch_path = cache_dir / "source_records.jsonl.gz"
+        if self.refresh and batch_path.exists():
+            batch_path.unlink()
+        self._batch_hashes = _read_batch_hashes(batch_path)
         seed_path = Path("data") / "policy_sources" / f"{trade_date.isoformat()}.json"
         records: list[dict[str, Any]] = []
         background: list[dict[str, Any]] = []
@@ -334,7 +339,12 @@ class PolicyCollector:
             "content_hash": hashlib.sha256(content.encode("utf-8")).hexdigest(),
             "raw": item,
         }
-        (cache_dir / f"{payload['content_hash'][:16]}.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        content_hash = payload["content_hash"]
+        if content_hash in getattr(self, "_batch_hashes", set()):
+            return
+        self._batch_hashes.add(content_hash)
+        with gzip.open(cache_dir / "source_records.jsonl.gz", "at", encoding="utf-8") as stream:
+            stream.write(json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n")
 
     def _write_aggregate(self, path: Path, collection: PolicyCollection) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -453,6 +463,21 @@ def _extract_date(text: str) -> str | None:
     if not match:
         return None
     return f"{int(match.group(1)):04d}-{int(match.group(2)):02d}-{int(match.group(3)):02d}"
+
+
+def _read_batch_hashes(path: Path) -> set[str]:
+    if not path.exists():
+        return set()
+    hashes: set[str] = set()
+    try:
+        with gzip.open(path, "rt", encoding="utf-8") as stream:
+            for line in stream:
+                value = json.loads(line).get("content_hash")
+                if value:
+                    hashes.add(str(value))
+    except (OSError, json.JSONDecodeError):
+        return set()
+    return hashes
 
 
 def _normalize_title(value: str) -> str:

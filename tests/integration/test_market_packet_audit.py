@@ -9,7 +9,7 @@ from sqlalchemy import func, select
 
 from src.market_packet.packet_builder import log_packet_outputs
 from src.storage.database import create_db_engine, session_factory
-from src.storage.models import FactVersion, OfficialPolicy, QualityGateRun, SourceBatch, SourceObservation
+from src.storage.models import FactVersion, OfficialPolicy, QualityGateRun, SourceBatch, SourceFallback, SourceObservation
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -39,6 +39,7 @@ def test_market_packet_logging_is_audited_and_fact_versions_are_append_only(tmp_
     with factory() as session:
         assert session.scalar(select(func.count()).select_from(SourceBatch)) > 0
         assert session.scalar(select(func.count()).select_from(SourceObservation)) > 0
+        assert session.scalar(select(func.count()).select_from(SourceFallback)) > 0
         assert session.scalar(select(func.count()).select_from(QualityGateRun)) == 2
         versions = session.scalars(select(FactVersion).where(FactVersion.fact_type == "policy")).all()
         assert len(versions) == 2

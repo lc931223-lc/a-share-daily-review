@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 from datetime import date, datetime
+import gzip
+import json
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -41,6 +43,13 @@ def test_policy_normal_return(tmp_path):
     assert result.records
     assert result.records[0]["evidence_level"] == "A"
     assert result.records[0]["is_official"] is True
+    batch = tmp_path / "2026-09-02" / "policies" / "source_records.jsonl.gz"
+    with gzip.open(batch, "rt", encoding="utf-8") as stream:
+        archived = [json.loads(line) for line in stream]
+    assert archived
+    assert all(item["content_hash"] for item in archived)
+    assert len({item["content_hash"] for item in archived}) == len(archived)
+    assert not list(batch.parent.glob("[0-9a-f]*.json"))
 
 
 def test_policy_official_original_preferred_over_media(tmp_path):

@@ -1,0 +1,40 @@
+{
+  "schema_version": "source-routing.1",
+  "datasets": {
+    "full_market_daily": {
+      "primary": "tushare.daily",
+      "fallbacks": ["tencent.quote", "akshare.tencent"],
+      "historical": true
+    },
+    "industry_board": {
+      "primary": "eastmoney.industry_snapshot",
+      "fallbacks": [],
+      "historical": "daily_snapshot_archive",
+      "request_mode": "single_snapshot"
+    },
+    "concept_board": {
+      "primary": "eastmoney.concept_snapshot",
+      "fallbacks": [],
+      "historical": "daily_snapshot_archive",
+      "request_mode": "single_snapshot"
+    },
+    "announcements": {
+      "primary": "cninfo.official",
+      "fallbacks": ["sse.official", "szse.official", "bse.official"],
+      "historical": true,
+      "request_mode": "core_pool_by_date"
+    },
+    "policies": {
+      "primary": "government_official_sources",
+      "fallbacks": [],
+      "historical": true,
+      "request_mode": "agency_index_by_date"
+    },
+    "northbound": {
+      "primary": "eastmoney.via_akshare",
+      "fallbacks": [],
+      "historical": true,
+      "null_policy": "unavailable"
+    }
+  }
+}

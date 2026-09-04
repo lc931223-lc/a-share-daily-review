@@ -16,3 +16,5 @@ sqlalchemy>=2.0
 streamlit>=1.49
 pytest>=8.3
 jsonschema>=4.23
+pyarrow>=18.0
+duckdb>=1.1
