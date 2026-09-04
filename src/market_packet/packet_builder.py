@@ -9,6 +9,7 @@ from typing import Any
 from jsonschema import Draft202012Validator
 from sqlalchemy import select
 
+from src.config.environment import load_project_environment
 from src.market_packet.collector import MarketPacketCollector
 from src.market_packet.announcement_collector import AnnouncementCollection, build_announcement_sections
 from src.market_packet.models import MarketPacket
@@ -42,6 +43,7 @@ def build_market_packet(
     refresh_datasets: set[str] | None = None,
     as_of_time: datetime | None = None,
 ) -> dict[str, Any]:
+    load_project_environment()
     collector = MarketPacketCollector(refresh=refresh, refresh_datasets=refresh_datasets, as_of_time=as_of_time)
     datasets = collector.collect(trade_date)
     normalized = normalize_packet_data(trade_date, datasets)
@@ -90,24 +92,54 @@ def build_market_packet(
 def compact_packet(packet: dict[str, Any]) -> dict[str, Any]:
     announcements = _section(packet.get("announcements"))
     policies = _section(packet.get("policies"))
+    industries = packet.get("industries", [])
+    themes = packet.get("themes", [])
+    quality = packet.get("data_quality", {})
     return {
         "meta": packet["meta"],
-        "data_quality": packet["data_quality"],
         "market_overview": packet["market_overview"],
+        "sector_strength": _board_extremes(industries, "name", reverse=True),
+        "sector_weakness": _board_extremes(industries, "name", reverse=False),
+        "theme_strength": _board_extremes(themes, "theme_name", reverse=True),
+        "theme_weakness": _board_extremes(themes, "theme_name", reverse=False),
+        "limit_up_ladder": _limit_up_ladder(packet.get("stocks", [])),
         "limit_up_down": packet["limit_up_down"],
-        "liquidity": packet["liquidity"],
-        "top_industries": packet["industries"][:20],
-        "top_themes": packet["themes"][:20],
-        "weak_themes": [item for item in packet["themes"] if item.get("limit_down_count") or item.get("failed_limit_count")][:20],
-        "core_stocks": packet["stocks"][:80],
-        "leader_candidates": packet["leader_candidates"][:40],
+        "core_stocks": [_compact_stock(item) for item in packet["stocks"][:80]],
+        "important_announcements": announcements.get("important_announcements", announcements["records"])[:30],
+        "risk_announcements": announcements.get("risk_announcements", [])[:30],
+        "official_policies": policies.get("daily_policy_events", policies["records"])[:20],
         "previous_review": packet["previous_review"],
         "tomorrow_check_context": packet["tomorrow_check_context"],
-        "announcements": {**announcements, "records": announcements["records"][:20], "important_announcements": announcements.get("important_announcements", announcements["records"])[:20]},
-        "policies": {**policies, "records": policies["records"][:20]},
-        "industry_events": packet["industry_events"][:50],
-        "missing_data": packet["missing_data"],
+        "data_quality": {
+            "status": quality.get("status"), "score": quality.get("score"), "domains": quality.get("domains", {}),
+            "sources": [{"source": item.get("source"), "dataset": item.get("dataset"), "quality": item.get("quality")} for item in quality.get("sources", [])],
+            "missing": packet.get("missing_data", []), "conflicts": quality.get("conflicts", []),
+            "unavailable": quality.get("unavailable_items", []),
+            "partial": [item.get("item") for item in quality.get("checks", []) if item.get("status") == "PARTIAL"],
+        },
     }
+
+
+def _board_extremes(rows: list[dict[str, Any]], name_field: str, *, reverse: bool) -> list[dict[str, Any]]:
+    available = [item for item in rows if item.get("change_pct") is not None]
+    selected = sorted(available, key=lambda item: item.get("change_pct"), reverse=reverse)[:20]
+    fields = (name_field, "code", "change_pct", "amount", "rise_count", "fall_count", "limit_up_count", "limit_down_count", "turnover_rate", "main_net_inflow", "quality")
+    return [{key: item.get(key) for key in fields} for item in selected]
+
+
+def _limit_up_ladder(stocks: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    ladder: dict[int, list[dict[str, Any]]] = {}
+    for stock in stocks:
+        height = stock.get("board_count")
+        if not isinstance(height, (int, float)) or height < 1:
+            continue
+        ladder.setdefault(int(height), []).append({"stock_code": stock.get("stock_code"), "stock_name": stock.get("stock_name")})
+    return [{"height": height, "stocks": items} for height, items in sorted(ladder.items(), reverse=True)]
+
+
+def _compact_stock(item: dict[str, Any]) -> dict[str, Any]:
+    fields = ("stock_code", "stock_name", "industry", "themes", "change_pct", "amount", "turnover_rate", "board_count", "limit_status", "leader_candidate_score", "capacity_candidate_score", "catch_up_candidate_score")
+    return {key: item.get(key) for key in fields}
 
 
 def quality_report(packet: dict[str, Any]) -> dict[str, Any]:

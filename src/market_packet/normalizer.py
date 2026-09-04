@@ -269,6 +269,7 @@ def _themes(limit_up: list[dict], failed: list[dict], limit_down: list[dict], co
             continue
         rows_by_name[name] = {
             "theme_name": name,
+            "code": _first_text(row, ["板块代码", "board_code", "code"]),
             "normalized_name": name,
             "change_pct": _first_number(row, ["涨跌幅", "change_pct", "pct_chg"]),
             "rise_count": _first_number(row, ["上涨家数", "rise_count"]),
@@ -285,7 +286,7 @@ def _themes(limit_up: list[dict], failed: list[dict], limit_down: list[dict], co
             "leader_candidates": [],
             "capacity_candidates": [],
             "catch_up_candidates": [],
-            "source": "Eastmoney concept board historical via AKShare",
+            "source": row.get("snapshot_source") or "Eastmoney concept board historical via AKShare",
             "quality": "PASS",
         }
     for item in grouped.values():
@@ -295,6 +296,7 @@ def _themes(limit_up: list[dict], failed: list[dict], limit_down: list[dict], co
             item["theme_name"],
             {
                 "theme_name": item["theme_name"],
+                "code": None,
                 "normalized_name": item["normalized_name"],
                 "change_pct": None,
                 "rise_count": rise or None,
@@ -343,20 +345,21 @@ def _industries(
             continue
         rows_by_name[name] = {
             "name": name,
+            "code": _first_text(row, ["板块代码", "board_code", "code"]),
             "change_pct": _first_number(row, ["涨跌幅", "change_pct", "pct_chg"]),
             "amount": _first_number(row, ["成交额", "amount"]),
             "turnover_rate": _first_number(row, ["换手率", "turnover_rate"]),
-            "rise_count": counts.get(name, {}).get("rise_count"),
-            "fall_count": counts.get(name, {}).get("fall_count"),
-            "limit_up_count": limit_counts.get(name, {}).get("limit_up_count"),
-            "limit_down_count": limit_counts.get(name, {}).get("limit_down_count"),
+            "rise_count": _first_number(row, ["上涨家数", "rise_count"]) if _first_number(row, ["上涨家数", "rise_count"]) is not None else counts.get(name, {}).get("rise_count"),
+            "fall_count": _first_number(row, ["下跌家数", "fall_count"]) if _first_number(row, ["下跌家数", "fall_count"]) is not None else counts.get(name, {}).get("fall_count"),
+            "limit_up_count": _first_number(row, ["涨停家数", "limit_up_count"]) if _first_number(row, ["涨停家数", "limit_up_count"]) is not None else limit_counts.get(name, {}).get("limit_up_count"),
+            "limit_down_count": _first_number(row, ["跌停家数", "limit_down_count"]) if _first_number(row, ["跌停家数", "limit_down_count"]) is not None else limit_counts.get(name, {}).get("limit_down_count"),
             "failed_limit_count": limit_counts.get(name, {}).get("failed_limit_count"),
             "main_net_inflow": None,
             "main_net_inflow_pct": None,
             "top_stocks": [],
             "five_day_change_pct": None,
             "twenty_day_change_pct": None,
-            "source": "Eastmoney industry board historical via AKShare",
+            "source": row.get("snapshot_source") or "Eastmoney industry board historical via AKShare",
             "quality": "PASS",
         }
     for name, value in {**counts, **limit_counts}.items():
@@ -364,6 +367,7 @@ def _industries(
             name,
             {
                 "name": name,
+                "code": None,
                 "change_pct": None,
                 "amount": None,
                 "turnover_rate": None,
@@ -616,6 +620,16 @@ def _first_number(row: dict[str, Any] | None, keys: list[str]) -> float | None:
         value = _number(row, key)
         if value is not None:
             return value
+    return None
+
+
+def _first_text(row: dict[str, Any] | None, keys: list[str]) -> str | None:
+    if not row:
+        return None
+    for key in keys:
+        value = row.get(key)
+        if value not in ("", None):
+            return str(value)
     return None
 
 

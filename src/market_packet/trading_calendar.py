@@ -7,6 +7,8 @@ from datetime import date, datetime, time, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from src.config.environment import load_project_environment
+
 try:
     import akshare as ak
 except Exception:  # pragma: no cover - surfaced through runtime error
@@ -74,6 +76,7 @@ def _read_calendar(path: Path) -> list[TradingCalendarDay]:
 
 
 def _fetch_tushare_calendar(anchor: date) -> list[dict] | None:
+    load_project_environment()
     token = os.environ.get("TUSHARE_TOKEN")
     if ts is None or not token:
         return None

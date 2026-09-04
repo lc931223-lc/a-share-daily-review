@@ -141,7 +141,7 @@ def _section_records_meta(value: Any) -> tuple[list[dict[str, Any]], dict[str, A
 
 
 def _section_status(rows: list[dict[str, Any]], dataset: CollectedDataset | None, threshold: int) -> str:
-    if dataset and dataset.quality in {"INVALID", "STALE"}:
+    if dataset and dataset.quality in {"FAIL", "INVALID", "STALE", "UNAVAILABLE"}:
         return dataset.quality
     complete = len(rows) >= threshold and any(item.get("change_pct") is not None for item in rows)
     return "PASS" if complete else "PARTIAL" if rows else "FAIL"

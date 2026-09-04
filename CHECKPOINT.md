@@ -1,5 +1,31 @@
 # Checkpoint
 
+## 2026-09-05 Phase 1.3 High-Value Data Gaps
+
+Checkpoint: 2026-09-05, implementation complete pending final test and Git delivery
+
+Task: Improve announcement reliability, daily board snapshots, precise official policy coverage, Tushare efficiency, official margin data, and compact Market Packet value without changing the architecture, Dashboard, PDF, research algorithms, or skills.
+
+Completed:
+
+- Added explicit project-root `.env` loading and credential-status-only CLI output; local token remains ignored and untracked.
+- Made Tushare `daily` the core full-market source, cached `trade_cal` annually and `stock_basic` daily, and disabled `daily_basic`/`adj_factor` unless requested.
+- Expanded the announcement core pool to 120 stocks, implemented paginated CNInfo date batches, source circuit breaking, risk phrase extraction, deduplication, and success/failure TTL behavior.
+- Restricted policies to the 11 required official agencies, separated daily events from background references, capped daily output at 20, and retained `EMPTY_VALID` semantics.
+- Added full current-day board snapshots with Eastmoney primary plus THS industry and Sina concept fallbacks. Raw snapshots and normalized derived views now use different Parquet dataset names.
+- Fixed Parquet reads for Arrow array values and added schema/date guards that reject mislabeled or cross-date board snapshots.
+- Replaced the compact packet with the explicit high-value research fields; the 2026-09-04 compact file is about 22% of the full packet.
+- Added official SSE/SZSE margin calls. Both returned no records for 2026-09-04, so margin remains explicitly unavailable rather than zero-filled.
+- Ran 2026-09-05 health checks only: CNInfo responded with zero matching records; policies scanned 10/11 sources; THS industry returned 90 rows and Sina concept returned 175 rows. No Saturday Market Packet was written.
+
+Current state: Announcements for 2026-09-02 through 2026-09-04 are all `PASS` with 120/120 pool coverage and 42/52/53 records. Tushare daily for 2026-09-04 is `PASS` with 5,548 rows. Policies are `PARTIAL`: zero same-day events, 41 background references, 10/11 sources available. The honest 2026-09-04 packet score is 63 (`PARTIAL`) because no full board snapshot was archived on the trading date and official margin/northbound data remain unavailable.
+
+Validation: `compileall` passes. The complete non-real-data suite passes with `188 passed, 1 deselected`. Final secret scan, Git commit/push, and `HEAD == origin/main` verification remain.
+
+Blockers / risks: 2026-09-04 industry/concept full snapshots cannot be reconstructed after the date without violating the no-current-to-history rule. The new daily mechanism will archive the next trading day's primary or fallback snapshots.
+
+Next actions: Run final validation, commit, push to `origin/main`, and verify exact revision equality.
+
 ## 2026-09-05 Phase 1.2 Truth Layer Design Gate
 
 Checkpoint: 2026-09-05, Phase 1.2 implementation complete

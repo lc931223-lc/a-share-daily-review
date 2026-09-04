@@ -11,6 +11,7 @@ from src.market_packet.policy_collector import (
     CsrcPolicyAdapter,
     MiitPolicyAdapter,
     NeaPolicyAdapter,
+    OFFICIAL_POLICY_SOURCES,
     PolicyCollector,
     build_policy_sections,
     media_policy_record,
@@ -107,6 +108,28 @@ def test_successful_empty_official_scan_is_empty_valid(tmp_path):
     result = collector.collect(date(2026, 9, 2), [], as_of_time=datetime(2026, 9, 2, 15, 30, tzinfo=TZ))
     assert result.records == []
     assert result.quality == "EMPTY_VALID"
+
+
+def test_policy_partial_aggregate_respects_retry_ttl(tmp_path):
+    first = _collector(tmp_path, [_html("关于支持农业的通知"), TimeoutError("slow")])
+    original = first.collect(date(2026, 9, 2), [], as_of_time=datetime(2026, 9, 2, 15, 30, tzinfo=TZ))
+    assert original.quality == "PARTIAL"
+    calls = {"count": 0}
+
+    def fetcher(_source):
+        calls["count"] += 1
+        return _html("关于支持制造业的通知")
+
+    cached = PolicyCollector(raw_root=tmp_path, source_fetcher=fetcher).collect(date(2026, 9, 2), [], as_of_time=datetime(2026, 9, 2, 15, 30, tzinfo=TZ))
+    assert cached.records == original.records
+    assert calls["count"] == 0
+
+
+def test_policy_source_scope_is_high_value_official_list():
+    assert {item["agency"] for item in OFFICIAL_POLICY_SOURCES} == {
+        "中国政府网", "国家发改委", "工信部", "财政部", "商务部", "人民银行", "证监会",
+        "住建部", "农业农村部", "国家能源局", "科技部",
+    }
 
 
 def test_policy_no_related_content_is_allowed_as_official_scan(tmp_path):

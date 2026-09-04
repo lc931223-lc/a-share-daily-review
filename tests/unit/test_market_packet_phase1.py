@@ -23,7 +23,7 @@ def test_market_packet_schema_accepts_generated_packet():
 def test_compact_packet_keeps_chatgpt_inputs_small():
     packet = json.loads(Path("data/market_packets/2026-09-02.json").read_text(encoding="utf-8"))
     compact = compact_packet(packet)
-    assert set(compact) >= {"market_overview", "limit_up_down", "top_themes", "core_stocks"}
+    assert set(compact) >= {"market_overview", "limit_up_down", "theme_strength", "core_stocks"}
     assert len(compact["core_stocks"]) <= 80
 
 

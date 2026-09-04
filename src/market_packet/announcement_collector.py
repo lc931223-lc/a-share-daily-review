@@ -23,6 +23,7 @@ except Exception:  # pragma: no cover - reported as collector failure
 
 
 SHANGHAI_TZ = ZoneInfo("Asia/Shanghai")
+ANNOUNCEMENT_SCHEMA_VERSION = "announcement.2"
 OFFICIAL_SOURCES = {"巨潮资讯", "上交所", "深交所", "北交所", "公司官网", "公司投资者关系"}
 CATEGORIES = {
     "业绩预告": "earnings",
@@ -64,12 +65,14 @@ CLARIFICATION_PHRASES = (
     "处于研发阶段",
     "仍在研发",
     "尚未通过客户认证",
+    "尚未客户认证",
     "尚未认证",
     "存在重大不确定性",
     "短期不会对业绩产生重大影响",
+    "短期不影响业绩",
     "股价严重偏离基本面",
 )
-RISK_PHRASES = ("风险提示", "减持", "立案调查", "监管关注", "监管问询", "异常波动", "重大不确定性")
+RISK_PHRASES = ("风险提示", "减持", "股东减持", "立案调查", "监管调查", "监管关注", "监管问询", "异常波动", "重大不确定性", "存在重大不确定性")
 _USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/126 Safari/537.36"
 
 
@@ -108,20 +111,28 @@ class CninfoBatchAnnouncementAdapter(CninfoAnnouncementAdapter):
 
     def fetch_many(self, codes: list[str], start: date, end: date) -> list[dict[str, Any]]:
         rows: list[dict[str, Any]] = []
-        for column in ("szse", "sse"):
+        page = 1
+        total_pages = 1
+        while page <= total_pages:
             response = self.client.post(
                 "https://www.cninfo.com.cn/new/hisAnnouncement/query",
                 data={
-                    "pageNum": 1, "pageSize": 1000, "column": column, "tabName": "fulltext",
+                    "pageNum": page, "pageSize": 30, "column": "szse", "tabName": "fulltext",
                     "plate": "", "stock": "", "searchkey": "", "secid": "", "category": "",
                     "trade": "", "seDate": f"{start.isoformat()}~{end.isoformat()}",
                     "sortName": "", "sortType": "", "isHLtitle": "true",
                 },
-                headers={"Referer": "https://www.cninfo.com.cn/", "User-Agent": _USER_AGENT},
+                headers={"Referer": "https://www.cninfo.com.cn/", "Origin": "https://www.cninfo.com.cn", "User-Agent": _USER_AGENT},
                 source=self.source,
                 dataset="official_announcements_batch",
             )
+            payload = response.json()
+            if page == 1:
+                total_pages = min(100, max(1, int(payload.get("totalpages") or 1)))
+                if int(payload.get("totalAnnouncement") or 0) > 0 and not payload.get("announcements"):
+                    raise RuntimeError("CNInfo batch response declared records but returned no rows")
             rows.extend(_announcement_rows_from_response(response, self.source, "http://static.cninfo.com.cn/"))
+            page += 1
         code_set = set(codes)
         return [row for row in rows if (_row_stock_code(row) in code_set)]
 
@@ -245,6 +256,7 @@ class AnnouncementCollector:
         adapters: list[AnnouncementSourceAdapter] | None = None,
         client: SafeHttpClient | None = None,
         max_stocks: int = 40,
+        extra_stock_codes: list[str] | None = None,
     ):
         self.raw_root = raw_root
         self.refresh = refresh
@@ -263,26 +275,29 @@ class AnnouncementCollector:
                 BseAnnouncementAdapter(self.client),
             ]
         self.max_stocks = max_stocks
+        self.extra_stock_codes = extra_stock_codes or []
 
     def collect(self, trade_date: date, datasets: dict[str, Any], *, as_of_time: datetime | None = None) -> AnnouncementCollection:
         as_of = as_of_time or datetime.combine(trade_date, time(15, 30), SHANGHAI_TZ)
         cache_dir = self.raw_root / trade_date.isoformat() / "announcements"
         aggregate = cache_dir / "announcements.json"
+        prior_payload: dict[str, Any] = {}
         if aggregate.exists() and not self.refresh:
             payload = json.loads(aggregate.read_text(encoding="utf-8"))
-            failed = payload.get("failed_sources", [])
-            core_count = payload.get("core_stock_count", 0)
-            failed_codes = set(payload.get("fully_failed_codes", []))
-            if not failed_codes:
-                failed_codes = {item.split(":")[1] for item in failed if len(item.split(":")) >= 2}
-            return AnnouncementCollection(
-                records=payload.get("records", []),
-                core_stock_count=core_count,
-                covered_stock_count=max(0, core_count - len(failed_codes)),
-                failed_sources=failed,
-                official_source_available=payload.get("official_source_available", False),
-                cache_dir=str(cache_dir),
-            )
+            prior_payload = payload
+            if payload.get("schema_version") == ANNOUNCEMENT_SCHEMA_VERSION and _aggregate_cache_reusable(payload):
+                failed = payload.get("failed_sources", [])
+                core_count = payload.get("core_stock_count", 0)
+                failed_codes = set(payload.get("fully_failed_codes", []))
+                if not failed_codes:
+                    failed_codes = {item.split(":")[1] for item in failed if len(item.split(":")) >= 2}
+                return AnnouncementCollection(
+                    records=payload.get("records", []), core_stock_count=core_count,
+                    covered_stock_count=max(0, core_count - len(failed_codes)), failed_sources=failed,
+                    official_source_available=payload.get("official_source_available", False), cache_dir=str(cache_dir),
+                )
+        elif aggregate.exists():
+            prior_payload = json.loads(aggregate.read_text(encoding="utf-8"))
         batch_path = cache_dir / "source_records.jsonl.gz"
         if self.refresh and batch_path.exists():
             batch_path.unlink()
@@ -303,20 +318,29 @@ class AnnouncementCollector:
             official_source_available=bool(covered_codes or records),
             cache_dir=str(cache_dir),
         )
+        if prior_payload.get("records") and not collection.records:
+            prior_failed = [*collection.failed_sources, "refresh:empty_result_preserved_previous_success"]
+            prior_core = int(prior_payload.get("core_stock_count") or core_count)
+            prior_covered = int(prior_payload.get("covered_stock_count") or prior_core)
+            collection = AnnouncementCollection(
+                records=prior_payload["records"], core_stock_count=prior_core, covered_stock_count=prior_covered,
+                failed_sources=prior_failed, official_source_available=True, cache_dir=str(cache_dir),
+            )
         self._write_aggregate(aggregate, collection)
         return collection
 
     def discover_announcements(self, trade_date: date, datasets: dict[str, Any]) -> tuple[list[AnnouncementCandidate], list[str], int, set[str], set[str]]:
         cache_dir = self.raw_root / trade_date.isoformat() / "announcements"
         stock_names = _stock_names_by_code(datasets)
-        codes = _core_stock_codes(datasets, self.max_stocks)
+        codes = _core_stock_codes(datasets, self.max_stocks, extra_codes=self.extra_stock_codes)
         if not codes:
             return [], ["core_stock_pool_empty"], 0, set(), set()
-        start = trade_date - timedelta(days=1)
+        start = trade_date
         candidates: list[AnnouncementCandidate] = []
         failed: list[str] = []
         covered_codes: set[str] = set()
         fully_failed_codes: set[str] = set()
+        disabled_adapters: set[int] = set()
         if ak is None and any(isinstance(adapter, CninfoAnnouncementAdapter) and not hasattr(adapter, "fetch_many") for adapter in self.adapters):
             failed.append("巨潮资讯:akshare_import_failed")
         batch_adapter = next((adapter for adapter in self.adapters if hasattr(adapter, "fetch_many")), None)
@@ -333,10 +357,13 @@ class AnnouncementCollector:
                 return candidates, failed, len(codes), covered_codes, fully_failed_codes
             except Exception as exc:
                 failed.append(f"{batch_adapter.source}:batch:{exc.__class__.__name__}")
+                disabled_adapters.add(id(batch_adapter))
         for code in codes:
             code_query_succeeded = False
             code_rows_found = False
             for adapter in self.adapters:
+                if id(adapter) in disabled_adapters:
+                    continue
                 if not adapter.supports(code):
                     continue
                 if self._uses_default_cninfo_fetcher and ak is None and isinstance(adapter, CninfoAnnouncementAdapter):
@@ -346,6 +373,7 @@ class AnnouncementCollector:
                     code_query_succeeded = True
                 except Exception as exc:
                     failed.append(f"{adapter.source}:{code}:{exc.__class__.__name__}")
+                    disabled_adapters.add(id(adapter))
                     continue
                 if not rows:
                     continue
@@ -406,7 +434,7 @@ class AnnouncementCollector:
 
     def classify_announcement(self, title: str, summary: str = "") -> str:
         text = title + " " + summary
-        if any(phrase in text for phrase in RISK_PHRASES if phrase != "减持"):
+        if any(phrase in text for phrase in RISK_PHRASES if "减持" not in phrase):
             return "risk_warning"
         for keyword, category in CATEGORIES.items():
             if keyword in text:
@@ -476,8 +504,15 @@ class AnnouncementCollector:
 
     def _write_aggregate(self, path: Path, collection: AnnouncementCollection) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
+        now = datetime.now(UTC)
+        retry_after = now + timedelta(minutes=15) if collection.quality in {"FAIL", "PARTIAL"} else None
         payload = {
-            "retrieved_at": datetime.now(UTC).isoformat(),
+            "schema_version": ANNOUNCEMENT_SCHEMA_VERSION,
+            "cache_created_at": now.isoformat(),
+            "retrieved_at": now.isoformat(),
+            "last_attempt_at": now.isoformat(),
+            "retry_after": retry_after.isoformat() if retry_after else None,
+            "error_type": "network_or_coverage" if retry_after else None,
             "records": collection.records,
             "core_stock_count": collection.core_stock_count,
             "covered_stock_count": collection.covered_stock_count,
@@ -514,23 +549,23 @@ def build_announcement_sections(records: list[dict[str, Any]], collection: Annou
     }
 
 
-def _core_stock_codes(datasets: dict[str, Any], limit: int) -> list[str]:
+def _core_stock_codes(datasets: dict[str, Any], limit: int, *, extra_codes: list[str] | None = None) -> list[str]:
     codes: list[str] = []
     for dataset_name in ("limit_up", "limit_down", "previous_limit", "failed_limit", "dragon_tiger_daily"):
         for row in getattr(datasets.get(dataset_name), "rows", []):
             code = _code(row)
             if code and code not in codes:
                 codes.append(code)
-            if len(codes) >= limit:
-                return codes
     daily = sorted(getattr(datasets.get("tushare_daily_all"), "rows", []), key=lambda row: float(row.get("amount") or 0), reverse=True)
-    for row in daily:
+    for row in daily[:40]:
         code = str(row.get("ts_code") or "").split(".")[0]
         if code and code not in codes:
             codes.append(code)
-        if len(codes) >= limit:
-            return codes
-    return codes
+    for raw_code in extra_codes or []:
+        code = str(raw_code).split(".")[0].zfill(6)
+        if code and code not in codes:
+            codes.append(code)
+    return codes[:limit]
 
 
 def _stock_names_by_code(datasets: dict[str, Any]) -> dict[str, str]:
@@ -617,7 +652,7 @@ def _announcement_rows_from_response(response: Any, source: str, base_url: str) 
         if not title:
             continue
         url = _first_text(row, ["公告链接", "url", "URL", "adjunctUrl", "announcementUrl", "attachPath", "filePath", "link"])
-        published = _first_text(row, ["公告时间", "公告日期", "发布时间", "published_at", "date", "publishDate", "publishTime"])
+        published = _first_text(row, ["公告时间", "公告日期", "发布时间", "published_at", "date", "publishDate", "publishTime", "announcementTime"])
         normalized.append(
             {
                 "公告标题": title,
@@ -687,6 +722,19 @@ def _read_batch_hashes(path: Path) -> set[str]:
     return hashes
 
 
+def _aggregate_cache_reusable(payload: dict[str, Any]) -> bool:
+    if payload.get("quality") in {"PASS", "EMPTY_VALID"}:
+        return True
+    retry_after = payload.get("retry_after")
+    if not retry_after:
+        return False
+    try:
+        parsed = datetime.fromisoformat(str(retry_after).replace("Z", "+00:00"))
+        return datetime.now(UTC) < parsed
+    except ValueError:
+        return False
+
+
 def _parse_datetime(value: Any, fallback_date: date) -> datetime | None:
     if isinstance(value, datetime):
         return value if value.tzinfo else value.replace(tzinfo=SHANGHAI_TZ)
@@ -694,6 +742,12 @@ def _parse_datetime(value: Any, fallback_date: date) -> datetime | None:
         return datetime.combine(value, time(0), SHANGHAI_TZ)
     if value in ("", None):
         return datetime.combine(fallback_date, time(0), SHANGHAI_TZ)
+    try:
+        numeric = float(value)
+        if numeric > 10_000_000_000:
+            return datetime.fromtimestamp(numeric / 1000, SHANGHAI_TZ)
+    except (TypeError, ValueError):
+        pass
     text = str(value).strip()[:19]
     for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M", "%Y-%m-%d", "%Y%m%d"):
         try:

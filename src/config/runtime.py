@@ -3,8 +3,9 @@ import os
 from pathlib import Path
 from typing import Any, Literal
 
-from dotenv import load_dotenv
 from pydantic import BaseModel, ConfigDict, Field
+
+from src.config.environment import load_project_environment
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -45,7 +46,7 @@ class RuntimeSettings(BaseModel):
 
     @classmethod
     def load(cls, config_path: str | Path | None = None) -> "RuntimeSettings":
-        load_dotenv()
+        load_project_environment()
         token = os.environ.get("TUSHARE_TOKEN", "").strip()
 
         resolved_config_path = Path(

@@ -6,7 +6,7 @@ from src.config.runtime import RuntimeSettings
 
 
 def test_runtime_allows_missing_tushare_token_for_eastmoney_primary(monkeypatch):
-    monkeypatch.delenv("TUSHARE_TOKEN", raising=False)
+    monkeypatch.setenv("TUSHARE_TOKEN", "")
     settings = RuntimeSettings.load()
 
     assert settings.pipeline.primary_market_source == "eastmoney"
@@ -38,7 +38,7 @@ def test_runtime_requires_tushare_token_for_tushare_primary(monkeypatch, tmp_pat
         ),
         encoding="utf-8",
     )
-    monkeypatch.delenv("TUSHARE_TOKEN", raising=False)
+    monkeypatch.setenv("TUSHARE_TOKEN", "")
     with pytest.raises(RuntimeError, match="TUSHARE_TOKEN"):
         RuntimeSettings.load(config_path=config_path)
 

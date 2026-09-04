@@ -67,6 +67,12 @@ python tools/build_market_packet.py --date 2026-09-03
 
 当前 Market Packet 会优先用 Tushare `daily(trade_date=...)` 补齐全市场涨跌家数、总成交额、上一交易日成交额和股票池目标日 OHLCV；没有 `TUSHARE_TOKEN` 或 `daily` 不可用时，股票池 OHLCV 继续顺序尝试 `akshare.stock_zh_a_hist`、`akshare.stock_zh_a_hist_tx`、`akshare.stock_zh_a_daily`。政策和公告仍需要独立数据源。
 
+`trade_cal` 按年度长期缓存，`stock_basic` 每日最多刷新一次。`daily_basic` 和 `adj_factor` 默认不请求，仅在 `.env` 中分别设置 `MARKET_PACKET_INCLUDE_DAILY_BASIC=1`、`MARKET_PACKET_INCLUDE_ADJ_FACTOR=1` 时启用；可选增强失败不会拖垮核心 `daily` 行情。
+
+公告按日期批量查询巨潮并在本地过滤核心股票池，交易所接口只作失败回退。成功与 `EMPTY_VALID` 结果永久复用，失败结果按 `retry_after` 重试。核心池覆盖涨停、跌停、昨日涨停、龙虎榜、全市场成交额前列、前一日正式复盘股票和可选跟踪池。
+
+行业板块优先使用东方财富全量快照，失败时使用同花顺行业概览；概念板块优先使用东方财富全量快照，失败时使用新浪概念板块。两者都只在请求日为上海当前日期时联网，并以单批次方式归档。原始快照分别写入 `industry_board_daily`、`concept_board_daily`；涨停池推导后的研究视图另写入 `industries`、`themes`，不得冒充全量快照。历史日期只读取匹配 `source_data_date` 的已归档原始快照。
+
 ### Review Import
 
 ChatGPT 输出正式 `review_YYYY-MM-DD.json` 后，再由 Codex 导入数据库，供 Dashboard、历史统计、回测和 PDF 使用。
@@ -105,7 +111,7 @@ python collect_daily_review.py --date 2026-09-01 --mode intraday
 
 ## 数据库
 
-数据存储采用两层结构：SQLite `data/a_share_review.db` 保存目录、来源批次、质量门、事实版本和服务状态；中大规模规范化事实写入 `data/facts/dataset=<name>/trade_date=<date>/part-<hash>.parquet`。Parquet 使用 Zstandard 压缩和内容哈希幂等命名，DuckDB 负责跨日分析查询。公告和政策的原始输入按日保存为 `source_records.jsonl.gz`，不再逐条产生小 JSON 文件。
+数据存储采用两层结构：SQLite `data/a_share_review.db` 保存目录、来源批次、质量门、事实版本和服务状态；中大规模规范化事实写入 `data/facts/dataset=<name>/trade_date=<date>/part-<hash>.parquet`。Parquet 使用 Zstandard 压缩和内容哈希幂等命名，DuckDB 负责跨日分析查询。公告和政策的原始输入按日保存为 `source_records.jsonl.gz`，不再逐条产生小 JSON 文件。Parquet 读取会将 Arrow 数组和 NumPy 标量恢复成 JSON 安全类型，板块历史读取还会校验原始快照标识，防止派生数据或跨日数据污染。
 
 板块数据源路由保存在 `config/market_packet_sources.json`。行业和概念板块在当日使用东方财富单次全量快照并归档；历史日期只读取已归档快照，缺失时返回 `UNAVAILABLE`，禁止用当前数据回填或逐板块 N+1 重建。公告优先使用巨潮按日期批量查询，批量接口失败后才按核心股票池走交易所正式来源回退。
 

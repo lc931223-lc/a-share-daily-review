@@ -8,13 +8,13 @@
     },
     "industry_board": {
       "primary": "eastmoney.industry_snapshot",
-      "fallbacks": [],
+      "fallbacks": ["ths.industry_summary"],
       "historical": "daily_snapshot_archive",
       "request_mode": "single_snapshot"
     },
     "concept_board": {
       "primary": "eastmoney.concept_snapshot",
-      "fallbacks": [],
+      "fallbacks": ["sina.concept_snapshot"],
       "historical": "daily_snapshot_archive",
       "request_mode": "single_snapshot"
     },

@@ -5,7 +5,7 @@ import gzip
 import json
 import re
 from dataclasses import dataclass
-from datetime import UTC, date, datetime, time
+from datetime import UTC, date, datetime, time, timedelta
 from pathlib import Path
 from typing import Any, Callable
 from urllib.parse import urljoin
@@ -25,16 +25,12 @@ OFFICIAL_POLICY_SOURCES = [
     {"agency": "商务部", "url": "https://www.mofcom.gov.cn/zwgk/zcfb/", "policy_level": "ministerial", "allow_paths": ["/zwgk/zcfb/"]},
     {"agency": "人民银行", "url": "https://www.pbc.gov.cn/tiaofasi/144941/144957/index.html", "policy_level": "ministerial", "allow_paths": ["/tiaofasi/"]},
     {"agency": "证监会", "url": "https://www.csrc.gov.cn/csrc/c100028/zfxxgk_zdgk.shtml", "policy_level": "ministerial", "allow_paths": ["/c100028/", "/zcfg/"]},
-    {"agency": "上交所", "url": "https://www.sse.com.cn/lawandrules/sselawsrules/", "policy_level": "ministerial", "allow_paths": ["/lawandrules/"]},
-    {"agency": "深交所", "url": "https://www.szse.cn/lawrules/rule/allrules/index.html", "policy_level": "ministerial", "allow_paths": ["/lawrules/"]},
-    {"agency": "北交所", "url": "https://www.bseinfo.net/business/overview.html", "policy_level": "ministerial", "allow_paths": ["/rule/", "/law/", "/business/"]},
     {"agency": "国家能源局", "url": "https://www.nea.gov.cn/nyflfg/", "policy_level": "ministerial", "allow_paths": ["/nyflfg/", "/zcwj/"]},
     {"agency": "科技部", "url": "https://www.most.gov.cn/xxgk/xinxifenlei/fdzdgknr/fgzc/", "policy_level": "ministerial", "allow_paths": ["/fgzc/"]},
-    {"agency": "国家卫健委", "url": "https://www.nhc.gov.cn/wjw/gfxwj/list.shtml", "policy_level": "ministerial", "allow_paths": ["/gfxwj/"]},
     {"agency": "农业农村部", "url": "https://www.moa.gov.cn/gk/zcfg/", "policy_level": "ministerial", "allow_paths": ["/gk/zcfg/"]},
     {"agency": "住建部", "url": "https://www.mohurd.gov.cn/gongkai/zhengce/zhengcefilelib/", "policy_level": "ministerial", "allow_paths": ["/gongkai/zhengce/"]},
 ]
-POLICY_SCHEMA_VERSION = "policy.2"
+POLICY_SCHEMA_VERSION = "policy.3"
 NAVIGATION_TITLES = {"APP下载", "English", "English Version", "一网通办", "首页", "登录", "导航", "专题", "下载客户端", "友情链接", "更多", "【更多】", "hide"}
 DENY_URL_PARTS = ("/english", "_en/", "/app/", "/login", "javascript:", "mailto:")
 POLICY_TITLE_KEYWORDS = ("通知", "公告", "意见", "办法", "规定", "决定", "批复", "函", "规则", "指引", "政策", "条例", "法", "方案", "细则", "标准")
@@ -187,12 +183,14 @@ class PolicyCollector:
         client: SafeHttpClient | None = None,
         source_fetcher: Callable[[dict[str, str]], str] | None = None,
         adapters: list[OfficialPolicyAdapter] | None = None,
+        incremental_days: int = 1,
     ):
         self.raw_root = raw_root
         self.refresh = refresh
         self.client = client or SafeHttpClient(timeout=8, max_retries=1, source="official_policy", dataset="policy_scan")
         self.source_fetcher = source_fetcher
         self.adapters = adapters or _default_policy_adapters()
+        self.incremental_days = max(1, incremental_days)
 
     def collect(self, trade_date: date, themes: list[dict[str, Any]] | None = None, *, as_of_time: datetime | None = None) -> PolicyCollection:
         as_of = as_of_time or datetime.combine(trade_date, time(15, 30), SHANGHAI_TZ)
@@ -200,7 +198,7 @@ class PolicyCollector:
         aggregate = cache_dir / "policies.json"
         if aggregate.exists() and not self.refresh:
             payload = json.loads(aggregate.read_text(encoding="utf-8"))
-            if payload.get("schema_version") == POLICY_SCHEMA_VERSION:
+            if payload.get("schema_version") == POLICY_SCHEMA_VERSION and _aggregate_cache_reusable(payload):
                 return PolicyCollection(
                     payload.get("records", []), payload.get("scanned_sources", []), payload.get("failed_sources", []), str(cache_dir),
                     payload.get("background_reference", []), payload.get("rejected_records", []), payload.get("invalid_reasons", []),
@@ -219,6 +217,7 @@ class PolicyCollector:
             records.extend(json.loads(seed_path.read_text(encoding="utf-8")))
             scanned.append("local.policy_sources")
         keywords = self._keywords_for_themes(themes or [])
+        window_start = trade_date - timedelta(days=self.incremental_days - 1)
         for adapter in self.adapters:
             source = adapter.source
             try:
@@ -241,7 +240,7 @@ class PolicyCollector:
                     item["published_at"] = published.isoformat() if published else None
                     item["retrieved_at"] = datetime.now(UTC).isoformat()
                     item["data_date"] = published.date().isoformat()
-                    if published.date() < trade_date:
+                    if published.date() < window_start:
                         background.append(item)
                         continue
                     if published.date() > trade_date:
@@ -252,7 +251,8 @@ class PolicyCollector:
             except Exception as exc:
                 failed.append(f"{source['agency']}:{exc.__class__.__name__}")
         records = self.deduplicate_policies(records)
-        invalid = _formal_policy_invalid_reasons(records, trade_date, as_of)
+        records = records[:20]
+        invalid = _formal_policy_invalid_reasons(records, trade_date, as_of, window_start=window_start)
         collection = PolicyCollection(records, scanned, failed, str(cache_dir), background, rejected, invalid)
         self._write_aggregate(aggregate, collection)
         return collection
@@ -348,9 +348,15 @@ class PolicyCollector:
 
     def _write_aggregate(self, path: Path, collection: PolicyCollection) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
+        now = datetime.now(UTC)
+        retry_after = now + timedelta(minutes=15) if collection.quality in {"FAIL", "PARTIAL"} else None
         payload = {
             "schema_version": POLICY_SCHEMA_VERSION,
-            "retrieved_at": datetime.now(UTC).isoformat(),
+            "cache_created_at": now.isoformat(),
+            "retrieved_at": now.isoformat(),
+            "last_attempt_at": now.isoformat(),
+            "retry_after": retry_after.isoformat() if retry_after else None,
+            "error_type": "network_or_coverage" if retry_after else None,
             "records": collection.records,
             "background_reference": collection.background_reference or [],
             "rejected_records": collection.rejected_records or [],
@@ -443,19 +449,33 @@ def _policy_rejection_reason(item: dict[str, Any], source: dict[str, Any]) -> st
     return None
 
 
-def _formal_policy_invalid_reasons(records: list[dict[str, Any]], trade_date: date, as_of: datetime) -> list[str]:
+def _formal_policy_invalid_reasons(records: list[dict[str, Any]], trade_date: date, as_of: datetime, *, window_start: date | None = None) -> list[str]:
     reasons: list[str] = []
+    start = window_start or trade_date
     for item in records:
         published = _parse_datetime(item.get("published_at"), trade_date)
         if published is None:
             reasons.append("missing_published_at")
-        elif published.date() != trade_date:
+        elif not start <= published.date() <= trade_date:
             reasons.append("cross_date_pollution")
         elif published.astimezone(SHANGHAI_TZ) > as_of.astimezone(SHANGHAI_TZ):
             reasons.append("future_pollution")
         if _policy_rejection_reason(item, {"allow_paths": [], "agency": item.get("agency")}) in {"navigation_title", "mojibake_title", "not_policy_document"}:
             reasons.append("content_pollution")
     return sorted(set(reasons))
+
+
+def _aggregate_cache_reusable(payload: dict[str, Any]) -> bool:
+    if payload.get("quality") in {"PASS", "EMPTY_VALID"}:
+        return True
+    retry_after = payload.get("retry_after")
+    if not retry_after:
+        return False
+    try:
+        parsed = datetime.fromisoformat(str(retry_after).replace("Z", "+00:00"))
+        return datetime.now(UTC) < parsed
+    except ValueError:
+        return False
 
 
 def _extract_date(text: str) -> str | None:

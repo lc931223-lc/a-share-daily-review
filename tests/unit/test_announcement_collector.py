@@ -76,6 +76,21 @@ def test_announcement_timeout_is_fail_without_fake_empty_values(tmp_path):
     assert result.quality == "FAIL"
 
 
+def test_announcement_failed_aggregate_respects_retry_ttl(tmp_path):
+    first = _collector(tmp_path, TimeoutError("slow"))
+    first.collect(date(2026, 9, 2), _datasets(), as_of_time=datetime(2026, 9, 2, 15, 30, tzinfo=TZ))
+    calls = {"count": 0}
+
+    def succeeds(*_args):
+        calls["count"] += 1
+        return pd.DataFrame([{"公告标题": "关于重大合同的公告", "公告时间": "2026-09-02"}])
+
+    second = AnnouncementCollector(raw_root=tmp_path, fetcher=succeeds, max_stocks=1)
+    result = second.collect(date(2026, 9, 2), _datasets(), as_of_time=datetime(2026, 9, 2, 15, 30, tzinfo=TZ))
+    assert result.quality == "FAIL"
+    assert calls["count"] == 0
+
+
 def test_announcement_exchange_adapter_fallback_after_cninfo_failure(tmp_path):
     collector = AnnouncementCollector(
         raw_root=tmp_path,
@@ -115,9 +130,76 @@ def test_cninfo_batch_adapter_queries_by_date_not_by_stock(tmp_path):
     collector = AnnouncementCollector(raw_root=tmp_path, adapters=[adapter], max_stocks=2)
     datasets = {"limit_up": Dataset([{"代码": "000001", "名称": "平安银行"}, {"代码": "600000", "名称": "浦发银行"}])}
     result = collector.collect(date(2026, 9, 2), datasets, as_of_time=datetime(2026, 9, 2, 15, 30, tzinfo=TZ))
-    assert client.calls == 2
+    assert client.calls == 1
     assert len(result.records) == 2
     assert result.coverage_rate == 1
+
+
+def test_cninfo_batch_adapter_fetches_all_reported_pages():
+    class Response:
+        def __init__(self, page):
+            self.page = page
+
+        def json(self):
+            return {
+                "totalpages": 2,
+                "totalAnnouncement": 2,
+                "announcements": [{
+                    "secCode": "000001",
+                    "announcementTitle": f"第{self.page}页公告",
+                    "announcementTime": "2026-09-02",
+                    "adjunctUrl": f"finalpage/{self.page}.pdf",
+                }],
+            }
+
+    class Client:
+        def __init__(self):
+            self.pages = []
+
+        def post(self, *_args, **kwargs):
+            page = kwargs["data"]["pageNum"]
+            self.pages.append(page)
+            return Response(page)
+
+    client = Client()
+    adapter = CninfoBatchAnnouncementAdapter(lambda *_: pd.DataFrame(), client)
+    rows = adapter.fetch_many(["000001"], date(2026, 9, 2), date(2026, 9, 2))
+
+    assert client.pages == [1, 2]
+    assert len(rows) == 2
+
+
+def test_announcement_failed_sources_are_disabled_for_remaining_stock_pool(tmp_path):
+    class FailingAdapter(AnnouncementSourceAdapter):
+        def __init__(self, source, *, batch=False):
+            self.source = source
+            self.calls = 0
+            self.batch = batch
+
+        def fetch_many(self, *_args):
+            if not self.batch:
+                raise AssertionError("not a batch adapter")
+            self.calls += 1
+            raise TimeoutError("source unavailable")
+
+        def fetch(self, *_args):
+            self.calls += 1
+            raise TimeoutError("source unavailable")
+
+    batch = FailingAdapter("巨潮资讯", batch=True)
+    exchange = FailingAdapter("深交所")
+    collector = AnnouncementCollector(raw_root=tmp_path, adapters=[batch, exchange], max_stocks=3)
+    datasets = {"limit_up": Dataset([
+        {"代码": "000001", "名称": "平安银行"},
+        {"代码": "000002", "名称": "万科A"},
+        {"代码": "300001", "名称": "特锐德"},
+    ])}
+
+    result = collector.collect(date(2026, 9, 2), datasets, as_of_time=datetime(2026, 9, 2, 15, 30, tzinfo=TZ))
+
+    assert batch.calls == 1
+    assert exchange.calls == 1
+    assert result.quality == "FAIL"
 
 
 def test_announcement_duplicate_and_multi_source_prefers_official(tmp_path):

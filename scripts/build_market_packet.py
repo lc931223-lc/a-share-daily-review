@@ -11,6 +11,7 @@ sys.path.insert(0, str(ROOT))
 
 from src.market_packet.packet_builder import build_market_packet, write_outputs
 from src.market_packet.trading_calendar import resolve_auto_trade_date
+from src.config.environment import load_project_environment
 
 
 def parse_args() -> argparse.Namespace:
@@ -40,6 +41,8 @@ def resolve_as_of(value: str | None) -> datetime | None:
 
 
 def main() -> int:
+    token_configured = load_project_environment()
+    print(f"TUSHARE_TOKEN_CONFIGURED={str(token_configured).lower()}")
     args = parse_args()
     trade_date = resolve_date(args.date)
     packet = build_market_packet(

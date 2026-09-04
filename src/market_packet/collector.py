@@ -13,9 +13,12 @@ from zoneinfo import ZoneInfo
 
 import pandas as pd
 
+from src.adapters.http import SafeHttpClient
+from src.config.environment import env_flag, env_int
 from src.market_packet.announcement_collector import AnnouncementCollector
 from src.market_packet.policy_collector import PolicyCollector
 from src.market_packet.source_router import SourceRouter
+from src.storage.fact_store import FactStore
 
 try:
     import akshare as ak
@@ -87,12 +90,16 @@ class MarketPacketCollector:
         refresh: bool = False,
         refresh_datasets: set[str] | None = None,
         as_of_time: datetime | None = None,
+        fact_root: Path | None = None,
+        reference_root: Path | None = None,
     ):
         self.raw_root = raw_root or PROJECT_ROOT / "data" / "raw" / "market_packets"
         self.refresh = refresh
         self.refresh_datasets = {item.strip().lower() for item in (refresh_datasets or set())}
         self.as_of_time = as_of_time
         self.source_router = SourceRouter()
+        self.fact_store = FactStore(fact_root)
+        self.reference_root = reference_root or PROJECT_ROOT / "data" / "reference"
 
     def _should_refresh(self, *names: str) -> bool:
         return self.refresh or any(name.lower() in self.refresh_datasets for name in names)
@@ -107,7 +114,8 @@ class MarketPacketCollector:
             ("dragon_tiger_daily", "akshare.stock_lhb_detail_em", lambda: ak.stock_lhb_detail_em(start_date=_compact(trade_date), end_date=_compact(trade_date)), trade_date, "historical"),
             ("northbound_hist", "akshare.stock_hsgt_hist_em", lambda: ak.stock_hsgt_hist_em(symbol="北向资金"), None, "historical"),
             ("hsgt_summary", "akshare.stock_hsgt_fund_flow_summary_em", lambda: ak.stock_hsgt_fund_flow_summary_em(), None, "current_only"),
-            ("szse_margin", "akshare.stock_margin_szse", lambda: ak.stock_margin_szse(date=_compact(trade_date)), trade_date, "historical"),
+            ("sse_margin", "sse.official.queryMargin", lambda: _fetch_sse_margin(trade_date), trade_date, "historical"),
+            ("szse_margin", "szse.official.ShowReport", lambda: _fetch_szse_margin(trade_date), trade_date, "historical"),
             ("szse_margin_detail", "akshare.stock_margin_detail_szse", lambda: ak.stock_margin_detail_szse(date=_compact(trade_date)), trade_date, "historical"),
             ("industry_fund_flow_current", "akshare.stock_fund_flow_industry", lambda: ak.stock_fund_flow_industry(symbol="即时"), None, "current_only"),
             ("concept_fund_flow_current", "akshare.stock_fund_flow_concept", lambda: ak.stock_fund_flow_concept(symbol="即时"), None, "current_only"),
@@ -121,6 +129,8 @@ class MarketPacketCollector:
         announcement_collection = AnnouncementCollector(
             raw_root=self.raw_root,
             refresh=self._should_refresh("announcements", "official_announcements"),
+            max_stocks=120,
+            extra_stock_codes=_historical_priority_codes(trade_date),
         ).collect(trade_date, datasets, as_of_time=self.as_of_time)
         datasets["official_announcements"] = CollectedDataset(
             "official_announcements",
@@ -156,6 +166,7 @@ class MarketPacketCollector:
         policy_collection = PolicyCollector(
             raw_root=self.raw_root,
             refresh=self._should_refresh("policy", "policies", "official_policies"),
+            incremental_days=env_int("MARKET_PACKET_POLICY_WINDOW_DAYS", default=1),
         ).collect(trade_date, [], as_of_time=self.as_of_time)
         datasets["official_policies"] = CollectedDataset(
             "official_policies",
@@ -201,6 +212,12 @@ class MarketPacketCollector:
 
     def _collect_tushare_core(self, datasets: dict[str, CollectedDataset], trade_date: date) -> None:
         token = os.environ.get("TUSHARE_TOKEN")
+        datasets["tushare_credential"] = CollectedDataset(
+            "tushare_credential", "project_root.env", trade_date, datetime.now(UTC),
+            [{"credential_status": "CONFIGURED"}] if token else [],
+            "PASS" if token else "UNAVAILABLE", "unknown" if token else "missing", False,
+            error=None if token else "credential_status=UNAVAILABLE", error_type=None if token else "credentials",
+        )
         if ts is None or not token:
             for name in ("tushare_trade_cal", "tushare_stock_basic", "tushare_daily_all", "tushare_previous_daily_all", "tushare_daily_basic_all", "tushare_adj_factor_all"):
                 cached = self._cached_tushare_dataset(name, trade_date)
@@ -225,28 +242,27 @@ class MarketPacketCollector:
             "historical",
         )
         datasets["tushare_previous_daily_all"] = self._collect_tushare_previous_daily(pro, trade_date, previous_trade_date)
-        datasets["tushare_daily_basic_all"] = self._collect_frame(
-            "tushare_daily_basic_all",
-            "tushare.daily_basic",
-            lambda: pro.daily_basic(trade_date=_compact(trade_date), fields="ts_code,trade_date,turnover_rate,volume_ratio,pe,pb,total_mv,circ_mv"),
-            trade_date,
-            trade_date,
-            "historical",
-        )
-        datasets["tushare_adj_factor_all"] = self._collect_frame(
-            "tushare_adj_factor_all",
-            "tushare.adj_factor",
-            lambda: pro.adj_factor(trade_date=_compact(trade_date)),
-            trade_date,
-            trade_date,
-            "historical",
-        )
+        if env_flag("MARKET_PACKET_INCLUDE_DAILY_BASIC"):
+            datasets["tushare_daily_basic_all"] = self._collect_frame(
+                "tushare_daily_basic_all", "tushare.daily_basic",
+                lambda: pro.daily_basic(trade_date=_compact(trade_date), fields="ts_code,trade_date,turnover_rate,volume_ratio,pe,pb,total_mv,circ_mv"),
+                trade_date, trade_date, "historical",
+            )
+        else:
+            datasets["tushare_daily_basic_all"] = self._cached_tushare_dataset("tushare_daily_basic_all", trade_date) or _disabled_dataset("tushare_daily_basic_all", "tushare.daily_basic", trade_date)
+        if env_flag("MARKET_PACKET_INCLUDE_ADJ_FACTOR"):
+            datasets["tushare_adj_factor_all"] = self._collect_frame(
+                "tushare_adj_factor_all", "tushare.adj_factor",
+                lambda: pro.adj_factor(trade_date=_compact(trade_date)), trade_date, trade_date, "historical",
+            )
+        else:
+            datasets["tushare_adj_factor_all"] = self._cached_tushare_dataset("tushare_adj_factor_all", trade_date) or _disabled_dataset("tushare_adj_factor_all", "tushare.adj_factor", trade_date)
 
     def _cached_tushare_dataset(self, name: str, trade_date: date) -> CollectedDataset | None:
         if name == "tushare_trade_cal":
-            path = PROJECT_ROOT / "data" / "reference" / f"{name}_{trade_date.year}.json"
+            path = self.reference_root / f"{name}_{trade_date.year}.json"
         elif name == "tushare_stock_basic":
-            path = PROJECT_ROOT / "data" / "reference" / f"{name}.json"
+            path = self.reference_root / f"{name}.json"
         else:
             path = self._cache_path(trade_date, name)
         if not path.exists():
@@ -258,11 +274,12 @@ class MarketPacketCollector:
 
     def _collect_tushare_trade_cal(self, pro, trade_date: date) -> CollectedDataset:
         name = "tushare_trade_cal"
-        ref_path = PROJECT_ROOT / "data" / "reference" / f"{name}_{trade_date.year}.json"
+        ref_path = self.reference_root / f"{name}_{trade_date.year}.json"
         if ref_path.exists() and not self.refresh:
             payload = json.loads(ref_path.read_text(encoding="utf-8"))
             rows = payload.get("rows", [])
-            return CollectedDataset(name, "tushare.trade_cal", trade_date, datetime.now(UTC), rows, "PASS" if rows else "FAIL", "historical", True, str(ref_path), payload.get("error"))
+            if rows:
+                return self._dataset_from_cache(name, "tushare.trade_cal", trade_date, "historical", ref_path, payload)
         start = date(trade_date.year, 1, 1)
         end = date(trade_date.year, 12, 31)
         return self._collect_reference_frame(
@@ -275,13 +292,13 @@ class MarketPacketCollector:
 
     def _collect_tushare_stock_basic(self, pro, trade_date: date) -> CollectedDataset:
         name = "tushare_stock_basic"
-        ref_path = PROJECT_ROOT / "data" / "reference" / f"{name}.json"
+        ref_path = self.reference_root / f"{name}.json"
         if ref_path.exists() and not self.refresh:
             payload = json.loads(ref_path.read_text(encoding="utf-8"))
             retrieved_date = _date_from_payload(str(payload.get("retrieved_at", ""))[:10])
             if retrieved_date and retrieved_date >= datetime.now(UTC).date():
                 rows = payload.get("rows", [])
-                return CollectedDataset(name, "tushare.stock_basic", trade_date, datetime.now(UTC), rows, "PASS" if rows else "FAIL", "historical", True, str(ref_path), payload.get("error"))
+                return self._dataset_from_cache(name, "tushare.stock_basic", trade_date, "historical", ref_path, payload)
         return self._collect_reference_frame(
             name,
             "tushare.stock_basic",
@@ -460,7 +477,7 @@ class MarketPacketCollector:
             path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
         return CollectedDataset(name, "official_policy_sources", trade_date, datetime.now(UTC), rows, "PASS" if rows else "FAIL", "historical", False, str(path), error)
 
-    def _collect_board_daily(self, trade_date: date, board_type: str, *, limit: int = 120) -> CollectedDataset:
+    def _collect_board_daily(self, trade_date: date, board_type: str, *, limit: int = 500) -> CollectedDataset:
         name = f"{board_type}_board_daily"
         route_name = f"{board_type}_board"
         route = self.source_router.route(route_name)
@@ -469,8 +486,19 @@ class MarketPacketCollector:
         refresh = self._should_refresh(name, f"{board_type}_board", "industry_board" if board_type == "industry" else "concept_board")
         if cache.exists() and not refresh:
             payload = json.loads(cache.read_text(encoding="utf-8"))
-            rows = payload.get("rows", [])
-            return self._dataset_from_cache(name, payload.get("source", source), trade_date, "historical", cache, payload)
+            cached = self._dataset_from_cache(name, payload.get("source", source), trade_date, "historical", cache, payload)
+            if cached.rows or not cached.retry_after or datetime.now(UTC) < cached.retry_after:
+                return cached
+        snapshot_rows = [
+            row for row in self.fact_store.read_dataset(name, trade_date)
+            if row.get("board_type") == board_type
+            and row.get("board_name")
+            and row.get("source_data_date") == trade_date.isoformat()
+        ]
+        if snapshot_rows and not refresh:
+            threshold = 30 if board_type == "industry" else 50
+            quality = "PASS" if len(snapshot_rows) >= threshold else "PARTIAL"
+            return CollectedDataset(name, f"parquet.{name}", trade_date, datetime.now(UTC), snapshot_rows, quality, "historical", True)
         shanghai_today = datetime.now(ZoneInfo("Asia/Shanghai")).date()
         if trade_date != shanghai_today:
             if cache.exists():
@@ -485,26 +513,47 @@ class MarketPacketCollector:
             return self._dataset_from_cache(name, source, trade_date, "historical", path, payload, is_cached=False)
         if ak is None:
             return CollectedDataset(name, source, trade_date, datetime.now(UTC), [], "UNAVAILABLE", "missing", False, error="akshare import failed")
+        errors: list[str] = []
+        board_list = pd.DataFrame()
         try:
             board_list = ak.stock_board_industry_name_em() if board_type == "industry" else ak.stock_board_concept_name_em()
         except Exception as exc:
-            path = self._write_cache(trade_date, name, source, trade_date, [], error=f"board list failed: {exc.__class__.__name__}: {exc}")
-            error = f"board list failed: {exc.__class__.__name__}: {exc}"
+            errors.append(f"{source}:{exc.__class__.__name__}")
+        if board_list.empty:
+            fallback = str((route.get("fallbacks") or [""])[0])
+            try:
+                if board_type == "industry":
+                    board_list = ak.stock_board_industry_summary_ths()
+                else:
+                    board_list = ak.stock_sector_spot(indicator="概念")
+                source = fallback
+            except Exception as exc:
+                errors.append(f"{fallback}:{exc.__class__.__name__}")
+        if board_list.empty:
+            error = f"board snapshot failed: {','.join(errors)}"
+            path = self._write_cache(trade_date, name, source, trade_date, [], error=error)
             return CollectedDataset(name, source, trade_date, datetime.now(UTC), [], "FAIL", "historical", False, str(path), error)
         rows: list[dict[str, Any]] = []
         for board in _frame_to_rows(board_list)[:limit]:
-            board_name = _first_text(board, ["板块名称", "名称", "name", "板块"])
+            board_name = _first_text(board, ["板块名称", "板块", "概念名称", "名称", "name"])
             if not board_name:
                 continue
             item = dict(board)
             item["board_type"] = board_type
             item["board_name"] = board_name
-            item["board_code"] = _first_text(board, ["板块代码", "代码", "code"])
+            item["board_code"] = _first_text(board, ["板块代码", "代码", "code", "label"])
+            item["change_pct"] = _first_number(board, ["涨跌幅", "change_pct", "pct_chg"])
+            item["amount"] = _first_number(board, ["成交额", "总成交额", "amount"])
+            item["rise_count"] = _first_number(board, ["上涨家数", "rise_count"])
+            item["fall_count"] = _first_number(board, ["下跌家数", "fall_count"])
+            item["snapshot_source"] = source
             item["source_data_date"] = trade_date.isoformat()
             rows.append(item)
         path = self._write_cache(trade_date, name, source, trade_date, rows)
         error = None if rows else "empty board snapshot"
         quality = "PASS" if len(rows) >= (30 if board_type == "industry" else 50) else "PARTIAL" if rows else "FAIL"
+        if rows:
+            self.fact_store.write_dataset(name, trade_date, rows)
         return CollectedDataset(name, source, trade_date, datetime.now(UTC), rows, quality, "historical", False, str(path), error)
 
     def _collect_frame(
@@ -605,6 +654,47 @@ def _compact(value: date) -> str:
     return value.strftime("%Y%m%d")
 
 
+def _disabled_dataset(name: str, source: str, trade_date: date) -> CollectedDataset:
+    return CollectedDataset(
+        name, source, trade_date, datetime.now(UTC), [], "UNAVAILABLE", "missing", False,
+        error="optional endpoint disabled because the current Market Packet does not require it",
+        error_type="disabled_not_required",
+    )
+
+
+def _historical_priority_codes(trade_date: date) -> list[str]:
+    candidates: list[tuple[date, Path]] = []
+    for root in (PROJECT_ROOT / "data" / "official_reviews", PROJECT_ROOT / "data" / "json" / "reviews"):
+        for path in root.glob("*.json") if root.exists() else []:
+            try:
+                payload = json.loads(path.read_text(encoding="utf-8"))
+                review_date = date.fromisoformat(str(payload.get("date")))
+            except (OSError, ValueError, TypeError, json.JSONDecodeError):
+                continue
+            if review_date < trade_date:
+                candidates.append((review_date, path))
+    codes: list[str] = []
+    if candidates:
+        _, latest = max(candidates, key=lambda item: item[0])
+        payload = json.loads(latest.read_text(encoding="utf-8"))
+        for item in payload.get("stocks", []):
+            code = str(item.get("code") or item.get("stock_code") or "").split(".")[0]
+            if code and code not in codes:
+                codes.append(code.zfill(6))
+    tracked_path = PROJECT_ROOT / "config" / "tracked_stocks.json"
+    if tracked_path.exists():
+        try:
+            tracked = json.loads(tracked_path.read_text(encoding="utf-8"))
+            for item in tracked if isinstance(tracked, list) else tracked.get("stocks", []):
+                raw = item if isinstance(item, str) else item.get("code") or item.get("stock_code")
+                code = str(raw or "").split(".")[0]
+                if code and code.zfill(6) not in codes:
+                    codes.append(code.zfill(6))
+        except (OSError, json.JSONDecodeError):
+            pass
+    return codes[:80]
+
+
 def _fetch_stock_daily_frame(code: str, trade_date: date) -> pd.DataFrame:
     last_error: Exception | None = None
     for fn in (_fetch_stock_hist_em, _fetch_stock_hist_tx, _fetch_stock_daily_sina):
@@ -617,6 +707,32 @@ def _fetch_stock_daily_frame(code: str, trade_date: date) -> pd.DataFrame:
     if last_error:
         raise last_error
     return pd.DataFrame()
+
+
+def _fetch_sse_margin(trade_date: date) -> pd.DataFrame:
+    response = SafeHttpClient(timeout=8, max_retries=1, source="sse", dataset="margin").get(
+        "https://query.sse.com.cn/marketdata/tradedata/queryMargin.do",
+        params={
+            "isPagination": "true", "beginDate": _compact(trade_date), "endDate": _compact(trade_date),
+            "tabType": "", "stockCode": "", "pageHelp.pageSize": "5000", "pageHelp.pageNo": "1",
+            "pageHelp.beginPage": "1", "pageHelp.cacheSize": "1", "pageHelp.endPage": "5",
+        },
+        headers={"Referer": "https://www.sse.com.cn/", "User-Agent": "Mozilla/5.0"},
+    )
+    payload = response.json()
+    rows = payload.get("result") or (payload.get("pageHelp") or {}).get("data") or []
+    return pd.DataFrame(rows)
+
+
+def _fetch_szse_margin(trade_date: date) -> pd.DataFrame:
+    response = SafeHttpClient(timeout=8, max_retries=1, source="szse", dataset="margin").get(
+        "https://www.szse.cn/api/report/ShowReport/data",
+        params={"SHOWTYPE": "JSON", "CATALOGID": "1837_xxpl", "txtDate": trade_date.isoformat(), "tab1PAGENO": "1"},
+        headers={"Referer": "https://www.szse.cn/disclosure/margin/object/index.html", "User-Agent": "Mozilla/5.0"},
+    )
+    payload = response.json()
+    rows = payload[0].get("data", []) if isinstance(payload, list) and payload else []
+    return pd.DataFrame(rows)
 
 
 def _fetch_stock_hist_em(code: str, trade_date: date) -> pd.DataFrame:
@@ -764,6 +880,23 @@ def _first_text(row: dict[str, Any] | None, keys: list[str]) -> str | None:
         value = row.get(key)
         if value not in ("", None):
             return str(value)
+    return None
+
+
+def _first_number(row: dict[str, Any] | None, keys: list[str]) -> float | int | None:
+    if not row:
+        return None
+    for key in keys:
+        value = row.get(key)
+        if value in ("", None, "-"):
+            continue
+        try:
+            number = float(str(value).replace(",", "").replace("%", ""))
+        except (TypeError, ValueError):
+            continue
+        if math.isnan(number):
+            continue
+        return int(number) if number.is_integer() else number
     return None
 
 

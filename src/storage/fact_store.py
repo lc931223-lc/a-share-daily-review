@@ -7,6 +7,7 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
+import numpy as np
 import pandas as pd
 from sqlalchemy import select
 
@@ -45,6 +46,14 @@ class FactStore:
             frame.to_parquet(path, engine="pyarrow", index=False, compression="zstd")
         schema_json = json.dumps({str(name): str(dtype) for name, dtype in frame.dtypes.items()}, ensure_ascii=False, sort_keys=True)
         return WrittenPartition(dataset, trade_date, path, content_hash, len(frame), schema_json)
+
+    def read_dataset(self, dataset: str, trade_date: date) -> list[dict[str, Any]]:
+        partition_dir = self.root / f"dataset={dataset}" / f"trade_date={trade_date.isoformat()}"
+        parts = sorted(partition_dir.glob("*.parquet"), key=lambda path: path.stat().st_mtime, reverse=True)
+        if not parts:
+            return []
+        frame = pd.read_parquet(parts[0], engine="pyarrow")
+        return [_json_safe(row) for row in frame.to_dict("records")]
 
     def persist_packet(self, packet: dict[str, Any], database_path: Path | None = None) -> list[WrittenPartition]:
         trade_date = date.fromisoformat(packet["meta"]["trade_date"])
@@ -100,8 +109,10 @@ class FactStore:
 def _json_safe(value: Any) -> Any:
     if isinstance(value, dict):
         return {str(key): _json_safe(item) for key, item in value.items()}
-    if isinstance(value, (list, tuple)):
+    if isinstance(value, (list, tuple, np.ndarray)):
         return [_json_safe(item) for item in value]
+    if isinstance(value, np.generic):
+        return _json_safe(value.item())
     if isinstance(value, (date, pd.Timestamp)):
         return value.isoformat()
     if pd.isna(value):
