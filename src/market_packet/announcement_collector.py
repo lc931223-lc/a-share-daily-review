@@ -7,9 +7,13 @@ from dataclasses import dataclass
 from datetime import UTC, date, datetime, time, timedelta
 from pathlib import Path
 from typing import Any, Callable
+from urllib.parse import urljoin
 from zoneinfo import ZoneInfo
 
+from bs4 import BeautifulSoup
 import pandas as pd
+
+from src.adapters.http import SafeHttpClient
 
 try:
     import akshare as ak
@@ -65,6 +69,7 @@ CLARIFICATION_PHRASES = (
     "股价严重偏离基本面",
 )
 RISK_PHRASES = ("风险提示", "减持", "立案调查", "监管关注", "监管问询", "异常波动", "重大不确定性")
+_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/126 Safari/537.36"
 
 
 @dataclass(frozen=True)
@@ -73,6 +78,111 @@ class AnnouncementCandidate:
     stock_name: str
     source: str
     raw: dict[str, Any]
+
+
+class AnnouncementSourceAdapter:
+    source = "unknown"
+
+    def supports(self, code: str) -> bool:
+        return True
+
+    def fetch(self, code: str, start: date, end: date) -> list[dict[str, Any]]:
+        raise NotImplementedError
+
+
+class CninfoAnnouncementAdapter(AnnouncementSourceAdapter):
+    source = "巨潮资讯"
+
+    def __init__(self, fetcher: Callable[[str, date, date], pd.DataFrame]):
+        self.fetcher = fetcher
+
+    def fetch(self, code: str, start: date, end: date) -> list[dict[str, Any]]:
+        return _frame_to_rows(self.fetcher(code, start, end))
+
+
+class SseAnnouncementAdapter(AnnouncementSourceAdapter):
+    source = "上交所"
+
+    def __init__(self, client: SafeHttpClient | None = None):
+        self.client = client or SafeHttpClient(timeout=8, max_retries=1, source="sse", dataset="official_announcements")
+
+    def supports(self, code: str) -> bool:
+        return code.startswith(("5", "6", "9"))
+
+    def fetch(self, code: str, start: date, end: date) -> list[dict[str, Any]]:
+        response = self.client.get(
+            "https://query.sse.com.cn/security/stock/queryCompanyBulletin.do",
+            params={
+                "isPagination": "true",
+                "productId": code,
+                "startDate": start.strftime("%Y-%m-%d"),
+                "endDate": end.strftime("%Y-%m-%d"),
+                "pageHelp.pageSize": 50,
+                "pageHelp.pageNo": 1,
+            },
+            headers={"Referer": "https://www.sse.com.cn/", "User-Agent": _USER_AGENT},
+            source=self.source,
+            dataset="official_announcements",
+        )
+        return _filter_rows_by_code(_announcement_rows_from_response(response, self.source, "https://www.sse.com.cn/"), code)
+
+
+class SzseAnnouncementAdapter(AnnouncementSourceAdapter):
+    source = "深交所"
+
+    def __init__(self, client: SafeHttpClient | None = None):
+        self.client = client or SafeHttpClient(timeout=8, max_retries=1, source="szse", dataset="official_announcements")
+
+    def supports(self, code: str) -> bool:
+        return code.startswith(("0", "2", "3"))
+
+    def fetch(self, code: str, start: date, end: date) -> list[dict[str, Any]]:
+        headers = {
+            "Referer": "https://www.szse.cn/disclosure/listed/notice/index.html",
+            "User-Agent": _USER_AGENT,
+        }
+        try:
+            response = self.client.post(
+                "https://www.szse.cn/api/disc/announcement/annList",
+                data={
+                    "seDate": f"{start.strftime('%Y-%m-%d')}~{end.strftime('%Y-%m-%d')}",
+                    "stock": code,
+                    "channelCode": "listedNotice_disc",
+                    "pageSize": 50,
+                    "pageNum": 1,
+                },
+                headers=headers,
+                source=self.source,
+                dataset="official_announcements",
+            )
+        except Exception:
+            response = self.client.get(
+                "https://www.szse.cn/disclosure/listed/notice/index.html",
+                headers=headers,
+                source=self.source,
+                dataset="official_announcements",
+            )
+        return _filter_rows_by_code(_announcement_rows_from_response(response, self.source, "https://www.szse.cn/"), code)
+
+
+class BseAnnouncementAdapter(AnnouncementSourceAdapter):
+    source = "北交所"
+
+    def __init__(self, client: SafeHttpClient | None = None):
+        self.client = client or SafeHttpClient(timeout=8, max_retries=1, source="bse", dataset="official_announcements")
+
+    def supports(self, code: str) -> bool:
+        return code.startswith(("4", "8"))
+
+    def fetch(self, code: str, start: date, end: date) -> list[dict[str, Any]]:
+        response = self.client.get(
+            "https://www.bse.cn/disclosure/announcement.html",
+            params={"stockCode": code, "startDate": start.strftime("%Y-%m-%d"), "endDate": end.strftime("%Y-%m-%d")},
+            headers={"Referer": "https://www.bse.cn/", "User-Agent": _USER_AGENT},
+            source=self.source,
+            dataset="official_announcements",
+        )
+        return _filter_rows_by_code(_announcement_rows_from_response(response, self.source, "https://www.bse.cn/"), code)
 
 
 @dataclass(frozen=True)
@@ -106,11 +216,26 @@ class AnnouncementCollector:
         raw_root: Path,
         refresh: bool = False,
         fetcher: Callable[[str, date, date], pd.DataFrame] | None = None,
+        adapters: list[AnnouncementSourceAdapter] | None = None,
+        client: SafeHttpClient | None = None,
         max_stocks: int = 40,
     ):
         self.raw_root = raw_root
         self.refresh = refresh
+        self._uses_default_cninfo_fetcher = fetcher is None
         self.fetcher = fetcher or self._fetch_cninfo
+        self.client = client or SafeHttpClient(timeout=8, max_retries=1, source="official_announcements", dataset="announcement_scan")
+        if adapters is not None:
+            self.adapters = adapters
+        elif fetcher is not None:
+            self.adapters = [CninfoAnnouncementAdapter(self.fetcher)]
+        else:
+            self.adapters = [
+                CninfoAnnouncementAdapter(self.fetcher),
+                SseAnnouncementAdapter(self.client),
+                SzseAnnouncementAdapter(self.client),
+                BseAnnouncementAdapter(self.client),
+            ]
         self.max_stocks = max_stocks
 
     def collect(self, trade_date: date, datasets: dict[str, Any], *, as_of_time: datetime | None = None) -> AnnouncementCollection:
@@ -121,7 +246,9 @@ class AnnouncementCollector:
             payload = json.loads(aggregate.read_text(encoding="utf-8"))
             failed = payload.get("failed_sources", [])
             core_count = payload.get("core_stock_count", 0)
-            failed_codes = {item.split(":")[1] for item in failed if item.startswith("cninfo:") and len(item.split(":")) >= 2}
+            failed_codes = set(payload.get("fully_failed_codes", []))
+            if not failed_codes:
+                failed_codes = {item.split(":")[1] for item in failed if len(item.split(":")) >= 2}
             return AnnouncementCollection(
                 records=payload.get("records", []),
                 core_stock_count=core_count,
@@ -130,50 +257,65 @@ class AnnouncementCollector:
                 official_source_available=payload.get("official_source_available", False),
                 cache_dir=str(cache_dir),
             )
-        candidates, failed_sources, core_count = self.discover_announcements(trade_date, datasets)
+        candidates, failed_sources, core_count, covered_codes, fully_failed_codes = self.discover_announcements(trade_date, datasets)
         records = []
         for candidate in candidates:
             item = self.fetch_official_announcement(candidate, trade_date, as_of)
             if item is not None:
                 records.append(item)
         records = self.deduplicate_announcements(records)
-        failed_codes = {item.split(":")[1] for item in failed_sources if item.startswith("cninfo:") and len(item.split(":")) >= 2}
-        covered = max(0, core_count - len(failed_codes))
+        covered = len(covered_codes)
         collection = AnnouncementCollection(
             records=records,
             core_stock_count=core_count,
             covered_stock_count=covered,
-            failed_sources=failed_sources,
-            official_source_available=not failed_sources or bool(records),
+            failed_sources=[*failed_sources, *[f"all_sources:{code}" for code in sorted(fully_failed_codes)]],
+            official_source_available=bool(covered_codes or records),
             cache_dir=str(cache_dir),
         )
         self._write_aggregate(aggregate, collection)
         return collection
 
-    def discover_announcements(self, trade_date: date, datasets: dict[str, Any]) -> tuple[list[AnnouncementCandidate], list[str], int]:
+    def discover_announcements(self, trade_date: date, datasets: dict[str, Any]) -> tuple[list[AnnouncementCandidate], list[str], int, set[str], set[str]]:
         cache_dir = self.raw_root / trade_date.isoformat() / "announcements"
         stock_names = _stock_names_by_code(datasets)
         codes = _core_stock_codes(datasets, self.max_stocks)
         if not codes:
-            return [], ["core_stock_pool_empty"], 0
+            return [], ["core_stock_pool_empty"], 0, set(), set()
         start = trade_date - timedelta(days=1)
         candidates: list[AnnouncementCandidate] = []
         failed: list[str] = []
-        if ak is None and self.fetcher == self._fetch_cninfo:
-            return [], ["akshare_import_failed"], len(codes)
+        covered_codes: set[str] = set()
+        fully_failed_codes: set[str] = set()
+        if ak is None and any(isinstance(adapter, CninfoAnnouncementAdapter) for adapter in self.adapters):
+            failed.append("巨潮资讯:akshare_import_failed")
         for code in codes:
-            try:
-                frame = self.fetcher(code, start, trade_date)
-            except Exception as exc:
-                failed.append(f"cninfo:{code}:{exc.__class__.__name__}")
-                continue
-            rows = _frame_to_rows(frame)
-            if not rows:
-                continue
-            for row in rows:
-                candidates.append(AnnouncementCandidate(code, stock_names.get(code, ""), "巨潮资讯", row))
-                self._write_raw_record(cache_dir, code, row)
-        return candidates, failed, len(codes)
+            code_query_succeeded = False
+            code_rows_found = False
+            for adapter in self.adapters:
+                if not adapter.supports(code):
+                    continue
+                if self._uses_default_cninfo_fetcher and ak is None and isinstance(adapter, CninfoAnnouncementAdapter):
+                    continue
+                try:
+                    rows = adapter.fetch(code, start, trade_date)
+                    code_query_succeeded = True
+                except Exception as exc:
+                    failed.append(f"{adapter.source}:{code}:{exc.__class__.__name__}")
+                    continue
+                if not rows:
+                    continue
+                code_rows_found = True
+                covered_codes.add(code)
+                for row in rows:
+                    candidates.append(AnnouncementCandidate(code, stock_names.get(code, ""), adapter.source, row))
+                    self._write_raw_record(cache_dir, code, row, adapter.source)
+                break
+            if code_query_succeeded:
+                covered_codes.add(code)
+            elif not code_rows_found:
+                fully_failed_codes.add(code)
+        return candidates, failed, len(codes), covered_codes, fully_failed_codes
 
     def fetch_official_announcement(self, candidate: AnnouncementCandidate, trade_date: date, as_of_time: datetime) -> dict[str, Any] | None:
         item = self.normalize_announcement(candidate)
@@ -208,7 +350,7 @@ class AnnouncementCollector:
             "source": source,
             "source_type": "official" if is_official else "media",
             "is_official": is_official,
-            "url": _normalize_url(_first_text(raw, ["公告链接", "url", "URL", "adjunctUrl", "announcementUrl"])),
+            "url": _normalize_url(_first_text(raw, ["公告链接", "url", "URL", "adjunctUrl", "announcementUrl"]), source),
             "category": category,
             "summary": summary,
             "confirmed_fact": raw_title,
@@ -267,14 +409,14 @@ class AnnouncementCollector:
     def _fetch_cninfo(self, code: str, start: date, end: date) -> pd.DataFrame:
         return ak.stock_zh_a_disclosure_report_cninfo(symbol=code, start_date=_compact(start), end_date=_compact(end))
 
-    def _write_raw_record(self, cache_dir: Path, code: str, row: dict[str, Any]) -> None:
+    def _write_raw_record(self, cache_dir: Path, code: str, row: dict[str, Any], source: str = "巨潮资讯") -> None:
         cache_dir.mkdir(parents=True, exist_ok=True)
         title = _first_text(row, ["公告标题", "标题", "title", "announcementTitle"]) or ""
         url = _first_text(row, ["公告链接", "url", "URL", "adjunctUrl", "announcementUrl"])
         text = json.dumps(row, ensure_ascii=False, sort_keys=True)
         payload = {
             "retrieved_at": datetime.now(UTC).isoformat(),
-            "source_url": _normalize_url(url),
+            "source_url": _normalize_url(url, source),
             "source_hash": hashlib.sha256(str(url or title).encode("utf-8")).hexdigest(),
             "published_at": _first_text(row, ["公告时间", "公告日期", "发布时间", "published_at", "date"]),
             "content_hash": hashlib.sha256(text.encode("utf-8")).hexdigest(),
@@ -291,6 +433,7 @@ class AnnouncementCollector:
             "covered_stock_count": collection.covered_stock_count,
             "coverage_rate": collection.coverage_rate,
             "failed_sources": collection.failed_sources,
+            "fully_failed_codes": [item.split(":")[1] for item in collection.failed_sources if item.startswith("all_sources:")],
             "official_source_available": collection.official_source_available,
             "quality": collection.quality,
         }
@@ -389,17 +532,89 @@ def _summary(value: str) -> str:
     return re.sub(r"\s+", " ", str(value)).strip()[:300]
 
 
-def _normalize_url(value: str | None) -> str | None:
+def _normalize_url(value: str | None, source: str = "巨潮资讯") -> str | None:
     if not value:
         return None
     text = str(value)
     if text.startswith("http"):
         return text
+    base_by_source = {"上交所": "https://www.sse.com.cn/", "深交所": "https://www.szse.cn/", "北交所": "https://www.bse.cn/"}
+    if source in base_by_source:
+        return urljoin(base_by_source[source], text)
     if text.startswith("/"):
         return f"http://static.cninfo.com.cn{text}"
     if re.match(r"finalpage/\d{4}-\d{2}-\d{2}/", text):
         return f"http://static.cninfo.com.cn/{text}"
     return text
+
+
+def _extract_date(text: str) -> str | None:
+    match = re.search(r"(20\d{2})[-年./](\d{1,2})[-月./](\d{1,2})", text)
+    if not match:
+        return None
+    return f"{int(match.group(1)):04d}-{int(match.group(2)):02d}-{int(match.group(3)):02d}"
+
+
+def _announcement_rows_from_response(response: Any, source: str, base_url: str) -> list[dict[str, Any]]:
+    try:
+        payload = response.json()
+    except Exception:
+        payload = None
+    rows = _extract_payload_rows(payload) if payload is not None else _announcement_rows_from_html(getattr(response, "text", ""), base_url)
+    normalized = []
+    for row in rows:
+        title = _first_text(row, ["公告标题", "标题", "title", "announcementTitle", "announcementTitleNew", "artTitle", "bulletinTitle"])
+        if not title:
+            continue
+        url = _first_text(row, ["公告链接", "url", "URL", "adjunctUrl", "announcementUrl", "attachPath", "filePath", "link"])
+        published = _first_text(row, ["公告时间", "公告日期", "发布时间", "published_at", "date", "publishDate", "publishTime"])
+        normalized.append(
+            {
+                "公告标题": title,
+                "公告时间": published,
+                "公告链接": urljoin(base_url, str(url)) if url else None,
+                "来源": source,
+                **row,
+            }
+        )
+    return normalized
+
+
+def _extract_payload_rows(payload: Any) -> list[dict[str, Any]]:
+    if isinstance(payload, list):
+        return [row for row in payload if isinstance(row, dict)]
+    if not isinstance(payload, dict):
+        return []
+    for key in ("data", "result", "announcements", "bulletinList", "list"):
+        value = payload.get(key)
+        if isinstance(value, list):
+            return [row for row in value if isinstance(row, dict)]
+        if isinstance(value, dict):
+            nested = _extract_payload_rows(value)
+            if nested:
+                return nested
+    page_help = payload.get("pageHelp")
+    if isinstance(page_help, dict):
+        value = page_help.get("data")
+        if isinstance(value, list):
+            return [row for row in value if isinstance(row, dict)]
+    return []
+
+
+def _announcement_rows_from_html(html: str, base_url: str) -> list[dict[str, Any]]:
+    soup = BeautifulSoup(html or "", "lxml")
+    rows = []
+    for link in soup.find_all("a", href=True):
+        title = link.get_text(" ", strip=True)
+        if not title or len(title) < 4:
+            continue
+        parent_text = link.find_parent().get_text(" ", strip=True) if link.find_parent() else title
+        rows.append({"公告标题": title, "公告链接": urljoin(base_url, link["href"]), "公告时间": _extract_date(parent_text), "摘要": parent_text})
+    return rows[:80]
+
+
+def _filter_rows_by_code(rows: list[dict[str, Any]], code: str) -> list[dict[str, Any]]:
+    return [row for row in rows if code in json.dumps(row, ensure_ascii=False)]
 
 
 def _parse_datetime(value: Any, fallback_date: date) -> datetime | None:

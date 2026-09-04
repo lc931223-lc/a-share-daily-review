@@ -4,7 +4,15 @@ from datetime import date, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from src.market_packet.policy_collector import PolicyCollector, build_policy_sections, media_policy_record
+from src.market_packet.policy_collector import (
+    BsePolicyAdapter,
+    CsrcPolicyAdapter,
+    MiitPolicyAdapter,
+    NeaPolicyAdapter,
+    PolicyCollector,
+    build_policy_sections,
+    media_policy_record,
+)
 
 
 TZ = ZoneInfo("Asia/Shanghai")
@@ -74,6 +82,30 @@ def test_policy_partial_source_failure(tmp_path):
     result = collector.collect(date(2026, 9, 2), [{"theme_name": "农业"}], as_of_time=datetime(2026, 9, 2, 15, 30, tzinfo=TZ))
     assert result.failed_sources
     assert result.quality == "PARTIAL"
+
+
+def test_policy_dedicated_adapters_use_official_source_headers():
+    adapters = [MiitPolicyAdapter(), CsrcPolicyAdapter(), BsePolicyAdapter(), NeaPolicyAdapter()]
+    assert [adapter.agency for adapter in adapters] == ["工信部", "证监会", "北交所", "国家能源局"]
+    for adapter in adapters:
+        headers = adapter.headers()
+        assert "User-Agent" in headers
+        assert headers["Referer"].startswith("https://")
+
+
+def test_policy_collector_accepts_dedicated_adapter(tmp_path):
+    adapter = MiitPolicyAdapter()
+
+    def fetcher(source):
+        assert source["agency"] == "工信部"
+        return _html("关于支持智能制造发展的通知")
+
+    collector = PolicyCollector(raw_root=tmp_path, source_fetcher=fetcher, adapters=[adapter])
+    result = collector.collect(date(2026, 9, 2), [{"theme_name": "机器人"}], as_of_time=datetime(2026, 9, 2, 15, 30, tzinfo=TZ))
+
+    assert result.scanned_sources == ["工信部"]
+    assert result.records[0]["agency"] == "工信部"
+    assert result.records[0]["evidence_level"] == "A"
 
 
 def test_policy_sections_group_records(tmp_path):

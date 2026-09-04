@@ -19,15 +19,15 @@ SHANGHAI_TZ = ZoneInfo("Asia/Shanghai")
 OFFICIAL_POLICY_SOURCES = [
     {"agency": "中国政府网", "url": "https://www.gov.cn/zhengce/zuixin/", "policy_level": "national"},
     {"agency": "国家发改委", "url": "https://www.ndrc.gov.cn/xxgk/zcfb/", "policy_level": "ministerial"},
-    {"agency": "工信部", "url": "https://www.miit.gov.cn/zwgk/zcwj/", "policy_level": "ministerial"},
+    {"agency": "工信部", "url": "https://zwgk.miit.gov.cn/", "policy_level": "ministerial"},
     {"agency": "财政部", "url": "https://www.mof.gov.cn/zhengwuxinxi/zhengcefabu/", "policy_level": "ministerial"},
     {"agency": "商务部", "url": "https://www.mofcom.gov.cn/zwgk/zcfb/", "policy_level": "ministerial"},
     {"agency": "人民银行", "url": "https://www.pbc.gov.cn/tiaofasi/144941/144957/index.html", "policy_level": "ministerial"},
     {"agency": "证监会", "url": "https://www.csrc.gov.cn/csrc/c100028/zfxxgk_zdgk.shtml", "policy_level": "ministerial"},
     {"agency": "上交所", "url": "https://www.sse.com.cn/lawandrules/sselawsrules/", "policy_level": "ministerial"},
     {"agency": "深交所", "url": "https://www.szse.cn/lawrules/rule/allrules/index.html", "policy_level": "ministerial"},
-    {"agency": "北交所", "url": "https://www.bse.cn/rule/", "policy_level": "ministerial"},
-    {"agency": "国家能源局", "url": "https://www.nea.gov.cn/2021-12/27/c_1310399847.htm", "policy_level": "ministerial"},
+    {"agency": "北交所", "url": "https://www.bseinfo.net/business/overview.html", "policy_level": "ministerial"},
+    {"agency": "国家能源局", "url": "https://www.nea.gov.cn/nyflfg/", "policy_level": "ministerial"},
     {"agency": "科技部", "url": "https://www.most.gov.cn/xxgk/xinxifenlei/fdzdgknr/fgzc/", "policy_level": "ministerial"},
     {"agency": "国家卫健委", "url": "https://www.nhc.gov.cn/wjw/gfxwj/list.shtml", "policy_level": "ministerial"},
     {"agency": "农业农村部", "url": "https://www.moa.gov.cn/gk/zcfg/", "policy_level": "ministerial"},
@@ -54,6 +54,97 @@ ACTION_KEYWORDS = {
     "金融": "finance",
     "投资": "investment",
 }
+_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/126 Safari/537.36"
+
+
+class OfficialPolicyAdapter:
+    def __init__(self, agency: str, url: str, policy_level: str):
+        self.source = {"agency": agency, "url": url, "policy_level": policy_level}
+
+    @property
+    def agency(self) -> str:
+        return self.source["agency"]
+
+    def headers(self) -> dict[str, str]:
+        return {"User-Agent": _USER_AGENT, "Referer": self.source["url"]}
+
+    def fetch_html(self, client: SafeHttpClient, source_fetcher: Callable[[dict[str, str]], str] | None = None) -> str:
+        if source_fetcher is not None:
+            return source_fetcher(self.source)
+        response = client.get(
+            self.source["url"],
+            headers=self.headers(),
+            source=self.agency,
+            dataset="policy_scan",
+        )
+        response.encoding = response.encoding or "utf-8"
+        return response.text
+
+    def discover(self, html: str) -> list[dict[str, Any]]:
+        return _discover_links_from_html(html, self.source)
+
+
+class MiitPolicyAdapter(OfficialPolicyAdapter):
+    def __init__(self):
+        super().__init__("工信部", "https://zwgk.miit.gov.cn/", "ministerial")
+
+    def headers(self) -> dict[str, str]:
+        return {**super().headers(), "Referer": "https://zwgk.miit.gov.cn/"}
+
+
+class CsrcPolicyAdapter(OfficialPolicyAdapter):
+    def __init__(self):
+        super().__init__("证监会", "https://www.csrc.gov.cn/csrc/c100028/zfxxgk_zdgk.shtml", "ministerial")
+
+    def headers(self) -> dict[str, str]:
+        return {**super().headers(), "Referer": "https://www.csrc.gov.cn/"}
+
+
+class BsePolicyAdapter(OfficialPolicyAdapter):
+    def __init__(self):
+        super().__init__("北交所", "https://www.bseinfo.net/business/overview.html", "ministerial")
+
+    def headers(self) -> dict[str, str]:
+        return {**super().headers(), "Referer": "https://www.bseinfo.net/"}
+
+
+class NeaPolicyAdapter(OfficialPolicyAdapter):
+    def __init__(self):
+        super().__init__("国家能源局", "https://www.nea.gov.cn/nyflfg/", "ministerial")
+
+    def headers(self) -> dict[str, str]:
+        return {**super().headers(), "Referer": "https://www.nea.gov.cn/"}
+
+
+class NhcPolicyAdapter(OfficialPolicyAdapter):
+    def __init__(self):
+        super().__init__("国家卫健委", "https://www.nhc.gov.cn/wjw/gfxwj/list.shtml", "ministerial")
+
+    def headers(self) -> dict[str, str]:
+        return {**super().headers(), "Referer": "https://www.nhc.gov.cn/"}
+
+
+class MohurdPolicyAdapter(OfficialPolicyAdapter):
+    def __init__(self):
+        super().__init__("住建部", "https://www.mohurd.gov.cn/gongkai/zhengce/zhengcefilelib/", "ministerial")
+
+    def headers(self) -> dict[str, str]:
+        return {**super().headers(), "Referer": "https://www.mohurd.gov.cn/"}
+
+
+def _default_policy_adapters() -> list[OfficialPolicyAdapter]:
+    specialized = {
+        "工信部": MiitPolicyAdapter(),
+        "证监会": CsrcPolicyAdapter(),
+        "北交所": BsePolicyAdapter(),
+        "国家能源局": NeaPolicyAdapter(),
+        "国家卫健委": NhcPolicyAdapter(),
+        "住建部": MohurdPolicyAdapter(),
+    }
+    adapters: list[OfficialPolicyAdapter] = []
+    for source in OFFICIAL_POLICY_SOURCES:
+        adapters.append(specialized.get(source["agency"]) or OfficialPolicyAdapter(source["agency"], source["url"], source["policy_level"]))
+    return adapters
 
 
 @dataclass(frozen=True)
@@ -82,11 +173,13 @@ class PolicyCollector:
         refresh: bool = False,
         client: SafeHttpClient | None = None,
         source_fetcher: Callable[[dict[str, str]], str] | None = None,
+        adapters: list[OfficialPolicyAdapter] | None = None,
     ):
         self.raw_root = raw_root
         self.refresh = refresh
         self.client = client or SafeHttpClient(timeout=8, max_retries=1, source="official_policy", dataset="policy_scan")
-        self.source_fetcher = source_fetcher or self._fetch_source_html
+        self.source_fetcher = source_fetcher
+        self.adapters = adapters or _default_policy_adapters()
 
     def collect(self, trade_date: date, themes: list[dict[str, Any]] | None = None, *, as_of_time: datetime | None = None) -> PolicyCollection:
         as_of = as_of_time or datetime.combine(trade_date, time(15, 30), SHANGHAI_TZ)
@@ -103,10 +196,11 @@ class PolicyCollector:
             records.extend(json.loads(seed_path.read_text(encoding="utf-8")))
             scanned.append("local.policy_sources")
         keywords = self._keywords_for_themes(themes or [])
-        for source in OFFICIAL_POLICY_SOURCES:
+        for adapter in self.adapters:
+            source = adapter.source
             try:
-                html = self.source_fetcher(source)
-                candidates = self._discover_from_html(html, source)
+                html = adapter.fetch_html(self.client, self.source_fetcher)
+                candidates = adapter.discover(html)
                 scanned.append(source["agency"])
                 for candidate in candidates:
                     item = self.normalize_policy(candidate, source, trade_date, keywords)
@@ -172,17 +266,7 @@ class PolicyCollector:
         return sorted(grouped.values(), key=lambda row: (row.get("published_at") or "", row["normalized_title"]))
 
     def _discover_from_html(self, html: str, source: dict[str, str]) -> list[dict[str, Any]]:
-        soup = BeautifulSoup(html, "lxml")
-        rows = []
-        for link in soup.find_all("a", href=True):
-            title = link.get_text(" ", strip=True)
-            if not title or len(title) < 4:
-                continue
-            url = urljoin(source["url"], link["href"])
-            nearby = link.find_parent()
-            text = nearby.get_text(" ", strip=True) if nearby else title
-            rows.append({"title": title, "url": url, "summary": text, "published_at": _extract_date(text)})
-        return rows[:80]
+        return _discover_links_from_html(html, source)
 
     def _keywords_for_themes(self, themes: list[dict[str, Any]]) -> list[str]:
         found: list[str] = []
@@ -202,7 +286,7 @@ class PolicyCollector:
         return "other"
 
     def _fetch_source_html(self, source: dict[str, str]) -> str:
-        response = self.client.get(source["url"], source=source["agency"], dataset="policy_scan")
+        response = self.client.get(source["url"], headers={"User-Agent": _USER_AGENT, "Referer": source["url"]}, source=source["agency"], dataset="policy_scan")
         response.encoding = response.encoding or "utf-8"
         return response.text
 
@@ -266,6 +350,20 @@ def media_policy_record(title: str, source: str, url: str | None = None) -> dict
         "confirmed_fact": title,
         "action_type": "other",
     }
+
+
+def _discover_links_from_html(html: str, source: dict[str, str]) -> list[dict[str, Any]]:
+    soup = BeautifulSoup(html, "lxml")
+    rows = []
+    for link in soup.find_all("a", href=True):
+        title = link.get_text(" ", strip=True)
+        if not title or len(title) < 4:
+            continue
+        url = urljoin(source["url"], link["href"])
+        nearby = link.find_parent()
+        text = nearby.get_text(" ", strip=True) if nearby else title
+        rows.append({"title": title, "url": url, "summary": text, "published_at": _extract_date(text)})
+    return rows[:80]
 
 
 def _extract_date(text: str) -> str | None:

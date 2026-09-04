@@ -7,7 +7,12 @@ from zoneinfo import ZoneInfo
 import pandas as pd
 import pytest
 
-from src.market_packet.announcement_collector import AnnouncementCandidate, AnnouncementCollector, build_announcement_sections
+from src.market_packet.announcement_collector import (
+    AnnouncementCandidate,
+    AnnouncementCollector,
+    AnnouncementSourceAdapter,
+    build_announcement_sections,
+)
 
 
 TZ = ZoneInfo("Asia/Shanghai")
@@ -31,6 +36,21 @@ def _datasets():
     return {"limit_up": Dataset([{"代码": "000001", "名称": "平安银行"}])}
 
 
+class StubAnnouncementAdapter(AnnouncementSourceAdapter):
+    def __init__(self, source: str, rows: list[dict] | Exception, supported_prefix: str = ""):
+        self.source = source
+        self.rows = rows
+        self.supported_prefix = supported_prefix
+
+    def supports(self, code: str) -> bool:
+        return code.startswith(self.supported_prefix)
+
+    def fetch(self, code, start, end):
+        if isinstance(self.rows, Exception):
+            raise self.rows
+        return self.rows
+
+
 def test_announcement_normal_return(tmp_path):
     collector = _collector(tmp_path, [{"公告标题": "关于重大合同的公告", "公告时间": "2026-09-02 10:00:00", "公告链接": "finalpage/2026-09-02/a.PDF"}])
     result = collector.collect(date(2026, 9, 2), _datasets(), as_of_time=datetime(2026, 9, 2, 15, 30, tzinfo=TZ))
@@ -45,6 +65,24 @@ def test_announcement_timeout_is_fail_without_fake_empty_values(tmp_path):
     assert result.records == []
     assert result.failed_sources
     assert result.quality == "FAIL"
+
+
+def test_announcement_exchange_adapter_fallback_after_cninfo_failure(tmp_path):
+    collector = AnnouncementCollector(
+        raw_root=tmp_path,
+        adapters=[
+            StubAnnouncementAdapter("巨潮资讯", TimeoutError("slow")),
+            StubAnnouncementAdapter("深交所", [{"公告标题": "关于签署重大合同的公告", "公告时间": "2026-09-02", "公告链接": "/disc/a.pdf"}], "0"),
+        ],
+        max_stocks=1,
+    )
+
+    result = collector.collect(date(2026, 9, 2), _datasets(), as_of_time=datetime(2026, 9, 2, 15, 30, tzinfo=TZ))
+
+    assert result.records[0]["source"] == "深交所"
+    assert result.records[0]["evidence_level"] == "A"
+    assert result.coverage_rate == 1
+    assert result.quality == "PARTIAL"
 
 
 def test_announcement_duplicate_and_multi_source_prefers_official(tmp_path):
