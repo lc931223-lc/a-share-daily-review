@@ -1,5 +1,33 @@
 # Checkpoint
 
+## 2026-09-05 Phase 1.2 Truth Layer Design Gate
+
+Checkpoint: 2026-09-05, design review pending
+
+Task: Repair Market Packet truthfulness, auditability, historical replay, storage layout, and source routing in two separately accepted batches.
+
+Completed:
+
+- Audited the current policy, quality, cache, source-audit, and storage behavior.
+- Converted the approved Scheme B requirements into `docs/superpowers/specs/2026-09-05-market-packet-truth-layer-phase-1.2-design.md`.
+- Fixed the design interpretation that daily policy events default to the requested calendar date up to `as_of_time`; older records are background references only.
+- Self-reviewed the specification for placeholders, contradictions, ambiguity, and scope creep.
+
+Current state: No Phase 1.2 production code has been changed. The brainstorming design gate requires user review before implementation.
+
+Validation: Design document passed placeholder scan and `git diff --check`.
+
+Pending:
+
+1. User reviews and approves the written specification.
+2. Create the first-batch implementation plan.
+3. Implement truthfulness and quality-gate repairs with tests.
+4. Regenerate and audit 2026-09-01 through 2026-09-04 before the first implementation push.
+
+Blockers / risks: The repository is already one local commit ahead of cached `origin/main`; GitHub connectivity previously failed. Final acceptance still requires both implementation-stage pushes and `local HEAD == origin/main`.
+
+Next actions: After approval, begin only the first batch. Do not modify PDF, auction logic, research features, or skills.
+
 ## 2026-09-05 GitHub Safe Sync Mechanism
 
 ### Task
