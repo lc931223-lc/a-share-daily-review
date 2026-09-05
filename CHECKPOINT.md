@@ -1,5 +1,41 @@
 # Checkpoint
 
+## 2026-09-05 Call Auction Phase A1
+
+Checkpoint: source feasibility audit and design complete; no production auction implementation started
+
+Task: Audit at most three 09:15-09:25 call-auction process candidates using 2026-09-04 historical data, then define source routing, schemas, anomaly scoring, previous-review validation, storage, backtest, and implementation order.
+
+Completed:
+
+- Audited KlineShare, TickDB, and eltdx using official documentation and live endpoint reachability checks.
+- Installed eltdx 3.1.3 in the local virtual environment for the audit only; no dependency was added to the project manifest.
+- Tested 20 stocks across large/small cap, previous limit-up/down, main board, ChiNext, STAR, and BSE.
+- eltdx passed 60/60 repeated historical process calls and 60/60 formal 09:25 opening-match calls for 2026-09-04.
+- Warm eltdx process requests had 17-21ms median and 43-60ms p95 per stock; formal opening-match median was 80-84ms.
+- All 20 eltdx formal opening prices matched Tushare `daily.open`; maximum error was 0%.
+- Confirmed the current Tushare token lacks `stk_auction_o` permission; status is optional/unavailable and non-blocking.
+- Confirmed KlineShare and TickDB are reachable but cannot be data-validated without API keys.
+- Documented source scores, field truth rules, checkpoint behavior, anomaly score, theme aggregation, official-review linkage, 100-point score, Parquet/SQLite/DuckDB layout, Auction Packet contracts, backtest, and staged file plan.
+
+Decision:
+
+- Process primary: eltdx.
+- Conditional fallback: KlineShare v2 after credentialed trading-day acceptance.
+- TickDB: observation only, not a process fallback.
+- Immediate open validation: Tencent primary, Eastmoney fallback; Tushare daily performs EOD reconciliation.
+
+Important limits:
+
+- The audit ran on Saturday and used only 2026-09-04 historical data; no current auction data was fabricated.
+- eltdx process points are irregular, not a guaranteed one-second grid. Formal 09:25 results must come from the opening-match record.
+- Process history worked for 2025-09-04 and 2026-03-10 but not 2024-09-04 in the tested stock; retention must be measured, not assumed.
+- A 2026-09-04 auction would require the 2026-09-03 official review, which is absent. The existing 2026-09-04 review was not backdated or used as fake prior input.
+
+Deliverable: `docs/superpowers/specs/2026-09-05-auction-phase-a-design.md`
+
+Next action: Do not start A2 until a real trading-day acceptance run verifies live freshness, reconnects, unmatched-direction semantics, and 100-200 stock checkpoint completion.
+
 ## 2026-09-05 Phase 1.3 High-Value Data Gaps
 
 Checkpoint: 2026-09-05, implementation and Git delivery complete
