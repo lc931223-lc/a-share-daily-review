@@ -1,5 +1,30 @@
 # Checkpoint
 
+## 2026-09-06 Review Intelligence Layer Phase 1
+
+Checkpoint: implementation and 2026-08-01 through 2026-09-04 real-data replay complete
+
+Task: Add an objective intelligence layer for ChatGPT's official daily review without generating final market conclusions or creating a second quote database.
+
+Completed:
+
+- Added market-operability features and component-level scoring with explicit available maximum points.
+- Added objective cycle vectors and startup, main-up, high-volatility, retreat, repair, and no-structure candidate labels.
+- Added 16 style groups with returns, breadth, amount change, limit-up counts, top-stock performance, methodology, sample coverage, and 1/5/20-trading-day changes.
+- Added theme concentration, theme features, official-evidence counts, and theme score changes without substituting limit-up-stock returns for missing whole-theme returns.
+- Added leader, capacity, trend-leader, elasticity, catch-up, and follower candidates, including Inflection and Auction linkage.
+- Added money-effect features, chip-health proxies, catalyst-fatigue candidate handling, a 20-stock Next-Day Plan pool, objective factor counts, prior-hypothesis context, and risk/falsification candidates.
+- Reused the existing Parquet, DuckDB, SQLite, source-batch, source-observation, and quality-gate infrastructure.
+- Replayed 25 real trading days from 2026-08-03 through 2026-09-04. Dates without archived Market Packets use same-day industry aggregation as an explicitly labeled proxy.
+
+Current state: The 2026-09-04 packet uses 5,548 full-market daily rows, 54 Market Packet themes, 5,507 Inflection rows, and 30 Auction rows. It produces 36 role candidates and a 20-stock Next-Day Plan. Quality is honestly `PARTIAL` because whole-theme returns and comparable catalyst-response history are unavailable.
+
+Validation: Both output schemas pass. `compileall` passes, and the complete non-real-data suite passes with `239 passed, 1 deselected`. The generated full and compact packets contain zero prohibited final-judgement phrases. The release secret scan found zero token matches.
+
+Blockers / risks: Full-market market cap and turnover are sampled from the Market Packet core pool. The `value` style is explicitly a non-growth-board proxy because valuation factors are unavailable. Historical theme switching before Market Packet archives is industry-proxy evidence, not a reconstructed concept history.
+
+Next actions: Commit the bounded Phase 1 files, push to `origin/main`, and verify local HEAD equals remote main.
+
 ## 2026-09-05 Inflection Scanner Phase 1
 
 Checkpoint: 2026-09-05, implementation and real-data replay complete

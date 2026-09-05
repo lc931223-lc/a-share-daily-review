@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Review Intelligence Compact Packet",
+  "type": "object",
+  "required": ["meta", "market_operability", "cycle_candidates", "cycle_feature_vector", "style_strength_ranking", "theme_concentration", "top_theme_features", "role_candidates", "money_effect_features", "trend_chip_candidates", "positive_catalyst_fatigue", "next_day_plan_candidates", "objective_factor_features", "previous_hypothesis_validation", "risk_and_falsification_candidates", "historical_changes", "data_quality"],
+  "properties": {
+    "meta": {"type": "object"},
+    "market_operability": {"type": "object"},
+    "cycle_candidates": {"type": "array"},
+    "cycle_feature_vector": {"type": "object"},
+    "style_strength_ranking": {"type": "array"},
+    "theme_concentration": {"type": "object"},
+    "top_theme_features": {"type": "array", "maxItems": 15},
+    "role_candidates": {"type": "array", "maxItems": 40},
+    "money_effect_features": {"type": "object"},
+    "trend_chip_candidates": {"type": "array", "maxItems": 20},
+    "positive_catalyst_fatigue": {"type": "array", "maxItems": 20},
+    "next_day_plan_candidates": {"type": "array", "maxItems": 20},
+    "objective_factor_features": {"type": "object"},
+    "previous_hypothesis_validation": {"type": "object"},
+    "risk_and_falsification_candidates": {"type": "array", "maxItems": 20},
+    "historical_changes": {"type": "object"},
+    "data_quality": {"type": "object"}
+  },
+  "additionalProperties": false
+}

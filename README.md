@@ -169,6 +169,17 @@ python scripts/run_inflection_backtest.py --start 2026-08-01 --end 2026-09-04
 
 `--no-fetch` 只读取本地 FactStore，适合离线重放和测试。完整结果写入 `data/inflection/YYYY-MM-DD.json`，给 ChatGPT 使用的精简结果写入 `data/inflection/YYYY-MM-DD_compact.json`，历史回放结果写入 `data/inflection/backtests/`。
 
+## Review Intelligence
+
+复盘智能数据层复用 Market Packet、Inflection、Auction、公告、政策和 FactStore，为 ChatGPT 正式复盘提供市场可操作度、周期候选、风格、主题集中度、个股角色、赚钱效应、筹码健康和 Next-Day Plan 客观检查项。该层不生成正式市场阶段、主线、仓位或买卖结论。
+
+```powershell
+python scripts/run_review_intelligence.py --date 2026-09-04
+python scripts/run_review_intelligence_replay.py --start 2026-08-01 --end 2026-09-04
+```
+
+输出位于 `data/review_intelligence/`。历史日期缺少 Market Packet 主题快照时，回放使用当日真实日线的行业聚合代理并标记 `PARTIAL`，不会使用当前板块数据回填历史。
+
 ## 测试
 
 离线测试：

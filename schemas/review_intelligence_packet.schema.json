@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Review Intelligence Packet",
+  "type": "object",
+  "required": ["meta", "market_operability", "cycle_feature_vector", "cycle_candidates", "style_strength_ranking", "theme_concentration", "theme_features", "role_candidates", "money_effect_features", "trend_chip_candidates", "positive_catalyst_fatigue", "next_day_plan_candidates", "objective_factor_features", "previous_hypothesis_validation", "risk_and_falsification_candidates", "historical_changes", "data_quality"],
+  "properties": {
+    "meta": {"type": "object", "required": ["schema_version", "trade_date", "as_of", "data_role", "final_judgement_owner"]},
+    "market_operability": {"type": "object", "required": ["market_operability_score", "available_max_score", "feature_components"]},
+    "cycle_feature_vector": {"type": "object"},
+    "cycle_candidates": {"type": "array", "items": {"type": "string"}},
+    "style_strength_ranking": {"type": "array"},
+    "theme_concentration": {"type": "object"},
+    "theme_features": {"type": "array"},
+    "role_candidates": {"type": "array"},
+    "money_effect_features": {"type": "object"},
+    "trend_chip_candidates": {"type": "array"},
+    "positive_catalyst_fatigue": {"type": "array"},
+    "next_day_plan_candidates": {"type": "array", "maxItems": 20},
+    "objective_factor_features": {"type": "object"},
+    "previous_hypothesis_validation": {"type": "object"},
+    "risk_and_falsification_candidates": {"type": "array"},
+    "historical_changes": {"type": "object"},
+    "data_quality": {"type": "object", "required": ["status", "checks", "known_gaps"]}
+  },
+  "additionalProperties": false
+}
