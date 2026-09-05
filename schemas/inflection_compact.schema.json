@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "meta", "top_new_inflections", "top_confirmed_inflections", "trend_confirmed",
+    "main_uptrend_candidates", "distribution_warnings", "trend_broken",
+    "fundamental_catalyst_candidates", "volume_breakout_candidates",
+    "weekly_breakout_candidates", "capacity_confirmed_candidates", "data_quality"
+  ],
+  "properties": {
+    "meta": {"type": "object"},
+    "top_new_inflections": {"type": "array"},
+    "top_confirmed_inflections": {"type": "array"},
+    "trend_confirmed": {"type": "array"},
+    "main_uptrend_candidates": {"type": "array"},
+    "distribution_warnings": {"type": "array"},
+    "trend_broken": {"type": "array"},
+    "fundamental_catalyst_candidates": {"type": "array"},
+    "volume_breakout_candidates": {"type": "array"},
+    "weekly_breakout_candidates": {"type": "array"},
+    "capacity_confirmed_candidates": {"type": "array"},
+    "data_quality": {"type": "object"}
+  },
+  "additionalProperties": false
+}

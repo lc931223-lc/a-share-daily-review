@@ -1,5 +1,30 @@
 # Checkpoint
 
+## 2026-09-05 Inflection Scanner Phase 1
+
+Checkpoint: 2026-09-05, implementation and real-data replay complete
+
+Task: Implement the first trend-inflection scanner using existing fundamental facts, price-volume anomalies, daily/weekly structure, chip proxy variables, auditable scoring, packets, and historical replay without changing Dashboard, PDF, Auction, or trading behavior.
+
+Completed:
+
+- Added full-market historical daily loading through the existing Tushare archive and FactStore, with unit normalization, DuckDB selected-code reads, stock metadata caching, and an explicit requested-date cutoff.
+- Added price-volume, daily K, weekly K, breakout/hold/failure, volatility, pullback, and chip-proxy features.
+- Added the 30/25/15/15/15 score model. Missing components remain `null`; totals are not rescaled. Risk and broken-trend overrides remain explicit.
+- Added basic fundamental scoring from existing target-date announcement facts only. Future announcements are rejected and no new collector was introduced.
+- Added full and compact Inflection Packets, Parquet fact storage, SQLite source observations and quality gates, plus a separate future-outcome backtest.
+- Cached 280 real A-share trading days and ran 2026-09-04 across 5,507 eligible stocks. The packet contains 561 surfaced candidates.
+- Replayed 24 trading days from 2026-08-03 through 2026-09-04 for change history and generated `data/inflection/backtests/2026-08-01_to_2026-09-04.json`.
+- Made Parquet partition writes atomic and added a regression test for interrupted writes.
+
+Current state: The 2026-09-04 scan has 99.64% core-feature coverage and 97.84% complete 250-day history coverage. Turnover features are unavailable because `daily_basic` is unavailable. Five-day and twenty-day score-change coverage remains below the quality threshold because only sampled historical scans exist before 2026-09-03. Capacity/breadth confirmation and positive-catalyst fatigue remain deferred and explicit `null` values. The honest packet status is `PARTIAL`.
+
+Validation: The regenerated full and compact packets pass JSON Schema validation and use the `2026-09-04T15:05:00+08:00` cutoff. Targeted tests pass with 16 tests. `compileall` passes, and the complete non-real-data suite passes with `226 passed, 1 deselected`. The historical replay contains 953 signal records; later horizons have materially smaller samples and are descriptive only.
+
+Blockers / risks: Prices are currently raw rather than adjusted because `adj_factor` is unavailable. The historical replay sample is too small and selection-biased for predictive claims. Existing 2026-09-04 announcement facts contain no qualifying positive fundamental catalyst categories, so the fundamental candidate list is empty rather than fabricated.
+
+Next actions: Run the staged secret scan, commit the bounded Phase 1 files, push to `origin/main`, and confirm local/remote equality.
+
 ## 2026-09-05 Call Auction Phase A1
 
 Checkpoint: source feasibility audit and design complete; no production auction implementation started

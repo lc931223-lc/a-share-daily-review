@@ -17,6 +17,12 @@ data/archive/
 data/reference/
 data/raw/market_packets/
 data/facts/
+data/inflection/*
+!data/inflection/2026-09-04.json
+!data/inflection/2026-09-04_compact.json
+!data/inflection/backtests/
+data/inflection/backtests/*
+!data/inflection/backtests/2026-08-01_to_2026-09-04.json
 data/market_reviews/*/akshare_probe/
 data/market_reviews/*/tushare_probe/
 data/market_reviews/*/engine/

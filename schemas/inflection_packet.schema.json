@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["meta", "scan_summary", "candidates", "data_quality"],
+  "properties": {
+    "meta": {"type": "object", "required": ["schema_version", "trade_date", "as_of", "final_judgement_owner"]},
+    "scan_summary": {"type": "object"},
+    "candidates": {"type": "array", "items": {"type": "object"}},
+    "data_quality": {"type": "object", "required": ["status", "checks"]}
+  },
+  "additionalProperties": false
+}

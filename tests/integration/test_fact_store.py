@@ -36,6 +36,21 @@ def test_fact_store_duckdb_date_query(tmp_path):
     assert str(result.iloc[0]["trade_date"])[:10] == "2026-09-02"
 
 
+def test_fact_store_does_not_leave_partial_parquet_when_write_fails(tmp_path, monkeypatch):
+    store = FactStore(tmp_path / "facts")
+
+    def fail_after_partial_write(self, path, **kwargs):
+        Path(path).write_bytes(b"partial")
+        raise RuntimeError("simulated writer failure")
+
+    monkeypatch.setattr("pandas.DataFrame.to_parquet", fail_after_partial_write)
+    with pytest.raises(RuntimeError, match="simulated writer failure"):
+        store.write_dataset("daily", date(2026, 9, 2), [{"stock_code": "000001", "close": 12.3}])
+
+    assert list((tmp_path / "facts").rglob("*.parquet")) == []
+    assert list((tmp_path / "facts").rglob("*.tmp")) == []
+
+
 def test_packet_fact_partitions_match_sqlite_catalog(tmp_path):
     packet = json.loads((ROOT / "data" / "market_packets" / "2026-09-02.json").read_text(encoding="utf-8"))
     database = tmp_path / "catalog.db"

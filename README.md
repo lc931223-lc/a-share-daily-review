@@ -157,6 +157,18 @@ python generate_daily_pdf.py --date 2026-09-01 --output reports/2026-09-01-a-sha
 
 PDF 只从 `PASSED` 快照生成。没有正式快照时命令退出 `3`，不会生成空 PDF。
 
+## Inflection Scanner
+
+趋势拐点扫描器基于全市场日线事实数据计算基本面变化、量价异常、日 K / 周 K 结构和筹码代理变量。评分只累加实际可用项，不对缺失项补零，也不按可用分数重新缩放到 100 分。
+
+```powershell
+python scripts/run_inflection_scanner.py --date 2026-09-04
+python scripts/run_inflection_scanner.py --date 2026-09-04 --limit 50 --no-fetch
+python scripts/run_inflection_backtest.py --start 2026-08-01 --end 2026-09-04
+```
+
+`--no-fetch` 只读取本地 FactStore，适合离线重放和测试。完整结果写入 `data/inflection/YYYY-MM-DD.json`，给 ChatGPT 使用的精简结果写入 `data/inflection/YYYY-MM-DD_compact.json`，历史回放结果写入 `data/inflection/backtests/`。
+
 ## 测试
 
 离线测试：

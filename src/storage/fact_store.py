@@ -43,7 +43,12 @@ class FactStore:
         path = partition_dir / f"part-{content_hash[:16]}.parquet"
         frame = pd.DataFrame(normalized)
         if not path.exists():
-            frame.to_parquet(path, engine="pyarrow", index=False, compression="zstd")
+            temporary = path.with_suffix(path.suffix + ".tmp")
+            try:
+                frame.to_parquet(temporary, engine="pyarrow", index=False, compression="zstd")
+                temporary.replace(path)
+            finally:
+                temporary.unlink(missing_ok=True)
         schema_json = json.dumps({str(name): str(dtype) for name, dtype in frame.dtypes.items()}, ensure_ascii=False, sort_keys=True)
         return WrittenPartition(dataset, trade_date, path, content_hash, len(frame), schema_json)
 
