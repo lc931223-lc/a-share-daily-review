@@ -19,11 +19,11 @@ Completed:
 
 Current state: The 2026-09-04 scan has 99.64% core-feature coverage and 97.84% complete 250-day history coverage. Turnover features are unavailable because `daily_basic` is unavailable. Five-day and twenty-day score-change coverage remains below the quality threshold because only sampled historical scans exist before 2026-09-03. Capacity/breadth confirmation and positive-catalyst fatigue remain deferred and explicit `null` values. The honest packet status is `PARTIAL`.
 
-Validation: The regenerated full and compact packets pass JSON Schema validation and use the `2026-09-04T15:05:00+08:00` cutoff. Targeted tests pass with 16 tests. `compileall` passes, and the complete non-real-data suite passes with `226 passed, 1 deselected`. The historical replay contains 953 signal records; later horizons have materially smaller samples and are descriptive only.
+Validation: The regenerated full and compact packets pass JSON Schema validation and use the `2026-09-04T15:05:00+08:00` cutoff. Targeted tests pass with 16 tests. `compileall` passes, and the complete non-real-data suite passes with `226 passed, 1 deselected`. The historical replay contains 953 signal records; later horizons have materially smaller samples and are descriptive only. The release secret scan found zero token matches, and the implementation was pushed to `origin/main`.
 
 Blockers / risks: Prices are currently raw rather than adjusted because `adj_factor` is unavailable. The historical replay sample is too small and selection-biased for predictive claims. Existing 2026-09-04 announcement facts contain no qualifying positive fundamental catalyst categories, so the fundamental candidate list is empty rather than fabricated.
 
-Next actions: Run the staged secret scan, commit the bounded Phase 1 files, push to `origin/main`, and confirm local/remote equality.
+Next actions: None for Phase 1. Accumulate full-market daily scans before treating 5-day or 20-day score changes as complete.
 
 ## 2026-09-05 Call Auction Phase A1
 
