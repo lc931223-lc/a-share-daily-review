@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "schema_version": "integrated_correction.1",
+    "prediction_date": "2026-09-04",
+    "status": "WAITING_FOR_REVIEW"
+  },
+  "review_status": "WAITING_FOR_VALIDATION",
+  "registered_error_types": [
+    "DATA_LIMITATION"
+  ],
+  "data_limitations": [
+    "Style and cycle conclusions are not reverse-engineered when no existing point-in-time validator is available."
+  ],
+  "model_change_applied": false,
+  "weight_change_applied": false,
+  "automatic_recommendation_generated": false
+}

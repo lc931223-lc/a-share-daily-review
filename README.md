@@ -205,6 +205,12 @@ uv run python scripts/run_feedback_loop.py --start 2025-01-01 --end 2026-09-04
 `theme_top1_accuracy` 的严格口径是预测第一行业是否恰好成为未来五个交易日等权收益第一；
 `theme_top3_coverage` 是未来第一行业是否进入预测前三，并不等同于预测行业上涨概率。
 
+同一交易日五个既有模块齐备时，系统还会在
+`data/feedback_records/YYYY-MM-DD/` 依次生成 `prediction.json`、`validation.json`、
+`review.json` 和 `correction.json`。预测文件只投影既有结论及候选，并保存每个原始输入的
+路径和 SHA-256；验证窗口不足时保持等待状态。纠错阶段只登记错误，不产生新评分、交易信号，
+也不自动修改模型或权重。
+
 ## 测试
 
 离线测试：

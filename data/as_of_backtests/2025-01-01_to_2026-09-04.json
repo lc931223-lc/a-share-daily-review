@@ -189257,6 +189257,22 @@
       "record_kind": "OBJECTIVE_REVIEW_CONTEXT"
     }
   ],
+  "integrated_feedback_cycles": [
+    {
+      "prediction_date": "2026-09-04",
+      "prediction_status": "SIMULATED_REVIEW_ONLY",
+      "validation_status": "WAITING_FOR_MARKET_DATA",
+      "review_status": "WAITING_FOR_VALIDATION",
+      "correction_status": "WAITING_FOR_REVIEW",
+      "source_review": "integrated_stack:3e6e759309684c21",
+      "paths": {
+        "prediction": "data/feedback_records/2026-09-04/prediction.json",
+        "validation": "data/feedback_records/2026-09-04/validation.json",
+        "review": "data/feedback_records/2026-09-04/review.json",
+        "correction": "data/feedback_records/2026-09-04/correction.json"
+      }
+    }
+  ],
   "persistence": {
     "proxy_predictions": {
       "inserted": 0,
@@ -189266,9 +189282,18 @@
       "inserted": 0,
       "updated": 2
     },
+    "integrated_predictions": {
+      "inserted": 0,
+      "updated": 1
+    },
     "validations": {
       "inserted": 0,
       "updated": 402,
+      "skipped": 0
+    },
+    "integrated_validations": {
+      "inserted": 0,
+      "updated": 0,
       "skipped": 0
     }
   }

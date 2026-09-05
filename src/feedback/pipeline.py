@@ -7,6 +7,13 @@ from pathlib import Path
 from typing import Any
 
 from src.feedback.backtest import ERROR_TYPES, run_as_of_backtest
+from src.feedback.integrated import (
+    build_correction_record,
+    build_integrated_prediction,
+    build_review_record,
+    validate_integrated_prediction,
+    validation_for_storage,
+)
 from src.feedback.tracker import (
     persist_predictions,
     persist_validations,
@@ -35,17 +42,36 @@ class FeedbackPipeline:
         metadata = self.history.stock_metadata(end)
         backtest = run_as_of_backtest(daily, metadata, start=start.isoformat(), end=end.isoformat())
         formal_predictions = self._formal_predictions(start, end)
+        integrated_cycles = self._integrated_cycles(start, end, daily)
+        integrated_predictions = [
+            cycle["prediction"]["normalized_prediction_record"] for cycle in integrated_cycles
+        ]
+        integrated_validations = [
+            stored
+            for cycle in integrated_cycles
+            if (stored := validation_for_storage(cycle["prediction"], cycle["validation"]))
+            is not None
+        ]
         persistence = {
             "proxy_predictions": persist_predictions(self.database_path, backtest["predictions"]),
             "formal_predictions": persist_predictions(self.database_path, formal_predictions),
+            "integrated_predictions": persist_predictions(
+                self.database_path, integrated_predictions
+            ),
         }
         persistence["validations"] = persist_validations(
             self.database_path, backtest["validations"]
+        )
+        persistence["integrated_validations"] = persist_validations(
+            self.database_path, integrated_validations
         )
         inflection_metrics = self._inflection_metrics(start, end)
         backtest["metrics"].update(inflection_metrics)
         backtest["history_status"] = history_status
         backtest["formal_prediction_records"] = formal_predictions
+        backtest["integrated_feedback_cycles"] = [
+            self._cycle_summary(cycle) for cycle in integrated_cycles
+        ]
         backtest["persistence"] = persistence
 
         backtest_dir = self.root / "data" / "as_of_backtests"
@@ -55,7 +81,7 @@ class FeedbackPipeline:
             json.dumps(backtest, ensure_ascii=False, indent=2), encoding="utf-8"
         )
 
-        report = self._report(end, backtest, formal_predictions)
+        report = self._report(end, backtest, formal_predictions, integrated_cycles)
         report_dir = self.root / "research_feedback"
         report_dir.mkdir(parents=True, exist_ok=True)
         report_path = report_dir / f"{end.isoformat()}.json"
@@ -115,9 +141,66 @@ class FeedbackPipeline:
             },
         }
 
+    def _integrated_cycles(self, start: date, end: date, daily) -> list[dict[str, Any]]:
+        date_sets = []
+        for folder in (
+            "market_packets",
+            "review_intelligence",
+            "inflection",
+            "auction_packets",
+            "official_reviews",
+        ):
+            dates = {
+                path.stem
+                for path in (self.root / "data" / folder).glob("????-??-??.json")
+                if start.isoformat() <= path.stem <= end.isoformat()
+            }
+            date_sets.append(dates)
+        common_dates = sorted(set.intersection(*date_sets)) if date_sets else []
+        output = []
+        for value in common_dates:
+            prediction = build_integrated_prediction(self.root, date.fromisoformat(value))
+            validation = validate_integrated_prediction(self.root, prediction, daily)
+            review = build_review_record(self.root, prediction, validation)
+            correction = build_correction_record(self.root, prediction, validation, review)
+            output.append(
+                {
+                    "prediction": prediction,
+                    "validation": validation,
+                    "review": review,
+                    "correction": correction,
+                }
+            )
+        return output
+
+    @staticmethod
+    def _cycle_summary(cycle: dict[str, Any]) -> dict[str, Any]:
+        prediction = cycle["prediction"]
+        validation = cycle["validation"]
+        review = cycle["review"]
+        correction = cycle["correction"]
+        trade_date = prediction["meta"]["prediction_date"]
+        return {
+            "prediction_date": trade_date,
+            "prediction_status": prediction["meta"]["status"],
+            "validation_status": validation["meta"]["status"],
+            "review_status": review["meta"]["status"],
+            "correction_status": correction["meta"]["status"],
+            "source_review": prediction["meta"]["source_review"],
+            "paths": {
+                "prediction": f"data/feedback_records/{trade_date}/prediction.json",
+                "validation": f"data/feedback_records/{trade_date}/validation.json",
+                "review": f"data/feedback_records/{trade_date}/review.json",
+                "correction": f"data/feedback_records/{trade_date}/correction.json",
+            },
+        }
+
     @staticmethod
     def _report(
-        end: date, backtest: dict[str, Any], formal: list[dict[str, Any]]
+        end: date,
+        backtest: dict[str, Any],
+        formal: list[dict[str, Any]],
+        integrated_cycles: list[dict[str, Any]],
     ) -> dict[str, Any]:
         predictions = backtest["predictions"]
         validations = backtest["validations"]
@@ -168,6 +251,15 @@ class FeedbackPipeline:
                 for key in sorted(ERROR_TYPES, key=lambda key: (-errors.get(key, 0), key))
             ],
             "aggregate_metrics": backtest["metrics"],
+            "feedback_loop": {
+                "status": "ACTIVE" if integrated_cycles else "WAITING_FOR_COMPLETE_SOURCE_SET",
+                "sequence": ["PREDICTION", "VALIDATION", "REVIEW", "CORRECTION"],
+                "cycle_count": len(integrated_cycles),
+                "cycles": [FeedbackPipeline._cycle_summary(cycle) for cycle in integrated_cycles],
+                "new_analysis_generated": False,
+                "model_change_applied": False,
+                "weight_change_applied": False,
+            },
             "evaluation_coverage": {
                 "market_review": "PROXY_HISTORY; no real historical official_review series",
                 "review_intelligence": "2026-09-04 objective context frozen; forward validation pending",

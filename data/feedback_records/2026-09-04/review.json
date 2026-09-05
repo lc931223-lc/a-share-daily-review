@@ -1,0 +1,246 @@
+{
+  "meta": {
+    "schema_version": "integrated_feedback_review.1",
+    "prediction_date": "2026-09-04",
+    "status": "WAITING_FOR_VALIDATION"
+  },
+  "correct_parts": [],
+  "incorrect_parts": [],
+  "error_type": [
+    "DATA_LIMITATION"
+  ],
+  "actual_market_state": {
+    "return_1d": null,
+    "return_5d": null,
+    "return_10d": null,
+    "return_20d": null
+  },
+  "actual_theme_result": [
+    {
+      "theme": "算力基础设施",
+      "candidate_codes": [
+        "300308.SZ"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "养殖业",
+      "candidate_codes": [
+        "000735.SZ",
+        "002124.SZ",
+        "600975.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "炼化及贸",
+      "candidate_codes": [
+        "001316.SZ",
+        "600506.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "种植业",
+      "candidate_codes": [
+        "600108.SH",
+        "600354.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "文娱用品",
+      "candidate_codes": [
+        "001222.SZ",
+        "002862.SZ"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "水泥",
+      "candidate_codes": [
+        "600801.SH",
+        "600802.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "酒店餐饮",
+      "candidate_codes": [
+        "000428.SZ",
+        "002186.SZ"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "包装印刷",
+      "candidate_codes": [
+        "920075.BJ"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "饲料",
+      "candidate_codes": [
+        "000702.SZ",
+        "000876.SZ",
+        "001366.SZ",
+        "002100.SZ",
+        "002567.SZ",
+        "603151.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "航运港口",
+      "candidate_codes": [
+        "603162.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "影视院线",
+      "candidate_codes": [
+        "000892.SZ"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "小家电",
+      "candidate_codes": [
+        "002403.SZ"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "动物保健",
+      "candidate_codes": [
+        "002868.SZ"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "食品加工",
+      "candidate_codes": [
+        "002702.SZ"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "医疗服务",
+      "candidate_codes": [
+        "603122.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "渔业",
+      "candidate_codes": [
+        "000798.SZ"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "林业Ⅱ",
+      "candidate_codes": [
+        "000592.SZ"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "调味发酵",
+      "candidate_codes": [
+        "603696.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "非白酒",
+      "candidate_codes": [
+        "600059.SH",
+        "600616.SH",
+        "601579.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "出版",
+      "candidate_codes": [
+        "601949.SH",
+        "605577.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "一般零售",
+      "candidate_codes": [
+        "600865.SH",
+        "601086.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    }
+  ]
+}

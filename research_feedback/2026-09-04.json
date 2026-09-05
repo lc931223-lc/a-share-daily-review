@@ -527,6 +527,35 @@
       "definition": "Probability that a DISTRIBUTION_WARNING candidate reaches a raw-price drawdown of at least 10% within 20 trading days."
     }
   },
+  "feedback_loop": {
+    "status": "ACTIVE",
+    "sequence": [
+      "PREDICTION",
+      "VALIDATION",
+      "REVIEW",
+      "CORRECTION"
+    ],
+    "cycle_count": 1,
+    "cycles": [
+      {
+        "prediction_date": "2026-09-04",
+        "prediction_status": "SIMULATED_REVIEW_ONLY",
+        "validation_status": "WAITING_FOR_MARKET_DATA",
+        "review_status": "WAITING_FOR_VALIDATION",
+        "correction_status": "WAITING_FOR_REVIEW",
+        "source_review": "integrated_stack:3e6e759309684c21",
+        "paths": {
+          "prediction": "data/feedback_records/2026-09-04/prediction.json",
+          "validation": "data/feedback_records/2026-09-04/validation.json",
+          "review": "data/feedback_records/2026-09-04/review.json",
+          "correction": "data/feedback_records/2026-09-04/correction.json"
+        }
+      }
+    ],
+    "new_analysis_generated": false,
+    "model_change_applied": false,
+    "weight_change_applied": false
+  },
   "evaluation_coverage": {
     "market_review": "PROXY_HISTORY; no real historical official_review series",
     "review_intelligence": "2026-09-04 objective context frozen; forward validation pending",
