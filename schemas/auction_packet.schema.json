@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.a-share/schemas/auction_packet.schema.json",
+  "type": "object",
+  "required": ["meta", "watchlist", "market_auction_summary", "stock_auction_summary", "volume_anomaly_candidates", "data_quality", "conflicts"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["schema_version", "trade_date", "mode", "process_primary", "final_judgement_owner"],
+      "properties": {
+        "schema_version": {"const": "auction_packet.1"},
+        "trade_date": {"type": "string", "format": "date"},
+        "mode": {"enum": ["historical", "live"]},
+        "process_primary": {"const": "eltdx"},
+        "final_judgement_owner": {"const": "chatgpt"}
+      }
+    },
+    "watchlist": {"type": "object"},
+    "market_auction_summary": {"type": "object"},
+    "stock_auction_summary": {"type": "array", "items": {"type": "object"}},
+    "volume_anomaly_candidates": {"type": "array", "items": {"type": "object"}},
+    "data_quality": {"type": "object", "required": ["status", "checks"]},
+    "conflicts": {"type": "array", "items": {"type": "object"}}
+  },
+  "additionalProperties": false
+}

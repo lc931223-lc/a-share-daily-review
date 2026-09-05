@@ -1,0 +1,1304 @@
+{
+  "schema_version": "auction_watchlist.1",
+  "trade_date": "2026-09-04",
+  "previous_trade_date": "2026-09-03",
+  "stock_count": 100,
+  "min_size": 100,
+  "max_size": 200,
+  "quality_status": "PASS",
+  "composition": {
+    "objective_pool_fill": 71,
+    "objective_role_candidate": 60,
+    "previous_continuous_board": 9,
+    "previous_limit_up": 44,
+    "risk_announcement": 16,
+    "top_amount": 60
+  },
+  "stocks": [
+    {
+      "ts_code": "000017.SZ",
+      "stock_name": "深中华A",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "risk_announcement"
+      ],
+      "priority": 18
+    },
+    {
+      "ts_code": "000635.SZ",
+      "stock_name": "英 力 特",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "risk_announcement"
+      ],
+      "priority": 18
+    },
+    {
+      "ts_code": "002104.SZ",
+      "stock_name": "恒宝股份",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "objective_role_candidate",
+        "risk_announcement",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 18
+    },
+    {
+      "ts_code": "002328.SZ",
+      "stock_name": "新朋股份",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate",
+        "risk_announcement",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 18
+    },
+    {
+      "ts_code": "002855.SZ",
+      "stock_name": "捷荣技术",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "risk_announcement",
+        "objective_pool_fill"
+      ],
+      "priority": 18
+    },
+    {
+      "ts_code": "003005.SZ",
+      "stock_name": "竞业达",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "risk_announcement",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 18
+    },
+    {
+      "ts_code": "600540.SH",
+      "stock_name": "新赛股份",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "risk_announcement"
+      ],
+      "priority": 18
+    },
+    {
+      "ts_code": "600828.SH",
+      "stock_name": "茂业商业",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "risk_announcement",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 18
+    },
+    {
+      "ts_code": "600830.SH",
+      "stock_name": "香溢融通",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "risk_announcement",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 18
+    },
+    {
+      "ts_code": "600967.SH",
+      "stock_name": "内蒙一机",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "objective_role_candidate",
+        "risk_announcement",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 18
+    },
+    {
+      "ts_code": "601086.SH",
+      "stock_name": "国芳集团",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "previous_continuous_board",
+        "objective_role_candidate",
+        "risk_announcement",
+        "objective_pool_fill"
+      ],
+      "priority": 18
+    },
+    {
+      "ts_code": "601566.SH",
+      "stock_name": "九牧王",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "risk_announcement",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 18
+    },
+    {
+      "ts_code": "603207.SH",
+      "stock_name": "小方制药",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "risk_announcement"
+      ],
+      "priority": 18
+    },
+    {
+      "ts_code": "603221.SH",
+      "stock_name": "爱丽家居",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "risk_announcement"
+      ],
+      "priority": 18
+    },
+    {
+      "ts_code": "605068.SH",
+      "stock_name": "明新旭腾",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate",
+        "risk_announcement"
+      ],
+      "priority": 18
+    },
+    {
+      "ts_code": "605577.SH",
+      "stock_name": "龙版传媒",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "previous_continuous_board",
+        "objective_role_candidate",
+        "risk_announcement",
+        "objective_pool_fill"
+      ],
+      "priority": 18
+    },
+    {
+      "ts_code": "002059.SZ",
+      "stock_name": "云南旅游",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "previous_continuous_board",
+        "objective_role_candidate"
+      ],
+      "priority": 22
+    },
+    {
+      "ts_code": "002297.SZ",
+      "stock_name": "博云新材",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "previous_continuous_board",
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 22
+    },
+    {
+      "ts_code": "002300.SZ",
+      "stock_name": "太阳电缆",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "previous_continuous_board",
+        "objective_role_candidate"
+      ],
+      "priority": 22
+    },
+    {
+      "ts_code": "002708.SZ",
+      "stock_name": "光洋股份",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "previous_continuous_board",
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 22
+    },
+    {
+      "ts_code": "002909.SZ",
+      "stock_name": "集泰股份",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "previous_continuous_board",
+        "objective_role_candidate"
+      ],
+      "priority": 22
+    },
+    {
+      "ts_code": "600657.SH",
+      "stock_name": "信达地产",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "previous_continuous_board",
+        "objective_role_candidate"
+      ],
+      "priority": 22
+    },
+    {
+      "ts_code": "603270.SH",
+      "stock_name": "金帝股份",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "previous_continuous_board",
+        "objective_role_candidate"
+      ],
+      "priority": 22
+    },
+    {
+      "ts_code": "000813.SZ",
+      "stock_name": "德展健康",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "001299.SZ",
+      "stock_name": "美能能源",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "002403.SZ",
+      "stock_name": "爱仕达",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "002631.SZ",
+      "stock_name": "德尔未来",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "previous_limit_up"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "002787.SZ",
+      "stock_name": "华源控股",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "002969.SZ",
+      "stock_name": "嘉美包装",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "002980.SZ",
+      "stock_name": "华盛昌",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "003018.SZ",
+      "stock_name": "金富科技",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "300830.SZ",
+      "stock_name": "金现代",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "301489.SZ",
+      "stock_name": "思泉新材",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "600108.SH",
+      "stock_name": "亚盛集团",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "600185.SH",
+      "stock_name": "珠免集团",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "previous_limit_up"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "600234.SH",
+      "stock_name": "科新发展",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "previous_limit_up"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "600479.SH",
+      "stock_name": "千金药业",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "600610.SH",
+      "stock_name": "中毅达",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate",
+        "objective_pool_fill"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "600611.SH",
+      "stock_name": "大众交通",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "600693.SH",
+      "stock_name": "东百集团",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "600703.SH",
+      "stock_name": "三安光电",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "600865.SH",
+      "stock_name": "百大集团",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "previous_limit_up"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "600969.SH",
+      "stock_name": "郴电国际",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "601212.SH",
+      "stock_name": "白银有色",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "603090.SH",
+      "stock_name": "宏盛股份",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate",
+        "objective_pool_fill"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "603138.SH",
+      "stock_name": "海量数据",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "603150.SH",
+      "stock_name": "万朗磁塑",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "603162.SH",
+      "stock_name": "海通发展",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "603538.SH",
+      "stock_name": "美诺华",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "603728.SH",
+      "stock_name": "鸣志电器",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "603757.SH",
+      "stock_name": "大元泵业",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "603989.SH",
+      "stock_name": "艾华集团",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "605088.SH",
+      "stock_name": "冠盛股份",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "605288.SH",
+      "stock_name": "凯迪股份",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "605398.SH",
+      "stock_name": "新炬网络",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "605580.SH",
+      "stock_name": "恒盛能源",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "previous_limit_up",
+        "objective_role_candidate"
+      ],
+      "priority": 25
+    },
+    {
+      "ts_code": "000560.SZ",
+      "stock_name": "我爱我家",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 30
+    },
+    {
+      "ts_code": "000628.SZ",
+      "stock_name": "高新发展",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 30
+    },
+    {
+      "ts_code": "002201.SZ",
+      "stock_name": "九鼎新材",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 30
+    },
+    {
+      "ts_code": "002418.SZ",
+      "stock_name": "康盛股份",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 30
+    },
+    {
+      "ts_code": "002639.SZ",
+      "stock_name": "雪人集团",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 30
+    },
+    {
+      "ts_code": "002886.SZ",
+      "stock_name": "沃特股份",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 30
+    },
+    {
+      "ts_code": "003040.SZ",
+      "stock_name": "楚天龙",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 30
+    },
+    {
+      "ts_code": "300189.SZ",
+      "stock_name": "神农种业",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 30
+    },
+    {
+      "ts_code": "301086.SZ",
+      "stock_name": "鸿富瀚",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 30
+    },
+    {
+      "ts_code": "600127.SH",
+      "stock_name": "金健米业",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 30
+    },
+    {
+      "ts_code": "600227.SH",
+      "stock_name": "赤天化",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 30
+    },
+    {
+      "ts_code": "600589.SH",
+      "stock_name": "大位科技",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 30
+    },
+    {
+      "ts_code": "600722.SH",
+      "stock_name": "金牛化工",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 30
+    },
+    {
+      "ts_code": "600869.SH",
+      "stock_name": "远东股份",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 30
+    },
+    {
+      "ts_code": "601606.SH",
+      "stock_name": "长城军工",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 30
+    },
+    {
+      "ts_code": "603618.SH",
+      "stock_name": "杭电股份",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 30
+    },
+    {
+      "ts_code": "603778.SH",
+      "stock_name": "国晟科技",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 30
+    },
+    {
+      "ts_code": "605006.SH",
+      "stock_name": "山东玻纤",
+      "themes": [],
+      "roles": [
+        "objective_candidate"
+      ],
+      "reasons": [
+        "objective_role_candidate",
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 30
+    },
+    {
+      "ts_code": "000892.SZ",
+      "stock_name": "欢瑞世纪",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 40
+    },
+    {
+      "ts_code": "001330.SZ",
+      "stock_name": "博纳影业",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 40
+    },
+    {
+      "ts_code": "002031.SZ",
+      "stock_name": "巨轮智能",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 40
+    },
+    {
+      "ts_code": "002196.SZ",
+      "stock_name": "方正电机",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 40
+    },
+    {
+      "ts_code": "002265.SZ",
+      "stock_name": "建设工业",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 40
+    },
+    {
+      "ts_code": "002274.SZ",
+      "stock_name": "华昌化工",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 40
+    },
+    {
+      "ts_code": "002536.SZ",
+      "stock_name": "飞龙股份",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 40
+    },
+    {
+      "ts_code": "002670.SZ",
+      "stock_name": "国盛证券",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 40
+    },
+    {
+      "ts_code": "002851.SZ",
+      "stock_name": "麦格米特",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 40
+    },
+    {
+      "ts_code": "301591.SZ",
+      "stock_name": "肯特股份",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 40
+    },
+    {
+      "ts_code": "600026.SH",
+      "stock_name": "中远海能",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 40
+    },
+    {
+      "ts_code": "600121.SH",
+      "stock_name": "郑州煤电",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 40
+    },
+    {
+      "ts_code": "600172.SH",
+      "stock_name": "黄河旋风",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 40
+    },
+    {
+      "ts_code": "600714.SH",
+      "stock_name": "金瑞矿业",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 40
+    },
+    {
+      "ts_code": "600721.SH",
+      "stock_name": "百花医药",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 40
+    },
+    {
+      "ts_code": "600885.SH",
+      "stock_name": "宏发股份",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 40
+    },
+    {
+      "ts_code": "600892.SH",
+      "stock_name": "大晟文化",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 40
+    },
+    {
+      "ts_code": "600903.SH",
+      "stock_name": "贵州燃气",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 40
+    },
+    {
+      "ts_code": "603067.SH",
+      "stock_name": "振华股份",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 40
+    },
+    {
+      "ts_code": "603978.SH",
+      "stock_name": "深圳新星",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "top_amount",
+        "objective_pool_fill"
+      ],
+      "priority": 40
+    },
+    {
+      "ts_code": "000520.SZ",
+      "stock_name": "凤凰航运",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "objective_pool_fill"
+      ],
+      "priority": 50
+    },
+    {
+      "ts_code": "002796.SZ",
+      "stock_name": "世嘉科技",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "objective_pool_fill"
+      ],
+      "priority": 50
+    },
+    {
+      "ts_code": "600228.SH",
+      "stock_name": "返利科技",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "objective_pool_fill"
+      ],
+      "priority": 50
+    },
+    {
+      "ts_code": "600749.SH",
+      "stock_name": "西藏旅游",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "objective_pool_fill"
+      ],
+      "priority": 50
+    },
+    {
+      "ts_code": "605118.SH",
+      "stock_name": "力鼎光电",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "objective_pool_fill"
+      ],
+      "priority": 50
+    },
+    {
+      "ts_code": "605299.SH",
+      "stock_name": "舒华体育",
+      "themes": [],
+      "roles": [],
+      "reasons": [
+        "objective_pool_fill"
+      ],
+      "priority": 50
+    }
+  ],
+  "sources": {
+    "official_review": null,
+    "market_packet": "data/market_packets/2026-09-03.json",
+    "historical_tracking": null
+  }
+}

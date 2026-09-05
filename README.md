@@ -129,6 +129,18 @@ python collect_daily_review.py --date 2026-09-01 --mode intraday
 - `score_history`
 - `market_packet_log`
 
+## 集合竞价 Phase A2
+
+历史回放、真实交易日采集和盘后 Tushare 开盘价复核分别运行：
+
+```powershell
+python scripts/run_auction_pipeline.py --date 2026-09-04 --mode historical --baseline-days 60
+python scripts/run_auction_pipeline.py --date 2026-09-07 --mode live --baseline-days 60
+python scripts/run_auction_pipeline.py --date 2026-09-07 --mode eod
+```
+
+`live` 必须在 Asia/Shanghai 09:15 前启动，并持续运行到 09:30:05。重点池和最小 Auction Packet 写入 `data/auction_watchlists/`、`data/auction_packets/`；原始过程、checkpoint 和日汇总写入 `data/facts/` Parquet，采集批次、逐股观测、fallback 与质量门记录复用 `data/a_share_review.db` 现有审计表。KlineShare fallback 保持禁用，TickDB 仅作观察源。
+
 ## Dashboard
 
 ```powershell

@@ -1294,6 +1294,15 @@ Regenerated a larger black Songti-style version:
 - Both generated PDFs had SHA-256 `4486a02b1341578df861754011c4c7fd33b7b543cdd802cbb2f686ff2c382f33`.
 - Rendered and visually checked all 11 pages; Source Han Sans CN remained embedded and no layout defects were found.
 
+## 2026-09-05 Auction Phase A2
+
+- Implemented the minimum auction pipeline under `src/auction` with a 100-200 stock watchlist, eltdx process events, nine checkpoints, formal 09:25 match, Parquet facts, existing SQLite audit tables, anomaly fields, realtime open routing, and Tushare EOD reconciliation.
+- Added `scripts/run_auction_pipeline.py` with `historical`, `live`, and `eod` modes. Live mode rejects starts after 09:15 Asia/Shanghai so replay data cannot pass as a realtime session.
+- Real 2026-09-04 historical replay result: 100 stocks, 100% stock completion, 94.78% overall checkpoint coverage, 100% post-09:20 coverage, 100% formal match coverage, and 100/100 archived Tushare open validation with zero price error or conflicts.
+- The 2026-09-04 packet remains `PARTIAL`: the prior 2026-09-03 official review is absent and a historical replay cannot satisfy the required live-session acceptance.
+- Output files: `data/auction_watchlists/auction_watchlist_2026-09-04.json` and `data/auction_packets/2026-09-04.json`.
+- Pending external-time acceptance: start `python scripts/run_auction_pipeline.py --date 2026-09-07 --mode live --baseline-days 60` before 09:15 Asia/Shanghai on the next trading day, then run `--mode eod` after Tushare daily data is available.
+
 ## 2026-09-01 CODEX_HOME Migration Verification
 
 - Migrated the effective Codex home to `D:\CodexData\codex-home` and preserved `C:\Users\愚者\.codex` as an untouched recovery source.

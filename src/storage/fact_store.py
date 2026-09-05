@@ -77,6 +77,8 @@ class FactStore:
         except ImportError as exc:  # pragma: no cover - dependency contract
             raise RuntimeError("duckdb is required for fact-store queries") from exc
         pattern = (self.root / f"dataset={dataset}" / "trade_date=*" / "*.parquet").as_posix()
+        if not list((self.root / f"dataset={dataset}").glob("trade_date=*/*.parquet")):
+            return pd.DataFrame()
         clauses = []
         parameters: list[Any] = [pattern]
         if start:
@@ -86,7 +88,10 @@ class FactStore:
             clauses.append("trade_date <= ?")
             parameters.append(end.isoformat())
         where = f" WHERE {' AND '.join(clauses)}" if clauses else ""
-        return duckdb.execute(f"SELECT * FROM read_parquet(?, hive_partitioning=true){where} ORDER BY trade_date", parameters).fetch_df()
+        return duckdb.execute(
+            f"SELECT * FROM read_parquet(?, hive_partitioning=true, union_by_name=true){where} ORDER BY trade_date",
+            parameters,
+        ).fetch_df()
 
     def _catalog(self, partitions: list[WrittenPartition], database_path: Path | None) -> None:
         engine = create_db_engine(database_path)
