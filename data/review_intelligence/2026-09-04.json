@@ -7142,6 +7142,7 @@
       "stock_name": "爱仕达",
       "theme": "小家电",
       "role_candidate": "LEADER_CANDIDATE",
+      "role_candidate_score": 91.25,
       "why_watch": [
         "主题客观排名第11",
         "角色候选分91.25"
@@ -7158,6 +7159,7 @@
       "stock_name": "华天酒店",
       "theme": "酒店餐饮",
       "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 72.6,
       "why_watch": [
         "主题客观排名第6",
         "角色候选分72.60"
@@ -7174,6 +7176,7 @@
       "stock_name": "新 希 望",
       "theme": "饲料",
       "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 87.85,
       "why_watch": [
         "主题客观排名第8",
         "角色候选分87.85",
@@ -7191,6 +7194,7 @@
       "stock_name": "海欣食品",
       "theme": "食品加工",
       "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 73.2,
       "why_watch": [
         "主题客观排名第13",
         "角色候选分73.20",
@@ -7208,6 +7212,7 @@
       "stock_name": "合富中国",
       "theme": "医疗服务",
       "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 77.9,
       "why_watch": [
         "主题客观排名第14",
         "角色候选分77.90"
@@ -7224,6 +7229,7 @@
       "stock_name": "中水渔业",
       "theme": "渔业",
       "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 72.9,
       "why_watch": [
         "主题客观排名第15",
         "角色候选分72.90"
@@ -7240,6 +7246,7 @@
       "stock_name": "全聚德",
       "theme": "酒店餐饮",
       "role_candidate": "TREND_LEADER_CANDIDATE",
+      "role_candidate_score": 52.0,
       "why_watch": [
         "主题客观排名第6",
         "角色候选分52.00",
@@ -7256,6 +7263,7 @@
       "stock_name": "天康生物",
       "theme": "饲料",
       "role_candidate": "TREND_LEADER_CANDIDATE",
+      "role_candidate_score": 61.6,
       "why_watch": [
         "主题客观排名第8",
         "角色候选分61.60",
@@ -7272,6 +7280,7 @@
       "stock_name": "唐人神",
       "theme": "饲料",
       "role_candidate": "TREND_LEADER_CANDIDATE",
+      "role_candidate_score": 52.8,
       "why_watch": [
         "主题客观排名第8",
         "角色候选分52.80",
@@ -7288,6 +7297,7 @@
       "stock_name": "天邦食品",
       "theme": "养殖业",
       "role_candidate": "ELASTICITY_CANDIDATE",
+      "role_candidate_score": 81.95,
       "why_watch": [
         "主题客观排名第1",
         "角色候选分81.95"
@@ -7303,6 +7313,7 @@
       "stock_name": "罗 牛 山",
       "theme": "养殖业",
       "role_candidate": "ELASTICITY_CANDIDATE",
+      "role_candidate_score": 70.63,
       "why_watch": [
         "主题客观排名第1",
         "角色候选分70.63"
@@ -7318,6 +7329,7 @@
       "stock_name": "新五丰",
       "theme": "养殖业",
       "role_candidate": "ELASTICITY_CANDIDATE",
+      "role_candidate_score": 67.11,
       "why_watch": [
         "主题客观排名第1",
         "角色候选分67.11",
@@ -7334,6 +7346,7 @@
       "stock_name": "统一股份",
       "theme": "炼化及贸",
       "role_candidate": "ELASTICITY_CANDIDATE",
+      "role_candidate_score": 80.55,
       "why_watch": [
         "主题客观排名第2",
         "角色候选分80.55"
@@ -7349,6 +7362,7 @@
       "stock_name": "润贝航科",
       "theme": "炼化及贸",
       "role_candidate": "ELASTICITY_CANDIDATE",
+      "role_candidate_score": 67.79,
       "why_watch": [
         "主题客观排名第2",
         "角色候选分67.79"
@@ -7364,6 +7378,7 @@
       "stock_name": "敦煌种业",
       "theme": "种植业",
       "role_candidate": "ELASTICITY_CANDIDATE",
+      "role_candidate_score": 100.0,
       "why_watch": [
         "主题客观排名第3",
         "角色候选分100.00"
@@ -7379,6 +7394,7 @@
       "stock_name": "亚盛集团",
       "theme": "种植业",
       "role_candidate": "ELASTICITY_CANDIDATE",
+      "role_candidate_score": 88.04,
       "why_watch": [
         "主题客观排名第3",
         "角色候选分88.04"
@@ -7394,6 +7410,7 @@
       "stock_name": "源飞宠物",
       "theme": "文娱用品",
       "role_candidate": "ELASTICITY_CANDIDATE",
+      "role_candidate_score": 75.22,
       "why_watch": [
         "主题客观排名第4",
         "角色候选分75.22",
@@ -7410,6 +7427,7 @@
       "stock_name": "实丰文化",
       "theme": "文娱用品",
       "role_candidate": "ELASTICITY_CANDIDATE",
+      "role_candidate_score": 73.97,
       "why_watch": [
         "主题客观排名第4",
         "角色候选分73.97"
@@ -7425,6 +7443,7 @@
       "stock_name": "福建水泥",
       "theme": "水泥",
       "role_candidate": "ELASTICITY_CANDIDATE",
+      "role_candidate_score": 67.63,
       "why_watch": [
         "主题客观排名第5",
         "角色候选分67.63",
@@ -7441,6 +7460,7 @@
       "stock_name": "柏星龙",
       "theme": "包装印刷",
       "role_candidate": "ELASTICITY_CANDIDATE",
+      "role_candidate_score": 100.0,
       "why_watch": [
         "主题客观排名第7",
         "角色候选分100.00"

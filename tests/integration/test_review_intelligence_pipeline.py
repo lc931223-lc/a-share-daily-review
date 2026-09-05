@@ -47,4 +47,5 @@ def test_pipeline_outputs_compact_contract_without_final_judgement(tmp_path):
     assert required <= compact.keys()
     assert "final_market_stage" not in json.dumps(compact)
     assert len(compact["next_day_plan_candidates"]) <= 20
+    assert all("role_candidate_score" in row for row in compact["next_day_plan_candidates"])
     assert compact["previous_hypothesis_validation"]["prior_official_review"]["status"] == "UNAVAILABLE"

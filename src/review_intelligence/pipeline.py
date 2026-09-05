@@ -226,7 +226,7 @@ def _next_day_plan(roles, chips, themes):
             checks.append("竞价成交额异常分是否继续高于历史基线")
         output.append({
             "ts_code": row["ts_code"], "stock_name": row.get("stock_name"), "theme": row["theme"],
-            "role_candidate": row["role_candidate"],
+            "role_candidate": row["role_candidate"], "role_candidate_score": row["role_candidate_score"],
             "why_watch": [f"主题客观排名第{theme_rank.get(row['theme'], 99) + 1}", f"角色候选分{row['role_candidate_score']:.2f}"] + ([f"筹码健康特征分{chip_map[row['ts_code']]['chip_health_feature_score']}"] if row["ts_code"] in chip_map and chip_map[row["ts_code"]].get("chip_health_feature_score") is not None else []),
             "next_day_objective_checks": checks, "candidate_only": True,
         })
