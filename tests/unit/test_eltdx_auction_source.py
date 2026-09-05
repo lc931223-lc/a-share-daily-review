@@ -69,3 +69,17 @@ def test_eltdx_isolates_single_stock_failure():
     assert result.stats["failure_count"] == 1
     assert result.stats["reconnect_count"] >= 1
     assert result.failures[0]["ts_code"] == "000002.SZ"
+
+
+def test_eltdx_records_full_source_failure_without_fabricating_rows():
+    source = EltdxAuctionSource(client_factory=lambda: FakeClient(fail_code="000001"), max_reconnects=1)
+    result = source.collect_historical(
+        [{"ts_code": "000001.SZ", "stock_name": "A"}],
+        date(2026, 9, 4),
+    )
+
+    assert result.process_rows == []
+    assert result.formal_rows == []
+    assert result.stats["success_count"] == 0
+    assert result.stats["failure_count"] == 1
+    assert result.failures[0]["ts_code"] == "000001.SZ"

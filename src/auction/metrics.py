@@ -3,6 +3,8 @@ from __future__ import annotations
 import statistics
 from typing import Any
 
+from src.auction.analysis import anomaly_labels
+
 
 def build_daily_summary(
     checkpoint_rows: list[dict[str, Any]],
@@ -42,7 +44,7 @@ def build_daily_summary(
     coverage = len(available) / len(components)
     gap_pct = ((auction_price / previous_close) - 1) * 100 if auction_price is not None and previous_close else None
     quality = "PASS" if coverage == 1.0 and count >= 60 else "PARTIAL"
-    return {
+    result = {
         "trade_date": final.get("trade_date") if final else (checkpoint_rows[0].get("trade_date") if checkpoint_rows else None),
         "ts_code": final.get("ts_code") if final else (checkpoint_rows[0].get("ts_code") if checkpoint_rows else None),
         "stock_name": final.get("stock_name") if final else (checkpoint_rows[0].get("stock_name") if checkpoint_rows else None),
@@ -76,6 +78,8 @@ def build_daily_summary(
         "conflict_status": "not_validated",
         "schema_version": "auction_daily_summary.1",
     }
+    result["anomaly_labels"] = anomaly_labels(result)
+    return result
 
 
 def _number(row: dict[str, Any] | None, key: str) -> float | None:

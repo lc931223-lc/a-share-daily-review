@@ -1,5 +1,6 @@
 from datetime import date
 import json
+from pathlib import Path
 
 from src.auction.pipeline import AuctionPipeline
 
@@ -16,7 +17,14 @@ def test_eod_reconciliation_preserves_realtime_validation_and_writes_tushare_res
             "open_price_validation_source": "tencent_realtime", "open_price_error_pct": 0.0,
             "conflict_status": "none", "quality_status": "PARTIAL",
         }],
-        "volume_anomaly_candidates": [], "data_quality": {"status": "PARTIAL", "checks": []}, "conflicts": [],
+        "volume_anomaly_candidates": [],
+        "objective_analysis": {
+            "market_auction_environment": {}, "previous_mainline_validation": {},
+            "sector_auction_ranking": [], "stock_auction_ranking": [],
+            "weak_to_strong_candidates": [], "strong_to_weak_candidates": [],
+            "transition_status": "UNAVAILABLE", "validation_conditions_0930_1000": [],
+        },
+        "data_quality": {"status": "PARTIAL", "checks": []}, "conflicts": [],
     }
     path = packet_dir / f"{trade_date.isoformat()}.json"
     path.write_text(json.dumps(packet), encoding="utf-8")
@@ -26,3 +34,5 @@ def test_eod_reconciliation_preserves_realtime_validation_and_writes_tushare_res
     assert summary["realtime_open_validation_source"] == "tencent_realtime"
     assert summary["eod_open_price_error_pct"] == 0.0
     assert result["status"] == "PASS"
+    assert Path(result["compact_path"]).exists()
+    assert result["compact_packet"]["data_quality"]["conflict_count"] == 0

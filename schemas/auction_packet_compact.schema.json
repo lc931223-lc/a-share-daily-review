@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.a-share/schemas/auction_packet_compact.schema.json",
+  "type": "object",
+  "required": [
+    "meta",
+    "market_auction_environment",
+    "previous_mainline_validation",
+    "sector_auction_ranking",
+    "stock_auction_ranking",
+    "volume_anomalies",
+    "weak_to_strong_candidates",
+    "strong_to_weak_candidates",
+    "transition_status",
+    "validation_conditions_0930_1000",
+    "data_quality"
+  ],
+  "properties": {
+    "meta": {"type": "object"},
+    "market_auction_environment": {"type": "object"},
+    "previous_mainline_validation": {"type": "object"},
+    "sector_auction_ranking": {"type": "array"},
+    "stock_auction_ranking": {"type": "array"},
+    "volume_anomalies": {"type": "array"},
+    "weak_to_strong_candidates": {"type": "array"},
+    "strong_to_weak_candidates": {"type": "array"},
+    "transition_status": {"enum": ["AVAILABLE", "UNAVAILABLE"]},
+    "validation_conditions_0930_1000": {"type": "array"},
+    "data_quality": {"type": "object"}
+  },
+  "additionalProperties": false
+}

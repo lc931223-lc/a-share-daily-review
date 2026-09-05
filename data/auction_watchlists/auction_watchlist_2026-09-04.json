@@ -38,7 +38,9 @@
     {
       "ts_code": "002104.SZ",
       "stock_name": "恒宝股份",
-      "themes": [],
+      "themes": [
+        "通信设备"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -53,7 +55,9 @@
     {
       "ts_code": "002328.SZ",
       "stock_name": "新朋股份",
-      "themes": [],
+      "themes": [
+        "汽车零部"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -69,7 +73,9 @@
     {
       "ts_code": "002855.SZ",
       "stock_name": "捷荣技术",
-      "themes": [],
+      "themes": [
+        "消费电子"
+      ],
       "roles": [],
       "reasons": [
         "risk_announcement",
@@ -80,7 +86,9 @@
     {
       "ts_code": "003005.SZ",
       "stock_name": "竞业达",
-      "themes": [],
+      "themes": [
+        "IT服务Ⅱ"
+      ],
       "roles": [],
       "reasons": [
         "risk_announcement",
@@ -102,7 +110,9 @@
     {
       "ts_code": "600828.SH",
       "stock_name": "茂业商业",
-      "themes": [],
+      "themes": [
+        "一般零售"
+      ],
       "roles": [],
       "reasons": [
         "risk_announcement",
@@ -114,7 +124,9 @@
     {
       "ts_code": "600830.SH",
       "stock_name": "香溢融通",
-      "themes": [],
+      "themes": [
+        "多元金融"
+      ],
       "roles": [],
       "reasons": [
         "risk_announcement",
@@ -126,7 +138,9 @@
     {
       "ts_code": "600967.SH",
       "stock_name": "内蒙一机",
-      "themes": [],
+      "themes": [
+        "地面兵装"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -141,7 +155,9 @@
     {
       "ts_code": "601086.SH",
       "stock_name": "国芳集团",
-      "themes": [],
+      "themes": [
+        "一般零售"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -157,7 +173,9 @@
     {
       "ts_code": "601566.SH",
       "stock_name": "九牧王",
-      "themes": [],
+      "themes": [
+        "服装家纺"
+      ],
       "roles": [],
       "reasons": [
         "risk_announcement",
@@ -203,7 +221,9 @@
     {
       "ts_code": "605577.SH",
       "stock_name": "龙版传媒",
-      "themes": [],
+      "themes": [
+        "出版"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -233,7 +253,9 @@
     {
       "ts_code": "002297.SZ",
       "stock_name": "博云新材",
-      "themes": [],
+      "themes": [
+        "航空装备"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -263,7 +285,9 @@
     {
       "ts_code": "002708.SZ",
       "stock_name": "光洋股份",
-      "themes": [],
+      "themes": [
+        "汽车零部"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -396,7 +420,9 @@
     {
       "ts_code": "002980.SZ",
       "stock_name": "华盛昌",
-      "themes": [],
+      "themes": [
+        "电网设备"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -411,7 +437,9 @@
     {
       "ts_code": "003018.SZ",
       "stock_name": "金富科技",
-      "themes": [],
+      "themes": [
+        "包装印刷"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -439,7 +467,9 @@
     {
       "ts_code": "301489.SZ",
       "stock_name": "思泉新材",
-      "themes": [],
+      "themes": [
+        "电子化学"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -454,7 +484,9 @@
     {
       "ts_code": "600108.SH",
       "stock_name": "亚盛集团",
-      "themes": [],
+      "themes": [
+        "种植业"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -489,7 +521,9 @@
     {
       "ts_code": "600479.SH",
       "stock_name": "千金药业",
-      "themes": [],
+      "themes": [
+        "中药Ⅱ"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -504,7 +538,9 @@
     {
       "ts_code": "600610.SH",
       "stock_name": "中毅达",
-      "themes": [],
+      "themes": [
+        "化学原料"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -518,7 +554,9 @@
     {
       "ts_code": "600611.SH",
       "stock_name": "大众交通",
-      "themes": [],
+      "themes": [
+        "铁路公路"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -533,7 +571,9 @@
     {
       "ts_code": "600693.SH",
       "stock_name": "东百集团",
-      "themes": [],
+      "themes": [
+        "一般零售"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -548,7 +588,9 @@
     {
       "ts_code": "600703.SH",
       "stock_name": "三安光电",
-      "themes": [],
+      "themes": [
+        "光学光电"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -586,7 +628,9 @@
     {
       "ts_code": "601212.SH",
       "stock_name": "白银有色",
-      "themes": [],
+      "themes": [
+        "工业金属"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -601,7 +645,9 @@
     {
       "ts_code": "603090.SH",
       "stock_name": "宏盛股份",
-      "themes": [],
+      "themes": [
+        "通用设备"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -641,7 +687,9 @@
     {
       "ts_code": "603162.SH",
       "stock_name": "海通发展",
-      "themes": [],
+      "themes": [
+        "航运港口"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -656,7 +704,9 @@
     {
       "ts_code": "603538.SH",
       "stock_name": "美诺华",
-      "themes": [],
+      "themes": [
+        "化学制药"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -684,7 +734,9 @@
     {
       "ts_code": "603757.SH",
       "stock_name": "大元泵业",
-      "themes": [],
+      "themes": [
+        "通用设备"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -699,7 +751,9 @@
     {
       "ts_code": "603989.SH",
       "stock_name": "艾华集团",
-      "themes": [],
+      "themes": [
+        "元件"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -766,7 +820,9 @@
     {
       "ts_code": "000560.SZ",
       "stock_name": "我爱我家",
-      "themes": [],
+      "themes": [
+        "房地产服"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -780,7 +836,9 @@
     {
       "ts_code": "000628.SZ",
       "stock_name": "高新发展",
-      "themes": [],
+      "themes": [
+        "房屋建设"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -794,7 +852,9 @@
     {
       "ts_code": "002201.SZ",
       "stock_name": "九鼎新材",
-      "themes": [],
+      "themes": [
+        "玻璃玻纤"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -822,7 +882,9 @@
     {
       "ts_code": "002639.SZ",
       "stock_name": "雪人集团",
-      "themes": [],
+      "themes": [
+        "通用设备"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -836,7 +898,9 @@
     {
       "ts_code": "002886.SZ",
       "stock_name": "沃特股份",
-      "themes": [],
+      "themes": [
+        "塑料"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -906,7 +970,9 @@
     {
       "ts_code": "600227.SH",
       "stock_name": "赤天化",
-      "themes": [],
+      "themes": [
+        "农化制品"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -920,7 +986,9 @@
     {
       "ts_code": "600589.SH",
       "stock_name": "大位科技",
-      "themes": [],
+      "themes": [
+        "IT服务Ⅱ"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -934,7 +1002,9 @@
     {
       "ts_code": "600722.SH",
       "stock_name": "金牛化工",
-      "themes": [],
+      "themes": [
+        "化学原料"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -948,7 +1018,9 @@
     {
       "ts_code": "600869.SH",
       "stock_name": "远东股份",
-      "themes": [],
+      "themes": [
+        "电网设备"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -962,7 +1034,9 @@
     {
       "ts_code": "601606.SH",
       "stock_name": "长城军工",
-      "themes": [],
+      "themes": [
+        "地面兵装"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -976,7 +1050,9 @@
     {
       "ts_code": "603618.SH",
       "stock_name": "杭电股份",
-      "themes": [],
+      "themes": [
+        "电网设备"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -990,7 +1066,9 @@
     {
       "ts_code": "603778.SH",
       "stock_name": "国晟科技",
-      "themes": [],
+      "themes": [
+        "光伏设备"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -1004,7 +1082,9 @@
     {
       "ts_code": "605006.SH",
       "stock_name": "山东玻纤",
-      "themes": [],
+      "themes": [
+        "玻璃玻纤"
+      ],
       "roles": [
         "objective_candidate"
       ],
@@ -1018,7 +1098,9 @@
     {
       "ts_code": "000892.SZ",
       "stock_name": "欢瑞世纪",
-      "themes": [],
+      "themes": [
+        "影视院线"
+      ],
       "roles": [],
       "reasons": [
         "top_amount",
@@ -1029,7 +1111,9 @@
     {
       "ts_code": "001330.SZ",
       "stock_name": "博纳影业",
-      "themes": [],
+      "themes": [
+        "影视院线"
+      ],
       "roles": [],
       "reasons": [
         "top_amount",
@@ -1040,7 +1124,9 @@
     {
       "ts_code": "002031.SZ",
       "stock_name": "巨轮智能",
-      "themes": [],
+      "themes": [
+        "专用设备"
+      ],
       "roles": [],
       "reasons": [
         "top_amount",
@@ -1051,7 +1137,9 @@
     {
       "ts_code": "002196.SZ",
       "stock_name": "方正电机",
-      "themes": [],
+      "themes": [
+        "电机Ⅱ"
+      ],
       "roles": [],
       "reasons": [
         "top_amount",
@@ -1062,7 +1150,9 @@
     {
       "ts_code": "002265.SZ",
       "stock_name": "建设工业",
-      "themes": [],
+      "themes": [
+        "汽车零部"
+      ],
       "roles": [],
       "reasons": [
         "top_amount",
@@ -1073,7 +1163,9 @@
     {
       "ts_code": "002274.SZ",
       "stock_name": "华昌化工",
-      "themes": [],
+      "themes": [
+        "化学原料"
+      ],
       "roles": [],
       "reasons": [
         "top_amount",
@@ -1084,7 +1176,9 @@
     {
       "ts_code": "002536.SZ",
       "stock_name": "飞龙股份",
-      "themes": [],
+      "themes": [
+        "汽车零部"
+      ],
       "roles": [],
       "reasons": [
         "top_amount",
@@ -1095,7 +1189,9 @@
     {
       "ts_code": "002670.SZ",
       "stock_name": "国盛证券",
-      "themes": [],
+      "themes": [
+        "证券Ⅱ"
+      ],
       "roles": [],
       "reasons": [
         "top_amount",
@@ -1106,7 +1202,9 @@
     {
       "ts_code": "002851.SZ",
       "stock_name": "麦格米特",
-      "themes": [],
+      "themes": [
+        "其他电源"
+      ],
       "roles": [],
       "reasons": [
         "top_amount",
@@ -1128,7 +1226,9 @@
     {
       "ts_code": "600026.SH",
       "stock_name": "中远海能",
-      "themes": [],
+      "themes": [
+        "航运港口"
+      ],
       "roles": [],
       "reasons": [
         "top_amount",
@@ -1139,7 +1239,9 @@
     {
       "ts_code": "600121.SH",
       "stock_name": "郑州煤电",
-      "themes": [],
+      "themes": [
+        "煤炭开采"
+      ],
       "roles": [],
       "reasons": [
         "top_amount",
@@ -1150,7 +1252,9 @@
     {
       "ts_code": "600172.SH",
       "stock_name": "黄河旋风",
-      "themes": [],
+      "themes": [
+        "通用设备"
+      ],
       "roles": [],
       "reasons": [
         "top_amount",
@@ -1161,7 +1265,9 @@
     {
       "ts_code": "600714.SH",
       "stock_name": "金瑞矿业",
-      "themes": [],
+      "themes": [
+        "化学原料"
+      ],
       "roles": [],
       "reasons": [
         "top_amount",
@@ -1183,7 +1289,9 @@
     {
       "ts_code": "600885.SH",
       "stock_name": "宏发股份",
-      "themes": [],
+      "themes": [
+        "电网设备"
+      ],
       "roles": [],
       "reasons": [
         "top_amount",
@@ -1194,7 +1302,9 @@
     {
       "ts_code": "600892.SH",
       "stock_name": "大晟文化",
-      "themes": [],
+      "themes": [
+        "游戏Ⅱ"
+      ],
       "roles": [],
       "reasons": [
         "top_amount",
@@ -1205,7 +1315,9 @@
     {
       "ts_code": "600903.SH",
       "stock_name": "贵州燃气",
-      "themes": [],
+      "themes": [
+        "燃气Ⅱ"
+      ],
       "roles": [],
       "reasons": [
         "top_amount",
@@ -1216,7 +1328,9 @@
     {
       "ts_code": "603067.SH",
       "stock_name": "振华股份",
-      "themes": [],
+      "themes": [
+        "化学原料"
+      ],
       "roles": [],
       "reasons": [
         "top_amount",
@@ -1227,7 +1341,9 @@
     {
       "ts_code": "603978.SH",
       "stock_name": "深圳新星",
-      "themes": [],
+      "themes": [
+        "金属新材"
+      ],
       "roles": [],
       "reasons": [
         "top_amount",
@@ -1238,7 +1354,9 @@
     {
       "ts_code": "000520.SZ",
       "stock_name": "凤凰航运",
-      "themes": [],
+      "themes": [
+        "航运港口"
+      ],
       "roles": [],
       "reasons": [
         "objective_pool_fill"
@@ -1248,7 +1366,9 @@
     {
       "ts_code": "002796.SZ",
       "stock_name": "世嘉科技",
-      "themes": [],
+      "themes": [
+        "通信设备"
+      ],
       "roles": [],
       "reasons": [
         "objective_pool_fill"
@@ -1258,7 +1378,9 @@
     {
       "ts_code": "600228.SH",
       "stock_name": "返利科技",
-      "themes": [],
+      "themes": [
+        "数字媒体"
+      ],
       "roles": [],
       "reasons": [
         "objective_pool_fill"
@@ -1268,7 +1390,9 @@
     {
       "ts_code": "600749.SH",
       "stock_name": "西藏旅游",
-      "themes": [],
+      "themes": [
+        "旅游及景"
+      ],
       "roles": [],
       "reasons": [
         "objective_pool_fill"
@@ -1278,7 +1402,9 @@
     {
       "ts_code": "605118.SH",
       "stock_name": "力鼎光电",
-      "themes": [],
+      "themes": [
+        "计算机设"
+      ],
       "roles": [],
       "reasons": [
         "objective_pool_fill"
@@ -1288,7 +1414,9 @@
     {
       "ts_code": "605299.SH",
       "stock_name": "舒华体育",
-      "themes": [],
+      "themes": [
+        "文娱用品"
+      ],
       "roles": [],
       "reasons": [
         "objective_pool_fill"

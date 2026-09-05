@@ -7,6 +7,7 @@ from typing import Any, Callable
 
 from jsonschema import Draft202012Validator
 
+from src.auction.analysis import build_compact_packet, build_objective_analysis
 from src.auction.checkpoints import CHECKPOINTS, map_checkpoints
 from src.auction.eltdx_source import AuctionCollection, EltdxAuctionSource
 from src.auction.metrics import build_daily_summary
@@ -139,7 +140,15 @@ class AuctionPipeline:
             packet_path=packet_path,
         )
         packet_path.write_text(json.dumps(packet, ensure_ascii=False, indent=2), encoding="utf-8")
-        return {"packet": packet, "path": str(packet_path), "status": eod_status}
+        compact = build_compact_packet(packet)
+        compact_path = packet_path.with_name(f"{trade_date.isoformat()}_compact.json")
+        compact_path.write_text(json.dumps(compact, ensure_ascii=False, indent=2), encoding="utf-8")
+        compact_schema = json.loads((PROJECT_ROOT / "schemas" / "auction_packet_compact.schema.json").read_text(encoding="utf-8"))
+        Draft202012Validator(compact_schema).validate(compact)
+        return {
+            "packet": packet, "compact_packet": compact,
+            "path": str(packet_path), "compact_path": str(compact_path), "status": eod_status,
+        }
 
     def _complete_collection(
         self,
@@ -170,6 +179,10 @@ class AuctionPipeline:
 
         previous_packet = _read_json(
             _resolve_source_path(self.root, watchlist["sources"].get("market_packet")),
+            {},
+        )
+        previous_review = _read_json(
+            _resolve_source_path(self.root, watchlist["sources"].get("official_review")),
             {},
         )
         previous_by_code = {
@@ -211,6 +224,7 @@ class AuctionPipeline:
         packet = _build_packet(
             trade_date, watchlist, summaries, collection, metrics, checks, conflicts,
             status=status, baseline_result=baseline_result, mode="live" if live_session else "historical",
+            previous_review=previous_review,
         )
         packet_dir = self.root / "data" / "auction_packets"
         packet_dir.mkdir(parents=True, exist_ok=True)
@@ -218,10 +232,16 @@ class AuctionPipeline:
         packet_path.write_text(json.dumps(packet, ensure_ascii=False, indent=2), encoding="utf-8")
         schema = json.loads((PROJECT_ROOT / "schemas" / "auction_packet.schema.json").read_text(encoding="utf-8"))
         Draft202012Validator(schema).validate(packet)
+        compact = build_compact_packet(packet)
+        compact_path = packet_dir / f"{trade_date.isoformat()}_compact.json"
+        compact_path.write_text(json.dumps(compact, ensure_ascii=False, indent=2), encoding="utf-8")
+        compact_schema = json.loads((PROJECT_ROOT / "schemas" / "auction_packet_compact.schema.json").read_text(encoding="utf-8"))
+        Draft202012Validator(compact_schema).validate(compact)
         return {
             "packet": packet,
+            "compact_packet": compact,
             "partitions": written,
-            "paths": {"watchlist": watchlist["output_path"], "packet": str(packet_path)},
+            "paths": {"watchlist": watchlist["output_path"], "packet": str(packet_path), "compact_packet": str(compact_path)},
         }
 
     def _backfill_formal_baselines(self, stocks: list[dict[str, Any]], dates: list[date]) -> dict[str, Any]:
@@ -394,6 +414,7 @@ def _build_packet(
     trade_date: date, watchlist: dict[str, Any], summaries: list[dict[str, Any]],
     collection: AuctionCollection, metrics: dict[str, Any], checks: list[dict[str, Any]],
     conflicts: list[dict[str, Any]], *, status: str, baseline_result: dict[str, Any], mode: str,
+    previous_review: dict[str, Any],
 ) -> dict[str, Any]:
     valid_gaps = [item["auction_gap_pct"] for item in summaries if item.get("auction_gap_pct") is not None]
     market_summary = {
@@ -403,6 +424,15 @@ def _build_packet(
         "high_open_3pct_count": sum(value >= 3 for value in valid_gaps),
         "baseline_backfill": baseline_result,
     }
+    objective_analysis = build_objective_analysis(watchlist, summaries, previous_review)
+    anomaly_candidates = sorted(
+        (item for item in summaries if item.get("anomaly_labels")),
+        key=lambda item: (
+            -(item.get("auction_volume_anomaly_score") or 0),
+            -(item.get("auction_amount_ratio_20d") or 0),
+            str(item.get("ts_code") or ""),
+        ),
+    )
     return {
         "meta": {
             "schema_version": "auction_packet.1", "trade_date": trade_date.isoformat(),
@@ -416,9 +446,8 @@ def _build_packet(
         } | {"stocks": watchlist["stocks"]},
         "market_auction_summary": market_summary,
         "stock_auction_summary": summaries,
-        "volume_anomaly_candidates": [
-            item for item in summaries if (item.get("auction_volume_anomaly_score") or 0) >= 9
-        ],
+        "volume_anomaly_candidates": anomaly_candidates,
+        "objective_analysis": objective_analysis,
         "data_quality": {"status": status, "checks": checks, "source_stats": collection.stats},
         "conflicts": conflicts,
     }

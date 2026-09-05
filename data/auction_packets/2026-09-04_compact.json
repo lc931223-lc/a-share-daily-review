@@ -1,0 +1,1079 @@
+{
+  "meta": {
+    "schema_version": "auction_packet_compact.1",
+    "trade_date": "2026-09-04",
+    "mode": "historical",
+    "process_primary": "eltdx",
+    "process_fallback": "klineshare_v2_disabled",
+    "final_judgement_owner": "chatgpt"
+  },
+  "market_auction_environment": {
+    "status": "AVAILABLE",
+    "watchlist_count": 100,
+    "valid_auction_count": 100,
+    "high_open_count": 46,
+    "flat_open_count": 6,
+    "low_open_count": 48,
+    "median_gap_pct": 0.0,
+    "total_auction_amount": 4044310423.0,
+    "checkpoint_coverage": 0.9466666666666667,
+    "post_0920_checkpoint_coverage": 1.0,
+    "formal_opening_match_success_rate": 1.0
+  },
+  "previous_mainline_validation": {
+    "status": "UNAVAILABLE",
+    "reason": "previous official_review main_themes unavailable",
+    "themes": []
+  },
+  "sector_auction_ranking": [
+    {
+      "rank": 1,
+      "name": "证券Ⅱ",
+      "stock_count": 1,
+      "valid_count": 1,
+      "median_gap_pct": 2.4428684003152235,
+      "positive_gap_ratio": 1.0,
+      "average_anomaly_score": 20.0,
+      "extreme_volume_count": 1,
+      "total_auction_amount": 23189400.0
+    },
+    {
+      "rank": 2,
+      "name": "出版",
+      "stock_count": 1,
+      "valid_count": 1,
+      "median_gap_pct": 0.5657708628005631,
+      "positive_gap_ratio": 1.0,
+      "average_anomaly_score": 20.0,
+      "extreme_volume_count": 1,
+      "total_auction_amount": 43122150.0
+    },
+    {
+      "rank": 3,
+      "name": "多元金融",
+      "stock_count": 1,
+      "valid_count": 1,
+      "median_gap_pct": -1.5748031496062964,
+      "positive_gap_ratio": 0.0,
+      "average_anomaly_score": 20.0,
+      "extreme_volume_count": 1,
+      "total_auction_amount": 62073000.0
+    },
+    {
+      "rank": 4,
+      "name": "旅游及景",
+      "stock_count": 1,
+      "valid_count": 1,
+      "median_gap_pct": -3.3057851239669422,
+      "positive_gap_ratio": 0.0,
+      "average_anomaly_score": 20.0,
+      "extreme_volume_count": 1,
+      "total_auction_amount": 21595158.0
+    },
+    {
+      "rank": 5,
+      "name": "服装家纺",
+      "stock_count": 1,
+      "valid_count": 1,
+      "median_gap_pct": -8.333333333333337,
+      "positive_gap_ratio": 0.0,
+      "average_anomaly_score": 20.0,
+      "extreme_volume_count": 1,
+      "total_auction_amount": 21100387.0
+    },
+    {
+      "rank": 6,
+      "name": "通信设备",
+      "stock_count": 2,
+      "valid_count": 2,
+      "median_gap_pct": 1.9349619098458282,
+      "positive_gap_ratio": 0.5,
+      "average_anomaly_score": 19.5,
+      "extreme_volume_count": 2,
+      "total_auction_amount": 68568754.0
+    },
+    {
+      "rank": 7,
+      "name": "铁路公路",
+      "stock_count": 1,
+      "valid_count": 1,
+      "median_gap_pct": 10.097087378640769,
+      "positive_gap_ratio": 1.0,
+      "average_anomaly_score": 19.0,
+      "extreme_volume_count": 1,
+      "total_auction_amount": 95632488.0
+    },
+    {
+      "rank": 8,
+      "name": "航运港口",
+      "stock_count": 3,
+      "valid_count": 3,
+      "median_gap_pct": 0.8362026561731462,
+      "positive_gap_ratio": 0.6666666666666666,
+      "average_anomaly_score": 18.666666666666668,
+      "extreme_volume_count": 3,
+      "total_auction_amount": 77714922.0
+    },
+    {
+      "rank": 9,
+      "name": "一般零售",
+      "stock_count": 3,
+      "valid_count": 3,
+      "median_gap_pct": -3.985507246376807,
+      "positive_gap_ratio": 0.0,
+      "average_anomaly_score": 18.666666666666668,
+      "extreme_volume_count": 3,
+      "total_auction_amount": 146850888.0
+    },
+    {
+      "rank": 10,
+      "name": "通用设备",
+      "stock_count": 4,
+      "valid_count": 4,
+      "median_gap_pct": -0.661177243716804,
+      "positive_gap_ratio": 0.25,
+      "average_anomaly_score": 18.5,
+      "extreme_volume_count": 4,
+      "total_auction_amount": 224979748.0
+    },
+    {
+      "rank": 11,
+      "name": "影视院线",
+      "stock_count": 2,
+      "valid_count": 2,
+      "median_gap_pct": -4.251867208708693,
+      "positive_gap_ratio": 0.0,
+      "average_anomaly_score": 18.5,
+      "extreme_volume_count": 2,
+      "total_auction_amount": 193455297.99999997
+    },
+    {
+      "rank": 12,
+      "name": "汽车零部",
+      "stock_count": 4,
+      "valid_count": 4,
+      "median_gap_pct": -0.2072748143543912,
+      "positive_gap_ratio": 0.5,
+      "average_anomaly_score": 18.25,
+      "extreme_volume_count": 4,
+      "total_auction_amount": 206481511.0
+    },
+    {
+      "rank": 13,
+      "name": "文娱用品",
+      "stock_count": 1,
+      "valid_count": 1,
+      "median_gap_pct": 1.2292118582791112,
+      "positive_gap_ratio": 1.0,
+      "average_anomaly_score": 18.0,
+      "extreme_volume_count": 1,
+      "total_auction_amount": 17960600.0
+    },
+    {
+      "rank": 14,
+      "name": "种植业",
+      "stock_count": 1,
+      "valid_count": 1,
+      "median_gap_pct": 1.0101010101010166,
+      "positive_gap_ratio": 1.0,
+      "average_anomaly_score": 18.0,
+      "extreme_volume_count": 1,
+      "total_auction_amount": 45884800.0
+    },
+    {
+      "rank": 15,
+      "name": "电机Ⅱ",
+      "stock_count": 1,
+      "valid_count": 1,
+      "median_gap_pct": 0.8873114463176623,
+      "positive_gap_ratio": 1.0,
+      "average_anomaly_score": 18.0,
+      "extreme_volume_count": 1,
+      "total_auction_amount": 24120318.0
+    },
+    {
+      "rank": 16,
+      "name": "元件",
+      "stock_count": 1,
+      "valid_count": 1,
+      "median_gap_pct": 0.46831095847641446,
+      "positive_gap_ratio": 1.0,
+      "average_anomaly_score": 18.0,
+      "extreme_volume_count": 1,
+      "total_auction_amount": 38957108.0
+    },
+    {
+      "rank": 17,
+      "name": "航空装备",
+      "stock_count": 1,
+      "valid_count": 1,
+      "median_gap_pct": 0.04545454545454852,
+      "positive_gap_ratio": 1.0,
+      "average_anomaly_score": 18.0,
+      "extreme_volume_count": 1,
+      "total_auction_amount": 99949611.00000001
+    },
+    {
+      "rank": 18,
+      "name": "燃气Ⅱ",
+      "stock_count": 1,
+      "valid_count": 1,
+      "median_gap_pct": 0.0,
+      "positive_gap_ratio": 0.0,
+      "average_anomaly_score": 18.0,
+      "extreme_volume_count": 0,
+      "total_auction_amount": 13235338.0
+    },
+    {
+      "rank": 19,
+      "name": "电子化学",
+      "stock_count": 1,
+      "valid_count": 1,
+      "median_gap_pct": -0.5769230769230749,
+      "positive_gap_ratio": 0.0,
+      "average_anomaly_score": 18.0,
+      "extreme_volume_count": 1,
+      "total_auction_amount": 34981254.0
+    },
+    {
+      "rank": 20,
+      "name": "地面兵装",
+      "stock_count": 2,
+      "valid_count": 2,
+      "median_gap_pct": -1.2962259064907777,
+      "positive_gap_ratio": 0.0,
+      "average_anomaly_score": 18.0,
+      "extreme_volume_count": 1,
+      "total_auction_amount": 93821180.0
+    }
+  ],
+  "stock_auction_ranking": [
+    {
+      "rank": 1,
+      "ts_code": "603090.SH",
+      "stock_name": "宏盛股份",
+      "themes": [
+        "通用设备"
+      ],
+      "auction_gap_pct": 1.7812852311161143,
+      "auction_amount_ratio_20d": 22.777766440990565,
+      "auction_amount_percentile_60d": 100.0,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "rank": 2,
+      "ts_code": "600830.SH",
+      "stock_name": "香溢融通",
+      "themes": [
+        "多元金融"
+      ],
+      "auction_gap_pct": -1.5748031496062964,
+      "auction_amount_ratio_20d": 20.222417598771248,
+      "auction_amount_percentile_60d": 100.0,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "rank": 3,
+      "ts_code": "600828.SH",
+      "stock_name": "茂业商业",
+      "themes": [
+        "一般零售"
+      ],
+      "auction_gap_pct": -9.60784313725489,
+      "auction_amount_ratio_20d": 14.437167848139596,
+      "auction_amount_percentile_60d": 100.0,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "rank": 4,
+      "ts_code": "000892.SZ",
+      "stock_name": "欢瑞世纪",
+      "themes": [
+        "影视院线"
+      ],
+      "auction_gap_pct": -6.102362204724421,
+      "auction_amount_ratio_20d": 13.691101349335241,
+      "auction_amount_percentile_60d": 98.333333,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "rank": 5,
+      "ts_code": "600540.SH",
+      "stock_name": "新赛股份",
+      "themes": [],
+      "auction_gap_pct": -5.940594059405935,
+      "auction_amount_ratio_20d": 12.229515449165385,
+      "auction_amount_percentile_60d": 100.0,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "rank": 6,
+      "ts_code": "601566.SH",
+      "stock_name": "九牧王",
+      "themes": [
+        "服装家纺"
+      ],
+      "auction_gap_pct": -8.333333333333337,
+      "auction_amount_ratio_20d": 11.995809048187532,
+      "auction_amount_percentile_60d": 98.333333,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "rank": 7,
+      "ts_code": "600749.SH",
+      "stock_name": "西藏旅游",
+      "themes": [
+        "旅游及景"
+      ],
+      "auction_gap_pct": -3.3057851239669422,
+      "auction_amount_ratio_20d": 11.353836369886197,
+      "auction_amount_percentile_60d": 100.0,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "rank": 8,
+      "ts_code": "002639.SZ",
+      "stock_name": "雪人集团",
+      "themes": [
+        "通用设备"
+      ],
+      "auction_gap_pct": -0.5685856432125047,
+      "auction_amount_ratio_20d": 10.911384640584068,
+      "auction_amount_percentile_60d": 98.333333,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "rank": 9,
+      "ts_code": "603067.SH",
+      "stock_name": "振华股份",
+      "themes": [
+        "化学原料"
+      ],
+      "auction_gap_pct": 5.240912933220621,
+      "auction_amount_ratio_20d": 10.471219968153754,
+      "auction_amount_percentile_60d": 100.0,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "rank": 10,
+      "ts_code": "301086.SZ",
+      "stock_name": "鸿富瀚",
+      "themes": [],
+      "auction_gap_pct": 2.8177952655962457,
+      "auction_amount_ratio_20d": 10.099530987344844,
+      "auction_amount_percentile_60d": 98.333333,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "rank": 11,
+      "ts_code": "605577.SH",
+      "stock_name": "龙版传媒",
+      "themes": [
+        "出版"
+      ],
+      "auction_gap_pct": 0.5657708628005631,
+      "auction_amount_ratio_20d": 9.379787066392726,
+      "auction_amount_percentile_60d": 100.0,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY"
+      ]
+    },
+    {
+      "rank": 12,
+      "ts_code": "002796.SZ",
+      "stock_name": "世嘉科技",
+      "themes": [
+        "通信设备"
+      ],
+      "auction_gap_pct": -2.873371199465413,
+      "auction_amount_ratio_20d": 9.163714311232845,
+      "auction_amount_percentile_60d": 96.666667,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "rank": 13,
+      "ts_code": "002670.SZ",
+      "stock_name": "国盛证券",
+      "themes": [
+        "证券Ⅱ"
+      ],
+      "auction_gap_pct": 2.4428684003152235,
+      "auction_amount_ratio_20d": 7.950911536963138,
+      "auction_amount_percentile_60d": 96.666667,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "rank": 14,
+      "ts_code": "002980.SZ",
+      "stock_name": "华盛昌",
+      "themes": [
+        "电网设备"
+      ],
+      "auction_gap_pct": 7.3785861616351145,
+      "auction_amount_ratio_20d": 7.5590091625186515,
+      "auction_amount_percentile_60d": 100.0,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "rank": 15,
+      "ts_code": "000520.SZ",
+      "stock_name": "凤凰航运",
+      "themes": [
+        "航运港口"
+      ],
+      "auction_gap_pct": -1.3544018058690654,
+      "auction_amount_ratio_20d": 7.298585920651703,
+      "auction_amount_percentile_60d": 98.333333,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "rank": 16,
+      "ts_code": "605580.SH",
+      "stock_name": "恒盛能源",
+      "themes": [],
+      "auction_gap_pct": 9.985315712187948,
+      "auction_amount_ratio_20d": 62.44041176056622,
+      "auction_amount_percentile_60d": 100.0,
+      "auction_volume_anomaly_score": 19,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "rank": 17,
+      "ts_code": "605398.SH",
+      "stock_name": "新炬网络",
+      "themes": [],
+      "auction_gap_pct": 9.983498349834985,
+      "auction_amount_ratio_20d": 54.6010315789205,
+      "auction_amount_percentile_60d": 100.0,
+      "auction_volume_anomaly_score": 19,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "rank": 18,
+      "ts_code": "600611.SH",
+      "stock_name": "大众交通",
+      "themes": [
+        "铁路公路"
+      ],
+      "auction_gap_pct": 10.097087378640769,
+      "auction_amount_ratio_20d": 9.735138340982779,
+      "auction_amount_percentile_60d": 100.0,
+      "auction_volume_anomaly_score": 19,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "rank": 19,
+      "ts_code": "002201.SZ",
+      "stock_name": "九鼎新材",
+      "themes": [
+        "玻璃玻纤"
+      ],
+      "auction_gap_pct": -5.35894843276038,
+      "auction_amount_ratio_20d": 7.955443648429267,
+      "auction_amount_percentile_60d": 96.666667,
+      "auction_volume_anomaly_score": 19,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "rank": 20,
+      "ts_code": "000017.SZ",
+      "stock_name": "深中华A",
+      "themes": [],
+      "auction_gap_pct": -10.018903591682427,
+      "auction_amount_ratio_20d": 6.063949568464676,
+      "auction_amount_percentile_60d": 100.0,
+      "auction_volume_anomaly_score": 19,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "rank": 21,
+      "ts_code": "002265.SZ",
+      "stock_name": "建设工业",
+      "themes": [
+        "汽车零部"
+      ],
+      "auction_gap_pct": -0.47801147227534146,
+      "auction_amount_ratio_20d": 4.5157985006738,
+      "auction_amount_percentile_60d": 98.333333,
+      "auction_volume_anomaly_score": 19,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "rank": 22,
+      "ts_code": "002104.SZ",
+      "stock_name": "恒宝股份",
+      "themes": [
+        "通信设备"
+      ],
+      "auction_gap_pct": 6.7432950191570695,
+      "auction_amount_ratio_20d": 4.422876756339207,
+      "auction_amount_percentile_60d": 98.333333,
+      "auction_volume_anomaly_score": 19,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "rank": 23,
+      "ts_code": "000635.SZ",
+      "stock_name": "英 力 特",
+      "themes": [],
+      "auction_gap_pct": -3.2301480484522083,
+      "auction_amount_ratio_20d": 4.339119997652632,
+      "auction_amount_percentile_60d": 96.666667,
+      "auction_volume_anomaly_score": 19,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "rank": 24,
+      "ts_code": "003040.SZ",
+      "stock_name": "楚天龙",
+      "themes": [],
+      "auction_gap_pct": 8.64583333333333,
+      "auction_amount_ratio_20d": 3.8874927406670716,
+      "auction_amount_percentile_60d": 100.0,
+      "auction_volume_anomaly_score": 19,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "rank": 25,
+      "ts_code": "600967.SH",
+      "stock_name": "内蒙一机",
+      "themes": [
+        "地面兵装"
+      ],
+      "auction_gap_pct": -1.179941002949858,
+      "auction_amount_ratio_20d": 3.7487494679641,
+      "auction_amount_percentile_60d": 98.333333,
+      "auction_volume_anomaly_score": 19,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "rank": 26,
+      "ts_code": "002403.SZ",
+      "stock_name": "爱仕达",
+      "themes": [],
+      "auction_gap_pct": 9.073170731707325,
+      "auction_amount_ratio_20d": 105.05672550379258,
+      "auction_amount_percentile_60d": 100.0,
+      "auction_volume_anomaly_score": 18,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "rank": 27,
+      "ts_code": "605088.SH",
+      "stock_name": "冠盛股份",
+      "themes": [],
+      "auction_gap_pct": 5.35714285714286,
+      "auction_amount_ratio_20d": 58.32639910670729,
+      "auction_amount_percentile_60d": 100.0,
+      "auction_volume_anomaly_score": 18,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "rank": 28,
+      "ts_code": "603138.SH",
+      "stock_name": "海量数据",
+      "themes": [],
+      "auction_gap_pct": 3.4482758620689724,
+      "auction_amount_ratio_20d": 57.37368085496733,
+      "auction_amount_percentile_60d": 100.0,
+      "auction_volume_anomaly_score": 18,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "rank": 29,
+      "ts_code": "002059.SZ",
+      "stock_name": "云南旅游",
+      "themes": [],
+      "auction_gap_pct": 0.0,
+      "auction_amount_ratio_20d": 50.91086480852643,
+      "auction_amount_percentile_60d": 100.0,
+      "auction_volume_anomaly_score": 18,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "rank": 30,
+      "ts_code": "600865.SH",
+      "stock_name": "百大集团",
+      "themes": [],
+      "auction_gap_pct": -2.5193798449612337,
+      "auction_amount_ratio_20d": 40.88413699870048,
+      "auction_amount_percentile_60d": 100.0,
+      "auction_volume_anomaly_score": 18,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    }
+  ],
+  "volume_anomalies": [
+    {
+      "ts_code": "603090.SH",
+      "stock_name": "宏盛股份",
+      "auction_gap_pct": 1.7812852311161143,
+      "auction_amount_ratio_20d": 22.777766440990565,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "ts_code": "600830.SH",
+      "stock_name": "香溢融通",
+      "auction_gap_pct": -1.5748031496062964,
+      "auction_amount_ratio_20d": 20.222417598771248,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "ts_code": "600828.SH",
+      "stock_name": "茂业商业",
+      "auction_gap_pct": -9.60784313725489,
+      "auction_amount_ratio_20d": 14.437167848139596,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "ts_code": "000892.SZ",
+      "stock_name": "欢瑞世纪",
+      "auction_gap_pct": -6.102362204724421,
+      "auction_amount_ratio_20d": 13.691101349335241,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "ts_code": "600540.SH",
+      "stock_name": "新赛股份",
+      "auction_gap_pct": -5.940594059405935,
+      "auction_amount_ratio_20d": 12.229515449165385,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "ts_code": "601566.SH",
+      "stock_name": "九牧王",
+      "auction_gap_pct": -8.333333333333337,
+      "auction_amount_ratio_20d": 11.995809048187532,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "ts_code": "600749.SH",
+      "stock_name": "西藏旅游",
+      "auction_gap_pct": -3.3057851239669422,
+      "auction_amount_ratio_20d": 11.353836369886197,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "ts_code": "002639.SZ",
+      "stock_name": "雪人集团",
+      "auction_gap_pct": -0.5685856432125047,
+      "auction_amount_ratio_20d": 10.911384640584068,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "ts_code": "603067.SH",
+      "stock_name": "振华股份",
+      "auction_gap_pct": 5.240912933220621,
+      "auction_amount_ratio_20d": 10.471219968153754,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "ts_code": "301086.SZ",
+      "stock_name": "鸿富瀚",
+      "auction_gap_pct": 2.8177952655962457,
+      "auction_amount_ratio_20d": 10.099530987344844,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "ts_code": "605577.SH",
+      "stock_name": "龙版传媒",
+      "auction_gap_pct": 0.5657708628005631,
+      "auction_amount_ratio_20d": 9.379787066392726,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY"
+      ]
+    },
+    {
+      "ts_code": "002796.SZ",
+      "stock_name": "世嘉科技",
+      "auction_gap_pct": -2.873371199465413,
+      "auction_amount_ratio_20d": 9.163714311232845,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "ts_code": "002670.SZ",
+      "stock_name": "国盛证券",
+      "auction_gap_pct": 2.4428684003152235,
+      "auction_amount_ratio_20d": 7.950911536963138,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "ts_code": "002980.SZ",
+      "stock_name": "华盛昌",
+      "auction_gap_pct": 7.3785861616351145,
+      "auction_amount_ratio_20d": 7.5590091625186515,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "ts_code": "000520.SZ",
+      "stock_name": "凤凰航运",
+      "auction_gap_pct": -1.3544018058690654,
+      "auction_amount_ratio_20d": 7.298585920651703,
+      "auction_volume_anomaly_score": 20,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "ts_code": "605580.SH",
+      "stock_name": "恒盛能源",
+      "auction_gap_pct": 9.985315712187948,
+      "auction_amount_ratio_20d": 62.44041176056622,
+      "auction_volume_anomaly_score": 19,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "ts_code": "605398.SH",
+      "stock_name": "新炬网络",
+      "auction_gap_pct": 9.983498349834985,
+      "auction_amount_ratio_20d": 54.6010315789205,
+      "auction_volume_anomaly_score": 19,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "ts_code": "600611.SH",
+      "stock_name": "大众交通",
+      "auction_gap_pct": 10.097087378640769,
+      "auction_amount_ratio_20d": 9.735138340982779,
+      "auction_volume_anomaly_score": 19,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "ts_code": "002201.SZ",
+      "stock_name": "九鼎新材",
+      "auction_gap_pct": -5.35894843276038,
+      "auction_amount_ratio_20d": 7.955443648429267,
+      "auction_volume_anomaly_score": 19,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "ts_code": "000017.SZ",
+      "stock_name": "深中华A",
+      "auction_gap_pct": -10.018903591682427,
+      "auction_amount_ratio_20d": 6.063949568464676,
+      "auction_volume_anomaly_score": 19,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "ts_code": "002265.SZ",
+      "stock_name": "建设工业",
+      "auction_gap_pct": -0.47801147227534146,
+      "auction_amount_ratio_20d": 4.5157985006738,
+      "auction_volume_anomaly_score": 19,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "ts_code": "002104.SZ",
+      "stock_name": "恒宝股份",
+      "auction_gap_pct": 6.7432950191570695,
+      "auction_amount_ratio_20d": 4.422876756339207,
+      "auction_volume_anomaly_score": 19,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "ts_code": "000635.SZ",
+      "stock_name": "英 力 特",
+      "auction_gap_pct": -3.2301480484522083,
+      "auction_amount_ratio_20d": 4.339119997652632,
+      "auction_volume_anomaly_score": 19,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "ts_code": "003040.SZ",
+      "stock_name": "楚天龙",
+      "auction_gap_pct": 8.64583333333333,
+      "auction_amount_ratio_20d": 3.8874927406670716,
+      "auction_volume_anomaly_score": 19,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "ts_code": "600967.SH",
+      "stock_name": "内蒙一机",
+      "auction_gap_pct": -1.179941002949858,
+      "auction_amount_ratio_20d": 3.7487494679641,
+      "auction_volume_anomaly_score": 19,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "ts_code": "002403.SZ",
+      "stock_name": "爱仕达",
+      "auction_gap_pct": 9.073170731707325,
+      "auction_amount_ratio_20d": 105.05672550379258,
+      "auction_volume_anomaly_score": 18,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "ts_code": "605088.SH",
+      "stock_name": "冠盛股份",
+      "auction_gap_pct": 5.35714285714286,
+      "auction_amount_ratio_20d": 58.32639910670729,
+      "auction_volume_anomaly_score": 18,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "ts_code": "603138.SH",
+      "stock_name": "海量数据",
+      "auction_gap_pct": 3.4482758620689724,
+      "auction_amount_ratio_20d": 57.37368085496733,
+      "auction_volume_anomaly_score": 18,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "STRONG_VOLUME_CONFIRMATION"
+      ]
+    },
+    {
+      "ts_code": "002059.SZ",
+      "stock_name": "云南旅游",
+      "auction_gap_pct": 0.0,
+      "auction_amount_ratio_20d": 50.91086480852643,
+      "auction_volume_anomaly_score": 18,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    },
+    {
+      "ts_code": "600865.SH",
+      "stock_name": "百大集团",
+      "auction_gap_pct": -2.5193798449612337,
+      "auction_amount_ratio_20d": 40.88413699870048,
+      "auction_volume_anomaly_score": 18,
+      "anomaly_labels": [
+        "EXTREME_VOLUME_ANOMALY",
+        "PRICE_WEAK_VOLUME_STRONG"
+      ]
+    }
+  ],
+  "weak_to_strong_candidates": [],
+  "strong_to_weak_candidates": [],
+  "transition_status": "UNAVAILABLE",
+  "validation_conditions_0930_1000": [
+    {
+      "id": "hold_auction_price",
+      "status": "PENDING",
+      "field": "low_0930_1000",
+      "operator": ">=",
+      "reference": "auction_price"
+    },
+    {
+      "id": "hold_previous_close",
+      "status": "PENDING",
+      "field": "last_price_1000",
+      "operator": ">=",
+      "reference": "prev_close"
+    },
+    {
+      "id": "sector_breadth_confirm",
+      "status": "PENDING",
+      "field": "sector_advancer_ratio_1000",
+      "operator": ">=",
+      "value": 0.5
+    },
+    {
+      "id": "opening_conflict_clear",
+      "status": "PENDING",
+      "field": "conflict_status",
+      "operator": "==",
+      "value": "none"
+    }
+  ],
+  "data_quality": {
+    "status": "PARTIAL",
+    "failed_checks": [
+      "official_review_available",
+      "live_session_acceptance"
+    ],
+    "conflict_count": 0
+  }
+}

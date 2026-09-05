@@ -58,8 +58,12 @@ def test_historical_pipeline_writes_watchlist_packet_facts_and_audit(tmp_path):
     packet_dir.mkdir(parents=True)
     packet = {
         "stocks": [
-            {"stock_code": "000001", "stock_name": "平安银行", "amount": 1000, "open": 10.0, "close": 10.0},
-            {"stock_code": "600519", "stock_name": "贵州茅台", "amount": 900, "open": 11.0, "close": 11.0},
+            {
+                "stock_code": f"{index:06d}", "stock_name": f"股票{index}",
+                "amount": 1_000_000 - index, "open": 10.0, "close": 10.0,
+                "themes": ["测试板块"],
+            }
+            for index in range(1, 21)
         ],
         "leader_candidates": [], "announcements": {"risk_announcements": []},
     }
@@ -71,14 +75,20 @@ def test_historical_pipeline_writes_watchlist_packet_facts_and_audit(tmp_path):
         eod_open_loader=lambda _, codes: {code: 10.0 if code.startswith("000001") else 11.0 for code in codes},
     )
 
-    result = pipeline.run_historical(target, min_watchlist_size=2, max_watchlist_size=2, baseline_days=0)
+    result = pipeline.run_historical(target, min_watchlist_size=20, max_watchlist_size=20, baseline_days=0)
 
     assert Path(result["paths"]["watchlist"]).exists()
     assert Path(result["paths"]["packet"]).exists()
-    assert result["packet"]["watchlist"]["stock_count"] == 2
+    assert Path(result["paths"]["compact_packet"]).exists()
+    assert result["packet"]["watchlist"]["stock_count"] == 20
     assert result["packet"]["watchlist"]["sources"]["market_packet"] == "data/market_packets/2026-09-03.json"
     assert "output_path" not in result["packet"]["watchlist"]
     assert result["packet"]["market_auction_summary"]["formal_opening_match_success_rate"] == 1.0
+    assert result["compact_packet"]["sector_auction_ranking"][0]["name"] == "测试板块"
+    assert result["compact_packet"]["previous_mainline_validation"]["status"] == "UNAVAILABLE"
+    assert result["compact_packet"]["weak_to_strong_candidates"] == []
+    scores = [item["auction_volume_anomaly_score"] for item in result["packet"]["volume_anomaly_candidates"]]
+    assert scores == sorted(scores, reverse=True)
     assert result["packet"]["data_quality"]["status"] == "PARTIAL"
 
 

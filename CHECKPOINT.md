@@ -1298,9 +1298,13 @@ Regenerated a larger black Songti-style version:
 
 - Implemented the minimum auction pipeline under `src/auction` with a 100-200 stock watchlist, eltdx process events, nine checkpoints, formal 09:25 match, Parquet facts, existing SQLite audit tables, anomaly fields, realtime open routing, and Tushare EOD reconciliation.
 - Added `scripts/run_auction_pipeline.py` with `historical`, `live`, and `eod` modes. Live mode rejects starts after 09:15 Asia/Shanghai so replay data cannot pass as a realtime session.
-- Real 2026-09-04 historical replay result: 100 stocks, 100% stock completion, 94.78% overall checkpoint coverage, 100% post-09:20 coverage, 100% formal match coverage, and 100/100 archived Tushare open validation with zero price error or conflicts.
+- Latest 2026-09-04 historical replay result: 100 stocks, 100% stock completion, 94.67% overall checkpoint coverage, 100% post-09:20 coverage, 100% formal match coverage, and 100/100 archived Tushare open validation with zero price error or conflicts.
 - The 2026-09-04 packet remains `PARTIAL`: the prior 2026-09-03 official review is absent and a historical replay cannot satisfy the required live-session acceptance.
-- Output files: `data/auction_watchlists/auction_watchlist_2026-09-04.json` and `data/auction_packets/2026-09-04.json`.
+- Added initial objective anomaly classifications: `EXTREME_VOLUME_ANOMALY`, `STRONG_VOLUME_CONFIRMATION`, `PRICE_STRONG_VOLUME_WEAK`, and `PRICE_WEAK_VOLUME_STRONG`.
+- Added objective market/sector/stock rankings and a compact ChatGPT packet. Mainline validation and strength-transition candidates require the previous official review; they remain explicitly `UNAVAILABLE` when it is missing.
+- Output files: `data/auction_watchlists/auction_watchlist_2026-09-04.json`, `data/auction_packets/2026-09-04.json`, and `data/auction_packets/2026-09-04_compact.json`.
+- The compact replay contains 20 sector rows, 30 stock rows, 30 compact anomaly rows, and four pending 09:30-10:00 objective validation conditions. Full replay found 85 stocks with at least one anomaly label.
+- Final validation: `compileall` passed; non-real-data suite `213 passed, 1 deselected`; auction-focused suite `25 passed`.
 - Pending external-time acceptance: start `python scripts/run_auction_pipeline.py --date 2026-09-07 --mode live --baseline-days 60` before 09:15 Asia/Shanghai on the next trading day, then run `--mode eod` after Tushare daily data is available.
 
 ## 2026-09-01 CODEX_HOME Migration Verification

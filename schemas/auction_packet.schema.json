@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://local.a-share/schemas/auction_packet.schema.json",
   "type": "object",
-  "required": ["meta", "watchlist", "market_auction_summary", "stock_auction_summary", "volume_anomaly_candidates", "data_quality", "conflicts"],
+  "required": ["meta", "watchlist", "market_auction_summary", "stock_auction_summary", "volume_anomaly_candidates", "objective_analysis", "data_quality", "conflicts"],
   "properties": {
     "meta": {
       "type": "object",
@@ -19,6 +19,7 @@
     "market_auction_summary": {"type": "object"},
     "stock_auction_summary": {"type": "array", "items": {"type": "object"}},
     "volume_anomaly_candidates": {"type": "array", "items": {"type": "object"}},
+    "objective_analysis": {"type": "object"},
     "data_quality": {"type": "object", "required": ["status", "checks"]},
     "conflicts": {"type": "array", "items": {"type": "object"}}
   },

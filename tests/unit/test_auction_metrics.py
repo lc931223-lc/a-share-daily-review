@@ -40,6 +40,7 @@ def test_daily_summary_computes_baselines_growth_and_unscaled_score():
     assert 0 <= result["auction_volume_anomaly_score"] <= 20
     assert result["score_component_coverage"] == 1.0
     assert result["baseline_quality_status"] == "PASS"
+    assert "STRONG_VOLUME_CONFIRMATION" in result["anomaly_labels"]
 
 
 def test_daily_summary_keeps_missing_metrics_null_and_partial():
@@ -57,3 +58,4 @@ def test_daily_summary_keeps_missing_metrics_null_and_partial():
     assert result["post_0920_amount_growth"] is None
     assert result["score_component_coverage"] < 1.0
     assert result["quality_status"] == "PARTIAL"
+    assert result["anomaly_labels"] == []

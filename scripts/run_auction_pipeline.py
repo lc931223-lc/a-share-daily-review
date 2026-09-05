@@ -30,6 +30,7 @@ def main() -> int:
     if args.mode == "eod":
         result = pipeline.reconcile_eod(trade_date)
         print(f"auction_packet={result['path']}")
+        print(f"auction_packet_compact={result['compact_path']}")
         print(f"eod_reconciliation_status={result['status']}")
         return 0 if result["status"] == "PASS" else 2
     runner = pipeline.run_live if args.mode == "live" else pipeline.run_historical
@@ -44,6 +45,7 @@ def main() -> int:
     summary = packet["market_auction_summary"]
     print(f"watchlist={result['paths']['watchlist']}")
     print(f"auction_packet={result['paths']['packet']}")
+    print(f"auction_packet_compact={result['paths']['compact_packet']}")
     print(f"quality_status={packet['data_quality']['status']}")
     for key in ("stock_completion_rate", "checkpoint_coverage", "post_0920_checkpoint_coverage", "formal_opening_match_success_rate"):
         print(f"{key}={summary.get(key)}")

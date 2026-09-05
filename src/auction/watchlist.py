@@ -113,10 +113,14 @@ def compose_watchlist(
         reverse=True,
     )
     for stock in amount_ranked[:60]:
-        add(stock.get("stock_code"), name=stock.get("stock_name"), reason="top_amount", priority=40)
+        themes = stock.get("themes") or [None]
+        for theme in themes:
+            add(stock.get("stock_code"), name=stock.get("stock_name"), theme=theme, reason="top_amount", priority=40)
     if len(candidates) < min_size:
         for stock in amount_ranked:
-            add(stock.get("stock_code"), name=stock.get("stock_name"), reason="objective_pool_fill", priority=50)
+            themes = stock.get("themes") or [None]
+            for theme in themes:
+                add(stock.get("stock_code"), name=stock.get("stock_name"), theme=theme, reason="objective_pool_fill", priority=50)
             if len(candidates) >= min_size:
                 break
 

@@ -139,7 +139,7 @@ python scripts/run_auction_pipeline.py --date 2026-09-07 --mode live --baseline-
 python scripts/run_auction_pipeline.py --date 2026-09-07 --mode eod
 ```
 
-`live` 必须在 Asia/Shanghai 09:15 前启动，并持续运行到 09:30:05。重点池和最小 Auction Packet 写入 `data/auction_watchlists/`、`data/auction_packets/`；原始过程、checkpoint 和日汇总写入 `data/facts/` Parquet，采集批次、逐股观测、fallback 与质量门记录复用 `data/a_share_review.db` 现有审计表。KlineShare fallback 保持禁用，TickDB 仅作观察源。
+`live` 必须在 Asia/Shanghai 09:15 前启动，并持续运行到 09:30:05。重点池、完整 Auction Packet 和 ChatGPT 用 compact Packet 写入 `data/auction_watchlists/`、`data/auction_packets/`；compact 文件名为 `YYYY-MM-DD_compact.json`，包含客观市场环境、昨日主线验证、板块/个股竞价排名、四类异常放量、弱转强/强转弱候选和 09:30-10:00 待验证条件。原始过程、checkpoint 和日汇总写入 `data/facts/` Parquet，采集批次、逐股观测、fallback 与质量门记录复用 `data/a_share_review.db` 现有审计表。KlineShare fallback 保持禁用，TickDB 仅作观察源。
 
 ## Dashboard
 
