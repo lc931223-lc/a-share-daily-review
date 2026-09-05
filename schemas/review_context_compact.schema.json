@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Review Context Compact Packet",
+  "type": "object",
+  "required": ["meta", "source_manifest", "market_environment", "next_day_theme_candidates", "medium_term_structure_candidates", "market_cycle_and_style", "core_theme_roles", "inflection_candidates", "previous_hypothesis_validation", "next_day_plan", "market_factors", "money_effect_structure", "risk_and_falsification_candidates", "auction_context", "review_template_support", "data_quality"],
+  "properties": {
+    "meta": {"type": "object"},
+    "source_manifest": {"type": "object"},
+    "market_environment": {"type": "object"},
+    "next_day_theme_candidates": {"type": "array", "maxItems": 15},
+    "medium_term_structure_candidates": {"type": "object"},
+    "market_cycle_and_style": {"type": "object"},
+    "core_theme_roles": {"type": "array", "maxItems": 15},
+    "inflection_candidates": {"type": "array", "maxItems": 20},
+    "previous_hypothesis_validation": {"type": "object"},
+    "next_day_plan": {"type": "array", "maxItems": 20},
+    "market_factors": {"type": "object"},
+    "money_effect_structure": {"type": "object"},
+    "risk_and_falsification_candidates": {"type": "array", "maxItems": 20},
+    "auction_context": {"type": "object"},
+    "review_template_support": {"type": "object", "minProperties": 13},
+    "data_quality": {"type": "object"}
+  },
+  "additionalProperties": false
+}

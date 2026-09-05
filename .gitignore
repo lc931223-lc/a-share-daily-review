@@ -29,6 +29,9 @@ data/review_intelligence/*
 !data/review_intelligence/backtests/
 data/review_intelligence/backtests/*
 !data/review_intelligence/backtests/2026-08-01_to_2026-09-04.json
+data/review_context/*
+!data/review_context/2026-09-04.json
+!data/review_context/2026-09-04_compact.json
 data/market_reviews/*/akshare_probe/
 data/market_reviews/*/tushare_probe/
 data/market_reviews/*/engine/

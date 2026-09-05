@@ -1,5 +1,28 @@
 # Checkpoint
 
+## 2026-09-06 Review Context Phase 2
+
+Checkpoint: implementation and 2026-09-04 real-data assembly complete; release checks pending
+
+Task: Assemble Market Packet, Review Intelligence, Inflection, Auction, and historical official-review context into a single objective input packet for ChatGPT's formal review.
+
+Completed:
+
+- Added strict same-date loading for all four current-day inputs and SHA-256 source manifests.
+- Added a strictly historical official-review loader. Same-day and future reviews are rejected; 2026-09-04 uses the embedded 2026-09-02 review fallback because no earlier standalone official review exists.
+- Added market environment, next-day theme candidates, 1-2 week structure candidates, cycle/style, per-theme role candidates, inflection/chip structures, prior-hypothesis validation, and a 20-stock next-day observation pool.
+- Added objective factor counts, money-effect structure, Auction context, risk/falsification candidates, and an explicit mapping for all 13 formal-review sections.
+- Added deep compact projection rather than copying the full packet. The 2026-09-04 compact artifact is about 54% of the full artifact.
+- Generated `data/review_context/2026-09-04.json` and `data/review_context/2026-09-04_compact.json` from real upstream packets.
+
+Current state: The packet contains 15 next-day theme candidates, three strong-theme candidates, four trend candidates, 12 repair candidates, 16 risk-theme candidates, 15 core-theme role groups, 20 Inflection candidates, and 20 Next-Day Plan observations. Upstream `PARTIAL` statuses are preserved, so the context packet is `PARTIAL`.
+
+Validation: Both schemas and explicit date-isolation assertions pass. `compileall` passes, and the full non-real-data suite passes with `243 passed, 1 deselected`. Generated artifacts contain zero prohibited recommendation/final-rating phrases. The release secret scan found zero token matches.
+
+Blockers / risks: High-level loss count and promotion rate remain unavailable upstream. Theme amount changes and whole-theme returns are missing for 2026-09-04. The historical review is from 2026-09-02 rather than the immediately previous trading day and is labeled accordingly.
+
+Next actions: Commit the bounded Phase 2 files, push to `origin/main`, and verify local HEAD equals remote main.
+
 ## 2026-09-06 Review Intelligence Layer Phase 1
 
 Checkpoint: implementation and 2026-08-01 through 2026-09-04 real-data replay complete

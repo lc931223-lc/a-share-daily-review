@@ -180,6 +180,16 @@ python scripts/run_review_intelligence_replay.py --start 2026-08-01 --end 2026-0
 
 输出位于 `data/review_intelligence/`。历史日期缺少 Market Packet 主题快照时，回放使用当日真实日线的行业聚合代理并标记 `PARTIAL`，不会使用当前板块数据回填历史。
 
+## Review Context
+
+正式复盘输入层只读聚合 Market Packet、Review Intelligence、Inflection、Auction 和严格早于目标日的 official review 历史，不生成最终市场结论。所有当日输入必须与请求日期完全一致；同日或未来 official review 不会作为历史上下文。
+
+```powershell
+python scripts/build_review_context.py --date 2026-09-04
+```
+
+完整包和 ChatGPT 精简包写入 `data/review_context/YYYY-MM-DD.json` 与 `data/review_context/YYYY-MM-DD_compact.json`。来源清单保存输入日期、上游质量状态和 SHA-256，以便追溯。
+
 ## 测试
 
 离线测试：
