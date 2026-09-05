@@ -472,3 +472,44 @@ class ThemeRelationship(Base):
     child_theme_id: Mapped[int | None] = mapped_column(ForeignKey("theme.id"))
     relation_type: Mapped[str] = mapped_column(String(30))
     description: Mapped[str | None] = mapped_column(Text)
+
+
+class ReviewPredictionRecord(Base):
+    __tablename__ = "review_prediction_record"
+    __table_args__ = (
+        UniqueConstraint("prediction_date", "source_review", name="uq_review_prediction_source_date"),
+        Index("idx_review_prediction_date", "prediction_date"),
+    )
+    id: Mapped[int] = mapped_column(primary_key=True)
+    prediction_date: Mapped[date] = mapped_column(Date)
+    source_review: Mapped[str] = mapped_column(String(100))
+    theme_prediction: Mapped[str] = mapped_column(Text, default="[]")
+    style_prediction: Mapped[str] = mapped_column(Text, default="[]")
+    leader_candidates: Mapped[str] = mapped_column(Text, default="[]")
+    next_day_plan: Mapped[str] = mapped_column(Text, default="[]")
+    inflection_candidates: Mapped[str] = mapped_column(Text, default="[]")
+    risk_points: Mapped[str] = mapped_column(Text, default="[]")
+    confidence_level: Mapped[str] = mapped_column(String(20))
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utc_now)
+
+
+class ReviewValidationResult(Base):
+    __tablename__ = "review_validation_result"
+    __table_args__ = (
+        UniqueConstraint("prediction_id", "validation_date", name="uq_review_validation_prediction_date"),
+        Index("idx_review_validation_date", "validation_date"),
+    )
+    id: Mapped[int] = mapped_column(primary_key=True)
+    validation_date: Mapped[date] = mapped_column(Date)
+    prediction_id: Mapped[int] = mapped_column(ForeignKey("review_prediction_record.id"))
+    actual_market_state: Mapped[str] = mapped_column(Text, default="{}")
+    actual_theme_result: Mapped[str] = mapped_column(Text, default="{}")
+    theme_return_5d: Mapped[str] = mapped_column(Text, default="{}")
+    theme_return_10d: Mapped[str] = mapped_column(Text, default="{}")
+    theme_return_20d: Mapped[str] = mapped_column(Text, default="{}")
+    leader_result: Mapped[str] = mapped_column(Text, default="[]")
+    stock_result: Mapped[str] = mapped_column(Text, default="[]")
+    max_gain: Mapped[float | None] = mapped_column(Float)
+    max_drawdown: Mapped[float | None] = mapped_column(Float)
+    error_type: Mapped[str] = mapped_column(Text, default="[]")
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utc_now)

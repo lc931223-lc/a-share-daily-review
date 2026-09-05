@@ -1,5 +1,25 @@
 # Checkpoint
 
+## 2026-09-06 Feedback Loop Phase 1
+
+Checkpoint: implementation, strict as-of historical replay, and release checks complete
+
+Task: Freeze research predictions, validate future outcomes without future leakage, and report historical feedback without automatically changing models or weights.
+
+Completed:
+
+- Added `review_prediction_record` and `review_validation_result` to both SQLAlchemy and the standalone SQLite schema, with idempotent date/source keys.
+- Added separate ingestion labels for real official reviews, simulated official-review fixtures, objective review contexts, and historical objective proxies.
+- Added a strict as-of industry proxy replay with 20/60-day warm-up data, 5/10/20-day forward validation, leader results, gain/drawdown, and the eight required error categories.
+- Added exact Top1 industry accuracy, Top3 coverage, five-day leader win rate, stored `INFLECTION_CONFIRMED` horizon performance, and `DISTRIBUTION_WARNING` drawdown probability.
+- Backfilled 188 Tushare daily partitions. The local history now contains 468 trading dates from 2024-10-08 through 2026-09-04 with zero fetch failures.
+- Replayed 407 prediction dates from 2025-01-02 through 2026-09-04; 402 currently have a five-day validation window.
+- Generated `data/as_of_backtests/2025-01-01_to_2026-09-04.json` and `research_feedback/2026-09-04.json`.
+
+Current state: Historical official reviews and auction-process snapshots do not exist for the replay interval, so proxy history is explicitly marked `AS_OF_DAILY_PROXY.v1` and `DATA_LIMITATION`. The standalone 2026-09-04 official-review fixture identifies itself as simulated and is not counted as a real formal review. Adjustment factors and point-in-time concept membership remain unavailable.
+
+Validation: Future-data mutation leaves same-day predictions unchanged. Database writes are idempotent. `compileall`, Ruff on the new feedback modules, and the full non-real-data suite pass with `248 passed, 1 deselected`. The generated artifacts contain no Tushare token assignment.
+
 ## 2026-09-06 Review Context Phase 2
 
 Checkpoint: implementation and 2026-09-04 real-data assembly complete; release checks pending

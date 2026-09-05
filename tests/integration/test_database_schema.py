@@ -24,7 +24,8 @@ REQUIRED_PIPELINE_TABLES = {
 REQUIRED_TABLES = {
     "review_import", "trading_day", "theme", "theme_alias", "theme_daily_score",
     "theme_driver", "stock", "stock_daily_score", "stock_driver", "evidence",
-    "risk_event", "tomorrow_check", "theme_relationship", *REQUIRED_PIPELINE_TABLES,
+    "risk_event", "tomorrow_check", "theme_relationship", "review_prediction_record",
+    "review_validation_result", *REQUIRED_PIPELINE_TABLES,
 }
 
 

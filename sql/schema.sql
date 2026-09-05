@@ -327,3 +327,38 @@ CREATE TABLE theme_relationship (
     child_theme_id INTEGER REFERENCES theme(id),
     relation_type TEXT NOT NULL, description TEXT
 );
+
+CREATE TABLE review_prediction_record (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    prediction_date DATE NOT NULL,
+    source_review TEXT NOT NULL,
+    theme_prediction TEXT NOT NULL,
+    style_prediction TEXT NOT NULL,
+    leader_candidates TEXT NOT NULL,
+    next_day_plan TEXT NOT NULL,
+    inflection_candidates TEXT NOT NULL,
+    risk_points TEXT NOT NULL,
+    confidence_level TEXT NOT NULL,
+    created_at DATETIME NOT NULL,
+    CONSTRAINT uq_review_prediction_source_date UNIQUE(prediction_date, source_review)
+);
+CREATE INDEX idx_review_prediction_date ON review_prediction_record(prediction_date);
+
+CREATE TABLE review_validation_result (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    validation_date DATE NOT NULL,
+    prediction_id INTEGER NOT NULL REFERENCES review_prediction_record(id),
+    actual_market_state TEXT NOT NULL,
+    actual_theme_result TEXT NOT NULL,
+    theme_return_5d TEXT NOT NULL,
+    theme_return_10d TEXT NOT NULL,
+    theme_return_20d TEXT NOT NULL,
+    leader_result TEXT NOT NULL,
+    stock_result TEXT NOT NULL,
+    max_gain REAL,
+    max_drawdown REAL,
+    error_type TEXT NOT NULL,
+    created_at DATETIME NOT NULL,
+    CONSTRAINT uq_review_validation_prediction_date UNIQUE(prediction_id, validation_date)
+);
+CREATE INDEX idx_review_validation_date ON review_validation_result(validation_date);

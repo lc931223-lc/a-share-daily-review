@@ -190,6 +190,21 @@ python scripts/build_review_context.py --date 2026-09-04
 
 完整包和 ChatGPT 精简包写入 `data/review_context/YYYY-MM-DD.json` 与 `data/review_context/YYYY-MM-DD_compact.json`。来源清单保存输入日期、上游质量状态和 SHA-256，以便追溯。
 
+## Feedback Loop
+
+```powershell
+$env:PYTHONPATH='.'
+uv run python scripts/run_feedback_loop.py --start 2025-01-01 --end 2026-09-04
+```
+
+该任务将正式 `official_review`、客观 `review_context` 与 `AS_OF_DAILY_PROXY` 分开冻结到
+`review_prediction_record`，并把可用的 5/10/20 交易日结果写入
+`review_validation_result`。历史代理只使用预测日及此前行情，不能替代历史 ChatGPT 正式结论；
+末端未来窗口不足时保持待验证。完整回放写入 `data/as_of_backtests/`，每日反馈摘要写入
+`research_feedback/YYYY-MM-DD.json`。流程只记录和评价，不自动调整评分模型或权重。
+`theme_top1_accuracy` 的严格口径是预测第一行业是否恰好成为未来五个交易日等权收益第一；
+`theme_top3_coverage` 是未来第一行业是否进入预测前三，并不等同于预测行业上涨概率。
+
 ## 测试
 
 离线测试：

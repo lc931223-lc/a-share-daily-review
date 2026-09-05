@@ -32,6 +32,13 @@ class DailyHistoryRepository:
 
     def ensure_history(self, target: date, *, count: int = 280) -> dict[str, Any]:
         dates = self.trading_days(target, count)
+        return self._ensure_dates(dates)
+
+    def ensure_range(self, start: date, end: date) -> dict[str, Any]:
+        dates = [day for day in self.trading_days(end, 600) if start <= day <= end]
+        return self._ensure_dates(dates)
+
+    def _ensure_dates(self, dates: list[date]) -> dict[str, Any]:
         loaded = 0
         cached = 0
         failed: list[str] = []
