@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Review Context Packet",
   "type": "object",
-  "required": ["meta", "source_manifest", "market_environment", "next_day_theme_candidates", "medium_term_structure_candidates", "market_cycle_and_style", "core_theme_roles", "inflection_candidates", "previous_hypothesis_validation", "next_day_plan", "market_factors", "money_effect_structure", "risk_and_falsification_candidates", "auction_context", "review_template_support", "data_quality"],
+  "required": ["meta", "source_manifest", "market_environment", "next_day_theme_candidates", "medium_term_structure_candidates", "market_cycle_and_style", "core_theme_roles", "inflection_candidates", "previous_hypothesis_validation", "next_day_plan", "market_factors", "money_effect_structure", "risk_and_falsification_candidates", "auction_context", "capital_preference", "review_template_support", "data_quality"],
   "properties": {
     "meta": {"type": "object", "required": ["schema_version", "trade_date", "as_of", "data_role", "final_judgement_owner"]},
     "source_manifest": {"type": "object", "required": ["market_packet", "review_intelligence", "inflection_scanner", "auction_packet", "prior_official_review"]},
@@ -18,7 +18,8 @@
     "money_effect_structure": {"type": "object"},
     "risk_and_falsification_candidates": {"type": "array"},
     "auction_context": {"type": "object"},
-    "review_template_support": {"type": "object", "minProperties": 13},
+    "capital_preference": {"type": "object"},
+    "review_template_support": {"type": "object", "minProperties": 14},
     "data_quality": {"type": "object", "required": ["status", "checks", "known_gaps"]}
   },
   "additionalProperties": false

@@ -180,9 +180,20 @@ python scripts/run_review_intelligence_replay.py --start 2026-08-01 --end 2026-0
 
 输出位于 `data/review_intelligence/`。历史日期缺少 Market Packet 主题快照时，回放使用当日真实日线的行业聚合代理并标记 `PARTIAL`，不会使用当前板块数据回填历史。
 
+## Capital Preference
+
+资金偏好智能层复用 Market Packet、Review Intelligence、Inflection、Auction、official review 和现有 FactStore，计算板块与个股的基本面适配、位置、容量、拥挤度、风格匹配及共识代理证据。缺失字段保持 `null` 并降低可用分上限；输出只表示候选证据，不确定主线、龙头，也不生成预测、仓位或买卖建议。
+
+```powershell
+python scripts/run_capital_preference.py --date 2026-09-04
+python scripts/run_capital_preference_replay.py --start 2026-08-01 --end 2026-09-04
+```
+
+完整包与 ChatGPT 精简包写入 `data/capital_preference/YYYY-MM-DD.json` 和 `data/capital_preference/YYYY-MM-DD_compact.json`，并复用现有 Parquet FactStore 与 SQLite catalog。区间回放报告位于 `data/capital_preference/backtests/`；其强弱分组是明确标注的 Review Intelligence 客观强度代理，不等同于历史正式主线结论。
+
 ## Review Context
 
-正式复盘输入层只读聚合 Market Packet、Review Intelligence、Inflection、Auction 和严格早于目标日的 official review 历史，不生成最终市场结论。所有当日输入必须与请求日期完全一致；同日或未来 official review 不会作为历史上下文。
+正式复盘输入层只读聚合 Market Packet、Review Intelligence、Inflection、Auction、Capital Preference 和严格早于目标日的 official review 历史，不生成最终市场结论。所有当日输入必须与请求日期完全一致；同日或未来 official review 不会作为历史上下文。
 
 ```powershell
 python scripts/build_review_context.py --date 2026-09-04

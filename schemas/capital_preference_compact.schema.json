@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Capital Preference Compact Packet",
+  "type": "object",
+  "required": ["meta", "source_manifest", "theme_capital_preference", "stock_capital_preference", "why_capital_selected", "capacity_structure", "crowding_status", "review_section_support", "data_quality"],
+  "properties": {
+    "meta": {"type": "object"},
+    "source_manifest": {"type": "object"},
+    "theme_capital_preference": {"type": "array", "maxItems": 20},
+    "stock_capital_preference": {"type": "array", "maxItems": 100},
+    "why_capital_selected": {"type": "array", "maxItems": 20},
+    "capacity_structure": {"type": "array", "maxItems": 20},
+    "crowding_status": {"type": "array", "maxItems": 20},
+    "review_section_support": {"type": "object"},
+    "data_quality": {"type": "object"}
+  },
+  "additionalProperties": false
+}

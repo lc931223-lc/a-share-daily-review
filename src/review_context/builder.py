@@ -40,6 +40,7 @@ class ReviewContextBuilder:
                 raise ValueError(f"{name} date mismatch: expected {target.isoformat()}, got {actual}")
 
         prior_review, prior_manifest = self._prior_official_review(target, market)
+        capital, capital_manifest = self._capital_preference(target)
         roles = intelligence.get("role_candidates") or []
         risks = intelligence.get("risk_and_falsification_candidates") or []
         themes = intelligence.get("theme_features") or []
@@ -53,6 +54,7 @@ class ReviewContextBuilder:
             "source_manifest": {
                 **{name: _manifest(payload, path) for name, (payload, path) in inputs.items()},
                 "prior_official_review": prior_manifest,
+                "capital_preference": capital_manifest,
             },
             "market_environment": _market_environment(market, intelligence),
             "next_day_theme_candidates": _theme_candidates(themes, roles, risks),
@@ -72,9 +74,10 @@ class ReviewContextBuilder:
             "money_effect_structure": intelligence.get("money_effect_features") or {},
             "risk_and_falsification_candidates": risks,
             "auction_context": _auction_context(auction),
+            "capital_preference": _capital_preference_context(capital),
             "review_template_support": _template_support(),
         }
-        packet["data_quality"] = _quality(inputs, prior_manifest, packet)
+        packet["data_quality"] = _quality(inputs, prior_manifest, capital_manifest, packet)
         compact = _compact(packet)
         _validate(self.root, "review_context_packet.schema.json", packet)
         _validate(self.root, "review_context_compact.schema.json", compact)
@@ -110,6 +113,19 @@ class ReviewContextBuilder:
                 "sha256": _digest(embedded),
             }
         return {}, {"status": "UNAVAILABLE", "data_date": None, "source": "official_reviews", "path": None, "sha256": None}
+
+    def _capital_preference(self, target: date):
+        path = self.root / "data" / "capital_preference" / f"{target.isoformat()}_compact.json"
+        if not path.is_file():
+            return {}, {
+                "status": "UNAVAILABLE", "data_date": None, "source": "capital_preference",
+                "path": None, "sha256": None, "quality_status": None,
+            }
+        payload = _read(path)
+        actual = _trade_date(payload)
+        if actual != target.isoformat():
+            raise ValueError(f"capital_preference date mismatch: expected {target.isoformat()}, got {actual}")
+        return payload, _manifest(payload, path)
 
 
 def _market_environment(market, intelligence):
@@ -261,6 +277,24 @@ def _auction_context(auction):
     }
 
 
+def _capital_preference_context(capital):
+    if not capital:
+        return {
+            "status": "UNAVAILABLE", "theme_capital_preference": [],
+            "stock_capital_preference": [], "why_capital_selected": [],
+            "capacity_structure": [], "crowding_status": [],
+        }
+    return {
+        "status": (capital.get("data_quality") or {}).get("status"),
+        "theme_capital_preference": capital.get("theme_capital_preference") or [],
+        "stock_capital_preference": capital.get("stock_capital_preference") or [],
+        "why_capital_selected": capital.get("why_capital_selected") or [],
+        "capacity_structure": capital.get("capacity_structure") or [],
+        "crowding_status": capital.get("crowding_status") or [],
+        "final_judgement_owner": "chatgpt",
+    }
+
+
 def _template_support():
     return {
         "一、先给结论": ["market_environment", "market_cycle_and_style", "data_quality"],
@@ -276,6 +310,7 @@ def _template_support():
         "十一、龙头/补涨/切换": ["core_theme_roles", "money_effect_structure"],
         "十二、风险": ["risk_and_falsification_candidates", "next_day_plan"],
         "十三、最终判断": ["source_manifest", "data_quality"],
+        "十四、资金青睐逻辑拆解": ["capital_preference"],
     }
 
 
@@ -315,11 +350,12 @@ def _compact(packet):
             **{key: packet["auction_context"].get(key) for key in ("status", "watchlist_count", "valid_auction_count", "checkpoint_coverage", "formal_opening_match_success_rate", "conflicts")},
             "volume_anomaly_candidates": packet["auction_context"].get("volume_anomaly_candidates", [])[:10],
         },
+        "capital_preference": packet["capital_preference"],
         "review_template_support": packet["review_template_support"], "data_quality": packet["data_quality"],
     }
 
 
-def _quality(inputs, prior_manifest, packet):
+def _quality(inputs, prior_manifest, capital_manifest, packet):
     checks = []
     for name, (payload, _) in inputs.items():
         status = payload.get("data_quality", {}).get("status")
@@ -327,7 +363,8 @@ def _quality(inputs, prior_manifest, packet):
     checks.extend([
         {"name": "historical_review_is_prior", "actual": prior_manifest.get("data_date"), "threshold": f"<{packet['meta']['trade_date']}", "passed": not prior_manifest.get("data_date") or prior_manifest["data_date"] < packet["meta"]["trade_date"]},
         {"name": "next_day_plan_limit", "actual": len(packet["next_day_plan"]), "threshold": 20, "passed": len(packet["next_day_plan"]) <= 20},
-        {"name": "required_context_sections", "actual": len(packet["review_template_support"]), "threshold": 13, "passed": len(packet["review_template_support"]) == 13},
+        {"name": "capital_preference_context", "actual": capital_manifest.get("status"), "threshold": "AVAILABLE", "passed": capital_manifest.get("status") == "AVAILABLE"},
+        {"name": "required_context_sections", "actual": len(packet["review_template_support"]), "threshold": 14, "passed": len(packet["review_template_support"]) == 14},
     ])
     return {
         "status": "PASS" if all(row["passed"] for row in checks) else "PARTIAL",

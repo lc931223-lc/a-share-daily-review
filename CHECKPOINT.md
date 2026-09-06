@@ -1,5 +1,25 @@
 # Checkpoint
 
+## 2026-09-06 Capital Preference Intelligence Layer Phase 1
+
+Checkpoint: implementation, 2026-09-04 packet, historical replay, and targeted validation complete
+
+Task: Add an objective capital-preference evidence layer without creating a second market database or producing mainline, trading, prediction, or position conclusions.
+
+Completed:
+
+- Added theme 0-100 scoring with the requested 20/20/20/15/15/10 component structure and per-component available-score accounting.
+- Added stock position, capacity, crowding, style-match, and role evidence plus candidate-only leader/capacity flags.
+- Added leader, capacity, trend-leader, elasticity, and catch-up capital structures with an auditable structure score.
+- Reused the existing Market Packet, Review Intelligence, Inflection, Auction, official-review files and FactStore; no second quote database was created.
+- Added full and compact schemas, CLI entry points, Parquet/catalog persistence, Review Context integration, and the fourteenth formal-review support section `资金青睐逻辑拆解`.
+- Generated the 2026-09-04 full/compact packets and a 25-trading-day replay for 2026-08-01 through 2026-09-04.
+- Reworked historical feature and cross-sectional percentile calculation so replay computes each history window and sorted rank set once.
+
+Current state: The 2026-09-04 packet contains 54 themes and 730 linked stocks. Quality is honestly `PARTIAL`: historical news counts, institution coverage, dedicated cycle fundamentals, point-in-time concept membership, broad market-cap coverage, and adjustment factors are unavailable. The historical comparison uses `OBJECTIVE_REVIEW_INTELLIGENCE_STRENGTH_PROXY`, not historical mainline labels.
+
+Validation: Targeted feature, missing-data, no-fundamental, no-capacity, overcrowding, multi-theme, packet/schema, and Review Context tests pass. `compileall` passes and the full non-real-data suite reports `255 passed, 1 deselected`.
+
 ## 2026-09-06 Feedback Loop Phase 1
 
 Checkpoint: implementation, strict as-of historical replay, and release checks complete

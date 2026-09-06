@@ -32,6 +32,12 @@ data/review_intelligence/backtests/*
 data/review_context/*
 !data/review_context/2026-09-04.json
 !data/review_context/2026-09-04_compact.json
+data/capital_preference/*
+!data/capital_preference/2026-09-04.json
+!data/capital_preference/2026-09-04_compact.json
+!data/capital_preference/backtests/
+data/capital_preference/backtests/*
+!data/capital_preference/backtests/2026-08-01_to_2026-09-04.json
 data/as_of_backtests/*
 !data/as_of_backtests/2025-01-01_to_2026-09-04.json
 data/feedback_records/*

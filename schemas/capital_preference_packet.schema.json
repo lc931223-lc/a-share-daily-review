@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Capital Preference Packet",
+  "type": "object",
+  "required": ["meta", "source_manifest", "theme_capital_preference", "stock_capital_preference", "data_quality"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["schema_version", "trade_date", "as_of", "data_role", "final_judgement_owner"],
+      "properties": {
+        "schema_version": {"const": "capital_preference_packet.1"},
+        "trade_date": {"type": "string", "format": "date"},
+        "as_of": {"type": "string"},
+        "data_role": {"const": "OBJECTIVE_EVIDENCE"},
+        "final_judgement_owner": {"const": "chatgpt"}
+      },
+      "additionalProperties": false
+    },
+    "source_manifest": {"type": "object"},
+    "theme_capital_preference": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["theme", "capital_preference_score", "available_max_score", "component_coverage", "fundamental_fit", "position_advantage", "capital_capacity", "crowding_advantage", "style_match", "consensus_proxy", "capital_structure_score", "capacity_structure", "crowding_status", "why_capital_selected", "candidate_only"]
+      }
+    },
+    "stock_capital_preference": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["ts_code", "stock_capital_preference_score", "position", "capacity", "crowding", "style_match", "theme_role", "leader_candidate", "capacity_candidate", "candidate_only"]
+      }
+    },
+    "data_quality": {
+      "type": "object",
+      "required": ["status", "checks", "known_gaps"]
+    }
+  },
+  "additionalProperties": false
+}

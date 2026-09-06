@@ -45,11 +45,13 @@ def test_context_contains_all_objective_sections(tmp_path):
     result = ReviewContextBuilder(tmp_path).build(date(2026, 9, 4))
     required = {"market_environment", "next_day_theme_candidates", "medium_term_structure_candidates",
         "market_cycle_and_style", "core_theme_roles", "inflection_candidates",
-        "previous_hypothesis_validation", "next_day_plan", "review_template_support", "data_quality"}
+        "previous_hypothesis_validation", "next_day_plan", "capital_preference",
+        "review_template_support", "data_quality"}
     assert required <= result["packet"].keys()
     assert result["packet"]["previous_hypothesis_validation"]["confirmed"] == ["A"]
     assert result["packet"]["previous_hypothesis_validation"]["weakened"] == ["B"]
     assert result["packet"]["previous_hypothesis_validation"]["invalidated"] == ["C"]
+    assert result["packet"]["capital_preference"]["status"] == "UNAVAILABLE"
     assert len(json.dumps(result["compact"])) <= len(json.dumps(result["packet"]))
 
 
