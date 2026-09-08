@@ -10,7 +10,7 @@ Task: Audit and remediate the production chain from the exact previous trading-d
 - Added 5/10/20-day auction amount/volume percentile and z-score fields, post-09:20 stability/growth/decay metrics, sector breadth/structure, tomorrow-check statuses, lifecycle candidates, and stock state transitions.
 - Implemented the 100-point traceable scoring model with child-level available maxima and a real 0-20 risk deduction. D-level evidence receives zero catalyst score.
 - Added `post-open` mode for same-day 09:30-10:00 Tencent/Eastmoney validation and a dedicated FactStore partition. Historical dates are rejected by current-only source guards.
-- The 2026-09-04 final replay remains honestly `MEDIUM/PARTIAL` and `degraded`: checkpoint coverage 95.64%, post-09:20 coverage 100%, formal match coverage 100%, but the exact 2026-09-03 official review and review context do not exist and historical mode cannot pass live acceptance.
+- The 2026-09-04 final replay remains honestly `MEDIUM/PARTIAL` and `degraded`: checkpoint coverage 95.73%, post-09:20 coverage 100%, formal match coverage 100%, but the exact 2026-09-03 official review and review context do not exist and historical mode cannot pass live acceptance.
 - Production readiness remains `PARTIALLY READY` until a real trading-day live run proves the scheduler, exact prior formal review availability, 09:15 start, 09:30-10:00 follow-up, and EOD reconciliation end to end.
 
 ## 2026-09-06 Capital Preference Intelligence Layer Phase 1

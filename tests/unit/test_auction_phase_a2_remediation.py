@@ -138,6 +138,31 @@ def test_high_gap_with_order_decay_does_not_beat_stable_small_gap():
     assert any(row["risk_type"] == "ORDER_DECAY" for row in high_gap["risks"])
 
 
+def test_price_component_is_capped_and_extreme_high_open_is_not_full_score():
+    normal = score_stock(
+        _summary(auction_gap_pct=3),
+        {"ts_code": "000001.SZ", "themes": ["测试主题"]},
+        _context(),
+        _sector(),
+        [],
+    )
+    extreme = score_stock(
+        _summary(auction_gap_pct=8),
+        {"ts_code": "000001.SZ", "themes": ["测试主题"]},
+        _context(),
+        _sector(),
+        [],
+    )
+    normal_price = normal["components"]["auction_strength"]["subcomponents"][
+        "price_performance"
+    ]["score"]
+    extreme_price = extreme["components"]["auction_strength"]["subcomponents"][
+        "price_performance"
+    ]["score"]
+    assert normal_price == 5
+    assert extreme_price < normal_price
+
+
 def test_d_level_evidence_scores_zero_and_is_deducted():
     score = score_stock(
         _summary(),

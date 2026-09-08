@@ -131,9 +131,13 @@ def _auction_component(summary, sector):
     parts = {}
     gap = summary.get("auction_gap_pct")
     if gap is not None:
-        absolute = abs(float(gap))
+        value = float(gap)
         parts["price_performance"] = (
-            max(0, 5 - max(0, absolute - 3) * 0.5) if gap > 0 else max(0, 2 + float(gap) * 0.5)
+            max(0, 2 + value * 2 / 3)
+            if value <= 0
+            else 2 + value
+            if value <= 3
+            else max(0, 5 - (value - 3) * 0.75)
         )
     stability = summary.get("post_0920_price_stability")
     if stability is not None:
