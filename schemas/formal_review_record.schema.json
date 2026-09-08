@@ -3,8 +3,10 @@
   "title": "Formal ChatGPT Review Record",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "date", "market_overview", "market_regime", "main_themes", "changes_vs_previous_day", "previous_day_validation", "uncertainties"],
+  "required": ["schema_version", "date", "previous_trade_date", "final_judgement_owner", "market_overview", "market_regime", "main_themes", "changes_vs_previous_day", "previous_day_validation", "uncertainties"],
   "properties": {
+    "final_judgement_owner": {"const": "chatgpt"},
+    "previous_trade_date": {"type": "string", "format": "date"},
     "schema_version": {"const": "formal_review.3"},
     "date": {"type": "string", "format": "date"},
     "market_overview": {"type": "object"},

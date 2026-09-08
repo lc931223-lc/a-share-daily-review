@@ -1,5 +1,11 @@
 # Daily Production Acceptance - 2026-09-08
 
+> Superseded by 2026-09-09-quality-memory-acceptance.md. The historical support PASS
+> and 0.633333 objective hit rate below are withdrawn: upstream failure was not
+> propagated and free-text checks were incorrectly inferred from price direction.
+> These figures must not be used as formal review performance. Current formal hit
+> rates are null because the exact previous ChatGPT formal review is absent.
+
 ## Result
 
 The daily close chain now has one production entry, ordered recovery, machine-readable status, strict same-date inputs, monotonic Feedback advancement, and scheduled execution. Real sequential production completed for 2026-09-07 and 2026-09-08.

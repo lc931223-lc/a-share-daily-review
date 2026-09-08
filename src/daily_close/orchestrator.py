@@ -14,6 +14,7 @@ from jsonschema import Draft202012Validator
 from src.capital_preference.pipeline import CapitalPreferencePipeline
 from src.feedback.forward import advance_feedback
 from src.formal_review.support import build_formal_review_support
+from src.formal_review.persistence import import_inbox, load_previous_formal
 from src.inflection.pipeline import InflectionPipeline
 from src.market_packet.packet_builder import build_market_packet, write_outputs
 from src.market_packet.trading_calendar import TradingCalendarDay, load_trading_calendar
@@ -79,6 +80,8 @@ class DailyCloseOrchestrator:
             "steps": {},
             "status": "BLOCKED",
             "blockers": [],
+            "upstream_warnings": [],
+            "degraded_inputs": [],
         }
         if not is_trade_day:
             manifest["status"] = "NON_TRADING_DAY"
@@ -86,6 +89,8 @@ class DailyCloseOrchestrator:
         if not market_closed:
             manifest["status"] = "MARKET_NOT_CLOSED"
             return self._finish(manifest)
+
+        manifest["formal_review_imports"] = import_inbox(self.root)
 
         for name in (
             "market_packet",
@@ -248,6 +253,18 @@ class DailyCloseOrchestrator:
             Draft202012Validator(schema).validate(payload)
             if name == "review_context":
                 self._validate_context_provenance(payload, target)
+                stored = (payload.get("source_manifest") or {}).get("prior_official_review")
+                if stored is not None:
+                    _, actual = load_previous_formal(self.root, target, self.calendar_loader(target))
+                    if stored.get("sha256") != actual.get("sha256") or stored.get("status") != actual.get("status"):
+                        raise ValueError("previous formal review changed; rebuild context")
+            if name == "formal_review_support":
+                for source_name, folder_name in (("review_context", "review_context"), ("market_packet", "market_packets")):
+                    reference = (payload.get("source_manifest") or {}).get(source_name)
+                    if reference:
+                        upstream_path = self.root / "data" / folder_name / f"{target}.json"
+                        if hashlib.sha256(upstream_path.read_bytes()).hexdigest() != reference.get("sha256"):
+                            raise ValueError("formal support upstream content changed")
             quality = (payload.get("data_quality") or {}).get("status") or "PASS"
             return {
                 "valid": True,
@@ -259,13 +276,21 @@ class DailyCloseOrchestrator:
         except Exception as exc:
             return {"valid": False, "path": str(path), "error": str(exc), "quality": None, "sha256": None}
 
-    @staticmethod
-    def _validate_context_provenance(payload: dict[str, Any], target: date) -> None:
+    def _validate_context_provenance(self, payload: dict[str, Any], target: date) -> None:
         manifest = payload.get("source_manifest") or {}
         for name in ("market_packet", "review_intelligence", "inflection_scanner", "capital_preference"):
             actual = str((manifest.get(name) or {}).get("data_date") or "")[:10]
             if actual != target.isoformat():
                 raise ValueError(f"review_context {name} provenance is not same-date: {actual}")
+            folders = {"market_packet": "market_packets", "review_intelligence": "review_intelligence", "inflection_scanner": "inflection", "capital_preference": "capital_preference"}
+            reference = manifest[name]
+            if reference.get("sha256"):
+                suffix = "_compact" if name == "capital_preference" else ""
+                path = self.root / "data" / folders[name] / f"{target}{suffix}.json"
+                upstream = json.loads(path.read_text(encoding="utf-8"))
+                digest = hashlib.sha256(json.dumps(upstream, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+                if digest != reference["sha256"]:
+                    raise ValueError(f"review_context {name} content changed")
         auction = manifest.get("auction_packet") or {}
         if auction.get("status") == "AVAILABLE" and str(auction.get("data_date") or "")[:10] != target.isoformat():
             raise ValueError("review_context auction provenance is cross-date")
@@ -307,6 +332,13 @@ class DailyCloseOrchestrator:
     def _finish(self, manifest: dict[str, Any]) -> dict[str, Any]:
         if manifest["status"] not in FINAL_STATUSES:
             raise ValueError(f"invalid final status {manifest['status']}")
+        for name, step in manifest["steps"].items():
+            if step.get("quality") not in {"PASS", "EMPTY_VALID"}:
+                manifest["degraded_inputs"].append({"step": name, "quality": step.get("quality"), "optional_missing": name == "auction" and step["status"] == "UNAVAILABLE"})
+            if step.get("quality") in {"FAIL", "INVALID", "PARTIAL_WITH_UPSTREAM_FAILURE"}:
+                manifest["upstream_warnings"].append({"step": name, "quality": step["quality"]})
+        if "auction" in manifest["steps"]:
+            manifest["steps"]["auction"]["optional_missing"] = manifest["steps"]["auction"]["status"] == "UNAVAILABLE"
         manifest["readiness_checks"] = self._readiness_checks(manifest)
         secret_check = next(
             row for row in manifest["readiness_checks"] if row["name"] == "no_plaintext_secrets"

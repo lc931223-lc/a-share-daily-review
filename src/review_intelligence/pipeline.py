@@ -9,6 +9,7 @@ import pandas as pd
 from jsonschema import Draft202012Validator
 
 from src.inflection.history import DailyHistoryRepository
+from src.market_packet.trading_calendar import load_trading_calendar
 from src.review_intelligence.helpers import mean, number, stock_code
 from src.review_intelligence.market import compute_cycle_features, compute_market_operability
 from src.review_intelligence.roles import build_chip_candidates, build_role_candidates, compute_money_effects, detect_catalyst_fatigue
@@ -39,7 +40,9 @@ class ReviewIntelligencePipeline:
         inflections = self._load_inflections(target)
         auction = self._load_auction(target)
         previous = self._previous_states(target)
-        raw_themes = market.get("themes") or _industry_themes(current, metadata)
+        raw_themes = list(market.get("themes") or [])
+        present = {row.get("theme_name") for row in raw_themes}
+        raw_themes.extend(row for row in _industry_themes(current, metadata) if row.get("theme_name") not in present and (not present or row.get("theme_name") in previous["theme_1d"]))
         announcement_counts = _announcement_counts(raw_themes, market)
         official_scores = _official_theme_scores(market)
         theme_rows = score_themes(
@@ -147,8 +150,10 @@ class ReviewIntelligencePipeline:
     def _previous_states(self, target):
         folder = self.root / "data" / "review_intelligence"
         dates = sorted(path.stem for path in folder.glob("????-??-??.json") if path.stem < target.isoformat())
+        trading_dates = sorted(row.cal_date.isoformat() for row in load_trading_calendar(target, cache_root=self.root / "data/reference") if row.is_open and row.cal_date < target) if dates else []
         def load(offset):
-            return _read(folder / f"{dates[-offset]}.json") if len(dates) >= offset else {}
+            expected = trading_dates[-offset] if len(trading_dates) >= offset else None
+            return _read(folder / f"{expected}.json") if expected in dates else {}
         one, five, twenty = load(1), load(5), load(20)
         return {
             "theme_1d": {row["theme_name"]: row.get("theme_inflection_score") for row in one.get("theme_features", [])},

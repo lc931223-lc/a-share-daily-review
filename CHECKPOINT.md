@@ -1,5 +1,21 @@
 # Checkpoint
 
+## 2026-09-09 Quality And Formal Memory Closure
+
+- Added conservative daily-band verification for empty limit-down responses; real
+  2026-09-08 remains FAIL/69 and UNAVAILABLE, not a fabricated zero.
+- Support inherits PARTIAL_WITH_UPSTREAM_FAILURE; manifest exposes degradation and
+  optional missing auction. Added upstream SHA invalidation.
+- Canonical ChatGPT v3 formal reviews now import through stdin/inbox with schema,
+  calendar, ordered 41 factors, tier, ownership, idempotency and SHA validation.
+  Exact prior day only; absent 2026-09-07 formal means null formal hit rates on 9/8.
+- Withdrew price-direction-based free-text hit rates. Objective and formal feedback
+  are separated. Added domain mapping, availability-aware score rubric, short windows,
+  alias/parent identity, stable prior industry candidates and real-calendar windows.
+- Real 9/8 support: 3 confirmed / 20 partial / 592 unconfirmed factor evaluations.
+- Full non-real-data tests: 293 passed, 1 deselected. See latest acceptance audit.
+- No final investment judgement, second model, auction expansion or PDF work.
+
 ## 2026-09-08 Daily Close Production Orchestrator
 
 Task: Connect the existing research artifacts into one recoverable daily close chain without adding another research model.

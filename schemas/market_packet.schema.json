@@ -3,6 +3,7 @@
     "DataQuality": {
       "additionalProperties": false,
       "properties": {
+        "empty_set_verifications": {"type": "object", "additionalProperties": {"type": "array", "items": {"type": "object"}}},
         "status": {
           "enum": [
             "PASS",
@@ -198,6 +199,7 @@
     "SourceMeta": {
       "additionalProperties": false,
       "properties": {
+        "empty_state": {"enum": ["NOT_EMPTY", "EMPTY_VALID", "EMPTY_UNVERIFIED", "SOURCE_FAILURE", null]},
         "source": {
           "title": "Source",
           "type": "string"

@@ -23,8 +23,8 @@
     "large_loss_count": null,
     "index_strength_dispersion": 2.4212538884336947,
     "sector_concentration": 17.74,
-    "theme_concentration": 42.01,
-    "market_operability_score": 67.51,
+    "theme_concentration": 54.91,
+    "market_operability_score": 68.8,
     "available_max_score": 90,
     "feature_components": {
       "liquidity": 5.88,
@@ -34,13 +34,13 @@
       "continuous_board_feedback": 8.57,
       "board_height": 10,
       "loss_control": null,
-      "theme_concentration": 4.2
+      "theme_concentration": 5.49
     }
   },
   "cycle_feature_vector": {
     "new_theme_count": 13,
-    "strengthening_theme_count": 16,
-    "weakening_theme_count": 2,
+    "strengthening_theme_count": 20,
+    "weakening_theme_count": 9,
     "limit_up_breadth": 2.9365329965266813,
     "continuous_board_height": 6.0,
     "promotion_rate": null,
@@ -378,13 +378,13 @@
     }
   ],
   "theme_concentration": {
-    "theme_concentration_score": 42.01,
+    "theme_concentration_score": 54.91,
     "concentration_candidate": "MEDIUM",
     "feature_components": {
-      "top1_theme_amount_share": 33.21443205466028,
-      "top3_theme_amount_share": 53.370537083481594,
-      "top1_limit_up_share": 15.053763440860216,
-      "top3_limit_up_share": 31.182795698924732,
+      "top1_theme_amount_share": 60.34120521562251,
+      "top3_theme_amount_share": 74.36376751989032,
+      "top1_limit_up_share": 14.893617021276595,
+      "top3_limit_up_share": 30.851063829787233,
       "top_theme_breadth": 100.0,
       "core_capacity_share": 80.67134269280025
     },
@@ -2663,6 +2663,71 @@
       "trend_candidates": []
     },
     {
+      "theme_name": "IT服务Ⅱ",
+      "normalized_name": "IT服务Ⅱ",
+      "code": null,
+      "change_pct": 4.9887,
+      "rise_count": 1,
+      "fall_count": 0,
+      "limit_up_count": 0,
+      "limit_down_count": 0,
+      "failed_limit_count": null,
+      "amount": 544425713.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "605398.SH",
+          "stock_name": "新炬网络",
+          "change_pct": 4.9887,
+          "amount": 544425713.0,
+          "board_count": 0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "605398.SH",
+          "stock_name": "新炬网络",
+          "change_pct": 4.9887,
+          "amount": 544425713.0,
+          "board_count": 0
+        }
+      ],
+      "catch_up_candidates": [],
+      "source": "tushare.daily industry proxy",
+      "quality": "PARTIAL",
+      "theme_return": 4.9887,
+      "top_stock_return": 4.9887,
+      "theme_breadth": 100.0,
+      "theme_amount": 544425713.0,
+      "theme_amount_change": null,
+      "leader_strength": null,
+      "capacity_strength": 74.9435,
+      "trend_leader_strength": 39.0,
+      "catch_up_strength": null,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 54.57,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 20.168294117647058,
+      "score_change_1d": 20.168294117647058,
+      "score_change_5d": null,
+      "score_change_20d": null,
+      "score_components": {
+        "return": 74.9435,
+        "breadth": 100.0,
+        "limit_up": 0.0,
+        "roles": 56.97175,
+        "volume": null,
+        "catalyst": 0.0
+      },
+      "quality_status": "PASS",
+      "trend_candidates": []
+    },
+    {
       "theme_name": "农化制品",
       "code": null,
       "normalized_name": "农化制品",
@@ -2742,6 +2807,230 @@
       },
       "quality_status": "PARTIAL",
       "trend_candidates": []
+    },
+    {
+      "theme_name": "林业Ⅱ",
+      "normalized_name": "林业Ⅱ",
+      "code": null,
+      "change_pct": 5.0734,
+      "rise_count": 1,
+      "fall_count": 0,
+      "limit_up_count": 0,
+      "limit_down_count": 0,
+      "failed_limit_count": null,
+      "amount": 4169067653.23,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "000592.SZ",
+          "stock_name": "平潭发展",
+          "change_pct": 5.0734,
+          "amount": 4169067653.23,
+          "board_count": 0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "000592.SZ",
+          "stock_name": "平潭发展",
+          "change_pct": 5.0734,
+          "amount": 4169067653.23,
+          "board_count": 0
+        }
+      ],
+      "catch_up_candidates": [],
+      "source": "tushare.daily industry proxy",
+      "quality": "PARTIAL",
+      "theme_return": 5.0734,
+      "top_stock_return": 5.0734,
+      "theme_breadth": 100.0,
+      "theme_amount": 4169067653.23,
+      "theme_amount_change": null,
+      "leader_strength": null,
+      "capacity_strength": 75.367,
+      "trend_leader_strength": 35.0,
+      "catch_up_strength": null,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 54.25,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 1.647176470588228,
+      "score_change_1d": 1.647176470588228,
+      "score_change_5d": null,
+      "score_change_20d": null,
+      "score_components": {
+        "return": 75.367,
+        "breadth": 100.0,
+        "limit_up": 0.0,
+        "roles": 55.1835,
+        "volume": null,
+        "catalyst": 0.0
+      },
+      "quality_status": "PASS",
+      "trend_candidates": []
+    },
+    {
+      "theme_name": "半导体",
+      "normalized_name": "半导体",
+      "code": null,
+      "change_pct": 2.5616840206185567,
+      "rise_count": 162,
+      "fall_count": 31,
+      "limit_up_count": 0,
+      "limit_down_count": 0,
+      "failed_limit_count": null,
+      "amount": 229570819998.88,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "300632.SZ",
+          "stock_name": "光莆股份",
+          "change_pct": 10.7872,
+          "amount": 483661088.52,
+          "board_count": 0
+        },
+        {
+          "stock_code": "688048.SH",
+          "stock_name": "长光华芯",
+          "change_pct": 10.282,
+          "amount": 3566367169.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "688123.SH",
+          "stock_name": "聚辰股份",
+          "change_pct": 10.0032,
+          "amount": 1610898848.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "301629.SZ",
+          "stock_name": "矽电股份",
+          "change_pct": 8.9174,
+          "amount": 404292816.18,
+          "board_count": 0
+        },
+        {
+          "stock_code": "300666.SZ",
+          "stock_name": "江丰电子",
+          "change_pct": 8.6611,
+          "amount": 3186395028.24,
+          "board_count": 0
+        },
+        {
+          "stock_code": "688809.SH",
+          "stock_name": "强一股份",
+          "change_pct": 8.6389,
+          "amount": 1026856730.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "301297.SZ",
+          "stock_name": "富乐德",
+          "change_pct": 8.5699,
+          "amount": 840749346.93,
+          "board_count": 0
+        },
+        {
+          "stock_code": "688035.SH",
+          "stock_name": "德邦科技",
+          "change_pct": 8.4655,
+          "amount": 522121302.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "688416.SH",
+          "stock_name": "恒烁股份",
+          "change_pct": 8.3627,
+          "amount": 535963355.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "688766.SH",
+          "stock_name": "普冉股份",
+          "change_pct": 8.1768,
+          "amount": 4159996013.0,
+          "board_count": 0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "688766.SH",
+          "stock_name": "普冉股份",
+          "change_pct": 8.1768,
+          "amount": 4159996013.0,
+          "board_count": 0
+        }
+      ],
+      "catch_up_candidates": [
+        {
+          "stock_code": "688048.SH",
+          "stock_name": "长光华芯",
+          "change_pct": 10.282,
+          "amount": 3566367169.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "688123.SH",
+          "stock_name": "聚辰股份",
+          "change_pct": 10.0032,
+          "amount": 1610898848.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "301629.SZ",
+          "stock_name": "矽电股份",
+          "change_pct": 8.9174,
+          "amount": 404292816.18,
+          "board_count": 0
+        }
+      ],
+      "source": "tushare.daily industry proxy",
+      "quality": "PARTIAL",
+      "theme_return": 2.5616840206185567,
+      "top_stock_return": 9.08647,
+      "theme_breadth": 83.93782383419689,
+      "theme_amount": 229570819998.88,
+      "theme_amount_change": null,
+      "leader_strength": null,
+      "capacity_strength": 90.884,
+      "trend_leader_strength": 54.0,
+      "catch_up_strength": 100.0,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 53.74,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 29.735116220538735,
+      "score_change_1d": 29.735116220538735,
+      "score_change_5d": -9.404883779461265,
+      "score_change_20d": 5.5251162205387345,
+      "score_components": {
+        "return": 62.808420103092786,
+        "breadth": 83.93782383419689,
+        "limit_up": 0.0,
+        "roles": 81.628,
+        "volume": null,
+        "catalyst": 0.0
+      },
+      "quality_status": "PASS",
+      "trend_candidates": [
+        {
+          "ts_code": "603991.SH",
+          "stock_code": "603991.SH",
+          "stock_name": "领先股份",
+          "change_pct": 4.8622,
+          "amount": 914888424.0,
+          "trend_inflection_score": 54
+        }
+      ]
     },
     {
       "theme_name": "调味发酵",
@@ -3144,6 +3433,95 @@
       },
       "quality_status": "PARTIAL",
       "trend_candidates": []
+    },
+    {
+      "theme_name": "文娱用品",
+      "normalized_name": "文娱用品",
+      "code": null,
+      "change_pct": 2.7951499999999996,
+      "rise_count": 2,
+      "fall_count": 0,
+      "limit_up_count": 0,
+      "limit_down_count": 0,
+      "failed_limit_count": null,
+      "amount": 639743025.0799999,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "001222.SZ",
+          "stock_name": "源飞宠物",
+          "change_pct": 5.528,
+          "amount": 338957522.94,
+          "board_count": 0
+        },
+        {
+          "stock_code": "002862.SZ",
+          "stock_name": "实丰文化",
+          "change_pct": 0.0623,
+          "amount": 300785502.14,
+          "board_count": 0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "001222.SZ",
+          "stock_name": "源飞宠物",
+          "change_pct": 5.528,
+          "amount": 338957522.94,
+          "board_count": 0
+        }
+      ],
+      "catch_up_candidates": [
+        {
+          "stock_code": "002862.SZ",
+          "stock_name": "实丰文化",
+          "change_pct": 0.0623,
+          "amount": 300785502.14,
+          "board_count": 0
+        }
+      ],
+      "source": "tushare.daily industry proxy",
+      "quality": "PARTIAL",
+      "theme_return": 2.7951499999999996,
+      "top_stock_return": 2.7951499999999996,
+      "theme_breadth": 100.0,
+      "theme_amount": 639743025.0799999,
+      "theme_amount_change": null,
+      "leader_strength": null,
+      "capacity_strength": 77.64,
+      "trend_leader_strength": 41.0,
+      "catch_up_strength": 50.3115,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 51.83,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": -5.706372549019612,
+      "score_change_1d": -5.706372549019612,
+      "score_change_5d": null,
+      "score_change_20d": null,
+      "score_components": {
+        "return": 63.97575,
+        "breadth": 100.0,
+        "limit_up": 0.0,
+        "roles": 56.31716666666667,
+        "volume": null,
+        "catalyst": 0.0
+      },
+      "quality_status": "PASS",
+      "trend_candidates": [
+        {
+          "ts_code": "001222.SZ",
+          "stock_code": "001222.SZ",
+          "stock_name": "源飞宠物",
+          "change_pct": 5.528,
+          "amount": 338957522.94,
+          "trend_inflection_score": 41
+        }
+      ]
     },
     {
       "theme_name": "房地产开",
@@ -3663,6 +4041,156 @@
       "trend_candidates": []
     },
     {
+      "theme_name": "医药商业",
+      "normalized_name": "医药商业",
+      "code": null,
+      "change_pct": 0.9512916666666666,
+      "rise_count": 25,
+      "fall_count": 11,
+      "limit_up_count": 1,
+      "limit_down_count": 0,
+      "failed_limit_count": null,
+      "amount": 3784704326.1400003,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "000078.SZ",
+          "stock_name": "ST海王",
+          "change_pct": 10.3448,
+          "amount": 261753940.15,
+          "board_count": 1
+        },
+        {
+          "stock_code": "002788.SZ",
+          "stock_name": "鹭燕医药",
+          "change_pct": 5.292,
+          "amount": 253582486.09,
+          "board_count": 0
+        },
+        {
+          "stock_code": "301126.SZ",
+          "stock_name": "达嘉维康",
+          "change_pct": 2.6137,
+          "amount": 39162454.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "301015.SZ",
+          "stock_name": "百洋医药",
+          "change_pct": 2.3124,
+          "amount": 100737308.52000001,
+          "board_count": 0
+        },
+        {
+          "stock_code": "301263.SZ",
+          "stock_name": "泰恩康",
+          "change_pct": 2.2959,
+          "amount": 76847660.42,
+          "board_count": 0
+        },
+        {
+          "stock_code": "002872.SZ",
+          "stock_name": "ST天圣",
+          "change_pct": 2.0654,
+          "amount": 16527295.999999998,
+          "board_count": 0
+        },
+        {
+          "stock_code": "603883.SH",
+          "stock_name": "老百姓",
+          "change_pct": 1.7075,
+          "amount": 188569672.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "603716.SH",
+          "stock_name": "塞力医疗",
+          "change_pct": 1.6734,
+          "amount": 170777938.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "002589.SZ",
+          "stock_name": "瑞康医药",
+          "change_pct": 1.2422,
+          "amount": 212394042.31,
+          "board_count": 0
+        },
+        {
+          "stock_code": "301584.SZ",
+          "stock_name": "建发致新",
+          "change_pct": 1.2013,
+          "amount": 25327752.64,
+          "board_count": 0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "000078.SZ",
+          "stock_name": "ST海王",
+          "change_pct": 10.3448,
+          "amount": 261753940.15,
+          "board_count": 1
+        }
+      ],
+      "catch_up_candidates": [
+        {
+          "stock_code": "002788.SZ",
+          "stock_name": "鹭燕医药",
+          "change_pct": 5.292,
+          "amount": 253582486.09,
+          "board_count": 0
+        },
+        {
+          "stock_code": "301126.SZ",
+          "stock_name": "达嘉维康",
+          "change_pct": 2.6137,
+          "amount": 39162454.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "301015.SZ",
+          "stock_name": "百洋医药",
+          "change_pct": 2.3124,
+          "amount": 100737308.52000001,
+          "board_count": 0
+        }
+      ],
+      "source": "tushare.daily industry proxy",
+      "quality": "PARTIAL",
+      "theme_return": 0.9512916666666666,
+      "top_stock_return": 3.07486,
+      "theme_breadth": 69.44444444444444,
+      "theme_amount": 3784704326.1400003,
+      "theme_amount_change": null,
+      "leader_strength": null,
+      "capacity_strength": 100.0,
+      "trend_leader_strength": 26.0,
+      "catch_up_strength": 76.46000000000001,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 47.22,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 47.22060457516339,
+      "score_change_1d": 47.22060457516339,
+      "score_change_5d": 20.30060457516339,
+      "score_change_20d": -16.879395424836602,
+      "score_components": {
+        "return": 54.756458333333335,
+        "breadth": 69.44444444444444,
+        "limit_up": 12.0,
+        "roles": 67.48666666666666,
+        "volume": null,
+        "catalyst": 0.0
+      },
+      "quality_status": "PASS",
+      "trend_candidates": []
+    },
+    {
       "theme_name": "非金属材",
       "code": null,
       "normalized_name": "非金属材",
@@ -4035,6 +4563,165 @@
       ]
     },
     {
+      "theme_name": "水泥",
+      "normalized_name": "水泥",
+      "code": null,
+      "change_pct": -0.2188818181818182,
+      "rise_count": 8,
+      "fall_count": 7,
+      "limit_up_count": 0,
+      "limit_down_count": 0,
+      "failed_limit_count": null,
+      "amount": 2290289154.64,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "000672.SZ",
+          "stock_name": "上峰材料",
+          "change_pct": 0.9402,
+          "amount": 274551705.85,
+          "board_count": 0
+        },
+        {
+          "stock_code": "605122.SH",
+          "stock_name": "四方新材",
+          "change_pct": 0.9402,
+          "amount": 20895913.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "603616.SH",
+          "stock_name": "韩建河山",
+          "change_pct": 0.5172,
+          "amount": 124336429.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "002233.SZ",
+          "stock_name": "塔牌集团",
+          "change_pct": 0.4231,
+          "amount": 72770834.41,
+          "board_count": 0
+        },
+        {
+          "stock_code": "600425.SH",
+          "stock_name": "青松建化",
+          "change_pct": 0.2688,
+          "amount": 39144053.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "002671.SZ",
+          "stock_name": "龙泉股份",
+          "change_pct": 0.2488,
+          "amount": 33671479.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "600802.SH",
+          "stock_name": "福建水泥",
+          "change_pct": 0.1919,
+          "amount": 284920811.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "600449.SH",
+          "stock_name": "宁夏建材",
+          "change_pct": 0.1591,
+          "amount": 90389974.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "002302.SZ",
+          "stock_name": "西部建设",
+          "change_pct": 0.0,
+          "amount": 24349929.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "000877.SZ",
+          "stock_name": "天山股份",
+          "change_pct": 0.0,
+          "amount": 43045557.0,
+          "board_count": 0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "600802.SH",
+          "stock_name": "福建水泥",
+          "change_pct": 0.1919,
+          "amount": 284920811.0,
+          "board_count": 0
+        }
+      ],
+      "catch_up_candidates": [
+        {
+          "stock_code": "605122.SH",
+          "stock_name": "四方新材",
+          "change_pct": 0.9402,
+          "amount": 20895913.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "603616.SH",
+          "stock_name": "韩建河山",
+          "change_pct": 0.5172,
+          "amount": 124336429.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "002233.SZ",
+          "stock_name": "塔牌集团",
+          "change_pct": 0.4231,
+          "amount": 72770834.41,
+          "board_count": 0
+        }
+      ],
+      "source": "tushare.daily industry proxy",
+      "quality": "PARTIAL",
+      "theme_return": -0.2188818181818182,
+      "top_stock_return": 0.36893,
+      "theme_breadth": 53.333333333333336,
+      "theme_amount": 2290289154.64,
+      "theme_amount_change": null,
+      "leader_strength": null,
+      "capacity_strength": 50.9595,
+      "trend_leader_strength": 41.0,
+      "catch_up_strength": 54.701,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 35.56,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": -20.070998217468812,
+      "score_change_1d": -20.070998217468812,
+      "score_change_5d": 4.019001782531191,
+      "score_change_20d": -22.15099821746881,
+      "score_components": {
+        "return": 48.90559090909091,
+        "breadth": 53.333333333333336,
+        "limit_up": 0.0,
+        "roles": 48.886833333333335,
+        "volume": null,
+        "catalyst": 0.0
+      },
+      "quality_status": "PASS",
+      "trend_candidates": [
+        {
+          "ts_code": "600802.SH",
+          "stock_code": "600802.SH",
+          "stock_name": "福建水泥",
+          "change_pct": 0.1919,
+          "amount": 284920811.0,
+          "trend_inflection_score": 41
+        }
+      ]
+    },
+    {
       "theme_name": "装修装饰",
       "code": null,
       "normalized_name": "装修装饰",
@@ -4099,6 +4786,436 @@
         "catalyst": 0.0
       },
       "quality_status": "PARTIAL",
+      "trend_candidates": []
+    },
+    {
+      "theme_name": "多元金融",
+      "normalized_name": "多元金融",
+      "code": null,
+      "change_pct": -1.0350695652173914,
+      "rise_count": 3,
+      "fall_count": 20,
+      "limit_up_count": 0,
+      "limit_down_count": 0,
+      "failed_limit_count": null,
+      "amount": 6345010859.24,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "603123.SH",
+          "stock_name": "翠微股份",
+          "change_pct": 5.1878,
+          "amount": 1461587197.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "600053.SH",
+          "stock_name": "*ST九鼎",
+          "change_pct": 1.5385,
+          "amount": 12043784.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "002647.SZ",
+          "stock_name": "仁东控股",
+          "change_pct": 0.1747,
+          "amount": 180989461.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "600120.SH",
+          "stock_name": "浙江东方",
+          "change_pct": -0.2033,
+          "amount": 155805006.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "600517.SH",
+          "stock_name": "国网英大",
+          "change_pct": -0.396,
+          "amount": 129733066.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "000567.SZ",
+          "stock_name": "海德股份",
+          "change_pct": -0.4464,
+          "amount": 191293819.38,
+          "board_count": 0
+        },
+        {
+          "stock_code": "600643.SH",
+          "stock_name": "爱建集团",
+          "change_pct": -0.4796,
+          "amount": 63294320.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "600901.SH",
+          "stock_name": "江苏金租",
+          "change_pct": -0.7418,
+          "amount": 208201984.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "600816.SH",
+          "stock_name": "建元信托",
+          "change_pct": -0.8,
+          "amount": 185586302.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "603300.SH",
+          "stock_name": "海南华铁",
+          "change_pct": -1.0204,
+          "amount": 161995140.0,
+          "board_count": 0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "603123.SH",
+          "stock_name": "翠微股份",
+          "change_pct": 5.1878,
+          "amount": 1461587197.0,
+          "board_count": 0
+        }
+      ],
+      "catch_up_candidates": [
+        {
+          "stock_code": "600053.SH",
+          "stock_name": "*ST九鼎",
+          "change_pct": 1.5385,
+          "amount": 12043784.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "002647.SZ",
+          "stock_name": "仁东控股",
+          "change_pct": 0.1747,
+          "amount": 180989461.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "600120.SH",
+          "stock_name": "浙江东方",
+          "change_pct": -0.2033,
+          "amount": 155805006.0,
+          "board_count": 0
+        }
+      ],
+      "source": "tushare.daily industry proxy",
+      "quality": "PARTIAL",
+      "theme_return": -1.0350695652173914,
+      "top_stock_return": 0.28135,
+      "theme_breadth": 13.043478260869565,
+      "theme_amount": 6345010859.24,
+      "theme_amount_change": null,
+      "leader_strength": null,
+      "capacity_strength": 75.939,
+      "trend_leader_strength": 36.0,
+      "catch_up_strength": 57.6925,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 26.92,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": -9.9995379369139,
+      "score_change_1d": -9.9995379369139,
+      "score_change_5d": -1.4995379369138995,
+      "score_change_20d": -28.009537936913897,
+      "score_components": {
+        "return": 44.824652173913044,
+        "breadth": 13.043478260869565,
+        "limit_up": 0.0,
+        "roles": 56.54383333333333,
+        "volume": null,
+        "catalyst": 0.0
+      },
+      "quality_status": "PASS",
+      "trend_candidates": []
+    },
+    {
+      "theme_name": "煤炭开采",
+      "normalized_name": "煤炭开采",
+      "code": null,
+      "change_pct": -2.000252,
+      "rise_count": 3,
+      "fall_count": 21,
+      "limit_up_count": 0,
+      "limit_down_count": 0,
+      "failed_limit_count": null,
+      "amount": 12847732482.89,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "600508.SH",
+          "stock_name": "上海能源",
+          "change_pct": 1.3369,
+          "amount": 470399058.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "600403.SH",
+          "stock_name": "大有能源",
+          "change_pct": 0.9188,
+          "amount": 483156385.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "000571.SZ",
+          "stock_name": "新大洲A",
+          "change_pct": 0.1684,
+          "amount": 73055409.73,
+          "board_count": 0
+        },
+        {
+          "stock_code": "600925.SH",
+          "stock_name": "苏能股份",
+          "change_pct": 0.0,
+          "amount": 36770628.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "600758.SH",
+          "stock_name": "辽宁能源",
+          "change_pct": -0.8174,
+          "amount": 147739126.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "600123.SH",
+          "stock_name": "兰花科创",
+          "change_pct": -0.8511,
+          "amount": 132652171.99999999,
+          "board_count": 0
+        },
+        {
+          "stock_code": "000552.SZ",
+          "stock_name": "甘肃能化",
+          "change_pct": -1.1719,
+          "amount": 161723570.85,
+          "board_count": 0
+        },
+        {
+          "stock_code": "601666.SH",
+          "stock_name": "平煤股份",
+          "change_pct": -1.3978,
+          "amount": 314535514.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "600546.SH",
+          "stock_name": "山煤国际",
+          "change_pct": -1.5945,
+          "amount": 320270569.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "601918.SH",
+          "stock_name": "新集能源",
+          "change_pct": -1.6221,
+          "amount": 344208240.0,
+          "board_count": 0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "600403.SH",
+          "stock_name": "大有能源",
+          "change_pct": 0.9188,
+          "amount": 483156385.0,
+          "board_count": 0
+        }
+      ],
+      "catch_up_candidates": [
+        {
+          "stock_code": "600403.SH",
+          "stock_name": "大有能源",
+          "change_pct": 0.9188,
+          "amount": 483156385.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "000571.SZ",
+          "stock_name": "新大洲A",
+          "change_pct": 0.1684,
+          "amount": 73055409.73,
+          "board_count": 0
+        },
+        {
+          "stock_code": "600925.SH",
+          "stock_name": "苏能股份",
+          "change_pct": 0.0,
+          "amount": 36770628.0,
+          "board_count": 0
+        }
+      ],
+      "source": "tushare.daily industry proxy",
+      "quality": "PARTIAL",
+      "theme_return": -2.000252,
+      "top_stock_return": -0.50307,
+      "theme_breadth": 12.5,
+      "theme_amount": 12847732482.89,
+      "theme_amount_change": null,
+      "leader_strength": null,
+      "capacity_strength": 54.594,
+      "trend_leader_strength": 13.0,
+      "catch_up_strength": 54.594,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 21.94,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 21.93601725490196,
+      "score_change_1d": 21.93601725490196,
+      "score_change_5d": -32.66398274509804,
+      "score_change_20d": -30.403982745098045,
+      "score_components": {
+        "return": 39.99874,
+        "breadth": 12.5,
+        "limit_up": 0.0,
+        "roles": 40.72933333333334,
+        "volume": null,
+        "catalyst": 0.0
+      },
+      "quality_status": "PASS",
+      "trend_candidates": []
+    },
+    {
+      "theme_name": "工程咨询",
+      "normalized_name": "工程咨询",
+      "code": null,
+      "change_pct": -0.1421,
+      "rise_count": 0,
+      "fall_count": 1,
+      "limit_up_count": 0,
+      "limit_down_count": 0,
+      "failed_limit_count": null,
+      "amount": 265179349.83,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "002949.SZ",
+          "stock_name": "华阳国际",
+          "change_pct": -0.1421,
+          "amount": 265179349.83,
+          "board_count": 0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "002949.SZ",
+          "stock_name": "华阳国际",
+          "change_pct": -0.1421,
+          "amount": 265179349.83,
+          "board_count": 0
+        }
+      ],
+      "catch_up_candidates": [],
+      "source": "tushare.daily industry proxy",
+      "quality": "PARTIAL",
+      "theme_return": -0.1421,
+      "top_stock_return": -0.1421,
+      "theme_breadth": 0.0,
+      "theme_amount": 265179349.83,
+      "theme_amount_change": null,
+      "leader_strength": null,
+      "capacity_strength": 49.2895,
+      "trend_leader_strength": 22.0,
+      "catch_up_strength": null,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 19.98,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": -11.805470588235295,
+      "score_change_1d": -11.805470588235295,
+      "score_change_5d": null,
+      "score_change_20d": null,
+      "score_components": {
+        "return": 49.2895,
+        "breadth": 0.0,
+        "limit_up": 0.0,
+        "roles": 35.64475,
+        "volume": null,
+        "catalyst": 0.0
+      },
+      "quality_status": "PASS",
+      "trend_candidates": []
+    },
+    {
+      "theme_name": "动物保健",
+      "normalized_name": "动物保健",
+      "code": null,
+      "change_pct": -0.542,
+      "rise_count": 0,
+      "fall_count": 1,
+      "limit_up_count": 0,
+      "limit_down_count": 0,
+      "failed_limit_count": null,
+      "amount": 298884135.91999996,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "002868.SZ",
+          "stock_name": "绿康生化",
+          "change_pct": -0.542,
+          "amount": 298884135.91999996,
+          "board_count": 0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "002868.SZ",
+          "stock_name": "绿康生化",
+          "change_pct": -0.542,
+          "amount": 298884135.91999996,
+          "board_count": 0
+        }
+      ],
+      "catch_up_candidates": [],
+      "source": "tushare.daily industry proxy",
+      "quality": "PARTIAL",
+      "theme_return": -0.542,
+      "top_stock_return": -0.542,
+      "theme_breadth": 0.0,
+      "theme_amount": 298884135.91999996,
+      "theme_amount_change": null,
+      "leader_strength": null,
+      "capacity_strength": 47.29,
+      "trend_leader_strength": 26.0,
+      "catch_up_strength": null,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 19.75,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": -34.100588235294126,
+      "score_change_1d": -34.100588235294126,
+      "score_change_5d": null,
+      "score_change_20d": null,
+      "score_components": {
+        "return": 47.29,
+        "breadth": 0.0,
+        "limit_up": 0.0,
+        "roles": 36.644999999999996,
+        "volume": null,
+        "catalyst": 0.0
+      },
+      "quality_status": "PASS",
       "trend_candidates": []
     },
     {
@@ -4228,6 +5345,231 @@
           "trend_inflection_score": 40
         }
       ]
+    },
+    {
+      "theme_name": "非白酒",
+      "normalized_name": "非白酒",
+      "code": null,
+      "change_pct": -2.2376,
+      "rise_count": 0,
+      "fall_count": 2,
+      "limit_up_count": 0,
+      "limit_down_count": 0,
+      "failed_limit_count": null,
+      "amount": 1600521298.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "601579.SH",
+          "stock_name": "会稽山",
+          "change_pct": -1.5372,
+          "amount": 1018704138.0,
+          "board_count": 0
+        },
+        {
+          "stock_code": "600059.SH",
+          "stock_name": "古越龙山",
+          "change_pct": -2.938,
+          "amount": 581817160.0,
+          "board_count": 0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "601579.SH",
+          "stock_name": "会稽山",
+          "change_pct": -1.5372,
+          "amount": 1018704138.0,
+          "board_count": 0
+        }
+      ],
+      "catch_up_candidates": [
+        {
+          "stock_code": "600059.SH",
+          "stock_name": "古越龙山",
+          "change_pct": -2.938,
+          "amount": 581817160.0,
+          "board_count": 0
+        }
+      ],
+      "source": "tushare.daily industry proxy",
+      "quality": "PARTIAL",
+      "theme_return": -2.2376,
+      "top_stock_return": -2.2376,
+      "theme_breadth": 0.0,
+      "theme_amount": 1600521298.0,
+      "theme_amount_change": null,
+      "leader_strength": null,
+      "capacity_strength": 42.314,
+      "trend_leader_strength": 31.0,
+      "catch_up_strength": 35.31,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 17.65,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": -33.11823529411765,
+      "score_change_1d": -33.11823529411765,
+      "score_change_5d": null,
+      "score_change_20d": null,
+      "score_components": {
+        "return": 38.812,
+        "breadth": 0.0,
+        "limit_up": 0.0,
+        "roles": 36.208,
+        "volume": null,
+        "catalyst": 0.0
+      },
+      "quality_status": "PASS",
+      "trend_candidates": []
+    },
+    {
+      "theme_name": "炼化及贸",
+      "normalized_name": "炼化及贸",
+      "code": null,
+      "change_pct": -2.3091,
+      "rise_count": 0,
+      "fall_count": 2,
+      "limit_up_count": 0,
+      "limit_down_count": 0,
+      "failed_limit_count": null,
+      "amount": 946333146.38,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "001316.SZ",
+          "stock_name": "润贝航科",
+          "change_pct": -1.8555,
+          "amount": 231055894.38000003,
+          "board_count": 0
+        },
+        {
+          "stock_code": "600506.SH",
+          "stock_name": "统一股份",
+          "change_pct": -2.7627,
+          "amount": 715277252.0,
+          "board_count": 0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "600506.SH",
+          "stock_name": "统一股份",
+          "change_pct": -2.7627,
+          "amount": 715277252.0,
+          "board_count": 0
+        }
+      ],
+      "catch_up_candidates": [
+        {
+          "stock_code": "600506.SH",
+          "stock_name": "统一股份",
+          "change_pct": -2.7627,
+          "amount": 715277252.0,
+          "board_count": 0
+        }
+      ],
+      "source": "tushare.daily industry proxy",
+      "quality": "PARTIAL",
+      "theme_return": -2.3091,
+      "top_stock_return": -2.3091,
+      "theme_breadth": 0.0,
+      "theme_amount": 946333146.38,
+      "theme_amount_change": null,
+      "leader_strength": null,
+      "capacity_strength": 36.186499999999995,
+      "trend_leader_strength": 26.0,
+      "catch_up_strength": 36.186499999999995,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 16.76,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": -43.94635294117647,
+      "score_change_1d": -43.94635294117647,
+      "score_change_5d": null,
+      "score_change_20d": null,
+      "score_components": {
+        "return": 38.454499999999996,
+        "breadth": 0.0,
+        "limit_up": 0.0,
+        "roles": 32.791,
+        "volume": null,
+        "catalyst": 0.0
+      },
+      "quality_status": "PASS",
+      "trend_candidates": []
+    },
+    {
+      "theme_name": "航运港口",
+      "normalized_name": "航运港口",
+      "code": null,
+      "change_pct": -3.4836,
+      "rise_count": 0,
+      "fall_count": 1,
+      "limit_up_count": 0,
+      "limit_down_count": 0,
+      "failed_limit_count": null,
+      "amount": 1550127475.0,
+      "amount_change": null,
+      "top_gainers": [
+        {
+          "stock_code": "603162.SH",
+          "stock_name": "海通发展",
+          "change_pct": -3.4836,
+          "amount": 1550127475.0,
+          "board_count": 0
+        }
+      ],
+      "top_losers": [],
+      "leader_candidates": [],
+      "capacity_candidates": [
+        {
+          "stock_code": "603162.SH",
+          "stock_name": "海通发展",
+          "change_pct": -3.4836,
+          "amount": 1550127475.0,
+          "board_count": 0
+        }
+      ],
+      "catch_up_candidates": [],
+      "source": "tushare.daily industry proxy",
+      "quality": "PARTIAL",
+      "theme_return": -3.4836,
+      "top_stock_return": -3.4836,
+      "theme_breadth": 0.0,
+      "theme_amount": 1550127475.0,
+      "theme_amount_change": null,
+      "leader_strength": null,
+      "capacity_strength": 32.582,
+      "trend_leader_strength": 25.0,
+      "catch_up_strength": null,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 14.44,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": -40.019294117647064,
+      "score_change_1d": -40.019294117647064,
+      "score_change_5d": null,
+      "score_change_20d": null,
+      "score_components": {
+        "return": 32.582,
+        "breadth": 0.0,
+        "limit_up": 0.0,
+        "roles": 28.791,
+        "volume": null,
+        "catalyst": 0.0
+      },
+      "quality_status": "PASS",
+      "trend_candidates": []
     },
     {
       "theme_name": "其他电子",
@@ -7143,10 +8485,10 @@
       "capacity_return": 10.120384187262399,
       "catch_up_return": 8.724679737027486,
       "new_theme_return": null,
-      "old_theme_return": null,
+      "old_theme_return": 0.33858633106815483,
       "high_level_return": 10.046435628890992,
       "low_level_return": 9.731763962035247,
-      "all_theme_return": null
+      "all_theme_return": 0.33858633106815483
     },
     "structure_candidates": [
       "LEADER_DOMINANT"
@@ -9845,8 +11187,8 @@
   "historical_changes": {
     "cycle_feature_change_1d": {
       "new_theme_count": 5.0,
-      "strengthening_theme_count": 4.0,
-      "weakening_theme_count": -14.0,
+      "strengthening_theme_count": 8.0,
+      "weakening_theme_count": -7.0,
       "limit_up_breadth": 1.3407883156756175,
       "continuous_board_height": 1.0,
       "promotion_rate": null,
@@ -9859,8 +11201,8 @@
     },
     "cycle_feature_change_5d": {
       "new_theme_count": 13.0,
-      "strengthening_theme_count": -10.0,
-      "weakening_theme_count": -53.0,
+      "strengthening_theme_count": -6.0,
+      "weakening_theme_count": -46.0,
       "limit_up_breadth": -0.14425920718284369,
       "continuous_board_height": 0.0,
       "promotion_rate": null,
@@ -9873,8 +11215,8 @@
     },
     "cycle_feature_change_20d": {
       "new_theme_count": 13.0,
-      "strengthening_theme_count": -65.0,
-      "weakening_theme_count": -8.0,
+      "strengthening_theme_count": -61.0,
+      "weakening_theme_count": -1.0,
       "limit_up_breadth": 0.18333732297702543,
       "continuous_board_height": 1.0,
       "promotion_rate": null,
@@ -9885,9 +11227,9 @@
       "failed_limit_rate": null,
       "large_loss_count": null
     },
-    "market_operability_change_1d": 15.270000000000003,
-    "market_operability_change_5d": 37.53,
-    "market_operability_change_20d": 38.68000000000001
+    "market_operability_change_1d": 16.559999999999995,
+    "market_operability_change_5d": 38.81999999999999,
+    "market_operability_change_20d": 39.97
   },
   "data_quality": {
     "status": "PARTIAL",
@@ -9907,7 +11249,7 @@
       },
       {
         "name": "theme_feature_count",
-        "actual": 47,
+        "actual": 60,
         "threshold": 10,
         "passed": true
       },
@@ -9919,7 +11261,7 @@
       },
       {
         "name": "theme_return_coverage",
-        "actual": 0.0,
+        "actual": 0.21666666666666667,
         "threshold": 0.9,
         "passed": false,
         "reason": "whole-theme returns are absent; top-stock returns are not substituted"

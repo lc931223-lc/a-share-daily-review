@@ -50,7 +50,7 @@ def normalize_packet_data(trade_date: date, datasets: dict[str, CollectedDataset
         "fall_count": breadth_counts["fall_count"],
         "flat_count": breadth_counts["flat_count"],
         "limit_up_count": len(limit_up) if limit_up else None,
-        "limit_down_count": len(limit_down) if limit_down else None,
+        "limit_down_count": len(limit_down) if limit_down or datasets["limit_down"].quality == "EMPTY_VALID" else None,
         "failed_limit_count": len(failed) if failed else None,
         "seal_rate": round(len(limit_up) / (len(limit_up) + len(failed)) * 100, 2) if limit_up or failed else None,
         "highest_board": highest_board,
@@ -68,7 +68,7 @@ def normalize_packet_data(trade_date: date, datasets: dict[str, CollectedDataset
     }
     limit_section = {
         "limit_up_count": len(limit_up) if limit_up else None,
-        "limit_down_count": len(limit_down) if limit_down else None,
+        "limit_down_count": len(limit_down) if limit_down or datasets["limit_down"].quality == "EMPTY_VALID" else None,
         "failed_limit_count": len(failed) if failed else None,
         "failed_limit_rate": failed_rate,
         "seal_rate": overview["seal_rate"],

@@ -16,6 +16,7 @@ def _builder(root):
     return ReviewContextBuilder(
         root,
         calendar_loader=lambda _: [
+            TradingCalendarDay(date(2026, 9, 2), True),
             TradingCalendarDay(date(2026, 9, 3), True),
             TradingCalendarDay(date(2026, 9, 4), True),
         ],
@@ -77,7 +78,7 @@ def test_same_day_official_review_is_not_loaded_as_history(tmp_path):
     _write(tmp_path / "data/official_reviews/2026-09-04.json", {"date": "2026-09-04", "main_themes": ["future"]})
     result = _builder(tmp_path).build(date(2026, 9, 4))
     source = result["packet"]["source_manifest"]["prior_official_review"]
-    assert source["status"] == "UNAVAILABLE"
+    assert source["status"] == "PREVIOUS_FORMAL_REVIEW_UNAVAILABLE"
     assert source["expected_date"] == "2026-09-03"
 
 
@@ -85,12 +86,10 @@ def test_only_exact_previous_trading_day_review_is_loaded(tmp_path):
     _inputs(tmp_path)
     _write(tmp_path / "data/official_reviews/2026-09-02.json", {"date": "2026-09-02"})
     result = _builder(tmp_path).build(date(2026, 9, 4))
-    assert result["packet"]["source_manifest"]["prior_official_review"]["status"] == "UNAVAILABLE"
+    assert result["packet"]["source_manifest"]["prior_official_review"]["status"] == "PREVIOUS_FORMAL_REVIEW_UNAVAILABLE"
     _write(tmp_path / "data/formal_reviews/2026-09-03.json", {"date": "2026-09-03"})
-    result = _builder(tmp_path).build(date(2026, 9, 4))
-    source = result["packet"]["source_manifest"]["prior_official_review"]
-    assert source["status"] == "AVAILABLE"
-    assert source["data_date"] == "2026-09-03"
+    with pytest.raises(Exception):
+        _builder(tmp_path).build(date(2026, 9, 4))
 
 
 def test_exact_previous_simulated_review_is_rejected_without_older_fallback(tmp_path):
@@ -103,7 +102,7 @@ def test_exact_previous_simulated_review_is_rejected_without_older_fallback(tmp_
     source = _builder(tmp_path).build(date(2026, 9, 4))["packet"]["source_manifest"][
         "prior_official_review"
     ]
-    assert source["status"] == "SIMULATED_REVIEW_REJECTED"
+    assert source["status"] == "PREVIOUS_FORMAL_REVIEW_UNAVAILABLE"
     assert source["expected_date"] == "2026-09-03"
 
 

@@ -123,6 +123,8 @@ class MarketPacketCollector:
         for name, source, fn, data_date, freshness in calls:
             datasets[name] = self._collect_frame(name, source, fn, trade_date, data_date, freshness)
         self._collect_tushare_core(datasets, trade_date)
+        from src.market_packet.empty_verification import verify_empty_limit_down
+        verify_empty_limit_down(datasets, trade_date)
         datasets["stock_top_ohlcv"] = self._collect_stock_top_ohlcv(trade_date, datasets)
         datasets["industry_board_daily"] = self._collect_board_daily(trade_date, "industry")
         datasets["concept_board_daily"] = self._collect_board_daily(trade_date, "concept")
@@ -242,6 +244,12 @@ class MarketPacketCollector:
             "historical",
         )
         datasets["tushare_previous_daily_all"] = self._collect_tushare_previous_daily(pro, trade_date, previous_trade_date)
+        if datasets.get("limit_down") is not None and not datasets["limit_down"].rows:
+            datasets["daily_price_limits"] = self._collect_frame(
+                "daily_price_limits", "tushare.stk_limit",
+                lambda: pro.stk_limit(trade_date=_compact(trade_date)),
+                trade_date, trade_date, "historical",
+            )
         if env_flag("MARKET_PACKET_INCLUDE_DAILY_BASIC"):
             datasets["tushare_daily_basic_all"] = self._collect_frame(
                 "tushare_daily_basic_all", "tushare.daily_basic",

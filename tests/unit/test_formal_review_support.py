@@ -97,7 +97,7 @@ def test_role_projection_reuses_capital_preference_evidence():
     assert roles[0]["unconfirmed_claims"]
 
 
-def test_previous_day_validation_keeps_failed_hypothesis():
+def test_previous_day_validation_excludes_support_hypothesis():
     previous = {
         "theme_support": [
             {
@@ -114,6 +114,5 @@ def test_previous_day_validation_keeps_failed_hypothesis():
     }
     market = {"themes": [{"name": "机器人", "change_pct": -1.2}], "stocks": []}
     result = _previous_day_validation(None, None, market, previous)
-    assert result["prediction_count"] == 1
-    assert result["failed_count"] == 1
-    assert result["records"][0]["result"] == "FAILED"
+    assert result["prediction_count"] == 0
+    assert result["hit_rate"] is None

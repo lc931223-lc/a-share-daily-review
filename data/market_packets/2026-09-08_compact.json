@@ -2,7 +2,7 @@
   "meta": {
     "schema_version": "market_packet.1",
     "trade_date": "2026-09-08",
-    "generated_at": "2026-09-08T15:01:33.332518Z",
+    "generated_at": "2026-09-08T16:10:01.134320Z",
     "generated_by": "codex_market_packet_phase1",
     "codex_role": "data_engineer_data_validator_research_clerk",
     "final_judgement_owner": "chatgpt"
@@ -4671,7 +4671,7 @@
       {
         "source": "akshare.stock_zt_pool_dtgc_em",
         "dataset": "limit_down",
-        "quality": "FAIL"
+        "quality": "UNAVAILABLE"
       },
       {
         "source": "akshare.stock_zt_pool_previous_em",
@@ -4744,6 +4744,11 @@
         "quality": "PASS"
       },
       {
+        "source": "tushare.stk_limit",
+        "dataset": "daily_price_limits",
+        "quality": "FAIL"
+      },
+      {
         "source": "tushare.daily_basic",
         "dataset": "tushare_daily_basic_all",
         "quality": "UNAVAILABLE"
@@ -4754,7 +4759,12 @@
         "quality": "UNAVAILABLE"
       },
       {
-        "source": "tushare.daily",
+        "source": "daily_price_band_verifier.v1",
+        "dataset": "limit_down_verification",
+        "quality": "PARTIAL"
+      },
+      {
+        "source": "akshare.stock_zh_a_hist; fallback akshare.stock_zh_a_hist_tx/stock_zh_a_daily",
         "dataset": "stock_top_ohlcv",
         "quality": "PASS"
       },

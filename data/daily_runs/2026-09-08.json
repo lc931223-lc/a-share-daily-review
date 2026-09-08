@@ -3,28 +3,28 @@
   "run_id": "daily-close:2026-09-08",
   "is_trade_day": true,
   "market_closed": true,
-  "pipeline_started_at": "2026-09-08T23:28:01.649405+08:00",
-  "pipeline_completed_at": "2026-09-08T23:28:16.881742+08:00",
+  "pipeline_started_at": "2026-09-09T00:24:34.268341+08:00",
+  "pipeline_completed_at": "2026-09-09T00:24:50.042663+08:00",
   "steps": {
     "market_packet": {
       "status": "PARTIAL",
       "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\market_packets\\2026-09-08.json",
       "source_date": "2026-09-08",
       "quality": "FAIL",
-      "started_at": "2026-09-08T23:28:01.653395+08:00",
-      "completed_at": "2026-09-08T23:28:01.683315+08:00",
+      "started_at": "2026-09-09T00:24:34.274315+08:00",
+      "completed_at": "2026-09-09T00:24:34.305207+08:00",
       "error": null,
       "retry_count": 0,
       "reused": true,
-      "provenance_sha256": "f27a9e8327bc97cec49f64bd015731c2485c2a8c4986ee6ca3473ca260b67a99"
+      "provenance_sha256": "8e17f5449e86647dcdd83dd9ad0a1fcc1219f98b3de4a8b7a749a12bcb4c79a6"
     },
     "inflection": {
       "status": "PARTIAL",
       "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\inflection\\2026-09-08.json",
       "source_date": "2026-09-08",
       "quality": "PARTIAL",
-      "started_at": "2026-09-08T23:28:01.683315+08:00",
-      "completed_at": "2026-09-08T23:28:01.710243+08:00",
+      "started_at": "2026-09-09T00:24:34.305207+08:00",
+      "completed_at": "2026-09-09T00:24:34.334129+08:00",
       "error": null,
       "retry_count": 0,
       "reused": true,
@@ -35,68 +35,69 @@
       "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\review_intelligence\\2026-09-08.json",
       "source_date": "2026-09-08",
       "quality": "PARTIAL",
-      "started_at": "2026-09-08T23:28:01.710243+08:00",
-      "completed_at": "2026-09-08T23:28:01.716227+08:00",
+      "started_at": "2026-09-09T00:24:34.334129+08:00",
+      "completed_at": "2026-09-09T00:24:34.348125+08:00",
       "error": null,
       "retry_count": 0,
       "reused": true,
-      "provenance_sha256": "9c2dc843ae76d78f0f9bb755f7e7bb3a03a03a4aecd78ecf60c64f443f3f9d12"
+      "provenance_sha256": "0e5f67ccaeeb71ca59c2d3fdaf5e6b9743b30037d3dab6cd36886f2cf81add03"
     },
     "capital_preference": {
       "status": "PARTIAL",
       "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\capital_preference\\2026-09-08.json",
       "source_date": "2026-09-08",
       "quality": "PARTIAL",
-      "started_at": "2026-09-08T23:28:01.716227+08:00",
-      "completed_at": "2026-09-08T23:28:01.727199+08:00",
+      "started_at": "2026-09-09T00:24:34.348125+08:00",
+      "completed_at": "2026-09-09T00:24:34.407966+08:00",
       "error": null,
       "retry_count": 0,
       "reused": true,
-      "provenance_sha256": "e56d16046144337d10c285eb7d902aa3258605a783f6199951114a2d0f591899"
+      "provenance_sha256": "3e6101cd179ca768e2b0244f0f82124891d543d46ec343a3249c3d257a8009f8"
     },
     "review_context": {
       "status": "PARTIAL",
       "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\review_context\\2026-09-08.json",
       "source_date": "2026-09-08",
       "quality": "PARTIAL",
-      "started_at": "2026-09-08T23:28:01.727199+08:00",
-      "completed_at": "2026-09-08T23:28:01.731220+08:00",
+      "started_at": "2026-09-09T00:24:34.407966+08:00",
+      "completed_at": "2026-09-09T00:24:34.509693+08:00",
       "error": null,
       "retry_count": 0,
       "reused": true,
-      "provenance_sha256": "39268237f5a02b7bc8ee0044df4b6bed66e32f8060286940965375f0948c5f2a"
+      "provenance_sha256": "8725cc6d32b15118e8caf8c2f978f6c6aacbf7705dfe55992da7888a844244a2"
     },
     "formal_review_support": {
-      "status": "PASS",
+      "status": "PARTIAL",
       "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\formal_review_support\\2026-09-08.json",
       "source_date": "2026-09-08",
-      "quality": "PASS",
-      "started_at": "2026-09-08T23:28:01.731220+08:00",
-      "completed_at": "2026-09-08T23:28:01.757149+08:00",
+      "quality": "PARTIAL_WITH_UPSTREAM_FAILURE",
+      "started_at": "2026-09-09T00:24:34.509693+08:00",
+      "completed_at": "2026-09-09T00:24:34.544567+08:00",
       "error": null,
       "retry_count": 0,
       "reused": true,
-      "provenance_sha256": "0890fa3a2c95750e58760e01c05ab51a07ac41601fa50ccdc9a7b9bb2018ba24"
+      "provenance_sha256": "dcfdfd8eb78a0d689f1217dbfb28a56689566e431893413a671dd657dec6a04f"
     },
     "auction": {
       "status": "UNAVAILABLE",
       "artifact_path": null,
       "source_date": null,
       "quality": null,
-      "started_at": "2026-09-08T23:28:01.758149+08:00",
-      "completed_at": "2026-09-08T23:28:01.758149+08:00",
+      "started_at": "2026-09-09T00:24:34.544567+08:00",
+      "completed_at": "2026-09-09T00:24:34.544567+08:00",
       "error": null,
       "retry_count": 0,
       "reused": false,
-      "provenance_sha256": null
+      "provenance_sha256": null,
+      "optional_missing": true
     },
     "feedback": {
       "status": "PASS",
       "artifact_path": null,
       "source_date": null,
       "quality": "WAITING",
-      "started_at": "2026-09-08T23:28:01.758149+08:00",
-      "completed_at": "2026-09-08T23:28:16.754100+08:00",
+      "started_at": "2026-09-09T00:24:34.544567+08:00",
+      "completed_at": "2026-09-09T00:24:49.908542+08:00",
       "error": null,
       "retry_count": 0,
       "reused": false,
@@ -135,11 +136,83 @@
           "review_status": "WAITING_FOR_VALIDATION",
           "correction_status": "WAITING_FOR_REVIEW"
         }
-      ]
+      ],
+      "formal_review_validation": {
+        "records": [],
+        "prediction_count": 0,
+        "confirmed_count": 0,
+        "partial_count": 0,
+        "failed_count": 0,
+        "not_evaluable_count": 0,
+        "hit_rate": null,
+        "weighted_hit_rate": null,
+        "status": "PREVIOUS_FORMAL_REVIEW_UNAVAILABLE",
+        "source": {
+          "status": "PREVIOUS_FORMAL_REVIEW_UNAVAILABLE",
+          "expected_date": "2026-09-07",
+          "data_date": null,
+          "path": null,
+          "sha256": null
+        },
+        "hypothesis_kind": "FORMAL_REVIEW_HYPOTHESIS"
+      }
     }
   },
   "status": "PARTIAL",
   "blockers": [],
+  "upstream_warnings": [
+    {
+      "step": "market_packet",
+      "quality": "FAIL"
+    },
+    {
+      "step": "formal_review_support",
+      "quality": "PARTIAL_WITH_UPSTREAM_FAILURE"
+    }
+  ],
+  "degraded_inputs": [
+    {
+      "step": "market_packet",
+      "quality": "FAIL",
+      "optional_missing": false
+    },
+    {
+      "step": "inflection",
+      "quality": "PARTIAL",
+      "optional_missing": false
+    },
+    {
+      "step": "review_intelligence",
+      "quality": "PARTIAL",
+      "optional_missing": false
+    },
+    {
+      "step": "capital_preference",
+      "quality": "PARTIAL",
+      "optional_missing": false
+    },
+    {
+      "step": "review_context",
+      "quality": "PARTIAL",
+      "optional_missing": false
+    },
+    {
+      "step": "formal_review_support",
+      "quality": "PARTIAL_WITH_UPSTREAM_FAILURE",
+      "optional_missing": false
+    },
+    {
+      "step": "auction",
+      "quality": null,
+      "optional_missing": true
+    },
+    {
+      "step": "feedback",
+      "quality": "WAITING",
+      "optional_missing": false
+    }
+  ],
+  "formal_review_imports": [],
   "readiness_checks": [
     {
       "name": "real_trading_calendar",

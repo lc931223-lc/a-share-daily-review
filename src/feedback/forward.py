@@ -12,6 +12,8 @@ from src.feedback.integrated import (
 )
 from src.feedback.tracker import persist_predictions, persist_validations, prediction_from_review_context
 from src.inflection.history import DailyHistoryRepository
+from src.formal_review.persistence import load_previous_formal
+from src.formal_review.support import validate_formal_hypotheses
 
 
 def advance_feedback(root: Path, as_of: date) -> dict[str, Any]:
@@ -40,6 +42,9 @@ def advance_feedback(root: Path, as_of: date) -> dict[str, Any]:
             waiting_before += old_status == "WAITING_FOR_MARKET_DATA"
         prediction = _read(prediction_path) if prediction_path.is_file() else _context_prediction(root, context_path)
         validation = validate_integrated_prediction(root, prediction, daily)
+        formal_eligible = prediction["meta"].get("official_review_kind") == "FORMAL_OFFICIAL_REVIEW"
+        validation["meta"]["hypothesis_kind"] = "FORMAL_REVIEW_HYPOTHESIS" if formal_eligible else "OBJECTIVE_SUPPORT_HYPOTHESIS"
+        validation["meta"]["formal_hit_rate_eligible"] = formal_eligible
         new_horizons = set((validation.get("meta") or {}).get("available_horizons") or [])
         if old_validation is not None and not old_horizons.issubset(new_horizons):
             validation = old_validation
@@ -47,6 +52,7 @@ def advance_feedback(root: Path, as_of: date) -> dict[str, Any]:
                 json.dumps(validation, ensure_ascii=False, indent=2), encoding="utf-8"
             )
             new_horizons = old_horizons
+        validation_path.write_text(json.dumps(validation, ensure_ascii=False, indent=2), encoding="utf-8")
         review = build_review_record(root, prediction, validation)
         correction = build_correction_record(root, prediction, validation, review)
         status = validation["meta"]["status"]
@@ -71,6 +77,14 @@ def advance_feedback(root: Path, as_of: date) -> dict[str, Any]:
                 "correction_status": correction["meta"]["status"],
             }
         )
+    formal_feedback = None
+    market_path = root / "data/market_packets" / f"{as_of}.json"
+    if market_path.exists():
+        formal, provenance = load_previous_formal(root, as_of)
+        formal_feedback = validate_formal_hypotheses(formal, provenance, _read(market_path))
+        folder = root / "research_feedback/formal"
+        folder.mkdir(parents=True, exist_ok=True)
+        (folder / f"{as_of}.json").write_text(json.dumps(formal_feedback, ensure_ascii=False, indent=2), encoding="utf-8")
     return {
         "status": "PASS",
         "as_of": as_of.isoformat(),
@@ -79,6 +93,7 @@ def advance_feedback(root: Path, as_of: date) -> dict[str, Any]:
         "still_waiting_count": still_waiting,
         "validated_count": validated,
         "cycles": cycles,
+        "formal_review_validation": formal_feedback,
     }
 
 

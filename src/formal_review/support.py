@@ -10,6 +10,8 @@ from jsonschema import Draft202012Validator
 
 from src.domain.constants import DRIVER_TYPES
 from src.market_packet.trading_calendar import load_trading_calendar
+from src.formal_review.persistence import load_previous_formal
+from src.formal_review.evidence_domains import identity, market_evidence, score_components, evidence_domain, number
 
 LIFECYCLE_STATES = (
     "MENG_LONG",
@@ -55,15 +57,21 @@ def build_formal_review_support(root: Path, target: date) -> dict[str, Any]:
     _require_date(market, target, "market_packet")
     previous = _previous_support(root, target)
     previous_themes = {
-        row["theme_name"]: row for row in (previous or {}).get("theme_support") or []
+        identity(row["theme_name"])["canonical_name"]: row for row in (previous or {}).get("theme_support") or []
     }
     evidence = _evidence(market, target)
     theme_support = []
     for rank, theme in enumerate(context.get("next_day_theme_candidates") or [], 1):
         name = str(theme.get("theme") or "")
+        theme, structure_evidence = market_evidence(theme, context, market, target)
+        prior_theme = previous_themes.get(identity(name)["canonical_name"]) or {}
+        strength = number(theme.get("strength"))
+        prior_strength = number(prior_theme.get("objective_strength"))
+        if theme.get("strength_change_1d") is None and strength is not None and prior_strength is not None:
+            theme["strength_change_1d"] = strength - prior_strength
         theme_evidence = [row for row in evidence if name in row.get("related_themes", [])]
-        factors = _factor_evaluation(theme_evidence)
-        previous_state = (previous_themes.get(name) or {}).get("lifecycle", {}).get(
+        factors = _factor_evaluation(theme_evidence + structure_evidence)
+        previous_state = (previous_themes.get(identity(name)["canonical_name"]) or {}).get("lifecycle", {}).get(
             "current_state"
         )
         lifecycle = _lifecycle(theme, previous_state)
@@ -72,8 +80,11 @@ def build_formal_review_support(root: Path, target: date) -> dict[str, Any]:
             {
                 "theme_name": name,
                 "theme_rank": rank,
+                "objective_strength": strength,
+                "theme_identity": identity(name),
+                "related_parent_history": previous_themes.get(identity(name)["parent"]),
                 "41_factors": factors,
-                "score_support": _score_support(theme, factors),
+                "score_support": score_components(theme, factors),
                 "lifecycle": lifecycle,
                 "core_stocks": roles,
                 "next_day_validation": _validation_points(context, name),
@@ -81,7 +92,10 @@ def build_formal_review_support(root: Path, target: date) -> dict[str, Any]:
                 "candidate_only": True,
             }
         )
-    prior_validation = _previous_day_validation(root, target, market, previous)
+    formal, formal_manifest = load_previous_formal(root, target)
+    prior_validation = validate_formal_hypotheses(formal, formal_manifest, market)
+    upstream = {name: (value.get("data_quality") or {}).get("status", "UNAVAILABLE") for name, value in (("market_packet", market), ("review_context", context))}
+    support_quality = "PARTIAL_WITH_UPSTREAM_FAILURE" if any(value in {"FAIL", "INVALID"} for value in upstream.values()) else "PASS" if all(value in {"PASS", "EMPTY_VALID"} for value in upstream.values()) else "PARTIAL"
     packet = {
         "meta": {
             "schema_version": "formal_review_support.1",
@@ -93,9 +107,12 @@ def build_formal_review_support(root: Path, target: date) -> dict[str, Any]:
             "review_context": _manifest(context_path, context),
             "market_packet": _manifest(market_path, market),
             "previous_support_date": (previous or {}).get("meta", {}).get("trade_date"),
+            "previous_formal_review": formal_manifest,
         },
         "theme_support": theme_support,
         "previous_day_validation": prior_validation,
+        "data_quality": {"status": support_quality, "upstream": upstream},
+        "objective_support_hypotheses": {"kind": "OBJECTIVE_SUPPORT_HYPOTHESIS", "formal_hit_rate_eligible": False, "records": [check for theme in (previous or {}).get("theme_support", []) for check in theme.get("next_day_validation", [])]},
         "factor_catalog": [
             {"factor_id": factor_id, "factor_name": name}
             for factor_id, name in DRIVER_TYPES.items()
@@ -165,7 +182,7 @@ def validate_formal_review_record(
 def _factor_evaluation(evidence: list[dict[str, Any]]) -> list[dict[str, Any]]:
     by_factor: dict[int, list[dict[str, Any]]] = {}
     for row in evidence:
-        factor_id = FACTOR_BY_CATEGORY.get(str(row.get("category") or ""))
+        factor_id = row.get("factor_id") or FACTOR_BY_CATEGORY.get(str(row.get("category") or ""))
         if factor_id:
             by_factor.setdefault(factor_id, []).append(row)
         if row.get("kind") == "policy":
@@ -178,7 +195,8 @@ def _factor_evaluation(evidence: list[dict[str, Any]]) -> list[dict[str, Any]]:
             {
                 "factor_id": factor_id,
                 "factor_name": name,
-                "status": "CONFIRMED" if eligible else "UNCONFIRMED",
+                "evidence_domain": evidence_domain(factor_id),
+                "status": "CONFIRMED" if any(row.get("evaluation_status", "CONFIRMED") == "CONFIRMED" for row in eligible) else "PARTIAL" if eligible else "UNCONFIRMED",
                 "evidence": eligible,
                 "confidence": "HIGH"
                 if any(row.get("tier") == 1 for row in eligible)
@@ -213,66 +231,14 @@ def _evidence(market: dict[str, Any], target: date) -> list[dict[str, Any]]:
                     "confidence": "HIGH" if level == "A" else "MEDIUM" if level in {"B", "C"} else "LOW",
                     "related_themes": row.get("related_themes") or [],
                     "title": row.get("title"),
+                    "evaluation_status": "PARTIAL",
                 }
             )
     return output
 
 
-def _score_support(theme: dict[str, Any], factors: list[dict[str, Any]]) -> dict[str, Any]:
-    confirmed = sum(row["status"] == "CONFIRMED" for row in factors)
-    strength = _number(theme.get("strength"))
-    breadth = _number(theme.get("breadth"))
-    components = {
-        "base_logic": _rubric(
-            40,
-            min(40, confirmed * 8) if confirmed else 0,
-            [{"name": "confirmed_factor_count", "value": confirmed, "max_score": 40}],
-            "only qualifying same-date evidence contributes",
-        ),
-        "realization": _rubric(
-            25,
-            min(25, max(0, (strength or 0) / 100 * 25)) if strength is not None else None,
-            [{"name": "objective_theme_strength", "value": strength, "max_score": 25}],
-            "objective theme-strength projection",
-        ),
-        "expectation_gap": _rubric(15, None, [], "no deterministic expectation baseline"),
-        "continuity": _rubric(
-            10,
-            min(10, max(0, (_number(theme.get("strength_change_5d")) or 0) / 2 + 5))
-            if theme.get("strength_change_5d") is not None
-            else None,
-            [{"name": "strength_change_5d", "value": theme.get("strength_change_5d"), "max_score": 10}],
-            "five-day objective strength change",
-        ),
-        "market_confirmation": _rubric(
-            10,
-            min(10, max(0, breadth / 100 * 10)) if breadth is not None else None,
-            [{"name": "theme_breadth", "value": breadth, "max_score": 10}],
-            "same-date market breadth",
-        ),
-        "risk_deduction": _rubric(20, 0, [], "no automatic positive conclusion; formal reviewer applies risks"),
-    }
-    positive_components = {
-        name: row for name, row in components.items() if name != "risk_deduction"
-    }
-    return {
-        "components": components,
-        "gross_raw_score": round(
-            sum(
-                row["raw_score"] or 0
-                for row in positive_components.values()
-                if row["raw_score"] is not None
-            ),
-            4,
-        ),
-        "gross_available_score": sum(
-            row["max_score"]
-            for row in positive_components.values()
-            if row["raw_score"] is not None
-        ),
-        "risk_deduction": components["risk_deduction"]["raw_score"],
-        "final_score_owner": "chatgpt",
-    }
+def _score_support(theme, factors):
+    return score_components(theme, factors)
 
 
 def _rubric(max_score, raw_score, subcomponents, reason):
@@ -370,54 +336,26 @@ def _validation_points(context: dict[str, Any], theme: str) -> list[dict[str, An
 
 
 def _previous_day_validation(root, target, market, previous):
-    if not previous:
-        return _validation_summary([])
-    themes = {
-        str(row.get("theme") or row.get("name") or row.get("theme_name") or ""): row
-        for row in market.get("themes") or []
-    }
-    stocks = {
-        str(row.get("stock_code") or row.get("code") or "").split(".")[0]: row
-        for row in market.get("stocks") or []
-    }
-    rows = []
-    for theme in previous.get("theme_support") or []:
-        theme_name = theme.get("theme_name")
-        actual_theme = themes.get(str(theme_name)) or {}
-        theme_change = _number(actual_theme.get("change_pct"))
-        for check in theme.get("next_day_validation") or []:
-            result = (
-                "NOT_EVALUABLE"
-                if theme_change is None
-                else "CONFIRMED"
-                if theme_change > 0
-                else "FAILED"
-            )
-            rows.append(
-                {
-                    "hypothesis": check.get("validation_point"),
-                    "expected_condition": check.get("strengthening_condition"),
-                    "actual_result": {"theme": theme_name, "change_pct": theme_change},
-                    "result": result,
-                    "evidence": ["same-date Market Packet theme change"]
-                    if theme_change is not None
-                    else [],
-                }
-            )
-        for stock in theme.get("core_stocks") or []:
-            actual = stocks.get(str(stock.get("code") or "").split(".")[0])
-            change = _number((actual or {}).get("change_pct"))
-            result = "NOT_EVALUABLE" if change is None else "CONFIRMED" if change > 0 else "FAILED"
-            rows.append(
-                {
-                    "hypothesis": f"{theme['theme_name']}:{stock.get('name')} role continuity",
-                    "expected_condition": "same stock remains positively market-confirmed",
-                    "actual_result": {"change_pct": change},
-                    "result": result,
-                    "evidence": ["same-date Market Packet stock change"] if change is not None else [],
-                }
-            )
-    return _validation_summary(rows)
+    return validate_formal_hypotheses(previous or {}, {}, market)
+
+
+def validate_formal_hypotheses(formal, manifest, market=None):
+    records = []
+    for theme in formal.get("main_themes", []):
+        for check in theme.get("next_day_validation", []):
+            record = {"hypothesis": check.get("validation_point"), "expected_condition": check.get("strengthening_condition"), "actual_result": None, "result": "NOT_EVALUABLE", "evidence": [], "reason": "No machine-readable predicate; free-text conditions require explicit evaluation", "hypothesis_kind": "FORMAL_REVIEW_HYPOTHESIS"}
+            predicate = check.get("predicate") or {}
+            if predicate and market:
+                allowed = {"change_pct", "amount", "rise_count", "fall_count", "limit_up_count", "limit_down_count"}
+                key = predicate.get("field")
+                rows = market.get("themes", []) + market.get("industries", [])
+                row = next((r for r in rows if (r.get("theme_name") or r.get("industry_name") or r.get("name")) == theme["theme_name"]), {})
+                actual, threshold = _number(row.get(key)), _number(predicate.get("threshold"))
+                if key in allowed and actual is not None and threshold is not None and predicate.get("operator") in {"gte", "lte"}:
+                    passed = actual >= threshold if predicate["operator"] == "gte" else actual <= threshold
+                    record.update(actual_result=actual, result="CONFIRMED" if passed else "FAILED", evidence=[{"source": "MarketPacket", "source_date": (market.get("meta") or {}).get("trade_date"), "field": key, "value": actual}], reason="evaluated exact formal predicate")
+            records.append(record)
+    return _validation_summary(records) | {"status": "FORMAL_REVIEW_HYPOTHESES_LOADED" if formal else "PREVIOUS_FORMAL_REVIEW_UNAVAILABLE", "source": manifest, "hypothesis_kind": "FORMAL_REVIEW_HYPOTHESIS"}
 
 
 def _validation_summary(rows):

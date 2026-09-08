@@ -262,7 +262,7 @@ def build_review_record(
     )
     correct = []
     incorrect = []
-    if status != "WAITING_FOR_VALIDATION":
+    if status != "WAITING_FOR_VALIDATION" and 5 in validation["meta"].get("available_horizons", []):
         if "LEADER_WRONG" not in errors:
             correct.append("Existing leader candidates include a positive five-day result.")
         if "THEME_WRONG" not in errors:

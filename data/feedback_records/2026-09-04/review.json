@@ -4,10 +4,7 @@
     "prediction_date": "2026-09-04",
     "status": "PARTIAL_REVIEW"
   },
-  "correct_parts": [
-    "Existing leader candidates include a positive five-day result.",
-    "Evaluable existing theme candidate baskets are not negative at five days."
-  ],
+  "correct_parts": [],
   "incorrect_parts": [],
   "error_type": [
     "DATA_LIMITATION"

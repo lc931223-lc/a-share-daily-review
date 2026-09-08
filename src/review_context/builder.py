@@ -128,37 +128,9 @@ class ReviewContextBuilder:
         return payload, path
 
     def _prior_official_review(self, target: date):
-        previous = _previous_trading_day(target, self.calendar_loader(target))
-        if previous is None:
-            return {}, {
-                "status": "UNAVAILABLE", "data_date": None,
-                "expected_date": None, "source": "formal_reviews", "path": None,
-                "sha256": None,
-            }
-        rejected_simulated = None
-        for folder_name in ("formal_reviews", "official_reviews"):
-            path = self.root / "data" / folder_name / f"{previous.isoformat()}.json"
-            if not path.is_file():
-                continue
-            payload = _read(path)
-            actual = _trade_date(payload)
-            if actual != previous.isoformat():
-                raise ValueError(
-                    f"prior official_review date mismatch: expected {previous.isoformat()}, got {actual}"
-                )
-            if _is_simulated(payload, path):
-                rejected_simulated = path
-                continue
-            return payload, _manifest(payload, path) | {
-                "status": "AVAILABLE", "expected_date": previous.isoformat(),
-            }
-        return {}, {
-            "status": "SIMULATED_REVIEW_REJECTED" if rejected_simulated else "UNAVAILABLE",
-            "data_date": None,
-            "expected_date": previous.isoformat(), "source": "formal_reviews",
-            "path": str(rejected_simulated) if rejected_simulated else None,
-            "sha256": None,
-        }
+        from src.formal_review.persistence import load_previous_formal
+        return load_previous_formal(self.root, target, self.calendar_loader(target))
+
 
     def _capital_preference(self, target: date):
         path = self.root / "data" / "capital_preference" / f"{target.isoformat()}_compact.json"
@@ -205,6 +177,9 @@ def _theme_candidates(themes, roles, risks):
         grouped = role_groups.get(name, {})
         output.append({
             "theme": name, "strength": theme.get("theme_inflection_score"),
+            "change_pct": theme.get("theme_return"),
+            "limit_up_count": theme.get("limit_up_count"),
+            "source": theme.get("source"),
             "strength_change_1d": theme.get("score_change_1d"),
             "strength_change_5d": theme.get("score_change_5d"),
             "breadth": theme.get("theme_breadth"), "amount": theme.get("theme_amount"),
@@ -274,6 +249,8 @@ def _previous_validation(market, intelligence, prior_review):
     changes = context.get("changes_vs_previous_day") or {}
     return {
         "review_date": prior_review.get("date"),
+        "hypothesis_kind": "OBJECTIVE_SUPPORT_HYPOTHESIS",
+        "formal_hit_rate_eligible": False,
         "confirmed": _unique((changes.get("strengthened") or []) + (changes.get("expanded") or []) + (changes.get("realized") or [])),
         "weakened": _unique(changes.get("weakened") or []),
         "invalidated": _unique(changes.get("invalidated") or []),

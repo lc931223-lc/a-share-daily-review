@@ -14,6 +14,7 @@ class PacketModel(BaseModel):
 
 
 class SourceMeta(PacketModel):
+    empty_state: Literal["NOT_EMPTY", "EMPTY_VALID", "EMPTY_UNVERIFIED", "SOURCE_FAILURE"] | None = None
     source: str
     dataset: str
     retrieved_at: datetime
@@ -40,6 +41,7 @@ class QualityCheck(PacketModel):
 
 
 class DataQuality(PacketModel):
+    empty_set_verifications: dict[str, list[dict[str, Any]]] = Field(default_factory=dict)
     status: QualityStatus
     score: int = Field(ge=0, le=100)
     checks: list[QualityCheck]

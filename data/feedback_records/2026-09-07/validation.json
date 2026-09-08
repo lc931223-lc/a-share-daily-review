@@ -7,7 +7,9 @@
     "available_horizons": [
       1
     ],
-    "source_review": "review_context:19020c91132c3abc"
+    "source_review": "review_context:19020c91132c3abc",
+    "hypothesis_kind": "OBJECTIVE_SUPPORT_HYPOTHESIS",
+    "formal_hit_rate_eligible": false
   },
   "actual_market_state": {
     "return_1d": 0.00665508,

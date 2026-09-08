@@ -64,6 +64,7 @@ data/feedback_records/*
 !data/feedback_records/2026-09-08/
 !data/feedback_records/2026-09-08/*.json
 research_feedback/*
+!research_feedback/formal/
 !research_feedback/2026-09-04.json
 !research_feedback/2026-09-07.json
 !research_feedback/2026-09-08.json

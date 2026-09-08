@@ -23,8 +23,8 @@
     "large_loss_count": null,
     "index_strength_dispersion": 2.4212538884336947,
     "sector_concentration": 17.74,
-    "theme_concentration": 42.01,
-    "market_operability_score": 67.51,
+    "theme_concentration": 54.91,
+    "market_operability_score": 68.8,
     "available_max_score": 90,
     "feature_components": {
       "liquidity": 5.88,
@@ -34,7 +34,7 @@
       "continuous_board_feedback": 8.57,
       "board_height": 10,
       "loss_control": null,
-      "theme_concentration": 4.2
+      "theme_concentration": 5.49
     }
   },
   "cycle_candidates": [
@@ -43,8 +43,8 @@
   ],
   "cycle_feature_vector": {
     "new_theme_count": 13,
-    "strengthening_theme_count": 16,
-    "weakening_theme_count": 2,
+    "strengthening_theme_count": 20,
+    "weakening_theme_count": 9,
     "limit_up_breadth": 2.9365329965266813,
     "continuous_board_height": 6.0,
     "promotion_rate": null,
@@ -378,13 +378,13 @@
     }
   ],
   "theme_concentration": {
-    "theme_concentration_score": 42.01,
+    "theme_concentration_score": 54.91,
     "concentration_candidate": "MEDIUM",
     "feature_components": {
-      "top1_theme_amount_share": 33.21443205466028,
-      "top3_theme_amount_share": 53.370537083481594,
-      "top1_limit_up_share": 15.053763440860216,
-      "top3_limit_up_share": 31.182795698924732,
+      "top1_theme_amount_share": 60.34120521562251,
+      "top3_theme_amount_share": 74.36376751989032,
+      "top1_limit_up_share": 14.893617021276595,
+      "top3_limit_up_share": 30.851063829787233,
       "top_theme_breadth": 100.0,
       "core_capacity_share": 80.67134269280025
     },
@@ -2139,10 +2139,10 @@
       "capacity_return": 10.120384187262399,
       "catch_up_return": 8.724679737027486,
       "new_theme_return": null,
-      "old_theme_return": null,
+      "old_theme_return": 0.33858633106815483,
       "high_level_return": 10.046435628890992,
       "low_level_return": 9.731763962035247,
-      "all_theme_return": null
+      "all_theme_return": 0.33858633106815483
     },
     "structure_candidates": [
       "LEADER_DOMINANT"
@@ -3217,8 +3217,8 @@
   "historical_changes": {
     "cycle_feature_change_1d": {
       "new_theme_count": 5.0,
-      "strengthening_theme_count": 4.0,
-      "weakening_theme_count": -14.0,
+      "strengthening_theme_count": 8.0,
+      "weakening_theme_count": -7.0,
       "limit_up_breadth": 1.3407883156756175,
       "continuous_board_height": 1.0,
       "promotion_rate": null,
@@ -3231,8 +3231,8 @@
     },
     "cycle_feature_change_5d": {
       "new_theme_count": 13.0,
-      "strengthening_theme_count": -10.0,
-      "weakening_theme_count": -53.0,
+      "strengthening_theme_count": -6.0,
+      "weakening_theme_count": -46.0,
       "limit_up_breadth": -0.14425920718284369,
       "continuous_board_height": 0.0,
       "promotion_rate": null,
@@ -3245,8 +3245,8 @@
     },
     "cycle_feature_change_20d": {
       "new_theme_count": 13.0,
-      "strengthening_theme_count": -65.0,
-      "weakening_theme_count": -8.0,
+      "strengthening_theme_count": -61.0,
+      "weakening_theme_count": -1.0,
       "limit_up_breadth": 0.18333732297702543,
       "continuous_board_height": 1.0,
       "promotion_rate": null,
@@ -3257,9 +3257,9 @@
       "failed_limit_rate": null,
       "large_loss_count": null
     },
-    "market_operability_change_1d": 15.270000000000003,
-    "market_operability_change_5d": 37.53,
-    "market_operability_change_20d": 38.68000000000001
+    "market_operability_change_1d": 16.559999999999995,
+    "market_operability_change_5d": 38.81999999999999,
+    "market_operability_change_20d": 39.97
   },
   "data_quality": {
     "status": "PARTIAL",
@@ -3279,7 +3279,7 @@
       },
       {
         "name": "theme_feature_count",
-        "actual": 47,
+        "actual": 60,
         "threshold": 10,
         "passed": true
       },
@@ -3291,7 +3291,7 @@
       },
       {
         "name": "theme_return_coverage",
-        "actual": 0.0,
+        "actual": 0.21666666666666667,
         "threshold": 0.9,
         "passed": false,
         "reason": "whole-theme returns are absent; top-stock returns are not substituted"

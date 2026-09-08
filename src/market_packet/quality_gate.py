@@ -33,7 +33,7 @@ def audit_packet(packet: dict[str, Any], datasets: dict[str, CollectedDataset]) 
     index_status = "PASS" if valid_indices >= 3 else "PARTIAL" if valid_indices else "FAIL"
     add("market_core", "主要指数", index_status, "akshare.stock_zh_index_daily", f"valid={valid_indices}/{len(indices)}", missing_key="indices", hard_gate=True)
     limit_parts = [datasets.get(name) for name in ("limit_up", "failed_limit", "limit_down")]
-    limit_failed = [item for item in limit_parts if item is None or item.quality in {"FAIL", "INVALID", "STALE"}]
+    limit_failed = [item for item in limit_parts if item is None or item.quality not in {"PASS", "EMPTY_VALID"}]
     add("market_core", "涨跌停", "FAIL" if limit_failed else "PASS", "Eastmoney/AKShare", "/".join(f"{x.name}:{x.quality}" for x in limit_parts if x), missing_key="limit_pools", hard_gate=True)
     previous = datasets.get("previous_limit")
     dragon = datasets.get("dragon_tiger_daily")
@@ -91,6 +91,7 @@ def audit_packet(packet: dict[str, Any], datasets: dict[str, CollectedDataset]) 
         "stale_items": [item["item"] for item in checks if item["status"] == "STALE"],
         "unavailable_items": [item["item"] for item in checks if item["status"] == "UNAVAILABLE"],
         "conflict_count": len(conflicts),
+        "empty_set_verifications": {name: item.rows for name, item in datasets.items() if name.endswith("_verification")},
     }
     return packet
 
@@ -174,4 +175,4 @@ def _source(datasets: dict[str, CollectedDataset], name: str) -> str | None:
 
 
 def _source_meta(item: CollectedDataset) -> dict[str, Any]:
-    return {"source": item.source, "dataset": item.name, "retrieved_at": item.retrieved_at.isoformat(), "data_date": item.data_date.isoformat() if item.data_date else None, "freshness": item.freshness, "quality": item.quality, "is_cached": item.is_cached, "path": item.path, "error": item.error, "record_count": len(item.rows), "cache_created_at": item.cache_created_at.isoformat() if item.cache_created_at else None, "last_attempt_at": item.last_attempt_at.isoformat() if item.last_attempt_at else None, "error_type": item.error_type, "retry_after": item.retry_after.isoformat() if item.retry_after else None}
+    return {"source": item.source, "dataset": item.name, "retrieved_at": item.retrieved_at.isoformat(), "data_date": item.data_date.isoformat() if item.data_date else None, "freshness": item.freshness, "quality": item.quality, "is_cached": item.is_cached, "path": item.path, "error": item.error, "record_count": len(item.rows), "cache_created_at": item.cache_created_at.isoformat() if item.cache_created_at else None, "last_attempt_at": item.last_attempt_at.isoformat() if item.last_attempt_at else None, "error_type": item.error_type, "retry_after": item.retry_after.isoformat() if item.retry_after else None} | {"empty_state": "NOT_EMPTY" if item.rows else "EMPTY_VALID" if item.quality == "EMPTY_VALID" else "EMPTY_UNVERIFIED" if item.error in {None, "empty response"} else "SOURCE_FAILURE"}
