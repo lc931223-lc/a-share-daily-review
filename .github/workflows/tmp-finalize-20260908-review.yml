@@ -1,0 +1,43 @@
+name: Finalize 2026-09-08 ChatGPT formal review
+on:
+  push:
+    paths:
+      - '.github/workflows/tmp-finalize-20260908-review.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Import through canonical validator
+        run: python tools/_tmp_finalize_20260908_review.py
+      - name: Verify queue and official projection
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          q=json.loads(Path('data/formal_review_queue/2026-09-08.json').read_text(encoding='utf-8'))
+          assert q['status']=='FORMAL_REVIEW_READY', q
+          assert q['validation_status']=='PASS', q
+          assert Path('data/formal_reviews/2026-09-08.json').exists()
+          assert Path('data/official_reviews/2026-09-08.json').exists()
+          print(json.dumps(q,ensure_ascii=False))
+          PY
+      - name: Persist formal artifacts
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f data/formal_reviews/2026-09-08.json data/official_reviews/2026-09-08.json data/formal_review_queue/2026-09-08.json data/chatgpt_review_inputs/2026-09-08_compact.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'data: import ChatGPT formal review for 2026-09-08'
+          git pull --rebase origin main
+          git push origin HEAD:main
