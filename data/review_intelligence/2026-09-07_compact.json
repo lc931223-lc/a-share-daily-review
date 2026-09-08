@@ -1,0 +1,3357 @@
+{
+  "meta": {
+    "schema_version": "review_intelligence_compact.1",
+    "trade_date": "2026-09-07",
+    "as_of": "2026-09-07T15:05:00+08:00",
+    "data_role": "OBJECTIVE_DATA",
+    "final_judgement_owner": "chatgpt"
+  },
+  "market_operability": {
+    "total_turnover": 1964235737790.84,
+    "turnover_change_pct": -4.23,
+    "rise_count": 3167,
+    "fall_count": 2196,
+    "limit_up_count": 93,
+    "limit_down_count": 2,
+    "failed_limit_count": 19,
+    "seal_rate": 83.04,
+    "previous_limit_avg_return": 4.61,
+    "previous_limit_red_rate": 76.92,
+    "continuous_board_red_rate": 85.71,
+    "highest_board": 6.0,
+    "high_level_loss_count": null,
+    "large_loss_count": null,
+    "index_strength_dispersion": 2.4212538884336947,
+    "sector_concentration": 17.74,
+    "theme_concentration": 42.01,
+    "market_operability_score": 67.51,
+    "available_max_score": 90,
+    "feature_components": {
+      "liquidity": 5.88,
+      "breadth": 8.86,
+      "limit_structure": 15,
+      "previous_limit_feedback": 15,
+      "continuous_board_feedback": 8.57,
+      "board_height": 10,
+      "loss_control": null,
+      "theme_concentration": 4.2
+    }
+  },
+  "cycle_candidates": [
+    "STARTUP_CANDIDATE",
+    "MAIN_UP_CANDIDATE"
+  ],
+  "cycle_feature_vector": {
+    "new_theme_count": 13,
+    "strengthening_theme_count": 16,
+    "weakening_theme_count": 2,
+    "limit_up_breadth": 2.9365329965266813,
+    "continuous_board_height": 6.0,
+    "promotion_rate": null,
+    "previous_limit_feedback": 4.61,
+    "high_level_stock_return": 10.03215503692627,
+    "mid_level_stock_return": 10.000878492991129,
+    "low_level_first_board_count": 80,
+    "failed_limit_rate": 16.964285714285715,
+    "large_loss_count": null
+  },
+  "style_strength_ranking": [
+    {
+      "style": "limit_up_style",
+      "return": 11.644867272727273,
+      "breadth": 100.0,
+      "amount_change": 0.8584716523730263,
+      "limit_up_count": 110,
+      "top_stock_performance": {
+        "ts_code": "920269.BJ",
+        "stock_name": NaN,
+        "return": 34.3648
+      },
+      "style_strength_score": 100,
+      "style_change_1d": 0.0,
+      "style_change_5d": 0.0,
+      "style_change_20d": 0.0,
+      "sample_count": 110,
+      "coverage_status": "PASS",
+      "source_coverage": 1.0,
+      "methodology": "full-market daily facts"
+    },
+    {
+      "style": "large_cap",
+      "return": 10.080331428571428,
+      "breadth": 97.14285714285714,
+      "amount_change": 0.8362209959612328,
+      "limit_up_count": 27,
+      "top_stock_performance": {
+        "ts_code": "688001.SH",
+        "stock_name": "华兴源创",
+        "return": 20.0
+      },
+      "style_strength_score": 96.86,
+      "style_change_1d": 42.8246406537042,
+      "style_change_5d": null,
+      "style_change_20d": null,
+      "sample_count": 35,
+      "coverage_status": "PARTIAL",
+      "source_coverage": 0.025049558479005227,
+      "methodology": "market-cap sample proxy"
+    },
+    {
+      "style": "short_term_speculation",
+      "return": 9.666758695652174,
+      "breadth": 92.7536231884058,
+      "amount_change": 0.8972914500212189,
+      "limit_up_count": 110,
+      "top_stock_performance": {
+        "ts_code": "920269.BJ",
+        "stock_name": NaN,
+        "return": 34.3648
+      },
+      "style_strength_score": 94.59,
+      "style_change_1d": 11.520174648869002,
+      "style_change_5d": -5.409825351131005,
+      "style_change_20d": -5.409825351131005,
+      "sample_count": 138,
+      "coverage_status": "PARTIAL",
+      "source_coverage": 0.0297350874031357,
+      "methodology": "turnover sample proxy"
+    },
+    {
+      "style": "institutional_trend",
+      "return": 9.489627272727272,
+      "breadth": 100.0,
+      "amount_change": 0.9847705354774761,
+      "limit_up_count": 6,
+      "top_stock_performance": {
+        "ts_code": "300684.SZ",
+        "stock_name": "中石科技",
+        "return": 17.3903
+      },
+      "style_strength_score": 93.73,
+      "style_change_1d": 9.290067123071225,
+      "style_change_5d": null,
+      "style_change_20d": null,
+      "sample_count": 11,
+      "coverage_status": "PARTIAL",
+      "source_coverage": 0.025049558479005227,
+      "methodology": "market-cap sample proxy"
+    },
+    {
+      "style": "small_cap",
+      "return": 7.35324705882353,
+      "breadth": 88.23529411764706,
+      "amount_change": 1.3721592292336078,
+      "limit_up_count": 21,
+      "top_stock_performance": {
+        "ts_code": "920821.BJ",
+        "stock_name": "则成电子",
+        "return": 29.9725
+      },
+      "style_strength_score": 85.3,
+      "style_change_1d": 9.445341176470592,
+      "style_change_5d": null,
+      "style_change_20d": null,
+      "sample_count": 34,
+      "coverage_status": "PARTIAL",
+      "source_coverage": 0.025049558479005227,
+      "methodology": "market-cap sample proxy"
+    },
+    {
+      "style": "trend_style",
+      "return": 6.056832911392405,
+      "breadth": 100.0,
+      "amount_change": 1.2455749933746385,
+      "limit_up_count": 17,
+      "top_stock_performance": {
+        "ts_code": "300112.SZ",
+        "stock_name": "万讯自控",
+        "return": 20.0228
+      },
+      "style_strength_score": 84.23,
+      "style_change_1d": 9.007331645569622,
+      "style_change_5d": -5.2226683544303825,
+      "style_change_20d": null,
+      "sample_count": 79,
+      "coverage_status": "PASS",
+      "source_coverage": 1.0,
+      "methodology": "full-market daily facts"
+    },
+    {
+      "style": "low_turnover",
+      "return": 8.016558536585366,
+      "breadth": 87.8048780487805,
+      "amount_change": 0.527056646919314,
+      "limit_up_count": 33,
+      "top_stock_performance": {
+        "ts_code": "688001.SH",
+        "stock_name": "华兴源创",
+        "return": 20.0
+      },
+      "style_strength_score": 80.7,
+      "style_change_1d": 8.593791167204344,
+      "style_change_5d": null,
+      "style_change_20d": null,
+      "sample_count": 41,
+      "coverage_status": "PARTIAL",
+      "source_coverage": 0.0297350874031357,
+      "methodology": "turnover sample proxy"
+    },
+    {
+      "style": "high_turnover",
+      "return": 6.108004761904762,
+      "breadth": 76.19047619047619,
+      "amount_change": 0.9915683140558122,
+      "limit_up_count": 14,
+      "top_stock_performance": {
+        "ts_code": "603448.SH",
+        "stock_name": "天博智能",
+        "return": 33.2482
+      },
+      "style_strength_score": 75.97,
+      "style_change_1d": 31.292210425122896,
+      "style_change_5d": null,
+      "style_change_20d": null,
+      "sample_count": 42,
+      "coverage_status": "PARTIAL",
+      "source_coverage": 0.0297350874031357,
+      "methodology": "turnover sample proxy"
+    },
+    {
+      "style": "high_price_position",
+      "return": 2.2904816414686824,
+      "breadth": 70.41036717062636,
+      "amount_change": 0.0449170581550105,
+      "limit_up_count": 49,
+      "top_stock_performance": {
+        "ts_code": "920269.BJ",
+        "stock_name": NaN,
+        "return": 34.3648
+      },
+      "style_strength_score": 44.48,
+      "style_change_1d": 36.17931094791912,
+      "style_change_5d": 1.0093109479191185,
+      "style_change_20d": 11.619310947919118,
+      "sample_count": 1389,
+      "coverage_status": "PASS",
+      "source_coverage": 1.0,
+      "methodology": "full-market daily facts"
+    },
+    {
+      "style": "consumer",
+      "return": 1.6921420168067227,
+      "breadth": 72.26890756302521,
+      "amount_change": 0.11714100370179185,
+      "limit_up_count": 15,
+      "top_stock_performance": {
+        "ts_code": "000078.SZ",
+        "stock_name": "ST海王",
+        "return": 10.3448
+      },
+      "style_strength_score": 43.82,
+      "style_change_1d": 0.3398007698125909,
+      "style_change_5d": 29.359800769812587,
+      "style_change_20d": -13.820199230187413,
+      "sample_count": 238,
+      "coverage_status": "PASS",
+      "source_coverage": 1.0,
+      "methodology": "full-market daily facts"
+    },
+    {
+      "style": "technology",
+      "return": 1.0545931972789115,
+      "breadth": 54.59183673469388,
+      "amount_change": -0.036852821880703095,
+      "limit_up_count": 25,
+      "top_stock_performance": {
+        "ts_code": "300112.SZ",
+        "stock_name": "万讯自控",
+        "return": 20.0228
+      },
+      "style_strength_score": 32.77,
+      "style_change_1d": 15.90272331804795,
+      "style_change_5d": -11.777276681952046,
+      "style_change_20d": -0.24727668195205155,
+      "sample_count": 1176,
+      "coverage_status": "PASS",
+      "source_coverage": 1.0,
+      "methodology": "full-market daily facts"
+    },
+    {
+      "style": "value",
+      "return": 0.770818929732433,
+      "breadth": 55.01375343835959,
+      "amount_change": -0.06066923791026132,
+      "limit_up_count": 106,
+      "top_stock_performance": {
+        "ts_code": "920269.BJ",
+        "stock_name": NaN,
+        "return": 34.3648
+      },
+      "style_strength_score": 31.43,
+      "style_change_1d": 4.008050853701665,
+      "style_change_5d": -3.401949146298332,
+      "style_change_20d": -13.62194914629833,
+      "sample_count": 3999,
+      "coverage_status": "PARTIAL",
+      "source_coverage": 1.0,
+      "methodology": "non-growth-board proxy; valuation factors unavailable"
+    },
+    {
+      "style": "growth",
+      "return": 1.3743587096774192,
+      "breadth": 62.38709677419355,
+      "amount_change": -0.02893102961122738,
+      "limit_up_count": 4,
+      "top_stock_performance": {
+        "ts_code": "300112.SZ",
+        "stock_name": "万讯自控",
+        "return": 20.0228
+      },
+      "style_strength_score": 30.9,
+      "style_change_1d": 20.078953265509007,
+      "style_change_5d": -3.8610467344909907,
+      "style_change_20d": 1.578953265509007,
+      "sample_count": 1550,
+      "coverage_status": "PASS",
+      "source_coverage": 1.0,
+      "methodology": "full-market daily facts"
+    },
+    {
+      "style": "low_price_position",
+      "return": 0.4339992800575954,
+      "breadth": 50.82793376529877,
+      "amount_change": -0.10686658838002469,
+      "limit_up_count": 21,
+      "top_stock_performance": {
+        "ts_code": "000078.SZ",
+        "stock_name": "ST海王",
+        "return": 10.3448
+      },
+      "style_strength_score": 27.92,
+      "style_change_1d": -5.327224887615419,
+      "style_change_5d": -0.22722488761541726,
+      "style_change_20d": -21.797224887615418,
+      "sample_count": 1389,
+      "coverage_status": "PASS",
+      "source_coverage": 1.0,
+      "methodology": "full-market daily facts"
+    },
+    {
+      "style": "cyclical",
+      "return": 0.9459145952109463,
+      "breadth": 60.77537058152793,
+      "amount_change": -0.11239205931776028,
+      "limit_up_count": 2,
+      "top_stock_performance": {
+        "ts_code": "300488.SZ",
+        "stock_name": "恒锋工具",
+        "return": 15.5669
+      },
+      "style_strength_score": 25.37,
+      "style_change_1d": 15.309157194612153,
+      "style_change_5d": -15.040842805387843,
+      "style_change_20d": -15.640842805387845,
+      "sample_count": 877,
+      "coverage_status": "PASS",
+      "source_coverage": 1.0,
+      "methodology": "full-market daily facts"
+    },
+    {
+      "style": "financial",
+      "return": -1.3868483333333332,
+      "breadth": 3.3333333333333335,
+      "amount_change": -0.061145084566497934,
+      "limit_up_count": 0,
+      "top_stock_performance": {
+        "ts_code": "603123.SH",
+        "stock_name": "翠微股份",
+        "return": 5.1878
+      },
+      "style_strength_score": 0,
+      "style_change_1d": -34.02,
+      "style_change_5d": -27.95,
+      "style_change_20d": -27.76,
+      "sample_count": 120,
+      "coverage_status": "PASS",
+      "source_coverage": 1.0,
+      "methodology": "full-market daily facts"
+    }
+  ],
+  "theme_concentration": {
+    "theme_concentration_score": 42.01,
+    "concentration_candidate": "MEDIUM",
+    "feature_components": {
+      "top1_theme_amount_share": 33.21443205466028,
+      "top3_theme_amount_share": 53.370537083481594,
+      "top1_limit_up_share": 15.053763440860216,
+      "top3_limit_up_share": 31.182795698924732,
+      "top_theme_breadth": 100.0,
+      "core_capacity_share": 80.67134269280025
+    },
+    "available_component_weight": 1.0
+  },
+  "top_theme_features": [
+    {
+      "theme_name": "元件",
+      "theme_return": null,
+      "top_stock_return": 10.002638053894042,
+      "theme_breadth": 100.0,
+      "theme_amount": 38396429440.0,
+      "theme_amount_change": null,
+      "limit_up_count": 14,
+      "failed_limit_count": null,
+      "leader_strength": null,
+      "capacity_strength": 100.0,
+      "trend_leader_strength": 45.0,
+      "catch_up_strength": 100.0,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 78.97,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 78.97435897435898,
+      "score_change_1d": 78.97435897435898,
+      "score_change_5d": null,
+      "score_change_20d": null,
+      "quality_status": "PARTIAL"
+    },
+    {
+      "theme_name": "通信设备",
+      "theme_return": null,
+      "top_stock_return": 9.999824523925781,
+      "theme_breadth": 100.0,
+      "theme_amount": 14953037399.0,
+      "theme_amount_change": null,
+      "limit_up_count": 8,
+      "failed_limit_count": null,
+      "leader_strength": null,
+      "capacity_strength": 100.0,
+      "trend_leader_strength": 46.0,
+      "catch_up_strength": 99.97976303100586,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 78.15,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 41.23177056728265,
+      "score_change_1d": 41.23177056728265,
+      "score_change_5d": 16.41177056728265,
+      "score_change_20d": 35.45177056728265,
+      "quality_status": "PARTIAL"
+    },
+    {
+      "theme_name": "一般零售",
+      "theme_return": null,
+      "top_stock_return": 10.015332221984863,
+      "theme_breadth": 100.0,
+      "theme_amount": 3334858132.0,
+      "theme_amount_change": null,
+      "limit_up_count": 6,
+      "failed_limit_count": null,
+      "leader_strength": 100.0,
+      "capacity_strength": 100.0,
+      "trend_leader_strength": 56.0,
+      "catch_up_strength": 100.0,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 74.77,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 33.089230769230774,
+      "score_change_1d": 33.089230769230774,
+      "score_change_5d": null,
+      "score_change_20d": null,
+      "quality_status": "PARTIAL"
+    },
+    {
+      "theme_name": "汽车零部",
+      "theme_return": null,
+      "top_stock_return": 11.457576070513044,
+      "theme_breadth": 77.77777777777779,
+      "theme_amount": 5933440672.0,
+      "theme_amount_change": null,
+      "limit_up_count": 7,
+      "failed_limit_count": 2,
+      "leader_strength": null,
+      "capacity_strength": 100.0,
+      "trend_leader_strength": 47.0,
+      "catch_up_strength": 100.0,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 68.65,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 28.469572649572648,
+      "score_change_1d": 28.469572649572648,
+      "score_change_5d": null,
+      "score_change_20d": null,
+      "quality_status": "PARTIAL"
+    },
+    {
+      "theme_name": "出版",
+      "theme_return": null,
+      "top_stock_return": 9.97698179880778,
+      "theme_breadth": 100.0,
+      "theme_amount": 1189621906.0,
+      "theme_amount_change": null,
+      "limit_up_count": 3,
+      "failed_limit_count": null,
+      "leader_strength": 100.0,
+      "capacity_strength": null,
+      "trend_leader_strength": 50.0,
+      "catch_up_strength": 99.7512435913086,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 64.69,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 18.242435240134213,
+      "score_change_1d": 18.242435240134213,
+      "score_change_5d": null,
+      "score_change_20d": null,
+      "quality_status": "PARTIAL"
+    },
+    {
+      "theme_name": "化学制品",
+      "theme_return": null,
+      "top_stock_return": 9.999659220377604,
+      "theme_breadth": 100.0,
+      "theme_amount": 1679905435.0,
+      "theme_amount_change": null,
+      "limit_up_count": 3,
+      "failed_limit_count": null,
+      "leader_strength": null,
+      "capacity_strength": 100.0,
+      "trend_leader_strength": 49.0,
+      "catch_up_strength": 100.0,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 64.62,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 30.205384615384617,
+      "score_change_1d": 30.205384615384617,
+      "score_change_5d": null,
+      "score_change_20d": null,
+      "quality_status": "PARTIAL"
+    },
+    {
+      "theme_name": "家电零部",
+      "theme_return": null,
+      "top_stock_return": 10.017516454060873,
+      "theme_breadth": 100.0,
+      "theme_amount": 1912522085.0,
+      "theme_amount_change": null,
+      "limit_up_count": 3,
+      "failed_limit_count": null,
+      "leader_strength": null,
+      "capacity_strength": 100.0,
+      "trend_leader_strength": 39.0,
+      "catch_up_strength": 100.0,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 63.59,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": null,
+      "score_change_1d": null,
+      "score_change_5d": null,
+      "score_change_20d": null,
+      "quality_status": "PARTIAL"
+    },
+    {
+      "theme_name": "小家电",
+      "theme_return": null,
+      "top_stock_return": 10.001550197601318,
+      "theme_breadth": 100.0,
+      "theme_amount": 656687857.0,
+      "theme_amount_change": null,
+      "limit_up_count": 2,
+      "failed_limit_count": null,
+      "leader_strength": 100.0,
+      "capacity_strength": null,
+      "trend_leader_strength": 48.0,
+      "catch_up_strength": 99.92684841156006,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 61.74,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 7.736087016570266,
+      "score_change_1d": 7.736087016570266,
+      "score_change_5d": null,
+      "score_change_20d": null,
+      "quality_status": "PARTIAL"
+    },
+    {
+      "theme_name": "饲料",
+      "theme_return": null,
+      "top_stock_return": 10.001353740692139,
+      "theme_breadth": 100.0,
+      "theme_amount": 463824596.0,
+      "theme_amount_change": null,
+      "limit_up_count": 2,
+      "failed_limit_count": null,
+      "leader_strength": 100.0,
+      "capacity_strength": null,
+      "trend_leader_strength": 44.0,
+      "catch_up_strength": 99.87426280975342,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 61.32,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 6.810437211256762,
+      "score_change_1d": 6.810437211256762,
+      "score_change_5d": 25.830437211256758,
+      "score_change_20d": -2.35956278874324,
+      "quality_status": "PARTIAL"
+    },
+    {
+      "theme_name": "种植业",
+      "theme_return": null,
+      "top_stock_return": 10.030391216278076,
+      "theme_breadth": 80.0,
+      "theme_amount": 4959584130.0,
+      "theme_amount_change": null,
+      "limit_up_count": 4,
+      "failed_limit_count": 1,
+      "leader_strength": 100.0,
+      "capacity_strength": 100.0,
+      "trend_leader_strength": 48.0,
+      "catch_up_strength": null,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 61.13,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 1.0282051282051228,
+      "score_change_1d": 1.0282051282051228,
+      "score_change_5d": 23.988205128205124,
+      "score_change_20d": 10.248205128205122,
+      "quality_status": "PARTIAL"
+    },
+    {
+      "theme_name": "农产品加",
+      "theme_return": null,
+      "top_stock_return": 9.994124412536621,
+      "theme_breadth": 100.0,
+      "theme_amount": 1975733214.0,
+      "theme_amount_change": null,
+      "limit_up_count": 2,
+      "failed_limit_count": null,
+      "leader_strength": null,
+      "capacity_strength": 100.0,
+      "trend_leader_strength": 41.0,
+      "catch_up_strength": 99.94124412536621,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 61.02,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": null,
+      "score_change_1d": null,
+      "score_change_5d": null,
+      "score_change_20d": null,
+      "quality_status": "PARTIAL"
+    },
+    {
+      "theme_name": "影视院线",
+      "theme_return": null,
+      "top_stock_return": 10.039330005645752,
+      "theme_breadth": 100.0,
+      "theme_amount": 1760679424.0,
+      "theme_amount_change": null,
+      "limit_up_count": 2,
+      "failed_limit_count": null,
+      "leader_strength": null,
+      "capacity_strength": 100.0,
+      "trend_leader_strength": 35.0,
+      "catch_up_strength": 100.0,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 60.41,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 6.1002564102564065,
+      "score_change_1d": 6.1002564102564065,
+      "score_change_5d": null,
+      "score_change_20d": null,
+      "quality_status": "PARTIAL"
+    },
+    {
+      "theme_name": "专用设备",
+      "theme_return": null,
+      "top_stock_return": 13.330679257710775,
+      "theme_breadth": 75.0,
+      "theme_amount": 3217159002.0,
+      "theme_amount_change": null,
+      "limit_up_count": 3,
+      "failed_limit_count": 1,
+      "leader_strength": 99.69573974609375,
+      "capacity_strength": 100.0,
+      "trend_leader_strength": 41.0,
+      "catch_up_strength": 100.0,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 57.59,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 19.13197998046875,
+      "score_change_1d": 19.13197998046875,
+      "score_change_5d": null,
+      "score_change_20d": null,
+      "quality_status": "PARTIAL"
+    },
+    {
+      "theme_name": "养殖业",
+      "theme_return": null,
+      "top_stock_return": 9.95106029510498,
+      "theme_breadth": 100.0,
+      "theme_amount": 345449520.0,
+      "theme_amount_change": null,
+      "limit_up_count": 1,
+      "failed_limit_count": null,
+      "leader_strength": 99.7553014755249,
+      "capacity_strength": null,
+      "trend_leader_strength": 51.0,
+      "catch_up_strength": null,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 56.73,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": -7.058415157611556,
+      "score_change_1d": -7.058415157611556,
+      "score_change_5d": null,
+      "score_change_20d": null,
+      "quality_status": "PARTIAL"
+    },
+    {
+      "theme_name": "酒店餐饮",
+      "theme_return": null,
+      "top_stock_return": 10.021322250366211,
+      "theme_breadth": 100.0,
+      "theme_amount": 517332416.0,
+      "theme_amount_change": null,
+      "limit_up_count": 1,
+      "failed_limit_count": null,
+      "leader_strength": 100.0,
+      "capacity_strength": null,
+      "trend_leader_strength": 47.0,
+      "catch_up_strength": null,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 56.15,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 1.073846153846155,
+      "score_change_1d": 1.073846153846155,
+      "score_change_5d": 28.343846153846155,
+      "score_change_20d": -4.136153846153846,
+      "quality_status": "PARTIAL"
+    }
+  ],
+  "role_candidates": [
+    {
+      "ts_code": "002403.SZ",
+      "stock_name": "爱仕达",
+      "theme": "小家电",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "LEADER_CANDIDATE",
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 100.0,
+      "role_scores": {
+        "leader": 95.39,
+        "capacity": 59.8,
+        "trend_leader": 58.4,
+        "elasticity": 100.0,
+        "catch_up": 41.61,
+        "follower": 44.73
+      },
+      "role_score_change_1d": 23.629999999999995,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 3.0,
+      "relative_strength": 10.0177,
+      "theme_leadership": 61.74,
+      "theme_follow_rate": 100.0,
+      "turnover": 13.469894409179688,
+      "amount": 473560152.07,
+      "recognition_score": 61.0,
+      "continuity": 3.0,
+      "previous_day_strength": 10.017730712890625,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002909.SZ",
+      "stock_name": "集泰股份",
+      "theme": "化学制品",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 100.0,
+      "role_scores": {
+        "leader": 54.42,
+        "capacity": 45.4,
+        "trend_leader": 23.2,
+        "elasticity": 100.0,
+        "catch_up": 37.68,
+        "follower": 45.82
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 9.986129760742188,
+      "theme_leadership": 64.62,
+      "theme_follow_rate": 100.0,
+      "turnover": 27.512056350708008,
+      "amount": 812185792.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "301550.SZ",
+      "stock_name": "斯菱智驱",
+      "theme": "汽车零部",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "LEADER_CANDIDATE",
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 100.0,
+      "role_scores": {
+        "leader": 74.45,
+        "capacity": 86.45,
+        "trend_leader": 41.6,
+        "elasticity": 100.0,
+        "catch_up": 44.03,
+        "follower": 67.46
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 19.99754524230957,
+      "theme_leadership": 68.65,
+      "theme_follow_rate": 77.77777777777779,
+      "turnover": 8.123709678649902,
+      "amount": 1588661872.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600371.SH",
+      "stock_name": "万向德农",
+      "theme": "种植业",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 100.0,
+      "role_scores": {
+        "leader": 54.45,
+        "capacity": 68.55,
+        "trend_leader": 58.4,
+        "elasticity": 100.0,
+        "catch_up": 41.67,
+        "follower": 44.45
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.0,
+      "theme_leadership": 61.13,
+      "theme_follow_rate": 80.0,
+      "turnover": 28.5697078704834,
+      "amount": 1222131039.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600540.SH",
+      "stock_name": "新赛股份",
+      "theme": "种植业",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 100.0,
+      "role_scores": {
+        "leader": 54.42,
+        "capacity": 52.75,
+        "trend_leader": 28.0,
+        "elasticity": 100.0,
+        "catch_up": 37.72,
+        "follower": 44.42
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 9.983633041381836,
+      "theme_leadership": 61.13,
+      "theme_follow_rate": 80.0,
+      "turnover": 31.838756561279297,
+      "amount": 1194789392.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "605577.SH",
+      "stock_name": "龙版传媒",
+      "theme": "出版",
+      "role_candidate": "LEADER_CANDIDATE",
+      "all_role_candidates": [
+        "LEADER_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 100.0,
+      "role_scores": {
+        "leader": 100.0,
+        "capacity": 58.33,
+        "trend_leader": 60.0,
+        "elasticity": 100.0,
+        "catch_up": 35.97,
+        "follower": 45.94
+      },
+      "role_score_change_1d": 0.0,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 6.0,
+      "relative_strength": 10.0322,
+      "theme_leadership": 64.69,
+      "theme_follow_rate": 100.0,
+      "turnover": 3.338653564453125,
+      "amount": 250953708.0,
+      "recognition_score": 70.0,
+      "continuity": 6.0,
+      "previous_day_strength": 10.03215503692627,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "688655.SH",
+      "stock_name": "迅捷兴",
+      "theme": "元件",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 100.0,
+      "role_scores": {
+        "leader": 74.45,
+        "capacity": 25.24,
+        "trend_leader": 37.6,
+        "elasticity": 100.0,
+        "catch_up": 60.41,
+        "follower": 71.59
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 20.0,
+      "theme_leadership": 78.97,
+      "theme_follow_rate": 100.0,
+      "turnover": 9.566338539123535,
+      "amount": 620997216.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "688813.SH",
+      "stock_name": "泰金新能",
+      "theme": "专用设备",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "LEADER_CANDIDATE",
+        "CAPACITY_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 100.0,
+      "role_scores": {
+        "leader": 74.45,
+        "capacity": 80.55,
+        "trend_leader": 14.4,
+        "elasticity": 100.0,
+        "catch_up": 40.16,
+        "follower": 63.03
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 19.998044967651367,
+      "theme_leadership": 57.59,
+      "theme_follow_rate": 75.0,
+      "turnover": 28.903514862060547,
+      "amount": 1010064928.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "920821.BJ",
+      "stock_name": "则成电子",
+      "theme": "元件",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "LEADER_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 100.0,
+      "role_scores": {
+        "leader": 90.89,
+        "capacity": 13.34,
+        "trend_leader": 49.6,
+        "elasticity": 100.0,
+        "catch_up": 29.07,
+        "follower": 91.53
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 29.97245216369629,
+      "theme_leadership": 78.97,
+      "theme_follow_rate": 100.0,
+      "turnover": 20.520875930786133,
+      "amount": 329178048.0,
+      "recognition_score": 37.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600108.SH",
+      "stock_name": "亚盛集团",
+      "theme": "种植业",
+      "role_candidate": "LEADER_CANDIDATE",
+      "all_role_candidates": [
+        "LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 95.53,
+      "role_scores": {
+        "leader": 95.53,
+        "capacity": 49.1,
+        "trend_leader": 36.8,
+        "elasticity": 82.09,
+        "catch_up": 25.4,
+        "follower": 44.64
+      },
+      "role_score_change_1d": 18.68348503112793,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 3.0,
+      "relative_strength": 10.091742515563965,
+      "theme_leadership": 61.13,
+      "theme_follow_rate": 80.0,
+      "turnover": 1.0875449180603027,
+      "amount": 101633170.0,
+      "recognition_score": 61.0,
+      "continuity": 3.0,
+      "previous_day_strength": 10.091742515563965,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600785.SH",
+      "stock_name": "新华百货",
+      "theme": "一般零售",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 95.46,
+      "role_scores": {
+        "leader": 54.45,
+        "capacity": 55.85,
+        "trend_leader": 16.8,
+        "elasticity": 95.46,
+        "catch_up": 46.36,
+        "follower": 49.91
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.0,
+      "theme_leadership": 74.77,
+      "theme_follow_rate": 100.0,
+      "turnover": 23.642011642456055,
+      "amount": 905511072.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600865.SH",
+      "stock_name": "百大集团",
+      "theme": "一般零售",
+      "role_candidate": "LEADER_CANDIDATE",
+      "all_role_candidates": [
+        "LEADER_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 95.44,
+      "role_scores": {
+        "leader": 95.44,
+        "capacity": 41.17,
+        "trend_leader": 56.0,
+        "elasticity": 87.25,
+        "catch_up": 32.89,
+        "follower": 50.0
+      },
+      "role_score_change_1d": 0.8281999999999954,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 3.0,
+      "relative_strength": 10.0441,
+      "theme_leadership": 74.77,
+      "theme_follow_rate": 100.0,
+      "turnover": 4.684093952178955,
+      "amount": 220018385.0,
+      "recognition_score": 61.0,
+      "continuity": 3.0,
+      "previous_day_strength": 10.044053077697754,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600127.SH",
+      "stock_name": "金健米业",
+      "theme": "农产品加",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 92.24,
+      "role_scores": {
+        "leader": 54.45,
+        "capacity": 87.85,
+        "trend_leader": 52.8,
+        "elasticity": 92.24,
+        "catch_up": 41.36,
+        "follower": 44.41
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.0,
+      "theme_leadership": 61.02,
+      "theme_follow_rate": 100.0,
+      "turnover": 21.495094299316406,
+      "amount": 1833838422.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "001330.SZ",
+      "stock_name": "博纳影业",
+      "theme": "影视院线",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 88.93,
+      "role_scores": {
+        "leader": 54.55,
+        "capacity": 71.05,
+        "trend_leader": 38.4,
+        "elasticity": 88.93,
+        "catch_up": 41.14,
+        "follower": 44.27
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.051993370056152,
+      "theme_leadership": 60.41,
+      "theme_follow_rate": 100.0,
+      "turnover": 19.115877151489258,
+      "amount": 1353107680.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "000759.SZ",
+      "stock_name": "中百集团",
+      "theme": "一般零售",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 88.89,
+      "role_scores": {
+        "leader": 54.58,
+        "capacity": 54.42,
+        "trend_leader": 12.0,
+        "elasticity": 88.89,
+        "catch_up": 42.84,
+        "follower": 50.03
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.06289291381836,
+      "theme_leadership": 74.77,
+      "theme_follow_rate": 100.0,
+      "turnover": 19.05183982849121,
+      "amount": 857306704.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600354.SH",
+      "stock_name": "敦煌种业",
+      "theme": "种植业",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "LEADER_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 87.49,
+      "role_scores": {
+        "leader": 76.74,
+        "capacity": 61.25,
+        "trend_leader": 52.0,
+        "elasticity": 87.49,
+        "catch_up": 33.53,
+        "follower": 44.54
+      },
+      "role_score_change_1d": -12.50792211914063,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 2.0,
+      "relative_strength": 10.0462,
+      "theme_leadership": 61.13,
+      "theme_follow_rate": 80.0,
+      "turnover": 11.50738525390625,
+      "amount": 569165445.0,
+      "recognition_score": 59.0,
+      "continuity": 2.0,
+      "previous_day_strength": 10.046189308166504,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "000428.SZ",
+      "stock_name": "华天酒店",
+      "theme": "酒店餐饮",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "LEADER_CANDIDATE",
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 85.32,
+      "role_scores": {
+        "leader": 76.69,
+        "capacity": 83.45,
+        "trend_leader": 57.6,
+        "elasticity": 85.32,
+        "catch_up": 39.65,
+        "follower": 42.5
+      },
+      "role_score_change_1d": 15.713521465301511,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 2.0,
+      "relative_strength": 10.0213,
+      "theme_leadership": 56.15,
+      "theme_follow_rate": 100.0,
+      "turnover": 10.144680976867676,
+      "amount": 517332409.02000004,
+      "recognition_score": 59.0,
+      "continuity": 2.0,
+      "previous_day_strength": 10.021322250366211,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002281.SZ",
+      "stock_name": "光迅科技",
+      "theme": "通信设备",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 85.15,
+      "role_scores": {
+        "leader": 54.45,
+        "capacity": 85.15,
+        "trend_leader": 11.2,
+        "elasticity": 68.17,
+        "catch_up": 47.43,
+        "follower": 51.26
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.0,
+      "theme_leadership": 78.15,
+      "theme_follow_rate": 100.0,
+      "turnover": 5.445681095123291,
+      "amount": 7691316736.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002579.SZ",
+      "stock_name": "中京电子",
+      "theme": "元件",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 84.36,
+      "role_scores": {
+        "leader": 54.45,
+        "capacity": 47.22,
+        "trend_leader": 39.2,
+        "elasticity": 84.36,
+        "catch_up": 67.64,
+        "follower": 51.59
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.0,
+      "theme_leadership": 78.97,
+      "theme_follow_rate": 100.0,
+      "turnover": 16.242948532104492,
+      "amount": 1441138160.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "000876.SZ",
+      "stock_name": "新 希 望",
+      "theme": "饲料",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 84.1,
+      "role_scores": {
+        "leader": 6.62,
+        "capacity": 84.1,
+        "trend_leader": 52.8,
+        "elasticity": 13.18,
+        "catch_up": 66.87,
+        "follower": 27.64
+      },
+      "role_score_change_1d": -3.75,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 0,
+      "relative_strength": 1.5584,
+      "theme_leadership": 61.32,
+      "theme_follow_rate": 100.0,
+      "turnover": 3.5916926860809326,
+      "amount": 1261347617.0600002,
+      "recognition_score": 10.0,
+      "continuity": null,
+      "previous_day_strength": 1.5584415197372437,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "601949.SH",
+      "stock_name": "中国出版",
+      "theme": "出版",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "LEADER_CANDIDATE",
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 82.95,
+      "role_scores": {
+        "leader": 76.55,
+        "capacity": 82.95,
+        "trend_leader": 53.6,
+        "elasticity": 79.95,
+        "catch_up": 42.89,
+        "follower": 45.77
+      },
+      "role_score_change_1d": 21.550000000000004,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 2.0,
+      "relative_strength": 9.9485,
+      "theme_leadership": 64.69,
+      "theme_follow_rate": 100.0,
+      "turnover": 6.805038928985596,
+      "amount": 794651255.0,
+      "recognition_score": 59.0,
+      "continuity": 2.0,
+      "previous_day_strength": 9.948541641235352,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002463.SZ",
+      "stock_name": "沪电股份",
+      "theme": "元件",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 82.71,
+      "role_scores": {
+        "leader": 54.45,
+        "capacity": 82.71,
+        "trend_leader": 8.8,
+        "elasticity": 66.25,
+        "catch_up": 77.64,
+        "follower": 51.59
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.0,
+      "theme_leadership": 78.97,
+      "theme_follow_rate": 100.0,
+      "turnover": 4.165695667266846,
+      "amount": 9613926400.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "603228.SH",
+      "stock_name": "景旺电子",
+      "theme": "元件",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 81.46,
+      "role_scores": {
+        "leader": 54.44,
+        "capacity": 81.46,
+        "trend_leader": 56.0,
+        "elasticity": 67.7,
+        "catch_up": 76.21,
+        "follower": 51.58
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 9.9958,
+      "theme_leadership": 78.97,
+      "theme_follow_rate": 100.0,
+      "turnover": 5.146159648895264,
+      "amount": 5269098174.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "003040.SZ",
+      "stock_name": "楚天龙",
+      "theme": "通信设备",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 80.84,
+      "role_scores": {
+        "leader": 20.83,
+        "capacity": 56.82,
+        "trend_leader": 56.8,
+        "elasticity": 80.84,
+        "catch_up": 46.99,
+        "follower": 48.59
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 0,
+      "relative_strength": 8.6648,
+      "theme_leadership": 78.15,
+      "theme_follow_rate": 100.0,
+      "turnover": 25.013681411743164,
+      "amount": 2501505202.2099996,
+      "recognition_score": 10.0,
+      "continuity": null,
+      "previous_day_strength": 8.664772987365723,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "000798.SZ",
+      "stock_name": "中水渔业",
+      "theme": "渔业",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "LEADER_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 79.83,
+      "role_scores": {
+        "leader": 73.07,
+        "capacity": 61.83,
+        "trend_leader": 48.0,
+        "elasticity": 79.83,
+        "catch_up": 32.76,
+        "follower": 42.13
+      },
+      "role_score_change_1d": 11.088314065933233,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 2.0,
+      "relative_strength": 9.960552215576172,
+      "theme_leadership": 55.51,
+      "theme_follow_rate": 100.0,
+      "turnover": 6.683701992034912,
+      "amount": 266169753.0,
+      "recognition_score": 49.0,
+      "continuity": 2.0,
+      "previous_day_strength": 9.960552215576172,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "603186.SH",
+      "stock_name": "华正新材",
+      "theme": "元件",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 79.63,
+      "role_scores": {
+        "leader": 54.45,
+        "capacity": 63.45,
+        "trend_leader": 37.6,
+        "elasticity": 79.63,
+        "catch_up": 73.35,
+        "follower": 51.59
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.001773834228516,
+      "theme_leadership": 78.97,
+      "theme_follow_rate": 100.0,
+      "turnover": 13.07883358001709,
+      "amount": 3716928464.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002988.SZ",
+      "stock_name": "豪美新材",
+      "theme": "工业金属",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 78.8,
+      "role_scores": {
+        "leader": 50.99,
+        "capacity": 78.8,
+        "trend_leader": 50.4,
+        "elasticity": 69.41,
+        "catch_up": 39.17,
+        "follower": 41.95
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.019120216369629,
+      "theme_leadership": 54.77,
+      "theme_follow_rate": 100.0,
+      "turnover": 6.211535930633545,
+      "amount": 431417376.0,
+      "recognition_score": 37.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "603083.SH",
+      "stock_name": "剑桥科技",
+      "theme": "通信设备",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 78.13,
+      "role_scores": {
+        "leader": 54.45,
+        "capacity": 78.13,
+        "trend_leader": 32.8,
+        "elasticity": 69.35,
+        "catch_up": 45.2,
+        "follower": 51.26
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.001592636108398,
+      "theme_leadership": 78.15,
+      "theme_follow_rate": 100.0,
+      "turnover": 6.2256340980529785,
+      "amount": 3544718640.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "603608.SH",
+      "stock_name": "天创时尚",
+      "theme": "服装家纺",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 77.5,
+      "role_scores": {
+        "leader": 51.0,
+        "capacity": 77.5,
+        "trend_leader": 40.0,
+        "elasticity": 67.8,
+        "catch_up": 39.79,
+        "follower": 42.26
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.023866653442383,
+      "theme_leadership": 55.54,
+      "theme_follow_rate": 100.0,
+      "turnover": 5.118377685546875,
+      "amount": 485555344.0,
+      "recognition_score": 37.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002827.SZ",
+      "stock_name": "高争民爆",
+      "theme": "化学制品",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 77.4,
+      "role_scores": {
+        "leader": 18.31,
+        "capacity": 77.4,
+        "trend_leader": 59.2,
+        "elasticity": 50.09,
+        "catch_up": 50.42,
+        "follower": 40.66
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 0,
+      "relative_strength": 7.4074,
+      "theme_leadership": 64.62,
+      "theme_follow_rate": 100.0,
+      "turnover": 8.69967269897461,
+      "amount": 1644408809.8899999,
+      "recognition_score": 10.0,
+      "continuity": null,
+      "previous_day_strength": 7.407407283782959,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002708.SZ",
+      "stock_name": "光洋股份",
+      "theme": "汽车零部",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 76.84,
+      "role_scores": {
+        "leader": 54.49,
+        "capacity": 65.59,
+        "trend_leader": 57.6,
+        "elasticity": 76.84,
+        "catch_up": 71.1,
+        "follower": 47.5
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.0196,
+      "theme_leadership": 68.65,
+      "theme_follow_rate": 77.77777777777779,
+      "turnover": 11.164031028747559,
+      "amount": 932054974.1800001,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002815.SZ",
+      "stock_name": "崇达技术",
+      "theme": "元件",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 76.66,
+      "role_scores": {
+        "leader": 54.52,
+        "capacity": 46.81,
+        "trend_leader": 41.6,
+        "elasticity": 76.66,
+        "catch_up": 64.78,
+        "follower": 51.66
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.034364700317383,
+      "theme_leadership": 78.97,
+      "theme_follow_rate": 100.0,
+      "turnover": 10.98912525177002,
+      "amount": 1334323632.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "000735.SZ",
+      "stock_name": "罗 牛 山",
+      "theme": "养殖业",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "LEADER_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 76.44,
+      "role_scores": {
+        "leader": 73.05,
+        "capacity": 60.4,
+        "trend_leader": 43.2,
+        "elasticity": 76.44,
+        "catch_up": 29.86,
+        "follower": 42.59
+      },
+      "role_score_change_1d": 5.812419052124028,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 2.0,
+      "relative_strength": 9.95106029510498,
+      "theme_leadership": 56.73,
+      "theme_follow_rate": 100.0,
+      "turnover": 4.458078384399414,
+      "amount": 345449520.0,
+      "recognition_score": 49.0,
+      "continuity": 2.0,
+      "previous_day_strength": 9.95106029510498,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "605488.SH",
+      "stock_name": "福莱新材",
+      "theme": "塑料",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 76.4,
+      "role_scores": {
+        "leader": 50.94,
+        "capacity": 76.4,
+        "trend_leader": 11.2,
+        "elasticity": 65.93,
+        "catch_up": 46.58,
+        "follower": 42.2
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 9.99265193939209,
+      "theme_leadership": 55.53,
+      "theme_follow_rate": 100.0,
+      "turnover": 3.97926664352417,
+      "amount": 344653904.0,
+      "recognition_score": 37.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002564.SZ",
+      "stock_name": "天沃科技",
+      "theme": "专用设备",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "LEADER_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 75.7,
+      "role_scores": {
+        "leader": 73.03,
+        "capacity": 30.77,
+        "trend_leader": 52.8,
+        "elasticity": 75.7,
+        "catch_up": 56.82,
+        "follower": 42.91
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 2.0,
+      "relative_strength": 9.9391,
+      "theme_leadership": 57.59,
+      "theme_follow_rate": 75.0,
+      "turnover": 4.001143455505371,
+      "amount": 181942410.48,
+      "recognition_score": 49.0,
+      "continuity": 2.0,
+      "previous_day_strength": 9.93914794921875,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "001366.SZ",
+      "stock_name": "播恩集团",
+      "theme": "饲料",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 75.36,
+      "role_scores": {
+        "leader": 73.21,
+        "capacity": 24.4,
+        "trend_leader": 39.2,
+        "elasticity": 75.36,
+        "catch_up": 24.32,
+        "follower": 44.58
+      },
+      "role_score_change_1d": 1.088404517173771,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 2.0,
+      "relative_strength": 10.027854919433594,
+      "theme_leadership": 61.32,
+      "theme_follow_rate": 100.0,
+      "turnover": 3.4794199466705322,
+      "amount": 88316740.0,
+      "recognition_score": 49.0,
+      "continuity": 2.0,
+      "previous_day_strength": 10.027854919433594,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002436.SZ",
+      "stock_name": "兴森科技",
+      "theme": "元件",
+      "role_candidate": "CATCH_UP_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 74.78,
+      "role_scores": {
+        "leader": 54.44,
+        "capacity": 71.18,
+        "trend_leader": 8.0,
+        "elasticity": 70.85,
+        "catch_up": 74.78,
+        "follower": 51.58
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 9.997007369995117,
+      "theme_leadership": 78.97,
+      "theme_follow_rate": 100.0,
+      "turnover": 7.24257230758667,
+      "amount": 3954318624.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "603628.SH",
+      "stock_name": "清源股份",
+      "theme": "光伏设备",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 74.0,
+      "role_scores": {
+        "leader": 51.03,
+        "capacity": 74.0,
+        "trend_leader": 52.0,
+        "elasticity": 70.23,
+        "catch_up": 39.28,
+        "follower": 42.11
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.0406,
+      "theme_leadership": 55.08,
+      "theme_follow_rate": 100.0,
+      "turnover": 6.682899475097656,
+      "amount": 193102668.0,
+      "recognition_score": 37.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002902.SZ",
+      "stock_name": "铭普光磁",
+      "theme": "通信设备",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 73.98,
+      "role_scores": {
+        "leader": 50.94,
+        "capacity": 29.53,
+        "trend_leader": 9.6,
+        "elasticity": 73.98,
+        "catch_up": 34.11,
+        "follower": 51.25
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 9.995952606201172,
+      "theme_leadership": 78.15,
+      "theme_follow_rate": 100.0,
+      "turnover": 9.33519172668457,
+      "amount": 458622496.0,
+      "recognition_score": 37.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "601086.SH",
+      "stock_name": "国芳集团",
+      "theme": "一般零售",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 73.52,
+      "role_scores": {
+        "leader": 54.53,
+        "capacity": 72.68,
+        "trend_leader": 64.8,
+        "elasticity": 73.52,
+        "catch_up": 39.57,
+        "follower": 49.99
+      },
+      "role_score_change_1d": 26.095208492279056,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.0395,
+      "theme_leadership": 74.77,
+      "theme_follow_rate": 100.0,
+      "turnover": 8.878472328186035,
+      "amount": 808732967.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    }
+  ],
+  "money_effect_features": {
+    "features": {
+      "leader_return": 13.336556821289063,
+      "capacity_return": 10.120384187262399,
+      "catch_up_return": 8.724679737027486,
+      "new_theme_return": null,
+      "old_theme_return": null,
+      "high_level_return": 10.046435628890992,
+      "low_level_return": 9.731763962035247,
+      "all_theme_return": null
+    },
+    "structure_candidates": [
+      "LEADER_DOMINANT"
+    ]
+  },
+  "trend_chip_candidates": [
+    {
+      "ts_code": "920242.BJ",
+      "stock_name": "建邦科技",
+      "pullback_volume_ratio": 0.854026666319986,
+      "amount_percentile": 31.666666666666664,
+      "turnover_percentile": null,
+      "volatility_percentile": 26.666666666666668,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_HELD",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 10.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "000776.SZ",
+      "stock_name": "广发证券",
+      "pullback_volume_ratio": 0.6729963473214111,
+      "amount_percentile": 30.0,
+      "turnover_percentile": null,
+      "volatility_percentile": 44.166666666666664,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_FAILED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "001301.SZ",
+      "stock_name": "尚太科技",
+      "pullback_volume_ratio": 0.5178043702692043,
+      "amount_percentile": 22.5,
+      "turnover_percentile": null,
+      "volatility_percentile": 40.0,
+      "upper_shadow_frequency": 0.05,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_UNCONFIRMED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": 0.0,
+      "chip_health_change_1d": 0.0,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "002546.SZ",
+      "stock_name": "新联电子",
+      "pullback_volume_ratio": 0.6081348547262375,
+      "amount_percentile": 44.166666666666664,
+      "turnover_percentile": null,
+      "volatility_percentile": 4.166666666666666,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_UNCONFIRMED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "002736.SZ",
+      "stock_name": "国信证券",
+      "pullback_volume_ratio": 0.6780006783758633,
+      "amount_percentile": 25.0,
+      "turnover_percentile": null,
+      "volatility_percentile": 9.166666666666666,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_FAILED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "002983.SZ",
+      "stock_name": "芯瑞达",
+      "pullback_volume_ratio": 0.5917346731216004,
+      "amount_percentile": 30.833333333333336,
+      "turnover_percentile": null,
+      "volatility_percentile": 27.500000000000004,
+      "upper_shadow_frequency": 0.05,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_FAILED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "300231.SZ",
+      "stock_name": "银信科技",
+      "pullback_volume_ratio": 0.6718142980805114,
+      "amount_percentile": 20.833333333333336,
+      "turnover_percentile": null,
+      "volatility_percentile": 0.8333333333333334,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_UNCONFIRMED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "600076.SH",
+      "stock_name": "康欣新材",
+      "pullback_volume_ratio": 0.5627607964896092,
+      "amount_percentile": 0.8333333333333334,
+      "turnover_percentile": null,
+      "volatility_percentile": 22.5,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_FAILED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "600529.SH",
+      "stock_name": "山东药玻",
+      "pullback_volume_ratio": 0.5408502909117828,
+      "amount_percentile": 45.83333333333333,
+      "turnover_percentile": null,
+      "volatility_percentile": 12.5,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_UNCONFIRMED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "601108.SH",
+      "stock_name": "财通证券",
+      "pullback_volume_ratio": 0.685280756068143,
+      "amount_percentile": 75.0,
+      "turnover_percentile": null,
+      "volatility_percentile": 62.5,
+      "upper_shadow_frequency": 0.05,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_UNCONFIRMED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "605011.SH",
+      "stock_name": "杭州热电",
+      "pullback_volume_ratio": 0.5434252910009761,
+      "amount_percentile": 19.166666666666668,
+      "turnover_percentile": null,
+      "volatility_percentile": 2.5,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_UNCONFIRMED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "000501.SZ",
+      "stock_name": "武商集团",
+      "pullback_volume_ratio": null,
+      "amount_percentile": 100.0,
+      "turnover_percentile": null,
+      "volatility_percentile": 49.166666666666664,
+      "upper_shadow_frequency": 0.05,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_HELD",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 8.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 4,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "000702.SZ",
+      "stock_name": "正虹科技",
+      "pullback_volume_ratio": null,
+      "amount_percentile": 100.0,
+      "turnover_percentile": null,
+      "volatility_percentile": 70.0,
+      "upper_shadow_frequency": 0.05,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_HELD",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 8.0,
+      "chip_health_change": 0.0,
+      "chip_health_change_1d": 0.0,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 4,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "000823.SZ",
+      "stock_name": "超声电子",
+      "pullback_volume_ratio": null,
+      "amount_percentile": 58.333333333333336,
+      "turnover_percentile": null,
+      "volatility_percentile": 49.166666666666664,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_HELD",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 8.0,
+      "chip_health_change": 1.0,
+      "chip_health_change_1d": 1.0,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 4,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "000876.SZ",
+      "stock_name": "新 希 望",
+      "pullback_volume_ratio": null,
+      "amount_percentile": 99.16666666666667,
+      "turnover_percentile": null,
+      "volatility_percentile": 82.5,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_HELD",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 8.0,
+      "chip_health_change": 0.0,
+      "chip_health_change_1d": 0.0,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 4,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "000903.SZ",
+      "stock_name": "ST云动",
+      "pullback_volume_ratio": null,
+      "amount_percentile": 98.33333333333333,
+      "turnover_percentile": null,
+      "volatility_percentile": 65.0,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_HELD",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 8.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 4,
+      "risk_flags": [
+        "ST"
+      ]
+    },
+    {
+      "ts_code": "001201.SZ",
+      "stock_name": "东瑞股份",
+      "pullback_volume_ratio": null,
+      "amount_percentile": 98.33333333333333,
+      "turnover_percentile": null,
+      "volatility_percentile": 40.833333333333336,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_HELD",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 8.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 4,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "001222.SZ",
+      "stock_name": "源飞宠物",
+      "pullback_volume_ratio": null,
+      "amount_percentile": 100.0,
+      "turnover_percentile": null,
+      "volatility_percentile": 97.5,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_HELD",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 8.0,
+      "chip_health_change": 0.0,
+      "chip_health_change_1d": 0.0,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 4,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "002011.SZ",
+      "stock_name": "盾安环境",
+      "pullback_volume_ratio": null,
+      "amount_percentile": 100.0,
+      "turnover_percentile": null,
+      "volatility_percentile": 100.0,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_HELD",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 8.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 4,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "002059.SZ",
+      "stock_name": "云南旅游",
+      "pullback_volume_ratio": null,
+      "amount_percentile": 99.16666666666667,
+      "turnover_percentile": null,
+      "volatility_percentile": 100.0,
+      "upper_shadow_frequency": 0.05,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_HELD",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 8.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 4,
+      "risk_flags": []
+    }
+  ],
+  "positive_catalyst_fatigue": [],
+  "next_day_plan_candidates": [
+    {
+      "ts_code": "600865.SH",
+      "stock_name": "百大集团",
+      "theme": "一般零售",
+      "role_candidate": "LEADER_CANDIDATE",
+      "role_candidate_score": 95.44,
+      "why_watch": [
+        "主题客观排名第3",
+        "角色候选分95.44",
+        "筹码健康特征分8.0"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "605577.SH",
+      "stock_name": "龙版传媒",
+      "theme": "出版",
+      "role_candidate": "LEADER_CANDIDATE",
+      "role_candidate_score": 100.0,
+      "why_watch": [
+        "主题客观排名第5",
+        "角色候选分100.00"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600108.SH",
+      "stock_name": "亚盛集团",
+      "theme": "种植业",
+      "role_candidate": "LEADER_CANDIDATE",
+      "role_candidate_score": 95.53,
+      "why_watch": [
+        "主题客观排名第10",
+        "角色候选分95.53"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002463.SZ",
+      "stock_name": "沪电股份",
+      "theme": "元件",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 82.71,
+      "why_watch": [
+        "主题客观排名第1",
+        "角色候选分82.71"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题",
+        "容量候选是否与主题高弹性股票同步走强"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "603228.SH",
+      "stock_name": "景旺电子",
+      "theme": "元件",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 81.46,
+      "why_watch": [
+        "主题客观排名第1",
+        "角色候选分81.46"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题",
+        "容量候选是否与主题高弹性股票同步走强"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002281.SZ",
+      "stock_name": "光迅科技",
+      "theme": "通信设备",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 85.15,
+      "why_watch": [
+        "主题客观排名第2",
+        "角色候选分85.15"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题",
+        "容量候选是否与主题高弹性股票同步走强"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "603083.SH",
+      "stock_name": "剑桥科技",
+      "theme": "通信设备",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 78.13,
+      "why_watch": [
+        "主题客观排名第2",
+        "角色候选分78.13"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题",
+        "容量候选是否与主题高弹性股票同步走强"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "601949.SH",
+      "stock_name": "中国出版",
+      "theme": "出版",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 82.95,
+      "why_watch": [
+        "主题客观排名第5",
+        "角色候选分82.95"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题",
+        "容量候选是否与主题高弹性股票同步走强"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002827.SZ",
+      "stock_name": "高争民爆",
+      "theme": "化学制品",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 77.4,
+      "why_watch": [
+        "主题客观排名第6",
+        "角色候选分77.40"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题",
+        "容量候选是否与主题高弹性股票同步走强"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002011.SZ",
+      "stock_name": "盾安环境",
+      "theme": "家电零部",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 72.65,
+      "why_watch": [
+        "主题客观排名第7",
+        "角色候选分72.65",
+        "筹码健康特征分8.0"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题",
+        "容量候选是否与主题高弹性股票同步走强"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "000876.SZ",
+      "stock_name": "新 希 望",
+      "theme": "饲料",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 84.1,
+      "why_watch": [
+        "主题客观排名第9",
+        "角色候选分84.10",
+        "筹码健康特征分8.0"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题",
+        "容量候选是否与主题高弹性股票同步走强"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600975.SH",
+      "stock_name": "新五丰",
+      "theme": "养殖业",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 65.1,
+      "why_watch": [
+        "主题客观排名第14",
+        "角色候选分65.10",
+        "筹码健康特征分8.0"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题",
+        "容量候选是否与主题高弹性股票同步走强"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "603609.SH",
+      "stock_name": "禾丰股份",
+      "theme": "饲料",
+      "role_candidate": "TREND_LEADER_CANDIDATE",
+      "role_candidate_score": 55.2,
+      "why_watch": [
+        "主题客观排名第9",
+        "角色候选分55.20",
+        "筹码健康特征分8.0"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600359.SH",
+      "stock_name": "新农开发",
+      "theme": "种植业",
+      "role_candidate": "TREND_LEADER_CANDIDATE",
+      "role_candidate_score": 52.8,
+      "why_watch": [
+        "主题客观排名第10",
+        "角色候选分52.80"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "688655.SH",
+      "stock_name": "迅捷兴",
+      "theme": "元件",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "role_candidate_score": 100.0,
+      "why_watch": [
+        "主题客观排名第1",
+        "角色候选分100.00"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "920821.BJ",
+      "stock_name": "则成电子",
+      "theme": "元件",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "role_candidate_score": 100.0,
+      "why_watch": [
+        "主题客观排名第1",
+        "角色候选分100.00"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002579.SZ",
+      "stock_name": "中京电子",
+      "theme": "元件",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "role_candidate_score": 84.36,
+      "why_watch": [
+        "主题客观排名第1",
+        "角色候选分84.36"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "603186.SH",
+      "stock_name": "华正新材",
+      "theme": "元件",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "role_candidate_score": 79.63,
+      "why_watch": [
+        "主题客观排名第1",
+        "角色候选分79.63"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002815.SZ",
+      "stock_name": "崇达技术",
+      "theme": "元件",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "role_candidate_score": 76.66,
+      "why_watch": [
+        "主题客观排名第1",
+        "角色候选分76.66"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "000823.SZ",
+      "stock_name": "超声电子",
+      "theme": "元件",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "role_candidate_score": 73.42,
+      "why_watch": [
+        "主题客观排名第1",
+        "角色候选分73.42",
+        "筹码健康特征分8.0"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题"
+      ],
+      "candidate_only": true
+    }
+  ],
+  "objective_factor_features": {
+    "announcement_category_counts": {
+      "risk_warning": 1
+    },
+    "announcement_evidence_counts": {
+      "A": 1
+    },
+    "policy_agency_counts": {},
+    "policy_level_counts": {},
+    "objective_only": true
+  },
+  "previous_hypothesis_validation": {
+    "market_packet_context": {
+      "source_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\json\\reviews\\2026-09-02-dashboard-review.json",
+      "checks": [
+        {
+          "entity_type": "market",
+          "entity_key": "2026-09-02",
+          "check_type": "breadth_repair",
+          "description": "9月3日上涨家数能否回到3000家以上，确认是否从退潮转修复。"
+        },
+        {
+          "entity_type": "theme",
+          "entity_key": "军工装备",
+          "check_type": "theme_persistence",
+          "description": "军工装备能否继续出现连板晋级和板块扩散，而不是一日轮动。"
+        },
+        {
+          "entity_type": "theme",
+          "entity_key": "农业回落",
+          "check_type": "loss_feedback",
+          "description": "农业方向跌停股是否继续负反馈，判断亏钱效应是否扩散。"
+        }
+      ],
+      "changes_vs_previous_day": {
+        "new": [
+          "培育钻石"
+        ],
+        "strengthened": [
+          "军工装备",
+          "航空装备"
+        ],
+        "weakened": [
+          "农业回落"
+        ],
+        "expanded": [
+          "玻璃玻纤"
+        ],
+        "realized": [],
+        "invalidated": []
+      }
+    },
+    "prior_official_review": {
+      "status": "AVAILABLE",
+      "date": "2026-09-04",
+      "main_themes": [
+        {
+          "name": "算力基础设施",
+          "rank_no": 1,
+          "stage": "验证期",
+          "change_status": "strengthened",
+          "causal_chain": [
+            "全市场成交额维持高位",
+            "主题内核心股承接",
+            "资金继续验证弹性方向"
+          ],
+          "drivers": [
+            {
+              "code": 21,
+              "name": "下游资本开支爆发",
+              "evidence_level": "B"
+            }
+          ],
+          "scores": {
+            "base_logic_score": 36,
+            "realization_score": 21,
+            "expectation_gap_score": 9,
+            "persistence_score": 8,
+            "market_confirmation_score": 8,
+            "risk_penalty": -3,
+            "total_score": 79,
+            "rating": "A",
+            "logic_quality": 86,
+            "market_strength": 80,
+            "risk_reward": 72,
+            "missing_reasons": {}
+          },
+          "delta_reason": "市场确认仍在，但政策和公告证据未完全补齐"
+        }
+      ],
+      "stocks": [
+        {
+          "name": "样例中军",
+          "code": "300308",
+          "theme": "算力基础设施",
+          "role": "中军",
+          "role_detail": "趋势承接样例",
+          "stage": "验证期",
+          "drivers": [
+            {
+              "code": 21,
+              "name": "下游资本开支爆发",
+              "evidence_level": "B"
+            }
+          ],
+          "catalyst": "成交额和趋势承接继续验证",
+          "benefit_path": [
+            "资本开支",
+            "订单预期",
+            "利润弹性"
+          ],
+          "causal_chain": [
+            "全市场流动性",
+            "板块成交",
+            "核心股承接"
+          ],
+          "scores": {
+            "realization_score": 78,
+            "expectation_gap": 65,
+            "logic_quality": 84,
+            "market_strength": 79,
+            "risk_reward": 70,
+            "total_score": 76,
+            "rating": "A",
+            "missing_reasons": {}
+          },
+          "delta_reason": "作为导入链路样例，保留可计算 delta 的完整评分"
+        }
+      ],
+      "tomorrow_checks": [
+        {
+          "entity_type": "theme",
+          "entity_key": "算力基础设施",
+          "check_type": "market_confirmation",
+          "description": "次日核心股是否继续维持成交额和趋势承接"
+        }
+      ]
+    },
+    "auction_previous_mainline_validation": null,
+    "auction_transition_status": null
+  },
+  "risk_and_falsification_candidates": [
+    {
+      "entity": "002403",
+      "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+      "fact": "股票交易异常波动公告",
+      "evidence_level": "A",
+      "candidate_only": true
+    },
+    {
+      "entity": "002444.SZ",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的2.03倍",
+        "最近回调/上涨段成交额比0.90"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "300231.SZ",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的0.82倍",
+        "最近回调/上涨段成交额比0.67"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "920263.BJ",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的1.58倍",
+        "收盘价形成BREAKOUT_20D，站稳天数0",
+        "最近回调/上涨段成交额比0.84"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "920792.BJ",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的1.98倍"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "002546.SZ",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的1.14倍",
+        "最近回调/上涨段成交额比0.61"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "603370.SH",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的5.03倍",
+        "最近回调/上涨段成交额比1.32"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "605011.SH",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的0.93倍",
+        "最近回调/上涨段成交额比0.54"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "601108.SH",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的1.00倍",
+        "最近回调/上涨段成交额比0.69"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "300840.SZ",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的3.27倍",
+        "最近回调/上涨段成交额比1.28"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "000830.SZ",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的0.85倍",
+        "收盘价形成BREAKOUT_20D，站稳天数0",
+        "最近回调/上涨段成交额比0.69"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "600855.SH",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的0.92倍",
+        "最近回调/上涨段成交额比0.69"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "603049.SH",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的1.83倍",
+        "收盘价形成BREAKOUT_20D，站稳天数0",
+        "最近回调/上涨段成交额比0.92"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "600900.SH",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的1.78倍",
+        "收盘价形成BREAKOUT_20D，站稳天数0",
+        "最近回调/上涨段成交额比0.99"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "002318.SZ",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的2.05倍",
+        "收盘价形成BREAKOUT_20D，站稳天数0",
+        "最近回调/上涨段成交额比0.91"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "603456.SH",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的0.35倍",
+        "最近回调/上涨段成交额比0.49"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "000650.SZ",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的0.51倍",
+        "最近回调/上涨段成交额比0.84"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "600019.SH",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的1.44倍",
+        "最近回调/上涨段成交额比0.89"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "301004.SZ",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的1.30倍",
+        "最近回调/上涨段成交额比0.81"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "600928.SH",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的0.97倍",
+        "最近回调/上涨段成交额比1.57"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    }
+  ],
+  "historical_changes": {
+    "cycle_feature_change_1d": {
+      "new_theme_count": 5.0,
+      "strengthening_theme_count": 4.0,
+      "weakening_theme_count": -14.0,
+      "limit_up_breadth": 1.3407883156756175,
+      "continuous_board_height": 1.0,
+      "promotion_rate": null,
+      "previous_limit_feedback": 5.180000000000001,
+      "high_level_stock_return": 0.06044292449951172,
+      "mid_level_stock_return": -0.014406840006511601,
+      "low_level_first_board_count": 48.0,
+      "failed_limit_rate": -38.20812807881773,
+      "large_loss_count": null
+    },
+    "cycle_feature_change_5d": {
+      "new_theme_count": 13.0,
+      "strengthening_theme_count": -10.0,
+      "weakening_theme_count": -53.0,
+      "limit_up_breadth": -0.14425920718284369,
+      "continuous_board_height": 0.0,
+      "promotion_rate": null,
+      "previous_limit_feedback": null,
+      "high_level_stock_return": null,
+      "mid_level_stock_return": null,
+      "low_level_first_board_count": -18.0,
+      "failed_limit_rate": null,
+      "large_loss_count": null
+    },
+    "cycle_feature_change_20d": {
+      "new_theme_count": 13.0,
+      "strengthening_theme_count": -65.0,
+      "weakening_theme_count": -8.0,
+      "limit_up_breadth": 0.18333732297702543,
+      "continuous_board_height": 1.0,
+      "promotion_rate": null,
+      "previous_limit_feedback": null,
+      "high_level_stock_return": null,
+      "mid_level_stock_return": null,
+      "low_level_first_board_count": -32.0,
+      "failed_limit_rate": null,
+      "large_loss_count": null
+    },
+    "market_operability_change_1d": 15.270000000000003,
+    "market_operability_change_5d": 37.53,
+    "market_operability_change_20d": 38.68000000000001
+  },
+  "data_quality": {
+    "status": "PARTIAL",
+    "checks": [
+      {
+        "name": "daily_market_coverage",
+        "actual": 5549,
+        "threshold": 5000,
+        "passed": true
+      },
+      {
+        "name": "market_packet_source",
+        "actual": "MARKET_PACKET",
+        "threshold": "MARKET_PACKET",
+        "passed": true,
+        "reason": ""
+      },
+      {
+        "name": "theme_feature_count",
+        "actual": 47,
+        "threshold": 10,
+        "passed": true
+      },
+      {
+        "name": "role_candidate_count",
+        "actual": 80,
+        "threshold": 1,
+        "passed": true
+      },
+      {
+        "name": "theme_return_coverage",
+        "actual": 0.0,
+        "threshold": 0.9,
+        "passed": false,
+        "reason": "whole-theme returns are absent; top-stock returns are not substituted"
+      },
+      {
+        "name": "market_cap_sample_count",
+        "actual": 139,
+        "threshold": 100,
+        "passed": true
+      },
+      {
+        "name": "turnover_sample_count",
+        "actual": 165,
+        "threshold": 100,
+        "passed": true
+      },
+      {
+        "name": "inflection_link",
+        "actual": 5507,
+        "threshold": 1,
+        "passed": true,
+        "reason": ""
+      },
+      {
+        "name": "auction_link",
+        "actual": 0,
+        "threshold": 1,
+        "passed": false,
+        "reason": "auction facts are optional outside their available date"
+      },
+      {
+        "name": "history_1d",
+        "actual": true,
+        "threshold": true,
+        "passed": true
+      },
+      {
+        "name": "history_5d",
+        "actual": true,
+        "threshold": true,
+        "passed": true
+      },
+      {
+        "name": "history_20d",
+        "actual": true,
+        "threshold": true,
+        "passed": true
+      },
+      {
+        "name": "catalyst_response_history",
+        "actual": "UNAVAILABLE",
+        "threshold": "AVAILABLE",
+        "passed": false,
+        "reason": "two comparable catalyst response windows are not available"
+      }
+    ],
+    "known_gaps": [
+      "historical theme snapshots are unavailable before Market Packet archives; industry aggregation is used as a labeled proxy",
+      "full-market market-cap and turnover-rate coverage is incomplete",
+      "catalyst fatigue remains unavailable until two comparable positive events have complete forward response windows"
+    ]
+  }
+}

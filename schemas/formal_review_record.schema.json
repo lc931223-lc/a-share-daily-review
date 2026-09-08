@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Formal ChatGPT Review Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "date", "market_overview", "market_regime", "main_themes", "changes_vs_previous_day", "previous_day_validation", "uncertainties"],
+  "properties": {
+    "schema_version": {"const": "formal_review.3"},
+    "date": {"type": "string", "format": "date"},
+    "market_overview": {"type": "object"},
+    "market_regime": {"type": "string", "minLength": 1},
+    "main_themes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["theme_name", "theme_rank", "41_factors", "base_logic_score", "realization_score", "expectation_gap_score", "continuity_score", "market_confirmation_score", "risk_deduction", "total_score", "rating", "scores", "lifecycle", "previous_lifecycle", "core_stocks", "next_day_validation", "uncertainties"],
+        "properties": {
+          "theme_name": {"type": "string", "minLength": 1},
+          "theme_rank": {"type": "integer", "minimum": 1},
+          "base_logic_score": {"type": ["number", "null"]},
+          "realization_score": {"type": ["number", "null"]},
+          "expectation_gap_score": {"type": ["number", "null"]},
+          "continuity_score": {"type": ["number", "null"]},
+          "market_confirmation_score": {"type": ["number", "null"]},
+          "risk_deduction": {"type": ["number", "null"]},
+          "total_score": {"type": ["number", "null"]},
+          "rating": {"enum": ["S+", "S", "A", "B", "C", "D", null]},
+          "41_factors": {
+            "type": "array",
+            "minItems": 41,
+            "maxItems": 41,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["factor_id", "factor_name", "status", "evidence", "confidence"],
+              "properties": {
+                "factor_id": {"type": "integer", "minimum": 1, "maximum": 41},
+                "factor_name": {"type": "string"},
+                "status": {"enum": ["CONFIRMED", "PARTIAL", "UNCONFIRMED", "REJECTED"]},
+                "confidence": {"enum": ["HIGH", "MEDIUM", "LOW", "NONE"]},
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": ["source", "source_type", "source_date", "tier", "confidence"],
+                    "properties": {
+                      "source": {"type": "string"},
+                      "source_type": {"type": "string"},
+                      "source_date": {"type": "string", "format": "date"},
+                      "tier": {"type": "integer", "minimum": 1, "maximum": 4},
+                      "confidence": {"enum": ["HIGH", "MEDIUM", "LOW"]},
+                      "url": {"type": ["string", "null"]}
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "scores": {
+            "type": "object",
+            "required": ["base_logic", "realization", "expectation_gap", "continuity", "market_confirmation", "risk_deduction", "total_score", "rating"],
+            "properties": {
+              "base_logic": {"$ref": "#/$defs/scoreComponent"},
+              "realization": {"$ref": "#/$defs/scoreComponent"},
+              "expectation_gap": {"$ref": "#/$defs/scoreComponent"},
+              "continuity": {"$ref": "#/$defs/scoreComponent"},
+              "market_confirmation": {"$ref": "#/$defs/scoreComponent"},
+              "risk_deduction": {"$ref": "#/$defs/scoreComponent"},
+              "total_score": {"type": ["number", "null"]},
+              "rating": {"enum": ["S+", "S", "A", "B", "C", "D", null]}
+            }
+          },
+          "lifecycle": {
+            "type": "object",
+            "required": ["previous_state", "current_state", "transition_reason", "positive_evidence", "negative_evidence", "confidence"],
+            "properties": {
+              "previous_state": {"type": ["string", "null"]},
+              "current_state": {"enum": ["MENG_LONG", "GERMINATION", "VALIDATION", "MAIN_UP", "DIFFUSION", "REALIZATION", "FALSIFIED", "HIGH_VOLATILITY", "SECONDARY_MAIN_UP", "REPAIR"]},
+              "transition_reason": {"type": "string"},
+              "positive_evidence": {"type": "array"},
+              "negative_evidence": {"type": "array"},
+              "confidence": {"enum": ["HIGH", "MEDIUM", "LOW"]}
+            }
+          },
+          "previous_lifecycle": {"type": ["string", "null"]},
+          "core_stocks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["code", "name", "role", "role_score", "role_confidence", "reason", "confirmed_evidence", "unconfirmed_claims"],
+              "properties": {
+                "role": {"enum": ["LEADER", "CAPACITY", "TREND_LEADER", "ELASTICITY", "CATCH_UP", "FOLLOWER"]}
+              }
+            }
+          },
+          "next_day_validation": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["validation_point", "strengthening_condition", "weakening_condition", "falsification_condition"]
+            }
+          },
+          "uncertainties": {"type": "array"}
+        }
+      }
+    },
+    "changes_vs_previous_day": {
+      "type": "object",
+      "required": ["new", "strengthened", "weakened", "diffused", "realized", "falsified"]
+    },
+    "previous_day_validation": {
+      "type": "object",
+      "required": ["records", "prediction_count", "confirmed_count", "partial_count", "failed_count", "not_evaluable_count", "hit_rate", "weighted_hit_rate"]
+    },
+    "uncertainties": {"type": "array"}
+  },
+  "$defs": {
+    "scoreComponent": {
+      "type": "object",
+      "required": ["raw_score", "available_score", "subcomponents", "evidence", "reason"],
+      "properties": {
+        "raw_score": {"type": ["number", "null"]},
+        "available_score": {"type": "number"},
+        "subcomponents": {"type": "array"},
+        "evidence": {"type": "array"},
+        "reason": {"type": "string"}
+      }
+    }
+  }
+}

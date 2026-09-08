@@ -1,0 +1,4540 @@
+{
+  "meta": {
+    "schema_version": "review_context_compact.1",
+    "trade_date": "2026-09-08",
+    "as_of": "2026-09-08T15:05:00+08:00",
+    "data_role": "OBJECTIVE_CONTEXT",
+    "final_judgement_owner": "chatgpt"
+  },
+  "source_manifest": {
+    "market_packet": {
+      "status": "AVAILABLE",
+      "data_date": "2026-09-08",
+      "quality_status": "FAIL",
+      "sha256": "34acef6514a3e95449a5d0334415cd97b0e90a6ebf2b712ba09bc1026eb4fb85"
+    },
+    "review_intelligence": {
+      "status": "AVAILABLE",
+      "data_date": "2026-09-08",
+      "quality_status": "PARTIAL",
+      "sha256": "0650104f10e700f4ea2cbc34a93b1be706f2517e0c2973c6eba765cf8874b5cd"
+    },
+    "inflection_scanner": {
+      "status": "AVAILABLE",
+      "data_date": "2026-09-08",
+      "quality_status": "PARTIAL",
+      "sha256": "3b9af65f2be32b26960df10daea78b66655b683485ce98e56c904548e3884d1d"
+    },
+    "prior_official_review": {
+      "status": "UNAVAILABLE",
+      "data_date": null,
+      "sha256": null
+    },
+    "capital_preference": {
+      "status": "AVAILABLE",
+      "data_date": "2026-09-08",
+      "quality_status": "PARTIAL",
+      "sha256": "7d255324cc3c321326efafa588a4c16f18f5551a68d6f4a92a65cb0d5d0b63b9"
+    },
+    "auction_packet": {
+      "status": "UNAVAILABLE",
+      "data_date": null,
+      "quality_status": null,
+      "sha256": null
+    }
+  },
+  "market_environment": {
+    "total_turnover": 1978217126610.82,
+    "turnover_change_pct": -3.55,
+    "rise_count": 3417,
+    "fall_count": 2026,
+    "flat_count": 106,
+    "limit_up_count": 73,
+    "limit_down_count": null,
+    "failed_limit_count": 37,
+    "seal_rate": 66.36,
+    "highest_board": 4.0,
+    "previous_limit_avg_return": 2.89,
+    "continuous_board_feedback": {
+      "count": 13,
+      "avg_change_pct": 6.62,
+      "red_rate": 92.31
+    },
+    "promotion_rate": null,
+    "large_loss_count": null,
+    "high_level_loss_count": null,
+    "market_operability_score": 47.9,
+    "market_operability_available_max": 75,
+    "operability_components": {
+      "liquidity": 6.22,
+      "breadth": 9.42,
+      "limit_structure": null,
+      "previous_limit_feedback": 14.73,
+      "continuous_board_feedback": 9.23,
+      "board_height": 8.0,
+      "loss_control": null,
+      "theme_concentration": 0.3
+    }
+  },
+  "next_day_theme_candidates": [
+    {
+      "theme": "草甘膦",
+      "strength": 34.34,
+      "strength_change_1d": null,
+      "strength_change_5d": null,
+      "breadth": null,
+      "amount": 6876665994.0,
+      "amount_change": null,
+      "risk": [],
+      "candidate_only": true,
+      "leader_candidates": [],
+      "capacity_candidates": []
+    },
+    {
+      "theme": "生物育种",
+      "strength": 29.75,
+      "strength_change_1d": null,
+      "strength_change_5d": null,
+      "breadth": null,
+      "amount": 11211688923.0,
+      "amount_change": null,
+      "risk": [],
+      "candidate_only": true,
+      "leader_candidates": [],
+      "capacity_candidates": []
+    },
+    {
+      "theme": "CXO概念",
+      "strength": 29.71,
+      "strength_change_1d": null,
+      "strength_change_5d": null,
+      "breadth": null,
+      "amount": 22042909412.0,
+      "amount_change": null,
+      "risk": [],
+      "candidate_only": true,
+      "leader_candidates": [],
+      "capacity_candidates": []
+    },
+    {
+      "theme": "CRO概念",
+      "strength": 29.27,
+      "strength_change_1d": null,
+      "strength_change_5d": null,
+      "breadth": null,
+      "amount": 20332986608.0,
+      "amount_change": null,
+      "risk": [],
+      "candidate_only": true,
+      "leader_candidates": [],
+      "capacity_candidates": []
+    },
+    {
+      "theme": "乡村振兴",
+      "strength": 29.2,
+      "strength_change_1d": null,
+      "strength_change_5d": null,
+      "breadth": null,
+      "amount": 29382925529.0,
+      "amount_change": null,
+      "risk": [],
+      "candidate_only": true,
+      "leader_candidates": [],
+      "capacity_candidates": []
+    },
+    {
+      "theme": "生态农业",
+      "strength": 28.16,
+      "strength_change_1d": null,
+      "strength_change_5d": null,
+      "breadth": null,
+      "amount": 13938639309.0,
+      "amount_change": null,
+      "risk": [],
+      "candidate_only": true,
+      "leader_candidates": [],
+      "capacity_candidates": []
+    },
+    {
+      "theme": "赛马概念",
+      "strength": 27.92,
+      "strength_change_1d": null,
+      "strength_change_5d": null,
+      "breadth": null,
+      "amount": 6766471234.0,
+      "amount_change": null,
+      "risk": [],
+      "candidate_only": true,
+      "leader_candidates": [],
+      "capacity_candidates": []
+    },
+    {
+      "theme": "油气改革",
+      "strength": 27.6,
+      "strength_change_1d": null,
+      "strength_change_5d": null,
+      "breadth": null,
+      "amount": 11891570209.0,
+      "amount_change": null,
+      "risk": [],
+      "candidate_only": true,
+      "leader_candidates": [],
+      "capacity_candidates": []
+    },
+    {
+      "theme": "图们江",
+      "strength": 27.53,
+      "strength_change_1d": null,
+      "strength_change_5d": null,
+      "breadth": null,
+      "amount": 7029056425.0,
+      "amount_change": null,
+      "risk": [],
+      "candidate_only": true,
+      "leader_candidates": [],
+      "capacity_candidates": []
+    },
+    {
+      "theme": "三沙概念",
+      "strength": 27.42,
+      "strength_change_1d": null,
+      "strength_change_5d": null,
+      "breadth": null,
+      "amount": 7055582208.0,
+      "amount_change": null,
+      "risk": [],
+      "candidate_only": true,
+      "leader_candidates": [],
+      "capacity_candidates": []
+    },
+    {
+      "theme": "氢能源",
+      "strength": 27.33,
+      "strength_change_1d": null,
+      "strength_change_5d": null,
+      "breadth": null,
+      "amount": 8440269132.0,
+      "amount_change": null,
+      "risk": [],
+      "candidate_only": true,
+      "leader_candidates": [],
+      "capacity_candidates": []
+    },
+    {
+      "theme": "文化振兴",
+      "strength": 27.32,
+      "strength_change_1d": null,
+      "strength_change_5d": null,
+      "breadth": null,
+      "amount": 6327970258.0,
+      "amount_change": null,
+      "risk": [],
+      "candidate_only": true,
+      "leader_candidates": [],
+      "capacity_candidates": []
+    },
+    {
+      "theme": "出口退税",
+      "strength": 27.03,
+      "strength_change_1d": null,
+      "strength_change_5d": null,
+      "breadth": null,
+      "amount": 20913619580.0,
+      "amount_change": null,
+      "risk": [],
+      "candidate_only": true,
+      "leader_candidates": [],
+      "capacity_candidates": []
+    },
+    {
+      "theme": "民营医院",
+      "strength": 27.01,
+      "strength_change_1d": null,
+      "strength_change_5d": null,
+      "breadth": null,
+      "amount": 9443596670.0,
+      "amount_change": null,
+      "risk": [],
+      "candidate_only": true,
+      "leader_candidates": [],
+      "capacity_candidates": []
+    },
+    {
+      "theme": "土地流转",
+      "strength": 26.97,
+      "strength_change_1d": null,
+      "strength_change_5d": null,
+      "breadth": null,
+      "amount": 19416597898.0,
+      "amount_change": null,
+      "risk": [],
+      "candidate_only": true,
+      "leader_candidates": [],
+      "capacity_candidates": []
+    }
+  ],
+  "medium_term_structure_candidates": {
+    "strong_themes": [],
+    "trend_candidates": [],
+    "repair_candidates": [],
+    "risk_themes": [],
+    "cycle_candidate_context": [
+      "MAIN_UP_CANDIDATE"
+    ],
+    "candidate_only": true
+  },
+  "market_cycle_and_style": {
+    "cycle_candidates": [
+      "MAIN_UP_CANDIDATE"
+    ],
+    "cycle_feature_vector": {
+      "new_theme_count": 0,
+      "strengthening_theme_count": 0,
+      "weakening_theme_count": 0,
+      "limit_up_breadth": 2.1363769388352356,
+      "continuous_board_height": 4.0,
+      "promotion_rate": null,
+      "previous_limit_feedback": 2.89,
+      "high_level_stock_return": 9.999982833862305,
+      "mid_level_stock_return": 9.989762624104818,
+      "low_level_first_board_count": 55,
+      "failed_limit_rate": 33.63636363636363,
+      "large_loss_count": null
+    },
+    "style_strength": [
+      {
+        "style": "limit_up_style",
+        "return": 10.61254358974359,
+        "breadth": 100.0,
+        "amount_change": 1.146897823424024,
+        "limit_up_count": 78,
+        "style_strength_score": 100,
+        "style_change_1d": 0.0,
+        "style_change_5d": 0.0,
+        "style_change_20d": 0.0,
+        "coverage_status": "PASS"
+      },
+      {
+        "style": "institutional_trend",
+        "return": 9.184923076923077,
+        "breadth": 100.0,
+        "amount_change": 1.4894536397458042,
+        "limit_up_count": 8,
+        "style_strength_score": 94.74,
+        "style_change_1d": 1.0096923076923048,
+        "style_change_5d": null,
+        "style_change_20d": null,
+        "coverage_status": "PARTIAL"
+      },
+      {
+        "style": "short_term_speculation",
+        "return": 7.370983193277311,
+        "breadth": 86.5546218487395,
+        "amount_change": 1.1173076912821542,
+        "limit_up_count": 78,
+        "style_strength_score": 84.78,
+        "style_change_1d": -9.811949579831932,
+        "style_change_5d": -15.221949579831929,
+        "style_change_20d": -15.221949579831929,
+        "coverage_status": "PARTIAL"
+      },
+      {
+        "style": "trend_style",
+        "return": 5.155797115384615,
+        "breadth": 95.1923076923077,
+        "amount_change": 1.0525971460012256,
+        "limit_up_count": 22,
+        "style_strength_score": 78.94,
+        "style_change_1d": -5.289503846153849,
+        "style_change_5d": 22.440496153846155,
+        "style_change_20d": null,
+        "coverage_status": "PASS"
+      },
+      {
+        "style": "small_cap",
+        "return": 6.154890697674419,
+        "breadth": 79.06976744186046,
+        "amount_change": 1.9539339641931766,
+        "limit_up_count": 19,
+        "style_strength_score": 77.29,
+        "style_change_1d": -8.00601860465116,
+        "style_change_5d": 4.033981395348832,
+        "style_change_20d": null,
+        "coverage_status": "PARTIAL"
+      },
+      {
+        "style": "low_turnover",
+        "return": 5.506127083333333,
+        "breadth": 79.16666666666666,
+        "amount_change": 0.9093534024305363,
+        "limit_up_count": 25,
+        "style_strength_score": 73.37,
+        "style_change_1d": -7.326857296875303,
+        "style_change_5d": -6.196857296875294,
+        "style_change_20d": null,
+        "coverage_status": "PARTIAL"
+      },
+      {
+        "style": "large_cap",
+        "return": 4.505797727272728,
+        "breadth": 75.0,
+        "amount_change": 1.0492373148907332,
+        "limit_up_count": 14,
+        "style_strength_score": 69.27,
+        "style_change_1d": -27.586809090909085,
+        "style_change_5d": 7.453190909090914,
+        "style_change_20d": null,
+        "coverage_status": "PARTIAL"
+      },
+      {
+        "style": "high_turnover",
+        "return": 2.636726530612245,
+        "breadth": 67.3469387755102,
+        "amount_change": 1.0210169732849936,
+        "limit_up_count": 8,
+        "style_strength_score": 57.12,
+        "style_change_1d": -18.851665306122456,
+        "style_change_5d": -42.88166530612246,
+        "style_change_20d": null,
+        "coverage_status": "PARTIAL"
+      },
+      {
+        "style": "low_price_position",
+        "return": 1.708070482361411,
+        "breadth": 86.24910007199425,
+        "amount_change": 0.1300152810346186,
+        "limit_up_count": 32,
+        "style_strength_score": 48.97,
+        "style_change_1d": 21.049696170162903,
+        "style_change_5d": -0.8703038298370984,
+        "style_change_20d": 31.919696170162904,
+        "coverage_status": "PASS"
+      },
+      {
+        "style": "consumer",
+        "return": 1.4266757322175734,
+        "breadth": 73.22175732217573,
+        "amount_change": 0.294606171668803,
+        "limit_up_count": 8,
+        "style_strength_score": 43.75,
+        "style_change_1d": -0.06658943333615497,
+        "style_change_5d": -7.856589433336154,
+        "style_change_20d": 31.953410566663845,
+        "coverage_status": "PASS"
+      },
+      {
+        "style": "value",
+        "return": 0.8963649,
+        "breadth": 66.525,
+        "amount_change": 0.042635213292872044,
+        "limit_up_count": 76,
+        "style_strength_score": 37.51,
+        "style_change_1d": 6.078737799393082,
+        "style_change_5d": -2.881262200606919,
+        "style_change_20d": 19.36873779939308,
+        "coverage_status": "PARTIAL"
+      },
+      {
+        "style": "financial",
+        "return": 0.44015714285714286,
+        "breadth": 68.90756302521008,
+        "amount_change": -0.18542147914206822,
+        "limit_up_count": 0,
+        "style_strength_score": 23.1,
+        "style_change_1d": 23.096953443121073,
+        "style_change_5d": -26.733046556878925,
+        "style_change_20d": 22.406953443121072,
+        "coverage_status": "PASS"
+      }
+    ],
+    "style_change": [
+      {
+        "style": "limit_up_style",
+        "change_1d": 0.0,
+        "change_5d": 0.0,
+        "change_20d": 0.0
+      },
+      {
+        "style": "institutional_trend",
+        "change_1d": 1.0096923076923048,
+        "change_5d": null,
+        "change_20d": null
+      },
+      {
+        "style": "short_term_speculation",
+        "change_1d": -9.811949579831932,
+        "change_5d": -15.221949579831929,
+        "change_20d": -15.221949579831929
+      },
+      {
+        "style": "trend_style",
+        "change_1d": -5.289503846153849,
+        "change_5d": 22.440496153846155,
+        "change_20d": null
+      },
+      {
+        "style": "small_cap",
+        "change_1d": -8.00601860465116,
+        "change_5d": 4.033981395348832,
+        "change_20d": null
+      },
+      {
+        "style": "low_turnover",
+        "change_1d": -7.326857296875303,
+        "change_5d": -6.196857296875294,
+        "change_20d": null
+      },
+      {
+        "style": "large_cap",
+        "change_1d": -27.586809090909085,
+        "change_5d": 7.453190909090914,
+        "change_20d": null
+      },
+      {
+        "style": "high_turnover",
+        "change_1d": -18.851665306122456,
+        "change_5d": -42.88166530612246,
+        "change_20d": null
+      },
+      {
+        "style": "low_price_position",
+        "change_1d": 21.049696170162903,
+        "change_5d": -0.8703038298370984,
+        "change_20d": 31.919696170162904
+      },
+      {
+        "style": "consumer",
+        "change_1d": -0.06658943333615497,
+        "change_5d": -7.856589433336154,
+        "change_20d": 31.953410566663845
+      },
+      {
+        "style": "value",
+        "change_1d": 6.078737799393082,
+        "change_5d": -2.881262200606919,
+        "change_20d": 19.36873779939308
+      },
+      {
+        "style": "financial",
+        "change_1d": 23.096953443121073,
+        "change_5d": -26.733046556878925,
+        "change_20d": 22.406953443121072
+      }
+    ],
+    "historical_changes": {
+      "cycle_feature_change_1d": {
+        "new_theme_count": -13.0,
+        "strengthening_theme_count": -16.0,
+        "weakening_theme_count": -2.0,
+        "limit_up_breadth": -0.8001560576914457,
+        "continuous_board_height": -2.0,
+        "promotion_rate": null,
+        "previous_limit_feedback": -1.7200000000000002,
+        "high_level_stock_return": -0.032172203063964844,
+        "mid_level_stock_return": -0.011115868886310665,
+        "low_level_first_board_count": -25.0,
+        "failed_limit_rate": 16.672077922077918,
+        "large_loss_count": null
+      },
+      "cycle_feature_change_5d": {
+        "new_theme_count": -34.0,
+        "strengthening_theme_count": -8.0,
+        "weakening_theme_count": -1.0,
+        "limit_up_breadth": -0.314169267246843,
+        "continuous_board_height": -3.0,
+        "promotion_rate": null,
+        "previous_limit_feedback": 1.4300000000000002,
+        "high_level_stock_return": -0.027809619903564453,
+        "mid_level_stock_return": -0.7197795141310905,
+        "low_level_first_board_count": -10.0,
+        "failed_limit_rate": 26.894790602655767,
+        "large_loss_count": null
+      },
+      "cycle_feature_change_20d": {
+        "new_theme_count": 0.0,
+        "strengthening_theme_count": -1.0,
+        "weakening_theme_count": -92.0,
+        "limit_up_breadth": -2.1360688815982014,
+        "continuous_board_height": -2.0,
+        "promotion_rate": null,
+        "previous_limit_feedback": null,
+        "high_level_stock_return": null,
+        "mid_level_stock_return": null,
+        "low_level_first_board_count": -14.0,
+        "failed_limit_rate": null,
+        "large_loss_count": null
+      },
+      "market_operability_change_1d": -19.610000000000007,
+      "market_operability_change_5d": 0.46000000000000085,
+      "market_operability_change_20d": 27.22
+    }
+  },
+  "core_theme_roles": [
+    {
+      "theme": "草甘膦",
+      "theme_strength": 34.34,
+      "candidate_only": true,
+      "leader_candidate": null,
+      "capacity_candidate": null,
+      "trend_leader": null,
+      "elasticity": null,
+      "catch_up": null
+    },
+    {
+      "theme": "生物育种",
+      "theme_strength": 29.75,
+      "candidate_only": true,
+      "leader_candidate": null,
+      "capacity_candidate": null,
+      "trend_leader": null,
+      "elasticity": null,
+      "catch_up": null
+    },
+    {
+      "theme": "CXO概念",
+      "theme_strength": 29.71,
+      "candidate_only": true,
+      "leader_candidate": null,
+      "capacity_candidate": null,
+      "trend_leader": null,
+      "elasticity": null,
+      "catch_up": null
+    },
+    {
+      "theme": "CRO概念",
+      "theme_strength": 29.27,
+      "candidate_only": true,
+      "leader_candidate": null,
+      "capacity_candidate": null,
+      "trend_leader": null,
+      "elasticity": null,
+      "catch_up": null
+    },
+    {
+      "theme": "乡村振兴",
+      "theme_strength": 29.2,
+      "candidate_only": true,
+      "leader_candidate": null,
+      "capacity_candidate": null,
+      "trend_leader": null,
+      "elasticity": null,
+      "catch_up": null
+    },
+    {
+      "theme": "生态农业",
+      "theme_strength": 28.16,
+      "candidate_only": true,
+      "leader_candidate": null,
+      "capacity_candidate": null,
+      "trend_leader": null,
+      "elasticity": null,
+      "catch_up": null
+    },
+    {
+      "theme": "赛马概念",
+      "theme_strength": 27.92,
+      "candidate_only": true,
+      "leader_candidate": null,
+      "capacity_candidate": null,
+      "trend_leader": null,
+      "elasticity": null,
+      "catch_up": null
+    },
+    {
+      "theme": "油气改革",
+      "theme_strength": 27.6,
+      "candidate_only": true,
+      "leader_candidate": null,
+      "capacity_candidate": null,
+      "trend_leader": null,
+      "elasticity": null,
+      "catch_up": null
+    },
+    {
+      "theme": "图们江",
+      "theme_strength": 27.53,
+      "candidate_only": true,
+      "leader_candidate": null,
+      "capacity_candidate": null,
+      "trend_leader": null,
+      "elasticity": null,
+      "catch_up": null
+    },
+    {
+      "theme": "三沙概念",
+      "theme_strength": 27.42,
+      "candidate_only": true,
+      "leader_candidate": null,
+      "capacity_candidate": null,
+      "trend_leader": null,
+      "elasticity": null,
+      "catch_up": null
+    },
+    {
+      "theme": "氢能源",
+      "theme_strength": 27.33,
+      "candidate_only": true,
+      "leader_candidate": null,
+      "capacity_candidate": null,
+      "trend_leader": null,
+      "elasticity": null,
+      "catch_up": null
+    },
+    {
+      "theme": "文化振兴",
+      "theme_strength": 27.32,
+      "candidate_only": true,
+      "leader_candidate": null,
+      "capacity_candidate": null,
+      "trend_leader": null,
+      "elasticity": null,
+      "catch_up": null
+    },
+    {
+      "theme": "出口退税",
+      "theme_strength": 27.03,
+      "candidate_only": true,
+      "leader_candidate": null,
+      "capacity_candidate": null,
+      "trend_leader": null,
+      "elasticity": null,
+      "catch_up": null
+    },
+    {
+      "theme": "民营医院",
+      "theme_strength": 27.01,
+      "candidate_only": true,
+      "leader_candidate": null,
+      "capacity_candidate": null,
+      "trend_leader": null,
+      "elasticity": null,
+      "catch_up": null
+    },
+    {
+      "theme": "土地流转",
+      "theme_strength": 26.97,
+      "candidate_only": true,
+      "leader_candidate": null,
+      "capacity_candidate": null,
+      "trend_leader": null,
+      "elasticity": null,
+      "catch_up": null
+    }
+  ],
+  "inflection_candidates": [
+    {
+      "ts_code": "601086.SH",
+      "stock_name": "国芳集团",
+      "industry": "一般零售",
+      "themes": [
+        "一般零售"
+      ],
+      "status_candidate": "INFLECTION_CANDIDATE",
+      "trend_score": 56,
+      "score_change_1d": 0.0,
+      "score_change_5d": null,
+      "breakout": {
+        "type": "BREAKOUT_250D",
+        "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+        "hold_days": 1,
+        "hold_status": "BREAKOUT_HELD",
+        "failure": false
+      },
+      "weekly_structure": {
+        "breakout_type": "WEEK_BREAKOUT_52W",
+        "wma5": 10.258,
+        "wma10": 8.776,
+        "wma20": 8.295,
+        "slope_wma20": 0.050000000000000044
+      },
+      "risk_flags": [],
+      "objective_reasons": [
+        "当日成交额为此前20日均值的7.18倍",
+        "收盘价形成BREAKOUT_250D，站稳天数1",
+        "周线形成WEEK_BREAKOUT_52W"
+      ],
+      "candidate_only": true,
+      "chip_health": {
+        "chip_health_feature_score": 8.0,
+        "chip_health_change_1d": 0.0,
+        "pullback_volume_ratio": null,
+        "amount_percentile": 100.0,
+        "turnover_percentile": null,
+        "volatility_percentile": 100.0,
+        "breakout_hold": "BREAKOUT_HELD",
+        "risk_flags": []
+      }
+    },
+    {
+      "ts_code": "605577.SH",
+      "stock_name": "龙版传媒",
+      "industry": "出版",
+      "themes": [
+        "出版"
+      ],
+      "status_candidate": "INFLECTION_CANDIDATE",
+      "trend_score": 54,
+      "score_change_1d": 4.0,
+      "score_change_5d": null,
+      "breakout": {
+        "type": "BREAKOUT_250D",
+        "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+        "hold_days": 1,
+        "hold_status": "BREAKOUT_HELD",
+        "failure": false
+      },
+      "weekly_structure": {
+        "breakout_type": "WEEK_BREAKOUT_52W",
+        "wma5": 12.668000000000001,
+        "wma10": 11.001000000000001,
+        "wma20": 10.681000000000001,
+        "slope_wma20": 0.0019229867267014367
+      },
+      "risk_flags": [],
+      "objective_reasons": [
+        "当日成交额为此前20日均值的7.82倍",
+        "收盘价形成BREAKOUT_250D，站稳天数1",
+        "周线形成WEEK_BREAKOUT_52W"
+      ],
+      "candidate_only": true,
+      "chip_health": {
+        "chip_health_feature_score": null,
+        "chip_health_change_1d": null,
+        "pullback_volume_ratio": null,
+        "amount_percentile": null,
+        "turnover_percentile": null,
+        "volatility_percentile": null,
+        "breakout_hold": null,
+        "risk_flags": null
+      }
+    },
+    {
+      "ts_code": "603991.SH",
+      "stock_name": "领先股份",
+      "industry": null,
+      "themes": [],
+      "status_candidate": "INFLECTION_CANDIDATE",
+      "trend_score": 54,
+      "score_change_1d": 0.0,
+      "score_change_5d": null,
+      "breakout": {
+        "type": "BREAKOUT_250D",
+        "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+        "hold_days": 1,
+        "hold_status": "BREAKOUT_HELD",
+        "failure": false
+      },
+      "weekly_structure": {
+        "breakout_type": "WEEK_BREAKOUT_52W",
+        "wma5": 148.142,
+        "wma10": 140.529,
+        "wma20": 131.2855,
+        "slope_wma20": 0.08703446105949975
+      },
+      "risk_flags": [],
+      "objective_reasons": [
+        "当日成交额为此前20日均值的2.90倍",
+        "收盘价形成BREAKOUT_250D，站稳天数1",
+        "周线形成WEEK_BREAKOUT_52W"
+      ],
+      "candidate_only": true,
+      "chip_health": {
+        "chip_health_feature_score": 8.0,
+        "chip_health_change_1d": 0.0,
+        "pullback_volume_ratio": null,
+        "amount_percentile": 90.83333333333333,
+        "turnover_percentile": null,
+        "volatility_percentile": 19.166666666666668,
+        "breakout_hold": "BREAKOUT_HELD",
+        "risk_flags": []
+      }
+    },
+    {
+      "ts_code": "603228.SH",
+      "stock_name": "景旺电子",
+      "industry": "元件",
+      "themes": [
+        "元件"
+      ],
+      "status_candidate": "INFLECTION_CANDIDATE",
+      "trend_score": 52,
+      "score_change_1d": 7.0,
+      "score_change_5d": null,
+      "breakout": {
+        "type": "BREAKOUT_250D",
+        "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+        "hold_days": 1,
+        "hold_status": "BREAKOUT_HELD",
+        "failure": false
+      },
+      "weekly_structure": {
+        "breakout_type": "WEEK_BREAKOUT_52W",
+        "wma5": 98.01200000000001,
+        "wma10": 87.406,
+        "wma20": 81.0965,
+        "slope_wma20": 0.12910030073513035
+      },
+      "risk_flags": [],
+      "objective_reasons": [
+        "当日成交额为此前20日均值的1.59倍",
+        "收盘价形成BREAKOUT_250D，站稳天数1",
+        "周线形成WEEK_BREAKOUT_52W"
+      ],
+      "candidate_only": true,
+      "chip_health": {
+        "chip_health_feature_score": null,
+        "chip_health_change_1d": null,
+        "pullback_volume_ratio": null,
+        "amount_percentile": null,
+        "turnover_percentile": null,
+        "volatility_percentile": null,
+        "breakout_hold": null,
+        "risk_flags": null
+      }
+    },
+    {
+      "ts_code": "600857.SH",
+      "stock_name": "宁波中百",
+      "industry": "一般零售",
+      "themes": [
+        "一般零售"
+      ],
+      "status_candidate": "INFLECTION_CANDIDATE",
+      "trend_score": 52,
+      "score_change_1d": 0.0,
+      "score_change_5d": null,
+      "breakout": {
+        "type": "BREAKOUT_250D",
+        "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+        "hold_days": 1,
+        "hold_status": "BREAKOUT_HELD",
+        "failure": false
+      },
+      "weekly_structure": {
+        "breakout_type": "WEEK_BREAKOUT_52W",
+        "wma5": 20.985999999999997,
+        "wma10": 19.393,
+        "wma20": 17.47,
+        "slope_wma20": 0.14877527535755375
+      },
+      "risk_flags": [],
+      "objective_reasons": [
+        "当日成交额为此前20日均值的2.17倍",
+        "收盘价形成BREAKOUT_250D，站稳天数1",
+        "周线形成WEEK_BREAKOUT_52W"
+      ],
+      "candidate_only": true,
+      "chip_health": {
+        "chip_health_feature_score": null,
+        "chip_health_change_1d": null,
+        "pullback_volume_ratio": null,
+        "amount_percentile": null,
+        "turnover_percentile": null,
+        "volatility_percentile": null,
+        "breakout_hold": null,
+        "risk_flags": null
+      }
+    },
+    {
+      "ts_code": "920895.BJ",
+      "stock_name": "花溪科技",
+      "industry": null,
+      "themes": [],
+      "status_candidate": "INFLECTION_CANDIDATE",
+      "trend_score": 51,
+      "score_change_1d": 14.0,
+      "score_change_5d": null,
+      "breakout": {
+        "type": "BREAKOUT_250D",
+        "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+        "hold_days": 1,
+        "hold_status": "BREAKOUT_HELD",
+        "failure": false
+      },
+      "weekly_structure": {
+        "breakout_type": "WEEK_BREAKOUT_52W",
+        "wma5": 20.736,
+        "wma10": 16.34,
+        "wma20": 15.241499999999998,
+        "slope_wma20": 0.07243878412609073
+      },
+      "risk_flags": [],
+      "objective_reasons": [
+        "当日成交额为此前20日均值的2.99倍",
+        "收盘价形成BREAKOUT_250D，站稳天数1",
+        "周线形成WEEK_BREAKOUT_52W"
+      ],
+      "candidate_only": true,
+      "chip_health": {
+        "chip_health_feature_score": null,
+        "chip_health_change_1d": null,
+        "pullback_volume_ratio": null,
+        "amount_percentile": null,
+        "turnover_percentile": null,
+        "volatility_percentile": null,
+        "breakout_hold": null,
+        "risk_flags": null
+      }
+    },
+    {
+      "ts_code": "000428.SZ",
+      "stock_name": "华天酒店",
+      "industry": "酒店餐饮",
+      "themes": [
+        "酒店餐饮"
+      ],
+      "status_candidate": "INFLECTION_CANDIDATE",
+      "trend_score": 51,
+      "score_change_1d": 4.0,
+      "score_change_5d": null,
+      "breakout": {
+        "type": "BREAKOUT_250D",
+        "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+        "hold_days": 1,
+        "hold_status": "BREAKOUT_HELD",
+        "failure": false
+      },
+      "weekly_structure": {
+        "breakout_type": "WEEK_BREAKOUT_52W",
+        "wma5": 4.554,
+        "wma10": 4.016,
+        "wma20": 3.757,
+        "slope_wma20": 0.04622667780562506
+      },
+      "risk_flags": [],
+      "objective_reasons": [
+        "当日成交额为此前20日均值的3.30倍",
+        "收盘价形成BREAKOUT_250D，站稳天数1",
+        "周线形成WEEK_BREAKOUT_52W"
+      ],
+      "candidate_only": true,
+      "chip_health": {
+        "chip_health_feature_score": null,
+        "chip_health_change_1d": null,
+        "pullback_volume_ratio": null,
+        "amount_percentile": null,
+        "turnover_percentile": null,
+        "volatility_percentile": null,
+        "breakout_hold": null,
+        "risk_flags": null
+      }
+    },
+    {
+      "ts_code": "600479.SH",
+      "stock_name": "千金药业",
+      "industry": "中药Ⅱ",
+      "themes": [
+        "中药Ⅱ"
+      ],
+      "status_candidate": "INFLECTION_CANDIDATE",
+      "trend_score": 50,
+      "score_change_1d": 14.0,
+      "score_change_5d": null,
+      "breakout": {
+        "type": "BREAKOUT_250D",
+        "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+        "hold_days": 1,
+        "hold_status": "BREAKOUT_HELD",
+        "failure": false
+      },
+      "weekly_structure": {
+        "breakout_type": "WEEK_BREAKOUT_52W",
+        "wma5": 12.209999999999999,
+        "wma10": 10.946000000000002,
+        "wma20": 10.5355,
+        "slope_wma20": 0.04080019757964948
+      },
+      "risk_flags": [],
+      "objective_reasons": [
+        "当日成交额为此前20日均值的2.95倍",
+        "收盘价形成BREAKOUT_250D，站稳天数1",
+        "周线形成WEEK_BREAKOUT_52W"
+      ],
+      "candidate_only": true,
+      "chip_health": {
+        "chip_health_feature_score": null,
+        "chip_health_change_1d": null,
+        "pullback_volume_ratio": null,
+        "amount_percentile": null,
+        "turnover_percentile": null,
+        "volatility_percentile": null,
+        "breakout_hold": null,
+        "risk_flags": null
+      }
+    },
+    {
+      "ts_code": "000626.SZ",
+      "stock_name": "远大控股",
+      "industry": "商贸代理",
+      "themes": [],
+      "status_candidate": "INFLECTION_CANDIDATE",
+      "trend_score": 50,
+      "score_change_1d": 3.0,
+      "score_change_5d": null,
+      "breakout": {
+        "type": "BREAKOUT_120D",
+        "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+        "hold_days": 1,
+        "hold_status": "BREAKOUT_HELD",
+        "failure": false
+      },
+      "weekly_structure": {
+        "breakout_type": "WEEK_BREAKOUT_52W",
+        "wma5": 9.018,
+        "wma10": 7.899000000000001,
+        "wma20": 7.8534999999999995,
+        "slope_wma20": 0.02345735322864395
+      },
+      "risk_flags": [],
+      "objective_reasons": [
+        "当日成交额为此前20日均值的2.15倍",
+        "收盘价形成BREAKOUT_120D，站稳天数1",
+        "周线形成WEEK_BREAKOUT_52W"
+      ],
+      "candidate_only": true,
+      "chip_health": {
+        "chip_health_feature_score": null,
+        "chip_health_change_1d": null,
+        "pullback_volume_ratio": null,
+        "amount_percentile": null,
+        "turnover_percentile": null,
+        "volatility_percentile": null,
+        "breakout_hold": null,
+        "risk_flags": null
+      }
+    },
+    {
+      "ts_code": "002349.SZ",
+      "stock_name": "精华制药",
+      "industry": "中药Ⅱ",
+      "themes": [
+        "中药Ⅱ"
+      ],
+      "status_candidate": "INFLECTION_WATCH",
+      "trend_score": 49,
+      "score_change_1d": 32.0,
+      "score_change_5d": null,
+      "breakout": {
+        "type": "BREAKOUT_250D",
+        "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+        "hold_days": 1,
+        "hold_status": "BREAKOUT_HELD",
+        "failure": false
+      },
+      "weekly_structure": {
+        "breakout_type": "WEEK_BREAKOUT_52W",
+        "wma5": 7.608,
+        "wma10": 7.142,
+        "wma20": 6.988499999999999,
+        "slope_wma20": 0.006988472622478259
+      },
+      "risk_flags": [],
+      "objective_reasons": [
+        "当日成交额为此前20日均值的2.51倍",
+        "收盘价形成BREAKOUT_250D，站稳天数1",
+        "周线形成WEEK_BREAKOUT_52W"
+      ],
+      "candidate_only": true,
+      "chip_health": {
+        "chip_health_feature_score": null,
+        "chip_health_change_1d": null,
+        "pullback_volume_ratio": null,
+        "amount_percentile": null,
+        "turnover_percentile": null,
+        "volatility_percentile": null,
+        "breakout_hold": null,
+        "risk_flags": null
+      }
+    },
+    {
+      "ts_code": "300939.SZ",
+      "stock_name": "秋田微",
+      "industry": "元器件",
+      "themes": [],
+      "status_candidate": "INFLECTION_WATCH",
+      "trend_score": 49,
+      "score_change_1d": 28.0,
+      "score_change_5d": null,
+      "breakout": {
+        "type": "BREAKOUT_60D",
+        "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+        "hold_days": 1,
+        "hold_status": "BREAKOUT_HELD",
+        "failure": false
+      },
+      "weekly_structure": {
+        "breakout_type": "WEEK_BREAKOUT_52W",
+        "wma5": 66.36800000000001,
+        "wma10": 59.435,
+        "wma20": 58.275999999999996,
+        "slope_wma20": 0.13313500165276415
+      },
+      "risk_flags": [],
+      "objective_reasons": [
+        "当日成交额为此前20日均值的2.47倍",
+        "收盘价形成BREAKOUT_60D，站稳天数1",
+        "周线形成WEEK_BREAKOUT_52W"
+      ],
+      "candidate_only": true,
+      "chip_health": {
+        "chip_health_feature_score": 8.0,
+        "chip_health_change_1d": null,
+        "pullback_volume_ratio": null,
+        "amount_percentile": 80.0,
+        "turnover_percentile": null,
+        "volatility_percentile": 25.0,
+        "breakout_hold": "BREAKOUT_HELD",
+        "risk_flags": []
+      }
+    },
+    {
+      "ts_code": "600359.SH",
+      "stock_name": "新农开发",
+      "industry": "种植业",
+      "themes": [],
+      "status_candidate": "INFLECTION_WATCH",
+      "trend_score": 49,
+      "score_change_1d": 8.0,
+      "score_change_5d": null,
+      "breakout": {
+        "type": "BREAKOUT_120D",
+        "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+        "hold_days": 1,
+        "hold_status": "BREAKOUT_HELD",
+        "failure": false
+      },
+      "weekly_structure": {
+        "breakout_type": "WEEK_BREAKOUT_52W",
+        "wma5": 7.114,
+        "wma10": 6.456,
+        "wma20": 6.5135000000000005,
+        "slope_wma20": 0.005247318465931183
+      },
+      "risk_flags": [],
+      "objective_reasons": [
+        "当日成交额为此前20日均值的2.20倍",
+        "收盘价形成BREAKOUT_120D，站稳天数1",
+        "周线形成WEEK_BREAKOUT_52W"
+      ],
+      "candidate_only": true,
+      "chip_health": {
+        "chip_health_feature_score": null,
+        "chip_health_change_1d": null,
+        "pullback_volume_ratio": null,
+        "amount_percentile": null,
+        "turnover_percentile": null,
+        "volatility_percentile": null,
+        "breakout_hold": null,
+        "risk_flags": null
+      }
+    },
+    {
+      "ts_code": "601949.SH",
+      "stock_name": "中国出版",
+      "industry": "出版",
+      "themes": [
+        "出版"
+      ],
+      "status_candidate": "INFLECTION_WATCH",
+      "trend_score": 49,
+      "score_change_1d": 7.0,
+      "score_change_5d": null,
+      "breakout": {
+        "type": "BREAKOUT_120D",
+        "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+        "hold_days": 1,
+        "hold_status": "BREAKOUT_HELD",
+        "failure": false
+      },
+      "weekly_structure": {
+        "breakout_type": "WEEK_BREAKOUT_26W",
+        "wma5": 5.672000000000001,
+        "wma10": 5.388,
+        "wma20": 5.3295,
+        "slope_wma20": -0.027108433734939763
+      },
+      "risk_flags": [],
+      "objective_reasons": [
+        "当日成交额为此前20日均值的3.32倍",
+        "收盘价形成BREAKOUT_120D，站稳天数1",
+        "周线形成WEEK_BREAKOUT_26W"
+      ],
+      "candidate_only": true,
+      "chip_health": {
+        "chip_health_feature_score": null,
+        "chip_health_change_1d": null,
+        "pullback_volume_ratio": null,
+        "amount_percentile": null,
+        "turnover_percentile": null,
+        "volatility_percentile": null,
+        "breakout_hold": null,
+        "risk_flags": null
+      }
+    },
+    {
+      "ts_code": "688293.SH",
+      "stock_name": "奥浦迈",
+      "industry": "生物制品",
+      "themes": [
+        "生物制品"
+      ],
+      "status_candidate": "INFLECTION_WATCH",
+      "trend_score": 48,
+      "score_change_1d": 30.0,
+      "score_change_5d": null,
+      "breakout": {
+        "type": "BREAKOUT_250D",
+        "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+        "hold_days": 1,
+        "hold_status": "BREAKOUT_HELD",
+        "failure": false
+      },
+      "weekly_structure": {
+        "breakout_type": "WEEK_BREAKOUT_52W",
+        "wma5": 61.226,
+        "wma10": 57.18300000000001,
+        "wma20": 50.13099999999999,
+        "slope_wma20": 0.06350570140546274
+      },
+      "risk_flags": [],
+      "objective_reasons": [
+        "当日成交额为此前20日均值的1.83倍",
+        "收盘价形成BREAKOUT_250D，站稳天数1",
+        "周线形成WEEK_BREAKOUT_52W"
+      ],
+      "candidate_only": true,
+      "chip_health": {
+        "chip_health_feature_score": null,
+        "chip_health_change_1d": null,
+        "pullback_volume_ratio": null,
+        "amount_percentile": null,
+        "turnover_percentile": null,
+        "volatility_percentile": null,
+        "breakout_hold": null,
+        "risk_flags": null
+      }
+    },
+    {
+      "ts_code": "600333.SH",
+      "stock_name": "长春燃气",
+      "industry": "供气供热",
+      "themes": [],
+      "status_candidate": "INFLECTION_WATCH",
+      "trend_score": 48,
+      "score_change_1d": 29.0,
+      "score_change_5d": null,
+      "breakout": {
+        "type": "BREAKOUT_120D",
+        "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+        "hold_days": 1,
+        "hold_status": "BREAKOUT_HELD",
+        "failure": false
+      },
+      "weekly_structure": {
+        "breakout_type": "WEEK_BREAKOUT_26W",
+        "wma5": 6.5840000000000005,
+        "wma10": 6.130000000000001,
+        "wma20": 5.861500000000001,
+        "slope_wma20": 0.05375280898876422
+      },
+      "risk_flags": [],
+      "objective_reasons": [
+        "当日成交额为此前20日均值的1.53倍",
+        "收盘价形成BREAKOUT_120D，站稳天数1",
+        "周线形成WEEK_BREAKOUT_26W"
+      ],
+      "candidate_only": true,
+      "chip_health": {
+        "chip_health_feature_score": 8.0,
+        "chip_health_change_1d": null,
+        "pullback_volume_ratio": null,
+        "amount_percentile": 81.66666666666667,
+        "turnover_percentile": null,
+        "volatility_percentile": 27.500000000000004,
+        "breakout_hold": "BREAKOUT_HELD",
+        "risk_flags": []
+      }
+    }
+  ],
+  "previous_hypothesis_validation": {
+    "review_date": null,
+    "confirmed": [
+      "军工装备",
+      "航空装备",
+      "玻璃玻纤"
+    ],
+    "weakened": [
+      "农业回落"
+    ],
+    "invalidated": [],
+    "new": [
+      "培育钻石"
+    ],
+    "unevaluated_checks": [
+      {
+        "entity_type": "market",
+        "entity_key": "2026-09-02",
+        "check_type": "breadth_repair",
+        "description": "9月3日上涨家数能否回到3000家以上，确认是否从退潮转修复。"
+      },
+      {
+        "entity_type": "theme",
+        "entity_key": "军工装备",
+        "check_type": "theme_persistence",
+        "description": "军工装备能否继续出现连板晋级和板块扩散，而不是一日轮动。"
+      },
+      {
+        "entity_type": "theme",
+        "entity_key": "农业回落",
+        "check_type": "loss_feedback",
+        "description": "农业方向跌停股是否继续负反馈，判断亏钱效应是否扩散。"
+      }
+    ],
+    "auction_validation": null,
+    "source": "market_packet.tomorrow_check_context"
+  },
+  "next_day_plan": [],
+  "market_factors": {
+    "announcement_category_counts": {
+      "litigation": 1,
+      "risk_warning": 13,
+      "other": 22,
+      "pledge": 3,
+      "restructuring": 1,
+      "decrease_holding": 2,
+      "regulatory": 1
+    },
+    "announcement_evidence_counts": {
+      "A": 43
+    },
+    "policy_agency_counts": {},
+    "policy_level_counts": {},
+    "objective_only": true
+  },
+  "money_effect_structure": {
+    "features": {
+      "leader_return": null,
+      "capacity_return": null,
+      "catch_up_return": null,
+      "new_theme_return": 0.5819439389362773,
+      "old_theme_return": null,
+      "high_level_return": null,
+      "low_level_return": null,
+      "all_theme_return": 0.5819439389362773
+    },
+    "structure_candidates": [
+      "ROTATION_DOMINANT"
+    ]
+  },
+  "risk_and_falsification_candidates": [
+    {
+      "entity": "000428",
+      "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+      "fact": "关于诉讼、仲裁情况的进展公告",
+      "evidence_level": "A",
+      "candidate_only": true
+    },
+    {
+      "entity": "000428",
+      "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+      "fact": "股票交易异常波动公告",
+      "evidence_level": "A",
+      "candidate_only": true
+    },
+    {
+      "entity": "000735",
+      "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+      "fact": "股票交易异常波动公告",
+      "evidence_level": "A",
+      "candidate_only": true
+    },
+    {
+      "entity": "000798",
+      "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+      "fact": "股票交易异常波动公告",
+      "evidence_level": "A",
+      "candidate_only": true
+    },
+    {
+      "entity": "001267",
+      "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+      "fact": "关于控股股东、实际控制人部分股份解除质押的公告",
+      "evidence_level": "A",
+      "candidate_only": true
+    },
+    {
+      "entity": "001366",
+      "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+      "fact": "股票交易异常波动公告",
+      "evidence_level": "A",
+      "candidate_only": true
+    },
+    {
+      "entity": "002264",
+      "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+      "fact": "关于股东股份减持计划时间届满未实施减持的公告",
+      "evidence_level": "A",
+      "candidate_only": true
+    },
+    {
+      "entity": "002484",
+      "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+      "fact": "南通江海电容器股份有限公司关于部分董事、高级管理人员股份减持时间届满暨减持结果的公告",
+      "evidence_level": "A",
+      "candidate_only": true
+    },
+    {
+      "entity": "002564",
+      "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+      "fact": "股票交易异常波动公告",
+      "evidence_level": "A",
+      "candidate_only": true
+    },
+    {
+      "entity": "002702",
+      "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+      "fact": "股票交易异常波动公告",
+      "evidence_level": "A",
+      "candidate_only": true
+    },
+    {
+      "entity": "001267.SZ",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的0.96倍",
+        "最近回调/上涨段成交额比0.60"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "301201.SZ",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的0.32倍",
+        "最近回调/上涨段成交额比0.61"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "300716.SZ",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的0.62倍",
+        "最近回调/上涨段成交额比0.68"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "300545.SZ",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的0.60倍",
+        "最近回调/上涨段成交额比0.68"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "300750.SZ",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的2.15倍",
+        "最近回调/上涨段成交额比1.10"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    }
+  ],
+  "auction_context": {
+    "status": null,
+    "watchlist_count": null,
+    "valid_auction_count": null,
+    "checkpoint_coverage": null,
+    "formal_opening_match_success_rate": null,
+    "conflicts": [],
+    "volume_anomaly_candidates": []
+  },
+  "capital_preference": {
+    "status": "PARTIAL",
+    "theme_capital_preference": [
+      {
+        "theme": "基金重仓",
+        "capital_preference_score": 36.46,
+        "available_max_score": 39.0,
+        "component_coverage": 0.39,
+        "fundamental_fit": {
+          "score": 0,
+          "available_points": 15,
+          "normalized_score": 0.0,
+          "coverage": 0.75,
+          "inputs": {
+            "announcement_count": 0,
+            "evidence_A_count": 0,
+            "earnings_count": 0,
+            "price_change_count": 0,
+            "policy_count": null,
+            "cycle_data": null
+          },
+          "missing_inputs": [
+            "policy",
+            "cycle_data"
+          ]
+        },
+        "position_advantage": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "return_20d": null,
+            "return_60d": null,
+            "return_120d": null,
+            "return_250d": null,
+            "historical_position_percentile": null
+          },
+          "missing_inputs": [
+            "return_20d",
+            "return_60d",
+            "return_120d",
+            "return_250d",
+            "historical_position"
+          ]
+        },
+        "capital_capacity": {
+          "score": 5.96,
+          "available_points": 10,
+          "normalized_score": 59.63,
+          "coverage": 0.5,
+          "inputs": {
+            "theme_amount": 78642933165.0,
+            "core_market_cap": null,
+            "core_average_amount": null,
+            "capacity_stock_count": 0
+          },
+          "missing_inputs": [
+            "core_market_cap",
+            "core_average_amount"
+          ]
+        },
+        "crowding_advantage": {
+          "score": 7.96,
+          "available_points": 8,
+          "normalized_score": 99.48,
+          "coverage": 0.5333,
+          "inputs": {
+            "change_pct": -0.26618908011433,
+            "amount_percentile": 99.375,
+            "volatility": null,
+            "volatility_percentile": null,
+            "turnover_history_percentile": null,
+            "crowding_intensity": 60.31
+          },
+          "missing_inputs": [
+            "volatility",
+            "turnover"
+          ],
+          "status": "BALANCED"
+        },
+        "style_match": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "matched_styles": [],
+            "matched_style_scores": {}
+          },
+          "missing_inputs": [
+            "matched_style_strength"
+          ]
+        },
+        "consensus_proxy": {
+          "score": 0.3,
+          "available_points": 6,
+          "normalized_score": 5.0,
+          "coverage": 0.6,
+          "inputs": {
+            "active_days": 1,
+            "observation_days": 20,
+            "historical_activity_ratio": 0.05,
+            "news_count": null,
+            "institution_coverage": null
+          },
+          "missing_inputs": [
+            "news_count",
+            "institution_coverage"
+          ]
+        },
+        "capital_structure_score": 0,
+        "candidate_only": true
+      },
+      {
+        "theme": "华为概念",
+        "capital_preference_score": 36.36,
+        "available_max_score": 39.0,
+        "component_coverage": 0.39,
+        "fundamental_fit": {
+          "score": 0,
+          "available_points": 15,
+          "normalized_score": 0.0,
+          "coverage": 0.75,
+          "inputs": {
+            "announcement_count": 0,
+            "evidence_A_count": 0,
+            "earnings_count": 0,
+            "price_change_count": 0,
+            "policy_count": null,
+            "cycle_data": null
+          },
+          "missing_inputs": [
+            "policy",
+            "cycle_data"
+          ]
+        },
+        "position_advantage": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "return_20d": null,
+            "return_60d": null,
+            "return_120d": null,
+            "return_250d": null,
+            "historical_position_percentile": null
+          },
+          "missing_inputs": [
+            "return_20d",
+            "return_60d",
+            "return_120d",
+            "return_250d",
+            "historical_position"
+          ]
+        },
+        "capital_capacity": {
+          "score": 6,
+          "available_points": 10,
+          "normalized_score": 60.0,
+          "coverage": 0.5,
+          "inputs": {
+            "theme_amount": 80823789723.0,
+            "core_market_cap": null,
+            "core_average_amount": null,
+            "capacity_stock_count": 0
+          },
+          "missing_inputs": [
+            "core_market_cap",
+            "core_average_amount"
+          ]
+        },
+        "crowding_advantage": {
+          "score": 7.88,
+          "available_points": 8,
+          "normalized_score": 98.44,
+          "coverage": 0.5333,
+          "inputs": {
+            "change_pct": -0.32775959234637,
+            "amount_percentile": 100.0,
+            "volatility": null,
+            "volatility_percentile": null,
+            "turnover_history_percentile": null,
+            "crowding_intensity": 59.06
+          },
+          "missing_inputs": [
+            "volatility",
+            "turnover"
+          ],
+          "status": "BALANCED"
+        },
+        "style_match": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "matched_styles": [],
+            "matched_style_scores": {}
+          },
+          "missing_inputs": [
+            "matched_style_strength"
+          ]
+        },
+        "consensus_proxy": {
+          "score": 0.3,
+          "available_points": 6,
+          "normalized_score": 5.0,
+          "coverage": 0.6,
+          "inputs": {
+            "active_days": 1,
+            "observation_days": 20,
+            "historical_activity_ratio": 0.05,
+            "news_count": null,
+            "institution_coverage": null
+          },
+          "missing_inputs": [
+            "news_count",
+            "institution_coverage"
+          ]
+        },
+        "capital_structure_score": 0,
+        "candidate_only": true
+      },
+      {
+        "theme": "国防军工",
+        "capital_preference_score": 35.15,
+        "available_max_score": 39.0,
+        "component_coverage": 0.39,
+        "fundamental_fit": {
+          "score": 0,
+          "available_points": 15,
+          "normalized_score": 0.0,
+          "coverage": 0.75,
+          "inputs": {
+            "announcement_count": 0,
+            "evidence_A_count": 0,
+            "earnings_count": 0,
+            "price_change_count": 0,
+            "policy_count": null,
+            "cycle_data": null
+          },
+          "missing_inputs": [
+            "policy",
+            "cycle_data"
+          ]
+        },
+        "position_advantage": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "return_20d": null,
+            "return_60d": null,
+            "return_120d": null,
+            "return_250d": null,
+            "historical_position_percentile": null
+          },
+          "missing_inputs": [
+            "return_20d",
+            "return_60d",
+            "return_120d",
+            "return_250d",
+            "historical_position"
+          ]
+        },
+        "capital_capacity": {
+          "score": 5.66,
+          "available_points": 10,
+          "normalized_score": 56.62,
+          "coverage": 0.5,
+          "inputs": {
+            "theme_amount": 55975767106.0,
+            "core_market_cap": null,
+            "core_average_amount": null,
+            "capacity_stock_count": 0
+          },
+          "missing_inputs": [
+            "core_market_cap",
+            "core_average_amount"
+          ]
+        },
+        "crowding_advantage": {
+          "score": 7.75,
+          "available_points": 8,
+          "normalized_score": 96.87,
+          "coverage": 0.5333,
+          "inputs": {
+            "change_pct": 0.030082479873923,
+            "amount_percentile": 94.375,
+            "volatility": null,
+            "volatility_percentile": null,
+            "turnover_history_percentile": null,
+            "crowding_intensity": 61.88
+          },
+          "missing_inputs": [
+            "volatility",
+            "turnover"
+          ],
+          "status": "BALANCED"
+        },
+        "style_match": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "matched_styles": [],
+            "matched_style_scores": {}
+          },
+          "missing_inputs": [
+            "matched_style_strength"
+          ]
+        },
+        "consensus_proxy": {
+          "score": 0.3,
+          "available_points": 6,
+          "normalized_score": 5.0,
+          "coverage": 0.6,
+          "inputs": {
+            "active_days": 1,
+            "observation_days": 20,
+            "historical_activity_ratio": 0.05,
+            "news_count": null,
+            "institution_coverage": null
+          },
+          "missing_inputs": [
+            "news_count",
+            "institution_coverage"
+          ]
+        },
+        "capital_structure_score": 0,
+        "candidate_only": true
+      },
+      {
+        "theme": "5G概念",
+        "capital_preference_score": 34.82,
+        "available_max_score": 39.0,
+        "component_coverage": 0.39,
+        "fundamental_fit": {
+          "score": 0,
+          "available_points": 15,
+          "normalized_score": 0.0,
+          "coverage": 0.75,
+          "inputs": {
+            "announcement_count": 0,
+            "evidence_A_count": 0,
+            "earnings_count": 0,
+            "price_change_count": 0,
+            "policy_count": null,
+            "cycle_data": null
+          },
+          "missing_inputs": [
+            "policy",
+            "cycle_data"
+          ]
+        },
+        "position_advantage": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "return_20d": null,
+            "return_60d": null,
+            "return_120d": null,
+            "return_250d": null,
+            "historical_position_percentile": null
+          },
+          "missing_inputs": [
+            "return_20d",
+            "return_60d",
+            "return_120d",
+            "return_250d",
+            "historical_position"
+          ]
+        },
+        "capital_capacity": {
+          "score": 5.4,
+          "available_points": 10,
+          "normalized_score": 54.0,
+          "coverage": 0.5,
+          "inputs": {
+            "theme_amount": 47735937436.0,
+            "core_market_cap": null,
+            "core_average_amount": null,
+            "capacity_stock_count": 0
+          },
+          "missing_inputs": [
+            "core_market_cap",
+            "core_average_amount"
+          ]
+        },
+        "crowding_advantage": {
+          "score": 7.88,
+          "available_points": 8,
+          "normalized_score": 98.44,
+          "coverage": 0.5333,
+          "inputs": {
+            "change_pct": 0.098261352076205,
+            "amount_percentile": 90.0,
+            "volatility": null,
+            "volatility_percentile": null,
+            "turnover_history_percentile": null,
+            "crowding_intensity": 60.94
+          },
+          "missing_inputs": [
+            "volatility",
+            "turnover"
+          ],
+          "status": "BALANCED"
+        },
+        "style_match": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "matched_styles": [],
+            "matched_style_scores": {}
+          },
+          "missing_inputs": [
+            "matched_style_strength"
+          ]
+        },
+        "consensus_proxy": {
+          "score": 0.3,
+          "available_points": 6,
+          "normalized_score": 5.0,
+          "coverage": 0.6,
+          "inputs": {
+            "active_days": 1,
+            "observation_days": 20,
+            "historical_activity_ratio": 0.05,
+            "news_count": null,
+            "institution_coverage": null
+          },
+          "missing_inputs": [
+            "news_count",
+            "institution_coverage"
+          ]
+        },
+        "capital_structure_score": 0,
+        "candidate_only": true
+      },
+      {
+        "theme": "社保重仓",
+        "capital_preference_score": 34.41,
+        "available_max_score": 39.0,
+        "component_coverage": 0.39,
+        "fundamental_fit": {
+          "score": 0,
+          "available_points": 15,
+          "normalized_score": 0.0,
+          "coverage": 0.75,
+          "inputs": {
+            "announcement_count": 0,
+            "evidence_A_count": 0,
+            "earnings_count": 0,
+            "price_change_count": 0,
+            "policy_count": null,
+            "cycle_data": null
+          },
+          "missing_inputs": [
+            "policy",
+            "cycle_data"
+          ]
+        },
+        "position_advantage": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "return_20d": null,
+            "return_60d": null,
+            "return_120d": null,
+            "return_250d": null,
+            "historical_position_percentile": null
+          },
+          "missing_inputs": [
+            "return_20d",
+            "return_60d",
+            "return_120d",
+            "return_250d",
+            "historical_position"
+          ]
+        },
+        "capital_capacity": {
+          "score": 5.62,
+          "available_points": 10,
+          "normalized_score": 56.25,
+          "coverage": 0.5,
+          "inputs": {
+            "theme_amount": 55305275671.0,
+            "core_market_cap": null,
+            "core_average_amount": null,
+            "capacity_stock_count": 0
+          },
+          "missing_inputs": [
+            "core_market_cap",
+            "core_average_amount"
+          ]
+        },
+        "crowding_advantage": {
+          "score": 7.5,
+          "available_points": 8,
+          "normalized_score": 93.75,
+          "coverage": 0.5333,
+          "inputs": {
+            "change_pct": 0.17266153703532,
+            "amount_percentile": 93.75,
+            "volatility": null,
+            "volatility_percentile": null,
+            "turnover_history_percentile": null,
+            "crowding_intensity": 63.75
+          },
+          "missing_inputs": [
+            "volatility",
+            "turnover"
+          ],
+          "status": "BALANCED"
+        },
+        "style_match": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "matched_styles": [],
+            "matched_style_scores": {}
+          },
+          "missing_inputs": [
+            "matched_style_strength"
+          ]
+        },
+        "consensus_proxy": {
+          "score": 0.3,
+          "available_points": 6,
+          "normalized_score": 5.0,
+          "coverage": 0.6,
+          "inputs": {
+            "active_days": 1,
+            "observation_days": 20,
+            "historical_activity_ratio": 0.05,
+            "news_count": null,
+            "institution_coverage": null
+          },
+          "missing_inputs": [
+            "news_count",
+            "institution_coverage"
+          ]
+        },
+        "capital_structure_score": 0,
+        "candidate_only": true
+      },
+      {
+        "theme": "锂电池",
+        "capital_preference_score": 33.97,
+        "available_max_score": 39.0,
+        "component_coverage": 0.39,
+        "fundamental_fit": {
+          "score": 0,
+          "available_points": 15,
+          "normalized_score": 0.0,
+          "coverage": 0.75,
+          "inputs": {
+            "announcement_count": 0,
+            "evidence_A_count": 0,
+            "earnings_count": 0,
+            "price_change_count": 0,
+            "policy_count": null,
+            "cycle_data": null
+          },
+          "missing_inputs": [
+            "policy",
+            "cycle_data"
+          ]
+        },
+        "position_advantage": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "return_20d": null,
+            "return_60d": null,
+            "return_120d": null,
+            "return_250d": null,
+            "historical_position_percentile": null
+          },
+          "missing_inputs": [
+            "return_20d",
+            "return_60d",
+            "return_120d",
+            "return_250d",
+            "historical_position"
+          ]
+        },
+        "capital_capacity": {
+          "score": 5.78,
+          "available_points": 10,
+          "normalized_score": 57.75,
+          "coverage": 0.5,
+          "inputs": {
+            "theme_amount": 61744559630.0,
+            "core_market_cap": null,
+            "core_average_amount": null,
+            "capacity_stock_count": 0
+          },
+          "missing_inputs": [
+            "core_market_cap",
+            "core_average_amount"
+          ]
+        },
+        "crowding_advantage": {
+          "score": 7.17,
+          "available_points": 8,
+          "normalized_score": 89.58,
+          "coverage": 0.5333,
+          "inputs": {
+            "change_pct": 0.21598147410244,
+            "amount_percentile": 96.25,
+            "volatility": null,
+            "volatility_percentile": null,
+            "turnover_history_percentile": null,
+            "crowding_intensity": 66.25
+          },
+          "missing_inputs": [
+            "volatility",
+            "turnover"
+          ],
+          "status": "BALANCED"
+        },
+        "style_match": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "matched_styles": [],
+            "matched_style_scores": {}
+          },
+          "missing_inputs": [
+            "matched_style_strength"
+          ]
+        },
+        "consensus_proxy": {
+          "score": 0.3,
+          "available_points": 6,
+          "normalized_score": 5.0,
+          "coverage": 0.6,
+          "inputs": {
+            "active_days": 1,
+            "observation_days": 20,
+            "historical_activity_ratio": 0.05,
+            "news_count": null,
+            "institution_coverage": null
+          },
+          "missing_inputs": [
+            "news_count",
+            "institution_coverage"
+          ]
+        },
+        "capital_structure_score": 0,
+        "candidate_only": true
+      },
+      {
+        "theme": "光伏概念",
+        "capital_preference_score": 33.95,
+        "available_max_score": 39.0,
+        "component_coverage": 0.39,
+        "fundamental_fit": {
+          "score": 0,
+          "available_points": 15,
+          "normalized_score": 0.0,
+          "coverage": 0.75,
+          "inputs": {
+            "announcement_count": 0,
+            "evidence_A_count": 0,
+            "earnings_count": 0,
+            "price_change_count": 0,
+            "policy_count": null,
+            "cycle_data": null
+          },
+          "missing_inputs": [
+            "policy",
+            "cycle_data"
+          ]
+        },
+        "position_advantage": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "return_20d": null,
+            "return_60d": null,
+            "return_120d": null,
+            "return_250d": null,
+            "historical_position_percentile": null
+          },
+          "missing_inputs": [
+            "return_20d",
+            "return_60d",
+            "return_120d",
+            "return_250d",
+            "historical_position"
+          ]
+        },
+        "capital_capacity": {
+          "score": 5.44,
+          "available_points": 10,
+          "normalized_score": 54.37,
+          "coverage": 0.5,
+          "inputs": {
+            "theme_amount": 48089786171.0,
+            "core_market_cap": null,
+            "core_average_amount": null,
+            "capacity_stock_count": 0
+          },
+          "missing_inputs": [
+            "core_market_cap",
+            "core_average_amount"
+          ]
+        },
+        "crowding_advantage": {
+          "score": 7.5,
+          "available_points": 8,
+          "normalized_score": 93.75,
+          "coverage": 0.5333,
+          "inputs": {
+            "change_pct": -0.25724889297102,
+            "amount_percentile": 90.625,
+            "volatility": null,
+            "volatility_percentile": null,
+            "turnover_history_percentile": null,
+            "crowding_intensity": 56.25
+          },
+          "missing_inputs": [
+            "volatility",
+            "turnover"
+          ],
+          "status": "BALANCED"
+        },
+        "style_match": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "matched_styles": [],
+            "matched_style_scores": {}
+          },
+          "missing_inputs": [
+            "matched_style_strength"
+          ]
+        },
+        "consensus_proxy": {
+          "score": 0.3,
+          "available_points": 6,
+          "normalized_score": 5.0,
+          "coverage": 0.6,
+          "inputs": {
+            "active_days": 1,
+            "observation_days": 20,
+            "historical_activity_ratio": 0.05,
+            "news_count": null,
+            "institution_coverage": null
+          },
+          "missing_inputs": [
+            "news_count",
+            "institution_coverage"
+          ]
+        },
+        "capital_structure_score": 0,
+        "candidate_only": true
+      },
+      {
+        "theme": "风电",
+        "capital_preference_score": 33.9,
+        "available_max_score": 39.0,
+        "component_coverage": 0.39,
+        "fundamental_fit": {
+          "score": 0,
+          "available_points": 15,
+          "normalized_score": 0.0,
+          "coverage": 0.75,
+          "inputs": {
+            "announcement_count": 0,
+            "evidence_A_count": 0,
+            "earnings_count": 0,
+            "price_change_count": 0,
+            "policy_count": null,
+            "cycle_data": null
+          },
+          "missing_inputs": [
+            "policy",
+            "cycle_data"
+          ]
+        },
+        "position_advantage": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "return_20d": null,
+            "return_60d": null,
+            "return_120d": null,
+            "return_250d": null,
+            "historical_position_percentile": null
+          },
+          "missing_inputs": [
+            "return_20d",
+            "return_60d",
+            "return_120d",
+            "return_250d",
+            "historical_position"
+          ]
+        },
+        "capital_capacity": {
+          "score": 5.59,
+          "available_points": 10,
+          "normalized_score": 55.88,
+          "coverage": 0.5,
+          "inputs": {
+            "theme_amount": 54461632491.0,
+            "core_market_cap": null,
+            "core_average_amount": null,
+            "capacity_stock_count": 0
+          },
+          "missing_inputs": [
+            "core_market_cap",
+            "core_average_amount"
+          ]
+        },
+        "crowding_advantage": {
+          "score": 7.33,
+          "available_points": 8,
+          "normalized_score": 91.67,
+          "coverage": 0.5333,
+          "inputs": {
+            "change_pct": 0.24690244534888,
+            "amount_percentile": 93.125,
+            "volatility": null,
+            "volatility_percentile": null,
+            "turnover_history_percentile": null,
+            "crowding_intensity": 65.0
+          },
+          "missing_inputs": [
+            "volatility",
+            "turnover"
+          ],
+          "status": "BALANCED"
+        },
+        "style_match": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "matched_styles": [],
+            "matched_style_scores": {}
+          },
+          "missing_inputs": [
+            "matched_style_strength"
+          ]
+        },
+        "consensus_proxy": {
+          "score": 0.3,
+          "available_points": 6,
+          "normalized_score": 5.0,
+          "coverage": 0.6,
+          "inputs": {
+            "active_days": 1,
+            "observation_days": 20,
+            "historical_activity_ratio": 0.05,
+            "news_count": null,
+            "institution_coverage": null
+          },
+          "missing_inputs": [
+            "news_count",
+            "institution_coverage"
+          ]
+        },
+        "capital_structure_score": 0,
+        "candidate_only": true
+      },
+      {
+        "theme": "超大盘",
+        "capital_preference_score": 33.77,
+        "available_max_score": 39.0,
+        "component_coverage": 0.39,
+        "fundamental_fit": {
+          "score": 0,
+          "available_points": 15,
+          "normalized_score": 0.0,
+          "coverage": 0.75,
+          "inputs": {
+            "announcement_count": 0,
+            "evidence_A_count": 0,
+            "earnings_count": 0,
+            "price_change_count": 0,
+            "policy_count": null,
+            "cycle_data": null
+          },
+          "missing_inputs": [
+            "policy",
+            "cycle_data"
+          ]
+        },
+        "position_advantage": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "return_20d": null,
+            "return_60d": null,
+            "return_120d": null,
+            "return_250d": null,
+            "historical_position_percentile": null
+          },
+          "missing_inputs": [
+            "return_20d",
+            "return_60d",
+            "return_120d",
+            "return_250d",
+            "historical_position"
+          ]
+        },
+        "capital_capacity": {
+          "score": 4.91,
+          "available_points": 10,
+          "normalized_score": 49.12,
+          "coverage": 0.5,
+          "inputs": {
+            "theme_amount": 36022898015.0,
+            "core_market_cap": null,
+            "core_average_amount": null,
+            "capacity_stock_count": 0
+          },
+          "missing_inputs": [
+            "core_market_cap",
+            "core_average_amount"
+          ]
+        },
+        "crowding_advantage": {
+          "score": 7.96,
+          "available_points": 8,
+          "normalized_score": 99.48,
+          "coverage": 0.5333,
+          "inputs": {
+            "change_pct": 0.2554764363755,
+            "amount_percentile": 81.875,
+            "volatility": null,
+            "volatility_percentile": null,
+            "turnover_history_percentile": null,
+            "crowding_intensity": 59.69
+          },
+          "missing_inputs": [
+            "volatility",
+            "turnover"
+          ],
+          "status": "BALANCED"
+        },
+        "style_match": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "matched_styles": [],
+            "matched_style_scores": {}
+          },
+          "missing_inputs": [
+            "matched_style_strength"
+          ]
+        },
+        "consensus_proxy": {
+          "score": 0.3,
+          "available_points": 6,
+          "normalized_score": 5.0,
+          "coverage": 0.6,
+          "inputs": {
+            "active_days": 1,
+            "observation_days": 20,
+            "historical_activity_ratio": 0.05,
+            "news_count": null,
+            "institution_coverage": null
+          },
+          "missing_inputs": [
+            "news_count",
+            "institution_coverage"
+          ]
+        },
+        "capital_structure_score": 0,
+        "candidate_only": true
+      },
+      {
+        "theme": "QFII重仓",
+        "capital_preference_score": 33.56,
+        "available_max_score": 39.0,
+        "component_coverage": 0.39,
+        "fundamental_fit": {
+          "score": 0,
+          "available_points": 15,
+          "normalized_score": 0.0,
+          "coverage": 0.75,
+          "inputs": {
+            "announcement_count": 0,
+            "evidence_A_count": 0,
+            "earnings_count": 0,
+            "price_change_count": 0,
+            "policy_count": null,
+            "cycle_data": null
+          },
+          "missing_inputs": [
+            "policy",
+            "cycle_data"
+          ]
+        },
+        "position_advantage": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "return_20d": null,
+            "return_60d": null,
+            "return_120d": null,
+            "return_250d": null,
+            "historical_position_percentile": null
+          },
+          "missing_inputs": [
+            "return_20d",
+            "return_60d",
+            "return_120d",
+            "return_250d",
+            "historical_position"
+          ]
+        },
+        "capital_capacity": {
+          "score": 5.25,
+          "available_points": 10,
+          "normalized_score": 52.5,
+          "coverage": 0.5,
+          "inputs": {
+            "theme_amount": 44901403332.0,
+            "core_market_cap": null,
+            "core_average_amount": null,
+            "capacity_stock_count": 0
+          },
+          "missing_inputs": [
+            "core_market_cap",
+            "core_average_amount"
+          ]
+        },
+        "crowding_advantage": {
+          "score": 7.54,
+          "available_points": 8,
+          "normalized_score": 94.27,
+          "coverage": 0.5333,
+          "inputs": {
+            "change_pct": 0.28469063122528,
+            "amount_percentile": 87.5,
+            "volatility": null,
+            "volatility_percentile": null,
+            "turnover_history_percentile": null,
+            "crowding_intensity": 63.44
+          },
+          "missing_inputs": [
+            "volatility",
+            "turnover"
+          ],
+          "status": "BALANCED"
+        },
+        "style_match": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "matched_styles": [],
+            "matched_style_scores": {}
+          },
+          "missing_inputs": [
+            "matched_style_strength"
+          ]
+        },
+        "consensus_proxy": {
+          "score": 0.3,
+          "available_points": 6,
+          "normalized_score": 5.0,
+          "coverage": 0.6,
+          "inputs": {
+            "active_days": 1,
+            "observation_days": 20,
+            "historical_activity_ratio": 0.05,
+            "news_count": null,
+            "institution_coverage": null
+          },
+          "missing_inputs": [
+            "news_count",
+            "institution_coverage"
+          ]
+        },
+        "capital_structure_score": 0,
+        "candidate_only": true
+      },
+      {
+        "theme": "光伏",
+        "capital_preference_score": 32.79,
+        "available_max_score": 39.0,
+        "component_coverage": 0.39,
+        "fundamental_fit": {
+          "score": 0,
+          "available_points": 15,
+          "normalized_score": 0.0,
+          "coverage": 0.75,
+          "inputs": {
+            "announcement_count": 0,
+            "evidence_A_count": 0,
+            "earnings_count": 0,
+            "price_change_count": 0,
+            "policy_count": null,
+            "cycle_data": null
+          },
+          "missing_inputs": [
+            "policy",
+            "cycle_data"
+          ]
+        },
+        "position_advantage": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "return_20d": null,
+            "return_60d": null,
+            "return_120d": null,
+            "return_250d": null,
+            "historical_position_percentile": null
+          },
+          "missing_inputs": [
+            "return_20d",
+            "return_60d",
+            "return_120d",
+            "return_250d",
+            "historical_position"
+          ]
+        },
+        "capital_capacity": {
+          "score": 5.32,
+          "available_points": 10,
+          "normalized_score": 53.25,
+          "coverage": 0.5,
+          "inputs": {
+            "theme_amount": 45904160307.0,
+            "core_market_cap": null,
+            "core_average_amount": null,
+            "capacity_stock_count": 0
+          },
+          "missing_inputs": [
+            "core_market_cap",
+            "core_average_amount"
+          ]
+        },
+        "crowding_advantage": {
+          "score": 7.17,
+          "available_points": 8,
+          "normalized_score": 89.58,
+          "coverage": 0.5333,
+          "inputs": {
+            "change_pct": -0.30573912850476,
+            "amount_percentile": 88.75,
+            "volatility": null,
+            "volatility_percentile": null,
+            "turnover_history_percentile": null,
+            "crowding_intensity": 53.75
+          },
+          "missing_inputs": [
+            "volatility",
+            "turnover"
+          ],
+          "status": "BALANCED"
+        },
+        "style_match": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "matched_styles": [],
+            "matched_style_scores": {}
+          },
+          "missing_inputs": [
+            "matched_style_strength"
+          ]
+        },
+        "consensus_proxy": {
+          "score": 0.3,
+          "available_points": 6,
+          "normalized_score": 5.0,
+          "coverage": 0.6,
+          "inputs": {
+            "active_days": 1,
+            "observation_days": 20,
+            "historical_activity_ratio": 0.05,
+            "news_count": null,
+            "institution_coverage": null
+          },
+          "missing_inputs": [
+            "news_count",
+            "institution_coverage"
+          ]
+        },
+        "capital_structure_score": 0,
+        "candidate_only": true
+      },
+      {
+        "theme": "含H股",
+        "capital_preference_score": 32.64,
+        "available_max_score": 39.0,
+        "component_coverage": 0.39,
+        "fundamental_fit": {
+          "score": 0,
+          "available_points": 15,
+          "normalized_score": 0.0,
+          "coverage": 0.75,
+          "inputs": {
+            "announcement_count": 0,
+            "evidence_A_count": 0,
+            "earnings_count": 0,
+            "price_change_count": 0,
+            "policy_count": null,
+            "cycle_data": null
+          },
+          "missing_inputs": [
+            "policy",
+            "cycle_data"
+          ]
+        },
+        "position_advantage": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "return_20d": null,
+            "return_60d": null,
+            "return_120d": null,
+            "return_250d": null,
+            "historical_position_percentile": null
+          },
+          "missing_inputs": [
+            "return_20d",
+            "return_60d",
+            "return_120d",
+            "return_250d",
+            "historical_position"
+          ]
+        },
+        "capital_capacity": {
+          "score": 5.93,
+          "available_points": 10,
+          "normalized_score": 59.25,
+          "coverage": 0.5,
+          "inputs": {
+            "theme_amount": 74317508647.0,
+            "core_market_cap": null,
+            "core_average_amount": null,
+            "capacity_stock_count": 0
+          },
+          "missing_inputs": [
+            "core_market_cap",
+            "core_average_amount"
+          ]
+        },
+        "crowding_advantage": {
+          "score": 6.5,
+          "available_points": 8,
+          "normalized_score": 81.25,
+          "coverage": 0.5333,
+          "inputs": {
+            "change_pct": 0.40729540050714,
+            "amount_percentile": 98.75,
+            "volatility": null,
+            "volatility_percentile": null,
+            "turnover_history_percentile": null,
+            "crowding_intensity": 71.25
+          },
+          "missing_inputs": [
+            "volatility",
+            "turnover"
+          ],
+          "status": "ELEVATED"
+        },
+        "style_match": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "matched_styles": [],
+            "matched_style_scores": {}
+          },
+          "missing_inputs": [
+            "matched_style_strength"
+          ]
+        },
+        "consensus_proxy": {
+          "score": 0.3,
+          "available_points": 6,
+          "normalized_score": 5.0,
+          "coverage": 0.6,
+          "inputs": {
+            "active_days": 1,
+            "observation_days": 20,
+            "historical_activity_ratio": 0.05,
+            "news_count": null,
+            "institution_coverage": null
+          },
+          "missing_inputs": [
+            "news_count",
+            "institution_coverage"
+          ]
+        },
+        "capital_structure_score": 0,
+        "candidate_only": true
+      },
+      {
+        "theme": "央企50",
+        "capital_preference_score": 32.64,
+        "available_max_score": 39.0,
+        "component_coverage": 0.39,
+        "fundamental_fit": {
+          "score": 0,
+          "available_points": 15,
+          "normalized_score": 0.0,
+          "coverage": 0.75,
+          "inputs": {
+            "announcement_count": 0,
+            "evidence_A_count": 0,
+            "earnings_count": 0,
+            "price_change_count": 0,
+            "policy_count": null,
+            "cycle_data": null
+          },
+          "missing_inputs": [
+            "policy",
+            "cycle_data"
+          ]
+        },
+        "position_advantage": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "return_20d": null,
+            "return_60d": null,
+            "return_120d": null,
+            "return_250d": null,
+            "historical_position_percentile": null
+          },
+          "missing_inputs": [
+            "return_20d",
+            "return_60d",
+            "return_120d",
+            "return_250d",
+            "historical_position"
+          ]
+        },
+        "capital_capacity": {
+          "score": 5.1,
+          "available_points": 10,
+          "normalized_score": 51.0,
+          "coverage": 0.5,
+          "inputs": {
+            "theme_amount": 40853215460.0,
+            "core_market_cap": null,
+            "core_average_amount": null,
+            "capacity_stock_count": 0
+          },
+          "missing_inputs": [
+            "core_market_cap",
+            "core_average_amount"
+          ]
+        },
+        "crowding_advantage": {
+          "score": 7.33,
+          "available_points": 8,
+          "normalized_score": 91.67,
+          "coverage": 0.5333,
+          "inputs": {
+            "change_pct": 0.41474234321828,
+            "amount_percentile": 85.0,
+            "volatility": null,
+            "volatility_percentile": null,
+            "turnover_history_percentile": null,
+            "crowding_intensity": 65.0
+          },
+          "missing_inputs": [
+            "volatility",
+            "turnover"
+          ],
+          "status": "BALANCED"
+        },
+        "style_match": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "matched_styles": [],
+            "matched_style_scores": {}
+          },
+          "missing_inputs": [
+            "matched_style_strength"
+          ]
+        },
+        "consensus_proxy": {
+          "score": 0.3,
+          "available_points": 6,
+          "normalized_score": 5.0,
+          "coverage": 0.6,
+          "inputs": {
+            "active_days": 1,
+            "observation_days": 20,
+            "historical_activity_ratio": 0.05,
+            "news_count": null,
+            "institution_coverage": null
+          },
+          "missing_inputs": [
+            "news_count",
+            "institution_coverage"
+          ]
+        },
+        "capital_structure_score": 0,
+        "candidate_only": true
+      },
+      {
+        "theme": "碳中和",
+        "capital_preference_score": 32.33,
+        "available_max_score": 39.0,
+        "component_coverage": 0.39,
+        "fundamental_fit": {
+          "score": 0,
+          "available_points": 15,
+          "normalized_score": 0.0,
+          "coverage": 0.75,
+          "inputs": {
+            "announcement_count": 0,
+            "evidence_A_count": 0,
+            "earnings_count": 0,
+            "price_change_count": 0,
+            "policy_count": null,
+            "cycle_data": null
+          },
+          "missing_inputs": [
+            "policy",
+            "cycle_data"
+          ]
+        },
+        "position_advantage": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "return_20d": null,
+            "return_60d": null,
+            "return_120d": null,
+            "return_250d": null,
+            "historical_position_percentile": null
+          },
+          "missing_inputs": [
+            "return_20d",
+            "return_60d",
+            "return_120d",
+            "return_250d",
+            "historical_position"
+          ]
+        },
+        "capital_capacity": {
+          "score": 4.31,
+          "available_points": 10,
+          "normalized_score": 43.12,
+          "coverage": 0.5,
+          "inputs": {
+            "theme_amount": 29223360885.0,
+            "core_market_cap": null,
+            "core_average_amount": null,
+            "capacity_stock_count": 0
+          },
+          "missing_inputs": [
+            "core_market_cap",
+            "core_average_amount"
+          ]
+        },
+        "crowding_advantage": {
+          "score": 8,
+          "available_points": 8,
+          "normalized_score": 100.0,
+          "coverage": 0.5333,
+          "inputs": {
+            "change_pct": 0.49912716302561,
+            "amount_percentile": 71.875,
+            "volatility": null,
+            "volatility_percentile": null,
+            "turnover_history_percentile": null,
+            "crowding_intensity": 60.0
+          },
+          "missing_inputs": [
+            "volatility",
+            "turnover"
+          ],
+          "status": "BALANCED"
+        },
+        "style_match": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "matched_styles": [],
+            "matched_style_scores": {}
+          },
+          "missing_inputs": [
+            "matched_style_strength"
+          ]
+        },
+        "consensus_proxy": {
+          "score": 0.3,
+          "available_points": 6,
+          "normalized_score": 5.0,
+          "coverage": 0.6,
+          "inputs": {
+            "active_days": 1,
+            "observation_days": 20,
+            "historical_activity_ratio": 0.05,
+            "news_count": null,
+            "institution_coverage": null
+          },
+          "missing_inputs": [
+            "news_count",
+            "institution_coverage"
+          ]
+        },
+        "capital_structure_score": 0,
+        "candidate_only": true
+      },
+      {
+        "theme": "股权激励",
+        "capital_preference_score": 32.28,
+        "available_max_score": 39.0,
+        "component_coverage": 0.39,
+        "fundamental_fit": {
+          "score": 0,
+          "available_points": 15,
+          "normalized_score": 0.0,
+          "coverage": 0.75,
+          "inputs": {
+            "announcement_count": 0,
+            "evidence_A_count": 0,
+            "earnings_count": 0,
+            "price_change_count": 0,
+            "policy_count": null,
+            "cycle_data": null
+          },
+          "missing_inputs": [
+            "policy",
+            "cycle_data"
+          ]
+        },
+        "position_advantage": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "return_20d": null,
+            "return_60d": null,
+            "return_120d": null,
+            "return_250d": null,
+            "historical_position_percentile": null
+          },
+          "missing_inputs": [
+            "return_20d",
+            "return_60d",
+            "return_120d",
+            "return_250d",
+            "historical_position"
+          ]
+        },
+        "capital_capacity": {
+          "score": 5.29,
+          "available_points": 10,
+          "normalized_score": 52.87,
+          "coverage": 0.5,
+          "inputs": {
+            "theme_amount": 45769409615.0,
+            "core_market_cap": null,
+            "core_average_amount": null,
+            "capacity_stock_count": 0
+          },
+          "missing_inputs": [
+            "core_market_cap",
+            "core_average_amount"
+          ]
+        },
+        "crowding_advantage": {
+          "score": 7.0,
+          "available_points": 8,
+          "normalized_score": 87.5,
+          "coverage": 0.5333,
+          "inputs": {
+            "change_pct": -0.34547801052318,
+            "amount_percentile": 88.125,
+            "volatility": null,
+            "volatility_percentile": null,
+            "turnover_history_percentile": null,
+            "crowding_intensity": 52.5
+          },
+          "missing_inputs": [
+            "volatility",
+            "turnover"
+          ],
+          "status": "BALANCED"
+        },
+        "style_match": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "matched_styles": [],
+            "matched_style_scores": {}
+          },
+          "missing_inputs": [
+            "matched_style_strength"
+          ]
+        },
+        "consensus_proxy": {
+          "score": 0.3,
+          "available_points": 6,
+          "normalized_score": 5.0,
+          "coverage": 0.6,
+          "inputs": {
+            "active_days": 1,
+            "observation_days": 20,
+            "historical_activity_ratio": 0.05,
+            "news_count": null,
+            "institution_coverage": null
+          },
+          "missing_inputs": [
+            "news_count",
+            "institution_coverage"
+          ]
+        },
+        "capital_structure_score": 0,
+        "candidate_only": true
+      },
+      {
+        "theme": "黄河三角",
+        "capital_preference_score": 32.26,
+        "available_max_score": 39.0,
+        "component_coverage": 0.39,
+        "fundamental_fit": {
+          "score": 0,
+          "available_points": 15,
+          "normalized_score": 0.0,
+          "coverage": 0.75,
+          "inputs": {
+            "announcement_count": 0,
+            "evidence_A_count": 0,
+            "earnings_count": 0,
+            "price_change_count": 0,
+            "policy_count": null,
+            "cycle_data": null
+          },
+          "missing_inputs": [
+            "policy",
+            "cycle_data"
+          ]
+        },
+        "position_advantage": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "return_20d": null,
+            "return_60d": null,
+            "return_120d": null,
+            "return_250d": null,
+            "historical_position_percentile": null
+          },
+          "missing_inputs": [
+            "return_20d",
+            "return_60d",
+            "return_120d",
+            "return_250d",
+            "historical_position"
+          ]
+        },
+        "capital_capacity": {
+          "score": 5.7,
+          "available_points": 10,
+          "normalized_score": 57.0,
+          "coverage": 0.5,
+          "inputs": {
+            "theme_amount": 57267253081.0,
+            "core_market_cap": null,
+            "core_average_amount": null,
+            "capacity_stock_count": 0
+          },
+          "missing_inputs": [
+            "core_market_cap",
+            "core_average_amount"
+          ]
+        },
+        "crowding_advantage": {
+          "score": 6.58,
+          "available_points": 8,
+          "normalized_score": 82.29,
+          "coverage": 0.5333,
+          "inputs": {
+            "change_pct": 0.45078628385217,
+            "amount_percentile": 95.0,
+            "volatility": null,
+            "volatility_percentile": null,
+            "turnover_history_percentile": null,
+            "crowding_intensity": 70.62
+          },
+          "missing_inputs": [
+            "volatility",
+            "turnover"
+          ],
+          "status": "ELEVATED"
+        },
+        "style_match": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "matched_styles": [],
+            "matched_style_scores": {}
+          },
+          "missing_inputs": [
+            "matched_style_strength"
+          ]
+        },
+        "consensus_proxy": {
+          "score": 0.3,
+          "available_points": 6,
+          "normalized_score": 5.0,
+          "coverage": 0.6,
+          "inputs": {
+            "active_days": 1,
+            "observation_days": 20,
+            "historical_activity_ratio": 0.05,
+            "news_count": null,
+            "institution_coverage": null
+          },
+          "missing_inputs": [
+            "news_count",
+            "institution_coverage"
+          ]
+        },
+        "capital_structure_score": 0,
+        "candidate_only": true
+      },
+      {
+        "theme": "宽带提速",
+        "capital_preference_score": 32.05,
+        "available_max_score": 39.0,
+        "component_coverage": 0.39,
+        "fundamental_fit": {
+          "score": 0,
+          "available_points": 15,
+          "normalized_score": 0.0,
+          "coverage": 0.75,
+          "inputs": {
+            "announcement_count": 0,
+            "evidence_A_count": 0,
+            "earnings_count": 0,
+            "price_change_count": 0,
+            "policy_count": null,
+            "cycle_data": null
+          },
+          "missing_inputs": [
+            "policy",
+            "cycle_data"
+          ]
+        },
+        "position_advantage": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "return_20d": null,
+            "return_60d": null,
+            "return_120d": null,
+            "return_250d": null,
+            "historical_position_percentile": null
+          },
+          "missing_inputs": [
+            "return_20d",
+            "return_60d",
+            "return_120d",
+            "return_250d",
+            "historical_position"
+          ]
+        },
+        "capital_capacity": {
+          "score": 5.03,
+          "available_points": 10,
+          "normalized_score": 50.25,
+          "coverage": 0.5,
+          "inputs": {
+            "theme_amount": 38999533957.0,
+            "core_market_cap": null,
+            "core_average_amount": null,
+            "capacity_stock_count": 0
+          },
+          "missing_inputs": [
+            "core_market_cap",
+            "core_average_amount"
+          ]
+        },
+        "crowding_advantage": {
+          "score": 7.17,
+          "available_points": 8,
+          "normalized_score": 89.58,
+          "coverage": 0.5333,
+          "inputs": {
+            "change_pct": -0.23338312173264,
+            "amount_percentile": 83.75,
+            "volatility": null,
+            "volatility_percentile": null,
+            "turnover_history_percentile": null,
+            "crowding_intensity": 53.75
+          },
+          "missing_inputs": [
+            "volatility",
+            "turnover"
+          ],
+          "status": "BALANCED"
+        },
+        "style_match": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "matched_styles": [],
+            "matched_style_scores": {}
+          },
+          "missing_inputs": [
+            "matched_style_strength"
+          ]
+        },
+        "consensus_proxy": {
+          "score": 0.3,
+          "available_points": 6,
+          "normalized_score": 5.0,
+          "coverage": 0.6,
+          "inputs": {
+            "active_days": 1,
+            "observation_days": 20,
+            "historical_activity_ratio": 0.05,
+            "news_count": null,
+            "institution_coverage": null
+          },
+          "missing_inputs": [
+            "news_count",
+            "institution_coverage"
+          ]
+        },
+        "capital_structure_score": 0,
+        "candidate_only": true
+      },
+      {
+        "theme": "特斯拉",
+        "capital_preference_score": 32.0,
+        "available_max_score": 39.0,
+        "component_coverage": 0.39,
+        "fundamental_fit": {
+          "score": 0,
+          "available_points": 15,
+          "normalized_score": 0.0,
+          "coverage": 0.75,
+          "inputs": {
+            "announcement_count": 0,
+            "evidence_A_count": 0,
+            "earnings_count": 0,
+            "price_change_count": 0,
+            "policy_count": null,
+            "cycle_data": null
+          },
+          "missing_inputs": [
+            "policy",
+            "cycle_data"
+          ]
+        },
+        "position_advantage": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "return_20d": null,
+            "return_60d": null,
+            "return_120d": null,
+            "return_250d": null,
+            "historical_position_percentile": null
+          },
+          "missing_inputs": [
+            "return_20d",
+            "return_60d",
+            "return_120d",
+            "return_250d",
+            "historical_position"
+          ]
+        },
+        "capital_capacity": {
+          "score": 5.51,
+          "available_points": 10,
+          "normalized_score": 55.12,
+          "coverage": 0.5,
+          "inputs": {
+            "theme_amount": 51044433305.0,
+            "core_market_cap": null,
+            "core_average_amount": null,
+            "capacity_stock_count": 0
+          },
+          "missing_inputs": [
+            "core_market_cap",
+            "core_average_amount"
+          ]
+        },
+        "crowding_advantage": {
+          "score": 6.67,
+          "available_points": 8,
+          "normalized_score": 83.33,
+          "coverage": 0.5333,
+          "inputs": {
+            "change_pct": -1.0365340106505,
+            "amount_percentile": 91.875,
+            "volatility": null,
+            "volatility_percentile": null,
+            "turnover_history_percentile": null,
+            "crowding_intensity": 50.0
+          },
+          "missing_inputs": [
+            "volatility",
+            "turnover"
+          ],
+          "status": "BALANCED"
+        },
+        "style_match": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "matched_styles": [],
+            "matched_style_scores": {}
+          },
+          "missing_inputs": [
+            "matched_style_strength"
+          ]
+        },
+        "consensus_proxy": {
+          "score": 0.3,
+          "available_points": 6,
+          "normalized_score": 5.0,
+          "coverage": 0.6,
+          "inputs": {
+            "active_days": 1,
+            "observation_days": 20,
+            "historical_activity_ratio": 0.05,
+            "news_count": null,
+            "institution_coverage": null
+          },
+          "missing_inputs": [
+            "news_count",
+            "institution_coverage"
+          ]
+        },
+        "capital_structure_score": 0,
+        "candidate_only": true
+      },
+      {
+        "theme": "保险重仓",
+        "capital_preference_score": 31.93,
+        "available_max_score": 54.0,
+        "component_coverage": 0.54,
+        "fundamental_fit": {
+          "score": 0,
+          "available_points": 15,
+          "normalized_score": 0.0,
+          "coverage": 0.75,
+          "inputs": {
+            "announcement_count": 0,
+            "evidence_A_count": 0,
+            "earnings_count": 0,
+            "price_change_count": 0,
+            "policy_count": null,
+            "cycle_data": null
+          },
+          "missing_inputs": [
+            "policy",
+            "cycle_data"
+          ]
+        },
+        "position_advantage": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "return_20d": null,
+            "return_60d": null,
+            "return_120d": null,
+            "return_250d": null,
+            "historical_position_percentile": null
+          },
+          "missing_inputs": [
+            "return_20d",
+            "return_60d",
+            "return_120d",
+            "return_250d",
+            "historical_position"
+          ]
+        },
+        "capital_capacity": {
+          "score": 5.89,
+          "available_points": 10,
+          "normalized_score": 58.87,
+          "coverage": 0.5,
+          "inputs": {
+            "theme_amount": 73268489756.0,
+            "core_market_cap": null,
+            "core_average_amount": null,
+            "capacity_stock_count": 0
+          },
+          "missing_inputs": [
+            "core_market_cap",
+            "core_average_amount"
+          ]
+        },
+        "crowding_advantage": {
+          "score": 7.58,
+          "available_points": 8,
+          "normalized_score": 94.79,
+          "coverage": 0.5333,
+          "inputs": {
+            "change_pct": 0.018056335767595,
+            "amount_percentile": 98.125,
+            "volatility": null,
+            "volatility_percentile": null,
+            "turnover_history_percentile": null,
+            "crowding_intensity": 63.12
+          },
+          "missing_inputs": [
+            "volatility",
+            "turnover"
+          ],
+          "status": "BALANCED"
+        },
+        "style_match": {
+          "score": 3.47,
+          "available_points": 15,
+          "normalized_score": 23.1,
+          "coverage": 1.0,
+          "inputs": {
+            "matched_styles": [
+              "financial"
+            ],
+            "matched_style_scores": {
+              "financial": 23.1
+            }
+          },
+          "missing_inputs": []
+        },
+        "consensus_proxy": {
+          "score": 0.3,
+          "available_points": 6,
+          "normalized_score": 5.0,
+          "coverage": 0.6,
+          "inputs": {
+            "active_days": 1,
+            "observation_days": 20,
+            "historical_activity_ratio": 0.05,
+            "news_count": null,
+            "institution_coverage": null
+          },
+          "missing_inputs": [
+            "news_count",
+            "institution_coverage"
+          ]
+        },
+        "capital_structure_score": 0,
+        "candidate_only": true
+      },
+      {
+        "theme": "重组概念",
+        "capital_preference_score": 31.82,
+        "available_max_score": 39.0,
+        "component_coverage": 0.39,
+        "fundamental_fit": {
+          "score": 0,
+          "available_points": 15,
+          "normalized_score": 0.0,
+          "coverage": 0.75,
+          "inputs": {
+            "announcement_count": 0,
+            "evidence_A_count": 0,
+            "earnings_count": 0,
+            "price_change_count": 0,
+            "policy_count": null,
+            "cycle_data": null
+          },
+          "missing_inputs": [
+            "policy",
+            "cycle_data"
+          ]
+        },
+        "position_advantage": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "return_20d": null,
+            "return_60d": null,
+            "return_120d": null,
+            "return_250d": null,
+            "historical_position_percentile": null
+          },
+          "missing_inputs": [
+            "return_20d",
+            "return_60d",
+            "return_120d",
+            "return_250d",
+            "historical_position"
+          ]
+        },
+        "capital_capacity": {
+          "score": 4.57,
+          "available_points": 10,
+          "normalized_score": 45.75,
+          "coverage": 0.5,
+          "inputs": {
+            "theme_amount": 30685769604.0,
+            "core_market_cap": null,
+            "core_average_amount": null,
+            "capacity_stock_count": 0
+          },
+          "missing_inputs": [
+            "core_market_cap",
+            "core_average_amount"
+          ]
+        },
+        "crowding_advantage": {
+          "score": 7.54,
+          "available_points": 8,
+          "normalized_score": 94.27,
+          "coverage": 0.5333,
+          "inputs": {
+            "change_pct": 0.52946801550153,
+            "amount_percentile": 76.25,
+            "volatility": null,
+            "volatility_percentile": null,
+            "turnover_history_percentile": null,
+            "crowding_intensity": 63.44
+          },
+          "missing_inputs": [
+            "volatility",
+            "turnover"
+          ],
+          "status": "BALANCED"
+        },
+        "style_match": {
+          "score": null,
+          "available_points": 0,
+          "normalized_score": null,
+          "coverage": 0.0,
+          "inputs": {
+            "matched_styles": [],
+            "matched_style_scores": {}
+          },
+          "missing_inputs": [
+            "matched_style_strength"
+          ]
+        },
+        "consensus_proxy": {
+          "score": 0.3,
+          "available_points": 6,
+          "normalized_score": 5.0,
+          "coverage": 0.6,
+          "inputs": {
+            "active_days": 1,
+            "observation_days": 20,
+            "historical_activity_ratio": 0.05,
+            "news_count": null,
+            "institution_coverage": null
+          },
+          "missing_inputs": [
+            "news_count",
+            "institution_coverage"
+          ]
+        },
+        "capital_structure_score": 0,
+        "candidate_only": true
+      }
+    ],
+    "stock_capital_preference": [],
+    "why_capital_selected": [
+      {
+        "theme": "基金重仓",
+        "evidence": [
+          {
+            "factor": "crowding_advantage",
+            "evidence": "crowding balance",
+            "normalized_score": 99.48
+          }
+        ]
+      },
+      {
+        "theme": "华为概念",
+        "evidence": [
+          {
+            "factor": "capital_capacity",
+            "evidence": "capital capacity",
+            "normalized_score": 60.0
+          },
+          {
+            "factor": "crowding_advantage",
+            "evidence": "crowding balance",
+            "normalized_score": 98.44
+          }
+        ]
+      },
+      {
+        "theme": "国防军工",
+        "evidence": [
+          {
+            "factor": "crowding_advantage",
+            "evidence": "crowding balance",
+            "normalized_score": 96.87
+          }
+        ]
+      },
+      {
+        "theme": "5G概念",
+        "evidence": [
+          {
+            "factor": "crowding_advantage",
+            "evidence": "crowding balance",
+            "normalized_score": 98.44
+          }
+        ]
+      },
+      {
+        "theme": "社保重仓",
+        "evidence": [
+          {
+            "factor": "crowding_advantage",
+            "evidence": "crowding balance",
+            "normalized_score": 93.75
+          }
+        ]
+      },
+      {
+        "theme": "锂电池",
+        "evidence": [
+          {
+            "factor": "crowding_advantage",
+            "evidence": "crowding balance",
+            "normalized_score": 89.58
+          }
+        ]
+      },
+      {
+        "theme": "光伏概念",
+        "evidence": [
+          {
+            "factor": "crowding_advantage",
+            "evidence": "crowding balance",
+            "normalized_score": 93.75
+          }
+        ]
+      },
+      {
+        "theme": "风电",
+        "evidence": [
+          {
+            "factor": "crowding_advantage",
+            "evidence": "crowding balance",
+            "normalized_score": 91.67
+          }
+        ]
+      },
+      {
+        "theme": "超大盘",
+        "evidence": [
+          {
+            "factor": "crowding_advantage",
+            "evidence": "crowding balance",
+            "normalized_score": 99.48
+          }
+        ]
+      },
+      {
+        "theme": "QFII重仓",
+        "evidence": [
+          {
+            "factor": "crowding_advantage",
+            "evidence": "crowding balance",
+            "normalized_score": 94.27
+          }
+        ]
+      },
+      {
+        "theme": "光伏",
+        "evidence": [
+          {
+            "factor": "crowding_advantage",
+            "evidence": "crowding balance",
+            "normalized_score": 89.58
+          }
+        ]
+      },
+      {
+        "theme": "含H股",
+        "evidence": [
+          {
+            "factor": "crowding_advantage",
+            "evidence": "crowding balance",
+            "normalized_score": 81.25
+          }
+        ]
+      },
+      {
+        "theme": "央企50",
+        "evidence": [
+          {
+            "factor": "crowding_advantage",
+            "evidence": "crowding balance",
+            "normalized_score": 91.67
+          }
+        ]
+      },
+      {
+        "theme": "碳中和",
+        "evidence": [
+          {
+            "factor": "crowding_advantage",
+            "evidence": "crowding balance",
+            "normalized_score": 100.0
+          }
+        ]
+      },
+      {
+        "theme": "股权激励",
+        "evidence": [
+          {
+            "factor": "crowding_advantage",
+            "evidence": "crowding balance",
+            "normalized_score": 87.5
+          }
+        ]
+      },
+      {
+        "theme": "黄河三角",
+        "evidence": [
+          {
+            "factor": "crowding_advantage",
+            "evidence": "crowding balance",
+            "normalized_score": 82.29
+          }
+        ]
+      },
+      {
+        "theme": "宽带提速",
+        "evidence": [
+          {
+            "factor": "crowding_advantage",
+            "evidence": "crowding balance",
+            "normalized_score": 89.58
+          }
+        ]
+      },
+      {
+        "theme": "特斯拉",
+        "evidence": [
+          {
+            "factor": "crowding_advantage",
+            "evidence": "crowding balance",
+            "normalized_score": 83.33
+          }
+        ]
+      },
+      {
+        "theme": "保险重仓",
+        "evidence": [
+          {
+            "factor": "crowding_advantage",
+            "evidence": "crowding balance",
+            "normalized_score": 94.79
+          }
+        ]
+      },
+      {
+        "theme": "重组概念",
+        "evidence": [
+          {
+            "factor": "crowding_advantage",
+            "evidence": "crowding balance",
+            "normalized_score": 94.27
+          }
+        ]
+      }
+    ],
+    "capacity_structure": [
+      {
+        "theme": "基金重仓",
+        "leader": null,
+        "capacity": null,
+        "trend_leader": null,
+        "elasticity": null,
+        "catch_up": null,
+        "capital_structure_score": 0,
+        "role_coverage": 0.0
+      },
+      {
+        "theme": "华为概念",
+        "leader": null,
+        "capacity": null,
+        "trend_leader": null,
+        "elasticity": null,
+        "catch_up": null,
+        "capital_structure_score": 0,
+        "role_coverage": 0.0
+      },
+      {
+        "theme": "国防军工",
+        "leader": null,
+        "capacity": null,
+        "trend_leader": null,
+        "elasticity": null,
+        "catch_up": null,
+        "capital_structure_score": 0,
+        "role_coverage": 0.0
+      },
+      {
+        "theme": "5G概念",
+        "leader": null,
+        "capacity": null,
+        "trend_leader": null,
+        "elasticity": null,
+        "catch_up": null,
+        "capital_structure_score": 0,
+        "role_coverage": 0.0
+      },
+      {
+        "theme": "社保重仓",
+        "leader": null,
+        "capacity": null,
+        "trend_leader": null,
+        "elasticity": null,
+        "catch_up": null,
+        "capital_structure_score": 0,
+        "role_coverage": 0.0
+      },
+      {
+        "theme": "锂电池",
+        "leader": null,
+        "capacity": null,
+        "trend_leader": null,
+        "elasticity": null,
+        "catch_up": null,
+        "capital_structure_score": 0,
+        "role_coverage": 0.0
+      },
+      {
+        "theme": "光伏概念",
+        "leader": null,
+        "capacity": null,
+        "trend_leader": null,
+        "elasticity": null,
+        "catch_up": null,
+        "capital_structure_score": 0,
+        "role_coverage": 0.0
+      },
+      {
+        "theme": "风电",
+        "leader": null,
+        "capacity": null,
+        "trend_leader": null,
+        "elasticity": null,
+        "catch_up": null,
+        "capital_structure_score": 0,
+        "role_coverage": 0.0
+      },
+      {
+        "theme": "超大盘",
+        "leader": null,
+        "capacity": null,
+        "trend_leader": null,
+        "elasticity": null,
+        "catch_up": null,
+        "capital_structure_score": 0,
+        "role_coverage": 0.0
+      },
+      {
+        "theme": "QFII重仓",
+        "leader": null,
+        "capacity": null,
+        "trend_leader": null,
+        "elasticity": null,
+        "catch_up": null,
+        "capital_structure_score": 0,
+        "role_coverage": 0.0
+      },
+      {
+        "theme": "光伏",
+        "leader": null,
+        "capacity": null,
+        "trend_leader": null,
+        "elasticity": null,
+        "catch_up": null,
+        "capital_structure_score": 0,
+        "role_coverage": 0.0
+      },
+      {
+        "theme": "含H股",
+        "leader": null,
+        "capacity": null,
+        "trend_leader": null,
+        "elasticity": null,
+        "catch_up": null,
+        "capital_structure_score": 0,
+        "role_coverage": 0.0
+      },
+      {
+        "theme": "央企50",
+        "leader": null,
+        "capacity": null,
+        "trend_leader": null,
+        "elasticity": null,
+        "catch_up": null,
+        "capital_structure_score": 0,
+        "role_coverage": 0.0
+      },
+      {
+        "theme": "碳中和",
+        "leader": null,
+        "capacity": null,
+        "trend_leader": null,
+        "elasticity": null,
+        "catch_up": null,
+        "capital_structure_score": 0,
+        "role_coverage": 0.0
+      },
+      {
+        "theme": "股权激励",
+        "leader": null,
+        "capacity": null,
+        "trend_leader": null,
+        "elasticity": null,
+        "catch_up": null,
+        "capital_structure_score": 0,
+        "role_coverage": 0.0
+      },
+      {
+        "theme": "黄河三角",
+        "leader": null,
+        "capacity": null,
+        "trend_leader": null,
+        "elasticity": null,
+        "catch_up": null,
+        "capital_structure_score": 0,
+        "role_coverage": 0.0
+      },
+      {
+        "theme": "宽带提速",
+        "leader": null,
+        "capacity": null,
+        "trend_leader": null,
+        "elasticity": null,
+        "catch_up": null,
+        "capital_structure_score": 0,
+        "role_coverage": 0.0
+      },
+      {
+        "theme": "特斯拉",
+        "leader": null,
+        "capacity": null,
+        "trend_leader": null,
+        "elasticity": null,
+        "catch_up": null,
+        "capital_structure_score": 0,
+        "role_coverage": 0.0
+      },
+      {
+        "theme": "保险重仓",
+        "leader": null,
+        "capacity": null,
+        "trend_leader": null,
+        "elasticity": null,
+        "catch_up": null,
+        "capital_structure_score": 0,
+        "role_coverage": 0.0
+      },
+      {
+        "theme": "重组概念",
+        "leader": null,
+        "capacity": null,
+        "trend_leader": null,
+        "elasticity": null,
+        "catch_up": null,
+        "capital_structure_score": 0,
+        "role_coverage": 0.0
+      }
+    ],
+    "crowding_status": [
+      {
+        "theme": "基金重仓",
+        "status": "BALANCED",
+        "inputs": {
+          "change_pct": -0.26618908011433,
+          "amount_percentile": 99.375,
+          "volatility": null,
+          "volatility_percentile": null,
+          "turnover_history_percentile": null,
+          "crowding_intensity": 60.31
+        }
+      },
+      {
+        "theme": "华为概念",
+        "status": "BALANCED",
+        "inputs": {
+          "change_pct": -0.32775959234637,
+          "amount_percentile": 100.0,
+          "volatility": null,
+          "volatility_percentile": null,
+          "turnover_history_percentile": null,
+          "crowding_intensity": 59.06
+        }
+      },
+      {
+        "theme": "国防军工",
+        "status": "BALANCED",
+        "inputs": {
+          "change_pct": 0.030082479873923,
+          "amount_percentile": 94.375,
+          "volatility": null,
+          "volatility_percentile": null,
+          "turnover_history_percentile": null,
+          "crowding_intensity": 61.88
+        }
+      },
+      {
+        "theme": "5G概念",
+        "status": "BALANCED",
+        "inputs": {
+          "change_pct": 0.098261352076205,
+          "amount_percentile": 90.0,
+          "volatility": null,
+          "volatility_percentile": null,
+          "turnover_history_percentile": null,
+          "crowding_intensity": 60.94
+        }
+      },
+      {
+        "theme": "社保重仓",
+        "status": "BALANCED",
+        "inputs": {
+          "change_pct": 0.17266153703532,
+          "amount_percentile": 93.75,
+          "volatility": null,
+          "volatility_percentile": null,
+          "turnover_history_percentile": null,
+          "crowding_intensity": 63.75
+        }
+      },
+      {
+        "theme": "锂电池",
+        "status": "BALANCED",
+        "inputs": {
+          "change_pct": 0.21598147410244,
+          "amount_percentile": 96.25,
+          "volatility": null,
+          "volatility_percentile": null,
+          "turnover_history_percentile": null,
+          "crowding_intensity": 66.25
+        }
+      },
+      {
+        "theme": "光伏概念",
+        "status": "BALANCED",
+        "inputs": {
+          "change_pct": -0.25724889297102,
+          "amount_percentile": 90.625,
+          "volatility": null,
+          "volatility_percentile": null,
+          "turnover_history_percentile": null,
+          "crowding_intensity": 56.25
+        }
+      },
+      {
+        "theme": "风电",
+        "status": "BALANCED",
+        "inputs": {
+          "change_pct": 0.24690244534888,
+          "amount_percentile": 93.125,
+          "volatility": null,
+          "volatility_percentile": null,
+          "turnover_history_percentile": null,
+          "crowding_intensity": 65.0
+        }
+      },
+      {
+        "theme": "超大盘",
+        "status": "BALANCED",
+        "inputs": {
+          "change_pct": 0.2554764363755,
+          "amount_percentile": 81.875,
+          "volatility": null,
+          "volatility_percentile": null,
+          "turnover_history_percentile": null,
+          "crowding_intensity": 59.69
+        }
+      },
+      {
+        "theme": "QFII重仓",
+        "status": "BALANCED",
+        "inputs": {
+          "change_pct": 0.28469063122528,
+          "amount_percentile": 87.5,
+          "volatility": null,
+          "volatility_percentile": null,
+          "turnover_history_percentile": null,
+          "crowding_intensity": 63.44
+        }
+      },
+      {
+        "theme": "光伏",
+        "status": "BALANCED",
+        "inputs": {
+          "change_pct": -0.30573912850476,
+          "amount_percentile": 88.75,
+          "volatility": null,
+          "volatility_percentile": null,
+          "turnover_history_percentile": null,
+          "crowding_intensity": 53.75
+        }
+      },
+      {
+        "theme": "含H股",
+        "status": "ELEVATED",
+        "inputs": {
+          "change_pct": 0.40729540050714,
+          "amount_percentile": 98.75,
+          "volatility": null,
+          "volatility_percentile": null,
+          "turnover_history_percentile": null,
+          "crowding_intensity": 71.25
+        }
+      },
+      {
+        "theme": "央企50",
+        "status": "BALANCED",
+        "inputs": {
+          "change_pct": 0.41474234321828,
+          "amount_percentile": 85.0,
+          "volatility": null,
+          "volatility_percentile": null,
+          "turnover_history_percentile": null,
+          "crowding_intensity": 65.0
+        }
+      },
+      {
+        "theme": "碳中和",
+        "status": "BALANCED",
+        "inputs": {
+          "change_pct": 0.49912716302561,
+          "amount_percentile": 71.875,
+          "volatility": null,
+          "volatility_percentile": null,
+          "turnover_history_percentile": null,
+          "crowding_intensity": 60.0
+        }
+      },
+      {
+        "theme": "股权激励",
+        "status": "BALANCED",
+        "inputs": {
+          "change_pct": -0.34547801052318,
+          "amount_percentile": 88.125,
+          "volatility": null,
+          "volatility_percentile": null,
+          "turnover_history_percentile": null,
+          "crowding_intensity": 52.5
+        }
+      },
+      {
+        "theme": "黄河三角",
+        "status": "ELEVATED",
+        "inputs": {
+          "change_pct": 0.45078628385217,
+          "amount_percentile": 95.0,
+          "volatility": null,
+          "volatility_percentile": null,
+          "turnover_history_percentile": null,
+          "crowding_intensity": 70.62
+        }
+      },
+      {
+        "theme": "宽带提速",
+        "status": "BALANCED",
+        "inputs": {
+          "change_pct": -0.23338312173264,
+          "amount_percentile": 83.75,
+          "volatility": null,
+          "volatility_percentile": null,
+          "turnover_history_percentile": null,
+          "crowding_intensity": 53.75
+        }
+      },
+      {
+        "theme": "特斯拉",
+        "status": "BALANCED",
+        "inputs": {
+          "change_pct": -1.0365340106505,
+          "amount_percentile": 91.875,
+          "volatility": null,
+          "volatility_percentile": null,
+          "turnover_history_percentile": null,
+          "crowding_intensity": 50.0
+        }
+      },
+      {
+        "theme": "保险重仓",
+        "status": "BALANCED",
+        "inputs": {
+          "change_pct": 0.018056335767595,
+          "amount_percentile": 98.125,
+          "volatility": null,
+          "volatility_percentile": null,
+          "turnover_history_percentile": null,
+          "crowding_intensity": 63.12
+        }
+      },
+      {
+        "theme": "重组概念",
+        "status": "BALANCED",
+        "inputs": {
+          "change_pct": 0.52946801550153,
+          "amount_percentile": 76.25,
+          "volatility": null,
+          "volatility_percentile": null,
+          "turnover_history_percentile": null,
+          "crowding_intensity": 63.44
+        }
+      }
+    ],
+    "final_judgement_owner": "chatgpt"
+  },
+  "review_template_support": {
+    "一、先给结论": [
+      "market_environment",
+      "market_cycle_and_style",
+      "data_quality"
+    ],
+    "二、市场环境": [
+      "market_environment"
+    ],
+    "三、下一交易日观察板块": [
+      "next_day_theme_candidates"
+    ],
+    "四、未来1-2周结构": [
+      "medium_term_structure_candidates"
+    ],
+    "五、市场周期与核心风格": [
+      "market_cycle_and_style"
+    ],
+    "六、核心主线与个股角色": [
+      "core_theme_roles"
+    ],
+    "七、趋势拐点与筹码": [
+      "inflection_candidates"
+    ],
+    "八、主线排名": [
+      "next_day_theme_candidates"
+    ],
+    "九、上涨因素": [
+      "market_factors"
+    ],
+    "十、昨日验证": [
+      "previous_hypothesis_validation"
+    ],
+    "十一、龙头/补涨/切换": [
+      "core_theme_roles",
+      "money_effect_structure"
+    ],
+    "十二、风险": [
+      "risk_and_falsification_candidates",
+      "next_day_plan"
+    ],
+    "十三、最终判断": [
+      "source_manifest",
+      "data_quality"
+    ],
+    "十四、资金青睐逻辑拆解": [
+      "capital_preference"
+    ]
+  },
+  "data_quality": {
+    "status": "PARTIAL",
+    "checks": [
+      {
+        "name": "market_packet_quality",
+        "actual": "FAIL",
+        "threshold": "PASS",
+        "passed": false
+      },
+      {
+        "name": "review_intelligence_quality",
+        "actual": "PARTIAL",
+        "threshold": "PASS",
+        "passed": false
+      },
+      {
+        "name": "inflection_scanner_quality",
+        "actual": "PARTIAL",
+        "threshold": "PASS",
+        "passed": false
+      },
+      {
+        "name": "historical_review_is_prior",
+        "actual": null,
+        "threshold": "<2026-09-08",
+        "passed": true
+      },
+      {
+        "name": "next_day_plan_limit",
+        "actual": 0,
+        "threshold": 20,
+        "passed": true
+      },
+      {
+        "name": "capital_preference_context",
+        "actual": "AVAILABLE",
+        "threshold": "AVAILABLE",
+        "passed": true
+      },
+      {
+        "name": "required_context_sections",
+        "actual": 14,
+        "threshold": 14,
+        "passed": true
+      }
+    ],
+    "known_gaps": [
+      "Upstream PARTIAL statuses are preserved and never upgraded by context assembly.",
+      "Only the exact previous A-share trading day's non-simulated formal review is admissible."
+    ]
+  }
+}

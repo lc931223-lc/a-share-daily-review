@@ -1,0 +1,180 @@
+{
+  "date": "2026-09-08",
+  "run_id": "daily-close:2026-09-08",
+  "is_trade_day": true,
+  "market_closed": true,
+  "pipeline_started_at": "2026-09-08T23:28:01.649405+08:00",
+  "pipeline_completed_at": "2026-09-08T23:28:16.881742+08:00",
+  "steps": {
+    "market_packet": {
+      "status": "PARTIAL",
+      "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\market_packets\\2026-09-08.json",
+      "source_date": "2026-09-08",
+      "quality": "FAIL",
+      "started_at": "2026-09-08T23:28:01.653395+08:00",
+      "completed_at": "2026-09-08T23:28:01.683315+08:00",
+      "error": null,
+      "retry_count": 0,
+      "reused": true,
+      "provenance_sha256": "f27a9e8327bc97cec49f64bd015731c2485c2a8c4986ee6ca3473ca260b67a99"
+    },
+    "inflection": {
+      "status": "PARTIAL",
+      "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\inflection\\2026-09-08.json",
+      "source_date": "2026-09-08",
+      "quality": "PARTIAL",
+      "started_at": "2026-09-08T23:28:01.683315+08:00",
+      "completed_at": "2026-09-08T23:28:01.710243+08:00",
+      "error": null,
+      "retry_count": 0,
+      "reused": true,
+      "provenance_sha256": "31e8f8f686d9663a8cbe00b639bdc7f5316e0856df1797e46b5c64516446a913"
+    },
+    "review_intelligence": {
+      "status": "PARTIAL",
+      "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\review_intelligence\\2026-09-08.json",
+      "source_date": "2026-09-08",
+      "quality": "PARTIAL",
+      "started_at": "2026-09-08T23:28:01.710243+08:00",
+      "completed_at": "2026-09-08T23:28:01.716227+08:00",
+      "error": null,
+      "retry_count": 0,
+      "reused": true,
+      "provenance_sha256": "9c2dc843ae76d78f0f9bb755f7e7bb3a03a03a4aecd78ecf60c64f443f3f9d12"
+    },
+    "capital_preference": {
+      "status": "PARTIAL",
+      "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\capital_preference\\2026-09-08.json",
+      "source_date": "2026-09-08",
+      "quality": "PARTIAL",
+      "started_at": "2026-09-08T23:28:01.716227+08:00",
+      "completed_at": "2026-09-08T23:28:01.727199+08:00",
+      "error": null,
+      "retry_count": 0,
+      "reused": true,
+      "provenance_sha256": "e56d16046144337d10c285eb7d902aa3258605a783f6199951114a2d0f591899"
+    },
+    "review_context": {
+      "status": "PARTIAL",
+      "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\review_context\\2026-09-08.json",
+      "source_date": "2026-09-08",
+      "quality": "PARTIAL",
+      "started_at": "2026-09-08T23:28:01.727199+08:00",
+      "completed_at": "2026-09-08T23:28:01.731220+08:00",
+      "error": null,
+      "retry_count": 0,
+      "reused": true,
+      "provenance_sha256": "39268237f5a02b7bc8ee0044df4b6bed66e32f8060286940965375f0948c5f2a"
+    },
+    "formal_review_support": {
+      "status": "PASS",
+      "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\formal_review_support\\2026-09-08.json",
+      "source_date": "2026-09-08",
+      "quality": "PASS",
+      "started_at": "2026-09-08T23:28:01.731220+08:00",
+      "completed_at": "2026-09-08T23:28:01.757149+08:00",
+      "error": null,
+      "retry_count": 0,
+      "reused": true,
+      "provenance_sha256": "0890fa3a2c95750e58760e01c05ab51a07ac41601fa50ccdc9a7b9bb2018ba24"
+    },
+    "auction": {
+      "status": "UNAVAILABLE",
+      "artifact_path": null,
+      "source_date": null,
+      "quality": null,
+      "started_at": "2026-09-08T23:28:01.758149+08:00",
+      "completed_at": "2026-09-08T23:28:01.758149+08:00",
+      "error": null,
+      "retry_count": 0,
+      "reused": false,
+      "provenance_sha256": null
+    },
+    "feedback": {
+      "status": "PASS",
+      "artifact_path": null,
+      "source_date": null,
+      "quality": "WAITING",
+      "started_at": "2026-09-08T23:28:01.758149+08:00",
+      "completed_at": "2026-09-08T23:28:16.754100+08:00",
+      "error": null,
+      "retry_count": 0,
+      "reused": false,
+      "provenance_sha256": null,
+      "as_of": "2026-09-08",
+      "pending_count": 1,
+      "newly_validated_count": 0,
+      "still_waiting_count": 1,
+      "validated_count": 2,
+      "cycles": [
+        {
+          "prediction_date": "2026-09-04",
+          "previous_status": "PARTIAL_FORWARD_WINDOW",
+          "validation_status": "PARTIAL_FORWARD_WINDOW",
+          "available_horizons": [
+            1
+          ],
+          "review_status": "PARTIAL_REVIEW",
+          "correction_status": "ERRORS_RECORDED"
+        },
+        {
+          "prediction_date": "2026-09-07",
+          "previous_status": "PARTIAL_FORWARD_WINDOW",
+          "validation_status": "PARTIAL_FORWARD_WINDOW",
+          "available_horizons": [
+            1
+          ],
+          "review_status": "PARTIAL_REVIEW",
+          "correction_status": "ERRORS_RECORDED"
+        },
+        {
+          "prediction_date": "2026-09-08",
+          "previous_status": "WAITING_FOR_MARKET_DATA",
+          "validation_status": "WAITING_FOR_MARKET_DATA",
+          "available_horizons": [],
+          "review_status": "WAITING_FOR_VALIDATION",
+          "correction_status": "WAITING_FOR_REVIEW"
+        }
+      ]
+    }
+  },
+  "status": "PARTIAL",
+  "blockers": [],
+  "readiness_checks": [
+    {
+      "name": "real_trading_calendar",
+      "passed": true,
+      "detail": "target is present as open in the cached/fetched A-share calendar"
+    },
+    {
+      "name": "market_close_gate",
+      "passed": true,
+      "detail": "target session is closed under Asia/Shanghai close policy"
+    },
+    {
+      "name": "daily_rows_completeness",
+      "passed": true,
+      "detail": "Market Packet full-market daily rows passed its hard gate"
+    },
+    {
+      "name": "same_date_core_artifacts",
+      "passed": true,
+      "detail": "all generated core artifacts must carry the requested trade date"
+    },
+    {
+      "name": "schema_and_provenance_sha256",
+      "passed": true,
+      "detail": "all available core artifacts passed schema validation and have a digest"
+    },
+    {
+      "name": "idempotent_reuse_contract",
+      "passed": true,
+      "detail": "validated artifacts are content-addressed and reusable on rerun"
+    },
+    {
+      "name": "no_plaintext_secrets",
+      "passed": true,
+      "detail": "no probable plaintext secrets found"
+    }
+  ]
+}

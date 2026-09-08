@@ -1,0 +1,195 @@
+{
+  "meta": {
+    "schema_version": "integrated_feedback_review.1",
+    "prediction_date": "2026-09-07",
+    "status": "PARTIAL_REVIEW"
+  },
+  "correct_parts": [
+    "Existing leader candidates include a positive five-day result.",
+    "Evaluable existing theme candidate baskets are not negative at five days."
+  ],
+  "incorrect_parts": [],
+  "error_type": [
+    "DATA_LIMITATION"
+  ],
+  "actual_market_state": {
+    "return_1d": 0.00665508,
+    "return_5d": null,
+    "return_10d": null,
+    "return_20d": null
+  },
+  "actual_theme_result": [
+    {
+      "theme": "元件",
+      "candidate_codes": [
+        "000823.SZ",
+        "002463.SZ",
+        "002579.SZ",
+        "002815.SZ",
+        "603186.SH",
+        "603228.SH",
+        "688655.SH",
+        "920821.BJ"
+      ],
+      "return_1d": 0.03670624,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "通信设备",
+      "candidate_codes": [
+        "002281.SZ",
+        "003040.SZ",
+        "603083.SH"
+      ],
+      "return_1d": 0.00588611,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "一般零售",
+      "candidate_codes": [
+        "600785.SH",
+        "600865.SH"
+      ],
+      "return_1d": 0.03648341,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "汽车零部",
+      "candidate_codes": [
+        "002708.SZ",
+        "301550.SZ"
+      ],
+      "return_1d": -0.01810818,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "出版",
+      "candidate_codes": [
+        "601949.SH",
+        "605577.SH"
+      ],
+      "return_1d": 0.09550937,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "化学制品",
+      "candidate_codes": [
+        "002827.SZ",
+        "002909.SZ"
+      ],
+      "return_1d": 0.00125349,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "家电零部",
+      "candidate_codes": [
+        "002011.SZ",
+        "002290.SZ"
+      ],
+      "return_1d": -0.00274068,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "小家电",
+      "candidate_codes": [
+        "002403.SZ"
+      ],
+      "return_1d": 0.09991942,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "饲料",
+      "candidate_codes": [
+        "000876.SZ",
+        "001366.SZ",
+        "603609.SH"
+      ],
+      "return_1d": 0.014152,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "种植业",
+      "candidate_codes": [
+        "600108.SH",
+        "600359.SH",
+        "600371.SH"
+      ],
+      "return_1d": 0.05352787,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "农产品加",
+      "candidate_codes": [
+        "600127.SH"
+      ],
+      "return_1d": 0.09312639,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "影视院线",
+      "candidate_codes": [
+        "001330.SZ",
+        "601595.SH"
+      ],
+      "return_1d": 0.03181705,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "专用设备",
+      "candidate_codes": [
+        "002564.SZ",
+        "688813.SH"
+      ],
+      "return_1d": -0.00625769,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "养殖业",
+      "candidate_codes": [
+        "000735.SZ",
+        "600975.SH"
+      ],
+      "return_1d": 0.00095559,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "酒店餐饮",
+      "candidate_codes": [
+        "000428.SZ",
+        "002186.SZ"
+      ],
+      "return_1d": 0.0140585,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    }
+  ]
+}

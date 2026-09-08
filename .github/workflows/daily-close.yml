@@ -1,0 +1,82 @@
+name: A-share daily close production
+
+on:
+  schedule:
+    - cron: "30 7 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      trade_date:
+        description: "Optional YYYY-MM-DD historical date"
+        required: false
+        type: string
+      force:
+        description: "Regenerate valid artifacts"
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: a-share-daily-close
+  cancel-in-progress: false
+
+jobs:
+  daily-close:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      TZ: Asia/Shanghai
+      TUSHARE_TOKEN: ${{ secrets.TUSHARE_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run close pipeline with retries
+        shell: bash
+        run: |
+          set -o pipefail
+          if [[ -n "${{ inputs.trade_date }}" ]]; then
+            args=(--date "${{ inputs.trade_date }}")
+          else
+            args=(--latest --backfill-missing)
+          fi
+          if [[ "${{ inputs.force }}" == "true" ]]; then
+            args+=(--force)
+          fi
+          for attempt in 1 2 3; do
+            python tools/run_daily_close_pipeline.py "${args[@]}" && exit 0
+            [[ "$attempt" == "3" ]] && exit 1
+            sleep $((attempt * 60))
+          done
+      - name: Commit manifests and generated artifacts
+        if: success()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/market_packets data/daily_runs data/formal_review_support reports/market_packets
+          git add -f data/inflection/*.json data/review_intelligence/*.json \
+            data/capital_preference/*.json data/review_context/*.json \
+            data/feedback_records research_feedback
+          git diff --cached --quiet && exit 0
+          git commit -m "data: advance daily close production"
+          git push origin HEAD:main
+      - name: Upload failure diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-close-diagnostics-${{ github.run_id }}
+          path: |
+            data/daily_runs/
+            logs/
+          if-no-files-found: ignore
+          retention-days: 14

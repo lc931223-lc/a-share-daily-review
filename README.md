@@ -86,14 +86,24 @@ python tools/update_validation_results.py --date 2026-09-04
 
 ### Daily Pipeline
 
-统一执行入口：
+正式收盘生产只有一个统一入口：
 
 ```powershell
-python tools/run_daily_pipeline.py --date auto
-python tools/run_daily_pipeline.py --date 2026-09-04
+python tools/run_daily_close_pipeline.py --latest --backfill-missing
+python tools/run_daily_close_pipeline.py --date 2026-09-08
 ```
 
-`run_daily_pipeline` 只负责生成 Market Packet、记录质量、检查是否存在 `data/official_reviews/YYYY-MM-DD.json`、存在则导入并更新验证结果；不存在时退出 `2`，不会自动编造正式复盘结论。
+入口使用 Asia/Shanghai 和真实 A 股交易日历，在 15:15 后依次运行 Market Packet、Inflection、Review Intelligence、Capital Preference、Review Context、formal-review objective support 和 Feedback。错过的交易日按顺序补齐，遇到阻断立即停止，不跳过中间日期。每日状态写入 `data/daily_runs/YYYY-MM-DD.json`；Auction 缺失作为可选增强明确标记，不会跨日回退。
+
+ChatGPT 正式结论仍需单独生成并通过结构化合同导入：
+
+```powershell
+python tools/import_formal_review_record.py path/to/formal-review.json
+```
+
+导入器校验 `schemas/formal_review_record.schema.json`、完整 41 因子、证据等级和 Tier 4 限制。系统不会自动编造市场阶段、主线、评级或角色结论。生产调度、Secrets 配置和故障恢复见 `docs/production-daily-close.md`。
+
+旧 `tools/run_daily_pipeline.py` 仅保留兼容，不是正式生产入口。
 
 旧的真实数据采集门禁命令仍保留：
 

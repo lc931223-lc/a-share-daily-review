@@ -2,11 +2,15 @@ from __future__ import annotations
 
 import hashlib
 import json
+from collections.abc import Callable
 from datetime import date
 from pathlib import Path
 from typing import Any
 
 from jsonschema import Draft202012Validator
+
+from src.feedback.tracker import prediction_from_official_review
+from src.market_packet.trading_calendar import TradingCalendarDay, load_trading_calendar
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -20,26 +24,35 @@ ROLE_KEYS = {
 
 
 class ReviewContextBuilder:
-    def __init__(self, root: Path = PROJECT_ROOT):
+    def __init__(
+        self,
+        root: Path = PROJECT_ROOT,
+        *,
+        calendar_loader: Callable[[date], list[TradingCalendarDay]] | None = None,
+    ):
         self.root = root
+        self.calendar_loader = calendar_loader or (
+            lambda anchor: load_trading_calendar(
+                anchor, cache_root=self.root / "data" / "reference"
+            )
+        )
 
     def build(self, target: date) -> dict[str, Any]:
         market, market_path = self._required("market_packets", target)
         intelligence, intelligence_path = self._required("review_intelligence", target)
         inflection, inflection_path = self._required("inflection", target)
-        auction, auction_path = self._required("auction_packets", target)
+        auction, auction_path = self._optional("auction_packets", target)
         inputs = {
             "market_packet": (market, market_path),
             "review_intelligence": (intelligence, intelligence_path),
             "inflection_scanner": (inflection, inflection_path),
-            "auction_packet": (auction, auction_path),
         }
         for name, (payload, _) in inputs.items():
             actual = _trade_date(payload)
             if actual != target.isoformat():
                 raise ValueError(f"{name} date mismatch: expected {target.isoformat()}, got {actual}")
 
-        prior_review, prior_manifest = self._prior_official_review(target, market)
+        prior_review, prior_manifest = self._prior_official_review(target)
         capital, capital_manifest = self._capital_preference(target)
         roles = intelligence.get("role_candidates") or []
         risks = intelligence.get("risk_and_falsification_candidates") or []
@@ -55,6 +68,15 @@ class ReviewContextBuilder:
                 **{name: _manifest(payload, path) for name, (payload, path) in inputs.items()},
                 "prior_official_review": prior_manifest,
                 "capital_preference": capital_manifest,
+                "auction_packet": _manifest(auction, auction_path)
+                if auction
+                else {
+                    "status": "UNAVAILABLE",
+                    "data_date": None,
+                    "path": None,
+                    "quality_status": None,
+                    "sha256": None,
+                },
             },
             "market_environment": _market_environment(market, intelligence),
             "next_day_theme_candidates": _theme_candidates(themes, roles, risks),
@@ -95,24 +117,48 @@ class ReviewContextBuilder:
             raise FileNotFoundError(f"required {folder} input is unavailable: {path}")
         return _read(path), path
 
-    def _prior_official_review(self, target: date, market: dict[str, Any]):
-        folder = self.root / "data" / "official_reviews"
-        paths = sorted(path for path in folder.glob("????-??-??.json") if path.stem < target.isoformat())
-        if paths:
-            payload = _read(paths[-1])
-            actual = str(payload.get("date") or "")[:10]
-            if actual >= target.isoformat():
-                raise ValueError("prior official_review is not strictly historical")
-            return payload, _manifest(payload, paths[-1]) | {"status": "AVAILABLE"}
-        embedded = market.get("previous_review") or {}
-        embedded_date = str(embedded.get("date") or "")[:10]
-        if embedded_date and embedded_date < target.isoformat():
-            return embedded, {
-                "status": "FALLBACK_EMBEDDED_HISTORY", "data_date": embedded_date,
-                "source": "market_packet.previous_review", "path": embedded.get("source_path"),
-                "sha256": _digest(embedded),
+    def _optional(self, folder: str, target: date) -> tuple[dict[str, Any], Path | None]:
+        path = self.root / "data" / folder / f"{target.isoformat()}.json"
+        if not path.is_file():
+            return {}, None
+        payload = _read(path)
+        actual = _trade_date(payload)
+        if actual != target.isoformat():
+            raise ValueError(f"{folder} date mismatch: expected {target.isoformat()}, got {actual}")
+        return payload, path
+
+    def _prior_official_review(self, target: date):
+        previous = _previous_trading_day(target, self.calendar_loader(target))
+        if previous is None:
+            return {}, {
+                "status": "UNAVAILABLE", "data_date": None,
+                "expected_date": None, "source": "formal_reviews", "path": None,
+                "sha256": None,
             }
-        return {}, {"status": "UNAVAILABLE", "data_date": None, "source": "official_reviews", "path": None, "sha256": None}
+        rejected_simulated = None
+        for folder_name in ("formal_reviews", "official_reviews"):
+            path = self.root / "data" / folder_name / f"{previous.isoformat()}.json"
+            if not path.is_file():
+                continue
+            payload = _read(path)
+            actual = _trade_date(payload)
+            if actual != previous.isoformat():
+                raise ValueError(
+                    f"prior official_review date mismatch: expected {previous.isoformat()}, got {actual}"
+                )
+            if _is_simulated(payload, path):
+                rejected_simulated = path
+                continue
+            return payload, _manifest(payload, path) | {
+                "status": "AVAILABLE", "expected_date": previous.isoformat(),
+            }
+        return {}, {
+            "status": "SIMULATED_REVIEW_REJECTED" if rejected_simulated else "UNAVAILABLE",
+            "data_date": None,
+            "expected_date": previous.isoformat(), "source": "formal_reviews",
+            "path": str(rejected_simulated) if rejected_simulated else None,
+            "sha256": None,
+        }
 
     def _capital_preference(self, target: date):
         path = self.root / "data" / "capital_preference" / f"{target.isoformat()}_compact.json"
@@ -371,7 +417,7 @@ def _quality(inputs, prior_manifest, capital_manifest, packet):
         "checks": checks,
         "known_gaps": [
             "Upstream PARTIAL statuses are preserved and never upgraded by context assembly.",
-            "A prior official_review may fall back to Market Packet embedded history when no strictly earlier official file exists.",
+            "Only the exact previous A-share trading day's non-simulated formal review is admissible.",
         ],
     }
 
@@ -427,6 +473,14 @@ def _theme_summary(row):
 
 
 def _manifest(payload, path):
+    if path is None:
+        return {
+            "status": "UNAVAILABLE",
+            "data_date": None,
+            "path": None,
+            "quality_status": None,
+            "sha256": None,
+        }
     return {
         "status": "AVAILABLE", "data_date": _trade_date(payload), "path": str(path),
         "quality_status": payload.get("data_quality", {}).get("status"), "sha256": _digest(payload),
@@ -435,6 +489,18 @@ def _manifest(payload, path):
 
 def _trade_date(payload):
     return str(payload.get("meta", {}).get("trade_date") or payload.get("trade_date") or payload.get("date") or "")[:10]
+
+
+def _previous_trading_day(target: date, days: list[TradingCalendarDay]) -> date | None:
+    previous = sorted(row.cal_date for row in days if row.is_open and row.cal_date < target)
+    return previous[-1] if previous else None
+
+
+def _is_simulated(payload: dict[str, Any], path: Path) -> bool:
+    return (
+        prediction_from_official_review(payload, path).get("record_kind")
+        == "SIMULATED_OFFICIAL_REVIEW"
+    )
 
 
 def _digest(payload):

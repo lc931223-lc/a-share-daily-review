@@ -1,0 +1,2186 @@
+{
+  "meta": {
+    "schema_version": "market_packet.1",
+    "trade_date": "2026-09-07",
+    "generated_at": "2026-09-08T14:48:23.989408Z",
+    "generated_by": "codex_market_packet_phase1",
+    "codex_role": "data_engineer_data_validator_research_clerk",
+    "final_judgement_owner": "chatgpt"
+  },
+  "market_overview": {
+    "trade_date": "2026-09-07",
+    "is_trading_day": true,
+    "market_closed": true,
+    "indices": {
+      "上证指数": {
+        "name": "上证指数",
+        "ts_code": "000001.SH",
+        "close": 3932.699,
+        "change_pct": null,
+        "open": 3942.509,
+        "high": 3948.421,
+        "low": 3916.492,
+        "volume": 47737526100.0,
+        "amount": null,
+        "source": "akshare.stock_zh_index_daily",
+        "quality": "PASS"
+      },
+      "深证成指": {
+        "name": "深证成指",
+        "ts_code": "399001.SZ",
+        "close": 13774.915,
+        "change_pct": null,
+        "open": 13605.021,
+        "high": 13811.258,
+        "low": 13590.824,
+        "volume": 58762570602.0,
+        "amount": null,
+        "source": "akshare.stock_zh_index_daily",
+        "quality": "PASS"
+      },
+      "创业板指": {
+        "name": "创业板指",
+        "ts_code": "399006.SZ",
+        "close": 3398.681,
+        "change_pct": null,
+        "open": 3326.417,
+        "high": 3409.365,
+        "low": 3320.265,
+        "volume": 16586585867.0,
+        "amount": null,
+        "source": "akshare.stock_zh_index_daily",
+        "quality": "PASS"
+      },
+      "科创50": {
+        "name": "科创50",
+        "ts_code": "000688.SH",
+        "close": 1615.531,
+        "change_pct": null,
+        "open": 1596.578,
+        "high": 1626.759,
+        "low": 1579.024,
+        "volume": 794538400.0,
+        "amount": null,
+        "source": "akshare.stock_zh_index_daily",
+        "quality": "PASS"
+      },
+      "北证50": {
+        "name": "北证50",
+        "ts_code": "899050.BJ",
+        "close": 1096.846,
+        "change_pct": null,
+        "open": 1090.28,
+        "high": 1099.01,
+        "low": 1086.182,
+        "volume": 881917949.0,
+        "amount": null,
+        "source": "akshare.stock_zh_index_daily",
+        "quality": "PASS"
+      }
+    },
+    "sh_sz_turnover": null,
+    "total_market_turnover": 1964235737790.84,
+    "previous_turnover": 2051048681166.63,
+    "turnover_delta": -86812943375.79,
+    "turnover_delta_pct": -4.23,
+    "rise_count": 3167,
+    "fall_count": 2196,
+    "flat_count": 186,
+    "limit_up_count": 93,
+    "limit_down_count": 2,
+    "failed_limit_count": 19,
+    "seal_rate": 83.04,
+    "highest_board": 6.0,
+    "previous_limit_up_avg_change_pct": 4.61,
+    "previous_continuous_board_performance": {
+      "count": 7,
+      "avg_change_pct": 7.19,
+      "red_rate": 85.71
+    },
+    "st_limit_up_count": 0,
+    "st_limit_down_count": 0
+  },
+  "sector_strength": [],
+  "sector_weakness": [],
+  "theme_strength": [],
+  "theme_weakness": [],
+  "limit_up_ladder": [
+    {
+      "height": 6,
+      "stocks": [
+        {
+          "stock_code": "605577",
+          "stock_name": "龙版传媒"
+        }
+      ]
+    },
+    {
+      "height": 3,
+      "stocks": [
+        {
+          "stock_code": "600108",
+          "stock_name": "亚盛集团"
+        },
+        {
+          "stock_code": "600865",
+          "stock_name": "百大集团"
+        },
+        {
+          "stock_code": "002403",
+          "stock_name": "爱仕达"
+        }
+      ]
+    },
+    {
+      "height": 2,
+      "stocks": [
+        {
+          "stock_code": "600354",
+          "stock_name": "敦煌种业"
+        },
+        {
+          "stock_code": "000428",
+          "stock_name": "华天酒店"
+        },
+        {
+          "stock_code": "601949",
+          "stock_name": "中国出版"
+        },
+        {
+          "stock_code": "002702",
+          "stock_name": "海欣食品"
+        },
+        {
+          "stock_code": "001366",
+          "stock_name": "播恩集团"
+        },
+        {
+          "stock_code": "000735",
+          "stock_name": "罗 牛 山"
+        },
+        {
+          "stock_code": "603696",
+          "stock_name": "安记食品"
+        },
+        {
+          "stock_code": "000798",
+          "stock_name": "中水渔业"
+        },
+        {
+          "stock_code": "002564",
+          "stock_name": "天沃科技"
+        }
+      ]
+    },
+    {
+      "height": 1,
+      "stocks": [
+        {
+          "stock_code": "603083",
+          "stock_name": "剑桥科技"
+        },
+        {
+          "stock_code": "600127",
+          "stock_name": "金健米业"
+        },
+        {
+          "stock_code": "600330",
+          "stock_name": "天通股份"
+        },
+        {
+          "stock_code": "002579",
+          "stock_name": "中京电子"
+        },
+        {
+          "stock_code": "688001",
+          "stock_name": "华兴源创"
+        },
+        {
+          "stock_code": "002436",
+          "stock_name": "兴森科技"
+        },
+        {
+          "stock_code": "603228",
+          "stock_name": "景旺电子"
+        },
+        {
+          "stock_code": "301550",
+          "stock_name": "斯菱智驱"
+        },
+        {
+          "stock_code": "002916",
+          "stock_name": "深南电路"
+        },
+        {
+          "stock_code": "603186",
+          "stock_name": "华正新材"
+        },
+        {
+          "stock_code": "603124",
+          "stock_name": "江南新材"
+        },
+        {
+          "stock_code": "600103",
+          "stock_name": "青山纸业"
+        },
+        {
+          "stock_code": "002980",
+          "stock_name": "华盛昌"
+        },
+        {
+          "stock_code": "002515",
+          "stock_name": "金字火腿"
+        },
+        {
+          "stock_code": "001267",
+          "stock_name": "汇绿生态"
+        },
+        {
+          "stock_code": "002975",
+          "stock_name": "博杰股份"
+        },
+        {
+          "stock_code": "002484",
+          "stock_name": "江海股份"
+        },
+        {
+          "stock_code": "002815",
+          "stock_name": "崇达技术"
+        },
+        {
+          "stock_code": "002281",
+          "stock_name": "光迅科技"
+        },
+        {
+          "stock_code": "002138",
+          "stock_name": "顺络电子"
+        },
+        {
+          "stock_code": "002463",
+          "stock_name": "沪电股份"
+        },
+        {
+          "stock_code": "001330",
+          "stock_name": "博纳影业"
+        },
+        {
+          "stock_code": "001389",
+          "stock_name": "广合科技"
+        },
+        {
+          "stock_code": "002881",
+          "stock_name": "美格智能"
+        },
+        {
+          "stock_code": "001296",
+          "stock_name": "长江材料"
+        },
+        {
+          "stock_code": "603118",
+          "stock_name": "共进股份"
+        },
+        {
+          "stock_code": "603826",
+          "stock_name": "坤彩科技"
+        },
+        {
+          "stock_code": "600400",
+          "stock_name": "红豆股份"
+        },
+        {
+          "stock_code": "002852",
+          "stock_name": "道道全"
+        },
+        {
+          "stock_code": "600280",
+          "stock_name": "中央商场"
+        },
+        {
+          "stock_code": "601595",
+          "stock_name": "上海电影"
+        },
+        {
+          "stock_code": "603009",
+          "stock_name": "北特科技"
+        },
+        {
+          "stock_code": "603311",
+          "stock_name": "金海高科"
+        },
+        {
+          "stock_code": "603286",
+          "stock_name": "日盈电子"
+        },
+        {
+          "stock_code": "603042",
+          "stock_name": "华脉科技"
+        },
+        {
+          "stock_code": "300112",
+          "stock_name": "万讯自控"
+        },
+        {
+          "stock_code": "001229",
+          "stock_name": "魅视科技"
+        },
+        {
+          "stock_code": "002172",
+          "stock_name": "澳洋健康"
+        },
+        {
+          "stock_code": "002902",
+          "stock_name": "铭普光磁"
+        },
+        {
+          "stock_code": "603192",
+          "stock_name": "汇得科技"
+        },
+        {
+          "stock_code": "600770",
+          "stock_name": "综艺股份"
+        },
+        {
+          "stock_code": "301516",
+          "stock_name": "中远通"
+        },
+        {
+          "stock_code": "603999",
+          "stock_name": "读者传媒"
+        },
+        {
+          "stock_code": "601086",
+          "stock_name": "国芳集团"
+        },
+        {
+          "stock_code": "603626",
+          "stock_name": "科森科技"
+        },
+        {
+          "stock_code": "603823",
+          "stock_name": "百合花"
+        },
+        {
+          "stock_code": "000823",
+          "stock_name": "超声电子"
+        },
+        {
+          "stock_code": "688655",
+          "stock_name": "迅捷兴"
+        },
+        {
+          "stock_code": "603119",
+          "stock_name": "浙江荣泰"
+        },
+        {
+          "stock_code": "002708",
+          "stock_name": "光洋股份"
+        },
+        {
+          "stock_code": "002011",
+          "stock_name": "盾安环境"
+        },
+        {
+          "stock_code": "002470",
+          "stock_name": "金正大"
+        },
+        {
+          "stock_code": "600540",
+          "stock_name": "新赛股份"
+        },
+        {
+          "stock_code": "603936",
+          "stock_name": "博敏电子"
+        },
+        {
+          "stock_code": "002957",
+          "stock_name": "科瑞技术"
+        },
+        {
+          "stock_code": "600345",
+          "stock_name": "长江通信"
+        },
+        {
+          "stock_code": "002290",
+          "stock_name": "禾盛新材"
+        },
+        {
+          "stock_code": "688813",
+          "stock_name": "泰金新能"
+        },
+        {
+          "stock_code": "600371",
+          "stock_name": "万向德农"
+        },
+        {
+          "stock_code": "002909",
+          "stock_name": "集泰股份"
+        },
+        {
+          "stock_code": "000759",
+          "stock_name": "中百集团"
+        },
+        {
+          "stock_code": "603395",
+          "stock_name": "红四方"
+        },
+        {
+          "stock_code": "600785",
+          "stock_name": "新华百货"
+        },
+        {
+          "stock_code": "600791",
+          "stock_name": "京能置业"
+        },
+        {
+          "stock_code": "002963",
+          "stock_name": "豪尔赛"
+        },
+        {
+          "stock_code": "603355",
+          "stock_name": "莱克电气"
+        },
+        {
+          "stock_code": "000978",
+          "stock_name": "桂林旅游"
+        },
+        {
+          "stock_code": "002483",
+          "stock_name": "润邦股份"
+        },
+        {
+          "stock_code": "603926",
+          "stock_name": "铁流股份"
+        },
+        {
+          "stock_code": "000816",
+          "stock_name": "智慧农业"
+        },
+        {
+          "stock_code": "603628",
+          "stock_name": "清源股份"
+        },
+        {
+          "stock_code": "920821",
+          "stock_name": "则成电子"
+        },
+        {
+          "stock_code": "603679",
+          "stock_name": "华体科技"
+        },
+        {
+          "stock_code": "605168",
+          "stock_name": "三人行"
+        },
+        {
+          "stock_code": "002972",
+          "stock_name": "科安达"
+        },
+        {
+          "stock_code": "605488",
+          "stock_name": "福莱新材"
+        },
+        {
+          "stock_code": "603608",
+          "stock_name": "天创时尚"
+        },
+        {
+          "stock_code": "603668",
+          "stock_name": "天马科技"
+        },
+        {
+          "stock_code": "002988",
+          "stock_name": "豪美新材"
+        },
+        {
+          "stock_code": "600857",
+          "stock_name": "宁波中百"
+        }
+      ]
+    }
+  ],
+  "limit_up_down": {
+    "limit_up_count": 93,
+    "limit_down_count": 2,
+    "failed_limit_count": 19,
+    "failed_limit_rate": 16.96,
+    "seal_rate": 83.04,
+    "highest_board": 6.0,
+    "second_board_count": 9,
+    "third_board_count": 3,
+    "fourth_board_count": 0,
+    "five_plus_board_count": 1,
+    "promotion_rate": null,
+    "previous_limit_up_performance": {
+      "count": 39,
+      "avg_change_pct": 4.61,
+      "high_open_rate": null,
+      "red_rate": 76.92,
+      "limit_up_rate": 33.33,
+      "limit_down_rate": 0.0
+    },
+    "twenty_cm_limit_up_count": 6,
+    "bse_limit_up_count": 1,
+    "large_loss_count": null,
+    "sky_floor_count": null,
+    "floor_sky_count": null,
+    "source": "akshare Eastmoney limit pools"
+  },
+  "core_stocks": [
+    {
+      "stock_code": "603083",
+      "stock_name": "剑桥科技",
+      "industry": "通信设备",
+      "themes": [
+        "通信设备"
+      ],
+      "change_pct": 10.001592636108398,
+      "amount": 3544718640.0,
+      "turnover_rate": 6.2256340980529785,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "600127",
+      "stock_name": "金健米业",
+      "industry": "农产品加",
+      "themes": [
+        "农产品加"
+      ],
+      "change_pct": 10.0,
+      "amount": 1833838416.0,
+      "turnover_rate": 21.495094299316406,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "600330",
+      "stock_name": "天通股份",
+      "industry": "电子化学",
+      "themes": [
+        "电子化学"
+      ],
+      "change_pct": 10.01523208618164,
+      "amount": 2239423728.0,
+      "turnover_rate": 6.3552165031433105,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "002579",
+      "stock_name": "中京电子",
+      "industry": "元件",
+      "themes": [
+        "元件"
+      ],
+      "change_pct": 10.0,
+      "amount": 1441138160.0,
+      "turnover_rate": 16.242948532104492,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "688001",
+      "stock_name": "华兴源创",
+      "industry": "通用设备",
+      "themes": [
+        "通用设备"
+      ],
+      "change_pct": 20.0,
+      "amount": 1092143568.0,
+      "turnover_rate": 4.096114635467529,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "002436",
+      "stock_name": "兴森科技",
+      "industry": "元件",
+      "themes": [
+        "元件"
+      ],
+      "change_pct": 9.997007369995117,
+      "amount": 3954318624.0,
+      "turnover_rate": 7.24257230758667,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 50
+    },
+    {
+      "stock_code": "603228",
+      "stock_name": "景旺电子",
+      "industry": "元件",
+      "themes": [
+        "元件"
+      ],
+      "change_pct": 9.995847702026367,
+      "amount": 5269098240.0,
+      "turnover_rate": 5.146159648895264,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "301550",
+      "stock_name": "斯菱智驱",
+      "industry": "汽车零部",
+      "themes": [
+        "汽车零部"
+      ],
+      "change_pct": 19.99754524230957,
+      "amount": 1588661872.0,
+      "turnover_rate": 8.123709678649902,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "002916",
+      "stock_name": "深南电路",
+      "industry": "元件",
+      "themes": [
+        "元件"
+      ],
+      "change_pct": 10.0,
+      "amount": 3314184032.0,
+      "turnover_rate": 1.3900041580200195,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "603186",
+      "stock_name": "华正新材",
+      "industry": "元件",
+      "themes": [
+        "元件"
+      ],
+      "change_pct": 10.001773834228516,
+      "amount": 3716928464.0,
+      "turnover_rate": 13.07883358001709,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "603124",
+      "stock_name": "江南新材",
+      "industry": "金属新材",
+      "themes": [
+        "金属新材"
+      ],
+      "change_pct": 9.999160766601562,
+      "amount": 1267317216.0,
+      "turnover_rate": 12.731863975524902,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "600103",
+      "stock_name": "青山纸业",
+      "industry": "造纸",
+      "themes": [
+        "造纸"
+      ],
+      "change_pct": 10.14084529876709,
+      "amount": 1875462400.0,
+      "turnover_rate": 22.27280044555664,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "002980",
+      "stock_name": "华盛昌",
+      "industry": "电网设备",
+      "themes": [
+        "电网设备"
+      ],
+      "change_pct": 10.003725051879883,
+      "amount": 1284638528.0,
+      "turnover_rate": 11.063730239868164,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "002515",
+      "stock_name": "金字火腿",
+      "industry": "食品加工",
+      "themes": [
+        "食品加工"
+      ],
+      "change_pct": 9.97304630279541,
+      "amount": 1385520768.0,
+      "turnover_rate": 15.767118453979492,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "001267",
+      "stock_name": "汇绿生态",
+      "industry": "通信设备",
+      "themes": [
+        "通信设备"
+      ],
+      "change_pct": 10.00284194946289,
+      "amount": 1544601456.0,
+      "turnover_rate": 6.7009758949279785,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "002975",
+      "stock_name": "博杰股份",
+      "industry": "自动化设",
+      "themes": [
+        "自动化设"
+      ],
+      "change_pct": 9.996843338012695,
+      "amount": 1680311664.0,
+      "turnover_rate": 11.897062301635742,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "002484",
+      "stock_name": "江海股份",
+      "industry": "元件",
+      "themes": [
+        "元件"
+      ],
+      "change_pct": 9.99644947052002,
+      "amount": 3662851552.0,
+      "turnover_rate": 7.391320705413818,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "002815",
+      "stock_name": "崇达技术",
+      "industry": "元件",
+      "themes": [
+        "元件"
+      ],
+      "change_pct": 10.034364700317383,
+      "amount": 1334323632.0,
+      "turnover_rate": 10.98912525177002,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "002281",
+      "stock_name": "光迅科技",
+      "industry": "通信设备",
+      "themes": [
+        "通信设备"
+      ],
+      "change_pct": 10.0,
+      "amount": 7691316736.0,
+      "turnover_rate": 5.445681095123291,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "002138",
+      "stock_name": "顺络电子",
+      "industry": "元件",
+      "themes": [
+        "元件"
+      ],
+      "change_pct": 10.00224781036377,
+      "amount": 2008762624.0,
+      "turnover_rate": 5.484105587005615,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "industry": "元件",
+      "themes": [
+        "元件"
+      ],
+      "change_pct": 10.0,
+      "amount": 9613926400.0,
+      "turnover_rate": 4.165695667266846,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "001330",
+      "stock_name": "博纳影业",
+      "industry": "影视院线",
+      "themes": [
+        "影视院线"
+      ],
+      "change_pct": 10.051993370056152,
+      "amount": 1353107680.0,
+      "turnover_rate": 19.115877151489258,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 50
+    },
+    {
+      "stock_code": "001389",
+      "stock_name": "广合科技",
+      "industry": "元件",
+      "themes": [
+        "元件"
+      ],
+      "change_pct": 9.998689651489258,
+      "amount": 1421436896.0,
+      "turnover_rate": 5.720675945281982,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 75,
+      "catch_up_candidate_score": 50
+    },
+    {
+      "stock_code": "605577",
+      "stock_name": "龙版传媒",
+      "industry": "出版",
+      "themes": [
+        "出版"
+      ],
+      "change_pct": 10.03215503692627,
+      "amount": 250953708.0,
+      "turnover_rate": 3.338653564453125,
+      "board_count": 6.0,
+      "limit_status": null,
+      "leader_candidate_score": 70,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "600108",
+      "stock_name": "亚盛集团",
+      "industry": "种植业",
+      "themes": [
+        "种植业"
+      ],
+      "change_pct": 10.091742515563965,
+      "amount": 101633170.0,
+      "turnover_rate": 1.0875449180603027,
+      "board_count": 3.0,
+      "limit_status": null,
+      "leader_candidate_score": 61,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "600865",
+      "stock_name": "百大集团",
+      "industry": "一般零售",
+      "themes": [
+        "一般零售"
+      ],
+      "change_pct": 10.044053077697754,
+      "amount": 220018385.0,
+      "turnover_rate": 4.684093952178955,
+      "board_count": 3.0,
+      "limit_status": null,
+      "leader_candidate_score": 61,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "002403",
+      "stock_name": "爱仕达",
+      "industry": "小家电",
+      "themes": [
+        "小家电"
+      ],
+      "change_pct": 10.017730712890625,
+      "amount": 473560160.0,
+      "turnover_rate": 13.469894409179688,
+      "board_count": 3.0,
+      "limit_status": null,
+      "leader_candidate_score": 61,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "002881",
+      "stock_name": "美格智能",
+      "industry": "通信设备",
+      "themes": [
+        "通信设备"
+      ],
+      "change_pct": 9.99284553527832,
+      "amount": 140164214.0,
+      "turnover_rate": 1.6585546731948853,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "001296",
+      "stock_name": "长江材料",
+      "industry": "非金属材",
+      "themes": [
+        "非金属材"
+      ],
+      "change_pct": 10.0,
+      "amount": 123925208.0,
+      "turnover_rate": 6.9557576179504395,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "603118",
+      "stock_name": "共进股份",
+      "industry": "通信设备",
+      "themes": [
+        "通信设备"
+      ],
+      "change_pct": 10.0246000289917,
+      "amount": 646068512.0,
+      "turnover_rate": 4.64169979095459,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "603826",
+      "stock_name": "坤彩科技",
+      "industry": "非金属材",
+      "themes": [
+        "非金属材"
+      ],
+      "change_pct": 10.0,
+      "amount": 113823699.0,
+      "turnover_rate": 0.7846952080726624,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "600400",
+      "stock_name": "红豆股份",
+      "industry": "服装家纺",
+      "themes": [
+        "服装家纺"
+      ],
+      "change_pct": 10.139860153198242,
+      "amount": 190737079.0,
+      "turnover_rate": 2.7163257598876953,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "002852",
+      "stock_name": "道道全",
+      "industry": "农产品加",
+      "themes": [
+        "农产品加"
+      ],
+      "change_pct": 9.988248825073242,
+      "amount": 141894798.0,
+      "turnover_rate": 5.43849515914917,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "600280",
+      "stock_name": "中央商场",
+      "industry": "一般零售",
+      "themes": [
+        "一般零售"
+      ],
+      "change_pct": 9.935897827148438,
+      "amount": 132823251.0,
+      "turnover_rate": 3.5181844234466553,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "601595",
+      "stock_name": "上海电影",
+      "industry": "影视院线",
+      "themes": [
+        "影视院线"
+      ],
+      "change_pct": 10.026666641235352,
+      "amount": 407571744.0,
+      "turnover_rate": 4.567811489105225,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "603009",
+      "stock_name": "北特科技",
+      "industry": "汽车零部",
+      "themes": [
+        "汽车零部"
+      ],
+      "change_pct": 10.0,
+      "amount": 682690384.0,
+      "turnover_rate": 4.114304065704346,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "603311",
+      "stock_name": "金海高科",
+      "industry": "家电零部",
+      "themes": [
+        "家电零部"
+      ],
+      "change_pct": 10.0,
+      "amount": 133892709.0,
+      "turnover_rate": 1.9911489486694336,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "603286",
+      "stock_name": "日盈电子",
+      "industry": "汽车零部",
+      "themes": [
+        "汽车零部"
+      ],
+      "change_pct": 10.011613845825195,
+      "amount": 307505984.0,
+      "turnover_rate": 5.736274719238281,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "603042",
+      "stock_name": "华脉科技",
+      "industry": "通信设备",
+      "themes": [
+        "通信设备"
+      ],
+      "change_pct": 9.978616714477539,
+      "amount": 166435009.0,
+      "turnover_rate": 5.341314792633057,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "300112",
+      "stock_name": "万讯自控",
+      "industry": "通用设备",
+      "themes": [
+        "通用设备"
+      ],
+      "change_pct": 20.02275276184082,
+      "amount": 388699664.0,
+      "turnover_rate": 15.799373626708984,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "001229",
+      "stock_name": "魅视科技",
+      "industry": "计算机设",
+      "themes": [
+        "计算机设"
+      ],
+      "change_pct": 10.014143943786621,
+      "amount": 181330785.0,
+      "turnover_rate": 6.537440299987793,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "002172",
+      "stock_name": "澳洋健康",
+      "industry": "医疗服务",
+      "themes": [
+        "医疗服务"
+      ],
+      "change_pct": 9.97624683380127,
+      "amount": 544855968.0,
+      "turnover_rate": 16.043054580688477,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 35,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "002902",
+      "stock_name": "铭普光磁",
+      "industry": "通信设备",
+      "themes": [
+        "通信设备"
+      ],
+      "change_pct": 9.995952606201172,
+      "amount": 458622496.0,
+      "turnover_rate": 9.33519172668457,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "603192",
+      "stock_name": "汇得科技",
+      "industry": "化学制品",
+      "themes": [
+        "化学制品"
+      ],
+      "change_pct": 10.005266189575195,
+      "amount": 90171163.0,
+      "turnover_rate": 2.7034807205200195,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "600770",
+      "stock_name": "综艺股份",
+      "industry": "综合Ⅱ",
+      "themes": [
+        "综合Ⅱ"
+      ],
+      "change_pct": 10.039369583129883,
+      "amount": 225266753.0,
+      "turnover_rate": 3.2315609455108643,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 40,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "301516",
+      "stock_name": "中远通",
+      "industry": "其他电源",
+      "themes": [
+        "其他电源"
+      ],
+      "change_pct": 20.0,
+      "amount": 539352640.0,
+      "turnover_rate": 42.203147888183594,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 35,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "603999",
+      "stock_name": "读者传媒",
+      "industry": "出版",
+      "themes": [
+        "出版"
+      ],
+      "change_pct": 9.950248718261719,
+      "amount": 144016950.0,
+      "turnover_rate": 3.922304391860962,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 37,
+      "capacity_candidate_score": 20,
+      "catch_up_candidate_score": 60
+    },
+    {
+      "stock_code": "003040",
+      "stock_name": "楚天龙",
+      "industry": "通信设备",
+      "themes": [
+        "通信设备"
+      ],
+      "change_pct": 8.664772987365723,
+      "amount": 2501505200.0,
+      "turnover_rate": 25.013681411743164,
+      "board_count": null,
+      "limit_status": null,
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "603123",
+      "stock_name": "翠微股份",
+      "industry": "多元金融",
+      "themes": [
+        "多元金融"
+      ],
+      "change_pct": 5.187835693359375,
+      "amount": 1461587200.0,
+      "turnover_rate": 19.38127899169922,
+      "board_count": null,
+      "limit_status": null,
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "601579",
+      "stock_name": "会稽山",
+      "industry": "非白酒",
+      "themes": [
+        "非白酒"
+      ],
+      "change_pct": -1.537183165550232,
+      "amount": 1018704144.0,
+      "turnover_rate": 8.823314666748047,
+      "board_count": null,
+      "limit_status": null,
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "002827",
+      "stock_name": "高争民爆",
+      "industry": "化学制品",
+      "themes": [
+        "化学制品"
+      ],
+      "change_pct": 7.407407283782959,
+      "amount": 1644408816.0,
+      "turnover_rate": 8.69967269897461,
+      "board_count": null,
+      "limit_status": null,
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "603162",
+      "stock_name": "海通发展",
+      "industry": "航运港口",
+      "themes": [
+        "航运港口"
+      ],
+      "change_pct": -3.4836065769195557,
+      "amount": 1550127472.0,
+      "turnover_rate": 25.790664672851562,
+      "board_count": null,
+      "limit_status": null,
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "002124",
+      "stock_name": "天邦食品",
+      "industry": "养殖业",
+      "themes": [
+        "养殖业"
+      ],
+      "change_pct": 4.958677768707275,
+      "amount": 1086084400.0,
+      "turnover_rate": 21.33932113647461,
+      "board_count": null,
+      "limit_status": null,
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "000592",
+      "stock_name": "平潭发展",
+      "industry": "林业Ⅱ",
+      "themes": [
+        "林业Ⅱ"
+      ],
+      "change_pct": 5.073431015014648,
+      "amount": 4169067648.0,
+      "turnover_rate": 27.468835830688477,
+      "board_count": null,
+      "limit_status": null,
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "000876",
+      "stock_name": "新 希 望",
+      "industry": "饲料",
+      "themes": [
+        "饲料"
+      ],
+      "change_pct": 1.5584415197372437,
+      "amount": 1261347616.0,
+      "turnover_rate": 3.5916926860809326,
+      "board_count": null,
+      "limit_status": null,
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "000560",
+      "stock_name": "我爱我家",
+      "industry": null,
+      "themes": [],
+      "change_pct": -0.6349,
+      "amount": 2487272764.6,
+      "turnover_rate": 33.4014,
+      "board_count": null,
+      "limit_status": null,
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "002104",
+      "stock_name": "恒宝股份",
+      "industry": null,
+      "themes": [],
+      "change_pct": -3.7011,
+      "amount": 2302222623.29,
+      "turnover_rate": 27.7545,
+      "board_count": null,
+      "limit_status": null,
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "002354",
+      "stock_name": "天娱数科",
+      "industry": null,
+      "themes": [],
+      "change_pct": -0.2367,
+      "amount": 4321883754.0,
+      "turnover_rate": 31.4298,
+      "board_count": null,
+      "limit_status": null,
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "300189",
+      "stock_name": "神农种业",
+      "industry": null,
+      "themes": [],
+      "change_pct": 9.5035,
+      "amount": 2648848619.22,
+      "turnover_rate": 39.123,
+      "board_count": null,
+      "limit_status": null,
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "600479",
+      "stock_name": "千金药业",
+      "industry": null,
+      "themes": [],
+      "change_pct": 5.3992,
+      "amount": 1494441366.0,
+      "turnover_rate": 25.8903,
+      "board_count": null,
+      "limit_status": null,
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "600722",
+      "stock_name": "金牛化工",
+      "industry": null,
+      "themes": [],
+      "change_pct": 4.4767,
+      "amount": 2517489607.0,
+      "turnover_rate": 21.4214,
+      "board_count": null,
+      "limit_status": null,
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "industry": null,
+      "themes": [],
+      "change_pct": 16.0982,
+      "amount": 9004888392.0,
+      "turnover_rate": 4.5893,
+      "board_count": null,
+      "limit_status": null,
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "688795",
+      "stock_name": "摩尔线程",
+      "industry": null,
+      "themes": [],
+      "change_pct": -19.9981,
+      "amount": 3467342041.0,
+      "turnover_rate": 14.7181,
+      "board_count": null,
+      "limit_status": null,
+      "leader_candidate_score": 10,
+      "capacity_candidate_score": 60,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "600354",
+      "stock_name": "敦煌种业",
+      "industry": "种植业",
+      "themes": [
+        "种植业"
+      ],
+      "change_pct": 10.046189308166504,
+      "amount": 569165440.0,
+      "turnover_rate": 11.50738525390625,
+      "board_count": 2.0,
+      "limit_status": null,
+      "leader_candidate_score": 59,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "000428",
+      "stock_name": "华天酒店",
+      "industry": "酒店餐饮",
+      "themes": [
+        "酒店餐饮"
+      ],
+      "change_pct": 10.021322250366211,
+      "amount": 517332416.0,
+      "turnover_rate": 10.144680976867676,
+      "board_count": 2.0,
+      "limit_status": null,
+      "leader_candidate_score": 59,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "601949",
+      "stock_name": "中国出版",
+      "industry": "出版",
+      "themes": [
+        "出版"
+      ],
+      "change_pct": 9.948541641235352,
+      "amount": 794651248.0,
+      "turnover_rate": 6.805038928985596,
+      "board_count": 2.0,
+      "limit_status": null,
+      "leader_candidate_score": 59,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 0
+    },
+    {
+      "stock_code": "601086",
+      "stock_name": "国芳集团",
+      "industry": "一般零售",
+      "themes": [
+        "一般零售"
+      ],
+      "change_pct": 10.039525032043457,
+      "amount": 808732960.0,
+      "turnover_rate": 8.878472328186035,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "603626",
+      "stock_name": "科森科技",
+      "industry": "消费电子",
+      "themes": [
+        "消费电子"
+      ],
+      "change_pct": 9.983268737792969,
+      "amount": 596844336.0,
+      "turnover_rate": 5.506383895874023,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 45
+    },
+    {
+      "stock_code": "603823",
+      "stock_name": "百合花",
+      "industry": "化学制品",
+      "themes": [
+        "化学制品"
+      ],
+      "change_pct": 10.00758171081543,
+      "amount": 777548480.0,
+      "turnover_rate": 3.2666852474212646,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 45
+    },
+    {
+      "stock_code": "000823",
+      "stock_name": "超声电子",
+      "industry": "元件",
+      "themes": [
+        "元件"
+      ],
+      "change_pct": 10.006901741027832,
+      "amount": 833771184.0,
+      "turnover_rate": 8.924453735351562,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "688655",
+      "stock_name": "迅捷兴",
+      "industry": "元件",
+      "themes": [
+        "元件"
+      ],
+      "change_pct": 20.0,
+      "amount": 620997216.0,
+      "turnover_rate": 9.566338539123535,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 45
+    },
+    {
+      "stock_code": "603119",
+      "stock_name": "浙江荣泰",
+      "industry": "汽车零部",
+      "themes": [
+        "汽车零部"
+      ],
+      "change_pct": 10.010649681091309,
+      "amount": 641019312.0,
+      "turnover_rate": 2.6655185222625732,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 45
+    },
+    {
+      "stock_code": "002708",
+      "stock_name": "光洋股份",
+      "industry": "汽车零部",
+      "themes": [
+        "汽车零部"
+      ],
+      "change_pct": 10.019646644592285,
+      "amount": 932054976.0,
+      "turnover_rate": 11.164031028747559,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "002011",
+      "stock_name": "盾安环境",
+      "industry": "家电零部",
+      "themes": [
+        "家电零部"
+      ],
+      "change_pct": 10.046082496643066,
+      "amount": 976147552.0,
+      "turnover_rate": 7.8355841636657715,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "002470",
+      "stock_name": "金正大",
+      "industry": "农化制品",
+      "themes": [
+        "农化制品"
+      ],
+      "change_pct": 10.047846794128418,
+      "amount": 790310928.0,
+      "turnover_rate": 10.754615783691406,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 45
+    },
+    {
+      "stock_code": "600540",
+      "stock_name": "新赛股份",
+      "industry": "种植业",
+      "themes": [
+        "种植业"
+      ],
+      "change_pct": 9.983633041381836,
+      "amount": 1194789392.0,
+      "turnover_rate": 31.838756561279297,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "603936",
+      "stock_name": "博敏电子",
+      "industry": "元件",
+      "themes": [
+        "元件"
+      ],
+      "change_pct": 10.012516021728516,
+      "amount": 875514368.0,
+      "turnover_rate": 8.113296508789062,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 35
+    },
+    {
+      "stock_code": "002957",
+      "stock_name": "科瑞技术",
+      "industry": "自动化设",
+      "themes": [
+        "自动化设"
+      ],
+      "change_pct": 10.0,
+      "amount": 805040608.0,
+      "turnover_rate": 4.825397968292236,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 50
+    },
+    {
+      "stock_code": "600345",
+      "stock_name": "长江通信",
+      "industry": "通信设备",
+      "themes": [
+        "通信设备"
+      ],
+      "change_pct": 10.00214672088623,
+      "amount": 761110336.0,
+      "turnover_rate": 7.264745712280273,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 45
+    },
+    {
+      "stock_code": "002290",
+      "stock_name": "禾盛新材",
+      "industry": "家电零部",
+      "themes": [
+        "家电零部"
+      ],
+      "change_pct": 10.00646686553955,
+      "amount": 802481824.0,
+      "turnover_rate": 4.901206970214844,
+      "board_count": 1.0,
+      "limit_status": null,
+      "leader_candidate_score": 47,
+      "capacity_candidate_score": 55,
+      "catch_up_candidate_score": 35
+    }
+  ],
+  "important_announcements": [
+    {
+      "stock_code": "002403",
+      "stock_name": "爱仕达",
+      "title": "股票交易异常波动公告",
+      "raw_title": "股票交易异常波动公告",
+      "normalized_title": "股票交易异常波动公告",
+      "published_at": "2026-09-07T00:00:00+08:00",
+      "source": "巨潮资讯",
+      "source_type": "official",
+      "is_official": true,
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-07/1225549782.PDF",
+      "category": "risk_warning",
+      "summary": "股票交易异常波动公告",
+      "confirmed_fact": "股票交易异常波动公告",
+      "evidence_level": "A",
+      "primary_source": "巨潮资讯",
+      "supplemental_sources": [],
+      "contract_amount": null,
+      "customer_name": null,
+      "contract_period": null,
+      "revenue_ratio_if_disclosed": null,
+      "profit_impact_if_disclosed": null,
+      "uncertainty_flag": false,
+      "revenue": null,
+      "revenue_yoy": null,
+      "net_profit": null,
+      "net_profit_yoy": null,
+      "guidance_low": null,
+      "guidance_high": null,
+      "clarification_flags": [],
+      "risk_flags": [
+        "异常波动"
+      ],
+      "data_date": "2026-09-07",
+      "retrieved_at": "2026-09-08T14:48:19.449351+00:00"
+    }
+  ],
+  "risk_announcements": [
+    {
+      "stock_code": "002403",
+      "stock_name": "爱仕达",
+      "title": "股票交易异常波动公告",
+      "raw_title": "股票交易异常波动公告",
+      "normalized_title": "股票交易异常波动公告",
+      "published_at": "2026-09-07T00:00:00+08:00",
+      "source": "巨潮资讯",
+      "source_type": "official",
+      "is_official": true,
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-07/1225549782.PDF",
+      "category": "risk_warning",
+      "summary": "股票交易异常波动公告",
+      "confirmed_fact": "股票交易异常波动公告",
+      "evidence_level": "A",
+      "primary_source": "巨潮资讯",
+      "supplemental_sources": [],
+      "contract_amount": null,
+      "customer_name": null,
+      "contract_period": null,
+      "revenue_ratio_if_disclosed": null,
+      "profit_impact_if_disclosed": null,
+      "uncertainty_flag": false,
+      "revenue": null,
+      "revenue_yoy": null,
+      "net_profit": null,
+      "net_profit_yoy": null,
+      "guidance_low": null,
+      "guidance_high": null,
+      "clarification_flags": [],
+      "risk_flags": [
+        "异常波动"
+      ],
+      "data_date": "2026-09-07",
+      "retrieved_at": "2026-09-08T14:48:19.449351+00:00"
+    }
+  ],
+  "official_policies": [],
+  "previous_review": {
+    "source_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\json\\reviews\\2026-09-02-dashboard-review.json",
+    "date": "2026-09-02",
+    "themes": [
+      {
+        "name": "军工装备",
+        "score": 70,
+        "rating": "A",
+        "stage": "验证期"
+      },
+      {
+        "name": "航空装备",
+        "score": 60,
+        "rating": "B",
+        "stage": "验证期"
+      },
+      {
+        "name": "玻璃玻纤",
+        "score": 52,
+        "rating": "C",
+        "stage": "发酵期"
+      },
+      {
+        "name": "培育钻石",
+        "score": 43,
+        "rating": "D",
+        "stage": "朦胧期"
+      },
+      {
+        "name": "农业回落",
+        "score": 25,
+        "rating": "D",
+        "stage": "兑现期"
+      }
+    ],
+    "stocks": [
+      {
+        "code": "301357",
+        "name": "北方长龙",
+        "theme": "军工装备",
+        "role": "龙头"
+      },
+      {
+        "code": "601606",
+        "name": "长城军工",
+        "theme": "军工装备",
+        "role": "中军"
+      },
+      {
+        "code": "600967",
+        "name": "内蒙一机",
+        "theme": "军工装备",
+        "role": "情绪股"
+      },
+      {
+        "code": "605006",
+        "name": "山东玻纤",
+        "theme": "玻璃玻纤",
+        "role": "龙头"
+      },
+      {
+        "code": "600354",
+        "name": "敦煌种业",
+        "theme": "农业回落",
+        "role": "情绪股"
+      }
+    ]
+  },
+  "tomorrow_check_context": {
+    "source_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\json\\reviews\\2026-09-02-dashboard-review.json",
+    "checks": [
+      {
+        "entity_type": "market",
+        "entity_key": "2026-09-02",
+        "check_type": "breadth_repair",
+        "description": "9月3日上涨家数能否回到3000家以上，确认是否从退潮转修复。"
+      },
+      {
+        "entity_type": "theme",
+        "entity_key": "军工装备",
+        "check_type": "theme_persistence",
+        "description": "军工装备能否继续出现连板晋级和板块扩散，而不是一日轮动。"
+      },
+      {
+        "entity_type": "theme",
+        "entity_key": "农业回落",
+        "check_type": "loss_feedback",
+        "description": "农业方向跌停股是否继续负反馈，判断亏钱效应是否扩散。"
+      }
+    ],
+    "changes_vs_previous_day": {
+      "new": [
+        "培育钻石"
+      ],
+      "strengthened": [
+        "军工装备",
+        "航空装备"
+      ],
+      "weakened": [
+        "农业回落"
+      ],
+      "expanded": [
+        "玻璃玻纤"
+      ],
+      "realized": [],
+      "invalidated": []
+    }
+  },
+  "data_quality": {
+    "status": "PARTIAL",
+    "score": 68,
+    "domains": {
+      "market_core": {
+        "score": 100,
+        "weight": 35,
+        "status": "PASS"
+      },
+      "sector_theme": {
+        "score": 0,
+        "weight": 20,
+        "status": "UNAVAILABLE"
+      },
+      "announcements": {
+        "score": 100,
+        "weight": 15,
+        "status": "PASS"
+      },
+      "policies": {
+        "score": 55,
+        "weight": 15,
+        "status": "FAIL"
+      },
+      "capital_flow": {
+        "score": 50,
+        "weight": 10,
+        "status": "FAIL"
+      },
+      "continuity_audit": {
+        "score": 100,
+        "weight": 5,
+        "status": "PASS"
+      }
+    },
+    "sources": [
+      {
+        "source": "akshare.stock_zt_pool_em",
+        "dataset": "limit_up",
+        "quality": "PASS"
+      },
+      {
+        "source": "akshare.stock_zt_pool_zbgc_em",
+        "dataset": "failed_limit",
+        "quality": "PASS"
+      },
+      {
+        "source": "akshare.stock_zt_pool_dtgc_em",
+        "dataset": "limit_down",
+        "quality": "PASS"
+      },
+      {
+        "source": "akshare.stock_zt_pool_previous_em",
+        "dataset": "previous_limit",
+        "quality": "PASS"
+      },
+      {
+        "source": "akshare.stock_lhb_detail_em",
+        "dataset": "dragon_tiger_daily",
+        "quality": "PASS"
+      },
+      {
+        "source": "akshare.stock_hsgt_hist_em",
+        "dataset": "northbound_hist",
+        "quality": "PASS"
+      },
+      {
+        "source": "akshare.stock_hsgt_fund_flow_summary_em",
+        "dataset": "hsgt_summary",
+        "quality": "PASS"
+      },
+      {
+        "source": "sse.official.queryMargin",
+        "dataset": "sse_margin",
+        "quality": "PASS"
+      },
+      {
+        "source": "szse.official.ShowReport",
+        "dataset": "szse_margin",
+        "quality": "PASS"
+      },
+      {
+        "source": "akshare.stock_margin_detail_szse",
+        "dataset": "szse_margin_detail",
+        "quality": "PASS"
+      },
+      {
+        "source": "akshare.stock_fund_flow_industry",
+        "dataset": "industry_fund_flow_current",
+        "quality": "PASS"
+      },
+      {
+        "source": "akshare.stock_fund_flow_concept",
+        "dataset": "concept_fund_flow_current",
+        "quality": "PASS"
+      },
+      {
+        "source": "project_root.env",
+        "dataset": "tushare_credential",
+        "quality": "PASS"
+      },
+      {
+        "source": "tushare.trade_cal",
+        "dataset": "tushare_trade_cal",
+        "quality": "PASS"
+      },
+      {
+        "source": "tushare.stock_basic",
+        "dataset": "tushare_stock_basic",
+        "quality": "PASS"
+      },
+      {
+        "source": "tushare.daily",
+        "dataset": "tushare_daily_all",
+        "quality": "PASS"
+      },
+      {
+        "source": "tushare.daily",
+        "dataset": "tushare_previous_daily_all",
+        "quality": "PASS"
+      },
+      {
+        "source": "tushare.daily_basic",
+        "dataset": "tushare_daily_basic_all",
+        "quality": "UNAVAILABLE"
+      },
+      {
+        "source": "tushare.adj_factor",
+        "dataset": "tushare_adj_factor_all",
+        "quality": "UNAVAILABLE"
+      },
+      {
+        "source": "tushare.daily",
+        "dataset": "stock_top_ohlcv",
+        "quality": "PASS"
+      },
+      {
+        "source": "eastmoney.industry_snapshot",
+        "dataset": "industry_board_daily",
+        "quality": "UNAVAILABLE"
+      },
+      {
+        "source": "eastmoney.concept_snapshot",
+        "dataset": "concept_board_daily",
+        "quality": "UNAVAILABLE"
+      },
+      {
+        "source": "announcement_collector.cninfo_exchange_ir",
+        "dataset": "official_announcements",
+        "quality": "PASS"
+      },
+      {
+        "source": "announcement_collector",
+        "dataset": "official_announcements_meta",
+        "quality": "PASS"
+      },
+      {
+        "source": "policy_collector.official_sources",
+        "dataset": "official_policies",
+        "quality": "PARTIAL"
+      },
+      {
+        "source": "policy_collector",
+        "dataset": "official_policies_meta",
+        "quality": "PARTIAL"
+      },
+      {
+        "source": "akshare.stock_zh_index_daily",
+        "dataset": "index_000001.SH",
+        "quality": "PASS"
+      },
+      {
+        "source": "akshare.stock_zh_index_daily",
+        "dataset": "index_399001.SZ",
+        "quality": "PASS"
+      },
+      {
+        "source": "akshare.stock_zh_index_daily",
+        "dataset": "index_399006.SZ",
+        "quality": "PASS"
+      },
+      {
+        "source": "akshare.stock_zh_index_daily",
+        "dataset": "index_000688.SH",
+        "quality": "PASS"
+      },
+      {
+        "source": "akshare.stock_zh_index_daily",
+        "dataset": "index_899050.BJ",
+        "quality": "PASS"
+      }
+    ],
+    "missing": [
+      "industries",
+      "northbound",
+      "themes"
+    ],
+    "conflicts": [],
+    "unavailable": [
+      "行业数据",
+      "题材数据",
+      "北向资金"
+    ],
+    "partial": [
+      "政策"
+    ]
+  }
+}

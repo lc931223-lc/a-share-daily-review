@@ -1,10 +1,10 @@
 {
   "meta": {
     "schema_version": "integrated_correction.1",
-    "prediction_date": "2026-09-04",
-    "status": "ERRORS_RECORDED"
+    "prediction_date": "2026-09-08",
+    "status": "WAITING_FOR_REVIEW"
   },
-  "review_status": "PARTIAL_REVIEW",
+  "review_status": "WAITING_FOR_VALIDATION",
   "registered_error_types": [
     "DATA_LIMITATION"
   ],

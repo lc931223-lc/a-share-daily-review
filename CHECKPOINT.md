@@ -1,5 +1,17 @@
 # Checkpoint
 
+## 2026-09-08 Daily Close Production Orchestrator
+
+Task: Connect the existing research artifacts into one recoverable daily close chain without adding another research model.
+
+- Added the single production entry `tools/run_daily_close_pipeline.py`, real-calendar and 15:15 Asia/Shanghai gates, ordered backfill, retry, strict artifact reuse, source-date/provenance/schema/SHA checks, and daily machine-readable manifests.
+- Added automatic Feedback forward advancement, including WAITING rescans and idempotent prediction/validation/review/correction persistence.
+- Added objective formal-review support and a separately importable `formal_review.3` schema with all 41 factors, evidence tiers, explainable score components, lifecycle candidates, Capital Preference-backed role projections, and previous-day validation. Codex still does not create final review conclusions.
+- Review Context now accepts Auction only as an optional same-date enhancement and accepts prior formal history only from the exact previous trading day; missing or simulated records remain unavailable and never fall back to an older date.
+- Added `.github/workflows/daily-close.yml` for scheduled and manual execution, bounded retries, diagnostics upload, and generated-artifact persistence. Credentials are referenced only through GitHub Secrets.
+- Real sequential runs completed for 2026-09-07 and 2026-09-08. Both are honestly PARTIAL; core daily rows passed, while unavailable or failed optional sources remain explicit.
+- Verification: `compileall` passed; the complete non-real-data suite passed with `282 passed, 1 deselected`.
+
 ## 2026-09-08 Auction 9:25 Audit And Remediation
 
 Task: Audit and remediate the production chain from the exact previous trading-day formal review through continuous auction snapshots, traceable scoring, quality gates, and 09:30-10:00 validation.

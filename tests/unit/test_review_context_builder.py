@@ -3,12 +3,23 @@ from datetime import date
 
 import pytest
 
+from src.market_packet.trading_calendar import TradingCalendarDay
 from src.review_context.builder import ReviewContextBuilder
 
 
 def _write(path, payload):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload), encoding="utf-8")
+
+
+def _builder(root):
+    return ReviewContextBuilder(
+        root,
+        calendar_loader=lambda _: [
+            TradingCalendarDay(date(2026, 9, 3), True),
+            TradingCalendarDay(date(2026, 9, 4), True),
+        ],
+    )
 
 
 def _inputs(root, *, market_date="2026-09-04"):
@@ -42,7 +53,7 @@ def _inputs(root, *, market_date="2026-09-04"):
 
 def test_context_contains_all_objective_sections(tmp_path):
     _inputs(tmp_path)
-    result = ReviewContextBuilder(tmp_path).build(date(2026, 9, 4))
+    result = _builder(tmp_path).build(date(2026, 9, 4))
     required = {"market_environment", "next_day_theme_candidates", "medium_term_structure_candidates",
         "market_cycle_and_style", "core_theme_roles", "inflection_candidates",
         "previous_hypothesis_validation", "next_day_plan", "capital_preference",
@@ -58,19 +69,47 @@ def test_context_contains_all_objective_sections(tmp_path):
 def test_mismatched_current_input_date_is_rejected(tmp_path):
     _inputs(tmp_path, market_date="2026-09-03")
     with pytest.raises(ValueError, match="date mismatch"):
-        ReviewContextBuilder(tmp_path).build(date(2026, 9, 4))
+        _builder(tmp_path).build(date(2026, 9, 4))
 
 
 def test_same_day_official_review_is_not_loaded_as_history(tmp_path):
     _inputs(tmp_path)
     _write(tmp_path / "data/official_reviews/2026-09-04.json", {"date": "2026-09-04", "main_themes": ["future"]})
-    result = ReviewContextBuilder(tmp_path).build(date(2026, 9, 4))
-    assert result["packet"]["source_manifest"]["prior_official_review"]["status"] == "FALLBACK_EMBEDDED_HISTORY"
+    result = _builder(tmp_path).build(date(2026, 9, 4))
+    source = result["packet"]["source_manifest"]["prior_official_review"]
+    assert source["status"] == "UNAVAILABLE"
+    assert source["expected_date"] == "2026-09-03"
+
+
+def test_only_exact_previous_trading_day_review_is_loaded(tmp_path):
+    _inputs(tmp_path)
+    _write(tmp_path / "data/official_reviews/2026-09-02.json", {"date": "2026-09-02"})
+    result = _builder(tmp_path).build(date(2026, 9, 4))
+    assert result["packet"]["source_manifest"]["prior_official_review"]["status"] == "UNAVAILABLE"
+    _write(tmp_path / "data/formal_reviews/2026-09-03.json", {"date": "2026-09-03"})
+    result = _builder(tmp_path).build(date(2026, 9, 4))
+    source = result["packet"]["source_manifest"]["prior_official_review"]
+    assert source["status"] == "AVAILABLE"
+    assert source["data_date"] == "2026-09-03"
+
+
+def test_exact_previous_simulated_review_is_rejected_without_older_fallback(tmp_path):
+    _inputs(tmp_path)
+    _write(tmp_path / "data/official_reviews/2026-09-02.json", {"date": "2026-09-02"})
+    _write(
+        tmp_path / "data/official_reviews/2026-09-03.json",
+        {"date": "2026-09-03", "market_commentary": ["模拟 ChatGPT 输出"]},
+    )
+    source = _builder(tmp_path).build(date(2026, 9, 4))["packet"]["source_manifest"][
+        "prior_official_review"
+    ]
+    assert source["status"] == "SIMULATED_REVIEW_REJECTED"
+    assert source["expected_date"] == "2026-09-03"
 
 
 def test_output_contains_no_prohibited_final_conclusions(tmp_path):
     _inputs(tmp_path)
-    packet = ReviewContextBuilder(tmp_path).build(date(2026, 9, 4))["packet"]
+    packet = _builder(tmp_path).build(date(2026, 9, 4))["packet"]
     text = json.dumps(packet, ensure_ascii=False)
     for phrase in ("应该买入", "建议仓位", "确定龙头", "确定主线", "股票推荐", "最终评级"):
         assert phrase not in text

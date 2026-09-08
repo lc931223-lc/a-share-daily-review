@@ -1,0 +1,2530 @@
+{
+  "meta": {
+    "schema_version": "integrated_prediction.1",
+    "prediction_date": "2026-09-08",
+    "status": "OBJECTIVE_CONTEXT_ONLY",
+    "source_review": "review_context:99f171e9467ac2b2",
+    "official_review_kind": "UNAVAILABLE",
+    "final_judgement_owner": "chatgpt",
+    "new_analysis_generated": false
+  },
+  "source_manifest": {
+    "review_context": {
+      "trade_date": "2026-09-08",
+      "path": "data/review_context/2026-09-08.json"
+    }
+  },
+  "market_baseline": {
+    "market_overview": {
+      "trade_date": "2026-09-08",
+      "is_trading_day": true,
+      "market_closed": true,
+      "indices": {
+        "上证指数": {
+          "name": "上证指数",
+          "ts_code": "000001.SH",
+          "close": 3940.551,
+          "change_pct": null,
+          "open": 3935.548,
+          "high": 3951.322,
+          "low": 3925.72,
+          "volume": 52999268800.0,
+          "amount": null,
+          "source": "akshare.stock_zh_index_daily",
+          "quality": "PASS"
+        },
+        "深证成指": {
+          "name": "深证成指",
+          "ts_code": "399001.SZ",
+          "close": 13703.208,
+          "change_pct": null,
+          "open": 13782.861,
+          "high": 13843.923,
+          "low": 13655.835,
+          "volume": 64427550432.0,
+          "amount": null,
+          "source": "akshare.stock_zh_index_daily",
+          "quality": "PASS"
+        },
+        "创业板指": {
+          "name": "创业板指",
+          "ts_code": "399006.SZ",
+          "close": 3359.716,
+          "change_pct": null,
+          "open": 3394.346,
+          "high": 3418.485,
+          "low": 3346.714,
+          "volume": 16708357667.0,
+          "amount": null,
+          "source": "akshare.stock_zh_index_daily",
+          "quality": "PASS"
+        },
+        "科创50": {
+          "name": "科创50",
+          "ts_code": "000688.SH",
+          "close": 1590.995,
+          "change_pct": null,
+          "open": 1614.188,
+          "high": 1624.688,
+          "low": 1585.124,
+          "volume": 675919200.0,
+          "amount": null,
+          "source": "akshare.stock_zh_index_daily",
+          "quality": "PASS"
+        },
+        "北证50": {
+          "name": "北证50",
+          "ts_code": "899050.BJ",
+          "close": 1086.254,
+          "change_pct": null,
+          "open": 1096.438,
+          "high": 1096.923,
+          "low": 1081.977,
+          "volume": 938594861.0,
+          "amount": null,
+          "source": "akshare.stock_zh_index_daily",
+          "quality": "PASS"
+        }
+      },
+      "sh_sz_turnover": null,
+      "total_market_turnover": 1978217126610.82,
+      "previous_turnover": 2051048681166.63,
+      "turnover_delta": -72831554555.81,
+      "turnover_delta_pct": -3.55,
+      "rise_count": 3417,
+      "fall_count": 2026,
+      "flat_count": 106,
+      "limit_up_count": 73,
+      "limit_down_count": null,
+      "failed_limit_count": 37,
+      "seal_rate": 66.36,
+      "highest_board": 4.0,
+      "previous_limit_up_avg_change_pct": 2.89,
+      "previous_continuous_board_performance": {
+        "count": 13,
+        "avg_change_pct": 6.62,
+        "red_rate": 92.31
+      },
+      "st_limit_up_count": 0,
+      "st_limit_down_count": null
+    },
+    "market_breadth": {
+      "rise_count": 3417,
+      "fall_count": 2026,
+      "flat_count": 106,
+      "source": "tushare.daily",
+      "quality": "PASS"
+    },
+    "liquidity": {
+      "sh_sz_turnover": null,
+      "total_market_turnover": 1978217126610.82,
+      "previous_turnover": 2051048681166.63,
+      "turnover_delta": -72831554555.81,
+      "turnover_delta_pct": -3.55,
+      "source": "tushare.daily amount sum; index amount when available"
+    },
+    "limit_up_down": {
+      "limit_up_count": 73,
+      "limit_down_count": null,
+      "failed_limit_count": 37,
+      "failed_limit_rate": 33.64,
+      "seal_rate": 66.36,
+      "highest_board": 4.0,
+      "second_board_count": 12,
+      "third_board_count": 3,
+      "fourth_board_count": 3,
+      "five_plus_board_count": 0,
+      "promotion_rate": null,
+      "previous_limit_up_performance": {
+        "count": 93,
+        "avg_change_pct": 2.89,
+        "high_open_rate": null,
+        "red_rate": 64.52,
+        "limit_up_rate": 20.43,
+        "limit_down_rate": 0.0
+      },
+      "twenty_cm_limit_up_count": 2,
+      "bse_limit_up_count": 1,
+      "large_loss_count": null,
+      "sky_floor_count": null,
+      "floor_sky_count": null,
+      "source": "akshare Eastmoney limit pools"
+    }
+  },
+  "official_review": {
+    "record_kind": "UNAVAILABLE"
+  },
+  "review_intelligence": {},
+  "inflection": {
+    "candidates": [
+      {
+        "ts_code": "601086.SH",
+        "stock_name": "国芳集团",
+        "industry": "一般零售",
+        "themes": [
+          "一般零售"
+        ],
+        "status_candidate": "INFLECTION_CANDIDATE",
+        "trend_score": 56,
+        "score_change_1d": 0.0,
+        "score_change_5d": null,
+        "chip_health": {
+          "ts_code": "601086.SH",
+          "stock_name": "国芳集团",
+          "pullback_volume_ratio": null,
+          "amount_percentile": 100.0,
+          "turnover_percentile": null,
+          "volatility_percentile": 100.0,
+          "upper_shadow_frequency": 0.05,
+          "large_negative_frequency": 0.0,
+          "breakout_hold": "BREAKOUT_HELD",
+          "catalyst_price_response": null,
+          "chip_health_feature_score": 8.0,
+          "chip_health_change": 0.0,
+          "chip_health_change_1d": 0.0,
+          "chip_health_change_5d": null,
+          "chip_health_change_20d": null,
+          "available_feature_count": 4,
+          "risk_flags": []
+        },
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 10.258,
+          "wma10": 8.776,
+          "wma20": 8.295,
+          "slope_wma20": 0.050000000000000044
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的7.18倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "605577.SH",
+        "stock_name": "龙版传媒",
+        "industry": "出版",
+        "themes": [
+          "出版"
+        ],
+        "status_candidate": "INFLECTION_CANDIDATE",
+        "trend_score": 54,
+        "score_change_1d": 4.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 12.668000000000001,
+          "wma10": 11.001000000000001,
+          "wma20": 10.681000000000001,
+          "slope_wma20": 0.0019229867267014367
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的7.82倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "603991.SH",
+        "stock_name": "领先股份",
+        "industry": null,
+        "themes": [],
+        "status_candidate": "INFLECTION_CANDIDATE",
+        "trend_score": 54,
+        "score_change_1d": 0.0,
+        "score_change_5d": null,
+        "chip_health": {
+          "ts_code": "603991.SH",
+          "stock_name": "领先股份",
+          "pullback_volume_ratio": null,
+          "amount_percentile": 90.83333333333333,
+          "turnover_percentile": null,
+          "volatility_percentile": 19.166666666666668,
+          "upper_shadow_frequency": 0.0,
+          "large_negative_frequency": 0.0,
+          "breakout_hold": "BREAKOUT_HELD",
+          "catalyst_price_response": null,
+          "chip_health_feature_score": 8.0,
+          "chip_health_change": 0.0,
+          "chip_health_change_1d": 0.0,
+          "chip_health_change_5d": null,
+          "chip_health_change_20d": null,
+          "available_feature_count": 4,
+          "risk_flags": []
+        },
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 148.142,
+          "wma10": 140.529,
+          "wma20": 131.2855,
+          "slope_wma20": 0.08703446105949975
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的2.90倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "603228.SH",
+        "stock_name": "景旺电子",
+        "industry": "元件",
+        "themes": [
+          "元件"
+        ],
+        "status_candidate": "INFLECTION_CANDIDATE",
+        "trend_score": 52,
+        "score_change_1d": 7.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 98.01200000000001,
+          "wma10": 87.406,
+          "wma20": 81.0965,
+          "slope_wma20": 0.12910030073513035
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的1.59倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "600857.SH",
+        "stock_name": "宁波中百",
+        "industry": "一般零售",
+        "themes": [
+          "一般零售"
+        ],
+        "status_candidate": "INFLECTION_CANDIDATE",
+        "trend_score": 52,
+        "score_change_1d": 0.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 20.985999999999997,
+          "wma10": 19.393,
+          "wma20": 17.47,
+          "slope_wma20": 0.14877527535755375
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的2.17倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "920895.BJ",
+        "stock_name": "花溪科技",
+        "industry": null,
+        "themes": [],
+        "status_candidate": "INFLECTION_CANDIDATE",
+        "trend_score": 51,
+        "score_change_1d": 14.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 20.736,
+          "wma10": 16.34,
+          "wma20": 15.241499999999998,
+          "slope_wma20": 0.07243878412609073
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的2.99倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "000428.SZ",
+        "stock_name": "华天酒店",
+        "industry": "酒店餐饮",
+        "themes": [
+          "酒店餐饮"
+        ],
+        "status_candidate": "INFLECTION_CANDIDATE",
+        "trend_score": 51,
+        "score_change_1d": 4.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 4.554,
+          "wma10": 4.016,
+          "wma20": 3.757,
+          "slope_wma20": 0.04622667780562506
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的3.30倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "600479.SH",
+        "stock_name": "千金药业",
+        "industry": "中药Ⅱ",
+        "themes": [
+          "中药Ⅱ"
+        ],
+        "status_candidate": "INFLECTION_CANDIDATE",
+        "trend_score": 50,
+        "score_change_1d": 14.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 12.209999999999999,
+          "wma10": 10.946000000000002,
+          "wma20": 10.5355,
+          "slope_wma20": 0.04080019757964948
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的2.95倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "000626.SZ",
+        "stock_name": "远大控股",
+        "industry": "商贸代理",
+        "themes": [],
+        "status_candidate": "INFLECTION_CANDIDATE",
+        "trend_score": 50,
+        "score_change_1d": 3.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_120D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 9.018,
+          "wma10": 7.899000000000001,
+          "wma20": 7.8534999999999995,
+          "slope_wma20": 0.02345735322864395
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的2.15倍",
+          "收盘价形成BREAKOUT_120D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "002349.SZ",
+        "stock_name": "精华制药",
+        "industry": "中药Ⅱ",
+        "themes": [
+          "中药Ⅱ"
+        ],
+        "status_candidate": "INFLECTION_WATCH",
+        "trend_score": 49,
+        "score_change_1d": 32.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 7.608,
+          "wma10": 7.142,
+          "wma20": 6.988499999999999,
+          "slope_wma20": 0.006988472622478259
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的2.51倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "300939.SZ",
+        "stock_name": "秋田微",
+        "industry": "元器件",
+        "themes": [],
+        "status_candidate": "INFLECTION_WATCH",
+        "trend_score": 49,
+        "score_change_1d": 28.0,
+        "score_change_5d": null,
+        "chip_health": {
+          "ts_code": "300939.SZ",
+          "stock_name": "秋田微",
+          "pullback_volume_ratio": null,
+          "amount_percentile": 80.0,
+          "turnover_percentile": null,
+          "volatility_percentile": 25.0,
+          "upper_shadow_frequency": 0.05,
+          "large_negative_frequency": 0.0,
+          "breakout_hold": "BREAKOUT_HELD",
+          "catalyst_price_response": null,
+          "chip_health_feature_score": 8.0,
+          "chip_health_change": null,
+          "chip_health_change_1d": null,
+          "chip_health_change_5d": null,
+          "chip_health_change_20d": null,
+          "available_feature_count": 4,
+          "risk_flags": []
+        },
+        "breakout": {
+          "type": "BREAKOUT_60D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 66.36800000000001,
+          "wma10": 59.435,
+          "wma20": 58.275999999999996,
+          "slope_wma20": 0.13313500165276415
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的2.47倍",
+          "收盘价形成BREAKOUT_60D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "600359.SH",
+        "stock_name": "新农开发",
+        "industry": "种植业",
+        "themes": [],
+        "status_candidate": "INFLECTION_WATCH",
+        "trend_score": 49,
+        "score_change_1d": 8.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_120D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 7.114,
+          "wma10": 6.456,
+          "wma20": 6.5135000000000005,
+          "slope_wma20": 0.005247318465931183
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的2.20倍",
+          "收盘价形成BREAKOUT_120D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "601949.SH",
+        "stock_name": "中国出版",
+        "industry": "出版",
+        "themes": [
+          "出版"
+        ],
+        "status_candidate": "INFLECTION_WATCH",
+        "trend_score": 49,
+        "score_change_1d": 7.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_120D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_26W",
+          "wma5": 5.672000000000001,
+          "wma10": 5.388,
+          "wma20": 5.3295,
+          "slope_wma20": -0.027108433734939763
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的3.32倍",
+          "收盘价形成BREAKOUT_120D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_26W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "688293.SH",
+        "stock_name": "奥浦迈",
+        "industry": "生物制品",
+        "themes": [
+          "生物制品"
+        ],
+        "status_candidate": "INFLECTION_WATCH",
+        "trend_score": 48,
+        "score_change_1d": 30.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 61.226,
+          "wma10": 57.18300000000001,
+          "wma20": 50.13099999999999,
+          "slope_wma20": 0.06350570140546274
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的1.83倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "600333.SH",
+        "stock_name": "长春燃气",
+        "industry": "供气供热",
+        "themes": [],
+        "status_candidate": "INFLECTION_WATCH",
+        "trend_score": 48,
+        "score_change_1d": 29.0,
+        "score_change_5d": null,
+        "chip_health": {
+          "ts_code": "600333.SH",
+          "stock_name": "长春燃气",
+          "pullback_volume_ratio": null,
+          "amount_percentile": 81.66666666666667,
+          "turnover_percentile": null,
+          "volatility_percentile": 27.500000000000004,
+          "upper_shadow_frequency": 0.0,
+          "large_negative_frequency": 0.0,
+          "breakout_hold": "BREAKOUT_HELD",
+          "catalyst_price_response": null,
+          "chip_health_feature_score": 8.0,
+          "chip_health_change": null,
+          "chip_health_change_1d": null,
+          "chip_health_change_5d": null,
+          "chip_health_change_20d": null,
+          "available_feature_count": 4,
+          "risk_flags": []
+        },
+        "breakout": {
+          "type": "BREAKOUT_120D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_26W",
+          "wma5": 6.5840000000000005,
+          "wma10": 6.130000000000001,
+          "wma20": 5.861500000000001,
+          "slope_wma20": 0.05375280898876422
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的1.53倍",
+          "收盘价形成BREAKOUT_120D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_26W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "002702.SZ",
+        "stock_name": "海欣食品",
+        "industry": "食品加工",
+        "themes": [
+          "食品加工"
+        ],
+        "status_candidate": "INFLECTION_WATCH",
+        "trend_score": 48,
+        "score_change_1d": 22.0,
+        "score_change_5d": null,
+        "chip_health": {
+          "ts_code": "002702.SZ",
+          "stock_name": "海欣食品",
+          "pullback_volume_ratio": null,
+          "amount_percentile": 100.0,
+          "turnover_percentile": null,
+          "volatility_percentile": 100.0,
+          "upper_shadow_frequency": 0.05,
+          "large_negative_frequency": 0.0,
+          "breakout_hold": "BREAKOUT_HELD",
+          "catalyst_price_response": null,
+          "chip_health_feature_score": 8.0,
+          "chip_health_change": null,
+          "chip_health_change_1d": null,
+          "chip_health_change_5d": null,
+          "chip_health_change_20d": null,
+          "available_feature_count": 4,
+          "risk_flags": []
+        },
+        "breakout": {
+          "type": "BREAKOUT_120D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_26W",
+          "wma5": 5.5,
+          "wma10": 5.028,
+          "wma20": 5.1850000000000005,
+          "slope_wma20": -0.0030763314747161985
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的4.16倍",
+          "收盘价形成BREAKOUT_120D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_26W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "600127.SH",
+        "stock_name": "金健米业",
+        "industry": "农产品加",
+        "themes": [
+          "农产品加"
+        ],
+        "status_candidate": "INFLECTION_WATCH",
+        "trend_score": 48,
+        "score_change_1d": 7.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 10.586,
+          "wma10": 8.126,
+          "wma20": 7.077499999999999,
+          "slope_wma20": 0.14319172993054452
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的2.40倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "002403.SZ",
+        "stock_name": "爱仕达",
+        "industry": "小家电",
+        "themes": [
+          "小家电"
+        ],
+        "status_candidate": "INFLECTION_WATCH",
+        "trend_score": 48,
+        "score_change_1d": 0.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_120D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_26W",
+          "wma5": 10.664,
+          "wma10": 9.843,
+          "wma20": 10.2025,
+          "slope_wma20": 0.007256392536281853
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的9.04倍",
+          "收盘价形成BREAKOUT_120D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_26W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "600371.SH",
+        "stock_name": "万向德农",
+        "industry": "种植业",
+        "themes": [
+          "种植业"
+        ],
+        "status_candidate": "INFLECTION_WATCH",
+        "trend_score": 48,
+        "score_change_1d": 0.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 11.184000000000001,
+          "wma10": 8.933,
+          "wma20": 8.241499999999998,
+          "slope_wma20": 0.0879867986798677
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的3.64倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "603679.SH",
+        "stock_name": "华体科技",
+        "industry": "光学光电",
+        "themes": [
+          "光学光电"
+        ],
+        "status_candidate": "INFLECTION_WATCH",
+        "trend_score": 47,
+        "score_change_1d": 19.0,
+        "score_change_5d": null,
+        "chip_health": {
+          "ts_code": "603679.SH",
+          "stock_name": "华体科技",
+          "pullback_volume_ratio": null,
+          "amount_percentile": 86.66666666666667,
+          "turnover_percentile": null,
+          "volatility_percentile": 77.5,
+          "upper_shadow_frequency": 0.05,
+          "large_negative_frequency": 0.0,
+          "breakout_hold": "BREAKOUT_HELD",
+          "catalyst_price_response": null,
+          "chip_health_feature_score": 8.0,
+          "chip_health_change": null,
+          "chip_health_change_1d": null,
+          "chip_health_change_5d": null,
+          "chip_health_change_20d": null,
+          "available_feature_count": 4,
+          "risk_flags": []
+        },
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "NORMAL_VOLUME",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 23.306,
+          "wma10": 20.934,
+          "wma20": 19.4965,
+          "slope_wma20": 0.13997953515567896
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的1.31倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      }
+    ]
+  },
+  "auction": {
+    "market_auction_summary": {},
+    "stock_auction_summary": [],
+    "volume_anomaly_candidates": [],
+    "objective_analysis": {},
+    "conflicts": []
+  },
+  "normalized_prediction_record": {
+    "prediction_date": "2026-09-08",
+    "source_review": "review_context:99f171e9467ac2b2",
+    "source_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\review_context\\2026-09-08.json",
+    "theme_prediction": [
+      {
+        "theme": "草甘膦",
+        "strength": 34.34,
+        "strength_change_1d": null,
+        "strength_change_5d": null,
+        "breadth": null,
+        "amount": 6876665994.0,
+        "amount_change": null,
+        "leader_candidates": [],
+        "capacity_candidates": [],
+        "risk": [],
+        "candidate_only": true
+      },
+      {
+        "theme": "生物育种",
+        "strength": 29.75,
+        "strength_change_1d": null,
+        "strength_change_5d": null,
+        "breadth": null,
+        "amount": 11211688923.0,
+        "amount_change": null,
+        "leader_candidates": [],
+        "capacity_candidates": [],
+        "risk": [],
+        "candidate_only": true
+      },
+      {
+        "theme": "CXO概念",
+        "strength": 29.71,
+        "strength_change_1d": null,
+        "strength_change_5d": null,
+        "breadth": null,
+        "amount": 22042909412.0,
+        "amount_change": null,
+        "leader_candidates": [],
+        "capacity_candidates": [],
+        "risk": [],
+        "candidate_only": true
+      },
+      {
+        "theme": "CRO概念",
+        "strength": 29.27,
+        "strength_change_1d": null,
+        "strength_change_5d": null,
+        "breadth": null,
+        "amount": 20332986608.0,
+        "amount_change": null,
+        "leader_candidates": [],
+        "capacity_candidates": [],
+        "risk": [],
+        "candidate_only": true
+      },
+      {
+        "theme": "乡村振兴",
+        "strength": 29.2,
+        "strength_change_1d": null,
+        "strength_change_5d": null,
+        "breadth": null,
+        "amount": 29382925529.0,
+        "amount_change": null,
+        "leader_candidates": [],
+        "capacity_candidates": [],
+        "risk": [],
+        "candidate_only": true
+      },
+      {
+        "theme": "生态农业",
+        "strength": 28.16,
+        "strength_change_1d": null,
+        "strength_change_5d": null,
+        "breadth": null,
+        "amount": 13938639309.0,
+        "amount_change": null,
+        "leader_candidates": [],
+        "capacity_candidates": [],
+        "risk": [],
+        "candidate_only": true
+      },
+      {
+        "theme": "赛马概念",
+        "strength": 27.92,
+        "strength_change_1d": null,
+        "strength_change_5d": null,
+        "breadth": null,
+        "amount": 6766471234.0,
+        "amount_change": null,
+        "leader_candidates": [],
+        "capacity_candidates": [],
+        "risk": [],
+        "candidate_only": true
+      },
+      {
+        "theme": "油气改革",
+        "strength": 27.6,
+        "strength_change_1d": null,
+        "strength_change_5d": null,
+        "breadth": null,
+        "amount": 11891570209.0,
+        "amount_change": null,
+        "leader_candidates": [],
+        "capacity_candidates": [],
+        "risk": [],
+        "candidate_only": true
+      },
+      {
+        "theme": "图们江",
+        "strength": 27.53,
+        "strength_change_1d": null,
+        "strength_change_5d": null,
+        "breadth": null,
+        "amount": 7029056425.0,
+        "amount_change": null,
+        "leader_candidates": [],
+        "capacity_candidates": [],
+        "risk": [],
+        "candidate_only": true
+      },
+      {
+        "theme": "三沙概念",
+        "strength": 27.42,
+        "strength_change_1d": null,
+        "strength_change_5d": null,
+        "breadth": null,
+        "amount": 7055582208.0,
+        "amount_change": null,
+        "leader_candidates": [],
+        "capacity_candidates": [],
+        "risk": [],
+        "candidate_only": true
+      },
+      {
+        "theme": "氢能源",
+        "strength": 27.33,
+        "strength_change_1d": null,
+        "strength_change_5d": null,
+        "breadth": null,
+        "amount": 8440269132.0,
+        "amount_change": null,
+        "leader_candidates": [],
+        "capacity_candidates": [],
+        "risk": [],
+        "candidate_only": true
+      },
+      {
+        "theme": "文化振兴",
+        "strength": 27.32,
+        "strength_change_1d": null,
+        "strength_change_5d": null,
+        "breadth": null,
+        "amount": 6327970258.0,
+        "amount_change": null,
+        "leader_candidates": [],
+        "capacity_candidates": [],
+        "risk": [],
+        "candidate_only": true
+      },
+      {
+        "theme": "出口退税",
+        "strength": 27.03,
+        "strength_change_1d": null,
+        "strength_change_5d": null,
+        "breadth": null,
+        "amount": 20913619580.0,
+        "amount_change": null,
+        "leader_candidates": [],
+        "capacity_candidates": [],
+        "risk": [],
+        "candidate_only": true
+      },
+      {
+        "theme": "民营医院",
+        "strength": 27.01,
+        "strength_change_1d": null,
+        "strength_change_5d": null,
+        "breadth": null,
+        "amount": 9443596670.0,
+        "amount_change": null,
+        "leader_candidates": [],
+        "capacity_candidates": [],
+        "risk": [],
+        "candidate_only": true
+      },
+      {
+        "theme": "土地流转",
+        "strength": 26.97,
+        "strength_change_1d": null,
+        "strength_change_5d": null,
+        "breadth": null,
+        "amount": 19416597898.0,
+        "amount_change": null,
+        "leader_candidates": [],
+        "capacity_candidates": [],
+        "risk": [],
+        "candidate_only": true
+      }
+    ],
+    "style_prediction": [
+      {
+        "style": "limit_up_style",
+        "return": 10.61254358974359,
+        "breadth": 100.0,
+        "amount_change": 1.146897823424024,
+        "limit_up_count": 78,
+        "top_stock_performance": {
+          "ts_code": "920371.BJ",
+          "stock_name": "欧福蛋业",
+          "return": 29.9113
+        },
+        "style_strength_score": 100,
+        "style_change_1d": 0.0,
+        "style_change_5d": 0.0,
+        "style_change_20d": 0.0,
+        "sample_count": 78,
+        "coverage_status": "PASS",
+        "source_coverage": 1.0,
+        "methodology": "full-market daily facts"
+      },
+      {
+        "style": "institutional_trend",
+        "return": 9.184923076923077,
+        "breadth": 100.0,
+        "amount_change": 1.4894536397458042,
+        "limit_up_count": 8,
+        "top_stock_performance": {
+          "ts_code": "688293.SH",
+          "stock_name": "奥浦迈",
+          "return": 19.9965
+        },
+        "style_strength_score": 94.74,
+        "style_change_1d": 1.0096923076923048,
+        "style_change_5d": null,
+        "style_change_20d": null,
+        "sample_count": 13,
+        "coverage_status": "PARTIAL",
+        "source_coverage": 0.030996575959632365,
+        "methodology": "market-cap sample proxy"
+      },
+      {
+        "style": "short_term_speculation",
+        "return": 7.370983193277311,
+        "breadth": 86.5546218487395,
+        "amount_change": 1.1173076912821542,
+        "limit_up_count": 78,
+        "top_stock_performance": {
+          "ts_code": "920371.BJ",
+          "stock_name": "欧福蛋业",
+          "return": 29.9113
+        },
+        "style_strength_score": 84.78,
+        "style_change_1d": -9.811949579831932,
+        "style_change_5d": -15.221949579831929,
+        "style_change_20d": -15.221949579831929,
+        "sample_count": 119,
+        "coverage_status": "PARTIAL",
+        "source_coverage": 0.03496125428005046,
+        "methodology": "turnover sample proxy"
+      },
+      {
+        "style": "trend_style",
+        "return": 5.155797115384615,
+        "breadth": 95.1923076923077,
+        "amount_change": 1.0525971460012256,
+        "limit_up_count": 22,
+        "top_stock_performance": {
+          "ts_code": "920371.BJ",
+          "stock_name": "欧福蛋业",
+          "return": 29.9113
+        },
+        "style_strength_score": 78.94,
+        "style_change_1d": -5.289503846153849,
+        "style_change_5d": 22.440496153846155,
+        "style_change_20d": null,
+        "sample_count": 104,
+        "coverage_status": "PASS",
+        "source_coverage": 1.0,
+        "methodology": "full-market daily facts"
+      },
+      {
+        "style": "small_cap",
+        "return": 6.154890697674419,
+        "breadth": 79.06976744186046,
+        "amount_change": 1.9539339641931766,
+        "limit_up_count": 19,
+        "top_stock_performance": {
+          "ts_code": "920371.BJ",
+          "stock_name": "欧福蛋业",
+          "return": 29.9113
+        },
+        "style_strength_score": 77.29,
+        "style_change_1d": -8.00601860465116,
+        "style_change_5d": 4.033981395348832,
+        "style_change_20d": null,
+        "sample_count": 43,
+        "coverage_status": "PARTIAL",
+        "source_coverage": 0.030996575959632365,
+        "methodology": "market-cap sample proxy"
+      },
+      {
+        "style": "low_turnover",
+        "return": 5.506127083333333,
+        "breadth": 79.16666666666666,
+        "amount_change": 0.9093534024305363,
+        "limit_up_count": 25,
+        "top_stock_performance": {
+          "ts_code": "600792.SH",
+          "stock_name": "云煤能源",
+          "return": 10.0985
+        },
+        "style_strength_score": 73.37,
+        "style_change_1d": -7.326857296875303,
+        "style_change_5d": -6.196857296875294,
+        "style_change_20d": null,
+        "sample_count": 48,
+        "coverage_status": "PARTIAL",
+        "source_coverage": 0.03496125428005046,
+        "methodology": "turnover sample proxy"
+      },
+      {
+        "style": "large_cap",
+        "return": 4.505797727272728,
+        "breadth": 75.0,
+        "amount_change": 1.0492373148907332,
+        "limit_up_count": 14,
+        "top_stock_performance": {
+          "ts_code": "000833.SZ",
+          "stock_name": "粤桂股份",
+          "return": 10.0241
+        },
+        "style_strength_score": 69.27,
+        "style_change_1d": -27.586809090909085,
+        "style_change_5d": 7.453190909090914,
+        "style_change_20d": null,
+        "sample_count": 44,
+        "coverage_status": "PARTIAL",
+        "source_coverage": 0.030996575959632365,
+        "methodology": "market-cap sample proxy"
+      },
+      {
+        "style": "high_turnover",
+        "return": 2.636726530612245,
+        "breadth": 67.3469387755102,
+        "amount_change": 1.0210169732849936,
+        "limit_up_count": 8,
+        "top_stock_performance": {
+          "ts_code": "002702.SZ",
+          "stock_name": "海欣食品",
+          "return": 10.0486
+        },
+        "style_strength_score": 57.12,
+        "style_change_1d": -18.851665306122456,
+        "style_change_5d": -42.88166530612246,
+        "style_change_20d": null,
+        "sample_count": 49,
+        "coverage_status": "PARTIAL",
+        "source_coverage": 0.03496125428005046,
+        "methodology": "turnover sample proxy"
+      },
+      {
+        "style": "low_price_position",
+        "return": 1.708070482361411,
+        "breadth": 86.24910007199425,
+        "amount_change": 0.1300152810346186,
+        "limit_up_count": 32,
+        "top_stock_performance": {
+          "ts_code": "300290.SZ",
+          "stock_name": "ST荣科",
+          "return": 13.6784
+        },
+        "style_strength_score": 48.97,
+        "style_change_1d": 21.049696170162903,
+        "style_change_5d": -0.8703038298370984,
+        "style_change_20d": 31.919696170162904,
+        "sample_count": 1389,
+        "coverage_status": "PASS",
+        "source_coverage": 1.0,
+        "methodology": "full-market daily facts"
+      },
+      {
+        "style": "consumer",
+        "return": 1.4266757322175734,
+        "breadth": 73.22175732217573,
+        "amount_change": 0.294606171668803,
+        "limit_up_count": 8,
+        "top_stock_performance": {
+          "ts_code": "301206.SZ",
+          "stock_name": "三元生物",
+          "return": 14.2615
+        },
+        "style_strength_score": 43.75,
+        "style_change_1d": -0.06658943333615497,
+        "style_change_5d": -7.856589433336154,
+        "style_change_20d": 31.953410566663845,
+        "sample_count": 239,
+        "coverage_status": "PASS",
+        "source_coverage": 1.0,
+        "methodology": "full-market daily facts"
+      },
+      {
+        "style": "value",
+        "return": 0.8963649,
+        "breadth": 66.525,
+        "amount_change": 0.042635213292872044,
+        "limit_up_count": 76,
+        "top_stock_performance": {
+          "ts_code": "920371.BJ",
+          "stock_name": "欧福蛋业",
+          "return": 29.9113
+        },
+        "style_strength_score": 37.51,
+        "style_change_1d": 6.078737799393082,
+        "style_change_5d": -2.881262200606919,
+        "style_change_20d": 19.36873779939308,
+        "sample_count": 4000,
+        "coverage_status": "PARTIAL",
+        "source_coverage": 1.0,
+        "methodology": "non-growth-board proxy; valuation factors unavailable"
+      },
+      {
+        "style": "financial",
+        "return": 0.44015714285714286,
+        "breadth": 68.90756302521008,
+        "amount_change": -0.18542147914206822,
+        "limit_up_count": 0,
+        "top_stock_performance": {
+          "ts_code": "600318.SH",
+          "stock_name": "新力金融",
+          "return": 5.618
+        },
+        "style_strength_score": 23.1,
+        "style_change_1d": 23.096953443121073,
+        "style_change_5d": -26.733046556878925,
+        "style_change_20d": 22.406953443121072,
+        "sample_count": 119,
+        "coverage_status": "PASS",
+        "source_coverage": 1.0,
+        "methodology": "full-market daily facts"
+      },
+      {
+        "style": "cyclical",
+        "return": 0.5195579976985041,
+        "breadth": 57.65247410817032,
+        "amount_change": -0.06889895782832915,
+        "limit_up_count": 0,
+        "top_stock_performance": {
+          "ts_code": "688690.SH",
+          "stock_name": "纳微科技",
+          "return": 12.104
+        },
+        "style_strength_score": 21.22,
+        "style_change_1d": -4.146886438771311,
+        "style_change_5d": 1.88311356122869,
+        "style_change_20d": 8.763113561228689,
+        "sample_count": 869,
+        "coverage_status": "PASS",
+        "source_coverage": 1.0,
+        "methodology": "full-market daily facts"
+      },
+      {
+        "style": "technology",
+        "return": -0.13240596760443307,
+        "breadth": 44.50127877237852,
+        "amount_change": -0.05145983610515895,
+        "limit_up_count": 6,
+        "top_stock_performance": {
+          "ts_code": "688660.SH",
+          "stock_name": "电气风电",
+          "return": 14.5967
+        },
+        "style_strength_score": 20.27,
+        "style_change_1d": -12.49607384166264,
+        "style_change_5d": -12.206073841662633,
+        "style_change_20d": 1.7139261583373653,
+        "sample_count": 1173,
+        "coverage_status": "PASS",
+        "source_coverage": 1.0,
+        "methodology": "full-market daily facts"
+      },
+      {
+        "style": "high_price_position",
+        "return": -0.3710807636887608,
+        "breadth": 36.31123919308357,
+        "amount_change": 0.0011516590200015414,
+        "limit_up_count": 9,
+        "top_stock_performance": {
+          "ts_code": "688293.SH",
+          "stock_name": "奥浦迈",
+          "return": 19.9965
+        },
+        "style_strength_score": 20.24,
+        "style_change_1d": -24.238114451875767,
+        "style_change_5d": 3.301885548124229,
+        "style_change_20d": -5.3481144518757695,
+        "sample_count": 1388,
+        "coverage_status": "PASS",
+        "source_coverage": 1.0,
+        "methodology": "full-market daily facts"
+      },
+      {
+        "style": "growth",
+        "return": 0.07188960619754681,
+        "breadth": 48.80568108457069,
+        "amount_change": -0.024977220951566983,
+        "limit_up_count": 2,
+        "top_stock_performance": {
+          "ts_code": "688293.SH",
+          "stock_name": "奥浦迈",
+          "return": 19.9965
+        },
+        "style_strength_score": 18.99,
+        "style_change_1d": -11.905111509883572,
+        "style_change_5d": -2.6951115098835743,
+        "style_change_20d": 5.624888490116428,
+        "sample_count": 1549,
+        "coverage_status": "PASS",
+        "source_coverage": 1.0,
+        "methodology": "full-market daily facts"
+      }
+    ],
+    "leader_candidates": [],
+    "next_day_plan": [],
+    "inflection_candidates": [
+      {
+        "ts_code": "601086.SH",
+        "stock_name": "国芳集团",
+        "industry": "一般零售",
+        "themes": [
+          "一般零售"
+        ],
+        "status_candidate": "INFLECTION_CANDIDATE",
+        "trend_score": 56,
+        "score_change_1d": 0.0,
+        "score_change_5d": null,
+        "chip_health": {
+          "ts_code": "601086.SH",
+          "stock_name": "国芳集团",
+          "pullback_volume_ratio": null,
+          "amount_percentile": 100.0,
+          "turnover_percentile": null,
+          "volatility_percentile": 100.0,
+          "upper_shadow_frequency": 0.05,
+          "large_negative_frequency": 0.0,
+          "breakout_hold": "BREAKOUT_HELD",
+          "catalyst_price_response": null,
+          "chip_health_feature_score": 8.0,
+          "chip_health_change": 0.0,
+          "chip_health_change_1d": 0.0,
+          "chip_health_change_5d": null,
+          "chip_health_change_20d": null,
+          "available_feature_count": 4,
+          "risk_flags": []
+        },
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 10.258,
+          "wma10": 8.776,
+          "wma20": 8.295,
+          "slope_wma20": 0.050000000000000044
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的7.18倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "605577.SH",
+        "stock_name": "龙版传媒",
+        "industry": "出版",
+        "themes": [
+          "出版"
+        ],
+        "status_candidate": "INFLECTION_CANDIDATE",
+        "trend_score": 54,
+        "score_change_1d": 4.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 12.668000000000001,
+          "wma10": 11.001000000000001,
+          "wma20": 10.681000000000001,
+          "slope_wma20": 0.0019229867267014367
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的7.82倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "603991.SH",
+        "stock_name": "领先股份",
+        "industry": null,
+        "themes": [],
+        "status_candidate": "INFLECTION_CANDIDATE",
+        "trend_score": 54,
+        "score_change_1d": 0.0,
+        "score_change_5d": null,
+        "chip_health": {
+          "ts_code": "603991.SH",
+          "stock_name": "领先股份",
+          "pullback_volume_ratio": null,
+          "amount_percentile": 90.83333333333333,
+          "turnover_percentile": null,
+          "volatility_percentile": 19.166666666666668,
+          "upper_shadow_frequency": 0.0,
+          "large_negative_frequency": 0.0,
+          "breakout_hold": "BREAKOUT_HELD",
+          "catalyst_price_response": null,
+          "chip_health_feature_score": 8.0,
+          "chip_health_change": 0.0,
+          "chip_health_change_1d": 0.0,
+          "chip_health_change_5d": null,
+          "chip_health_change_20d": null,
+          "available_feature_count": 4,
+          "risk_flags": []
+        },
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 148.142,
+          "wma10": 140.529,
+          "wma20": 131.2855,
+          "slope_wma20": 0.08703446105949975
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的2.90倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "603228.SH",
+        "stock_name": "景旺电子",
+        "industry": "元件",
+        "themes": [
+          "元件"
+        ],
+        "status_candidate": "INFLECTION_CANDIDATE",
+        "trend_score": 52,
+        "score_change_1d": 7.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 98.01200000000001,
+          "wma10": 87.406,
+          "wma20": 81.0965,
+          "slope_wma20": 0.12910030073513035
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的1.59倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "600857.SH",
+        "stock_name": "宁波中百",
+        "industry": "一般零售",
+        "themes": [
+          "一般零售"
+        ],
+        "status_candidate": "INFLECTION_CANDIDATE",
+        "trend_score": 52,
+        "score_change_1d": 0.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 20.985999999999997,
+          "wma10": 19.393,
+          "wma20": 17.47,
+          "slope_wma20": 0.14877527535755375
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的2.17倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "920895.BJ",
+        "stock_name": "花溪科技",
+        "industry": null,
+        "themes": [],
+        "status_candidate": "INFLECTION_CANDIDATE",
+        "trend_score": 51,
+        "score_change_1d": 14.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 20.736,
+          "wma10": 16.34,
+          "wma20": 15.241499999999998,
+          "slope_wma20": 0.07243878412609073
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的2.99倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "000428.SZ",
+        "stock_name": "华天酒店",
+        "industry": "酒店餐饮",
+        "themes": [
+          "酒店餐饮"
+        ],
+        "status_candidate": "INFLECTION_CANDIDATE",
+        "trend_score": 51,
+        "score_change_1d": 4.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 4.554,
+          "wma10": 4.016,
+          "wma20": 3.757,
+          "slope_wma20": 0.04622667780562506
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的3.30倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "600479.SH",
+        "stock_name": "千金药业",
+        "industry": "中药Ⅱ",
+        "themes": [
+          "中药Ⅱ"
+        ],
+        "status_candidate": "INFLECTION_CANDIDATE",
+        "trend_score": 50,
+        "score_change_1d": 14.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 12.209999999999999,
+          "wma10": 10.946000000000002,
+          "wma20": 10.5355,
+          "slope_wma20": 0.04080019757964948
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的2.95倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "000626.SZ",
+        "stock_name": "远大控股",
+        "industry": "商贸代理",
+        "themes": [],
+        "status_candidate": "INFLECTION_CANDIDATE",
+        "trend_score": 50,
+        "score_change_1d": 3.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_120D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 9.018,
+          "wma10": 7.899000000000001,
+          "wma20": 7.8534999999999995,
+          "slope_wma20": 0.02345735322864395
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的2.15倍",
+          "收盘价形成BREAKOUT_120D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "002349.SZ",
+        "stock_name": "精华制药",
+        "industry": "中药Ⅱ",
+        "themes": [
+          "中药Ⅱ"
+        ],
+        "status_candidate": "INFLECTION_WATCH",
+        "trend_score": 49,
+        "score_change_1d": 32.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 7.608,
+          "wma10": 7.142,
+          "wma20": 6.988499999999999,
+          "slope_wma20": 0.006988472622478259
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的2.51倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "300939.SZ",
+        "stock_name": "秋田微",
+        "industry": "元器件",
+        "themes": [],
+        "status_candidate": "INFLECTION_WATCH",
+        "trend_score": 49,
+        "score_change_1d": 28.0,
+        "score_change_5d": null,
+        "chip_health": {
+          "ts_code": "300939.SZ",
+          "stock_name": "秋田微",
+          "pullback_volume_ratio": null,
+          "amount_percentile": 80.0,
+          "turnover_percentile": null,
+          "volatility_percentile": 25.0,
+          "upper_shadow_frequency": 0.05,
+          "large_negative_frequency": 0.0,
+          "breakout_hold": "BREAKOUT_HELD",
+          "catalyst_price_response": null,
+          "chip_health_feature_score": 8.0,
+          "chip_health_change": null,
+          "chip_health_change_1d": null,
+          "chip_health_change_5d": null,
+          "chip_health_change_20d": null,
+          "available_feature_count": 4,
+          "risk_flags": []
+        },
+        "breakout": {
+          "type": "BREAKOUT_60D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 66.36800000000001,
+          "wma10": 59.435,
+          "wma20": 58.275999999999996,
+          "slope_wma20": 0.13313500165276415
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的2.47倍",
+          "收盘价形成BREAKOUT_60D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "600359.SH",
+        "stock_name": "新农开发",
+        "industry": "种植业",
+        "themes": [],
+        "status_candidate": "INFLECTION_WATCH",
+        "trend_score": 49,
+        "score_change_1d": 8.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_120D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 7.114,
+          "wma10": 6.456,
+          "wma20": 6.5135000000000005,
+          "slope_wma20": 0.005247318465931183
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的2.20倍",
+          "收盘价形成BREAKOUT_120D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "601949.SH",
+        "stock_name": "中国出版",
+        "industry": "出版",
+        "themes": [
+          "出版"
+        ],
+        "status_candidate": "INFLECTION_WATCH",
+        "trend_score": 49,
+        "score_change_1d": 7.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_120D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_26W",
+          "wma5": 5.672000000000001,
+          "wma10": 5.388,
+          "wma20": 5.3295,
+          "slope_wma20": -0.027108433734939763
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的3.32倍",
+          "收盘价形成BREAKOUT_120D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_26W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "688293.SH",
+        "stock_name": "奥浦迈",
+        "industry": "生物制品",
+        "themes": [
+          "生物制品"
+        ],
+        "status_candidate": "INFLECTION_WATCH",
+        "trend_score": 48,
+        "score_change_1d": 30.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 61.226,
+          "wma10": 57.18300000000001,
+          "wma20": 50.13099999999999,
+          "slope_wma20": 0.06350570140546274
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的1.83倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "600333.SH",
+        "stock_name": "长春燃气",
+        "industry": "供气供热",
+        "themes": [],
+        "status_candidate": "INFLECTION_WATCH",
+        "trend_score": 48,
+        "score_change_1d": 29.0,
+        "score_change_5d": null,
+        "chip_health": {
+          "ts_code": "600333.SH",
+          "stock_name": "长春燃气",
+          "pullback_volume_ratio": null,
+          "amount_percentile": 81.66666666666667,
+          "turnover_percentile": null,
+          "volatility_percentile": 27.500000000000004,
+          "upper_shadow_frequency": 0.0,
+          "large_negative_frequency": 0.0,
+          "breakout_hold": "BREAKOUT_HELD",
+          "catalyst_price_response": null,
+          "chip_health_feature_score": 8.0,
+          "chip_health_change": null,
+          "chip_health_change_1d": null,
+          "chip_health_change_5d": null,
+          "chip_health_change_20d": null,
+          "available_feature_count": 4,
+          "risk_flags": []
+        },
+        "breakout": {
+          "type": "BREAKOUT_120D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_26W",
+          "wma5": 6.5840000000000005,
+          "wma10": 6.130000000000001,
+          "wma20": 5.861500000000001,
+          "slope_wma20": 0.05375280898876422
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的1.53倍",
+          "收盘价形成BREAKOUT_120D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_26W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "002702.SZ",
+        "stock_name": "海欣食品",
+        "industry": "食品加工",
+        "themes": [
+          "食品加工"
+        ],
+        "status_candidate": "INFLECTION_WATCH",
+        "trend_score": 48,
+        "score_change_1d": 22.0,
+        "score_change_5d": null,
+        "chip_health": {
+          "ts_code": "002702.SZ",
+          "stock_name": "海欣食品",
+          "pullback_volume_ratio": null,
+          "amount_percentile": 100.0,
+          "turnover_percentile": null,
+          "volatility_percentile": 100.0,
+          "upper_shadow_frequency": 0.05,
+          "large_negative_frequency": 0.0,
+          "breakout_hold": "BREAKOUT_HELD",
+          "catalyst_price_response": null,
+          "chip_health_feature_score": 8.0,
+          "chip_health_change": null,
+          "chip_health_change_1d": null,
+          "chip_health_change_5d": null,
+          "chip_health_change_20d": null,
+          "available_feature_count": 4,
+          "risk_flags": []
+        },
+        "breakout": {
+          "type": "BREAKOUT_120D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_26W",
+          "wma5": 5.5,
+          "wma10": 5.028,
+          "wma20": 5.1850000000000005,
+          "slope_wma20": -0.0030763314747161985
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的4.16倍",
+          "收盘价形成BREAKOUT_120D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_26W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "600127.SH",
+        "stock_name": "金健米业",
+        "industry": "农产品加",
+        "themes": [
+          "农产品加"
+        ],
+        "status_candidate": "INFLECTION_WATCH",
+        "trend_score": 48,
+        "score_change_1d": 7.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 10.586,
+          "wma10": 8.126,
+          "wma20": 7.077499999999999,
+          "slope_wma20": 0.14319172993054452
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的2.40倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "002403.SZ",
+        "stock_name": "爱仕达",
+        "industry": "小家电",
+        "themes": [
+          "小家电"
+        ],
+        "status_candidate": "INFLECTION_WATCH",
+        "trend_score": 48,
+        "score_change_1d": 0.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_120D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_26W",
+          "wma5": 10.664,
+          "wma10": 9.843,
+          "wma20": 10.2025,
+          "slope_wma20": 0.007256392536281853
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的9.04倍",
+          "收盘价形成BREAKOUT_120D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_26W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "600371.SH",
+        "stock_name": "万向德农",
+        "industry": "种植业",
+        "themes": [
+          "种植业"
+        ],
+        "status_candidate": "INFLECTION_WATCH",
+        "trend_score": 48,
+        "score_change_1d": 0.0,
+        "score_change_5d": null,
+        "chip_health": null,
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "HIGH_VOLUME_CONFIRMED",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 11.184000000000001,
+          "wma10": 8.933,
+          "wma20": 8.241499999999998,
+          "slope_wma20": 0.0879867986798677
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的3.64倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      },
+      {
+        "ts_code": "603679.SH",
+        "stock_name": "华体科技",
+        "industry": "光学光电",
+        "themes": [
+          "光学光电"
+        ],
+        "status_candidate": "INFLECTION_WATCH",
+        "trend_score": 47,
+        "score_change_1d": 19.0,
+        "score_change_5d": null,
+        "chip_health": {
+          "ts_code": "603679.SH",
+          "stock_name": "华体科技",
+          "pullback_volume_ratio": null,
+          "amount_percentile": 86.66666666666667,
+          "turnover_percentile": null,
+          "volatility_percentile": 77.5,
+          "upper_shadow_frequency": 0.05,
+          "large_negative_frequency": 0.0,
+          "breakout_hold": "BREAKOUT_HELD",
+          "catalyst_price_response": null,
+          "chip_health_feature_score": 8.0,
+          "chip_health_change": null,
+          "chip_health_change_1d": null,
+          "chip_health_change_5d": null,
+          "chip_health_change_20d": null,
+          "available_feature_count": 4,
+          "risk_flags": []
+        },
+        "breakout": {
+          "type": "BREAKOUT_250D",
+          "volume_confirmation": "NORMAL_VOLUME",
+          "hold_days": 1,
+          "hold_status": "BREAKOUT_HELD",
+          "failure": false
+        },
+        "weekly_structure": {
+          "breakout_type": "WEEK_BREAKOUT_52W",
+          "wma5": 23.306,
+          "wma10": 20.934,
+          "wma20": 19.4965,
+          "slope_wma20": 0.13997953515567896
+        },
+        "risk_flags": [],
+        "objective_reasons": [
+          "当日成交额为此前20日均值的1.31倍",
+          "收盘价形成BREAKOUT_250D，站稳天数1",
+          "周线形成WEEK_BREAKOUT_52W"
+        ],
+        "candidate_only": true
+      }
+    ],
+    "risk_points": [
+      {
+        "entity": "000428",
+        "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+        "fact": "关于诉讼、仲裁情况的进展公告",
+        "evidence_level": "A",
+        "candidate_only": true
+      },
+      {
+        "entity": "000428",
+        "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+        "fact": "股票交易异常波动公告",
+        "evidence_level": "A",
+        "candidate_only": true
+      },
+      {
+        "entity": "000735",
+        "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+        "fact": "股票交易异常波动公告",
+        "evidence_level": "A",
+        "candidate_only": true
+      },
+      {
+        "entity": "000798",
+        "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+        "fact": "股票交易异常波动公告",
+        "evidence_level": "A",
+        "candidate_only": true
+      },
+      {
+        "entity": "001267",
+        "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+        "fact": "关于控股股东、实际控制人部分股份解除质押的公告",
+        "evidence_level": "A",
+        "candidate_only": true
+      },
+      {
+        "entity": "001366",
+        "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+        "fact": "股票交易异常波动公告",
+        "evidence_level": "A",
+        "candidate_only": true
+      },
+      {
+        "entity": "002264",
+        "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+        "fact": "关于股东股份减持计划时间届满未实施减持的公告",
+        "evidence_level": "A",
+        "candidate_only": true
+      },
+      {
+        "entity": "002484",
+        "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+        "fact": "南通江海电容器股份有限公司关于部分董事、高级管理人员股份减持时间届满暨减持结果的公告",
+        "evidence_level": "A",
+        "candidate_only": true
+      },
+      {
+        "entity": "002564",
+        "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+        "fact": "股票交易异常波动公告",
+        "evidence_level": "A",
+        "candidate_only": true
+      },
+      {
+        "entity": "002702",
+        "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+        "fact": "股票交易异常波动公告",
+        "evidence_level": "A",
+        "candidate_only": true
+      },
+      {
+        "entity": "001267.SZ",
+        "type": "TREND_BROKEN",
+        "fact": [
+          "当日成交额为此前20日均值的0.96倍",
+          "最近回调/上涨段成交额比0.60"
+        ],
+        "evidence_level": "OBJECTIVE_MARKET_DATA",
+        "candidate_only": true
+      },
+      {
+        "entity": "301201.SZ",
+        "type": "TREND_BROKEN",
+        "fact": [
+          "当日成交额为此前20日均值的0.32倍",
+          "最近回调/上涨段成交额比0.61"
+        ],
+        "evidence_level": "OBJECTIVE_MARKET_DATA",
+        "candidate_only": true
+      },
+      {
+        "entity": "300716.SZ",
+        "type": "TREND_BROKEN",
+        "fact": [
+          "当日成交额为此前20日均值的0.62倍",
+          "最近回调/上涨段成交额比0.68"
+        ],
+        "evidence_level": "OBJECTIVE_MARKET_DATA",
+        "candidate_only": true
+      },
+      {
+        "entity": "300545.SZ",
+        "type": "TREND_BROKEN",
+        "fact": [
+          "当日成交额为此前20日均值的0.60倍",
+          "最近回调/上涨段成交额比0.68"
+        ],
+        "evidence_level": "OBJECTIVE_MARKET_DATA",
+        "candidate_only": true
+      },
+      {
+        "entity": "300750.SZ",
+        "type": "TREND_BROKEN",
+        "fact": [
+          "当日成交额为此前20日均值的2.15倍",
+          "最近回调/上涨段成交额比1.10"
+        ],
+        "evidence_level": "OBJECTIVE_MARKET_DATA",
+        "candidate_only": true
+      },
+      {
+        "entity": "600012.SH",
+        "type": "TREND_BROKEN",
+        "fact": [
+          "当日成交额为此前20日均值的1.68倍",
+          "收盘价形成BREAKOUT_20D，站稳天数0",
+          "最近回调/上涨段成交额比1.25"
+        ],
+        "evidence_level": "OBJECTIVE_MARKET_DATA",
+        "candidate_only": true
+      },
+      {
+        "entity": "688210.SH",
+        "type": "TREND_BROKEN",
+        "fact": [
+          "当日成交额为此前20日均值的1.08倍",
+          "收盘价形成BREAKOUT_20D，站稳天数0",
+          "最近回调/上涨段成交额比0.56"
+        ],
+        "evidence_level": "OBJECTIVE_MARKET_DATA",
+        "candidate_only": true
+      },
+      {
+        "entity": "920247.BJ",
+        "type": "TREND_BROKEN",
+        "fact": [
+          "当日成交额为此前20日均值的0.73倍",
+          "收盘价形成BREAKOUT_20D，站稳天数0",
+          "最近回调/上涨段成交额比0.66"
+        ],
+        "evidence_level": "OBJECTIVE_MARKET_DATA",
+        "candidate_only": true
+      },
+      {
+        "entity": "688345.SH",
+        "type": "TREND_BROKEN",
+        "fact": [
+          "当日成交额为此前20日均值的0.58倍",
+          "最近回调/上涨段成交额比0.63"
+        ],
+        "evidence_level": "OBJECTIVE_MARKET_DATA",
+        "candidate_only": true
+      },
+      {
+        "entity": "301603.SZ",
+        "type": "TREND_BROKEN",
+        "fact": [
+          "当日成交额为此前20日均值的0.92倍",
+          "收盘价形成BREAKOUT_20D，站稳天数0",
+          "最近回调/上涨段成交额比0.69"
+        ],
+        "evidence_level": "OBJECTIVE_MARKET_DATA",
+        "candidate_only": true
+      },
+      {
+        "entity": "002189.SZ",
+        "type": "TREND_BROKEN",
+        "fact": [
+          "当日成交额为此前20日均值的0.85倍",
+          "收盘价形成BREAKOUT_20D，站稳天数0",
+          "最近回调/上涨段成交额比0.99"
+        ],
+        "evidence_level": "OBJECTIVE_MARKET_DATA",
+        "candidate_only": true
+      },
+      {
+        "entity": "601059.SH",
+        "type": "TREND_BROKEN",
+        "fact": [
+          "当日成交额为此前20日均值的3.08倍",
+          "收盘价形成BREAKOUT_20D，站稳天数0",
+          "最近回调/上涨段成交额比1.46"
+        ],
+        "evidence_level": "OBJECTIVE_MARKET_DATA",
+        "candidate_only": true
+      },
+      {
+        "entity": "688512.SH",
+        "type": "TREND_BROKEN",
+        "fact": [
+          "当日成交额为此前20日均值的1.03倍",
+          "最近回调/上涨段成交额比0.67"
+        ],
+        "evidence_level": "OBJECTIVE_MARKET_DATA",
+        "candidate_only": true
+      },
+      {
+        "entity": "002415.SZ",
+        "type": "TREND_BROKEN",
+        "fact": [
+          "当日成交额为此前20日均值的2.89倍"
+        ],
+        "evidence_level": "OBJECTIVE_MARKET_DATA",
+        "candidate_only": true
+      },
+      {
+        "entity": "603398.SH",
+        "type": "TREND_BROKEN",
+        "fact": [
+          "当日成交额为此前20日均值的3.20倍",
+          "最近回调/上涨段成交额比0.98"
+        ],
+        "evidence_level": "OBJECTIVE_MARKET_DATA",
+        "candidate_only": true
+      },
+      {
+        "entity": "002283.SZ",
+        "type": "TREND_BROKEN",
+        "fact": [
+          "当日成交额为此前20日均值的1.63倍",
+          "最近回调/上涨段成交额比0.82"
+        ],
+        "evidence_level": "OBJECTIVE_MARKET_DATA",
+        "candidate_only": true
+      },
+      {
+        "entity": "600076.SH",
+        "type": "TREND_BROKEN",
+        "fact": [
+          "当日成交额为此前20日均值的5.90倍",
+          "收盘价形成BREAKOUT_20D，站稳天数0",
+          "最近回调/上涨段成交额比1.42"
+        ],
+        "evidence_level": "OBJECTIVE_MARKET_DATA",
+        "candidate_only": true
+      },
+      {
+        "entity": "002876.SZ",
+        "type": "TREND_BROKEN",
+        "fact": [
+          "当日成交额为此前20日均值的1.41倍",
+          "收盘价形成BREAKOUT_20D，站稳天数0",
+          "最近回调/上涨段成交额比0.94"
+        ],
+        "evidence_level": "OBJECTIVE_MARKET_DATA",
+        "candidate_only": true
+      },
+      {
+        "entity": "688583.SH",
+        "type": "TREND_BROKEN",
+        "fact": [
+          "当日成交额为此前20日均值的2.33倍",
+          "最近回调/上涨段成交额比0.97"
+        ],
+        "evidence_level": "OBJECTIVE_MARKET_DATA",
+        "candidate_only": true
+      },
+      {
+        "entity": "301188.SZ",
+        "type": "TREND_BROKEN",
+        "fact": [
+          "当日成交额为此前20日均值的1.37倍",
+          "最近回调/上涨段成交额比0.45"
+        ],
+        "evidence_level": "OBJECTIVE_MARKET_DATA",
+        "candidate_only": true
+      }
+    ],
+    "confidence_level": "MEDIUM",
+    "record_kind": "OBJECTIVE_REVIEW_CONTEXT"
+  }
+}

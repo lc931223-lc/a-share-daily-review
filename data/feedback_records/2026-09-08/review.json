@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "schema_version": "integrated_feedback_review.1",
+    "prediction_date": "2026-09-08",
+    "status": "WAITING_FOR_VALIDATION"
+  },
+  "correct_parts": [],
+  "incorrect_parts": [],
+  "error_type": [
+    "DATA_LIMITATION"
+  ],
+  "actual_market_state": {
+    "return_1d": null,
+    "return_5d": null,
+    "return_10d": null,
+    "return_20d": null
+  },
+  "actual_theme_result": [
+    {
+      "theme": "草甘膦",
+      "candidate_codes": [],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "生物育种",
+      "candidate_codes": [],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "CXO概念",
+      "candidate_codes": [],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "CRO概念",
+      "candidate_codes": [],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "乡村振兴",
+      "candidate_codes": [],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "生态农业",
+      "candidate_codes": [],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "赛马概念",
+      "candidate_codes": [],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "油气改革",
+      "candidate_codes": [],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "图们江",
+      "candidate_codes": [],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "三沙概念",
+      "candidate_codes": [],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "氢能源",
+      "candidate_codes": [],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "文化振兴",
+      "candidate_codes": [],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "出口退税",
+      "candidate_codes": [],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "民营医院",
+      "candidate_codes": [],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "土地流转",
+      "candidate_codes": [],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    }
+  ]
+}

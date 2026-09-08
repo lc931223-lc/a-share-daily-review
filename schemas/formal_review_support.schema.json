@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["meta", "source_manifest", "theme_support", "previous_day_validation", "factor_catalog", "constraints"],
+  "properties": {
+    "meta": {"type": "object", "required": ["schema_version", "trade_date", "data_role", "final_judgement_owner"]},
+    "source_manifest": {"type": "object"},
+    "theme_support": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["theme_name", "theme_rank", "41_factors", "score_support", "lifecycle", "core_stocks", "next_day_validation", "uncertainties", "candidate_only"],
+        "properties": {
+          "41_factors": {
+            "type": "array",
+            "minItems": 41,
+            "maxItems": 41,
+            "items": {
+              "type": "object",
+              "required": ["factor_id", "factor_name", "status", "evidence", "confidence", "reason"],
+              "properties": {
+                "factor_id": {"type": "integer", "minimum": 1, "maximum": 41},
+                "status": {"enum": ["CONFIRMED", "PARTIAL", "UNCONFIRMED", "REJECTED"]},
+                "evidence": {"type": "array"}
+              }
+            }
+          },
+          "lifecycle": {
+            "type": "object",
+            "required": ["previous_state", "current_state", "transition_reason", "positive_evidence", "negative_evidence", "confidence"]
+          }
+        }
+      }
+    },
+    "previous_day_validation": {"type": "object"},
+    "factor_catalog": {"type": "array", "minItems": 41, "maxItems": 41},
+    "constraints": {"type": "object"}
+  }
+}
