@@ -41,3 +41,4 @@ jobs:
           git commit -m 'data: import ChatGPT formal review for 2026-09-08'
           git pull --rebase origin main
           git push origin HEAD:main
+# rerun after repo-root import fix
