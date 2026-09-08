@@ -1,11 +1,14 @@
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
 
 from src.formal_review.persistence import import_record
 
-ROOT = Path(__file__).resolve().parents[1]
 DAY = "2026-09-08"
 PREV = "2026-09-07"
 FACTOR_NAMES = {
