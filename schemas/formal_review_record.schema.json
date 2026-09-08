@@ -5,6 +5,7 @@
   "additionalProperties": false,
   "required": ["schema_version", "date", "previous_trade_date", "final_judgement_owner", "market_overview", "market_regime", "main_themes", "changes_vs_previous_day", "previous_day_validation", "uncertainties"],
   "properties": {
+    "tomorrow_checks": {"type": "array", "items": {"$ref": "#/$defs/tomorrowCheck"}},
     "final_judgement_owner": {"const": "chatgpt"},
     "previous_trade_date": {"type": "string", "format": "date"},
     "schema_version": {"const": "formal_review.3"},
@@ -118,6 +119,21 @@
     "uncertainties": {"type": "array"}
   },
   "$defs": {
+    "tomorrowCheck": {
+      "type": "object",
+      "required": ["id", "entity_type", "entity_key", "metric", "operator", "threshold", "time_window", "description"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "entity_type": {"enum": ["theme", "stock", "market"]},
+        "entity_key": {"type": "string"},
+        "metric": {"enum": ["auction_gap_pct", "auction_amount_percentile", "post_0920_price_change", "post_0920_order_growth", "sector_positive_ratio", "leader_strength", "capacity_strength", "relative_strength", "holds_auction_price", "holds_previous_close"]},
+        "operator": {"enum": [">=", "<=", ">", "<", "=="]},
+        "threshold": {"type": ["number", "boolean"]},
+        "comparison_entity": {"type": ["string", "null"]},
+        "time_window": {"enum": ["auction", "post_open"]},
+        "description": {"type": "string"}
+      }
+    },
     "scoreComponent": {
       "type": "object",
       "required": ["raw_score", "available_score", "subcomponents", "evidence", "reason"],

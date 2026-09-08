@@ -40,7 +40,7 @@ class FakeLiveSource:
         }
 
 
-def test_live_runner_polls_all_checkpoints_and_waits_until_open_validation():
+def test_live_runner_returns_at_formal_match_without_waiting_for_open():
     current = [datetime(2026, 9, 7, 9, 14, 50, tzinfo=TZ)]
 
     def now():
@@ -56,15 +56,15 @@ def test_live_runner_polls_all_checkpoints_and_waits_until_open_validation():
     )
     assert source.polls == 21
     assert result.stats["checkpoint_poll_count"] == 21
-    assert current[0].time().isoformat() == "09:30:05"
+    assert current[0].time().isoformat() == "09:25:02"
     assert source.closed is True
 
 
 def test_live_runner_rejects_late_start_instead_of_mislabeling_replay_as_live():
-    current = datetime(2026, 9, 7, 9, 15, 1, tzinfo=TZ)
+    current = datetime(2026, 9, 7, 9, 30, 1, tzinfo=TZ)
     source = FakeLiveSource()
 
-    with pytest.raises(ValueError, match="must start by 09:15"):
+    with pytest.raises(ValueError, match="after market open"):
         LiveAuctionRunner(source, now=lambda: current).collect(
             date(2026, 9, 7),
             [{"ts_code": "000001.SZ", "stock_name": "平安银行"}],

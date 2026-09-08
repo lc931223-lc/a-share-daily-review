@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from typing import Any
+from src.auction.score_rules import market_component, mainline_component, catalyst_component, RISK_RULES
 
 COMPONENT_MAX = {
     "market_environment": 10,
@@ -24,9 +25,9 @@ def score_stock(
     prior_theme = _prior_theme(previous_context, (watch_stock.get("themes") or [None])[0])
     relevant_evidence = _relevant_evidence(refreshed_evidence, summary, watch_stock, prior_stock)
     components = {
-        "market_environment": _market_component(sector),
-        "mainline_match": _mainline_component(prior_theme, sector),
-        "catalyst_credibility": _catalyst_component(prior_stock, prior_theme, relevant_evidence),
+        "market_environment": market_component(previous_context),
+        "mainline_match": mainline_component(prior_theme, sector),
+        "catalyst_credibility": catalyst_component(prior_stock, prior_theme, relevant_evidence),
         "auction_strength": _auction_component(summary, sector),
         "order_structure": _order_component(summary),
         "stock_role": _role_component(prior_stock),
@@ -69,62 +70,6 @@ def _component(score, maximum, reason, fields, confidence, *, available_maximum=
     }
 
 
-def _market_component(sector):
-    if not sector or sector.get("positive_gap_ratio") is None:
-        return _component(None, 10, "market/sector auction breadth unavailable", [], "NONE")
-    ratio = float(sector["positive_gap_ratio"])
-    score = ratio * 7 + min(3, max(0, float(sector.get("post_0920_positive_ratio") or 0) * 3))
-    return _component(
-        score,
-        10,
-        "current sector breadth and post-09:20 participation",
-        ["positive_gap_ratio", "post_0920_positive_ratio"],
-        "MEDIUM",
-    )
-
-
-def _mainline_component(theme, sector):
-    if not theme:
-        return _component(
-            None, 15, "stock is not linked to an exact previous-day formal mainline", [], "NONE"
-        )
-    prior_score = theme.get("mainline_score")
-    breadth = sector.get("positive_gap_ratio") if sector else None
-    values = []
-    if prior_score is not None:
-        values.append(min(5, max(0, float(prior_score) / 100 * 5)))
-    if breadth is not None:
-        values.append(float(breadth) * 10)
-    if not values:
-        return _component(
-            None, 15, "previous mainline exists but comparable fields are unavailable", [], "LOW"
-        )
-    return _component(
-        sum(values),
-        15,
-        "previous mainline score plus current sector auction breadth",
-        ["mainline_score", "positive_gap_ratio"],
-        "MEDIUM",
-    )
-
-
-def _catalyst_component(stock, theme, evidence):
-    factors = (stock or {}).get("factors") or (theme or {}).get("factors") or []
-    levels = [str(item.get("evidence_level")) for item in factors if item.get("evidence_level")]
-    levels.extend(
-        str(item.get("evidence_level")) for item in evidence if item.get("evidence_level")
-    )
-    if not levels:
-        return _component(None, 15, "no inherited or refreshed catalyst evidence", [], "NONE")
-    best = min(levels, key=lambda level: "ABCD".find(level) if level in "ABCD" else 99)
-    score = {"A": 15, "B": 11, "C": 7, "D": 0}.get(best)
-    return _component(
-        score,
-        15,
-        f"best evidence level is {best}; D-level evidence receives no hard-validation score",
-        ["factor_ids", "evidence_level", "verified"],
-        "HIGH" if best == "A" else "MEDIUM" if best in {"B", "C"} else "LOW",
-    )
 
 
 def _auction_component(summary, sector):
@@ -181,6 +126,8 @@ def _auction_component(summary, sector):
 def _order_component(summary):
     parts = {}
     direction = summary.get("unmatched_direction")
+    if not summary.get("source_contract_reference"):
+        direction = None
     if direction in {"buy", "sell"}:
         parts["post_0920_direction"] = 5 if direction == "buy" else 0
     stability = summary.get("unmatched_stability")
@@ -280,7 +227,7 @@ def _risk_deductions(summary, stock, theme, sector, evidence):
     risks = []
 
     def add(kind, points, reason):
-        risks.append({"risk_type": kind, "deduction": points, "reason": reason})
+        risks.append({"risk_type": kind, "risk_rule_id": f"AUCTION_{kind}_V1", "matched_evidence": reason, "deduction": points, "reason": reason})
 
     gap = summary.get("auction_gap_pct")
     percentile = summary.get("auction_amount_percentile_20d") or summary.get(
@@ -322,15 +269,10 @@ def _risk_deductions(summary, stock, theme, sector, evidence):
     if levels and all(level == "D" for level in levels):
         add("RUMOR_DRIVEN", 4, "all inherited catalyst evidence is D-level")
     risk_text = " ".join(str(item) for item in evidence)
-    for key, kind, points in (
-        ("监管", "REGULATORY", 4),
-        ("减持", "DECREASE_HOLDING", 4),
-        ("解禁", "UNLOCK", 3),
-        ("澄清", "CLARIFICATION", 3),
-        ("业绩", "EARNINGS_RISK", 3),
-    ):
-        if key in risk_text:
-            add(kind, points, f"refreshed evidence contains {key}")
+    for kind, (points, phrases) in RISK_RULES.items():
+        matches = [phrase for phrase in phrases if phrase in risk_text]
+        if matches:
+            add(kind, points, "; ".join(matches))
     if any(key in risk_text for key in ("风险提示", "风险警示", "公告风险")):
         add("ANNOUNCEMENT_RISK", 4, "refreshed official evidence contains an announcement risk")
     if summary.get("quality_status") != "PASS":

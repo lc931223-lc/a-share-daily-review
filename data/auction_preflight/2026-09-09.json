@@ -1,0 +1,13 @@
+{
+  "trade_date": "2026-09-09",
+  "python": "3.12.14",
+  "platform": "Windows",
+  "started_at": "2026-09-09T01:20:43.669766+08:00",
+  "previous_trade_date": "2026-09-08",
+  "previous_review_status": "MISSING",
+  "review_context": true,
+  "market_packet": true,
+  "report_status": "degraded",
+  "source_health": "CONNECTED_NOT_LIVE_ACCEPTED",
+  "status": "PASS"
+}

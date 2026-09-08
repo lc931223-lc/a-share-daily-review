@@ -52,6 +52,10 @@ def import_record(root, payload, calendar=None):
     validate_record(root, payload, calendar)
     raw = json.dumps(payload, ensure_ascii=False, sort_keys=True, indent=2).encode("utf-8")
     digest = hashlib.sha256(raw).hexdigest()
+    from src.formal_review.delivery import official_projection, publish_official
+    official = root / "data/official_reviews" / f"{payload['date']}.json"
+    if official.exists() and json.loads(official.read_text(encoding="utf-8")) != official_projection(payload, digest):
+        raise ValueError("immutable official review projection conflict")
     folder = root / "data/formal_reviews"
     folder.mkdir(parents=True, exist_ok=True)
     target = folder / f"{payload['date']}.json"
@@ -64,6 +68,7 @@ def import_record(root, payload, calendar=None):
             stream.write(raw)
         status = "IMPORTED"
     digest = hashlib.sha256(target.read_bytes()).hexdigest()
+    publish_official(root, payload, digest)
     return {"status": status, "path": str(target), "sha256": digest, "date": payload["date"]}
 
 

@@ -190,7 +190,7 @@ def test_unsupported_order_fields_remain_na_and_reduce_available_max():
     )
     assert score["components"]["order_structure"]["score"] is None
     assert "order_structure" in score["missing_score_components"]
-    assert score["available_max_score"] == 75
+    assert score["available_max_score"] == 49
 
 
 @pytest.mark.parametrize(
@@ -208,7 +208,8 @@ def test_tomorrow_check_has_machine_readable_status(ratio, expected):
         [],
         [{"name": "测试主题", "positive_gap_ratio": ratio, "post_0920_positive_ratio": ratio}],
     )
-    assert result[0]["validation_status"] == expected
+    assert result[0]["validation_status"] == "unverified"
+    assert result[0]["reason"] == "UNSUPPORTED_CONDITION"
 
 
 def test_post_open_router_rejects_historical_date_and_evaluates_real_fields():

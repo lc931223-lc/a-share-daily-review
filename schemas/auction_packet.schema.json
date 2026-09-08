@@ -4,6 +4,9 @@
   "type": "object",
   "required": ["meta", "watchlist", "market_auction_summary", "stock_auction_summary", "volume_anomaly_candidates", "objective_analysis", "previous_context", "sector_breadth", "tomorrow_check_validation", "lifecycle_transition_candidates", "stock_state_transitions", "scored_stock_ranking", "catalyst_refresh", "scoring_model", "report_status", "report", "data_quality", "conflicts"],
   "properties": {
+    "auction_market_environment": {"type": "object"},
+    "auction_report_0925": {"type": "object"},
+    "auction_timeliness": {"type": "object", "required": ["collection_start_time", "formal_match_time", "frozen_at", "report_generated_at", "latency_from_0925_seconds", "status"]},
     "meta": {
       "type": "object",
       "required": ["schema_version", "trade_date", "mode", "process_primary", "final_judgement_owner"],

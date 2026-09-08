@@ -1,0 +1,25 @@
+{
+  "trade_date": "2026-09-04",
+  "status": "PARTIALLY_READY",
+  "live_acceptance": "LIVE_ACCEPTANCE_PENDING",
+  "checks": {
+    "trading_day": true,
+    "live": false,
+    "started_before_0915": false,
+    "eleven_checkpoints": false,
+    "post920": true,
+    "formal_match": true,
+    "full_packet": true,
+    "compact": true,
+    "schema": true,
+    "previous_exact": false,
+    "score_trace": true,
+    "unavailable_direction": true,
+    "report_before_0930": false,
+    "freeze_sha": false,
+    "post_open_independent": false,
+    "post_open_0935": false,
+    "post_open_1000": false,
+    "eod": false
+  }
+}

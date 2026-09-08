@@ -207,7 +207,9 @@ def build_watchlist_from_files(
     if not review_path.exists():
         review_path = root / "data" / "json" / "reviews" / f"{previous_trade_date.isoformat()}.json"
     packet_path = root / "data" / "market_packets" / f"{previous_trade_date.isoformat()}.json"
-    review = _read_json(review_path, {})
+    from src.auction.previous_context import load_previous_context
+    inherited = load_previous_context(root, target_date, days)
+    review = inherited["official_review"]
     packet = _read_json(packet_path, {"stocks": []})
     tracking_path = root / "data" / "auction_watchlists" / "historical_tracking.json"
     tracking = _read_json(tracking_path, [])

@@ -8,6 +8,10 @@
 
 ## 功能
 
+竞价生产化 A2.1 的时间轴、运行约束、正式复盘导入队列和验收结果见
+[生产验收记录](docs/audits/2026-09-09-auction-a21-production.md)。09:25 报告冻结后，
+post-open 与 EOD 结果独立存储，不覆盖原始竞价评分。当前 Live 验收待真实交易日完成。
+
 - Pydantic 与 JSON Schema 双层契约校验，正式 `DailyReview` 使用 schema `2.0` 且 `data_kind` 固定为 `real`。
 - 版本化数据门禁配置：`config/data_pipeline.json`。
 - 原始来源批次、标准化观察、降级来源、质量门禁和分析快照审计表。

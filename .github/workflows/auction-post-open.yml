@@ -1,0 +1,48 @@
+name: Auction independent post-open and EOD
+on:
+  schedule:
+    - cron: '35,45 1 * * 1-5'
+    - cron: '0 2 * * 1-5'
+    - cron: '15 7 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      stage:
+        type: choice
+        options: [post-open, eod]
+        default: post-open
+permissions:
+  contents: write
+concurrency:
+  group: auction-production-writes
+  cancel-in-progress: false
+jobs:
+  validate:
+    if: vars.AUCTION_EXECUTION_ENV == 'github'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      TZ: Asia/Shanghai
+      TUSHARE_TOKEN: ${{ secrets.TUSHARE_TOKEN }}
+      STAGE: ${{ inputs.stage || (github.event.schedule == '15 7 * * 1-5' && 'eod' || 'post-open') }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python tools/run_auction_scheduled.py --stage "$STAGE"
+      - name: Persist only independent validations
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          mkdir -p data/auction_runs data/auction_post_open data/auction_eod
+          git add -f data/auction_runs/*.json data/auction_post_open/*.json data/auction_eod/*.json 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: persist independent auction validation'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

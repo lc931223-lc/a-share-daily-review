@@ -228,6 +228,9 @@ class EltdxAuctionSource:
         failures: list[dict[str, str]] = []
         completed = 0
         for stock in stocks:
+            deadline = getattr(self, "collection_deadline", None)
+            if deadline is not None and datetime.now(SHANGHAI_TZ) >= deadline:
+                break
             ts_code = str(stock["ts_code"])
             try:
                 series = self._request(lambda code=ts_code: self.client.auctions.series(code[:6]))

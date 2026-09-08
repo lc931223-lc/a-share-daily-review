@@ -26,6 +26,8 @@
     "data_quality"
   ],
   "properties": {
+    "auction_report_0925": {"type": "object"},
+    "auction_timeliness": {"type": "object"},
     "meta": {"type": "object"},
     "market_auction_environment": {"type": "object"},
     "previous_mainline_validation": {"type": "object"},

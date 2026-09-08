@@ -100,6 +100,7 @@ def validate_tomorrow_checks(
     previous_context: dict[str, Any],
     summaries: list[dict[str, Any]],
     sectors: list[dict[str, Any]],
+    *, time_window="auction",
 ) -> list[dict[str, Any]]:
     by_code = {str(row.get("ts_code")): row for row in summaries}
     by_name = {str(row.get("stock_name")): row for row in summaries}
@@ -114,10 +115,15 @@ def validate_tomorrow_checks(
             evidence = by_sector.get(key)
         elif entity_type == "stock":
             evidence = by_code.get(_with_suffix(key)) or by_name.get(key)
-        status, reason = _check_status(entity_type, description, evidence)
+        from src.auction.conditions import evaluate
+        comparison = by_code.get(_with_suffix(check.get("comparison_entity"))) or by_sector.get(check.get("comparison_entity"))
+        if entity_type == "market":
+            evidence = previous_context.get("auction_market")
+        status, reason = evaluate(check, evidence, comparison, window=time_window)
         results.append(
             {
                 "previous_judgement": description,
+                "id": check.get("id"),
                 "entity_type": entity_type,
                 "entity_key": key,
                 "today_auction_evidence": evidence,
@@ -143,11 +149,11 @@ def lifecycle_transitions(previous_context: dict[str, Any], sectors: list[dict[s
             weak = (current.get("positive_gap_ratio") or 1) <= 0.33 or current.get(
                 "structure_status"
             ) == "HIGH_OPEN_REVERSAL_RISK"
-            if strong and previous in {"启动", "朦胧期", "发酵", "发酵期"}:
+            if strong and previous in {"启动", "朦胧期", "发酵", "发酵期", "MENG_LONG", "GERMINATION", "VALIDATION"}:
                 candidate = "发酵→加速候选"
-            elif weak and previous in {"加速", "主升期", "扩散期"}:
+            elif weak and previous in {"加速", "主升期", "扩散期", "MAIN_UP", "DIFFUSION"}:
                 candidate = "加速→分歧候选"
-            elif strong and previous in {"退潮", "兑现期"}:
+            elif strong and previous in {"退潮", "兑现期", "REALIZATION", "FALSIFIED"}:
                 candidate = "退潮→修复候选"
         rows.append(
             {
@@ -173,7 +179,7 @@ def stock_state_machine(previous_context, summaries, sectors):
         gap = summary.get("auction_gap_pct")
         order_growth = summary.get("post_0920_order_growth")
         directional_order_growth = (
-            order_growth if summary.get("unmatched_direction") in {"buy", "sell"} else None
+            order_growth if summary.get("unmatched_direction") in {"buy", "sell"} and summary.get("source_contract_reference") else None
         )
         percentile = summary.get("auction_amount_percentile_20d") or summary.get(
             "auction_amount_percentile_60d"
@@ -230,7 +236,7 @@ def stock_state_machine(previous_context, summaries, sectors):
             reason_codes.append("GAP_POSITIVE" if gap > 0 else "GAP_NON_POSITIVE")
         if directional_order_growth is not None:
             reason_codes.append(
-                "POST_920_ORDER_GROWTH"
+                "POST_920_SIGNED_ORDER_GROWTH"
                 if directional_order_growth >= 0
                 else "POST_920_ORDER_DECAY"
             )
@@ -247,6 +253,8 @@ def stock_state_machine(previous_context, summaries, sectors):
                 "previous_role": old.get("role"),
                 "state": state,
                 "reason_codes": reason_codes,
+                "order_direction_confidence": "DIRECTION_SUPPORTED" if directional_order_growth is not None else "DIRECTION_UNAVAILABLE",
+                "order_interpretation": "protocol-supported direction" if directional_order_growth is not None else "unmatched absolute magnitude only; buy/sell direction cannot be confirmed",
             }
         )
     return rows

@@ -330,6 +330,9 @@ class DailyCloseOrchestrator:
         )
 
     def _finish(self, manifest: dict[str, Any]) -> dict[str, Any]:
+        from src.formal_review.delivery import update_queue
+        if "formal_review_support" in manifest["steps"]:
+            manifest["formal_review_queue"] = update_queue(self.root, manifest["trade_date"] if "trade_date" in manifest else manifest["date"])
         if manifest["status"] not in FINAL_STATUSES:
             raise ValueError(f"invalid final status {manifest['status']}")
         for name, step in manifest["steps"].items():

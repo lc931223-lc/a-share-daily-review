@@ -1,0 +1,53 @@
+name: Auction live production
+on:
+  schedule:
+    - cron: '12 1 * * 1-5'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: auction-production-writes
+  cancel-in-progress: false
+jobs:
+  live:
+    # Local scheduler is primary until this deployment passes the cloud source probe.
+    if: vars.AUCTION_EXECUTION_ENV == 'github'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      TZ: Asia/Shanghai
+      TUSHARE_TOKEN: ${{ secrets.TUSHARE_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Preflight
+        run: python tools/auction_preflight.py
+      - name: Collect and freeze without post-open wait
+        run: python tools/run_auction_scheduled.py --stage live
+      - name: Persist completed files and failure receipts
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          mkdir -p data/auction_packets data/auction_runs data/auction_preflight
+          git add -f data/auction_packets/*.json data/auction_runs/*.json data/auction_preflight/*.json 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: persist auction freeze and receipts'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: auction-live-${{ github.run_id }}
+          path: |
+            data/auction_runs/
+            data/auction_packets/
+            data/auction_preflight/
+          if-no-files-found: ignore

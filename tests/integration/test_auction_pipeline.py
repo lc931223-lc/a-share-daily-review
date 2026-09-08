@@ -68,6 +68,44 @@ class FakeAuctionSource:
             },
         )
 
+
+class FakeLiveAuctionSource(FakeAuctionSource):
+    def connect(self):
+        pass
+
+    def close(self):
+        pass
+
+    def collect_live_process(self, stocks, trade_date):
+        return self.collect_historical(stocks, trade_date)
+
+    def collect_live_formal(self, stocks, trade_date):
+        return self.collect_historical(stocks, trade_date)
+
+    def _stats(self, completed, total):
+        return dict(request_count=1,success_count=completed,failure_count=total-completed,reconnect_count=0,median_latency_ms=1,p95_latency_ms=1,stock_completion_rate=completed/total)
+
+
+def test_twenty_stock_live_freeze_then_resume_never_calls_open_router(tmp_path):
+    from datetime import datetime, timedelta
+    from zoneinfo import ZoneInfo
+    target=date(2026,9,9)
+    previous=date(2026,9,8)
+    folder=tmp_path/'data/market_packets'
+    folder.mkdir(parents=True)
+    (folder/f'{previous}.json').write_text(json.dumps({'meta':{'trade_date':str(previous)},'stocks':[{'stock_code':f'{n:06d}','stock_name':f'stock{n}','close':10,'amount':1000000} for n in range(1,21)]}),encoding='utf-8')
+    class NoOpen:
+        def load(self,*a,**k):
+            pytest.fail('09:25 must not request post-open quotes')
+    clock=[datetime(2026,9,9,9,14,50,tzinfo=ZoneInfo('Asia/Shanghai'))]
+    pipe=AuctionPipeline(root=tmp_path,source_factory=FakeLiveAuctionSource,calendar_loader=lambda _:[TradingCalendarDay(previous,True),TradingCalendarDay(target,True)],realtime_open_router=NoOpen())
+    result=pipe.run_live(target,min_watchlist_size=20,max_watchlist_size=20,baseline_days=60,now=lambda:clock[0],sleeper=lambda seconds:clock.__setitem__(0,clock[0]+timedelta(seconds=seconds)))
+    assert clock[0].strftime('%H:%M:%S')=='09:25:02'
+    assert 'auction_report_0925' in result['packet']
+    assert 'post_open_validation' not in result['packet']
+    assert result['packet']['data_quality']['production']['previous_formal_review_status']=='MISSING'
+    assert pipe.run_live(target,now=lambda:clock[0])['reused']
+
     def collect_formal_only(self, stocks, trade_date):
         return AuctionCollection(
             [],
@@ -223,13 +261,18 @@ def test_post_open_stage_updates_packet_and_persists_fact_partition(tmp_path):
             )
 
     pipeline.post_open_router = FakePostOpenRouter()
-    result = pipeline.run_post_open(target)
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+    frozen_path = tmp_path / 'data/auction_packets' / f'{target}.json'
+    before = frozen_path.read_bytes()
+    result = pipeline.run_post_open(target, now=datetime.combine(target, datetime.strptime('09:35','%H:%M').time(), ZoneInfo('Asia/Shanghai')))
 
     validation = result["packet"]["post_open_validation"]
     assert validation["status"] == "AVAILABLE"
     assert validation["coverage"] == 1.0
-    assert Path(result["partition"]).exists()
-    assert result["compact_packet"]["post_open_validation"]["source"] == "fixture_post_open"
+    assert Path(result["path"]).exists()
+    assert frozen_path.read_bytes() == before
+    assert len(result['post_open']['snapshots']) == 1
 
 
 def test_archived_tushare_open_loader_prefers_full_raw_record_and_guards_date(tmp_path):

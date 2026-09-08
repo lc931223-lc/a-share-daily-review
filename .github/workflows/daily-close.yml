@@ -65,6 +65,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/market_packets data/daily_runs data/formal_review_support reports/market_packets
           if [[ -d data/formal_reviews ]]; then git add data/formal_reviews; fi
+          git add data/formal_review_queue data/chatgpt_review_inputs
+          if [[ -d data/official_reviews ]]; then git add data/official_reviews; fi
           git add -f data/inflection/*.json data/review_intelligence/*.json \
             data/capital_preference/*.json data/review_context/*.json \
             data/feedback_records research_feedback

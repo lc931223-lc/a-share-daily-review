@@ -40,7 +40,7 @@ class PostOpenQuoteRouter:
         fallbacks: list[dict[str, Any]] = []
         try:
             rows = self.tencent_loader(codes)
-            _validate_rows(trade_date, rows)
+            _validate_rows(trade_date, rows, current)
             if rows:
                 return "tencent_realtime", rows, fallbacks
         except Exception as exc:
@@ -52,7 +52,7 @@ class PostOpenQuoteRouter:
                 }
             )
         rows = self.eastmoney_loader(codes)
-        _validate_rows(trade_date, rows)
+        _validate_rows(trade_date, rows, current)
         return "eastmoney_realtime", rows, fallbacks
 
 
@@ -163,10 +163,17 @@ def evaluate_post_open(
     return results
 
 
-def _validate_rows(expected: date, rows: list[dict[str, Any]]) -> None:
+def _validate_rows(expected: date, rows: list[dict[str, Any]], now=None) -> None:
     dates = {datetime.fromisoformat(str(row["observed_at"])).date() for row in rows}
     if dates != {expected}:
         raise ValueError(f"source date mismatch: expected {expected.isoformat()}, observed {dates}")
+    for row in rows:
+        observed = datetime.fromisoformat(str(row['observed_at']))
+        if observed.tzinfo is None or (now is not None and (observed > now or (now-observed).total_seconds()>120)):
+            raise ValueError('post-open observation is future or stale')
+        local=observed.astimezone(SHANGHAI_TZ)
+        if not 570 <= local.hour*60+local.minute <= 600:
+            raise ValueError('post-open observation outside validation window')
 
 
 def _number(value: Any) -> float | None:

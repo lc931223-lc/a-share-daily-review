@@ -1,5 +1,20 @@
 # Checkpoint
 
+## 2026-09-09 Auction A2.1
+
+- Removed 09:30:05 wait and synchronous live history backfill. Added frozen raw/report
+  recovery, independent post-open/EOD, actual timing receipts and validation CLI.
+- Canonical formal v3 imports now derive immutable official projections and queue READY;
+  daily close emits waiting queue and consolidated ChatGPT input. Exact prior only.
+- Replaced duplicate market/sector scoring, tier-only catalysts and generic earnings
+  risk keywords; structured conditions never infer prose; direction requires contract.
+- Registered five local Windows tasks (09:12,09:35,09:45,10:00,15:15), interactive user
+  required. Local eltdx connection passed; Ubuntu workflow probe pending push.
+- Tests: 313 passed, 1 deselected; targeted auction tests 39 passed; compileall,
+  JSON schemas and workflow YAML parse passed. No 9/9 live facts exist yet.
+- Pending: Ubuntu probe after push; actual session timed freeze/post-open/EOD and
+  ChatGPT 9/8 formal delivery. Local tasks are registered, interactive login required.
+
 ## 2026-09-09 Quality And Formal Memory Closure
 
 - Added conservative daily-band verification for empty limit-down responses; real

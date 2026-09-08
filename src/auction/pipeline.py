@@ -2,7 +2,8 @@ from __future__ import annotations
 
 import json
 from collections.abc import Callable
-from datetime import date, datetime
+from datetime import date, datetime, time
+from zoneinfo import ZoneInfo
 from pathlib import Path
 from typing import Any
 
@@ -19,6 +20,7 @@ from src.auction.previous_context import load_previous_context
 from src.auction.realtime_open import RealtimeOpenRouter
 from src.auction.scoring import score_stock
 from src.auction.storage import persist_auction_run, persist_eod_reconciliation
+from src.auction.production import update_run, resume_report, freeze_result, save_post_open, write, read
 from src.auction.verification import (
     build_report,
     build_sector_breadth,
@@ -68,6 +70,8 @@ class AuctionPipeline:
         baseline_days: int = 60,
         max_checkpoint_lag_seconds: int = 65,
     ) -> dict[str, Any]:
+        if resume_report(self.root, trade_date):
+            raise ValueError('historical replay cannot overwrite a frozen live report')
         calendar = self.calendar_loader(trade_date)
         if not any(item.cal_date == trade_date and item.is_open for item in calendar):
             raise ValueError(f"{trade_date.isoformat()} is not an A-share trading day")
@@ -116,10 +120,20 @@ class AuctionPipeline:
         max_checkpoint_lag_seconds: int = 65,
         now=None,
         sleeper=None,
+        force=False,
     ) -> dict[str, Any]:
+        now = now or (lambda: datetime.now(ZoneInfo("Asia/Shanghai")))
+        if now().date() != trade_date:
+            raise ValueError("live requires today's Shanghai date")
+        if not force:
+            reused = resume_report(self.root, trade_date)
+            if reused:
+                return reused
         calendar = self.calendar_loader(trade_date)
         if not any(item.cal_date == trade_date and item.is_open for item in calendar):
-            raise ValueError(f"{trade_date.isoformat()} is not an A-share trading day")
+            update_run(self.root, trade_date, "NOT_STARTED", status="SKIPPED_NON_TRADING_DAY")
+            return {"status": "SKIPPED_NON_TRADING_DAY"}
+        update_run(self.root, trade_date, "NOT_STARTED", started_at=now().isoformat())
         previous_context = load_previous_context(self.root, trade_date, calendar)
         watchlist = build_watchlist_from_files(
             trade_date,
@@ -130,40 +144,44 @@ class AuctionPipeline:
         )
         watchlist["sources"]["review_context"] = previous_context["source_paths"]["review_context"]
         stocks = watchlist["stocks"]
-        baseline_dates = sorted(
-            item.cal_date for item in calendar if item.is_open and item.cal_date < trade_date
-        )[-max(0, baseline_days) :]
-        baseline_result = self._backfill_formal_baselines(stocks, baseline_dates)
+        baseline_result = {"status": "CACHED_ONLY", "reason": "live never blocks on historical network backfill", "requested_days": baseline_days}
         runner_kwargs = {}
         if now is not None:
             runner_kwargs["now"] = now
         if sleeper is not None:
             runner_kwargs["sleeper"] = sleeper
-        collection = LiveAuctionRunner(self.source_factory(), **runner_kwargs).collect(
-            trade_date, stocks
-        )
-        codes = [str(stock["ts_code"]) for stock in stocks]
-        validation_source, official_opens, fallbacks = self.realtime_open_router.load(
-            trade_date, codes, now=now() if now else None
-        )
-        return self._complete_collection(
+        runner_kwargs["progress"] = lambda stage, details: update_run(self.root, trade_date, stage, **details)
+        raw_path = self.root / 'data/auction_raw_frozen' / f'{trade_date}.json'
+        frozen = read(raw_path) if not force else None
+        if frozen:
+            collection = AuctionCollection(**frozen['collection'])
+            watchlist = frozen['watchlist']
+            previous_context = frozen['previous_context']
+        else:
+            collection = LiveAuctionRunner(self.source_factory(), **runner_kwargs).collect(trade_date, stocks)
+            write(raw_path, dict(collection=dict(process_rows=collection.process_rows, formal_rows=collection.formal_rows, failures=collection.failures, stats=collection.stats), watchlist=watchlist, previous_context=previous_context))
+        result = self._complete_collection(
             trade_date,
             watchlist,
             collection,
             baseline_result,
-            official_opens=official_opens,
-            validation_source=validation_source,
+            official_opens={},
+            validation_source="POST_OPEN_PENDING",
             live_session=True,
-            fallbacks=fallbacks,
+            fallbacks=[],
             max_checkpoint_lag_seconds=max_checkpoint_lag_seconds,
             previous_context=previous_context,
         )
+        return freeze_result(self.root, trade_date, result, collection.stats, now)
 
     def reconcile_eod(self, trade_date: date) -> dict[str, Any]:
         packet_path = self.root / "data" / "auction_packets" / f"{trade_date.isoformat()}.json"
         packet = _read_json(packet_path, None)
         if not packet:
             raise FileNotFoundError(f"Auction Packet not found: {packet_path}")
+        current = datetime.now(ZoneInfo("Asia/Shanghai"))
+        if "auction_report_0925" in packet and (trade_date > current.date() or (trade_date == current.date() and current.time() < time(15,15))):
+            raise ValueError("EOD reconciliation requires a closed session after 15:15")
         summaries = packet.get("stock_auction_summary") or []
         codes = [str(item.get("ts_code")) for item in summaries if item.get("ts_code")]
         official_opens = self.eod_open_loader(trade_date, codes)
@@ -203,6 +221,11 @@ class AuctionPipeline:
             database_path=self.database_path,
             packet_path=packet_path,
         )
+        if "auction_report_0925" in packet:
+            eod_path = self.root / "data/auction_eod" / f"{trade_date}.json"
+            write(eod_path, dict(trade_date=str(trade_date), status=eod_status, summaries=summaries, conflicts=conflicts))
+            update_run(self.root, trade_date, "EOD_RECONCILED", status=eod_status, eod_completed_at=current.isoformat() if eod_status == "PASS" else None)
+            return dict(packet=packet, path=str(eod_path), compact_path=str(packet_path.with_name(f"{trade_date}_compact.json")), status=eod_status)
         packet_path.write_text(json.dumps(packet, ensure_ascii=False, indent=2), encoding="utf-8")
         compact = build_compact_packet(packet)
         compact_path = packet_path.with_name(f"{trade_date.isoformat()}_compact.json")
@@ -222,6 +245,9 @@ class AuctionPipeline:
         }
 
     def run_post_open(self, trade_date: date, *, now: datetime | None = None) -> dict[str, Any]:
+        now = now or datetime.now(ZoneInfo("Asia/Shanghai"))
+        if now.date() != trade_date or not time(9,30) <= now.time() < time(10,1):
+            raise ValueError("post-open requires today's 09:30-10:00 Shanghai window")
         calendar = self.calendar_loader(trade_date)
         if not any(item.cal_date == trade_date and item.is_open for item in calendar):
             raise ValueError(f"{trade_date.isoformat()} is not an A-share trading day")
@@ -231,6 +257,7 @@ class AuctionPipeline:
             raise FileNotFoundError(f"Auction Packet not found: {packet_path}")
         summaries = packet.get("stock_auction_summary") or []
         codes = [str(row["ts_code"]) for row in summaries if row.get("ts_code")]
+        update_run(self.root, trade_date, "POST_OPEN_VALIDATING", post_open_started_at=now.isoformat())
         source, quotes, fallbacks = self.post_open_router.load(trade_date, codes, now=now)
         results = evaluate_post_open(summaries, quotes, source)
         partition = self.fact_store.write_dataset("auction_post_open_validation", trade_date, results)
@@ -252,42 +279,11 @@ class AuctionPipeline:
             "fallbacks": fallbacks,
             "stocks": results,
         }
-        packet["objective_analysis"]["validation_conditions_0930_1000"] = [
-            {
-                "id": "hold_auction_price",
-                "status": "EVALUATED",
-                "passed_count": sum(row.get("holds_auction_price") is True for row in results),
-                "available_count": sum("holds_auction_price" in row for row in results),
-            },
-            {
-                "id": "hold_previous_close",
-                "status": "EVALUATED",
-                "passed_count": sum(row.get("holds_previous_close") is True for row in results),
-                "available_count": sum("holds_previous_close" in row for row in results),
-            },
-            {
-                "id": "sector_breadth_confirm",
-                "status": "UNVERIFIED",
-                "reason": "full-sector realtime breadth is not collected by the focused-stock source",
-            },
-            {
-                "id": "opening_conflict_clear",
-                "status": "EVALUATED",
-                "passed": not packet.get("conflicts"),
-            },
-        ]
-        packet["report"] = build_report(packet)
-        packet_path.write_text(json.dumps(packet, ensure_ascii=False, indent=2), encoding="utf-8")
-        compact = build_compact_packet(packet)
-        compact_path = packet_path.with_name(f"{trade_date.isoformat()}_compact.json")
-        compact_path.write_text(json.dumps(compact, ensure_ascii=False, indent=2), encoding="utf-8")
-        return {
-            "packet": packet,
-            "compact_packet": compact,
-            "path": str(packet_path),
-            "compact_path": str(compact_path),
-            "partition": str(partition.path) if partition else None,
-        }
+        validation = packet["post_open_validation"]
+        validation["tomorrow_checks"] = validate_tomorrow_checks(load_previous_context(self.root, trade_date, calendar), [dict(row, **next((v for v in results if v.get("ts_code") == row.get("ts_code")), {})) for row in summaries], packet.get("sector_breadth", []), time_window="post_open")
+        saved = save_post_open(self.root, trade_date, validation, now)
+        return {"packet": packet, "path": str(self.root / "data/auction_post_open" / f"{trade_date}.json"), "compact_path": str(packet_path.with_name(f"{trade_date}_compact.json")), "post_open": saved}
+
 
     def _complete_collection(
         self,
@@ -304,6 +300,12 @@ class AuctionPipeline:
         previous_context: dict[str, Any],
     ) -> dict[str, Any]:
         stocks = watchlist["stocks"]
+        if live_session:
+            cutoff = datetime.combine(trade_date, time(9,25), ZoneInfo('Asia/Shanghai'))
+            for row in collection.process_rows + collection.formal_rows:
+                observed = datetime.fromisoformat(row['snapshot_time'])
+                if observed.tzinfo is None or observed.date() != trade_date or observed > cutoff:
+                    raise ValueError('09:25 report rejects future or cross-date observations')
         process_by_code: dict[str, list[dict[str, Any]]] = {}
         for row in collection.process_rows:
             process_by_code.setdefault(str(row["ts_code"]), []).append(row)
@@ -371,6 +373,12 @@ class AuctionPipeline:
         refreshed = self._refreshed_evidence(trade_date)
         sectors = build_sector_breadth(watchlist, summaries, previous_context)
         sector_map = {row["name"]: row for row in sectors}
+        from src.auction.score_rules import market_sample
+        previous_context["auction_market"] = market_sample(summaries, previous_context, stocks)
+        initial_checks = validate_tomorrow_checks(previous_context, summaries, sectors)
+        for sector in sectors:
+            checks_for_sector = [c for c in initial_checks if c['entity_type']=='theme' and c['entity_key']==sector['name'] and c['validation_status'] != 'unverified']
+            sector['tomorrow_check_ratio'] = sum(c['validation_status']=='confirmed' for c in checks_for_sector)/len(checks_for_sector) if checks_for_sector else None
         watch_by_code = {str(row.get("ts_code")): row for row in stocks}
         scored = []
         for summary in summaries:
@@ -460,6 +468,7 @@ class AuctionPipeline:
             if key not in {"official_review", "review_context", "market_packet"}
         }
         packet["sector_breadth"] = sectors
+        packet["auction_market_environment"] = previous_context["auction_market"]
         packet["tomorrow_check_validation"] = tomorrow_validation
         packet["lifecycle_transition_candidates"] = lifecycle
         packet["stock_state_transitions"] = stock_transitions
@@ -651,7 +660,7 @@ class AuctionPipeline:
                     continue
                 if str(row.get("evidence_level") or "") not in {"A", "B", "C", "D"}:
                     continue
-                records.append(row)
+                records.append(dict(row, as_of=cutoff))
         return {
             "status": "AVAILABLE" if records else "EMPTY_VALID" if packet else "UNAVAILABLE",
             "as_of": cutoff,

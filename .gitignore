@@ -15,6 +15,8 @@ data/*.db
 data/**/*.db
 data/archive/
 data/reference/
+data/auction_raw_frozen/
+data/auction_runs/*.lock/
 data/raw/market_packets/
 data/facts/
 data/inflection/*

@@ -27,10 +27,24 @@ def load_previous_context(
     market_path = root / "data" / "market_packets" / f"{previous.isoformat()}.json"
 
     official = _read_exact(official_path, previous)
+    canonical = root / "data/formal_reviews" / f"{previous}.json"
+    canonical_invalid = False
+    if canonical.exists():
+        from src.formal_review.persistence import load_previous_formal
+        from src.formal_review.delivery import official_projection
+        try:
+            formal, manifest = load_previous_formal(root, target, calendar_days)
+            official = official_projection(formal, manifest["sha256"])
+        except Exception:
+            official = {}
+            canonical_invalid = True
+        official_path = canonical
     review_context = _read_exact(context_path, previous)
     market_packet = _read_exact(market_path, previous)
-    official_status = _official_review_status(official)
+    official_status = "INVALID_FORMAL_REVIEW" if canonical_invalid else _official_review_status(official)
     official_loaded = official_status == "FORMAL"
+    if not official_loaded:
+        official = {}
     return {
         "previous_trade_date": previous.isoformat(),
         "status": "AVAILABLE" if official_loaded else "DEGRADED",
@@ -76,6 +90,7 @@ def _market_context(official: dict[str, Any], context: dict[str, Any]) -> dict[s
             "decliners": official.get("decliners") or environment.get("fall_count"),
         },
         "risk_level": (official.get("sentiment_dashboard") or {}).get("loss_feedback"),
+        "operability": (environment.get("market_operability") or {}).get("market_operability_score") if isinstance(environment.get("market_operability"), dict) else environment.get("market_operability"),
     }
 
 
@@ -128,6 +143,7 @@ def _stock_context(row: dict[str, Any]) -> dict[str, Any]:
 
 def _driver(row: dict[str, Any]) -> dict[str, Any]:
     return {
+        **row,
         "factor_id": row.get("code"),
         "name": row.get("name"),
         "evidence_level": row.get("evidence_level"),

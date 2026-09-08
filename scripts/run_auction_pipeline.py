@@ -2,7 +2,8 @@ from __future__ import annotations
 
 import argparse
 import sys
-from datetime import date
+from datetime import date, datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -21,12 +22,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--min-watchlist", type=int, default=100)
     parser.add_argument("--max-watchlist", type=int, default=200)
     parser.add_argument("--max-checkpoint-lag", type=int, default=65)
+    parser.add_argument("--force", action="store_true")
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
-    trade_date = date.fromisoformat(args.date)
+    trade_date = datetime.now(ZoneInfo("Asia/Shanghai")).date() if args.date == "today" else date.fromisoformat(args.date)
     pipeline = AuctionPipeline()
     if args.mode == "post-open":
         result = pipeline.run_post_open(trade_date)
@@ -47,7 +49,11 @@ def main() -> int:
         max_watchlist_size=args.max_watchlist,
         baseline_days=args.baseline_days,
         max_checkpoint_lag_seconds=args.max_checkpoint_lag,
+        **({"force": args.force} if args.mode == "live" else {}),
     )
+    if result.get("status") == "SKIPPED_NON_TRADING_DAY":
+        print(result['status'])
+        return 0
     packet = result["packet"]
     summary = packet["market_auction_summary"]
     print(f"watchlist={result['paths']['watchlist']}")
