@@ -1,5 +1,18 @@
 # Checkpoint
 
+## 2026-09-08 Auction 9:25 Audit And Remediation
+
+Task: Audit and remediate the production chain from the exact previous trading-day formal review through continuous auction snapshots, traceable scoring, quality gates, and 09:30-10:00 validation.
+
+- Audited the 2026-09-04 real cache: 100 stocks, 13,546 raw process rows, source-event median interval 3 seconds, P95 9 seconds, and complete 09:20-09:25 minute checkpoints.
+- Expanded standard checkpoints to every minute from 09:15 through 09:25 and live polling to every 30 seconds. Unsupported buy/sell split, cancellation ratio, and unmatched amount remain explicit `N/A`.
+- Added exact previous-trading-day inheritance for official review, review context, market context, mainline score/lifecycle/factors/evidence, stock role, and tomorrow checks. No older fallback is allowed; simulated reviews are rejected.
+- Added 5/10/20-day auction amount/volume percentile and z-score fields, post-09:20 stability/growth/decay metrics, sector breadth/structure, tomorrow-check statuses, lifecycle candidates, and stock state transitions.
+- Implemented the 100-point traceable scoring model with child-level available maxima and a real 0-20 risk deduction. D-level evidence receives zero catalyst score.
+- Added `post-open` mode for same-day 09:30-10:00 Tencent/Eastmoney validation and a dedicated FactStore partition. Historical dates are rejected by current-only source guards.
+- The 2026-09-04 final replay remains honestly `MEDIUM/PARTIAL` and `degraded`: checkpoint coverage 95.64%, post-09:20 coverage 100%, formal match coverage 100%, but the exact 2026-09-03 official review and review context do not exist and historical mode cannot pass live acceptance.
+- Production readiness remains `PARTIALLY READY` until a real trading-day live run proves the scheduler, exact prior formal review availability, 09:15 start, 09:30-10:00 follow-up, and EOD reconciliation end to end.
+
 ## 2026-09-06 Capital Preference Intelligence Layer Phase 1
 
 Checkpoint: implementation, 2026-09-04 packet, historical replay, and targeted validation complete

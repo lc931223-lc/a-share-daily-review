@@ -1,15 +1,17 @@
 from __future__ import annotations
 
+from collections.abc import Callable
 from datetime import datetime, time, timedelta
 from time import sleep
-from typing import Any, Callable
+from typing import Any
 from zoneinfo import ZoneInfo
 
-from src.auction.checkpoints import CHECKPOINTS
 from src.auction.eltdx_source import AuctionCollection
 
-
 SHANGHAI_TZ = ZoneInfo("Asia/Shanghai")
+POLL_TIMES = tuple(time(9, minute, second) for minute in range(15, 25) for second in (0, 30)) + (
+    time(9, 25),
+)
 
 
 class LiveAuctionRunner:
@@ -27,7 +29,9 @@ class LiveAuctionRunner:
     def collect(self, trade_date, stocks: list[dict[str, Any]]) -> AuctionCollection:
         current = self.now().astimezone(SHANGHAI_TZ)
         if current.date() != trade_date:
-            raise ValueError("live auction collection requires the current Asia/Shanghai trade date")
+            raise ValueError(
+                "live auction collection requires the current Asia/Shanghai trade date"
+            )
         if current.time() > time(9, 15):
             raise ValueError("live auction collection must start by 09:15 Asia/Shanghai")
         self.source.connect()
@@ -35,8 +39,8 @@ class LiveAuctionRunner:
         failures: dict[str, dict[str, str]] = {}
         polled = 0
         try:
-            for checkpoint_text in CHECKPOINTS:
-                target = datetime.combine(trade_date, time.fromisoformat(checkpoint_text), SHANGHAI_TZ)
+            for poll_time in POLL_TIMES:
+                target = datetime.combine(trade_date, poll_time, SHANGHAI_TZ)
                 self._wait_until(target)
                 result = self.source.collect_live_process(stocks, trade_date)
                 polled += 1
@@ -44,11 +48,17 @@ class LiveAuctionRunner:
                     unique_rows[str(row["content_hash"])] = row
                 for failure in result.failures:
                     failures[str(failure["ts_code"])] = failure
-            self._wait_until(datetime.combine(trade_date, time(9, 25), SHANGHAI_TZ) + timedelta(seconds=2))
+            self._wait_until(
+                datetime.combine(trade_date, time(9, 25), SHANGHAI_TZ) + timedelta(seconds=2)
+            )
             formal = self.source.collect_live_formal(stocks, trade_date)
             formal_by_code = {str(row["ts_code"]): row for row in formal.formal_rows}
-            successful_codes = {str(row["ts_code"]) for row in unique_rows.values()} & set(formal_by_code)
-            failures = {code: item for code, item in failures.items() if code not in successful_codes}
+            successful_codes = {str(row["ts_code"]) for row in unique_rows.values()} & set(
+                formal_by_code
+            )
+            failures = {
+                code: item for code, item in failures.items() if code not in successful_codes
+            }
             for item in formal.failures:
                 if str(item["ts_code"]) not in successful_codes:
                     failures[str(item["ts_code"])] = item
@@ -56,8 +66,10 @@ class LiveAuctionRunner:
             stats["checkpoint_poll_count"] = polled
             self._wait_until(datetime.combine(trade_date, time(9, 30, 5), SHANGHAI_TZ))
             return AuctionCollection(
-                process_rows=list(unique_rows.values()), formal_rows=list(formal_by_code.values()),
-                failures=list(failures.values()), stats=stats,
+                process_rows=list(unique_rows.values()),
+                formal_rows=list(formal_by_code.values()),
+                failures=list(failures.values()),
+                stats=stats,
             )
         finally:
             self.source.close()

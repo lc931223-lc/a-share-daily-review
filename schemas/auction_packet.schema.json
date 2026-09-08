@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://local.a-share/schemas/auction_packet.schema.json",
   "type": "object",
-  "required": ["meta", "watchlist", "market_auction_summary", "stock_auction_summary", "volume_anomaly_candidates", "objective_analysis", "data_quality", "conflicts"],
+  "required": ["meta", "watchlist", "market_auction_summary", "stock_auction_summary", "volume_anomaly_candidates", "objective_analysis", "previous_context", "sector_breadth", "tomorrow_check_validation", "lifecycle_transition_candidates", "stock_state_transitions", "scored_stock_ranking", "catalyst_refresh", "scoring_model", "report_status", "report", "data_quality", "conflicts"],
   "properties": {
     "meta": {
       "type": "object",
@@ -17,10 +17,21 @@
     },
     "watchlist": {"type": "object"},
     "market_auction_summary": {"type": "object"},
-    "stock_auction_summary": {"type": "array", "items": {"type": "object"}},
+    "stock_auction_summary": {"type": "array", "items": {"type": "object", "required": ["ts_code", "price_0915", "price_0920", "price_0924", "price_0925", "auction_amount", "auction_vol", "composite_score"]}},
     "volume_anomaly_candidates": {"type": "array", "items": {"type": "object"}},
     "objective_analysis": {"type": "object"},
-    "data_quality": {"type": "object", "required": ["status", "checks"]},
+    "previous_context": {"type": "object", "required": ["previous_trade_date", "status", "report_status", "official_review_loaded", "review_context_loaded"]},
+    "sector_breadth": {"type": "array", "items": {"type": "object", "required": ["name", "watchlist_count", "structure_status"]}},
+    "tomorrow_check_validation": {"type": "array", "items": {"type": "object", "required": ["previous_judgement", "today_auction_evidence", "validation_status", "reason"]}},
+    "lifecycle_transition_candidates": {"type": "array"},
+    "stock_state_transitions": {"type": "array"},
+    "scored_stock_ranking": {"type": "array", "items": {"type": "object", "required": ["rank", "ts_code", "score", "expectation_bucket"]}},
+    "catalyst_refresh": {"type": "object", "required": ["status", "as_of", "record_count"]},
+    "scoring_model": {"type": "object", "required": ["gross_max_score", "risk_deduction_range", "formula"]},
+    "post_open_validation": {"type": "object"},
+    "report_status": {"enum": ["normal", "degraded"]},
+    "report": {"type": "object", "minProperties": 10},
+    "data_quality": {"type": "object", "required": ["status", "level", "checks", "coverage"], "properties": {"level": {"enum": ["HIGH", "MEDIUM", "LOW"]}}},
     "conflicts": {"type": "array", "items": {"type": "object"}}
   },
   "additionalProperties": false

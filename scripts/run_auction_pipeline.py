@@ -5,7 +5,6 @@ import sys
 from datetime import date
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
@@ -15,8 +14,10 @@ from src.auction.pipeline import AuctionPipeline
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run the A-share call-auction Phase A2 pipeline.")
     parser.add_argument("--date", required=True, help="Trading date in YYYY-MM-DD format")
-    parser.add_argument("--mode", choices=("historical", "live", "eod"), default="historical")
-    parser.add_argument("--baseline-days", type=int, choices=range(0, 121), default=60)
+    parser.add_argument(
+        "--mode", choices=("historical", "live", "post-open", "eod"), default="historical"
+    )
+    parser.add_argument("--baseline-days", type=int, choices=range(121), default=60)
     parser.add_argument("--min-watchlist", type=int, default=100)
     parser.add_argument("--max-watchlist", type=int, default=200)
     parser.add_argument("--max-checkpoint-lag", type=int, default=65)
@@ -27,6 +28,12 @@ def main() -> int:
     args = parse_args()
     trade_date = date.fromisoformat(args.date)
     pipeline = AuctionPipeline()
+    if args.mode == "post-open":
+        result = pipeline.run_post_open(trade_date)
+        print(f"auction_packet={result['path']}")
+        print(f"auction_packet_compact={result['compact_path']}")
+        print(f"post_open_status={result['packet']['post_open_validation']['status']}")
+        return 0 if result["packet"]["post_open_validation"]["status"] == "AVAILABLE" else 2
     if args.mode == "eod":
         result = pipeline.reconcile_eod(trade_date)
         print(f"auction_packet={result['path']}")
@@ -47,7 +54,12 @@ def main() -> int:
     print(f"auction_packet={result['paths']['packet']}")
     print(f"auction_packet_compact={result['paths']['compact_packet']}")
     print(f"quality_status={packet['data_quality']['status']}")
-    for key in ("stock_completion_rate", "checkpoint_coverage", "post_0920_checkpoint_coverage", "formal_opening_match_success_rate"):
+    for key in (
+        "stock_completion_rate",
+        "checkpoint_coverage",
+        "post_0920_checkpoint_coverage",
+        "formal_opening_match_success_rate",
+    ):
         print(f"{key}={summary.get(key)}")
     return 0 if packet["data_quality"]["status"] == "PASS" else 2
 

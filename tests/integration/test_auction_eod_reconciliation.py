@@ -1,5 +1,5 @@
-from datetime import date
 import json
+from datetime import date
 from pathlib import Path
 
 from src.auction.pipeline import AuctionPipeline
@@ -10,21 +10,39 @@ def test_eod_reconciliation_preserves_realtime_validation_and_writes_tushare_res
     packet_dir = tmp_path / "data" / "auction_packets"
     packet_dir.mkdir(parents=True)
     packet = {
-        "meta": {"schema_version": "auction_packet.1", "trade_date": trade_date.isoformat(), "mode": "live", "process_primary": "eltdx", "final_judgement_owner": "chatgpt"},
-        "watchlist": {}, "market_auction_summary": {},
-        "stock_auction_summary": [{
-            "ts_code": "000001.SZ", "auction_price": 10.0, "official_open_price": 10.0,
-            "open_price_validation_source": "tencent_realtime", "open_price_error_pct": 0.0,
-            "conflict_status": "none", "quality_status": "PARTIAL",
-        }],
+        "meta": {
+            "schema_version": "auction_packet.1",
+            "trade_date": trade_date.isoformat(),
+            "mode": "live",
+            "process_primary": "eltdx",
+            "final_judgement_owner": "chatgpt",
+        },
+        "watchlist": {},
+        "market_auction_summary": {},
+        "stock_auction_summary": [
+            {
+                "ts_code": "000001.SZ",
+                "auction_price": 10.0,
+                "official_open_price": 10.0,
+                "open_price_validation_source": "tencent_realtime",
+                "open_price_error_pct": 0.0,
+                "conflict_status": "none",
+                "quality_status": "PARTIAL",
+            }
+        ],
         "volume_anomaly_candidates": [],
         "objective_analysis": {
-            "market_auction_environment": {}, "previous_mainline_validation": {},
-            "sector_auction_ranking": [], "stock_auction_ranking": [],
-            "weak_to_strong_candidates": [], "strong_to_weak_candidates": [],
-            "transition_status": "UNAVAILABLE", "validation_conditions_0930_1000": [],
+            "market_auction_environment": {},
+            "previous_mainline_validation": {},
+            "sector_auction_ranking": [],
+            "stock_auction_ranking": [],
+            "weak_to_strong_candidates": [],
+            "strong_to_weak_candidates": [],
+            "transition_status": "UNAVAILABLE",
+            "validation_conditions_0930_1000": [],
         },
-        "data_quality": {"status": "PARTIAL", "checks": []}, "conflicts": [],
+        "data_quality": {"status": "PARTIAL", "checks": []},
+        "conflicts": [],
     }
     path = packet_dir / f"{trade_date.isoformat()}.json"
     path.write_text(json.dumps(packet), encoding="utf-8")

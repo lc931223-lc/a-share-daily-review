@@ -31,8 +31,12 @@ def build_objective_analysis(
 ) -> dict[str, Any]:
     stocks = {str(item.get("ts_code")): item for item in watchlist.get("stocks") or []}
     valid = [item for item in summaries if item.get("auction_price") is not None]
-    gaps = [float(item["auction_gap_pct"]) for item in valid if item.get("auction_gap_pct") is not None]
-    amounts = [float(item["auction_amount"]) for item in valid if item.get("auction_amount") is not None]
+    gaps = [
+        float(item["auction_gap_pct"]) for item in valid if item.get("auction_gap_pct") is not None
+    ]
+    amounts = [
+        float(item["auction_amount"]) for item in valid if item.get("auction_amount") is not None
+    ]
     market = {
         "status": "AVAILABLE" if valid else "UNAVAILABLE",
         "watchlist_count": len(summaries),
@@ -49,11 +53,13 @@ def build_objective_analysis(
         for theme in stocks.get(str(summary.get("ts_code")), {}).get("themes") or []:
             sector_buckets[str(theme)].append(summary)
     sector_rows = [_aggregate_sector(name, rows) for name, rows in sector_buckets.items()]
-    sector_rows.sort(key=lambda item: (
-        -(item["average_anomaly_score"] if item["average_anomaly_score"] is not None else -1),
-        -(item["median_gap_pct"] if item["median_gap_pct"] is not None else -999),
-        item["name"],
-    ))
+    sector_rows.sort(
+        key=lambda item: (
+            -(item["average_anomaly_score"] if item["average_anomaly_score"] is not None else -1),
+            -(item["median_gap_pct"] if item["median_gap_pct"] is not None else -999),
+            item["name"],
+        )
+    )
     for rank, item in enumerate(sector_rows, 1):
         item["rank"] = rank
 
@@ -71,11 +77,21 @@ def build_objective_analysis(
         }
         for item in summaries
     ]
-    stock_rows.sort(key=lambda item: (
-        -(item["auction_volume_anomaly_score"] if item["auction_volume_anomaly_score"] is not None else -1),
-        -(item["auction_amount_ratio_20d"] if item["auction_amount_ratio_20d"] is not None else -1),
-        str(item.get("ts_code") or ""),
-    ))
+    stock_rows.sort(
+        key=lambda item: (
+            -(
+                item["auction_volume_anomaly_score"]
+                if item["auction_volume_anomaly_score"] is not None
+                else -1
+            ),
+            -(
+                item["auction_amount_ratio_20d"]
+                if item["auction_amount_ratio_20d"] is not None
+                else -1
+            ),
+            str(item.get("ts_code") or ""),
+        )
+    )
     for rank, item in enumerate(stock_rows, 1):
         item["rank"] = rank
 
@@ -97,10 +113,15 @@ def build_compact_packet(packet: dict[str, Any]) -> dict[str, Any]:
     analysis = packet["objective_analysis"]
     return {
         "meta": packet["meta"] | {"schema_version": "auction_packet_compact.1"},
-        "market_auction_environment": analysis["market_auction_environment"] | {
+        "market_auction_environment": analysis["market_auction_environment"]
+        | {
             "checkpoint_coverage": packet["market_auction_summary"].get("checkpoint_coverage"),
-            "post_0920_checkpoint_coverage": packet["market_auction_summary"].get("post_0920_checkpoint_coverage"),
-            "formal_opening_match_success_rate": packet["market_auction_summary"].get("formal_opening_match_success_rate"),
+            "post_0920_checkpoint_coverage": packet["market_auction_summary"].get(
+                "post_0920_checkpoint_coverage"
+            ),
+            "formal_opening_match_success_rate": packet["market_auction_summary"].get(
+                "formal_opening_match_success_rate"
+            ),
         },
         "previous_mainline_validation": analysis["previous_mainline_validation"],
         "sector_auction_ranking": analysis["sector_auction_ranking"][:20],
@@ -120,17 +141,40 @@ def build_compact_packet(packet: dict[str, Any]) -> dict[str, Any]:
         "strong_to_weak_candidates": analysis["strong_to_weak_candidates"][:20],
         "transition_status": analysis["transition_status"],
         "validation_conditions_0930_1000": analysis["validation_conditions_0930_1000"],
+        "report_status": packet.get("report_status") or "degraded",
+        "previous_context": packet.get("previous_context") or {},
+        "sector_breadth": (packet.get("sector_breadth") or [])[:20],
+        "tomorrow_check_validation": packet.get("tomorrow_check_validation") or [],
+        "lifecycle_transition_candidates": packet.get("lifecycle_transition_candidates") or [],
+        "stock_state_transitions": (packet.get("stock_state_transitions") or [])[:30],
+        "scored_stock_ranking": [
+            _compact_scored(row) for row in (packet.get("scored_stock_ranking") or [])[:30]
+        ],
+        "catalyst_refresh": packet.get("catalyst_refresh") or {},
+        "scoring_model": packet.get("scoring_model") or {},
+        "post_open_validation": packet.get("post_open_validation"),
+        "report": packet.get("report") or {},
         "data_quality": {
             "status": packet["data_quality"]["status"],
-            "failed_checks": [item["name"] for item in packet["data_quality"]["checks"] if not item["passed"]],
+            "level": packet["data_quality"].get("level") or "LOW",
+            "coverage": packet["data_quality"].get("coverage") or {},
+            "failed_checks": [
+                item["name"] for item in packet["data_quality"]["checks"] if not item["passed"]
+            ],
             "conflict_count": len(packet["conflicts"]),
         },
     }
 
 
 def _aggregate_sector(name: str, rows: list[dict[str, Any]]) -> dict[str, Any]:
-    gaps = [float(item["auction_gap_pct"]) for item in rows if item.get("auction_gap_pct") is not None]
-    scores = [float(item["auction_volume_anomaly_score"]) for item in rows if item.get("auction_volume_anomaly_score") is not None]
+    gaps = [
+        float(item["auction_gap_pct"]) for item in rows if item.get("auction_gap_pct") is not None
+    ]
+    scores = [
+        float(item["auction_volume_anomaly_score"])
+        for item in rows
+        if item.get("auction_volume_anomaly_score") is not None
+    ]
     return {
         "rank": 0,
         "name": name,
@@ -139,12 +183,57 @@ def _aggregate_sector(name: str, rows: list[dict[str, Any]]) -> dict[str, Any]:
         "median_gap_pct": statistics.median(gaps) if gaps else None,
         "positive_gap_ratio": sum(value > 0 for value in gaps) / len(gaps) if gaps else None,
         "average_anomaly_score": statistics.fmean(scores) if scores else None,
-        "extreme_volume_count": sum("EXTREME_VOLUME_ANOMALY" in (item.get("anomaly_labels") or []) for item in rows),
-        "total_auction_amount": sum(float(item["auction_amount"]) for item in rows if item.get("auction_amount") is not None),
+        "extreme_volume_count": sum(
+            "EXTREME_VOLUME_ANOMALY" in (item.get("anomaly_labels") or []) for item in rows
+        ),
+        "total_auction_amount": sum(
+            float(item["auction_amount"]) for item in rows if item.get("auction_amount") is not None
+        ),
     }
 
 
-def _previous_mainline_validation(review: dict[str, Any], sector_rows: list[dict[str, Any]]) -> dict[str, Any]:
+def _compact_scored(row: dict[str, Any]) -> dict[str, Any]:
+    score = row.get("score") or {}
+    return {
+        key: row.get(key)
+        for key in (
+            "rank",
+            "ts_code",
+            "stock_name",
+            "themes",
+            "roles",
+            "auction_gap_pct",
+            "auction_amount",
+            "auction_amount_percentile_20d",
+            "price_change_0920_0925_pct",
+            "expectation_bucket",
+        )
+    } | {
+        "score": {
+            "gross_score": score.get("gross_score"),
+            "risk_deduction": score.get("risk_deduction"),
+            "final_score": score.get("final_score"),
+            "score_available": score.get("score_available"),
+            "available_max_score": score.get("available_max_score"),
+            "missing_score_components": score.get("missing_score_components") or [],
+            "component_scores": {
+                name: {
+                    "score": component.get("score"),
+                    "max_score": component.get("max_score"),
+                    "available_max_score": component.get("available_max_score"),
+                    "confidence": component.get("confidence"),
+                }
+                for name, component in (score.get("components") or {}).items()
+            },
+            "risks": score.get("risks") or [],
+            "evidence_validation": score.get("evidence_validation") or {},
+        }
+    }
+
+
+def _previous_mainline_validation(
+    review: dict[str, Any], sector_rows: list[dict[str, Any]]
+) -> dict[str, Any]:
     themes = review.get("main_themes") or []
     if not themes:
         return {
@@ -157,23 +246,33 @@ def _previous_mainline_validation(review: dict[str, Any], sector_rows: list[dict
     for theme in themes:
         name = str(theme.get("name") or "")
         objective = ranked.get(name)
-        rows.append({
-            "name": name,
-            "previous_rank": theme.get("rank_no") or theme.get("rank"),
-            "previous_stage": theme.get("stage"),
-            "auction_observation_status": "AVAILABLE" if objective else "UNAVAILABLE",
-            "auction_rank": objective.get("rank") if objective else None,
-            "median_gap_pct": objective.get("median_gap_pct") if objective else None,
-            "positive_gap_ratio": objective.get("positive_gap_ratio") if objective else None,
-            "average_anomaly_score": objective.get("average_anomaly_score") if objective else None,
-        })
+        rows.append(
+            {
+                "name": name,
+                "previous_rank": theme.get("rank_no") or theme.get("rank"),
+                "previous_stage": theme.get("stage"),
+                "auction_observation_status": "AVAILABLE" if objective else "UNAVAILABLE",
+                "auction_rank": objective.get("rank") if objective else None,
+                "median_gap_pct": objective.get("median_gap_pct") if objective else None,
+                "positive_gap_ratio": objective.get("positive_gap_ratio") if objective else None,
+                "average_anomaly_score": objective.get("average_anomaly_score")
+                if objective
+                else None,
+            }
+        )
     return {"status": "AVAILABLE", "reason": None, "themes": rows}
 
 
-def _transition_candidates(review: dict[str, Any], summaries: list[dict[str, Any]]) -> dict[str, Any]:
+def _transition_candidates(
+    review: dict[str, Any], summaries: list[dict[str, Any]]
+) -> dict[str, Any]:
     review_stocks = review.get("stocks") or []
     if not review_stocks:
-        return {"status": "UNAVAILABLE", "weak_to_strong_candidates": [], "strong_to_weak_candidates": []}
+        return {
+            "status": "UNAVAILABLE",
+            "weak_to_strong_candidates": [],
+            "strong_to_weak_candidates": [],
+        }
     prior = {_digits(item.get("code") or item.get("stock_code")): item for item in review_stocks}
     weak_to_strong = []
     strong_to_weak = []
@@ -192,19 +291,52 @@ def _transition_candidates(review: dict[str, Any], summaries: list[dict[str, Any
             "auction_volume_anomaly_score": summary.get("auction_volume_anomaly_score"),
             "anomaly_labels": labels,
         }
-        if role == "catch_up" and gap is not None and gap >= 1 and "STRONG_VOLUME_CONFIRMATION" in labels:
+        if (
+            role == "catch_up"
+            and gap is not None
+            and gap >= 1
+            and "STRONG_VOLUME_CONFIRMATION" in labels
+        ):
             weak_to_strong.append(row)
         if role in {"leader", "capacity"} and gap is not None and gap < 0:
             strong_to_weak.append(row)
-    return {"status": "AVAILABLE", "weak_to_strong_candidates": weak_to_strong, "strong_to_weak_candidates": strong_to_weak}
+    return {
+        "status": "AVAILABLE",
+        "weak_to_strong_candidates": weak_to_strong,
+        "strong_to_weak_candidates": strong_to_weak,
+    }
 
 
 def _validation_conditions() -> list[dict[str, Any]]:
     return [
-        {"id": "hold_auction_price", "status": "PENDING", "field": "low_0930_1000", "operator": ">=", "reference": "auction_price"},
-        {"id": "hold_previous_close", "status": "PENDING", "field": "last_price_1000", "operator": ">=", "reference": "prev_close"},
-        {"id": "sector_breadth_confirm", "status": "PENDING", "field": "sector_advancer_ratio_1000", "operator": ">=", "value": 0.5},
-        {"id": "opening_conflict_clear", "status": "PENDING", "field": "conflict_status", "operator": "==", "value": "none"},
+        {
+            "id": "hold_auction_price",
+            "status": "PENDING",
+            "field": "low_0930_1000",
+            "operator": ">=",
+            "reference": "auction_price",
+        },
+        {
+            "id": "hold_previous_close",
+            "status": "PENDING",
+            "field": "last_price_1000",
+            "operator": ">=",
+            "reference": "prev_close",
+        },
+        {
+            "id": "sector_breadth_confirm",
+            "status": "PENDING",
+            "field": "sector_advancer_ratio_1000",
+            "operator": ">=",
+            "value": 0.5,
+        },
+        {
+            "id": "opening_conflict_clear",
+            "status": "PENDING",
+            "field": "conflict_status",
+            "operator": "==",
+            "value": "none",
+        },
     ]
 
 
@@ -215,8 +347,12 @@ def _digits(value: Any) -> str:
 def _normalize_role(value: Any) -> str:
     role = str(value or "").strip().lower()
     aliases = {
-        "龙头": "leader", "核心龙头": "leader",
-        "中军": "capacity", "容量": "capacity", "容量核心": "capacity",
-        "补涨": "catch_up", "补涨股": "catch_up",
+        "龙头": "leader",
+        "核心龙头": "leader",
+        "中军": "capacity",
+        "容量": "capacity",
+        "容量核心": "capacity",
+        "补涨": "catch_up",
+        "补涨股": "catch_up",
     }
     return aliases.get(role, role)

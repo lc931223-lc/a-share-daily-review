@@ -131,15 +131,16 @@ python collect_daily_review.py --date 2026-09-01 --mode intraday
 
 ## 集合竞价 Phase A2
 
-历史回放、真实交易日采集和盘后 Tushare 开盘价复核分别运行：
+历史回放、真实交易日竞价采集、09:30-10:00验证和盘后 Tushare 开盘价复核分别运行：
 
 ```powershell
 python scripts/run_auction_pipeline.py --date 2026-09-04 --mode historical --baseline-days 60
 python scripts/run_auction_pipeline.py --date 2026-09-07 --mode live --baseline-days 60
+python scripts/run_auction_pipeline.py --date 2026-09-07 --mode post-open
 python scripts/run_auction_pipeline.py --date 2026-09-07 --mode eod
 ```
 
-`live` 必须在 Asia/Shanghai 09:15 前启动，并持续运行到 09:30:05。重点池、完整 Auction Packet 和 ChatGPT 用 compact Packet 写入 `data/auction_watchlists/`、`data/auction_packets/`；compact 文件名为 `YYYY-MM-DD_compact.json`，包含客观市场环境、昨日主线验证、板块/个股竞价排名、四类异常放量、弱转强/强转弱候选和 09:30-10:00 待验证条件。原始过程、checkpoint 和日汇总写入 `data/facts/` Parquet，采集批次、逐股观测、fallback 与质量门记录复用 `data/a_share_review.db` 现有审计表。KlineShare fallback 保持禁用，TickDB 仅作观察源。
+`live` 必须在 Asia/Shanghai 09:15 前启动，按30秒轮询并持续运行到09:30:05；标准checkpoint覆盖09:15至09:25每分钟共11个点。`post-open`只允许目标交易日09:30-10:00运行，腾讯失败时回退东方财富，结果写入`auction_post_open_validation`事实分区。重点池、完整 Auction Packet 和 ChatGPT 用 compact Packet 写入 `data/auction_watchlists/`、`data/auction_packets/`。评分按100分组件、0-20风险扣分和实际可用子项分母输出；无法确认的买卖方向、撤单率、未匹配金额及历史30分钟模式保持`N/A`。上一实际交易日正式复盘缺失或被识别为fixture时，报告必须为`degraded`，且不回退更早复盘。原始过程、checkpoint 和日汇总写入 `data/facts/` Parquet，采集批次、逐股观测、fallback 与质量门记录复用 `data/a_share_review.db` 现有审计表。KlineShare fallback 保持禁用，TickDB 仅作观察源。
 
 ## Dashboard
 

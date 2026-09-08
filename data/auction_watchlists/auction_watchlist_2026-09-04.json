@@ -4,7 +4,7 @@
   "previous_trade_date": "2026-09-03",
   "stock_count": 100,
   "min_size": 100,
-  "max_size": 200,
+  "max_size": 100,
   "quality_status": "PASS",
   "composition": {
     "objective_pool_fill": 71,

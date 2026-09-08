@@ -1,11 +1,11 @@
 from __future__ import annotations
 
+from collections.abc import Callable
 from datetime import date, datetime
-from typing import Any, Callable
+from typing import Any
 from zoneinfo import ZoneInfo
 
 import requests
-
 
 SHANGHAI_TZ = ZoneInfo("Asia/Shanghai")
 TENCENT_URL = "https://qt.gtimg.cn/q="
@@ -22,10 +22,14 @@ class RealtimeOpenRouter:
         self.tencent_loader = tencent_loader or load_tencent_opens
         self.eastmoney_loader = eastmoney_loader or load_eastmoney_opens
 
-    def load(self, trade_date: date, codes: list[str], *, now: datetime | None = None) -> tuple[str, dict[str, float], list[dict[str, Any]]]:
+    def load(
+        self, trade_date: date, codes: list[str], *, now: datetime | None = None
+    ) -> tuple[str, dict[str, float], list[dict[str, Any]]]:
         current = (now or datetime.now(SHANGHAI_TZ)).astimezone(SHANGHAI_TZ)
         if current.date() != trade_date:
-            raise ValueError("current-only open sources cannot be written to a historical trade date")
+            raise ValueError(
+                "current-only open sources cannot be written to a historical trade date"
+            )
         fallbacks: list[dict[str, Any]] = []
         try:
             values, dates = self.tencent_loader(codes)
@@ -33,7 +37,13 @@ class RealtimeOpenRouter:
             if values:
                 return "tencent_realtime", values, fallbacks
         except Exception as exc:
-            fallbacks.append({"primary_source": "tencent_realtime", "fallback_source": "eastmoney_realtime", "reason": type(exc).__name__})
+            fallbacks.append(
+                {
+                    "primary_source": "tencent_realtime",
+                    "fallback_source": "eastmoney_realtime",
+                    "reason": type(exc).__name__,
+                }
+            )
         values, dates = self.eastmoney_loader(codes)
         _validate_dates(trade_date, dates)
         return "eastmoney_realtime", values, fallbacks
@@ -65,10 +75,15 @@ def load_eastmoney_opens(codes: list[str]) -> tuple[dict[str, float], set[date]]
     result: dict[str, float] = {}
     observed_dates: set[date] = set()
     for chunk in _chunks(codes, 50):
-        response = requests.get(EASTMONEY_URL, params={
-            "secids": ",".join(_eastmoney_secid(code) for code in chunk),
-            "fields": "f12,f13,f17,f124", "fltt": 2,
-        }, timeout=8)
+        response = requests.get(
+            EASTMONEY_URL,
+            params={
+                "secids": ",".join(_eastmoney_secid(code) for code in chunk),
+                "fields": "f12,f13,f17,f124",
+                "fltt": 2,
+            },
+            timeout=8,
+        )
         response.raise_for_status()
         rows = (response.json().get("data") or {}).get("diff") or []
         for row in rows:
@@ -82,12 +97,14 @@ def load_eastmoney_opens(codes: list[str]) -> tuple[dict[str, float], set[date]]
 
 def _validate_dates(expected: date, observed: set[date]) -> None:
     if observed != {expected}:
-        raise ValueError(f"source date mismatch: expected {expected.isoformat()}, observed {sorted(observed)}")
+        raise ValueError(
+            f"source date mismatch: expected {expected.isoformat()}, observed {sorted(observed)}"
+        )
 
 
 def _chunks(values: list[str], size: int):
     for index in range(0, len(values), size):
-        yield values[index:index + size]
+        yield values[index : index + size]
 
 
 def _vendor_code(code: str) -> str:

@@ -13,6 +13,16 @@
     "strong_to_weak_candidates",
     "transition_status",
     "validation_conditions_0930_1000",
+    "report_status",
+    "previous_context",
+    "sector_breadth",
+    "tomorrow_check_validation",
+    "lifecycle_transition_candidates",
+    "stock_state_transitions",
+    "scored_stock_ranking",
+    "catalyst_refresh",
+    "scoring_model",
+    "report",
     "data_quality"
   ],
   "properties": {
@@ -26,7 +36,18 @@
     "strong_to_weak_candidates": {"type": "array"},
     "transition_status": {"enum": ["AVAILABLE", "UNAVAILABLE"]},
     "validation_conditions_0930_1000": {"type": "array"},
-    "data_quality": {"type": "object"}
+    "report_status": {"enum": ["normal", "degraded"]},
+    "previous_context": {"type": "object"},
+    "sector_breadth": {"type": "array"},
+    "tomorrow_check_validation": {"type": "array"},
+    "lifecycle_transition_candidates": {"type": "array"},
+    "stock_state_transitions": {"type": "array"},
+    "scored_stock_ranking": {"type": "array"},
+    "catalyst_refresh": {"type": "object"},
+    "scoring_model": {"type": "object"},
+    "post_open_validation": {"type": ["object", "null"]},
+    "report": {"type": "object"},
+    "data_quality": {"type": "object", "required": ["status", "level", "coverage"]}
   },
   "additionalProperties": false
 }

@@ -26,15 +26,17 @@ def apply_open_validation(
         if error > error_threshold_pct:
             summary["conflict_status"] = "conflict"
             summary["quality_status"] = "INVALID"
-            conflicts.append({
-                "type": "open_price_conflict",
-                "ts_code": code,
-                "auction_final_price": float(auction_price),
-                "official_open_price": float(official_open),
-                "validation_source": source,
-                "open_price_error_pct": error,
-                "threshold_pct": error_threshold_pct,
-            })
+            conflicts.append(
+                {
+                    "type": "open_price_conflict",
+                    "ts_code": code,
+                    "auction_final_price": float(auction_price),
+                    "official_open_price": float(official_open),
+                    "validation_source": source,
+                    "open_price_error_pct": error,
+                    "threshold_pct": error_threshold_pct,
+                }
+            )
         else:
             summary["conflict_status"] = "none"
     return conflicts

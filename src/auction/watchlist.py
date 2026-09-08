@@ -1,10 +1,11 @@
 from __future__ import annotations
 
-from collections import Counter
-from datetime import date
 import json
+from collections import Counter
+from collections.abc import Iterable
+from datetime import date
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 from src.market_packet.trading_calendar import TradingCalendarDay, load_trading_calendar
 
@@ -39,18 +40,29 @@ def compose_watchlist(
 ) -> dict[str, Any]:
     candidates: dict[str, dict[str, Any]] = {}
 
-    def add(code: Any, *, name: Any = None, theme: Any = None, role: Any = None, reason: str, priority: int) -> None:
+    def add(
+        code: Any,
+        *,
+        name: Any = None,
+        theme: Any = None,
+        role: Any = None,
+        reason: str,
+        priority: int,
+    ) -> None:
         ts_code = normalize_ts_code(code)
         if ts_code is None:
             return
-        item = candidates.setdefault(ts_code, {
-            "ts_code": ts_code,
-            "stock_name": str(name or ""),
-            "themes": [],
-            "roles": [],
-            "reasons": [],
-            "priority": priority,
-        })
+        item = candidates.setdefault(
+            ts_code,
+            {
+                "ts_code": ts_code,
+                "stock_name": str(name or ""),
+                "themes": [],
+                "roles": [],
+                "reasons": [],
+                "priority": priority,
+            },
+        )
         if name and not item["stock_name"]:
             item["stock_name"] = str(name)
         if theme and str(theme) not in item["themes"]:
@@ -66,19 +78,33 @@ def compose_watchlist(
         add(
             stock.get("code") or stock.get("stock_code"),
             name=stock.get("name") or stock.get("stock_name"),
-            theme=stock.get("theme"), role=stock.get("role"),
-            reason="official_review_stock", priority=10,
+            theme=stock.get("theme"),
+            role=stock.get("role"),
+            reason="official_review_stock",
+            priority=10,
         )
 
-    theme_names = {str(item.get("name")) for item in review.get("main_themes") or [] if item.get("name")}
+    theme_names = {
+        str(item.get("name")) for item in review.get("main_themes") or [] if item.get("name")
+    }
     packet_stocks = packet.get("stocks") or []
-    stock_by_code = {normalize_ts_code(item.get("stock_code") or item.get("code")): item for item in packet_stocks}
-    stock_by_name = {str(item.get("stock_name") or item.get("name")): item for item in packet_stocks}
+    stock_by_code = {
+        normalize_ts_code(item.get("stock_code") or item.get("code")): item
+        for item in packet_stocks
+    }
+    stock_by_name = {
+        str(item.get("stock_name") or item.get("name")): item for item in packet_stocks
+    }
     for check in review.get("tomorrow_checks") or []:
         key = check.get("entity_key")
         matched = stock_by_code.get(normalize_ts_code(key)) or stock_by_name.get(str(key))
         if matched:
-            add(matched.get("stock_code"), name=matched.get("stock_name"), reason="tomorrow_check", priority=15)
+            add(
+                matched.get("stock_code"),
+                name=matched.get("stock_name"),
+                reason="tomorrow_check",
+                priority=15,
+            )
         elif str(check.get("entity_type") or "").lower() == "stock":
             add(key, reason="tomorrow_check", priority=15)
 
@@ -96,13 +122,21 @@ def compose_watchlist(
 
     for stock in packet.get("leader_candidates") or []:
         add(
-            stock.get("stock_code"), name=stock.get("stock_name"),
-            role="objective_candidate", reason="objective_role_candidate", priority=30,
+            stock.get("stock_code"),
+            name=stock.get("stock_name"),
+            role="objective_candidate",
+            reason="objective_role_candidate",
+            priority=30,
         )
 
     announcements = packet.get("announcements") or {}
     for item in announcements.get("risk_announcements") or []:
-        add(item.get("stock_code"), name=item.get("stock_name"), reason="risk_announcement", priority=18)
+        add(
+            item.get("stock_code"),
+            name=item.get("stock_name"),
+            reason="risk_announcement",
+            priority=18,
+        )
 
     for code in historical_codes:
         add(code, reason="historical_tracking", priority=35)
@@ -115,16 +149,30 @@ def compose_watchlist(
     for stock in amount_ranked[:60]:
         themes = stock.get("themes") or [None]
         for theme in themes:
-            add(stock.get("stock_code"), name=stock.get("stock_name"), theme=theme, reason="top_amount", priority=40)
+            add(
+                stock.get("stock_code"),
+                name=stock.get("stock_name"),
+                theme=theme,
+                reason="top_amount",
+                priority=40,
+            )
     if len(candidates) < min_size:
         for stock in amount_ranked:
             themes = stock.get("themes") or [None]
             for theme in themes:
-                add(stock.get("stock_code"), name=stock.get("stock_name"), theme=theme, reason="objective_pool_fill", priority=50)
+                add(
+                    stock.get("stock_code"),
+                    name=stock.get("stock_name"),
+                    theme=theme,
+                    reason="objective_pool_fill",
+                    priority=50,
+                )
             if len(candidates) >= min_size:
                 break
 
-    ordered = sorted(candidates.values(), key=lambda item: (item["priority"], item["ts_code"]))[:max_size]
+    ordered = sorted(candidates.values(), key=lambda item: (item["priority"], item["ts_code"]))[
+        :max_size
+    ]
     reason_counts = Counter(reason for item in ordered for reason in item["reasons"])
     quality = "PASS" if min_size <= len(ordered) <= max_size else "PARTIAL"
     return {
@@ -148,7 +196,9 @@ def build_watchlist_from_files(
     min_size: int = 100,
     max_size: int = 200,
 ) -> dict[str, Any]:
-    days = calendar_days or load_trading_calendar(target_date, cache_root=root / "data" / "reference")
+    days = calendar_days or load_trading_calendar(
+        target_date, cache_root=root / "data" / "reference"
+    )
     previous = [item.cal_date for item in days if item.is_open and item.cal_date < target_date]
     if not previous:
         raise RuntimeError(f"No previous A-share trading day before {target_date.isoformat()}")
@@ -165,14 +215,22 @@ def build_watchlist_from_files(
         tracking = tracking.get("stocks") or tracking.get("codes") or []
     tracking_codes = [item.get("ts_code") if isinstance(item, dict) else item for item in tracking]
     result = compose_watchlist(
-        target_date=target_date, previous_trade_date=previous_trade_date,
-        review=review, packet=packet, historical_codes=tracking_codes,
-        min_size=min_size, max_size=max_size,
+        target_date=target_date,
+        previous_trade_date=previous_trade_date,
+        review=review,
+        packet=packet,
+        historical_codes=tracking_codes,
+        min_size=min_size,
+        max_size=max_size,
     )
     result["sources"] = {
-        "official_review": review_path.relative_to(root).as_posix() if review_path.exists() else None,
+        "official_review": review_path.relative_to(root).as_posix()
+        if review_path.exists()
+        else None,
         "market_packet": packet_path.relative_to(root).as_posix() if packet_path.exists() else None,
-        "historical_tracking": tracking_path.relative_to(root).as_posix() if tracking_path.exists() else None,
+        "historical_tracking": tracking_path.relative_to(root).as_posix()
+        if tracking_path.exists()
+        else None,
     }
     output_dir = root / "data" / "auction_watchlists"
     output_dir.mkdir(parents=True, exist_ok=True)

@@ -7,7 +7,9 @@ def test_watchlist_prioritizes_review_and_fills_from_objective_packet():
     review = {
         "main_themes": [{"name": "机器人"}],
         "stocks": [{"code": "300001", "name": "核心股", "theme": "机器人", "role": "leader"}],
-        "tomorrow_checks": [{"entity_type": "stock", "entity_key": "300002", "description": "观察承接"}],
+        "tomorrow_checks": [
+            {"entity_type": "stock", "entity_key": "300002", "description": "观察承接"}
+        ],
     }
     stocks = [
         {
@@ -20,7 +22,11 @@ def test_watchlist_prioritizes_review_and_fills_from_objective_packet():
         }
         for index in range(1, 12)
     ]
-    packet = {"stocks": stocks, "leader_candidates": [], "announcements": {"risk_announcements": []}}
+    packet = {
+        "stocks": stocks,
+        "leader_candidates": [],
+        "announcements": {"risk_announcements": []},
+    }
 
     result = compose_watchlist(
         target_date=date(2026, 9, 7),
