@@ -1,0 +1,31 @@
+{
+  "schema_version": "formal_review.3",
+  "date": "2026-09-08",
+  "previous_trade_date": "2026-09-07",
+  "final_judgement_owner": "chatgpt",
+  "market_overview": {},
+  "market_regime": "NOT_ASSESSED",
+  "main_themes": [],
+  "changes_vs_previous_day": {
+    "new": [],
+    "strengthened": [],
+    "weakened": [],
+    "diffused": [],
+    "realized": [],
+    "falsified": []
+  },
+  "previous_day_validation": {
+    "records": [],
+    "prediction_count": 0,
+    "confirmed_count": 0,
+    "partial_count": 0,
+    "failed_count": 0,
+    "not_evaluable_count": 0,
+    "hit_rate": null,
+    "weighted_hit_rate": null
+  },
+  "tomorrow_checks": [],
+  "uncertainties": [
+    "UNFILLED_HANDOFF_TEMPLATE: ChatGPT has not supplied market judgements. Do not import this blank template as a completed review."
+  ]
+}
