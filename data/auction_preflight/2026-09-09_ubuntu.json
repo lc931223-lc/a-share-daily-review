@@ -1,0 +1,15 @@
+{
+  "trade_date": "2026-09-09",
+  "platform": "ubuntu-latest",
+  "python": "3.12.14",
+  "dependency_install": "PASS",
+  "source_connection": "FAIL",
+  "error_type": "ResponseTimeoutError",
+  "workflow_run_id": 34257589954,
+  "job_id": 102167200050,
+  "tested_commit": "21c32b583884c39cdae5be071ea8d22431cc9de2",
+  "observed_at": "2026-09-09T01:31:57+08:00",
+  "url": "https://github.com/lc931223-lc/a-share-daily-review/actions/runs/34257589954",
+  "scope": "CONNECTION_PROBE_NOT_LIVE_ACCEPTANCE",
+  "production_decision": "USE_REGISTERED_LOCAL_WINDOWS_SCHEDULER"
+}

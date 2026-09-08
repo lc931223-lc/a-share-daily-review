@@ -86,7 +86,12 @@ collection instead of recollecting different 09:25 facts. Force is explicit.
 Local eltdx 3.1.3 connection probe: PASS. Current environment Python 3.12.14/Windows.
 This is connection evidence, not a 100-stock live throughput or E2E acceptance.
 The package has a Linux manylinux wheel and does not require a Windows quote client.
-Ubuntu GitHub IP reachability must be measured by auction-source-probe.yml.
+Actual Ubuntu probe [run 34257589954](https://github.com/lc931223-lc/a-share-daily-review/actions/runs/34257589954):
+Python 3.12.14 and requirements installation PASS, eltdx connection FAIL with
+ResponseTimeoutError at 2026-09-09 01:31:57 Shanghai. Therefore this hosted runner
+is not accepted as a production quote environment. Evidence is archived in
+data/auction_preflight/2026-09-09_ubuntu.json. This does not prove every cloud IP fails;
+it does establish that the tested deployment cannot be claimed operational.
 Cloud live/post-open cron is deliberately gated by AUCTION_EXECUTION_ENV=github;
 do not enable it simultaneously with local production without choosing one owner.
 
@@ -114,7 +119,8 @@ Without actual ChatGPT delivery, full acceptance cannot be READY even if collect
 
 compileall: PASS. Full non-real-data suite: 313 passed, 1 deselected. Targeted
 auction unit/integration/EOD tests: 39 passed. All JSON schemas validate; three new
-workflow YAMLs parse successfully. This static check is not a remote execution proof.
+workflow YAMLs parse successfully. The separately executed Ubuntu workflow passed
+setup but failed the actual source probe; static validation is not a source PASS.
 
 Unit/integration fixtures cover immediate return at 09:25:02, 20-stock live assembly
 without realtime-open calls, idempotent freeze reuse, independent incremental post-open
