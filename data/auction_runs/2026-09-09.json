@@ -6,7 +6,7 @@
   "post_open_started_at": "2026-09-09T10:00:02.189122+08:00",
   "post_open_completed_at": "2026-09-09T10:00:02.189122+08:00",
   "eod_completed_at": null,
-  "status": "GIT_SYNC_PENDING",
+  "status": "PUSHED",
   "failures": [
     {
       "stage": "live",
@@ -21,8 +21,8 @@
   "packet_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\auction_packets\\2026-09-09.json",
   "compact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\auction_packets\\2026-09-09_compact.json",
   "workflow_run_id": null,
-  "stage": "GIT_SYNC_PENDING",
-  "sync_status": "PERSIST_FAILED_LOCAL_ARTIFACTS_RETAINED",
+  "stage": "PUSHED",
+  "sync_status": "PUSHED",
   "collection_start_time": "2026-09-09T09:19:26.226138+08:00",
   "late_start": true,
   "packet_sha256": "7199891fe25a1f0744da4dca7edcaf77fbd9a2bdea5a8086d5e3c32087e4ae88",
@@ -30,7 +30,7 @@
   "git_sync_started_at": "2026-09-09T21:00:23.816051+08:00",
   "local_report_status": "LOCAL_REPORT_READY",
   "raw_sha256": "2fa9677d6b7764f2ea447fb22224b9e0e58035988a5abe2c80cb6c44c2695c69",
-  "last_successful_stage": "GIT_SYNC_PENDING",
+  "last_successful_stage": "PUSHED",
   "stage_history": [
     {
       "timestamp": "2026-09-09T21:00:23.817033+08:00",
@@ -38,6 +38,19 @@
       "git_sync_started_at": "2026-09-09T21:00:23.816051+08:00",
       "local_report_status": "LOCAL_REPORT_READY",
       "raw_sha256": "2fa9677d6b7764f2ea447fb22224b9e0e58035988a5abe2c80cb6c44c2695c69"
+    },
+    {
+      "timestamp": "2026-09-09T21:00:29.124999+08:00",
+      "event": "PUSHED",
+      "sync_status": "PUSHED",
+      "git_sync_result": "PASS",
+      "push_result": "PASS",
+      "distributed_commit": "60ac02a82074cbd200a9c9e32b21513741a0a35f",
+      "git_sync_completed_at": "2026-09-09T21:00:29.124002+08:00"
     }
-  ]
+  ],
+  "git_sync_result": "PASS",
+  "push_result": "PASS",
+  "distributed_commit": "60ac02a82074cbd200a9c9e32b21513741a0a35f",
+  "git_sync_completed_at": "2026-09-09T21:00:29.124002+08:00"
 }
