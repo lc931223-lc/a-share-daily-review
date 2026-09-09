@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import re
 from collections.abc import Callable
 from datetime import date, datetime, time
@@ -12,6 +13,7 @@ from zoneinfo import ZoneInfo
 from jsonschema import Draft202012Validator
 
 from src.capital_preference.pipeline import CapitalPreferencePipeline
+from src.daily_close.credentials import credential_health, redact
 from src.feedback.forward import advance_feedback
 from src.formal_review.support import build_formal_review_support
 from src.formal_review.persistence import import_inbox, load_previous_formal
@@ -52,6 +54,7 @@ class DailyCloseOrchestrator:
         calendar_loader: Callable[[date], list[TradingCalendarDay]] | None = None,
         runners: dict[str, Callable[[date], Any]] | None = None,
         max_retries: int = 2,
+        requires_tushare: bool | None = None,
     ):
         self.root = root
         self.now = now or (lambda: datetime.now(SHANGHAI))
@@ -62,18 +65,26 @@ class DailyCloseOrchestrator:
         )
         self.max_retries = max_retries
         self.runners = self._default_runners() | (runners or {})
+        # Injected market producers may be offline fixtures or non-Tushare sources.
+        # The production CLI always uses the native Tushare-dependent producer.
+        self.requires_tushare = ("market_packet" not in (runners or {})) if requires_tushare is None else requires_tushare
 
     def run_date(self, target: date, *, force: bool = False) -> dict[str, Any]:
         started = self.now().astimezone(SHANGHAI)
-        days = self.calendar_loader(target)
-        is_trade_day = any(row.cal_date == target and row.is_open for row in days)
         market_closed = target < started.date() or (
             target == started.date() and started.time() >= CLOSE_READY
         )
         manifest = {
             "date": target.isoformat(),
-            "run_id": f"daily-close:{target.isoformat()}",
-            "is_trade_day": is_trade_day,
+            "run_id": os.getenv("GITHUB_RUN_ID") or f"daily-close:{target.isoformat()}",
+            "workflow_run_attempt": os.getenv("GITHUB_RUN_ATTEMPT", "1"),
+            "workflow_retry_count": max(0, int(os.getenv("DAILY_CLOSE_ATTEMPT", "1")) - 1),
+            "credential_health": credential_health(self.root),
+            "source_availability": {"full_market_daily": "NOT_ATTEMPTED"},
+            "failed_step": None,
+            "retry_count": 0,
+            "is_trade_day": None,
+            "calendar_status": "NOT_CHECKED",
             "market_closed": market_closed,
             "pipeline_started_at": started.isoformat(),
             "pipeline_completed_at": None,
@@ -83,6 +94,20 @@ class DailyCloseOrchestrator:
             "upstream_warnings": [],
             "degraded_inputs": [],
         }
+        if self.requires_tushare and manifest["credential_health"]["tushare_token"] == "MISSING":
+            manifest.update(status="FAILED", failed_step="credential_preflight")
+            manifest["source_availability"]["full_market_daily"] = "BLOCKED_MISSING_CREDENTIAL"
+            manifest["blockers"].append({"step": "credential_preflight", "error": "MISSING_TUSHARE_TOKEN"})
+            manifest["steps"]["credential_preflight"] = self._step_record("FAILED", None, target, None, started, 0, "MISSING_TUSHARE_TOKEN", False, None)
+            return self._finish(manifest)
+        try:
+            days = self.calendar_loader(target)
+        except Exception as exc:
+            manifest.update(status="FAILED", failed_step="trading_calendar")
+            manifest["blockers"].append({"step": "trading_calendar", "error": redact(f"{type(exc).__name__}: {exc}")[:500]})
+            return self._finish(manifest)
+        is_trade_day = any(row.cal_date == target and row.is_open for row in days)
+        manifest.update(is_trade_day=is_trade_day, calendar_status="CHECKED")
         if not is_trade_day:
             manifest["status"] = "NON_TRADING_DAY"
             return self._finish(manifest)
@@ -102,11 +127,15 @@ class DailyCloseOrchestrator:
         ):
             step = self._execute_step(name, target, force=force)
             manifest["steps"][name] = step
+            if name == "market_packet":
+                manifest["source_availability"]["full_market_daily"] = "PASS" if step["status"] not in {"FAILED", "BLOCKED"} else "FAILED_PRODUCTION_GATE"
+                manifest["source_availability"]["market_packet_sources"] = self._source_availability(target)
             if step["status"] in {"FAILED", "BLOCKED"}:
                 manifest["blockers"].append(
                     {"step": name, "error": step.get("error"), "missing_upstream": self._missing_upstream(name, target)}
                 )
                 manifest["status"] = "BLOCKED" if name != "market_packet" else "FAILED"
+                manifest["failed_step"] = name
                 return self._finish(manifest)
 
         manifest["steps"]["auction"] = self._optional_artifact("auction_packets", target)
@@ -130,7 +159,13 @@ class DailyCloseOrchestrator:
 
     def run_latest(self, *, backfill_missing: bool = False, force: bool = False) -> list[dict[str, Any]]:
         current = self.now().astimezone(SHANGHAI)
-        days = self.calendar_loader(current.date())
+        if self.requires_tushare and credential_health(self.root)["tushare_token"] == "MISSING":
+            # A diagnostic date, not an invented trading-calendar determination.
+            return [self.run_date(current.date(), force=force)]
+        try:
+            days = self.calendar_loader(current.date())
+        except Exception:
+            return [self.run_date(current.date(), force=force)]
         closed_days = sorted(
             row.cal_date
             for row in days
@@ -195,7 +230,7 @@ class DailyCloseOrchestrator:
                     sha256=artifact["sha256"],
                 )
             except Exception as exc:
-                error = f"{type(exc).__name__}: {str(exc)[:500]}"
+                error = redact(f"{type(exc).__name__}: {exc}")[:500]
         return self._step_record(
             "FAILED",
             None,
@@ -232,7 +267,7 @@ class DailyCloseOrchestrator:
                 None,
                 started,
                 retry_count=0,
-                error=f"{type(exc).__name__}: {str(exc)[:500]}",
+                error=redact(f"{type(exc).__name__}: {exc}")[:500],
                 reused=False,
                 sha256=None,
             )
@@ -352,6 +387,10 @@ class DailyCloseOrchestrator:
             )
             manifest["status"] = "FAILED"
         manifest["pipeline_completed_at"] = self.now().astimezone(SHANGHAI).isoformat()
+        manifest["retry_count"] = sum(step.get("retry_count", 0) for step in manifest["steps"].values())
+        if manifest["failed_step"] is None:
+            manifest["failed_step"] = next((name for name, step in manifest["steps"].items() if step["status"] in {"FAILED", "BLOCKED"}), None)
+        manifest = redact(manifest)
         schema = json.loads(
             (self.root / "schemas" / "daily_run_manifest.schema.json").read_text(encoding="utf-8")
         )
@@ -359,9 +398,24 @@ class DailyCloseOrchestrator:
         folder = self.root / "data" / "daily_runs"
         folder.mkdir(parents=True, exist_ok=True)
         path = folder / f"{manifest['date']}.json"
-        path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+        temporary = path.with_suffix(f".{os.getpid()}.tmp")
+        with temporary.open("w", encoding="utf-8") as stream:
+            stream.write(json.dumps(manifest, ensure_ascii=False, indent=2))
+            stream.flush()
+            os.fsync(stream.fileno())
+        temporary.replace(path)
         manifest["manifest_path"] = str(path)
         return manifest
+
+    def _source_availability(self, target):
+        path = self.root / "data/market_packets" / f"{target}.json"
+        try:
+            packet = json.loads(path.read_text(encoding="utf-8"))
+            if _payload_date(packet) != str(target):
+                return []
+            return [{"dataset": row.get("dataset"), "status": row.get("status"), "data_date": row.get("data_date")} for row in (packet.get("data_quality") or {}).get("sources", [])]
+        except (OSError, ValueError):
+            return []
 
     def _readiness_checks(self, manifest: dict[str, Any]) -> list[dict[str, Any]]:
         core = [
@@ -378,7 +432,7 @@ class DailyCloseOrchestrator:
         return [
             {
                 "name": "real_trading_calendar",
-                "passed": manifest["is_trade_day"],
+                "passed": manifest["is_trade_day"] is True,
                 "detail": "target is present as open in the cached/fetched A-share calendar",
             },
             {
@@ -393,17 +447,17 @@ class DailyCloseOrchestrator:
             },
             {
                 "name": "same_date_core_artifacts",
-                "passed": all(row.get("source_date") == manifest["date"] for row in core),
+                "passed": bool(core) and all(row.get("source_date") == manifest["date"] for row in core),
                 "detail": "all generated core artifacts must carry the requested trade date",
             },
             {
                 "name": "schema_and_provenance_sha256",
-                "passed": all(row.get("provenance_sha256") for row in core),
+                "passed": bool(core) and all(row.get("provenance_sha256") for row in core),
                 "detail": "all available core artifacts passed schema validation and have a digest",
             },
             {
                 "name": "idempotent_reuse_contract",
-                "passed": all(row.get("provenance_sha256") for row in core),
+                "passed": bool(core) and all(row.get("provenance_sha256") for row in core),
                 "detail": "validated artifacts are content-addressed and reusable on rerun",
             },
             {

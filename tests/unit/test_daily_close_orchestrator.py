@@ -147,9 +147,7 @@ def test_future_dated_market_source_is_rejected_and_regenerated(tmp_path):
     _write_artifact(tmp_path, "market_packet", date(2026, 9, 8))
     path = tmp_path / "data/market_packets/2026-09-08.json"
     payload = json.loads(path.read_text(encoding="utf-8"))
-    payload["data_quality"]["sources"] = [
-        {"dataset": "bad_source", "data_date": "2026-09-09"}
-    ]
+    payload["data_quality"]["sources"] = [{"dataset": "bad_source", "data_date": "2026-09-09"}]
     path.write_text(json.dumps(payload), encoding="utf-8")
     result = DailyCloseOrchestrator(
         tmp_path,
@@ -166,9 +164,7 @@ def test_plaintext_secret_scan_is_a_hard_failure(tmp_path):
     calls = []
     source = tmp_path / "src"
     source.mkdir()
-    (source / "bad.py").write_text(
-        'api_key = "' + ("x" * 32) + '"', encoding="utf-8"
-    )
+    (source / "bad.py").write_text('api_key = "' + ("x" * 32) + '"', encoding="utf-8")
     result = DailyCloseOrchestrator(
         tmp_path,
         now=lambda: datetime(2026, 9, 8, 16, tzinfo=SHANGHAI),
@@ -192,3 +188,112 @@ def test_backfill_runs_missing_trading_days_in_order(tmp_path):
     results = pipeline.run_latest(backfill_missing=True)
     assert [row["date"] for row in results] == ["2026-09-07", "2026-09-08"]
     assert all(row["status"] == "PASS" for row in results)
+
+
+def test_missing_tushare_preflight_persists_before_any_fetch(tmp_path, monkeypatch, capsys):
+    _schemas(tmp_path)
+    monkeypatch.setenv("TUSHARE_TOKEN", " ")
+    monkeypatch.setenv("GITHUB_RUN_ID", "fixture-run")
+
+    def forbidden(*args):
+        raise AssertionError("no data/calendar request allowed")
+
+    pipeline = DailyCloseOrchestrator(tmp_path, calendar_loader=forbidden)
+    result = pipeline.run_date(date(2026, 9, 9))
+    assert result["status"] == "FAILED"
+    assert result["credential_health"] == {"tushare_token": "MISSING"}
+    assert result["failed_step"] == "credential_preflight"
+    assert result["blockers"][0]["error"] == "MISSING_TUSHARE_TOKEN"
+    assert result["retry_count"] == 0
+    assert result["run_id"] == "fixture-run"
+    assert result["is_trade_day"] is None
+    stored = json.loads(Path(result["manifest_path"]).read_text(encoding="utf-8"))
+    assert stored["source_availability"]["full_market_daily"] == "BLOCKED_MISSING_CREDENTIAL"
+    assert not (tmp_path / "data/market_packets").exists()
+    assert not (tmp_path / "data/review_context").exists()
+    assert pipeline.run_latest()[0]["failed_step"] == "credential_preflight"
+    from tools import run_daily_close_pipeline as cli
+
+    monkeypatch.setattr(cli, "DailyCloseOrchestrator", lambda: pipeline)
+    assert cli.main(["--date", "2026-09-09"]) == 3
+    assert "MISSING_TUSHARE_TOKEN" in capsys.readouterr().out
+
+
+def test_available_secret_is_presence_only(tmp_path, monkeypatch, capsys):
+    _schemas(tmp_path)
+    secret = "fixture-only-" + "not-a-real-credential"
+    monkeypatch.setenv("TUSHARE_TOKEN", secret)
+    pipeline = DailyCloseOrchestrator(
+        tmp_path,
+        now=lambda: datetime(2026, 9, 8, 16, tzinfo=SHANGHAI),
+        calendar_loader=lambda _: _calendar(),
+        runners=_runners(tmp_path, []),
+        requires_tushare=True,
+    )
+    result = pipeline.run_date(date(2026, 9, 8))
+    assert result["credential_health"] == {"tushare_token": "AVAILABLE"}
+    assert result["status"] == "PASS"
+    assert secret not in json.dumps(result)
+    assert secret not in Path(result["manifest_path"]).read_text(encoding="utf-8")
+    from tools import run_daily_close_pipeline as cli
+
+    monkeypatch.setattr(cli, "DailyCloseOrchestrator", lambda: pipeline)
+    assert cli.main(["--date", "2026-09-08"]) == 0
+    output = capsys.readouterr().out
+    assert "AVAILABLE" in output and secret not in output
+
+
+def test_source_exception_does_not_leak_secret_or_build_context(tmp_path, monkeypatch, capsys):
+    _schemas(tmp_path)
+    secret = "fixture-only-" + "not-a-real-credential"
+    monkeypatch.setenv("TUSHARE_TOKEN", secret)
+    calls = []
+    runners = _runners(tmp_path, calls)
+
+    def fail(target):
+        raise RuntimeError("provider echoed credential: " + secret)
+
+    runners["market_packet"] = fail
+    result = DailyCloseOrchestrator(
+        tmp_path,
+        now=lambda: datetime(2026, 9, 8, 16, tzinfo=SHANGHAI),
+        calendar_loader=lambda _: _calendar(),
+        runners=runners,
+        requires_tushare=True,
+    ).run_date(date(2026, 9, 8))
+    assert result["status"] == "FAILED"
+    assert result["failed_step"] == "market_packet"
+    assert result["retry_count"] == 2
+    assert secret not in json.dumps(result)
+    assert secret not in Path(result["manifest_path"]).read_text(encoding="utf-8")
+    assert secret not in capsys.readouterr().out
+    assert calls == []
+    assert not (tmp_path / "data/review_context").exists()
+
+
+def test_failed_daily_gate_never_builds_review_context(tmp_path, monkeypatch):
+    _schemas(tmp_path)
+    monkeypatch.setenv("TUSHARE_TOKEN", "fixture-only-available")
+    calls = []
+    runners = _runners(tmp_path, calls)
+
+    def incomplete(day):
+        _write_artifact(tmp_path, "market_packet", day)
+        path = tmp_path / f"data/market_packets/{day}.json"
+        value = json.loads(path.read_text(encoding="utf-8"))
+        value["data_quality"]["checks"][0]["status"] = "FAIL"
+        path.write_text(json.dumps(value), encoding="utf-8")
+
+    runners["market_packet"] = incomplete
+    result = DailyCloseOrchestrator(
+        tmp_path,
+        now=lambda: datetime(2026, 9, 8, 16, tzinfo=SHANGHAI),
+        calendar_loader=lambda _: _calendar(),
+        runners=runners,
+        requires_tushare=True,
+    ).run_date(date(2026, 9, 8))
+    assert result["status"] == "FAILED"
+    assert "production gate" in result["blockers"][0]["error"]
+    assert Path(result["manifest_path"]).exists()
+    assert calls == []
+    assert not (tmp_path / "data/review_context").exists()

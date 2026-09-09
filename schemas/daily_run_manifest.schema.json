@@ -5,7 +5,8 @@
   "properties": {
     "date": {"type": "string", "format": "date"},
     "run_id": {"type": "string"},
-    "is_trade_day": {"type": "boolean"},
+    "is_trade_day": {"type": ["boolean", "null"]},
+    "credential_health": {"type": "object", "required": ["tushare_token"], "additionalProperties": false, "properties": {"tushare_token": {"enum": ["AVAILABLE", "MISSING"]}}},
     "market_closed": {"type": "boolean"},
     "pipeline_started_at": {"type": "string"},
     "pipeline_completed_at": {"type": "string"},

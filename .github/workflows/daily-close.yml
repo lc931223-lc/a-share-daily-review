@@ -41,19 +41,29 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run close pipeline with retries
+        id: close
         shell: bash
+        env:
+          REQUESTED_TRADE_DATE: ${{ inputs.trade_date }}
+          FORCE_REBUILD: ${{ inputs.force }}
         run: |
           set -o pipefail
-          if [[ -n "${{ inputs.trade_date }}" ]]; then
-            args=(--date "${{ inputs.trade_date }}")
+          if [[ -n "$REQUESTED_TRADE_DATE" ]]; then
+            args=(--date "$REQUESTED_TRADE_DATE")
           else
             args=(--latest --backfill-missing)
           fi
-          if [[ "${{ inputs.force }}" == "true" ]]; then
+          if [[ "$FORCE_REBUILD" == "true" ]]; then
             args+=(--force)
           fi
           for attempt in 1 2 3; do
-            python tools/run_daily_close_pipeline.py "${args[@]}" && exit 0
+            if DAILY_CLOSE_ATTEMPT="$attempt" python tools/run_daily_close_pipeline.py "${args[@]}"; then
+              exit 0
+            else
+              code=$?
+            fi
+            # Missing credentials cannot be repaired by sleeping and retrying.
+            [[ "$code" == "3" ]] && exit 3
             [[ "$attempt" == "3" ]] && exit 1
             sleep $((attempt * 60))
           done
@@ -73,6 +83,9 @@ jobs:
           git diff --cached --quiet && exit 0
           git commit -m "data: advance daily close production"
           git push origin HEAD:main
+      - name: Commit failed daily close manifest only
+        if: ${{ always() && steps.close.outcome == 'failure' }}
+        run: python tools/publish_daily_close_failure.py
       - name: Upload failure diagnostics
         if: failure()
         uses: actions/upload-artifact@v4
@@ -80,6 +93,5 @@ jobs:
           name: daily-close-diagnostics-${{ github.run_id }}
           path: |
             data/daily_runs/
-            logs/
           if-no-files-found: ignore
           retention-days: 14

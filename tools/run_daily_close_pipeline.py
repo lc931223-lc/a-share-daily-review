@@ -17,7 +17,9 @@ def main(argv: list[str] | None = None) -> int:
     group = parser.add_mutually_exclusive_group()
     group.add_argument("--date", help="Historical or explicit date in YYYY-MM-DD format")
     group.add_argument("--latest", action="store_true", help="Run the latest completed trading day")
-    parser.add_argument("--backfill-missing", action="store_true", help="Run every missing trading day in order")
+    parser.add_argument(
+        "--backfill-missing", action="store_true", help="Run every missing trading day in order"
+    )
     parser.add_argument("--force", action="store_true", help="Regenerate valid existing artifacts")
     args = parser.parse_args(argv)
     pipeline = DailyCloseOrchestrator()
@@ -27,7 +29,24 @@ def main(argv: list[str] | None = None) -> int:
         else pipeline.run_latest(backfill_missing=args.backfill_missing, force=args.force)
     )
     for result in results:
-        print(json.dumps({"date": result["date"], "status": result["status"], "manifest": result["manifest_path"], "blockers": result["blockers"]}, ensure_ascii=False))
+        print(
+            json.dumps(
+                {
+                    "date": result["date"],
+                    "status": result["status"],
+                    "manifest": result["manifest_path"],
+                    "blockers": result["blockers"],
+                    "credential_health": result["credential_health"],
+                },
+                ensure_ascii=False,
+            )
+        )
+    if any(
+        blocker.get("error") == "MISSING_TUSHARE_TOKEN"
+        for row in results
+        for blocker in row["blockers"]
+    ):
+        return 3
     return 0 if results and all(row["status"] in {"PASS", "PARTIAL"} for row in results) else 2
 
 
