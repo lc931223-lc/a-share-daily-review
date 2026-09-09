@@ -24,6 +24,8 @@ def repos(tmp_path, monkeypatch):
     sync.git(root, "init", "--initial-branch=main")
     sync.git(root, "config", "user.email", "fixture@example.invalid")
     sync.git(root, "config", "user.name", "Fixture")
+    (root / ".gitattributes").write_text("data/auction_packets/*.json -text\n", encoding="utf-8")
+    sync.git(root, "add", ".gitattributes")
     sync.git(root, "commit", "--allow-empty", "-m", "fixture base")
     sync.git(root, "remote", "add", "origin", str(remote))
     sync.git(root, "push", "-u", "origin", "main")
@@ -137,3 +139,36 @@ def test_stage_history_survives_failure(tmp_path):
         "COLLECTION_FAILED",
     ]
     assert len((tmp_path / f"data/auction_logs/{DAY}/live.log").read_text().splitlines()) == 5
+
+
+def test_crlf_frozen_bytes_survive_windows_autocrlf(repos):
+    root, remote = repos
+    sync.git(root, "config", "core.autocrlf", "true")
+    (root / ".gitattributes").write_text("data/auction_packets/*.json -text\n", encoding="utf-8")
+    sync.git(root, "add", ".gitattributes")
+    sync.git(root, "commit", "--allow-empty", "-m", "fixture attributes")
+    sync.git(root, "push", "origin", "main")
+    packet = root / f"data/auction_packets/{DAY}.json"
+    packet.write_bytes(b'{\r\n  "fixture": true\r\n}')
+    update_run(
+        root, DAY, "REPORT_READY", packet_sha256=hashlib.sha256(packet.read_bytes()).hexdigest()
+    )
+    assert sync.persist(root, DAY) == "PUSHED"
+    assert sync.git(remote, "rev-parse", f"main:data/auction_packets/{DAY}.json") == sync.git(
+        root, "hash-object", "--no-filters", str(packet)
+    )
+
+
+def test_filter_mismatch_blocks_commit(repos):
+    root, remote = repos
+    (root / ".gitattributes").write_text("data/auction_packets/*.json text\n", encoding="utf-8")
+    sync.git(root, "config", "core.autocrlf", "true")
+    before = sync.git(remote, "rev-parse", "main")
+    packet = root / f"data/auction_packets/{DAY}.json"
+    packet.write_bytes(b'{\r\n  "fixture": true\r\n}')
+    update_run(
+        root, DAY, "REPORT_READY", packet_sha256=hashlib.sha256(packet.read_bytes()).hexdigest()
+    )
+    with pytest.raises(ValueError, match="FILTER_CHANGED"):
+        sync.persist(root, DAY)
+    assert sync.git(remote, "rev-parse", "main") == before

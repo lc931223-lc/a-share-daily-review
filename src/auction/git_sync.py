@@ -161,7 +161,18 @@ def persist(root, day, *, require_frozen=False):
         ]
 
         def commit_paths():
+            if raw_sha:
+                for suffix in ("", "_compact"):
+                    path = f"data/auction_packets/{day}{suffix}.json"
+                    if run("hash-object", "--no-filters", path) != run("hash-object", path):
+                        raise ValueError("GIT_FILTER_CHANGED_FROZEN_BYTES")
             run("add", "-f", "--", *paths)
+            run("add", "--renormalize", "--", *paths)
+            if raw_sha:
+                for suffix in ("", "_compact"):
+                    path = f"data/auction_packets/{day}{suffix}.json"
+                    if run("hash-object", "--no-filters", path) != run("rev-parse", f":{path}"):
+                        raise ValueError("GIT_FILTER_CHANGED_FROZEN_BYTES")
             staged = run("diff", "--cached", "--name-only")
             if set(staged.splitlines()) - set(paths):
                 raise RuntimeError("UNEXPECTED_STAGED_CHANGES")

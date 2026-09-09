@@ -153,7 +153,10 @@ in a following receipt commit to avoid a self-referential SHA.
 
 ## Verification And Next Session
 
-Offline suite: 337 passed, 1 real_data test deselected. compileall passed.
+Offline suite: 339 passed, 1 real_data test deselected; compileall passed.
+The final connection-failure logging changes also passed 30 targeted tests.
+Two newline-filter regression tests cover Windows autocrlf and a rejected
+byte-changing Git filter.
 Tests cover local bare-remote push, push failure/retry of existing commits, remote
 advancement, SHA corruption, staged-work protection, OS lock, stage history,
 watchdog no-duplicate behavior, pre-09:15 errors, late-start boundaries, bounded
@@ -182,3 +185,18 @@ Local evidence directories (ignored by Git, not deleted):
 `data/auction_host_audit/20260909-203507/` (original XML/receipt),
 `data/auction_host_audit/20260909-205515/` (post-repair inventory/source test), and
 `data/auction_dry_runs/20260909-204417/`, `20260909-204501/` (failed/successful task tests).
+
+## Distribution Verification Follow-Up
+
+The task-launched SyncRecovery run returned 0 and committed/pushed real local
+9/9 artifacts, including both packets and the run receipt. This verified actual
+Git authentication under the scheduler identity, not only a terminal dry run.
+During remote byte verification, Git autocrlf was found to normalize the original
+CRLF packet to LF. JSON semantics were identical, but the frozen SHA differed.
+The local immutable bytes were not changed. `.gitattributes` now marks frozen
+auction JSON as `-text`, and sync checks raw-versus-filtered/staged Git blob hashes
+before committing. Renormalization is limited to the explicit auction paths.
+The corrected distribution must match the original packet/compact SHA above.
+
+Local raw-freeze SHA-256:
+`2fa9677d6b7764f2ea447fb22224b9e0e58035988a5abe2c80cb6c44c2695c69`.

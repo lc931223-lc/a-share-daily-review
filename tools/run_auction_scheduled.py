@@ -147,6 +147,7 @@ def main(argv=None):
                         if result["status"] == "PASS"
                         and result["previous_review_status"] == "READY"
                         and result["source_probe"]["connect_result"] == "PASS"
+                        and result["source_probe"]["success_count"] == 15
                         else 1
                     )
                     update_run(
@@ -172,7 +173,8 @@ def main(argv=None):
                 receipt = read(receipt_root / "data/auction_runs" / f"{day}.json", {})
                 stage = (
                     "PREFLIGHT_FAILED"
-                    if receipt.get("stage") in {"SCHEDULER_STARTED", "PREFLIGHT_RUNNING"}
+                    if receipt.get("stage")
+                    in {"SCHEDULER_STARTED", "PREFLIGHT_RUNNING", "PREFLIGHT_FAILED"}
                     else "COLLECTION_FAILED"
                 )
                 update_run(

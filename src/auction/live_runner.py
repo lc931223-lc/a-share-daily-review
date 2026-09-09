@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import traceback
 from collections.abc import Callable
 from datetime import datetime, time, timedelta
 from time import sleep
@@ -44,8 +45,10 @@ class LiveAuctionRunner:
         unique_rows: dict[str, dict[str, Any]] = {}
         failures: dict[str, dict[str, str]] = {}
         polled = 0
+        connected = False
         try:
             self.source.connect()
+            connected = True
             self.progress("SOURCE_CONNECTED", {"source_connect_result": "PASS"})
             current = self.now().astimezone(SHANGHAI_TZ)
             late_seconds = max(
@@ -159,6 +162,16 @@ class LiveAuctionRunner:
                 failures=list(failures.values()),
                 stats=stats,
             )
+        except Exception as exc:
+            self.progress(
+                "COLLECTION_FAILED" if connected else "PREFLIGHT_FAILED",
+                {
+                    "source_connect_result": "PASS" if connected else "FAIL",
+                    "exception_type": type(exc).__name__,
+                    "exception_traceback": traceback.format_exc(),
+                },
+            )
+            raise
         finally:
             self.source.close()
 

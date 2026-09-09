@@ -133,4 +133,5 @@ def test_source_failure_closes_and_leaves_connect_started():
             progress=lambda stage, details: events.append((stage, details)),
         ).collect(date(2026, 9, 7), [])
     assert source.closed
-    assert events[-1][0] == "PREFLIGHT_RUNNING"
+    assert events[-1][0] == "PREFLIGHT_FAILED"
+    assert events[-1][1]["source_connect_result"] == "FAIL"

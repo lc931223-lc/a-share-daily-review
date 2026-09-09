@@ -155,6 +155,10 @@ class AuctionPipeline:
         raw_path = self.root / 'data/auction_raw_frozen' / f'{trade_date}.json'
         frozen = read(raw_path)
         if frozen:
+            import hashlib
+            expected = read(self.root / 'data/auction_runs' / f'{trade_date}.json', {}).get('raw_sha256')
+            if expected and hashlib.sha256(raw_path.read_bytes()).hexdigest() != expected:
+                raise ValueError('immutable raw freeze hash mismatch')
             collection = AuctionCollection(**frozen['collection'])
             watchlist = frozen['watchlist']
             previous_context = frozen['previous_context']
