@@ -81,4 +81,10 @@ output/
 tools/bin/
 assets/fonts/*-VF.ttf
 reports/test-*.pdf
+data/auction_host_config.json
+data/auction_host_audit/
+data/auction_dry_runs/
+data/auction_logs/
+data/auction_runs/*.lock
+data/auction_runs/*.lock/
 research/skill-pdf-extract-*.txt

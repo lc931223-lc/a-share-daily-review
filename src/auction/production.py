@@ -9,6 +9,14 @@ from zoneinfo import ZoneInfo
 
 TZ = ZoneInfo("Asia/Shanghai")
 STAGES = (
+    "SCHEDULER_STARTED",
+    "PREFLIGHT_RUNNING",
+    "PREFLIGHT_FAILED",
+    "SOURCE_CONNECTED",
+    "COLLECTION_FAILED",
+    "GIT_SYNC_PENDING",
+    "GIT_SYNC_FAILED",
+    "PUSHED",
     "NOT_STARTED",
     "COLLECTING",
     "FORMAL_MATCH_PENDING",
@@ -20,6 +28,17 @@ STAGES = (
 )
 
 
+def log_event(root, day, event, **details):
+    path = root / "data/auction_logs" / str(day) / "live.log"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    entry = dict(timestamp=datetime.now(TZ).isoformat(), event=event, **details)
+    with path.open("a", encoding="utf-8") as stream:
+        stream.write(json.dumps(entry, ensure_ascii=False, default=str) + "\n")
+        stream.flush()
+        os.fsync(stream.fileno())
+    return entry
+
+
 def read(path, default=None):
     return json.loads(path.read_text(encoding="utf-8")) if path.exists() else default
 
@@ -27,7 +46,10 @@ def read(path, default=None):
 def write(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(f".{os.getpid()}.tmp")
-    temporary.write_text(json.dumps(value, ensure_ascii=False, indent=2), encoding="utf-8")
+    with temporary.open("w", encoding="utf-8") as stream:
+        stream.write(json.dumps(value, ensure_ascii=False, indent=2))
+        stream.flush()
+        os.fsync(stream.fileno())
     temporary.replace(path)
 
 
@@ -52,7 +74,11 @@ def update_run(root, day, stage, **values):
             compact_path=None,
             workflow_run_id=os.getenv("GITHUB_RUN_ID"),
         )
-    record.update(stage=stage, **values)
+    record.update(stage=stage, status=values.pop("status", stage), **values)
+    if not stage.endswith("FAILED"):
+        record["last_successful_stage"] = stage
+    entry = log_event(root, day, stage, **values)
+    record.setdefault("stage_history", []).append(entry)
     write(path, record)
     return record
 
@@ -150,8 +176,11 @@ def resume_report(root, day):
     ):
         raise ValueError("frozen auction report hash mismatch; explicit --force required")
     compact_path = path.with_name(f"{day}_compact.json")
-    if receipt.get('compact_sha256') and (not compact_path.exists() or hashlib.sha256(compact_path.read_bytes()).hexdigest() != receipt['compact_sha256']):
-        raise ValueError('frozen compact report hash mismatch')
+    if receipt.get("compact_sha256") and (
+        not compact_path.exists()
+        or hashlib.sha256(compact_path.read_bytes()).hexdigest() != receipt["compact_sha256"]
+    ):
+        raise ValueError("frozen compact report hash mismatch")
     return dict(
         packet=read(path),
         compact_packet=read(compact_path),

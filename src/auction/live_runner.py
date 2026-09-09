@@ -37,19 +37,61 @@ class LiveAuctionRunner:
         if current.time() >= time(9, 30):
             raise ValueError("live auction collection cannot start after market open")
         late = current.time() > time(9, 15)
-        self.progress("COLLECTING", {"collection_start_time": current.isoformat(), "late_start": late})
-        self.source.connect()
+        late_seconds = max(
+            0, (current - datetime.combine(trade_date, time(9, 15), SHANGHAI_TZ)).total_seconds()
+        )
+        self.progress("PREFLIGHT_RUNNING", {"source_connect_started_at": self.now().isoformat()})
         unique_rows: dict[str, dict[str, Any]] = {}
         failures: dict[str, dict[str, str]] = {}
         polled = 0
         try:
+            self.source.connect()
+            self.progress("SOURCE_CONNECTED", {"source_connect_result": "PASS"})
+            current = self.now().astimezone(SHANGHAI_TZ)
+            late_seconds = max(
+                0,
+                (current - datetime.combine(trade_date, time(9, 15), SHANGHAI_TZ)).total_seconds(),
+            )
+            late = late_seconds > 5
+            self.progress(
+                "COLLECTING",
+                {
+                    "collection_start_time": current.isoformat(),
+                    "collection_started_at": self.now().isoformat(),
+                    "late_start": late,
+                    "late_start_seconds": late_seconds,
+                    "start_acceptance": "PASS"
+                    if late_seconds <= 5
+                    else "PARTIAL"
+                    if late_seconds <= 60
+                    else "FAIL",
+                },
+            )
             for poll_time in POLL_TIMES:
                 target = datetime.combine(trade_date, poll_time, SHANGHAI_TZ)
                 if target < current or self.now().astimezone(SHANGHAI_TZ).time() >= time(9, 25):
                     continue
                 self._wait_until(target)
-                self.source.collection_deadline = datetime.combine(trade_date, time(9, 25), SHANGHAI_TZ)
+                self.progress(
+                    "COLLECTING",
+                    {
+                        "checkpoint_started_at": self.now().isoformat(),
+                        "checkpoint_scheduled_at": target.isoformat(),
+                    },
+                )
+                self.source.collection_deadline = datetime.combine(
+                    trade_date, time(9, 25), SHANGHAI_TZ
+                )
                 result = self.source.collect_live_process(stocks, trade_date)
+                self.progress(
+                    "COLLECTING",
+                    {
+                        "checkpoint_scheduled_at": target.isoformat(),
+                        "checkpoint_completed_at": self.now().isoformat(),
+                        "checkpoint_rows": len(result.process_rows),
+                        "checkpoint_failures": result.failures,
+                    },
+                )
                 polled += 1
                 for row in result.process_rows:
                     unique_rows[str(row["content_hash"])] = row
@@ -58,9 +100,39 @@ class LiveAuctionRunner:
             self._wait_until(
                 datetime.combine(trade_date, time(9, 25), SHANGHAI_TZ) + timedelta(seconds=2)
             )
-            self.progress("FORMAL_MATCH_PENDING", {})
+            self.progress(
+                "FORMAL_MATCH_PENDING", {"formal_match_started_at": self.now().isoformat()}
+            )
             formal = self.source.collect_live_formal(stocks, trade_date)
             formal_by_code = {str(row["ts_code"]): row for row in formal.formal_rows}
+            # A server may not expose every opening print at 09:25:02. Retry
+            # only missing stocks, inside a bounded live window, never history.
+            for attempt in range(2):
+                missing = [stock for stock in stocks if str(stock["ts_code"]) not in formal_by_code]
+                if not missing or self.now().time() >= time(9, 25, 16):
+                    break
+                self.sleeper(2)
+                retry = self.source.collect_live_formal(missing, trade_date)
+                formal_by_code.update({str(row["ts_code"]): row for row in retry.formal_rows})
+                self.progress(
+                    "FORMAL_MATCH_PENDING",
+                    {
+                        "formal_retry": attempt + 1,
+                        "requested_count": len(missing),
+                        "returned_count": len(retry.formal_rows),
+                        "formal_retry_failures": retry.failures,
+                    },
+                )
+            self.progress(
+                "FORMAL_MATCH_PENDING",
+                {
+                    "formal_match_completed_at": self.now().isoformat(),
+                    "formal_match_count": len(formal_by_code),
+                    "formal_match_failures": [
+                        f for f in formal.failures if str(f["ts_code"]) not in formal_by_code
+                    ],
+                },
+            )
             successful_codes = {str(row["ts_code"]) for row in unique_rows.values()} & set(
                 formal_by_code
             )
@@ -72,8 +144,14 @@ class LiveAuctionRunner:
                     failures[str(item["ts_code"])] = item
             stats = self.source._stats(len(successful_codes), len(stocks))
             stats["checkpoint_poll_count"] = polled
-            stats["formal_match_times"] = [row.get("snapshot_time") for row in formal.formal_rows]
-            stats.update(collection_start_time=current.isoformat(), auction_frozen_at=self.now().astimezone(SHANGHAI_TZ).isoformat(), late_start=late)
+            stats["formal_match_times"] = [
+                row.get("snapshot_time") for row in formal_by_code.values()
+            ]
+            stats.update(
+                collection_start_time=current.isoformat(),
+                auction_frozen_at=self.now().astimezone(SHANGHAI_TZ).isoformat(),
+                late_start=late,
+            )
             self.progress("AUCTION_FROZEN", {"auction_frozen_at": stats["auction_frozen_at"]})
             return AuctionCollection(
                 process_rows=list(unique_rows.values()),

@@ -125,10 +125,11 @@ class AuctionPipeline:
         now = now or (lambda: datetime.now(ZoneInfo("Asia/Shanghai")))
         if now().date() != trade_date:
             raise ValueError("live requires today's Shanghai date")
-        if not force:
-            reused = resume_report(self.root, trade_date)
-            if reused:
-                return reused
+        reused = resume_report(self.root, trade_date)
+        if reused:
+            if force:
+                raise ValueError("immutable frozen report cannot be forced")
+            return reused
         calendar = self.calendar_loader(trade_date)
         if not any(item.cal_date == trade_date and item.is_open for item in calendar):
             update_run(self.root, trade_date, "NOT_STARTED", status="SKIPPED_NON_TRADING_DAY")
@@ -152,7 +153,7 @@ class AuctionPipeline:
             runner_kwargs["sleeper"] = sleeper
         runner_kwargs["progress"] = lambda stage, details: update_run(self.root, trade_date, stage, **details)
         raw_path = self.root / 'data/auction_raw_frozen' / f'{trade_date}.json'
-        frozen = read(raw_path) if not force else None
+        frozen = read(raw_path)
         if frozen:
             collection = AuctionCollection(**frozen['collection'])
             watchlist = frozen['watchlist']
@@ -160,6 +161,8 @@ class AuctionPipeline:
         else:
             collection = LiveAuctionRunner(self.source_factory(), **runner_kwargs).collect(trade_date, stocks)
             write(raw_path, dict(collection=dict(process_rows=collection.process_rows, formal_rows=collection.formal_rows, failures=collection.failures, stats=collection.stats), watchlist=watchlist, previous_context=previous_context))
+        import hashlib
+        update_run(self.root, trade_date, "AUCTION_FROZEN", raw_sha256=hashlib.sha256(raw_path.read_bytes()).hexdigest(), freeze_completed_at=now().isoformat())
         result = self._complete_collection(
             trade_date,
             watchlist,
