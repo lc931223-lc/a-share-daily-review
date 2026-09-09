@@ -61,7 +61,7 @@ def build_formal_review_support(root: Path, target: date) -> dict[str, Any]:
     }
     evidence = _evidence(market, target)
     theme_support = []
-    for rank, theme in enumerate(context.get("next_day_theme_candidates") or [], 1):
+    for theme in context.get("next_day_theme_candidates") or []:
         name = str(theme.get("theme") or "")
         theme, structure_evidence = market_evidence(theme, context, market, target)
         prior_theme = previous_themes.get(identity(name)["canonical_name"]) or {}
@@ -71,21 +71,22 @@ def build_formal_review_support(root: Path, target: date) -> dict[str, Any]:
             theme["strength_change_1d"] = strength - prior_strength
         theme_evidence = [row for row in evidence if name in row.get("related_themes", [])]
         factors = _factor_evaluation(theme_evidence + structure_evidence)
-        previous_state = (previous_themes.get(identity(name)["canonical_name"]) or {}).get("lifecycle", {}).get(
-            "current_state"
-        )
-        lifecycle = _lifecycle(theme, previous_state)
-        roles = _roles(context, name)
+        # Legacy scoring/lifecycle/role helpers remain for archived compatibility,
+        # but production support no longer assigns these ChatGPT-owned judgements.
+        roles = [
+            {"code": row.get("ts_code"), "name": row.get("stock_name"),
+             "candidate_scores": row.get("role_scores") or {}, "candidate_only": True}
+            for row in (context.get("next_day_theme_candidates") or [])
+            if row.get("theme") == name
+            for row in (row.get("leader_candidates") or []) + (row.get("capacity_candidates") or [])
+        ]
         theme_support.append(
             {
                 "theme_name": name,
-                "theme_rank": rank,
                 "objective_strength": strength,
                 "theme_identity": identity(name),
-                "related_parent_history": previous_themes.get(identity(name)["parent"]),
                 "41_factors": factors,
-                "score_support": score_components(theme, factors),
-                "lifecycle": lifecycle,
+                "lifecycle_inputs": {"strength_change_1d": theme.get("strength_change_1d")},
                 "core_stocks": roles,
                 "next_day_validation": _validation_points(context, name),
                 "uncertainties": _uncertainties(factors, roles),
@@ -121,6 +122,7 @@ def build_formal_review_support(root: Path, target: date) -> dict[str, Any]:
             "no_reason_from_price_only": True,
             "tier4_cannot_confirm": True,
             "support_is_not_formal_review": True,
+            "legacy_judgement_helpers_disabled": True,
         },
     }
     schema = _read(root / "schemas" / "formal_review_support.schema.json")

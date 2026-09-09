@@ -233,6 +233,13 @@ def test_import_to_next_day_pipeline_formal_only_feedback(tmp_path, monkeypatch)
     prior = context["source_manifest"]["prior_official_review"]
     assert prior["data_date"] == "2026-09-08" and prior["sha256"] == digest
     support = read(tmp_path / "data/formal_review_support/2026-09-09.json")
+    assert all(not {"theme_rank", "score_support", "lifecycle"}.intersection(t) for t in support["theme_support"])
+    objective_input = read(tmp_path / "data/chatgpt_review_inputs/2026-09-09.json")
+    metric_validation = objective_input["previous_review_actual_results"]
+    assert metric_validation["source"]["sha256"] == digest
+    assert len(metric_validation["records"]) == 12
+    assert [r["condition_met"] for r in metric_validation["records"] if r["metric_status"] == "EVALUATED"] == [True, False]
+    assert all("result" not in r and "hypothesis_kind" not in r for r in metric_validation["records"])
     assert len(support["objective_support_hypotheses"]["records"]) == 1
     assert support["objective_support_hypotheses"]["formal_hit_rate_eligible"] is False
     feedback = read(tmp_path / "research_feedback/formal/2026-09-09.json")
@@ -250,6 +257,14 @@ def test_import_to_next_day_pipeline_formal_only_feedback(tmp_path, monkeypatch)
     pipeline.run_date(DAY)
     assert canonical.read_bytes() == before
     assert read(tmp_path / "research_feedback/formal/2026-09-09.json") == feedback
+    def fail_delivery(*args, **kwargs):
+        raise ValueError("FIXTURE_INPUT_SCHEMA_FAILURE")
+    monkeypatch.setattr("src.formal_review.objective_inputs.build_inputs", fail_delivery)
+    failed = pipeline.run_date(DAY)
+    assert failed["status"] == "FAILED"
+    receipt = read(tmp_path / "data/daily_runs/2026-09-09.json")
+    assert receipt["failed_step"] == "chatgpt_review_inputs"
+    assert any("FIXTURE_INPUT_SCHEMA_FAILURE" in row["error"] for row in receipt["blockers"])
 
 
 def test_missing_exact_day_never_falls_back_to_older_formal(tmp_path):

@@ -367,7 +367,13 @@ class DailyCloseOrchestrator:
     def _finish(self, manifest: dict[str, Any]) -> dict[str, Any]:
         from src.formal_review.delivery import update_queue
         if "formal_review_support" in manifest["steps"]:
-            manifest["formal_review_queue"] = update_queue(self.root, manifest["trade_date"] if "trade_date" in manifest else manifest["date"])
+            try:
+                manifest["formal_review_queue"] = update_queue(self.root, manifest["trade_date"] if "trade_date" in manifest else manifest["date"])
+            except Exception as exc:
+                # Delivery validation must not bypass the durable failure receipt.
+                manifest["status"] = "FAILED"
+                manifest["failed_step"] = "chatgpt_review_inputs"
+                manifest["blockers"].append({"step": "chatgpt_review_inputs", "error": f"{type(exc).__name__}: {exc}"})
         if manifest["status"] not in FINAL_STATUSES:
             raise ValueError(f"invalid final status {manifest['status']}")
         for name, step in manifest["steps"].items():

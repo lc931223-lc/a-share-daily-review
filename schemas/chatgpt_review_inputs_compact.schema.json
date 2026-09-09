@@ -1,0 +1,1903 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "meta",
+    "market_snapshot",
+    "market_divergence_candidates",
+    "theme_candidates",
+    "theme_evidence",
+    "factor41_evidence",
+    "realization_facts",
+    "stock_role_candidates",
+    "lifecycle_vectors",
+    "six_dimension_inputs",
+    "previous_review_actual_results",
+    "cross_market_facts",
+    "abnormal_data_candidates",
+    "inflection_observations",
+    "data_gaps",
+    "source_manifest",
+    "selection"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "trade_date",
+        "as_of",
+        "data_role",
+        "final_judgement_owner"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "chatgpt_review_inputs_compact.1"
+        },
+        "trade_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "as_of": {
+          "type": "string"
+        },
+        "data_role": {
+          "const": "OBJECTIVE_RESEARCH_INPUT"
+        },
+        "final_judgement_owner": {
+          "const": "chatgpt"
+        }
+      }
+    },
+    "market_snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total_amount",
+        "amount_change_vs_previous",
+        "rise_count",
+        "fall_count",
+        "median_return",
+        "limit_up_count",
+        "limit_down_count",
+        "failed_limit_count",
+        "failed_limit_rate",
+        "highest_board",
+        "promotion_rate",
+        "new_limit_up_count",
+        "theme_limit_down_count",
+        "large_cap_return",
+        "small_cap_return",
+        "growth_return",
+        "value_return",
+        "high_beta_return",
+        "dividend_return",
+        "board_distribution",
+        "strongest_style",
+        "weakest_style",
+        "style_observations",
+        "style_selection_method"
+      ],
+      "properties": {
+        "total_amount": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "amount_change_vs_previous": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "rise_count": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "fall_count": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "median_return": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "limit_up_count": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "limit_down_count": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "failed_limit_count": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "failed_limit_rate": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "highest_board": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "promotion_rate": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "new_limit_up_count": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "theme_limit_down_count": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "large_cap_return": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "small_cap_return": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "growth_return": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "value_return": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "high_beta_return": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "dividend_return": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "board_distribution": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5+"
+          ],
+          "properties": {
+            "1": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "2": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "3": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "4": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "5+": {
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          }
+        },
+        "strongest_style": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "weakest_style": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "style_observations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "style",
+              "return_pct",
+              "sample_count",
+              "coverage_status",
+              "source_coverage",
+              "methodology"
+            ],
+            "properties": {
+              "style": {
+                "type": "string"
+              },
+              "return_pct": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "sample_count": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "coverage_status": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "source_coverage": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "methodology": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "style_selection_method": {
+          "type": "string"
+        }
+      }
+    },
+    "market_divergence_candidates": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "index_up_but_breadth_weak": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "metric_a",
+            "metric_b",
+            "raw_difference",
+            "severity"
+          ],
+          "properties": {
+            "metric_a": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "metric_b": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "raw_difference": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "severity": {
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          }
+        },
+        "many_limit_ups_but_low_promotion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "metric_a",
+            "metric_b",
+            "raw_difference",
+            "severity"
+          ],
+          "properties": {
+            "metric_a": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "metric_b": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "raw_difference": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "severity": {
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          }
+        },
+        "small_caps_strong_but_capacity_weak": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "metric_a",
+            "metric_b",
+            "raw_difference",
+            "severity"
+          ],
+          "properties": {
+            "metric_a": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "metric_b": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "raw_difference": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "severity": {
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          }
+        },
+        "sector_up_but_leaders_failed": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "metric_a",
+            "metric_b",
+            "raw_difference",
+            "severity"
+          ],
+          "properties": {
+            "metric_a": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "metric_b": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "raw_difference": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "severity": {
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          }
+        },
+        "volume_down_but_index_up": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "metric_a",
+            "metric_b",
+            "raw_difference",
+            "severity"
+          ],
+          "properties": {
+            "metric_a": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "metric_b": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "raw_difference": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "severity": {
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          }
+        },
+        "theme_price_strength_vs_fundamental_evidence_gap": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "metric_a",
+            "metric_b",
+            "raw_difference",
+            "severity"
+          ],
+          "properties": {
+            "metric_a": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "metric_b": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "raw_difference": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "severity": {
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "theme_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "theme_name",
+          "return",
+          "breadth",
+          "limit_up_count",
+          "failed_limit_count",
+          "amount",
+          "amount_change",
+          "leader_strength",
+          "capacity_strength",
+          "persistence_1d",
+          "persistence_3d",
+          "persistence_5d",
+          "evidence_count_tier1",
+          "evidence_count_tier2",
+          "evidence_count_total",
+          "price_factor_count",
+          "policy_factor_count",
+          "earnings_factor_count",
+          "order_factor_count",
+          "risk_factor_count",
+          "source",
+          "coverage_status"
+        ],
+        "properties": {
+          "theme_name": {
+            "type": "string"
+          },
+          "return": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "breadth": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "limit_up_count": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "failed_limit_count": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "amount": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "amount_change": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "leader_strength": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "capacity_strength": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "persistence_1d": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "persistence_3d": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "persistence_5d": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "evidence_count_tier1": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "evidence_count_tier2": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "evidence_count_total": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "price_factor_count": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "policy_factor_count": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "earnings_factor_count": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "order_factor_count": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "risk_factor_count": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "coverage_status": {
+            "type": "string"
+          }
+        }
+      },
+      "maxItems": 10
+    },
+    "theme_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "fact_type",
+          "status",
+          "date",
+          "value",
+          "source",
+          "url",
+          "source_type",
+          "tier",
+          "related_theme",
+          "related_company",
+          "factor_id",
+          "risk_flags",
+          "evidence_id"
+        ],
+        "properties": {
+          "fact_type": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "OBSERVED",
+              "DISCLOSED_UNVERIFIED"
+            ]
+          },
+          "date": {
+            "type": "string"
+          },
+          "value": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "contract_amount": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "revenue": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "revenue_yoy": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "net_profit": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "net_profit_yoy": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "revenue_ratio_if_disclosed": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "customer_name": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "measurement": {
+                "type": ["number", "null"]
+              },
+              "unit": {
+                "type": ["string", "null"]
+              }
+            }
+          },
+          "source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_type": {
+            "type": "string"
+          },
+          "tier": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4
+          },
+          "related_theme": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "related_company": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "factor_id": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "maximum": 41
+          },
+          "risk_flags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence_id": {
+            "type": "string"
+          }
+        }
+      },
+      "maxItems": 30
+    },
+    "factor41_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "factor_id",
+          "factor_name",
+          "evidence_status",
+          "evidence",
+          "source_type",
+          "source_date",
+          "tier",
+          "confidence",
+          "data_available"
+        ],
+        "properties": {
+          "factor_id": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 41
+          },
+          "factor_name": {
+            "type": "string"
+          },
+          "evidence_status": {
+            "enum": [
+              "EVIDENCE_FOUND",
+              "PARTIAL_EVIDENCE",
+              "NO_EVIDENCE",
+              "DATA_UNAVAILABLE",
+              "CONTRADICTORY_EVIDENCE"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "source_type": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "source_date": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tier": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "maximum": 4
+          },
+          "confidence": {
+            "enum": [
+              "SOURCE_ONLY",
+              "NONE"
+            ]
+          },
+          "data_available": {
+            "type": "boolean"
+          }
+        }
+      },
+      "minItems": 41,
+      "maxItems": 41
+    },
+    "realization_facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "evidence_id",
+          "related_theme",
+          "related_company",
+          "fact_level"
+        ],
+        "properties": {
+          "evidence_id": {
+            "type": "string"
+          },
+          "related_theme": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "related_company": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "fact_level": {
+            "enum": [
+              "POLICY_ONLY",
+              "PRODUCT_VALIDATION",
+              "CUSTOMER_VALIDATION",
+              "PRICE_CHANGE",
+              "ORDER_CONFIRMED",
+              "SHIPMENT_CONFIRMED",
+              "REVENUE_CONFIRMED",
+              "MARGIN_CONFIRMED",
+              "PROFIT_CONFIRMED",
+              "MARKET_ONLY",
+              "UNKNOWN"
+            ]
+          }
+        }
+      }
+    },
+    "stock_role_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "stock_code",
+          "stock_name",
+          "leader_candidate_score",
+          "capacity_candidate_score",
+          "trend_candidate_score",
+          "elasticity_score",
+          "catch_up_score",
+          "follower_score",
+          "amount",
+          "market_cap",
+          "relative_strength",
+          "board_height",
+          "persistence",
+          "announcement_support",
+          "earnings_support",
+          "theme_linkage",
+          "risk_flags"
+        ],
+        "properties": {
+          "stock_code": {
+            "type": "string"
+          },
+          "stock_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "leader_candidate_score": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "capacity_candidate_score": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "trend_candidate_score": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "elasticity_score": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "catch_up_score": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "follower_score": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "amount": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "market_cap": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "relative_strength": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "board_height": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "persistence": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "announcement_support": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "earnings_support": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "theme_linkage": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "risk_flags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "maxItems": 20
+    },
+    "lifecycle_vectors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "theme_name",
+          "first_seen_date",
+          "active_days",
+          "strength_change_1d",
+          "strength_change_3d",
+          "breadth_change",
+          "amount_change",
+          "leader_persistence",
+          "capacity_persistence",
+          "new_subtheme_count",
+          "catch_up_count",
+          "failed_leader_count",
+          "theme_limit_down_count",
+          "catalyst_age",
+          "realization_level"
+        ],
+        "properties": {
+          "theme_name": {
+            "type": "string"
+          },
+          "first_seen_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "active_days": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "strength_change_1d": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "strength_change_3d": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "breadth_change": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "amount_change": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "leader_persistence": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "capacity_persistence": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "new_subtheme_count": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "catch_up_count": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "failed_leader_count": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "theme_limit_down_count": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "catalyst_age": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "realization_level": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "six_dimension_inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "theme_name",
+          "base_logic_inputs",
+          "realization_inputs",
+          "expectation_gap_inputs",
+          "continuity_inputs",
+          "market_confirmation_inputs",
+          "risk_inputs"
+        ],
+        "properties": {
+          "theme_name": {
+            "type": "string"
+          },
+          "base_logic_inputs": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "tier1_policy_count",
+              "price_evidence",
+              "industry_data",
+              "earnings_evidence"
+            ],
+            "properties": {
+              "tier1_policy_count": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "price_evidence": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "industry_data": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "earnings_evidence": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "realization_inputs": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "evidence"
+            ],
+            "properties": {
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "expectation_gap_inputs": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "consensus_estimate",
+              "prior_guidance",
+              "actual_reported"
+            ],
+            "properties": {
+              "consensus_estimate": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "prior_guidance": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "actual_reported": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              }
+            }
+          },
+          "continuity_inputs": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "persistence_1d",
+              "persistence_3d",
+              "persistence_5d"
+            ],
+            "properties": {
+              "persistence_1d": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "persistence_3d": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "persistence_5d": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              }
+            }
+          },
+          "market_confirmation_inputs": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "amount",
+              "breadth",
+              "limit_up_count",
+              "leader_strength",
+              "capacity_strength"
+            ],
+            "properties": {
+              "amount": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "breadth": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "limit_up_count": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "leader_strength": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "capacity_strength": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              }
+            }
+          },
+          "risk_inputs": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "amount_percentile",
+              "volatility",
+              "turnover_history_percentile",
+              "leader_dependency",
+              "failed_limit_count",
+              "valuation",
+              "disclosure_flags"
+            ],
+            "properties": {
+              "amount_percentile": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "volatility": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "turnover_history_percentile": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "leader_dependency": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "failed_limit_count": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "valuation": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "disclosure_flags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "previous_review_actual_results": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "source",
+        "records"
+      ],
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "expected_date",
+            "data_date",
+            "path",
+            "sha256"
+          ],
+          "properties": {
+            "status": {
+              "type": "string"
+            },
+            "expected_date": {
+              "type": "string"
+            },
+            "data_date": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "path": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "sha256": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "theme_name",
+              "check_index",
+              "condition_type",
+              "condition",
+              "metric",
+              "operator",
+              "actual_value",
+              "threshold",
+              "condition_met",
+              "metric_status",
+              "evidence"
+            ],
+            "properties": {
+              "theme_name": {
+                "type": "string"
+              },
+              "check_index": {
+                "type": "integer"
+              },
+              "condition_type": {
+                "enum": [
+                  "validation_point",
+                  "strengthening_condition",
+                  "weakening_condition",
+                  "falsification_condition"
+                ]
+              },
+              "condition": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "metric": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "operator": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "actual_value": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "threshold": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "condition_met": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "metric_status": {
+                "enum": [
+                  "EVALUATED",
+                  "NOT_EVALUABLE"
+                ]
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "source",
+                    "source_date",
+                    "field",
+                    "value"
+                  ],
+                  "properties": {
+                    "source": {
+                      "type": "string"
+                    },
+                    "source_date": {
+                      "type": "string"
+                    },
+                    "field": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": [
+                        "number",
+                        "null"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "cross_market_facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "market",
+          "instrument",
+          "date",
+          "value",
+          "source",
+          "url",
+          "tier"
+        ],
+        "properties": {
+          "market": {
+            "type": "string"
+          },
+          "instrument": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "value": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "source": {
+            "type": "string"
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tier": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4
+          }
+        }
+      }
+    },
+    "abnormal_data_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "candidate_type",
+          "stock_code",
+          "metric_a",
+          "metric_b",
+          "source_date",
+          "evidence"
+        ],
+        "properties": {
+          "candidate_type": {
+            "type": "string"
+          },
+          "stock_code": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "metric_a": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "metric_b": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "source_date": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "inflection_observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "stock_code",
+          "trend_score",
+          "chip_inputs",
+          "weekly_inputs",
+          "hold_days"
+        ],
+        "properties": {
+          "stock_code": {
+            "type": "string"
+          },
+          "trend_score": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "chip_inputs": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "pullback_volume_ratio",
+              "amount_percentile",
+              "turnover_percentile",
+              "volatility_percentile",
+              "upper_shadow_frequency",
+              "large_negative_frequency"
+            ],
+            "properties": {
+              "pullback_volume_ratio": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "amount_percentile": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "turnover_percentile": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "volatility_percentile": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "upper_shadow_frequency": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "large_negative_frequency": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              }
+            }
+          },
+          "weekly_inputs": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "wma5",
+              "wma10",
+              "wma20",
+              "slope_wma20"
+            ],
+            "properties": {
+              "wma5": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "wma10": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "wma20": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "slope_wma20": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              }
+            }
+          },
+          "hold_days": {
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "data_gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "field",
+          "reason"
+        ],
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "source_manifest": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "source_date",
+          "sha256",
+          "status"
+        ],
+        "properties": {
+          "canonical_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "sha256": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "method",
+        "theme_limit",
+        "stock_limit",
+        "evidence_limit",
+        "full_theme_count",
+        "full_evidence_count"
+      ],
+      "properties": {
+        "method": {
+          "type": "string"
+        },
+        "theme_limit": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "stock_limit": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "evidence_limit": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "full_theme_count": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "full_evidence_count": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

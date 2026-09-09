@@ -9,7 +9,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["theme_name", "theme_rank", "41_factors", "score_support", "lifecycle", "core_stocks", "next_day_validation", "uncertainties", "candidate_only"],
+        "required": ["theme_name", "41_factors", "core_stocks", "next_day_validation", "uncertainties", "candidate_only"],
         "properties": {
           "41_factors": {
             "type": "array",

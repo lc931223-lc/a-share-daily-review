@@ -86,9 +86,13 @@ def update_queue(root, day):
     support = root / "data/formal_review_support" / f"{day}.json"
     context = root / "data/review_context" / f"{day}.json"
     projection = read(official, {})
+    raw = formal.read_bytes() if formal.exists() else b""
+    # Git may materialize the immutable JSON with CRLF on Windows. Accept only
+    # exact bytes or the LF representation, never an unrelated content hash.
+    formal_hashes = {hashlib.sha256(raw).hexdigest(), hashlib.sha256(raw.replace(b"\r\n", b"\n")).hexdigest()}
     ready = (
         formal.exists()
-        and projection.get("source_sha256") == hashlib.sha256(formal.read_bytes()).hexdigest()
+        and projection.get("source_sha256") in formal_hashes
     )
     queue = dict(
         trade_date=str(day),
@@ -101,37 +105,10 @@ def update_queue(root, day):
     )
     write(root / "data/formal_review_queue" / f"{day}.json", queue)
     if support.exists() and context.exists():
-        data, ctx = read(support), read(context)
-        theme_rows = data.get("theme_support", [])
-        inputs = dict(
-            trade_date=str(day),
-            data_role="OBJECTIVE_SUPPORT_ONLY",
-            final_judgement_owner="chatgpt",
-            market_environment=ctx.get("market_environment"),
-            top_mainline_candidates=theme_rows,
-            capital_preference=ctx.get("capital_preference"),
-            inflection=ctx.get("inflection_candidates"),
-            review_intelligence=ctx.get("market_cycle_and_style"),
-            source_quality=data.get("data_quality"),
-            catalysts=ctx.get("catalysts", []),
-            risks=ctx.get("risks", []),
-            missing_fields=[
-                {
-                    "theme": t["theme_name"],
-                    "factors": [
-                        f["factor_id"] for f in t["41_factors"] if f["status"] == "UNCONFIRMED"
-                    ],
-                }
-                for t in theme_rows
-            ],
-            role_fields={
-                "leaders": "LEADER",
-                "zhongjun": "CAPACITY",
-                "trend_core": "TREND_LEADER",
-                "buzhang": "CATCH_UP",
-                "sentiment_core": "ELASTICITY",
-            },
-            source_manifest=data.get("source_manifest"),
-        )
-        write(root / "data/chatgpt_review_inputs" / f"{day}_compact.json", inputs)
+        from src.formal_review.objective_inputs import build_inputs
+
+        build_inputs(root, day)
+        queue["chatgpt_review_input_path"] = f"data/chatgpt_review_inputs/{day}.json"
+        queue["chatgpt_review_input_compact_path"] = f"data/chatgpt_review_inputs/{day}_compact.json"
+        write(root / "data/formal_review_queue" / f"{day}.json", queue)
     return queue

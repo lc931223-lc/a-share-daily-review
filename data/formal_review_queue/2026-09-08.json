@@ -5,5 +5,7 @@
   "status": "FORMAL_REVIEW_READY",
   "official_review_required": true,
   "official_review_path": "data/official_reviews/2026-09-08.json",
-  "validation_status": "PASS"
+  "validation_status": "PASS",
+  "chatgpt_review_input_path": "data/chatgpt_review_inputs/2026-09-08.json",
+  "chatgpt_review_input_compact_path": "data/chatgpt_review_inputs/2026-09-08_compact.json"
 }
