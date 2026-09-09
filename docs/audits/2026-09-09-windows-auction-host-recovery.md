@@ -198,5 +198,40 @@ auction JSON as `-text`, and sync checks raw-versus-filtered/staged Git blob has
 before committing. Renormalization is limited to the explicit auction paths.
 The corrected distribution must match the original packet/compact SHA above.
 
+Final verification succeeded: both remote blobs now match those original SHA-256
+values exactly. The corrected data commit is
+`baa313ce49621a70931065dabcdc49aca6191c2e`; its acknowledged PUSHED receipt was
+published in `0210f1b3ed8b222179e2ddaf2f032e9475efb527`. The report still has
+data_quality=FAIL and timeliness=FAIL. Local raw bytes also match their saved SHA.
+The final task-launched dry run returned 0, as did SyncRecovery and the actual
+watchdog no-op test. Original and subsequent failure logs remain on disk.
+
+The existing production validator confirmed schema, exact previous review,
+score trace, freeze SHA and independent post-open observations. Its overall
+result remains PARTIALLY_READY: late start, incomplete formal match/checkpoint
+coverage and incomplete EOD reconciliation are not relabelled as success.
+
+Temporary DryRun and SyncRecovery tasks are removed after validation; their
+logs/receipts are retained. The five production tasks and 09:13 watchdog remain.
+
 Local raw-freeze SHA-256:
 `2fa9677d6b7764f2ea447fb22224b9e0e58035988a5abe2c80cb6c44c2695c69`.
+
+## Changed Files
+
+- `.gitattributes`, `.gitignore`: byte preservation and local diagnostic exclusions.
+- `src/auction/git_sync.py`: executable/proxy resolution, traceable data-only push and retry.
+- `src/auction/host_lock.py`: shared OS-backed collector/watchdog/retry lock.
+- `src/auction/live_runner.py`: lifecycle/checkpoint logging and bounded missing-match retries.
+- `src/auction/pipeline.py`: immutable resume and raw-freeze SHA validation.
+- `src/auction/production.py`: fsynced logs, atomic receipts and stage history.
+- `tools/run_auction_task.ps1`: scheduler bootstrap before Python import.
+- `tools/install_auction_tasks.ps1`: actual task registration, watchdog, host paths, login options.
+- `tools/run_auction_scheduled.py`: early receipt, isolated dry run, preflight and local-first control.
+- `tools/check_auction_host_readiness.ps1`: task XML, power, repository, source and file audit.
+- `tools/probe_auction_host_source.py`: five-stock transport diagnostics only.
+- `tools/retry_auction_sync.py`: frozen-data-only recovery command.
+- `tests/integration/test_auction_host_sync.py`: real bare-Git failure/retry and byte tests.
+- `tests/unit/test_auction_live_runner.py`: timing, formal retry and source failures.
+- `tests/unit/test_auction_scheduled_boundary.py`: watchdog and early failure evidence.
+- This audit, original 9/9 auction artifacts/watchlist and the existing validator's acceptance receipt.
