@@ -1,0 +1,119 @@
+{
+  "retrieved_at": "2026-09-10T01:27:10.474494+08:00",
+  "sources": [
+    {
+      "path": "data/market_packets/2026-09-01.json",
+      "sha256": "3a5ea1bda793bba26d004666d0ad9325b07eeb6cfa50b35f736447e8608941be",
+      "record_count": 3,
+      "status": "PARTIAL_TITLE_ONLY_NOT_HARD_EVIDENCE"
+    },
+    {
+      "path": "data/market_packets/2026-09-02.json",
+      "sha256": "754ad14f965472325bebc4f5803b9d2c5c53068c353fcee64518e9f2c063b0e6",
+      "record_count": 49,
+      "status": "PARTIAL_TITLE_ONLY_NOT_HARD_EVIDENCE"
+    },
+    {
+      "path": "data/market_packets/2026-09-03.json",
+      "sha256": "5c5281639b927d0703a191241e7730875072bb95a6c74bbb31ba5d20002a2683",
+      "record_count": 52,
+      "status": "PARTIAL_TITLE_ONLY_NOT_HARD_EVIDENCE"
+    },
+    {
+      "path": "data/market_packets/2026-09-04.json",
+      "sha256": "4c911460b4a237bce21543edb4ae672ac6bf1d715e86c0071593376cefe95deb",
+      "record_count": 50,
+      "status": "PARTIAL_TITLE_ONLY_NOT_HARD_EVIDENCE"
+    },
+    {
+      "path": "data/market_packets/2026-09-07.json",
+      "sha256": "109a921dac9774e39e77a8bc0565622113fce64ec6c53ca5d9bea64f7a2734b9",
+      "record_count": 45,
+      "status": "PARTIAL_TITLE_ONLY_NOT_HARD_EVIDENCE"
+    },
+    {
+      "path": "data/market_packets/2026-09-08.json",
+      "sha256": "8e17f5449e86647dcdd83dd9ad0a1fcc1219f98b3de4a8b7a749a12bcb4c79a6",
+      "record_count": 3,
+      "status": "PARTIAL_TITLE_ONLY_NOT_HARD_EVIDENCE"
+    },
+    {
+      "path": "data/market_packets/2026-09-09.json",
+      "sha256": "02ee0ef99d47b78560c247e3985c246febff9be55eb409f95bb3e28f03dda1e9",
+      "record_count": 162,
+      "status": "PARTIAL_TITLE_ONLY_NOT_HARD_EVIDENCE"
+    },
+    {
+      "source": "焦煤连续",
+      "status": "PARTIAL",
+      "rows": 167,
+      "fetched_at": "2026-09-10T01:27:10.605675+08:00",
+      "path": "data/raw/opportunity_radar/焦煤连续/b63625234c0fa86613950b930b753d8e89f0010fd2938af63517a70dfadf7bbf.json",
+      "sha256": "c90a48d4e4b40a835f3ff669ffdd870b8a6a069699160d0ad792ae4c259a92f2",
+      "gap": "PUBLICATION_TIMESTAMP_UNAVAILABLE; backfilled series excluded from earlier as-of replay"
+    },
+    {
+      "source": "焦炭连续",
+      "status": "PARTIAL",
+      "rows": 167,
+      "fetched_at": "2026-09-10T01:27:10.886012+08:00",
+      "path": "data/raw/opportunity_radar/焦炭连续/3addbe9a8702b31f9b635bf1af3562dfdf0a1a745c362f91abd97259eb6b604e.json",
+      "sha256": "82b5228a4f76a01f2e037d86eb9ac1d7bcd4b70688e4c6c0c309ccb5f9f8130a",
+      "gap": "PUBLICATION_TIMESTAMP_UNAVAILABLE; backfilled series excluded from earlier as-of replay"
+    },
+    {
+      "source": "玉米连续",
+      "status": "PARTIAL",
+      "rows": 167,
+      "fetched_at": "2026-09-10T01:27:11.036607+08:00",
+      "path": "data/raw/opportunity_radar/玉米连续/4690ba5787aae3add0cf0d038b1ea4332c027b8835d41a7d0dc6ac332cc95981.json",
+      "sha256": "3d82034bd6c29b9bc97c663731a17e0f6c670203dbff8b502e74e610f99ccb4c",
+      "gap": "PUBLICATION_TIMESTAMP_UNAVAILABLE; backfilled series excluded from earlier as-of replay"
+    },
+    {
+      "source": "豆粕连续",
+      "status": "PARTIAL",
+      "rows": 167,
+      "fetched_at": "2026-09-10T01:27:11.313967+08:00",
+      "path": "data/raw/opportunity_radar/豆粕连续/f5595a8291e7556f7c99dfab9ee41140ac92b051dbb9aa0bb486d076817e8d00.json",
+      "sha256": "9c8a4aaf03fff4ca82c17973c0fbd8fc61a79939d3cf16246a4c94f92826b417",
+      "gap": "PUBLICATION_TIMESTAMP_UNAVAILABLE; backfilled series excluded from earlier as-of replay"
+    },
+    {
+      "source": "甲醇连续",
+      "status": "PARTIAL",
+      "rows": 167,
+      "fetched_at": "2026-09-10T01:27:11.674625+08:00",
+      "path": "data/raw/opportunity_radar/甲醇连续/fd552eabd62ba6b5e9d71fe56f2a98deb24f6e56cd01e263537d6b815120f55f.json",
+      "sha256": "01d08d58478ce58fc608ce58024fd1ffdc18323715e014367645ae35914ae186",
+      "gap": "PUBLICATION_TIMESTAMP_UNAVAILABLE; backfilled series excluded from earlier as-of replay"
+    },
+    {
+      "source": "铜连续",
+      "status": "PARTIAL",
+      "rows": 167,
+      "fetched_at": "2026-09-10T01:27:11.792659+08:00",
+      "path": "data/raw/opportunity_radar/铜连续/0de54a55cccea454e134566b567efb0bfee2ec7bd9c97708b7d24b431efb96f8.json",
+      "sha256": "255d60a34d2c80fdba968c24e332fa47c902725c63a3d7c6abc66f44c1076f19",
+      "gap": "PUBLICATION_TIMESTAMP_UNAVAILABLE; backfilled series excluded from earlier as-of replay"
+    },
+    {
+      "source": "铝连续",
+      "status": "PARTIAL",
+      "rows": 167,
+      "fetched_at": "2026-09-10T01:27:12.064568+08:00",
+      "path": "data/raw/opportunity_radar/铝连续/b41c1344dc74eedb23be4e566333f3f893693ab3e5ebf62f026239bcfeec4ca9.json",
+      "sha256": "618df1ff9be36a3577fad4e2ee7f2db0b3ba61f60d0feec393d0366ab29cd8a6",
+      "gap": "PUBLICATION_TIMESTAMP_UNAVAILABLE; backfilled series excluded from earlier as-of replay"
+    },
+    {
+      "source": "BDI",
+      "status": "PARTIAL",
+      "rows": 174,
+      "fetched_at": "2026-09-10T01:27:12.401645+08:00",
+      "path": "data/raw/opportunity_radar/BDI/7473ee527ea3f5f4a8ef750d19a0f9b1176f0d47dd07fc2f5e7ea8e37fbda309.json",
+      "sha256": "2ced185c77ccb0225bc891d4f443e81ab2ab47d13c815a7023eed8767fc631b1",
+      "gap": "PUBLICATION_TIMESTAMP_UNAVAILABLE; backfilled series excluded from earlier as-of replay"
+    }
+  ]
+}

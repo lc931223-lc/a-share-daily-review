@@ -1,3 +1,5 @@
 # Frozen evidence hashes are over exact bytes, not newline-normalized JSON.
 data/auction_packets/*.json -text
 data/auction_raw_frozen/*.json -text
+data/opportunity_radar/** -text
+data/raw/opportunity_radar/** -text

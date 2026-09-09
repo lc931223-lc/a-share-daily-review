@@ -103,6 +103,10 @@ class ReviewContextBuilder:
         }
         if not auction:
             packet["auction_context"]["status"] = "UNAVAILABLE"
+        from src.opportunity_radar.pipeline import read_only_summary
+        radar = read_only_summary(self.root, target)
+        if radar["status"] == "AVAILABLE":
+            packet["opportunity_radar"] = radar
         packet["data_quality"] = _quality(inputs, prior_manifest, capital_manifest, packet)
         compact = _compact(packet)
         _validate(self.root, "review_context_packet.schema.json", packet)
@@ -378,6 +382,7 @@ def _compact(packet):
             "volume_anomaly_candidates": packet["auction_context"].get("volume_anomaly_candidates", [])[:10],
         },
         "capital_preference": packet["capital_preference"],
+        **({"opportunity_radar": packet["opportunity_radar"]} if "opportunity_radar" in packet else {}),
         "review_template_support": packet["review_template_support"], "data_quality": packet["data_quality"],
     }
 

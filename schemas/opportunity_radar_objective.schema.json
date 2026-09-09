@@ -1,0 +1,1323 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "opportunity_radar_objective.2",
+  "type": "object",
+  "required": [
+    "commodity_observations",
+    "supply_demand_observations",
+    "capacity_utilization_observations",
+    "policy_observations",
+    "technology_breakthrough_observations",
+    "product_commercialization_observations",
+    "customer_order_observations",
+    "fundamental_change_observations",
+    "expectation_revision_observations",
+    "industry_competition_observations",
+    "capital_operation_observations",
+    "shareholder_management_observations",
+    "overseas_lead_observations",
+    "macro_observations",
+    "valuation_fundamental_divergence_candidates",
+    "market_structure_observations",
+    "market_context",
+    "technology_supply_chain_mapping",
+    "industry_transmission_mapping",
+    "theme_candidates",
+    "company_specific_candidates",
+    "positive_change_candidates",
+    "negative_risk_candidates",
+    "factor41_mapping",
+    "signal_history",
+    "lead_time_statistics",
+    "data_gaps",
+    "source_manifest",
+    "meta"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "commodity_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    },
+    "supply_demand_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    },
+    "capacity_utilization_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    },
+    "policy_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    },
+    "technology_breakthrough_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    },
+    "product_commercialization_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    },
+    "customer_order_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    },
+    "fundamental_change_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    },
+    "expectation_revision_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    },
+    "industry_competition_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    },
+    "capital_operation_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    },
+    "shareholder_management_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    },
+    "overseas_lead_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    },
+    "macro_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    },
+    "valuation_fundamental_divergence_candidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    },
+    "market_structure_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    },
+    "market_context": {
+      "type": "object"
+    },
+    "technology_supply_chain_mapping": {
+      "type": "object"
+    },
+    "industry_transmission_mapping": {
+      "type": "array"
+    },
+    "theme_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "entity",
+          "theme",
+          "stock_code",
+          "candidate_type",
+          "signal_type",
+          "observation_id",
+          "signal_first_seen_date",
+          "source_date",
+          "direction",
+          "changes",
+          "first_seen_at"
+        ],
+        "properties": {
+          "entity": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "theme": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "stock_code": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "candidate_type": {
+            "enum": [
+              "THEME_LEVEL_CANDIDATE",
+              "COMPANY_SPECIFIC_CANDIDATE"
+            ]
+          },
+          "signal_type": {
+            "enum": [
+              "COMMODITY_PRICE",
+              "SUPPLY_DEMAND",
+              "CAPACITY_AND_UTILIZATION",
+              "POLICY_AND_FISCAL",
+              "TECHNOLOGY_BREAKTHROUGH",
+              "PRODUCT_COMMERCIALIZATION",
+              "CUSTOMER_AND_ORDER",
+              "REVENUE_PROFIT_MARGIN",
+              "EXPECTATION_REVISION",
+              "INDUSTRY_COMPETITION",
+              "M&A_AND_CAPITAL_OPERATION",
+              "SHAREHOLDER_MANAGEMENT_ACTION",
+              "OVERSEAS_LEAD",
+              "MACRO_LIQUIDITY_FX_RATES",
+              "VALUATION_FUNDAMENTAL_DIVERGENCE",
+              "MARKET_STRUCTURE_AND_FLOW"
+            ]
+          },
+          "observation_id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "signal_first_seen_date": {
+            "type": "string"
+          },
+          "source_date": {
+            "type": "string"
+          },
+          "direction": {
+            "enum": [
+              "INCREASE",
+              "DECREASE"
+            ]
+          },
+          "changes": {
+            "type": "object"
+          },
+          "first_seen_at": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "company_specific_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "entity",
+          "theme",
+          "stock_code",
+          "candidate_type",
+          "signal_type",
+          "observation_id",
+          "signal_first_seen_date",
+          "source_date",
+          "direction",
+          "changes",
+          "first_seen_at"
+        ],
+        "properties": {
+          "entity": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "theme": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "stock_code": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "candidate_type": {
+            "enum": [
+              "THEME_LEVEL_CANDIDATE",
+              "COMPANY_SPECIFIC_CANDIDATE"
+            ]
+          },
+          "signal_type": {
+            "enum": [
+              "COMMODITY_PRICE",
+              "SUPPLY_DEMAND",
+              "CAPACITY_AND_UTILIZATION",
+              "POLICY_AND_FISCAL",
+              "TECHNOLOGY_BREAKTHROUGH",
+              "PRODUCT_COMMERCIALIZATION",
+              "CUSTOMER_AND_ORDER",
+              "REVENUE_PROFIT_MARGIN",
+              "EXPECTATION_REVISION",
+              "INDUSTRY_COMPETITION",
+              "M&A_AND_CAPITAL_OPERATION",
+              "SHAREHOLDER_MANAGEMENT_ACTION",
+              "OVERSEAS_LEAD",
+              "MACRO_LIQUIDITY_FX_RATES",
+              "VALUATION_FUNDAMENTAL_DIVERGENCE",
+              "MARKET_STRUCTURE_AND_FLOW"
+            ]
+          },
+          "observation_id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "signal_first_seen_date": {
+            "type": "string"
+          },
+          "source_date": {
+            "type": "string"
+          },
+          "direction": {
+            "enum": [
+              "INCREASE",
+              "DECREASE"
+            ]
+          },
+          "changes": {
+            "type": "object"
+          },
+          "first_seen_at": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "positive_change_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "entity",
+          "theme",
+          "stock_code",
+          "candidate_type",
+          "signal_type",
+          "observation_id",
+          "signal_first_seen_date",
+          "source_date",
+          "direction",
+          "changes",
+          "first_seen_at"
+        ],
+        "properties": {
+          "entity": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "theme": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "stock_code": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "candidate_type": {
+            "enum": [
+              "THEME_LEVEL_CANDIDATE",
+              "COMPANY_SPECIFIC_CANDIDATE"
+            ]
+          },
+          "signal_type": {
+            "enum": [
+              "COMMODITY_PRICE",
+              "SUPPLY_DEMAND",
+              "CAPACITY_AND_UTILIZATION",
+              "POLICY_AND_FISCAL",
+              "TECHNOLOGY_BREAKTHROUGH",
+              "PRODUCT_COMMERCIALIZATION",
+              "CUSTOMER_AND_ORDER",
+              "REVENUE_PROFIT_MARGIN",
+              "EXPECTATION_REVISION",
+              "INDUSTRY_COMPETITION",
+              "M&A_AND_CAPITAL_OPERATION",
+              "SHAREHOLDER_MANAGEMENT_ACTION",
+              "OVERSEAS_LEAD",
+              "MACRO_LIQUIDITY_FX_RATES",
+              "VALUATION_FUNDAMENTAL_DIVERGENCE",
+              "MARKET_STRUCTURE_AND_FLOW"
+            ]
+          },
+          "observation_id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "signal_first_seen_date": {
+            "type": "string"
+          },
+          "source_date": {
+            "type": "string"
+          },
+          "direction": {
+            "enum": [
+              "INCREASE",
+              "DECREASE"
+            ]
+          },
+          "changes": {
+            "type": "object"
+          },
+          "first_seen_at": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "negative_risk_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "entity",
+          "theme",
+          "stock_code",
+          "candidate_type",
+          "signal_type",
+          "observation_id",
+          "signal_first_seen_date",
+          "source_date",
+          "direction",
+          "changes",
+          "first_seen_at"
+        ],
+        "properties": {
+          "entity": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "theme": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "stock_code": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "candidate_type": {
+            "enum": [
+              "THEME_LEVEL_CANDIDATE",
+              "COMPANY_SPECIFIC_CANDIDATE"
+            ]
+          },
+          "signal_type": {
+            "enum": [
+              "COMMODITY_PRICE",
+              "SUPPLY_DEMAND",
+              "CAPACITY_AND_UTILIZATION",
+              "POLICY_AND_FISCAL",
+              "TECHNOLOGY_BREAKTHROUGH",
+              "PRODUCT_COMMERCIALIZATION",
+              "CUSTOMER_AND_ORDER",
+              "REVENUE_PROFIT_MARGIN",
+              "EXPECTATION_REVISION",
+              "INDUSTRY_COMPETITION",
+              "M&A_AND_CAPITAL_OPERATION",
+              "SHAREHOLDER_MANAGEMENT_ACTION",
+              "OVERSEAS_LEAD",
+              "MACRO_LIQUIDITY_FX_RATES",
+              "VALUATION_FUNDAMENTAL_DIVERGENCE",
+              "MARKET_STRUCTURE_AND_FLOW"
+            ]
+          },
+          "observation_id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "signal_first_seen_date": {
+            "type": "string"
+          },
+          "source_date": {
+            "type": "string"
+          },
+          "direction": {
+            "enum": [
+              "INCREASE",
+              "DECREASE"
+            ]
+          },
+          "changes": {
+            "type": "object"
+          },
+          "first_seen_at": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "factor41_mapping": {
+      "type": "array"
+    },
+    "signal_history": {
+      "type": "array"
+    },
+    "lead_time_statistics": {
+      "type": "object",
+      "required": [
+        "records",
+        "status"
+      ],
+      "properties": {
+        "records": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "entity",
+              "signal_type",
+              "lead_trading_days"
+            ],
+            "properties": {
+              "entity": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "signal_type": {
+                "enum": [
+                  "COMMODITY_PRICE",
+                  "SUPPLY_DEMAND",
+                  "CAPACITY_AND_UTILIZATION",
+                  "POLICY_AND_FISCAL",
+                  "TECHNOLOGY_BREAKTHROUGH",
+                  "PRODUCT_COMMERCIALIZATION",
+                  "CUSTOMER_AND_ORDER",
+                  "REVENUE_PROFIT_MARGIN",
+                  "EXPECTATION_REVISION",
+                  "INDUSTRY_COMPETITION",
+                  "M&A_AND_CAPITAL_OPERATION",
+                  "SHAREHOLDER_MANAGEMENT_ACTION",
+                  "OVERSEAS_LEAD",
+                  "MACRO_LIQUIDITY_FX_RATES",
+                  "VALUATION_FUNDAMENTAL_DIVERGENCE",
+                  "MARKET_STRUCTURE_AND_FLOW"
+                ]
+              },
+              "lead_trading_days": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "data_gaps": {
+      "type": "array"
+    },
+    "source_manifest": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "url",
+          "source",
+          "provenance",
+          "source_tier"
+        ],
+        "properties": {
+          "path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "provenance": {
+            "type": "object",
+            "required": [
+              "sha256"
+            ],
+            "properties": {
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            }
+          },
+          "source_tier": {
+            "enum": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        }
+      }
+    },
+    "meta": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "trade_date",
+        "snapshot_type",
+        "as_of",
+        "data_role",
+        "final_judgement_owner",
+        "execution_mode"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "opportunity_radar_objective.2"
+        },
+        "trade_date": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "snapshot_type": {
+          "enum": [
+            "MORNING",
+            "EOD"
+          ]
+        },
+        "as_of": {
+          "type": "string"
+        },
+        "data_role": {
+          "const": "OBJECTIVE_OPPORTUNITY_EVIDENCE"
+        },
+        "final_judgement_owner": {
+          "const": "chatgpt"
+        },
+        "execution_mode": {
+          "enum": [
+            "LIVE",
+            "AS_OF_REPLAY"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "compact_metadata": {
+      "type": "object"
+    }
+  },
+  "$defs": {
+    "observation": {
+      "type": "object",
+      "required": [
+        "entity",
+        "theme",
+        "stock_code",
+        "stock_name",
+        "metric",
+        "unit",
+        "currency",
+        "event_date",
+        "published_at",
+        "first_seen_at",
+        "effective_date",
+        "source_date",
+        "source",
+        "source_path",
+        "url",
+        "body_evidence",
+        "title",
+        "observation_id",
+        "signal_type",
+        "source_tier",
+        "value",
+        "facts",
+        "provenance",
+        "data_quality",
+        "confidence",
+        "data_gaps",
+        "as_of_valid",
+        "mapped_factor_ids",
+        "mapping_confidence",
+        "mapping_method",
+        "mapping_source",
+        "changes",
+        "history_references"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "entity": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "theme": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "stock_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "stock_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "metric": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "currency": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "event_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "published_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "first_seen_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "effective_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "body_evidence": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "observation_id": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "signal_type": {
+          "enum": [
+            "COMMODITY_PRICE",
+            "SUPPLY_DEMAND",
+            "CAPACITY_AND_UTILIZATION",
+            "POLICY_AND_FISCAL",
+            "TECHNOLOGY_BREAKTHROUGH",
+            "PRODUCT_COMMERCIALIZATION",
+            "CUSTOMER_AND_ORDER",
+            "REVENUE_PROFIT_MARGIN",
+            "EXPECTATION_REVISION",
+            "INDUSTRY_COMPETITION",
+            "M&A_AND_CAPITAL_OPERATION",
+            "SHAREHOLDER_MANAGEMENT_ACTION",
+            "OVERSEAS_LEAD",
+            "MACRO_LIQUIDITY_FX_RATES",
+            "VALUATION_FUNDAMENTAL_DIVERGENCE",
+            "MARKET_STRUCTURE_AND_FLOW"
+          ]
+        },
+        "source_tier": {
+          "enum": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "facts": {
+          "type": "object"
+        },
+        "provenance": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "data_quality": {
+          "enum": [
+            "PASS",
+            "PARTIAL",
+            "UNAVAILABLE",
+            "LOW_CONFIDENCE"
+          ]
+        },
+        "confidence": {
+          "enum": [
+            "LOW",
+            "HIGH"
+          ]
+        },
+        "data_gaps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "as_of_valid": {
+          "const": true
+        },
+        "mapped_factor_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 41
+          }
+        },
+        "mapping_confidence": {
+          "const": "LOW"
+        },
+        "mapping_method": {
+          "const": "CATEGORY_ASSOCIATION_NOT_CAUSAL"
+        },
+        "mapping_source": {
+          "type": "string"
+        },
+        "changes": {
+          "type": "object"
+        },
+        "history_references": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "signal_type": {
+                "const": "COMMODITY_PRICE"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "instrument",
+                  "category",
+                  "latest_value",
+                  "unit",
+                  "currency",
+                  "change_1d",
+                  "change_3d",
+                  "change_5d",
+                  "change_10d",
+                  "change_20d",
+                  "percentile_20d",
+                  "percentile_60d",
+                  "percentile_250d",
+                  "new_high_20d",
+                  "new_high_60d",
+                  "new_low_20d",
+                  "slope_3d",
+                  "slope_10d",
+                  "slope_20d",
+                  "acceleration_3d_vs_20d",
+                  "historical_volatility"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "signal_type": {
+                "const": "SUPPLY_DEMAND"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "metric",
+                  "industry",
+                  "current_value",
+                  "previous_value",
+                  "change_abs",
+                  "change_pct",
+                  "percentile",
+                  "zscore",
+                  "trend_5d",
+                  "trend_20d"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "signal_type": {
+                "const": "CAPACITY_AND_UTILIZATION"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "industry",
+                  "company",
+                  "metric",
+                  "current",
+                  "previous",
+                  "delta",
+                  "historical_percentile",
+                  "event_type",
+                  "announced_capacity",
+                  "effective_capacity"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "signal_type": {
+                "const": "POLICY_AND_FISCAL"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "title",
+                  "publisher",
+                  "affected_industries",
+                  "affected_regions",
+                  "policy_stage",
+                  "fiscal_amount",
+                  "project_amount",
+                  "implementation_date"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "signal_type": {
+                "const": "TECHNOLOGY_BREAKTHROUGH"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "technology",
+                  "institution",
+                  "company",
+                  "milestone_type",
+                  "previous_stage",
+                  "current_stage",
+                  "quantitative_improvement"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "signal_type": {
+                "const": "PRODUCT_COMMERCIALIZATION"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "stock_code",
+                  "product",
+                  "previous_stage",
+                  "current_stage",
+                  "transition_date",
+                  "evidence"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "signal_type": {
+                "const": "CUSTOMER_AND_ORDER"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "stock_code",
+                  "stock_name",
+                  "customer",
+                  "event_type",
+                  "contract_amount",
+                  "currency",
+                  "ratio_vs_last_year_revenue",
+                  "duration",
+                  "certainty"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "signal_type": {
+                "const": "REVENUE_PROFIT_MARGIN"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "revenue_yoy",
+                  "revenue_qoq",
+                  "revenue_acceleration",
+                  "profit_yoy",
+                  "profit_qoq",
+                  "profit_acceleration",
+                  "gross_margin",
+                  "gross_margin_change",
+                  "net_margin",
+                  "cash_flow",
+                  "ROE",
+                  "backlog",
+                  "segment_growth",
+                  "monthly_operation_data"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "signal_type": {
+                "const": "EXPECTATION_REVISION"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "consensus_eps_current",
+                  "consensus_eps_previous",
+                  "consensus_profit_current",
+                  "consensus_profit_previous",
+                  "revision_7d",
+                  "revision_30d",
+                  "number_of_upgrades",
+                  "number_of_downgrades",
+                  "company_guidance_change",
+                  "broker_estimate_change"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "signal_type": {
+                "const": "INDUSTRY_COMPETITION"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "industry",
+                  "metric",
+                  "current",
+                  "previous",
+                  "event"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "signal_type": {
+                "const": "M&A_AND_CAPITAL_OPERATION"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "value",
+                  "target",
+                  "consideration",
+                  "approval_required",
+                  "uncertainty_flags"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "signal_type": {
+                "const": "SHAREHOLDER_MANAGEMENT_ACTION"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "actor",
+                  "action",
+                  "amount",
+                  "shares",
+                  "percentage",
+                  "price_range"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "signal_type": {
+                "const": "OVERSEAS_LEAD"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "market",
+                  "instrument",
+                  "related_theme",
+                  "move_1d",
+                  "move_3d",
+                  "move_5d",
+                  "event_type"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "signal_type": {
+                "const": "MACRO_LIQUIDITY_FX_RATES"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "metric",
+                  "current",
+                  "previous",
+                  "surprise_vs_expectation",
+                  "trend"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "signal_type": {
+                "const": "VALUATION_FUNDAMENTAL_DIVERGENCE"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "revenue",
+                  "profit",
+                  "margin",
+                  "order",
+                  "price",
+                  "supply_demand",
+                  "expectation_revision",
+                  "return_1d",
+                  "return_5d",
+                  "return_20d",
+                  "PE",
+                  "PB",
+                  "PS",
+                  "valuation_percentile",
+                  "sector_relative_valuation"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "signal_type": {
+                "const": "MARKET_STRUCTURE_AND_FLOW"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "return_1d",
+                  "return_3d",
+                  "return_5d",
+                  "return_10d",
+                  "return_20d",
+                  "relative_return_5d",
+                  "relative_return_20d",
+                  "breadth",
+                  "amount",
+                  "amount_change",
+                  "limit_up_count",
+                  "failed_limit_count",
+                  "turnover",
+                  "historical_percentile",
+                  "relative_strength"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

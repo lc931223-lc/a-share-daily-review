@@ -4,6 +4,7 @@
   "type": "object",
   "required": ["meta", "source_manifest", "market_environment", "next_day_theme_candidates", "medium_term_structure_candidates", "market_cycle_and_style", "core_theme_roles", "inflection_candidates", "previous_hypothesis_validation", "next_day_plan", "market_factors", "money_effect_structure", "risk_and_falsification_candidates", "auction_context", "capital_preference", "review_template_support", "data_quality"],
   "properties": {
+    "opportunity_radar": {"type": "object", "required": ["status", "score_effect", "signals"], "properties": {"score_effect": {"const": 0}}},
     "meta": {"type": "object", "required": ["schema_version", "trade_date", "as_of", "data_role", "final_judgement_owner"]},
     "source_manifest": {"type": "object", "required": ["market_packet", "review_intelligence", "inflection_scanner", "auction_packet", "prior_official_review"]},
     "market_environment": {"type": "object", "required": ["total_turnover", "rise_count", "fall_count", "limit_up_count", "limit_down_count", "market_operability_score"]},

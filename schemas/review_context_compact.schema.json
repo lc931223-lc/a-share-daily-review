@@ -4,6 +4,7 @@
   "type": "object",
   "required": ["meta", "source_manifest", "market_environment", "next_day_theme_candidates", "medium_term_structure_candidates", "market_cycle_and_style", "core_theme_roles", "inflection_candidates", "previous_hypothesis_validation", "next_day_plan", "market_factors", "money_effect_structure", "risk_and_falsification_candidates", "auction_context", "capital_preference", "review_template_support", "data_quality"],
   "properties": {
+    "opportunity_radar": {"type": "object", "required": ["status", "score_effect", "signals"], "properties": {"score_effect": {"const": 0}}},
     "meta": {"type": "object"},
     "source_manifest": {"type": "object"},
     "market_environment": {"type": "object"},

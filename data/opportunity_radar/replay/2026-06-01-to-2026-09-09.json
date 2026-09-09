@@ -1,0 +1,1952 @@
+{
+  "mode": "AS_OF_REPLAY",
+  "start": "2026-06-01",
+  "end": "2026-09-09",
+  "days": [
+    {
+      "date": "2026-06-01",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-06-02",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-06-03",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-06-04",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-06-05",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-06-08",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-06-09",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-06-10",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-06-11",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-06-12",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-06-15",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-06-16",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-06-17",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-06-18",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-06-22",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-06-23",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-06-24",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-06-25",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-06-26",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-06-29",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-06-30",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-07-01",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-07-02",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-07-03",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-07-06",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-07-07",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-07-08",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-07-09",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-07-10",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-07-13",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-07-14",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-07-15",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-07-16",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-07-17",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-07-20",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-07-21",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-07-22",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-07-23",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-07-24",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-07-27",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-07-28",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-07-29",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-07-30",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-07-31",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-08-03",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-08-04",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-08-05",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-08-06",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-08-07",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-08-10",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-08-11",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-08-12",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-08-13",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-08-14",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-08-17",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-08-18",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-08-19",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-08-20",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-08-21",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-08-24",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-08-25",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-08-26",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-08-27",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-08-28",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-08-31",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-09-01",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-09-02",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-09-03",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 0,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-09-04",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 2,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-09-07",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 90,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 100,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    },
+    {
+      "date": "2026-09-09",
+      "positive_count": 0,
+      "negative_count": 0,
+      "observation_count": 262,
+      "signal_first_seen": [],
+      "feedback": {
+        "rule": {
+          "relative_return_5d_min": 3.0,
+          "breadth_min": 0.6,
+          "amount_ratio_20d_min": 1.2,
+          "evaluation_window_trading_days": 20,
+          "version": "radar-confirmation.1"
+        },
+        "records": [],
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    }
+  ],
+  "coverage": "Missing point-in-time evidence is not backfilled"
+}

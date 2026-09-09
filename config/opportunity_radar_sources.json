@@ -1,0 +1,104 @@
+{
+  "schema_version": "source-routing.1",
+  "datasets": {
+    "焦煤连续": {
+      "source": "sina.futures_daily",
+      "url": "https://stock2.finance.sina.com.cn/futures/api/jsonp.php/var%20_JM02021_08_17=/InnerFuturesNewService.getDailyKLine?symbol=JM0&_=2021_08_17",
+      "format": "sina_jsonp",
+      "theme": "煤炭",
+      "metric": "continuous_futures_close",
+      "unit": "CNY/tonne",
+      "currency": "CNY",
+      "instrument_type": "CONTINUOUS_FUTURES_NOT_SPOT",
+      "caveat": "Unadjusted continuous futures; roll effects possible. Not a spot, contract-price or demand series."
+    },
+    "焦炭连续": {
+      "source": "sina.futures_daily",
+      "url": "https://stock2.finance.sina.com.cn/futures/api/jsonp.php/var%20_J02021_08_17=/InnerFuturesNewService.getDailyKLine?symbol=J0&_=2021_08_17",
+      "format": "sina_jsonp",
+      "theme": "煤炭",
+      "metric": "continuous_futures_close",
+      "unit": "CNY/tonne",
+      "currency": "CNY",
+      "instrument_type": "CONTINUOUS_FUTURES_NOT_SPOT",
+      "caveat": "Unadjusted continuous futures; roll effects possible. Not a spot, contract-price or demand series."
+    },
+    "玉米连续": {
+      "source": "sina.futures_daily",
+      "url": "https://stock2.finance.sina.com.cn/futures/api/jsonp.php/var%20_C02021_08_17=/InnerFuturesNewService.getDailyKLine?symbol=C0&_=2021_08_17",
+      "format": "sina_jsonp",
+      "theme": "农业",
+      "metric": "continuous_futures_close",
+      "unit": "CNY/tonne",
+      "currency": "CNY",
+      "instrument_type": "CONTINUOUS_FUTURES_NOT_SPOT",
+      "caveat": "Unadjusted continuous futures; roll effects possible. Not a spot, contract-price or demand series."
+    },
+    "豆粕连续": {
+      "source": "sina.futures_daily",
+      "url": "https://stock2.finance.sina.com.cn/futures/api/jsonp.php/var%20_M02021_08_17=/InnerFuturesNewService.getDailyKLine?symbol=M0&_=2021_08_17",
+      "format": "sina_jsonp",
+      "theme": "农业",
+      "metric": "continuous_futures_close",
+      "unit": "CNY/tonne",
+      "currency": "CNY",
+      "instrument_type": "CONTINUOUS_FUTURES_NOT_SPOT",
+      "caveat": "Unadjusted continuous futures; roll effects possible. Not a spot, contract-price or demand series."
+    },
+    "甲醇连续": {
+      "source": "sina.futures_daily",
+      "url": "https://stock2.finance.sina.com.cn/futures/api/jsonp.php/var%20_MA02021_08_17=/InnerFuturesNewService.getDailyKLine?symbol=MA0&_=2021_08_17",
+      "format": "sina_jsonp",
+      "theme": "化工",
+      "metric": "continuous_futures_close",
+      "unit": "CNY/tonne",
+      "currency": "CNY",
+      "instrument_type": "CONTINUOUS_FUTURES_NOT_SPOT",
+      "caveat": "Unadjusted continuous futures; roll effects possible. Not a spot, contract-price or demand series."
+    },
+    "铜连续": {
+      "source": "sina.futures_daily",
+      "url": "https://stock2.finance.sina.com.cn/futures/api/jsonp.php/var%20_CU02021_08_17=/InnerFuturesNewService.getDailyKLine?symbol=CU0&_=2021_08_17",
+      "format": "sina_jsonp",
+      "theme": "有色",
+      "metric": "continuous_futures_close",
+      "unit": "CNY/tonne",
+      "currency": "CNY",
+      "instrument_type": "CONTINUOUS_FUTURES_NOT_SPOT",
+      "caveat": "Unadjusted continuous futures; roll effects possible. Not a spot, contract-price or demand series."
+    },
+    "铝连续": {
+      "source": "sina.futures_daily",
+      "url": "https://stock2.finance.sina.com.cn/futures/api/jsonp.php/var%20_AL02021_08_17=/InnerFuturesNewService.getDailyKLine?symbol=AL0&_=2021_08_17",
+      "format": "sina_jsonp",
+      "theme": "有色",
+      "metric": "continuous_futures_close",
+      "unit": "CNY/tonne",
+      "currency": "CNY",
+      "instrument_type": "CONTINUOUS_FUTURES_NOT_SPOT",
+      "caveat": "Unadjusted continuous futures; roll effects possible. Not a spot, contract-price or demand series."
+    },
+    "BDI": {
+      "source": "eastmoney.industry_index",
+      "url": "https://datacenter-web.eastmoney.com/api/data/v1/get",
+      "format": "eastmoney_json",
+      "params": {
+        "sortColumns": "REPORT_DATE",
+        "sortTypes": "-1",
+        "pageSize": "500",
+        "pageNumber": "1",
+        "reportName": "RPT_INDUSTRY_INDEX",
+        "columns": "REPORT_DATE,INDICATOR_VALUE",
+        "filter": "(INDICATOR_ID=\"EMI00107664\")",
+        "source": "WEB",
+        "client": "WEB"
+      },
+      "theme": "航运",
+      "metric": "freight_index",
+      "unit": "index_points",
+      "currency": null,
+      "instrument_type": "DRY_BULK_INDEX_NOT_TANKER_RATE",
+      "caveat": "Latest 500 observations only; publication vintage unavailable; not VLCC or SCFI."
+    }
+  }
+}
