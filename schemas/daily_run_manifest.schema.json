@@ -1,8 +1,16 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
-  "required": ["date", "run_id", "is_trade_day", "market_closed", "pipeline_started_at", "pipeline_completed_at", "steps", "status", "blockers", "readiness_checks"],
+  "required": ["date", "run_id", "is_trade_day", "market_closed", "pipeline_started_at", "pipeline_completed_at", "steps", "status", "blockers", "readiness_checks", "failed_step", "blocker", "credential_health", "retry_count", "source_health", "upstream_available", "upstream_missing", "started_at", "completed_at"],
   "properties": {
+    "failed_step": {"type": ["string", "null"]},
+    "blocker": {"type": "array"},
+    "retry_count": {"type": "integer", "minimum": 0},
+    "source_health": {"type": "object"},
+    "upstream_available": {"type": "array", "items": {"type": "string"}},
+    "upstream_missing": {"type": "array", "items": {"type": "string"}},
+    "started_at": {"type": "string"},
+    "completed_at": {"type": "string"},
     "date": {"type": "string", "format": "date"},
     "run_id": {"type": "string"},
     "is_trade_day": {"type": ["boolean", "null"]},

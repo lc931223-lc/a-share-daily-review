@@ -143,8 +143,9 @@ class ReviewIntelligencePipeline:
         return {str(row.get("ts_code")): row for row in rows if row.get("ts_code")}
 
     def _load_auction(self, target):
-        path = self.root / "data" / "auction_packets" / f"{target.isoformat()}_compact.json"
-        rows = _read(path).get("stock_auction_ranking", []) if path.is_file() else []
+        from src.auction.production import optional_review_input
+        accepted, _ = optional_review_input(self.root, target)
+        rows = accepted.get("compact", {}).get("stock_auction_ranking", [])
         return {str(row.get("ts_code")): row for row in rows if row.get("ts_code")}
 
     def _previous_states(self, target):
@@ -349,8 +350,9 @@ def _factor_features(market):
 
 
 def _previous_hypothesis_context(root, target, market):
-    auction_path = root / "data" / "auction_packets" / f"{target.isoformat()}_compact.json"
-    auction = _read(auction_path) if auction_path.is_file() else {}
+    from src.auction.production import optional_review_input
+    accepted, _ = optional_review_input(root, target)
+    auction = accepted.get("compact", {})
     review_folder = root / "data" / "official_reviews"
     review_paths = sorted(path for path in review_folder.glob("????-??-??.json") if path.stem < target.isoformat())
     prior_review = _read(review_paths[-1]) if review_paths else None

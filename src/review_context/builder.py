@@ -41,7 +41,9 @@ class ReviewContextBuilder:
         market, market_path = self._required("market_packets", target)
         intelligence, intelligence_path = self._required("review_intelligence", target)
         inflection, inflection_path = self._required("inflection", target)
-        auction, auction_path = self._optional("auction_packets", target)
+        from src.auction.production import optional_review_input
+        accepted_auction, auction_health = optional_review_input(self.root, target)
+        auction, auction_path = accepted_auction.get("packet", {}), accepted_auction.get("path")
         inputs = {
             "market_packet": (market, market_path),
             "review_intelligence": (intelligence, intelligence_path),
@@ -99,6 +101,8 @@ class ReviewContextBuilder:
             "capital_preference": _capital_preference_context(capital),
             "review_template_support": _template_support(),
         }
+        if not auction:
+            packet["auction_context"]["status"] = "UNAVAILABLE"
         packet["data_quality"] = _quality(inputs, prior_manifest, capital_manifest, packet)
         compact = _compact(packet)
         _validate(self.root, "review_context_packet.schema.json", packet)

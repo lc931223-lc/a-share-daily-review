@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-09",
+  "run_id": "34325288683",
+  "job_id": "102381030806",
+  "status": "FAILED",
+  "failed_step": "Run close pipeline with retries",
+  "blocker": ["MISSING_TUSHARE_TOKEN", "full-market daily rows did not pass the production gate"],
+  "credential_health": {"tushare_token": "MISSING"},
+  "retry_count": 2,
+  "source_health": {"full_market_daily": "FAILED_PRODUCTION_GATE"},
+  "upstream_available": [],
+  "upstream_missing": ["market_packet", "inflection", "review_intelligence", "capital_preference", "review_context", "chatgpt_review_inputs"],
+  "started_at": "2026-09-09T07:43:14Z",
+  "completed_at": "2026-09-09T07:57:41Z",
+  "source": "https://github.com/lc931223-lc/a-share-daily-review/actions/runs/34325288683",
+  "head_sha": "b90d8151ad314fbd10fce1038cb7fe7ddef9baa9",
+  "receipt_type": "RETROSPECTIVE_WORKFLOW_LOG_AUDIT",
+  "original_failure_manifest_in_repository": false,
+  "current_repository_secret_configuration": "NOT_OBSERVABLE",
+  "note": "Evidence from the actual job log and GitHub job metadata; not a new workflow run or a reconstructed market packet."
+}

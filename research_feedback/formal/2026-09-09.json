@@ -1,0 +1,74 @@
+{
+  "records": [
+    {
+      "hypothesis": "主题成交额与广度继续保持前列",
+      "expected_condition": "竞价板块正向广度>=60%，容量股同步不掉队",
+      "actual_result": null,
+      "result": "NOT_EVALUABLE",
+      "evidence": [],
+      "reason": "No machine-readable predicate; free-text conditions require explicit evaluation",
+      "hypothesis_kind": "FORMAL_REVIEW_HYPOTHESIS"
+    },
+    {
+      "hypothesis": "容量与弹性共振",
+      "expected_condition": "赤天化竞价量能达到自身历史60分位以上，且金正大保持板块领先",
+      "actual_result": null,
+      "result": "NOT_EVALUABLE",
+      "evidence": [],
+      "reason": "No machine-readable predicate; free-text conditions require explicit evaluation",
+      "hypothesis_kind": "FORMAL_REVIEW_HYPOTHESIS"
+    },
+    {
+      "hypothesis": "主升结构是否由容量确认",
+      "expected_condition": "出版传媒竞价量能达到历史60分位以上且板块正向广度>=60%",
+      "actual_result": null,
+      "result": "NOT_EVALUABLE",
+      "evidence": [],
+      "reason": "No machine-readable predicate; free-text conditions require explicit evaluation",
+      "hypothesis_kind": "FORMAL_REVIEW_HYPOTHESIS"
+    },
+    {
+      "hypothesis": "突破结构延续",
+      "expected_condition": "前一日确认的高量突破个股竞价/开盘后不出现集体回落",
+      "actual_result": null,
+      "result": "NOT_EVALUABLE",
+      "evidence": [],
+      "reason": "No machine-readable predicate; free-text conditions require explicit evaluation",
+      "hypothesis_kind": "FORMAL_REVIEW_HYPOTHESIS"
+    },
+    {
+      "hypothesis": "龙头与容量共振",
+      "expected_condition": "欧福蛋业保持相对强势，金健米业竞价量能>=自身历史60分位",
+      "actual_result": null,
+      "result": "NOT_EVALUABLE",
+      "evidence": [],
+      "reason": "No machine-readable predicate; free-text conditions require explicit evaluation",
+      "hypothesis_kind": "FORMAL_REVIEW_HYPOTHESIS"
+    },
+    {
+      "hypothesis": "板块广度持续",
+      "expected_condition": "竞价板块正向广度>=60%",
+      "actual_result": null,
+      "result": "NOT_EVALUABLE",
+      "evidence": [],
+      "reason": "No machine-readable predicate; free-text conditions require explicit evaluation",
+      "hypothesis_kind": "FORMAL_REVIEW_HYPOTHESIS"
+    }
+  ],
+  "prediction_count": 6,
+  "confirmed_count": 0,
+  "partial_count": 0,
+  "failed_count": 0,
+  "not_evaluable_count": 6,
+  "hit_rate": null,
+  "weighted_hit_rate": null,
+  "status": "FORMAL_REVIEW_HYPOTHESES_LOADED",
+  "source": {
+    "status": "AVAILABLE",
+    "expected_date": "2026-09-08",
+    "data_date": "2026-09-08",
+    "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\formal_reviews\\2026-09-08.json",
+    "sha256": "e4fc81b4104c42157baf65bee725d3e81fcbdce9acce530f40002a8bc8d3585f"
+  },
+  "hypothesis_kind": "FORMAL_REVIEW_HYPOTHESIS"
+}

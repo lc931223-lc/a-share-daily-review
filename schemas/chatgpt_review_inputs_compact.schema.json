@@ -19,7 +19,8 @@
     "inflection_observations",
     "data_gaps",
     "source_manifest",
-    "selection"
+    "selection",
+    "selection_metadata"
   ],
   "properties": {
     "meta": {
@@ -535,6 +536,7 @@
         "required": [
           "theme_name",
           "return",
+          "theme_type",
           "breadth",
           "limit_up_count",
           "failed_limit_count",
@@ -561,10 +563,10 @@
             "type": "string"
           },
           "return": {
-            "type": [
-              "number",
-              "null"
-            ]
+            "type": ["number", "null"]
+          },
+          "theme_type": {
+            "enum": ["INDUSTRY", "CONCEPT", "EVENT", "STYLE_TAG", "OWNERSHIP_TAG", "FINANCING_TAG", "PERFORMANCE_TAG", "INDEX_TAG", "OTHER"]
           },
           "breadth": {
             "type": [
@@ -1483,6 +1485,7 @@
               "condition_type",
               "condition",
               "metric",
+              "metric_name",
               "operator",
               "actual_value",
               "threshold",
@@ -1512,6 +1515,9 @@
                 ]
               },
               "metric": {
+                "type": ["string", "null"]
+              },
+              "metric_name": {
                 "type": [
                   "string",
                   "null"
@@ -1852,6 +1858,7 @@
         }
       }
     },
+    "selection_metadata": {"type":"object","additionalProperties":false,"required":["type_filter_applied","available_by_type","retained_by_type","truncated_by_type"],"properties":{"type_filter_applied":{"const":false},"available_by_type":{"type":"object","additionalProperties":false,"required":["INDUSTRY","CONCEPT","EVENT","STYLE_TAG","OWNERSHIP_TAG","FINANCING_TAG","PERFORMANCE_TAG","INDEX_TAG","OTHER"],"properties":{"INDUSTRY":{"type":"integer","minimum":0},"CONCEPT":{"type":"integer","minimum":0},"EVENT":{"type":"integer","minimum":0},"STYLE_TAG":{"type":"integer","minimum":0},"OWNERSHIP_TAG":{"type":"integer","minimum":0},"FINANCING_TAG":{"type":"integer","minimum":0},"PERFORMANCE_TAG":{"type":"integer","minimum":0},"INDEX_TAG":{"type":"integer","minimum":0},"OTHER":{"type":"integer","minimum":0}}},"retained_by_type":{"type":"object","additionalProperties":false,"required":["INDUSTRY","CONCEPT","EVENT","STYLE_TAG","OWNERSHIP_TAG","FINANCING_TAG","PERFORMANCE_TAG","INDEX_TAG","OTHER"],"properties":{"INDUSTRY":{"type":"integer","minimum":0},"CONCEPT":{"type":"integer","minimum":0},"EVENT":{"type":"integer","minimum":0},"STYLE_TAG":{"type":"integer","minimum":0},"OWNERSHIP_TAG":{"type":"integer","minimum":0},"FINANCING_TAG":{"type":"integer","minimum":0},"PERFORMANCE_TAG":{"type":"integer","minimum":0},"INDEX_TAG":{"type":"integer","minimum":0},"OTHER":{"type":"integer","minimum":0}}},"truncated_by_type":{"type":"object","additionalProperties":false,"required":["INDUSTRY","CONCEPT","EVENT","STYLE_TAG","OWNERSHIP_TAG","FINANCING_TAG","PERFORMANCE_TAG","INDEX_TAG","OTHER"],"properties":{"INDUSTRY":{"type":"integer","minimum":0},"CONCEPT":{"type":"integer","minimum":0},"EVENT":{"type":"integer","minimum":0},"STYLE_TAG":{"type":"integer","minimum":0},"OWNERSHIP_TAG":{"type":"integer","minimum":0},"FINANCING_TAG":{"type":"integer","minimum":0},"PERFORMANCE_TAG":{"type":"integer","minimum":0},"INDEX_TAG":{"type":"integer","minimum":0},"OTHER":{"type":"integer","minimum":0}}}}},
     "selection": {
       "type": "object",
       "additionalProperties": false,

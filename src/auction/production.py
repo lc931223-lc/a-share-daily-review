@@ -43,6 +43,37 @@ def read(path, default=None):
     return json.loads(path.read_text(encoding="utf-8")) if path.exists() else default
 
 
+def optional_review_input(root, day):
+    """Read-only acceptance gate shared by daily-close consumers."""
+    from jsonschema import Draft202012Validator
+    from src.auction.git_sync import verify_frozen
+
+    path = root / "data/auction_packets" / f"{day}.json"
+    unavailable = {"status": "UNAVAILABLE", "reason": "MISSING", "checks": {}}
+    if not path.exists():
+        return {}, unavailable
+    checks = {}
+    try:
+        packet = read(path)
+        receipt = read(root / "data/auction_runs" / f"{day}.json", {})
+        checks["same_date"] = packet.get("meta", {}).get("trade_date") == str(day) == receipt.get("trade_date")
+        checks["frozen"] = bool(packet.get("meta", {}).get("auction_frozen_at"))
+        Draft202012Validator(read(root / "schemas/auction_packet.schema.json")).validate(packet)
+        compact = read(path.with_name(f"{day}_compact.json"))
+        Draft202012Validator(read(root / "schemas/auction_packet_compact.schema.json")).validate(compact)
+        checks["schema_valid"] = True
+        checks["same_date"] &= compact.get("meta", {}).get("trade_date") == str(day)
+        digest = verify_frozen(root, str(day))
+        checks["provenance_valid"] = bool(receipt.get("raw_sha256")) and receipt["raw_sha256"] == digest
+        checks["timing_valid"] = packet.get("auction_timeliness", {}).get("status") == "PASS"
+        checks["quality_valid"] = packet.get("data_quality", {}).get("status") == "PASS"
+        if not all(checks.values()):
+            return {}, {"status": "UNAVAILABLE", "reason": "AUCTION_ACCEPTANCE_FAILED", "checks": checks}
+        return {"packet": packet, "compact": compact, "path": path}, {"status": "AVAILABLE", "reason": None, "checks": checks}
+    except Exception as exc:
+        return {}, {"status": "UNAVAILABLE", "reason": type(exc).__name__, "checks": checks}
+
+
 def write(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(f".{os.getpid()}.tmp")

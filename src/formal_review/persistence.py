@@ -7,6 +7,11 @@ from pathlib import Path
 from src.market_packet.trading_calendar import load_trading_calendar
 
 
+def formal_file_sha256(path):
+    # Preserve the canonical import hash across Git's Windows newline conversion.
+    return hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
+
+
 def previous_day(root, target, calendar=None):
     days = calendar if calendar is not None else load_trading_calendar(target, cache_root=root / "data/reference")
     earlier = sorted(row.cal_date for row in days if row.is_open and row.cal_date < target)
@@ -25,7 +30,7 @@ def load_previous_formal(root, target, calendar=None):
     validate_record(root, payload, calendar)
     if payload["date"] != str(expected):
         raise ValueError("formal review exact previous-date mismatch")
-    return payload, manifest | {"status": "AVAILABLE", "data_date": str(expected), "path": str(path), "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+    return payload, manifest | {"status": "AVAILABLE", "data_date": str(expected), "path": str(path), "sha256": formal_file_sha256(path)}
 
 
 def validate_record(root, payload, calendar=None):
@@ -67,7 +72,7 @@ def import_record(root, payload, calendar=None):
         with target.open("xb") as stream:
             stream.write(raw)
         status = "IMPORTED"
-    digest = hashlib.sha256(target.read_bytes()).hexdigest()
+    digest = formal_file_sha256(target)
     publish_official(root, payload, digest)
     return {"status": status, "path": str(target), "sha256": digest, "date": payload["date"]}
 

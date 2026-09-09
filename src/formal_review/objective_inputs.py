@@ -20,6 +20,7 @@ from src.formal_review.objective_evidence import (
 from src.formal_review.objective_validation import previous_results
 from src.formal_review.persistence import previous_day
 from src.market_packet.trading_calendar import load_trading_calendar
+from src.formal_review.theme_types import classify_theme, selection_types
 
 SCHEMA_ROOT = Path(__file__).resolve().parents[2] / "schemas"
 MARKET_FIELDS = "total_amount amount_change_vs_previous rise_count fall_count median_return limit_up_count limit_down_count failed_limit_count failed_limit_rate highest_board promotion_rate new_limit_up_count theme_limit_down_count large_cap_return small_cap_return growth_return value_return high_beta_return dividend_return".split()
@@ -242,11 +243,13 @@ def _roles(ri, capital, market, nodes):
 def _themes(ri, market, nodes):
     raw = ri.get("theme_features") or market.get("themes") or []
     output = []
+    industry_names = {r.get("name") or r.get("industry_name") for r in market.get("industries", [])}
     for theme in raw:
         name = theme.get("theme_name") or theme.get("name")
         if not name:
             continue
         row = numeric(theme, THEME_FIELDS)
+        row["theme_type"] = classify_theme(theme, industry_names)
         row.update(
             theme_name=name,
             source=theme.get("source"),
@@ -414,11 +417,21 @@ def build_inputs(root, target, calendar=None):
         raise ValueError("review input requires an exchange trading day")
     manifest, gaps = {}, []
     market = _load(root, "market_packets", target, manifest, gaps, required=True)
+    daily_check = next((r for r in market.get("data_quality", {}).get("checks", []) if r.get("item") == "全市场日线"), {})
+    if daily_check.get("status") != "PASS":
+        raise ValueError("full-market daily rows did not pass the production gate")
     ri = _load(root, "review_intelligence", target, manifest, gaps)
     capital = _load(root, "capital_preference", target, manifest, gaps)
     context = _load(root, "review_context", target, manifest, gaps)
-    for folder in ("formal_review_support", "auction_packets"):
+    for folder in ("formal_review_support",):
         _load(root, folder, target, manifest, gaps)
+    from src.auction.production import optional_review_input
+    accepted_auction, auction_health = optional_review_input(root, target)
+    manifest["auction_packets"] = dict(path=None, source_date=None, sha256=None, status="UNAVAILABLE")
+    if accepted_auction:
+        _load(root, "auction_packets", target, manifest, gaps)
+    else:
+        gaps.append(dict(field="auction_packets", reason=auction_health["reason"]))
     previous = previous_day(root, target, calendar)
     prior_manifest = {}
     prior = _load(root, "market_packets", previous, prior_manifest, gaps)
@@ -585,6 +598,7 @@ def compact_inputs(packet):
     result["theme_candidates"] = sorted(
         result["theme_candidates"], key=lambda r: (-(r["amount"] or 0), r["theme_name"])
     )[:10]
+    result["selection_metadata"] = selection_types(packet["theme_candidates"], result["theme_candidates"])
     names = {r["theme_name"] for r in result["theme_candidates"]}
     result["stock_role_candidates"] = sorted(
         [r for r in result["stock_role_candidates"] if names.intersection(r["theme_linkage"])],

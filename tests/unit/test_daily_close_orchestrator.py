@@ -203,6 +203,11 @@ def test_missing_tushare_preflight_persists_before_any_fetch(tmp_path, monkeypat
     assert result["status"] == "FAILED"
     assert result["credential_health"] == {"tushare_token": "MISSING"}
     assert result["failed_step"] == "credential_preflight"
+    assert result["blocker"] == ["MISSING_TUSHARE_TOKEN"]
+    assert "chatgpt_review_inputs" in result["upstream_missing"]
+    assert result["upstream_available"] == []
+    assert result["source_health"]["full_market_daily"] == "BLOCKED_MISSING_CREDENTIAL"
+    assert result["started_at"] and result["completed_at"]
     assert result["blockers"][0]["error"] == "MISSING_TUSHARE_TOKEN"
     assert result["retry_count"] == 0
     assert result["run_id"] == "fixture-run"
@@ -294,6 +299,7 @@ def test_failed_daily_gate_never_builds_review_context(tmp_path, monkeypatch):
     ).run_date(date(2026, 9, 8))
     assert result["status"] == "FAILED"
     assert "production gate" in result["blockers"][0]["error"]
+    assert not (tmp_path / "data/chatgpt_review_inputs/2026-09-09.json").exists()
     assert Path(result["manifest_path"]).exists()
     assert calls == []
     assert not (tmp_path / "data/review_context").exists()

@@ -52,6 +52,7 @@ def metric_results(formal, market):
                         condition_type=kind,
                         condition=condition if isinstance(condition, str) else None,
                         metric=field if field in FIELDS else None,
+                        metric_name=field if field in FIELDS else None,
                         operator=op if supported else None,
                         actual_value=actual,
                         threshold=threshold,

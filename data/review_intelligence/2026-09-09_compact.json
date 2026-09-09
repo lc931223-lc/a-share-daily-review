@@ -1,0 +1,3949 @@
+{
+  "meta": {
+    "schema_version": "review_intelligence_compact.1",
+    "trade_date": "2026-09-09",
+    "as_of": "2026-09-09T15:05:00+08:00",
+    "data_role": "OBJECTIVE_DATA",
+    "final_judgement_owner": "chatgpt"
+  },
+  "market_operability": {
+    "total_turnover": 1873067039783.31,
+    "turnover_change_pct": -8.68,
+    "rise_count": 1794,
+    "fall_count": 3642,
+    "limit_up_count": 48,
+    "limit_down_count": 7,
+    "failed_limit_count": 27,
+    "seal_rate": 64.0,
+    "previous_limit_avg_return": 1.11,
+    "previous_limit_red_rate": 49.32,
+    "continuous_board_red_rate": 44.44,
+    "highest_board": 5.0,
+    "high_level_loss_count": null,
+    "large_loss_count": null,
+    "index_strength_dispersion": 1.94204360779025,
+    "sector_concentration": 15.76,
+    "theme_concentration": 22.59,
+    "market_operability_score": 46.91,
+    "available_max_score": 90,
+    "feature_components": {
+      "liquidity": 3.66,
+      "breadth": 4.95,
+      "limit_structure": 11.32,
+      "previous_limit_feedback": 10.28,
+      "continuous_board_feedback": 4.44,
+      "board_height": 10,
+      "loss_control": null,
+      "theme_concentration": 2.26
+    }
+  },
+  "cycle_candidates": [
+    "MAIN_UP_CANDIDATE"
+  ],
+  "cycle_feature_vector": {
+    "new_theme_count": 0,
+    "strengthening_theme_count": 8,
+    "weakening_theme_count": 29,
+    "limit_up_breadth": 2.6755852842809364,
+    "continuous_board_height": 5.0,
+    "promotion_rate": null,
+    "previous_limit_feedback": 1.11,
+    "high_level_stock_return": 9.970888137817383,
+    "mid_level_stock_return": 9.975756304604667,
+    "low_level_first_board_count": 33,
+    "failed_limit_rate": 36.0,
+    "large_loss_count": null
+  },
+  "style_strength_ranking": [
+    {
+      "style": "limit_up_style",
+      "return": 12.561152727272727,
+      "breadth": 100.0,
+      "amount_change": 1.671412463585726,
+      "limit_up_count": 55,
+      "top_stock_performance": {
+        "ts_code": "301699.SZ",
+        "stock_name": "洛轴股份",
+        "return": 101.4484
+      },
+      "style_strength_score": 100,
+      "style_change_1d": 0.0,
+      "style_change_5d": 0.0,
+      "style_change_20d": 0.0,
+      "sample_count": 55,
+      "coverage_status": "PASS",
+      "source_coverage": 1.0,
+      "methodology": "full-market daily facts"
+    },
+    {
+      "style": "institutional_trend",
+      "return": 8.092213333333333,
+      "breadth": 100.0,
+      "amount_change": 1.2626040241684657,
+      "limit_up_count": 9,
+      "top_stock_performance": {
+        "ts_code": "000523.SZ",
+        "stock_name": "红棉股份",
+        "return": 10.101
+      },
+      "style_strength_score": 91.37,
+      "style_change_1d": -3.371146666666661,
+      "style_change_5d": null,
+      "style_change_20d": null,
+      "sample_count": 15,
+      "coverage_status": "PARTIAL",
+      "source_coverage": 0.024144144144144144,
+      "methodology": "market-cap sample proxy"
+    },
+    {
+      "style": "short_term_speculation",
+      "return": 7.362379545454545,
+      "breadth": 79.54545454545455,
+      "amount_change": 1.4475873773648587,
+      "limit_up_count": 55,
+      "top_stock_performance": {
+        "ts_code": "301699.SZ",
+        "stock_name": "洛轴股份",
+        "return": 101.4484
+      },
+      "style_strength_score": 82.29,
+      "style_change_1d": -2.48957272727273,
+      "style_change_5d": -2.8195727272727282,
+      "style_change_20d": -17.70957272727273,
+      "sample_count": 88,
+      "coverage_status": "PARTIAL",
+      "source_coverage": 0.02810810810810811,
+      "methodology": "turnover sample proxy"
+    },
+    {
+      "style": "large_cap",
+      "return": 5.820005882352941,
+      "breadth": 85.29411764705883,
+      "amount_change": 1.6037151530455176,
+      "limit_up_count": 13,
+      "top_stock_performance": {
+        "ts_code": "300913.SZ",
+        "stock_name": "兆龙互连",
+        "return": 14.7166
+      },
+      "style_strength_score": 78.13,
+      "style_change_1d": 8.862964705882362,
+      "style_change_5d": 21.69296470588236,
+      "style_change_20d": null,
+      "sample_count": 34,
+      "coverage_status": "PARTIAL",
+      "source_coverage": 0.024144144144144144,
+      "methodology": "market-cap sample proxy"
+    },
+    {
+      "style": "trend_style",
+      "return": 4.563366315789474,
+      "breadth": 95.78947368421052,
+      "amount_change": 1.572182656311008,
+      "limit_up_count": 21,
+      "top_stock_performance": {
+        "ts_code": "002377.SZ",
+        "stock_name": "国创高新",
+        "return": 10.1399
+      },
+      "style_strength_score": 76.78,
+      "style_change_1d": -2.1602189473684206,
+      "style_change_5d": 75.13978105263158,
+      "style_change_20d": -5.850218947368418,
+      "sample_count": 95,
+      "coverage_status": "PASS",
+      "source_coverage": 1.0,
+      "methodology": "full-market daily facts"
+    },
+    {
+      "style": "low_turnover",
+      "return": 5.1986358974358975,
+      "breadth": 74.35897435897436,
+      "amount_change": 1.1305405316052146,
+      "limit_up_count": 19,
+      "top_stock_performance": {
+        "ts_code": "000523.SZ",
+        "stock_name": "红棉股份",
+        "return": 10.101
+      },
+      "style_strength_score": 71.82,
+      "style_change_1d": -1.5498153846153855,
+      "style_change_5d": 1.2001846153846145,
+      "style_change_20d": null,
+      "sample_count": 39,
+      "coverage_status": "PARTIAL",
+      "source_coverage": 0.02810810810810811,
+      "methodology": "turnover sample proxy"
+    },
+    {
+      "style": "high_turnover",
+      "return": 2.96579,
+      "breadth": 55.00000000000001,
+      "amount_change": 1.3414640412542318,
+      "limit_up_count": 7,
+      "top_stock_performance": {
+        "ts_code": "301699.SZ",
+        "stock_name": "洛轴股份",
+        "return": 101.4484
+      },
+      "style_strength_score": 53.11,
+      "style_change_1d": -4.006839999999997,
+      "style_change_5d": -6.046839999999996,
+      "style_change_20d": null,
+      "sample_count": 40,
+      "coverage_status": "PARTIAL",
+      "source_coverage": 0.02810810810810811,
+      "methodology": "turnover sample proxy"
+    },
+    {
+      "style": "small_cap",
+      "return": 1.6059121212121212,
+      "breadth": 57.57575757575758,
+      "amount_change": 2.1491855882728723,
+      "limit_up_count": 11,
+      "top_stock_performance": {
+        "ts_code": "002377.SZ",
+        "stock_name": "国创高新",
+        "return": 10.1399
+      },
+      "style_strength_score": 51.58,
+      "style_change_1d": -25.714836363636365,
+      "style_change_5d": -8.24483636363636,
+      "style_change_20d": null,
+      "sample_count": 33,
+      "coverage_status": "PARTIAL",
+      "source_coverage": 0.024144144144144144,
+      "methodology": "market-cap sample proxy"
+    },
+    {
+      "style": "high_price_position",
+      "return": -0.12691945244956773,
+      "breadth": 37.82420749279539,
+      "amount_change": -0.034292691745915344,
+      "limit_up_count": 11,
+      "top_stock_performance": {
+        "ts_code": "301699.SZ",
+        "stock_name": "洛轴股份",
+        "return": 101.4484
+      },
+      "style_strength_score": 22.22,
+      "style_change_1d": 1.9764044364913858,
+      "style_change_5d": 5.646404436491384,
+      "style_change_20d": -18.253595563508615,
+      "sample_count": 1388,
+      "coverage_status": "PASS",
+      "source_coverage": 1.0,
+      "methodology": "full-market daily facts"
+    },
+    {
+      "style": "value",
+      "return": -0.3273953511622094,
+      "breadth": 34.61634591352162,
+      "amount_change": 0.0037030737459834706,
+      "limit_up_count": 55,
+      "top_stock_performance": {
+        "ts_code": "301699.SZ",
+        "stock_name": "洛轴股份",
+        "return": 101.4484
+      },
+      "style_strength_score": 20.86,
+      "style_change_1d": -16.648314228726516,
+      "style_change_5d": 0.0016857712734825725,
+      "style_change_20d": -18.718314228726516,
+      "sample_count": 4001,
+      "coverage_status": "PARTIAL",
+      "source_coverage": 1.0,
+      "methodology": "non-growth-board proxy; valuation factors unavailable"
+    },
+    {
+      "style": "low_price_position",
+      "return": -0.4491920143884892,
+      "breadth": 31.07913669064748,
+      "amount_change": 0.06434266292756327,
+      "limit_up_count": 20,
+      "top_stock_performance": {
+        "ts_code": "688033.SH",
+        "stock_name": "*ST天宜",
+        "return": 12.1951
+      },
+      "style_strength_score": 20.05,
+      "style_change_1d": -28.92393027191389,
+      "style_change_5d": 6.506069728086111,
+      "style_change_20d": -22.13393027191389,
+      "sample_count": 1390,
+      "coverage_status": "PASS",
+      "source_coverage": 1.0,
+      "methodology": "full-market daily facts"
+    },
+    {
+      "style": "cyclical",
+      "return": -0.26215535307517085,
+      "breadth": 35.64920273348519,
+      "amount_change": -0.08609707276207682,
+      "limit_up_count": 5,
+      "top_stock_performance": {
+        "ts_code": "688559.SH",
+        "stock_name": "海目星",
+        "return": 12.5024
+      },
+      "style_strength_score": 15.14,
+      "style_change_1d": -6.082856547012019,
+      "style_change_5d": 2.6471434529879794,
+      "style_change_20d": -23.08285654701202,
+      "sample_count": 878,
+      "coverage_status": "PASS",
+      "source_coverage": 1.0,
+      "methodology": "full-market daily facts"
+    },
+    {
+      "style": "technology",
+      "return": -0.6629608881298037,
+      "breadth": 26.98548249359522,
+      "amount_change": -0.06988168603633281,
+      "limit_up_count": 8,
+      "top_stock_performance": {
+        "ts_code": "300913.SZ",
+        "stock_name": "兆龙互连",
+        "return": 14.7166
+      },
+      "style_strength_score": 13.74,
+      "style_change_1d": -6.525149970305879,
+      "style_change_5d": -3.7151499703058803,
+      "style_change_20d": -28.54514997030588,
+      "sample_count": 1171,
+      "coverage_status": "PASS",
+      "source_coverage": 1.0,
+      "methodology": "full-market daily facts"
+    },
+    {
+      "style": "consumer",
+      "return": -0.9212144104803494,
+      "breadth": 23.144104803493452,
+      "amount_change": 0.13046178680496465,
+      "limit_up_count": 3,
+      "top_stock_performance": {
+        "ts_code": "000759.SZ",
+        "stock_name": "中百集团",
+        "return": 10.0
+      },
+      "style_strength_score": 9.37,
+      "style_change_1d": -34.377494158624216,
+      "style_change_5d": 4.29250584137578,
+      "style_change_20d": -23.55749415862422,
+      "sample_count": 229,
+      "coverage_status": "PASS",
+      "source_coverage": 1.0,
+      "methodology": "full-market daily facts"
+    },
+    {
+      "style": "growth",
+      "return": -0.7291667527437056,
+      "breadth": 26.404131697869595,
+      "amount_change": -0.042253958584257255,
+      "limit_up_count": 0,
+      "top_stock_performance": {
+        "ts_code": "300913.SZ",
+        "stock_name": "兆龙互连",
+        "return": 14.7166
+      },
+      "style_strength_score": 5.69,
+      "style_change_1d": -13.299030295484322,
+      "style_change_5d": 2.850969704515676,
+      "style_change_20d": -28.70903029548432,
+      "sample_count": 1549,
+      "coverage_status": "PASS",
+      "source_coverage": 1.0,
+      "methodology": "full-market daily facts"
+    },
+    {
+      "style": "financial",
+      "return": -0.4066941666666667,
+      "breadth": 33.33333333333333,
+      "amount_change": -0.3235790623153375,
+      "limit_up_count": 0,
+      "top_stock_performance": {
+        "ts_code": "002839.SZ",
+        "stock_name": "张家港行",
+        "return": 1.5873
+      },
+      "style_strength_score": 5.19,
+      "style_change_1d": -17.913795934730068,
+      "style_change_5d": 4.826204065269935,
+      "style_change_20d": -17.293795934730063,
+      "sample_count": 120,
+      "coverage_status": "PASS",
+      "source_coverage": 1.0,
+      "methodology": "full-market daily facts"
+    }
+  ],
+  "theme_concentration": {
+    "theme_concentration_score": 22.59,
+    "concentration_candidate": "LOW",
+    "feature_components": {
+      "top1_theme_amount_share": 4.1621677545761955,
+      "top3_theme_amount_share": 10.297208616207236,
+      "top1_limit_up_share": 10.81081081081081,
+      "top3_limit_up_share": 27.027027027027028,
+      "top_theme_breadth": 100.0,
+      "core_capacity_share": 58.428678950637455
+    },
+    "available_component_weight": 1.0
+  },
+  "top_theme_features": [
+    {
+      "theme_name": "电网设备",
+      "theme_return": 7.545871428571429,
+      "top_stock_return": 7.545871428571429,
+      "theme_breadth": 100.0,
+      "theme_amount": 14265246342.34,
+      "theme_amount_change": null,
+      "limit_up_count": 3,
+      "failed_limit_count": null,
+      "leader_strength": null,
+      "capacity_strength": 100.0,
+      "trend_leader_strength": 47.0,
+      "catch_up_strength": 100.0,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 69.9,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 4.627103641456571,
+      "score_change_1d": 4.627103641456571,
+      "score_change_5d": -2.702896358543427,
+      "score_change_20d": null,
+      "quality_status": "PASS"
+    },
+    {
+      "theme_name": "汽车零部",
+      "theme_return": 9.8782,
+      "top_stock_return": 9.8782,
+      "theme_breadth": 100.0,
+      "theme_amount": 1169412116.33,
+      "theme_amount_change": null,
+      "limit_up_count": 2,
+      "failed_limit_count": null,
+      "leader_strength": null,
+      "capacity_strength": 99.869,
+      "trend_leader_strength": 37.0,
+      "catch_up_strength": 98.91300000000001,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 69.64,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 37.1535294117647,
+      "score_change_1d": 37.1535294117647,
+      "score_change_5d": -5.736470588235292,
+      "score_change_20d": null,
+      "quality_status": "PASS"
+    },
+    {
+      "theme_name": "通用设备",
+      "theme_return": 9.997499999999999,
+      "top_stock_return": 9.997499999999999,
+      "theme_breadth": 100.0,
+      "theme_amount": 2681918940.5299997,
+      "theme_amount_change": null,
+      "limit_up_count": 2,
+      "failed_limit_count": null,
+      "leader_strength": null,
+      "capacity_strength": 100.0,
+      "trend_leader_strength": 27.0,
+      "catch_up_strength": 99.963,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 69.09,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 37.34219607843137,
+      "score_change_1d": 37.34219607843137,
+      "score_change_5d": 2.012196078431373,
+      "score_change_20d": null,
+      "quality_status": "PASS"
+    },
+    {
+      "theme_name": "农产品加",
+      "theme_return": 6.767485714285714,
+      "top_stock_return": 6.767485714285714,
+      "theme_breadth": 85.71428571428571,
+      "theme_amount": 7976016914.87,
+      "theme_amount_change": null,
+      "limit_up_count": 4,
+      "failed_limit_count": null,
+      "leader_strength": null,
+      "capacity_strength": 95.154,
+      "trend_leader_strength": 51.0,
+      "catch_up_strength": 100.0,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 67.67,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": -7.038694677871149,
+      "score_change_1d": -7.038694677871149,
+      "score_change_5d": null,
+      "score_change_20d": null,
+      "quality_status": "PASS"
+    },
+    {
+      "theme_name": "旅游及景",
+      "theme_return": 9.9875,
+      "top_stock_return": 9.9875,
+      "theme_breadth": 100.0,
+      "theme_amount": 1009111003.16,
+      "theme_amount_change": null,
+      "limit_up_count": 1,
+      "failed_limit_count": null,
+      "leader_strength": null,
+      "capacity_strength": 99.9375,
+      "trend_leader_strength": 52.0,
+      "catch_up_strength": null,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 67.04,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 1.036764705882348,
+      "score_change_1d": 1.036764705882348,
+      "score_change_5d": 2.7267647058823457,
+      "score_change_20d": null,
+      "quality_status": "PASS"
+    },
+    {
+      "theme_name": "元件",
+      "theme_return": 7.0917,
+      "top_stock_return": 7.0917,
+      "theme_breadth": 80.0,
+      "theme_amount": 11299900937.45,
+      "theme_amount_change": null,
+      "limit_up_count": 3,
+      "failed_limit_count": null,
+      "leader_strength": null,
+      "capacity_strength": 100.0,
+      "trend_leader_strength": 51.0,
+      "catch_up_strength": 100.0,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 64.97,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 11.940627450980386,
+      "score_change_1d": 11.940627450980386,
+      "score_change_5d": null,
+      "score_change_20d": null,
+      "quality_status": "PASS"
+    },
+    {
+      "theme_name": "工业金属",
+      "theme_return": 9.9715,
+      "top_stock_return": 9.9715,
+      "theme_breadth": 100.0,
+      "theme_amount": 84449025.96,
+      "theme_amount_change": null,
+      "limit_up_count": 1,
+      "failed_limit_count": null,
+      "leader_strength": null,
+      "capacity_strength": 99.8575,
+      "trend_leader_strength": 30.0,
+      "catch_up_strength": null,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 64.42,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": -3.649705882352933,
+      "score_change_1d": -3.649705882352933,
+      "score_change_5d": null,
+      "score_change_20d": null,
+      "quality_status": "PASS"
+    },
+    {
+      "theme_name": "非白酒",
+      "theme_return": 8.4091,
+      "top_stock_return": 8.4091,
+      "theme_breadth": 100.0,
+      "theme_amount": 1660258936.0,
+      "theme_amount_change": null,
+      "limit_up_count": 1,
+      "failed_limit_count": null,
+      "leader_strength": null,
+      "capacity_strength": 84.09100000000001,
+      "trend_leader_strength": 50.0,
+      "catch_up_strength": 84.09100000000001,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 64.42,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 10.59713725490196,
+      "score_change_1d": 10.59713725490196,
+      "score_change_5d": null,
+      "score_change_20d": null,
+      "quality_status": "PASS"
+    },
+    {
+      "theme_name": "金属新材",
+      "theme_return": 9.887,
+      "top_stock_return": 9.887,
+      "theme_breadth": 100.0,
+      "theme_amount": 595074365.0,
+      "theme_amount_change": null,
+      "limit_up_count": 1,
+      "failed_limit_count": null,
+      "leader_strength": null,
+      "capacity_strength": 99.435,
+      "trend_leader_strength": 29.0,
+      "catch_up_strength": null,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 64.15,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 19.92352941176471,
+      "score_change_1d": 19.92352941176471,
+      "score_change_5d": -0.15647058823529392,
+      "score_change_20d": null,
+      "quality_status": "PASS"
+    },
+    {
+      "theme_name": "一般零售",
+      "theme_return": 6.539975,
+      "top_stock_return": 6.539975,
+      "theme_breadth": 75.0,
+      "theme_amount": 3122566044.7200003,
+      "theme_amount_change": null,
+      "limit_up_count": 3,
+      "failed_limit_count": null,
+      "leader_strength": null,
+      "capacity_strength": 100.0,
+      "trend_leader_strength": 48.0,
+      "catch_up_strength": 99.8545,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 62.9,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": -0.6616372549019687,
+      "score_change_1d": -0.6616372549019687,
+      "score_change_5d": -4.181637254901965,
+      "score_change_20d": null,
+      "quality_status": "PASS"
+    },
+    {
+      "theme_name": "煤炭开采",
+      "theme_return": 3.4707,
+      "top_stock_return": 5.93817,
+      "theme_breadth": 92.0,
+      "theme_amount": 14491673147.33,
+      "theme_amount_change": null,
+      "limit_up_count": 2,
+      "failed_limit_count": null,
+      "leader_strength": null,
+      "capacity_strength": 100.0,
+      "trend_leader_strength": 41.0,
+      "catch_up_strength": 100.0,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 60.63,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 11.912196078431371,
+      "score_change_1d": 11.912196078431371,
+      "score_change_5d": 60.63219607843137,
+      "score_change_20d": 34.34219607843137,
+      "quality_status": "PASS"
+    },
+    {
+      "theme_name": "自动化设",
+      "theme_return": 8.2165,
+      "top_stock_return": 8.2165,
+      "theme_breadth": 100.0,
+      "theme_amount": 11116402001.3,
+      "theme_amount_change": null,
+      "limit_up_count": 0,
+      "failed_limit_count": null,
+      "leader_strength": null,
+      "capacity_strength": 91.0825,
+      "trend_leader_strength": 21.0,
+      "catch_up_strength": null,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 58.15,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 29.83676470588235,
+      "score_change_1d": 29.83676470588235,
+      "score_change_5d": null,
+      "score_change_20d": null,
+      "quality_status": "PASS"
+    },
+    {
+      "theme_name": "农化制品",
+      "theme_return": 4.2272625,
+      "top_stock_return": 4.2272625,
+      "theme_breadth": 87.5,
+      "theme_amount": 10053492426.66,
+      "theme_amount_change": null,
+      "limit_up_count": 2,
+      "failed_limit_count": null,
+      "leader_strength": null,
+      "capacity_strength": 72.351,
+      "trend_leader_strength": 39.0,
+      "catch_up_strength": 99.407,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 58.09,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": -23.788475490196078,
+      "score_change_1d": -23.788475490196078,
+      "score_change_5d": 14.301524509803919,
+      "score_change_20d": null,
+      "quality_status": "PASS"
+    },
+    {
+      "theme_name": "渔业",
+      "theme_return": 2.8196857142857144,
+      "top_stock_return": 2.8196857142857144,
+      "theme_breadth": 100.0,
+      "theme_amount": 2582608704.24,
+      "theme_amount_change": null,
+      "limit_up_count": 1,
+      "failed_limit_count": null,
+      "leader_strength": null,
+      "capacity_strength": 99.913,
+      "trend_leader_strength": 52.0,
+      "catch_up_strength": 67.3075,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 57.92,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": 9.76280672268907,
+      "score_change_1d": 9.76280672268907,
+      "score_change_5d": null,
+      "score_change_20d": 11.572806722689066,
+      "quality_status": "PASS"
+    },
+    {
+      "theme_name": "炼化及贸",
+      "theme_return": 3.381825,
+      "top_stock_return": 3.381825,
+      "theme_breadth": 75.0,
+      "theme_amount": 1865011151.72,
+      "theme_amount_change": null,
+      "limit_up_count": 1,
+      "failed_limit_count": null,
+      "leader_strength": null,
+      "capacity_strength": 100.0,
+      "trend_leader_strength": 41.0,
+      "catch_up_strength": 74.34899999999999,
+      "theme_volume_anomaly": null,
+      "theme_inflection_score": 52.4,
+      "official_catalyst_count": 0,
+      "evidence_A_count": 0,
+      "evidence_B_count": 0,
+      "previous_review_score": null,
+      "score_change": -18.03185294117648,
+      "score_change_1d": -18.03185294117648,
+      "score_change_5d": 52.398147058823525,
+      "score_change_20d": null,
+      "quality_status": "PASS"
+    }
+  ],
+  "role_candidates": [
+    {
+      "ts_code": "000759.SZ",
+      "stock_name": "中百集团",
+      "theme": "一般零售",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "LEADER_CANDIDATE",
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 100.0,
+      "role_scores": {
+        "leader": 62.85,
+        "capacity": 80.85,
+        "trend_leader": 56.8,
+        "elasticity": 100.0,
+        "catch_up": 42.02,
+        "follower": 45.16
+      },
+      "role_score_change_1d": 26.47,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.0,
+      "theme_leadership": 62.9,
+      "theme_follow_rate": 75.0,
+      "turnover": 28.37491226196289,
+      "amount": 1541911510.06,
+      "recognition_score": 71.0,
+      "continuity": 3.0,
+      "previous_day_strength": 10.0,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600108.SH",
+      "stock_name": "亚盛集团",
+      "theme": "种植业",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 100.0,
+      "role_scores": {
+        "leader": 16.29,
+        "capacity": 78.9,
+        "trend_leader": 51.2,
+        "elasticity": 100.0,
+        "catch_up": 41.59,
+        "follower": 34.34
+      },
+      "role_score_change_1d": 38.7,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 0,
+      "relative_strength": 8.1439,
+      "theme_leadership": 45.12,
+      "theme_follow_rate": 38.88888888888889,
+      "turnover": 40.55028533935547,
+      "amount": 4525026596.0,
+      "recognition_score": 0.0,
+      "continuity": null,
+      "previous_day_strength": 8.143939018249512,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600540.SH",
+      "stock_name": "新赛股份",
+      "theme": "种植业",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 100.0,
+      "role_scores": {
+        "leader": 54.6,
+        "capacity": 58.05,
+        "trend_leader": 58.4,
+        "elasticity": 100.0,
+        "catch_up": 29.79,
+        "follower": 38.2
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.0763,
+      "theme_leadership": 45.12,
+      "theme_follow_rate": 38.88888888888889,
+      "turnover": 32.07535171508789,
+      "amount": 1291393679.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "000978.SZ",
+      "stock_name": "桂林旅游",
+      "theme": "旅游及景",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "LEADER_CANDIDATE",
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 99.0,
+      "role_scores": {
+        "leader": 62.83,
+        "capacity": 83.95,
+        "trend_leader": 61.6,
+        "elasticity": 99.0,
+        "catch_up": 43.46,
+        "follower": 46.79
+      },
+      "role_score_change_1d": 30.682659797668464,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 9.9875,
+      "theme_leadership": 67.04,
+      "theme_follow_rate": 100.0,
+      "turnover": 26.043439865112305,
+      "amount": 1009111003.16,
+      "recognition_score": 71.0,
+      "continuity": 3.0,
+      "previous_day_strength": 9.987516403198242,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "000798.SZ",
+      "stock_name": "中水渔业",
+      "theme": "渔业",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 98.65,
+      "role_scores": {
+        "leader": 54.42,
+        "capacity": 83.85,
+        "trend_leader": 60.8,
+        "elasticity": 98.65,
+        "catch_up": 40.27,
+        "follower": 43.13
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 9.9826,
+      "theme_leadership": 57.92,
+      "theme_follow_rate": 100.0,
+      "turnover": 25.82280158996582,
+      "amount": 1150095141.1,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "300913.SZ",
+      "stock_name": "兆龙互连",
+      "theme": "通信设备",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 95.72,
+      "role_scores": {
+        "leader": 29.43,
+        "capacity": 54.0,
+        "trend_leader": 44.0,
+        "elasticity": 95.72,
+        "catch_up": 27.0,
+        "follower": 46.58
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 0,
+      "relative_strength": 14.7166,
+      "theme_leadership": 42.86,
+      "theme_follow_rate": 42.74809160305343,
+      "turnover": 14.75497817993164,
+      "amount": 1733800812.06,
+      "recognition_score": 0.0,
+      "continuity": null,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600354.SH",
+      "stock_name": "敦煌种业",
+      "theme": "种植业",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 92.11,
+      "role_scores": {
+        "leader": 13.04,
+        "capacity": 74.0,
+        "trend_leader": 60.0,
+        "elasticity": 92.11,
+        "catch_up": 49.71,
+        "follower": 27.59
+      },
+      "role_score_change_1d": 18.291866455078136,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 0,
+      "relative_strength": 4.771,
+      "theme_leadership": 45.12,
+      "theme_follow_rate": 38.88888888888889,
+      "turnover": 45.50457763671875,
+      "amount": 2634249226.0,
+      "recognition_score": 10.0,
+      "continuity": null,
+      "previous_day_strength": 4.770992279052734,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002377.SZ",
+      "stock_name": "国创高新",
+      "theme": "炼化及贸",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 90.25,
+      "role_scores": {
+        "leader": 54.73,
+        "capacity": 55.35,
+        "trend_leader": 52.8,
+        "elasticity": 90.25,
+        "catch_up": 38.34,
+        "follower": 41.24
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.1399,
+      "theme_leadership": 52.4,
+      "theme_follow_rate": 75.0,
+      "turnover": 19.698863983154297,
+      "amount": 528317047.88,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600865.SH",
+      "stock_name": "百大集团",
+      "theme": "一般零售",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "LEADER_CANDIDATE",
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 88.04,
+      "role_scores": {
+        "leader": 65.94,
+        "capacity": 79.8,
+        "trend_leader": 58.4,
+        "elasticity": 88.04,
+        "catch_up": 37.1,
+        "follower": 45.1
+      },
+      "role_score_change_1d": 26.288076583862306,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 9.9709,
+      "theme_leadership": 62.9,
+      "theme_follow_rate": 75.0,
+      "turnover": 18.789051055908203,
+      "amount": 1038728603.0,
+      "recognition_score": 80.0,
+      "continuity": 5.0,
+      "previous_day_strength": 9.970888137817383,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600121.SH",
+      "stock_name": "郑州煤电",
+      "theme": "煤炭开采",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 86.65,
+      "role_scores": {
+        "leader": 54.53,
+        "capacity": 72.85,
+        "trend_leader": 52.8,
+        "elasticity": 86.65,
+        "catch_up": 41.22,
+        "follower": 44.33
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.0386,
+      "theme_leadership": 60.63,
+      "theme_follow_rate": 92.0,
+      "turnover": 17.640233993530273,
+      "amount": 1165089405.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "603186.SH",
+      "stock_name": "华正新材",
+      "theme": "元件",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 86.55,
+      "role_scores": {
+        "leader": 54.45,
+        "capacity": 86.55,
+        "trend_leader": 42.4,
+        "elasticity": 81.63,
+        "catch_up": 42.74,
+        "follower": 45.99
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.001,
+      "theme_leadership": 64.97,
+      "theme_follow_rate": 80.0,
+      "turnover": 14.414056777954102,
+      "amount": 4658624546.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600869.SH",
+      "stock_name": "远东股份",
+      "theme": "电网设备",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 86.45,
+      "role_scores": {
+        "leader": 54.49,
+        "capacity": 86.45,
+        "trend_leader": 41.6,
+        "elasticity": 81.22,
+        "catch_up": 44.54,
+        "follower": 48.0
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": 11.450000000000003,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.0177,
+      "theme_leadership": 69.9,
+      "theme_follow_rate": 100.0,
+      "turnover": 14.088030815124512,
+      "amount": 7371146996.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "000019.SZ",
+      "stock_name": "深粮控股",
+      "theme": "农产品加",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 85.57,
+      "role_scores": {
+        "leader": 54.48,
+        "capacity": 55.39,
+        "trend_leader": 56.0,
+        "elasticity": 85.57,
+        "catch_up": 38.16,
+        "follower": 47.09
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.013,
+      "theme_leadership": 67.67,
+      "theme_follow_rate": 85.71428571428571,
+      "turnover": 17.006591796875,
+      "amount": 581275010.8199999,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002068.SZ",
+      "stock_name": "黑猫股份",
+      "theme": "橡胶",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "LEADER_CANDIDATE",
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 85.4,
+      "role_scores": {
+        "leader": 58.65,
+        "capacity": 64.95,
+        "trend_leader": 45.6,
+        "elasticity": 85.4,
+        "catch_up": 31.35,
+        "follower": 37.53
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.0,
+      "theme_leadership": 43.83,
+      "theme_follow_rate": 40.0,
+      "turnover": 16.936256408691406,
+      "amount": 1192876349.5,
+      "recognition_score": 59.0,
+      "continuity": 2.0,
+      "previous_day_strength": 10.0,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600737.SH",
+      "stock_name": "中粮糖业",
+      "theme": "农产品加",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 85.1,
+      "role_scores": {
+        "leader": 21.56,
+        "capacity": 85.1,
+        "trend_leader": 60.8,
+        "elasticity": 65.31,
+        "catch_up": 46.82,
+        "follower": 45.13
+      },
+      "role_score_change_1d": 2.9799999999999898,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 0,
+      "relative_strength": 9.0308,
+      "theme_leadership": 67.67,
+      "theme_follow_rate": 85.71428571428571,
+      "turnover": 13.438935279846191,
+      "amount": 5479681336.0,
+      "recognition_score": 10.0,
+      "continuity": null,
+      "previous_day_strength": 9.030837059020996,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "603308.SH",
+      "stock_name": "应流股份",
+      "theme": "通用设备",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 84.55,
+      "role_scores": {
+        "leader": 54.45,
+        "capacity": 84.55,
+        "trend_leader": 6.4,
+        "elasticity": 66.51,
+        "catch_up": 44.18,
+        "follower": 47.64
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.0024,
+      "theme_leadership": 69.09,
+      "theme_follow_rate": 100.0,
+      "turnover": 4.334065914154053,
+      "amount": 1429703265.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "000833.SZ",
+      "stock_name": "粤桂股份",
+      "theme": "综合Ⅱ",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 83.0,
+      "role_scores": {
+        "leader": 6.92,
+        "capacity": 83.0,
+        "trend_leader": 44.0,
+        "elasticity": 42.25,
+        "catch_up": 60.99,
+        "follower": 21.49
+      },
+      "role_score_change_1d": 10.700000000000003,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 0,
+      "relative_strength": 1.7083,
+      "theme_leadership": 45.19,
+      "theme_follow_rate": 66.66666666666666,
+      "turnover": 22.46971893310547,
+      "amount": 2369811031.8,
+      "recognition_score": 10.0,
+      "continuity": null,
+      "previous_day_strength": 1.7082786560058594,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "603650.SH",
+      "stock_name": "彤程新材",
+      "theme": "橡胶",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 82.05,
+      "role_scores": {
+        "leader": 54.45,
+        "capacity": 82.05,
+        "trend_leader": 14.4,
+        "elasticity": 68.18,
+        "catch_up": 33.34,
+        "follower": 37.54
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.0017,
+      "theme_leadership": 43.83,
+      "theme_follow_rate": 40.0,
+      "turnover": 5.450028896331787,
+      "amount": 2156858320.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600255.SH",
+      "stock_name": "鑫科材料",
+      "theme": "金属新材",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 81.65,
+      "role_scores": {
+        "leader": 54.22,
+        "capacity": 81.65,
+        "trend_leader": 43.2,
+        "elasticity": 72.43,
+        "catch_up": 42.45,
+        "follower": 45.43
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 9.887,
+      "theme_leadership": 64.15,
+      "theme_follow_rate": 100.0,
+      "turnover": 8.662296295166016,
+      "amount": 595074365.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "603823.SH",
+      "stock_name": "百合花",
+      "theme": "化学制品",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE"
+      ],
+      "role_candidate_score": 81.6,
+      "role_scores": {
+        "leader": 3.5,
+        "capacity": 81.6,
+        "trend_leader": 12.8,
+        "elasticity": 16.3,
+        "catch_up": 66.0,
+        "follower": 18.29
+      },
+      "role_score_change_1d": 12.699999999999989,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 0,
+      "relative_strength": -8.5526,
+      "theme_leadership": 45.72,
+      "theme_follow_rate": 60.0,
+      "turnover": 10.867090225219727,
+      "amount": 2746988786.0,
+      "recognition_score": 10.0,
+      "continuity": null,
+      "previous_day_strength": -8.552631378173828,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600778.SH",
+      "stock_name": "友好集团",
+      "theme": "一般零售",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 80.86,
+      "role_scores": {
+        "leader": 50.82,
+        "capacity": 34.1,
+        "trend_leader": 52.8,
+        "elasticity": 80.86,
+        "catch_up": 32.21,
+        "follower": 45.03
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 9.9338,
+      "theme_leadership": 62.9,
+      "theme_follow_rate": 75.0,
+      "turnover": 14.126343727111816,
+      "amount": 285223950.0,
+      "recognition_score": 37.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600403.SH",
+      "stock_name": "大有能源",
+      "theme": "煤炭开采",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 79.15,
+      "role_scores": {
+        "leader": 54.45,
+        "capacity": 79.15,
+        "trend_leader": 19.2,
+        "elasticity": 69.38,
+        "catch_up": 37.34,
+        "follower": 44.25
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.0,
+      "theme_leadership": 60.63,
+      "theme_follow_rate": 92.0,
+      "turnover": 6.253478527069092,
+      "amount": 1083284268.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600698.SH",
+      "stock_name": "湖南天雁",
+      "theme": "汽车零部",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 78.12,
+      "role_scores": {
+        "leader": 54.4,
+        "capacity": 67.45,
+        "trend_leader": 49.6,
+        "elasticity": 78.12,
+        "catch_up": 44.37,
+        "follower": 47.8
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 9.9738,
+      "theme_leadership": 69.64,
+      "theme_follow_rate": 100.0,
+      "turnover": 12.16845989227295,
+      "amount": 822155283.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "000988.SZ",
+      "stock_name": "华工科技",
+      "theme": "自动化设",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 77.1,
+      "role_scores": {
+        "leader": 16.43,
+        "capacity": 77.1,
+        "trend_leader": 16.8,
+        "elasticity": 56.19,
+        "catch_up": 40.35,
+        "follower": 39.69
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 0,
+      "relative_strength": 8.2165,
+      "theme_leadership": 58.15,
+      "theme_follow_rate": 100.0,
+      "turnover": 10.072854042053223,
+      "amount": 11116402001.3,
+      "recognition_score": 0.0,
+      "continuity": null,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "605077.SH",
+      "stock_name": "华康股份",
+      "theme": "化学制品",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "LEADER_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 76.91,
+      "role_scores": {
+        "leader": 55.1,
+        "capacity": 48.1,
+        "trend_leader": 52.8,
+        "elasticity": 76.91,
+        "catch_up": 28.0,
+        "follower": 38.24
+      },
+      "role_score_change_1d": 6.698011119842548,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 9.9761,
+      "theme_leadership": 45.72,
+      "theme_follow_rate": 60.0,
+      "turnover": 11.35167407989502,
+      "amount": 457738082.0,
+      "recognition_score": 49.0,
+      "continuity": 2.0,
+      "previous_day_strength": 9.976058006286621,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600596.SH",
+      "stock_name": "新安股份",
+      "theme": "农化制品",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 75.7,
+      "role_scores": {
+        "leader": 12.44,
+        "capacity": 75.7,
+        "trend_leader": 45.6,
+        "elasticity": 42.58,
+        "catch_up": 56.73,
+        "follower": 32.18
+      },
+      "role_score_change_1d": -5.049999999999997,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 0,
+      "relative_strength": 4.4702,
+      "theme_leadership": 58.09,
+      "theme_follow_rate": 87.5,
+      "turnover": 13.484087944030762,
+      "amount": 2265805531.0,
+      "recognition_score": 10.0,
+      "continuity": null,
+      "previous_day_strength": 4.470198631286621,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600359.SH",
+      "stock_name": "新农开发",
+      "theme": "种植业",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 75.6,
+      "role_scores": {
+        "leader": 51.05,
+        "capacity": 31.2,
+        "trend_leader": 57.6,
+        "elasticity": 75.6,
+        "catch_up": 23.87,
+        "follower": 38.15
+      },
+      "role_score_change_1d": 70.52325275802612,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.0503,
+      "theme_leadership": 45.12,
+      "theme_follow_rate": 38.88888888888889,
+      "turnover": 10.234501838684082,
+      "amount": 335687763.0,
+      "recognition_score": 37.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "603077.SH",
+      "stock_name": "和邦生物",
+      "theme": "农化制品",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 75.15,
+      "role_scores": {
+        "leader": 5.87,
+        "capacity": 75.15,
+        "trend_leader": 51.2,
+        "elasticity": 16.09,
+        "catch_up": 61.58,
+        "follower": 25.61
+      },
+      "role_score_change_1d": -9.0,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 0,
+      "relative_strength": 1.1858,
+      "theme_leadership": 58.09,
+      "theme_follow_rate": 87.5,
+      "turnover": 6.7731146812438965,
+      "amount": 1522787387.0,
+      "recognition_score": 10.0,
+      "continuity": null,
+      "previous_day_strength": 1.1857707500457764,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "601869.SH",
+      "stock_name": "长飞光纤",
+      "theme": "通信设备",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 74.0,
+      "role_scores": {
+        "leader": 12.08,
+        "capacity": 74.0,
+        "trend_leader": 40.0,
+        "elasticity": 37.53,
+        "catch_up": 59.03,
+        "follower": 29.23
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 0,
+      "relative_strength": 6.0405,
+      "theme_leadership": 42.86,
+      "theme_follow_rate": 42.74809160305343,
+      "turnover": 4.882978916168213,
+      "amount": 8886271897.0,
+      "recognition_score": 0.0,
+      "continuity": null,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "000912.SZ",
+      "stock_name": "泸天化",
+      "theme": "农化制品",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "LEADER_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 73.83,
+      "role_scores": {
+        "leader": 58.52,
+        "capacity": 37.77,
+        "trend_leader": 47.2,
+        "elasticity": 73.83,
+        "catch_up": 27.83,
+        "follower": 43.11
+      },
+      "role_score_change_1d": 9.144456356048579,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 9.9366,
+      "theme_leadership": 58.09,
+      "theme_follow_rate": 87.5,
+      "turnover": 9.434304237365723,
+      "amount": 767886020.5899999,
+      "recognition_score": 59.0,
+      "continuity": 2.0,
+      "previous_day_strength": 9.936574935913086,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "000565.SZ",
+      "stock_name": "渝三峡Ａ",
+      "theme": "化学制品",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 73.04,
+      "role_scores": {
+        "leader": 50.83,
+        "capacity": 21.9,
+        "trend_leader": 51.2,
+        "elasticity": 73.04,
+        "catch_up": 20.11,
+        "follower": 38.17
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 9.9388,
+      "theme_leadership": 45.72,
+      "theme_follow_rate": 60.0,
+      "turnover": 8.899659156799316,
+      "amount": 270737859.40000004,
+      "recognition_score": 37.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002295.SZ",
+      "stock_name": "精艺股份",
+      "theme": "工业金属",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "LEADER_CANDIDATE",
+        "CAPACITY_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 73.0,
+      "role_scores": {
+        "leader": 55.09,
+        "capacity": 73.0,
+        "trend_leader": 44.0,
+        "elasticity": 64.23,
+        "catch_up": 42.55,
+        "follower": 45.71
+      },
+      "role_score_change_1d": 43.730000000000004,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 9.9715,
+      "theme_leadership": 64.42,
+      "theme_follow_rate": 100.0,
+      "turnover": 2.9120917320251465,
+      "amount": 84449025.96,
+      "recognition_score": 49.0,
+      "continuity": 2.0,
+      "previous_day_strength": 9.97150993347168,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600192.SH",
+      "stock_name": "长城电工",
+      "theme": "电网设备",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 70.69,
+      "role_scores": {
+        "leader": 51.03,
+        "capacity": 17.89,
+        "trend_leader": 48.8,
+        "elasticity": 70.69,
+        "catch_up": 27.32,
+        "follower": 48.04
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.0418,
+      "theme_leadership": 69.9,
+      "theme_follow_rate": 100.0,
+      "turnover": 6.987832069396973,
+      "amount": 237057143.0,
+      "recognition_score": 37.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002913.SZ",
+      "stock_name": "奥士康",
+      "theme": "元件",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 70.62,
+      "role_scores": {
+        "leader": 37.85,
+        "capacity": 60.1,
+        "trend_leader": 60.8,
+        "elasticity": 70.62,
+        "catch_up": 34.96,
+        "follower": 45.84
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 9.9274,
+      "theme_leadership": 64.97,
+      "theme_follow_rate": 80.0,
+      "turnover": 7.322790145874023,
+      "amount": 1561049463.1000001,
+      "recognition_score": 0.0,
+      "continuity": null,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "601579.SH",
+      "stock_name": "会稽山",
+      "theme": "非白酒",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 70.39,
+      "role_scores": {
+        "leader": 54.45,
+        "capacity": 65.55,
+        "trend_leader": 54.4,
+        "elasticity": 70.39,
+        "catch_up": 32.55,
+        "follower": 45.77
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.0,
+      "theme_leadership": 64.42,
+      "theme_follow_rate": 100.0,
+      "turnover": 6.927977085113525,
+      "amount": 819278150.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "000972.SZ",
+      "stock_name": "中基健康",
+      "theme": "农产品加",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 69.46,
+      "role_scores": {
+        "leader": 51.1,
+        "capacity": 23.67,
+        "trend_leader": 60.8,
+        "elasticity": 69.46,
+        "catch_up": 26.54,
+        "follower": 47.22
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.0756,
+      "theme_leadership": 67.67,
+      "theme_follow_rate": 85.71428571428571,
+      "turnover": 6.05305814743042,
+      "amount": 202316898.01,
+      "recognition_score": 37.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "601126.SH",
+      "stock_name": "四方股份",
+      "theme": "电网设备",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "all_role_candidates": [
+        "CAPACITY_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 67.41,
+      "role_scores": {
+        "leader": 15.16,
+        "capacity": 67.41,
+        "trend_leader": 13.6,
+        "elasticity": 47.59,
+        "catch_up": 48.99,
+        "follower": 43.12
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 0,
+      "relative_strength": 7.581,
+      "theme_leadership": 69.9,
+      "theme_follow_rate": 100.0,
+      "turnover": 6.457594871520996,
+      "amount": 2290748016.0,
+      "recognition_score": 0.0,
+      "continuity": null,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "000930.SZ",
+      "stock_name": "中粮科技",
+      "theme": "农产品加",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "LEADER_CANDIDATE",
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 66.88,
+      "role_scores": {
+        "leader": 58.55,
+        "capacity": 59.28,
+        "trend_leader": 52.8,
+        "elasticity": 66.88,
+        "catch_up": 35.49,
+        "follower": 46.97
+      },
+      "role_score_change_1d": 3.6155652236938423,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 9.9485,
+      "theme_leadership": 67.67,
+      "theme_follow_rate": 85.71428571428571,
+      "turnover": 4.755376815795898,
+      "amount": 556141698.18,
+      "recognition_score": 59.0,
+      "continuity": 2.0,
+      "previous_day_strength": 9.948541641235352,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "603328.SH",
+      "stock_name": "依顿电子",
+      "theme": "元件",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "TREND_LEADER_CANDIDATE",
+        "ELASTICITY_CANDIDATE"
+      ],
+      "role_candidate_score": 66.46,
+      "role_scores": {
+        "leader": 54.45,
+        "capacity": 35.65,
+        "trend_leader": 43.2,
+        "elasticity": 66.46,
+        "catch_up": 26.74,
+        "follower": 45.99
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 10.0,
+      "theme_leadership": 64.97,
+      "theme_follow_rate": 80.0,
+      "turnover": 4.309056282043457,
+      "amount": 502327012.0,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002498.SZ",
+      "stock_name": "汉缆股份",
+      "theme": "电网设备",
+      "role_candidate": "ELASTICITY_CANDIDATE",
+      "all_role_candidates": [
+        "ELASTICITY_CANDIDATE",
+        "CATCH_UP_CANDIDATE"
+      ],
+      "role_candidate_score": 66.36,
+      "role_scores": {
+        "leader": 54.33,
+        "capacity": 57.79,
+        "trend_leader": 15.2,
+        "elasticity": 66.36,
+        "catch_up": 36.21,
+        "follower": 47.84
+      },
+      "role_score_change_1d": null,
+      "role_score_change_5d": null,
+      "role_score_change_20d": null,
+      "board_height": 1.0,
+      "relative_strength": 9.9379,
+      "theme_leadership": 69.9,
+      "theme_follow_rate": 100.0,
+      "turnover": 4.447809219360352,
+      "amount": 1030267077.63,
+      "recognition_score": 47.0,
+      "continuity": 1.0,
+      "previous_day_strength": null,
+      "auction_confirmation": null,
+      "candidate_only": true
+    }
+  ],
+  "money_effect_features": {
+    "features": {
+      "leader_return": 9.981018181818182,
+      "capacity_return": 6.551077419354839,
+      "catch_up_return": 5.035743636363636,
+      "new_theme_return": -0.14458189328883525,
+      "old_theme_return": 0.34331057161268785,
+      "high_level_return": null,
+      "low_level_return": 6.16544623655914,
+      "all_theme_return": 0.3336012688285779
+    },
+    "structure_candidates": [
+      "LEADER_DOMINANT"
+    ]
+  },
+  "trend_chip_candidates": [
+    {
+      "ts_code": "301108.SZ",
+      "stock_name": "洁雅股份",
+      "pullback_volume_ratio": 0.6111105331593011,
+      "amount_percentile": 55.00000000000001,
+      "turnover_percentile": null,
+      "volatility_percentile": 72.5,
+      "upper_shadow_frequency": 0.05,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_HELD",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 12.0,
+      "chip_health_change": 4.0,
+      "chip_health_change_1d": 4.0,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "300320.SZ",
+      "stock_name": "海达股份",
+      "pullback_volume_ratio": 0.4847208452612556,
+      "amount_percentile": 19.166666666666668,
+      "turnover_percentile": null,
+      "volatility_percentile": 44.166666666666664,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_UNCONFIRMED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 10.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "603658.SH",
+      "stock_name": "安图生物",
+      "pullback_volume_ratio": 0.4218822465020597,
+      "amount_percentile": 20.833333333333336,
+      "turnover_percentile": null,
+      "volatility_percentile": 58.333333333333336,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_UNCONFIRMED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 10.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "688083.SH",
+      "stock_name": "中望软件",
+      "pullback_volume_ratio": 0.44759506410573563,
+      "amount_percentile": 5.833333333333333,
+      "turnover_percentile": null,
+      "volatility_percentile": 10.0,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_UNCONFIRMED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 10.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "000988.SZ",
+      "stock_name": "华工科技",
+      "pullback_volume_ratio": 0.6481056723759486,
+      "amount_percentile": 62.5,
+      "turnover_percentile": null,
+      "volatility_percentile": 10.833333333333334,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_UNCONFIRMED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "001358.SZ",
+      "stock_name": "兴欣新材",
+      "pullback_volume_ratio": 0.6526245725647738,
+      "amount_percentile": 50.83333333333333,
+      "turnover_percentile": null,
+      "volatility_percentile": 44.166666666666664,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_UNCONFIRMED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "002199.SZ",
+      "stock_name": "东晶电子",
+      "pullback_volume_ratio": 0.5903301970334289,
+      "amount_percentile": 40.0,
+      "turnover_percentile": null,
+      "volatility_percentile": 5.833333333333333,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_UNCONFIRMED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "002242.SZ",
+      "stock_name": "九阳股份",
+      "pullback_volume_ratio": 0.5746389680334031,
+      "amount_percentile": 23.333333333333332,
+      "turnover_percentile": null,
+      "volatility_percentile": 39.166666666666664,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_UNCONFIRMED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "002373.SZ",
+      "stock_name": "千方科技",
+      "pullback_volume_ratio": 0.6625736796807307,
+      "amount_percentile": 8.333333333333332,
+      "turnover_percentile": null,
+      "volatility_percentile": 21.666666666666668,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_UNCONFIRMED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "002757.SZ",
+      "stock_name": "南兴股份",
+      "pullback_volume_ratio": 0.654237707737902,
+      "amount_percentile": 40.833333333333336,
+      "turnover_percentile": null,
+      "volatility_percentile": 12.5,
+      "upper_shadow_frequency": 0.05,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_FAILED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "300251.SZ",
+      "stock_name": "光线传媒",
+      "pullback_volume_ratio": 0.6828949763327358,
+      "amount_percentile": 23.333333333333332,
+      "turnover_percentile": null,
+      "volatility_percentile": 40.0,
+      "upper_shadow_frequency": 0.05,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_UNCONFIRMED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "301101.SZ",
+      "stock_name": "明月镜片",
+      "pullback_volume_ratio": 0.6634576162210464,
+      "amount_percentile": 5.0,
+      "turnover_percentile": null,
+      "volatility_percentile": 90.0,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_FAILED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "301507.SZ",
+      "stock_name": "民生健康",
+      "pullback_volume_ratio": 0.6620059925024625,
+      "amount_percentile": 8.333333333333332,
+      "turnover_percentile": null,
+      "volatility_percentile": 64.16666666666667,
+      "upper_shadow_frequency": 0.05,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_UNCONFIRMED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "603262.SH",
+      "stock_name": "技源集团",
+      "pullback_volume_ratio": 0.6503921204157573,
+      "amount_percentile": 82.5,
+      "turnover_percentile": null,
+      "volatility_percentile": 49.166666666666664,
+      "upper_shadow_frequency": 0.05,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_UNCONFIRMED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "603863.SH",
+      "stock_name": "松炀资源",
+      "pullback_volume_ratio": 0.6495584933930799,
+      "amount_percentile": 0.8333333333333334,
+      "turnover_percentile": null,
+      "volatility_percentile": 5.0,
+      "upper_shadow_frequency": 0.05,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_UNCONFIRMED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "603877.SH",
+      "stock_name": "太平鸟",
+      "pullback_volume_ratio": 0.6830109893614468,
+      "amount_percentile": 35.833333333333336,
+      "turnover_percentile": null,
+      "volatility_percentile": 25.0,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_UNCONFIRMED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "605086.SH",
+      "stock_name": "龙高股份",
+      "pullback_volume_ratio": 0.6097553807692587,
+      "amount_percentile": 9.166666666666666,
+      "turnover_percentile": null,
+      "volatility_percentile": 30.0,
+      "upper_shadow_frequency": 0.05,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_FAILED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "688271.SH",
+      "stock_name": "联影医疗",
+      "pullback_volume_ratio": 0.6736699861678473,
+      "amount_percentile": 17.5,
+      "turnover_percentile": null,
+      "volatility_percentile": 27.500000000000004,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_UNCONFIRMED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "688570.SH",
+      "stock_name": "天玛智控",
+      "pullback_volume_ratio": 0.5895493446617296,
+      "amount_percentile": 25.0,
+      "turnover_percentile": null,
+      "volatility_percentile": 9.166666666666666,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_UNCONFIRMED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    },
+    {
+      "ts_code": "920022.BJ",
+      "stock_name": "世昌股份",
+      "pullback_volume_ratio": 0.5792338941879623,
+      "amount_percentile": 13.333333333333334,
+      "turnover_percentile": null,
+      "volatility_percentile": 31.666666666666664,
+      "upper_shadow_frequency": 0.0,
+      "large_negative_frequency": 0.0,
+      "breakout_hold": "BREAKOUT_FAILED",
+      "catalyst_price_response": null,
+      "chip_health_feature_score": 9.0,
+      "chip_health_change": null,
+      "chip_health_change_1d": null,
+      "chip_health_change_5d": null,
+      "chip_health_change_20d": null,
+      "available_feature_count": 5,
+      "risk_flags": []
+    }
+  ],
+  "positive_catalyst_fatigue": [],
+  "next_day_plan_candidates": [
+    {
+      "ts_code": "600869.SH",
+      "stock_name": "远东股份",
+      "theme": "电网设备",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 86.45,
+      "why_watch": [
+        "主题客观排名第1",
+        "角色候选分86.45"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题",
+        "容量候选是否与主题高弹性股票同步走强"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "601126.SH",
+      "stock_name": "四方股份",
+      "theme": "电网设备",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 67.41,
+      "why_watch": [
+        "主题客观排名第1",
+        "角色候选分67.41"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题",
+        "容量候选是否与主题高弹性股票同步走强"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "603308.SH",
+      "stock_name": "应流股份",
+      "theme": "通用设备",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 84.55,
+      "why_watch": [
+        "主题客观排名第3",
+        "角色候选分84.55"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题",
+        "容量候选是否与主题高弹性股票同步走强"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600737.SH",
+      "stock_name": "中粮糖业",
+      "theme": "农产品加",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 85.1,
+      "why_watch": [
+        "主题客观排名第4",
+        "角色候选分85.10"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题",
+        "容量候选是否与主题高弹性股票同步走强"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "603186.SH",
+      "stock_name": "华正新材",
+      "theme": "元件",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 86.55,
+      "why_watch": [
+        "主题客观排名第6",
+        "角色候选分86.55"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题",
+        "容量候选是否与主题高弹性股票同步走强"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002579.SZ",
+      "stock_name": "中京电子",
+      "theme": "元件",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 51.4,
+      "why_watch": [
+        "主题客观排名第6",
+        "角色候选分51.40"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题",
+        "容量候选是否与主题高弹性股票同步走强"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002295.SZ",
+      "stock_name": "精艺股份",
+      "theme": "工业金属",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 73.0,
+      "why_watch": [
+        "主题客观排名第7",
+        "角色候选分73.00",
+        "筹码健康特征分8.0"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题",
+        "容量候选是否与主题高弹性股票同步走强"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600059.SH",
+      "stock_name": "古越龙山",
+      "theme": "非白酒",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 60.0,
+      "why_watch": [
+        "主题客观排名第8",
+        "角色候选分60.00",
+        "筹码健康特征分8.0"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题",
+        "容量候选是否与主题高弹性股票同步走强"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600255.SH",
+      "stock_name": "鑫科材料",
+      "theme": "金属新材",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 81.65,
+      "why_watch": [
+        "主题客观排名第9",
+        "角色候选分81.65",
+        "筹码健康特征分8.0"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题",
+        "容量候选是否与主题高弹性股票同步走强"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600403.SH",
+      "stock_name": "大有能源",
+      "theme": "煤炭开采",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 79.15,
+      "why_watch": [
+        "主题客观排名第11",
+        "角色候选分79.15"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题",
+        "容量候选是否与主题高弹性股票同步走强"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "000988.SZ",
+      "stock_name": "华工科技",
+      "theme": "自动化设",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 77.1,
+      "why_watch": [
+        "主题客观排名第12",
+        "角色候选分77.10",
+        "筹码健康特征分9.0"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题",
+        "容量候选是否与主题高弹性股票同步走强"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600596.SH",
+      "stock_name": "新安股份",
+      "theme": "农化制品",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 75.7,
+      "why_watch": [
+        "主题客观排名第13",
+        "角色候选分75.70",
+        "筹码健康特征分8.0"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题",
+        "容量候选是否与主题高弹性股票同步走强"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "603077.SH",
+      "stock_name": "和邦生物",
+      "theme": "农化制品",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 75.15,
+      "why_watch": [
+        "主题客观排名第13",
+        "角色候选分75.15",
+        "筹码健康特征分8.0"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题",
+        "容量候选是否与主题高弹性股票同步走强"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600227.SH",
+      "stock_name": "赤天化",
+      "theme": "农化制品",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 59.77,
+      "why_watch": [
+        "主题客观排名第13",
+        "角色候选分59.77"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题",
+        "容量候选是否与主题高弹性股票同步走强"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "603353.SH",
+      "stock_name": "和顺石油",
+      "theme": "炼化及贸",
+      "role_candidate": "CAPACITY_CANDIDATE",
+      "role_candidate_score": 61.35,
+      "why_watch": [
+        "主题客观排名第15",
+        "角色候选分61.35"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题",
+        "容量候选是否与主题高弹性股票同步走强"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "002121.SZ",
+      "stock_name": "科陆电子",
+      "theme": "电网设备",
+      "role_candidate": "TREND_LEADER_CANDIDATE",
+      "role_candidate_score": 44.0,
+      "why_watch": [
+        "主题客观排名第1",
+        "角色候选分44.00",
+        "筹码健康特征分8.0"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "920371.BJ",
+      "stock_name": "欧福蛋业",
+      "theme": "农产品加",
+      "role_candidate": "TREND_LEADER_CANDIDATE",
+      "role_candidate_score": 41.6,
+      "why_watch": [
+        "主题客观排名第4",
+        "角色候选分41.60"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "000679.SZ",
+      "stock_name": "大连友谊",
+      "theme": "一般零售",
+      "role_candidate": "TREND_LEADER_CANDIDATE",
+      "role_candidate_score": 41.6,
+      "why_watch": [
+        "主题客观排名第10",
+        "角色候选分41.60",
+        "筹码健康特征分8.0"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600348.SH",
+      "stock_name": "华阳股份",
+      "theme": "煤炭开采",
+      "role_candidate": "TREND_LEADER_CANDIDATE",
+      "role_candidate_score": 48.0,
+      "why_watch": [
+        "主题客观排名第11",
+        "角色候选分48.00"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题"
+      ],
+      "candidate_only": true
+    },
+    {
+      "ts_code": "600691.SH",
+      "stock_name": "潞化科技",
+      "theme": "农化制品",
+      "role_candidate": "TREND_LEADER_CANDIDATE",
+      "role_candidate_score": 48.0,
+      "why_watch": [
+        "主题客观排名第13",
+        "角色候选分48.00"
+      ],
+      "next_day_objective_checks": [
+        "主题成交额排名是否进入或保持前3",
+        "个股表现是否继续强于所属主题"
+      ],
+      "candidate_only": true
+    }
+  ],
+  "objective_factor_features": {
+    "announcement_category_counts": {
+      "other": 35,
+      "risk_warning": 14,
+      "order": 1,
+      "restructuring": 1,
+      "pledge": 1,
+      "shareholding_change": 3
+    },
+    "announcement_evidence_counts": {
+      "A": 55
+    },
+    "policy_agency_counts": {},
+    "policy_level_counts": {},
+    "objective_only": true
+  },
+  "previous_hypothesis_validation": {
+    "market_packet_context": {
+      "source_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\json\\reviews\\2026-09-02-dashboard-review.json",
+      "checks": [
+        {
+          "entity_type": "market",
+          "entity_key": "2026-09-02",
+          "check_type": "breadth_repair",
+          "description": "9月3日上涨家数能否回到3000家以上，确认是否从退潮转修复。"
+        },
+        {
+          "entity_type": "theme",
+          "entity_key": "军工装备",
+          "check_type": "theme_persistence",
+          "description": "军工装备能否继续出现连板晋级和板块扩散，而不是一日轮动。"
+        },
+        {
+          "entity_type": "theme",
+          "entity_key": "农业回落",
+          "check_type": "loss_feedback",
+          "description": "农业方向跌停股是否继续负反馈，判断亏钱效应是否扩散。"
+        }
+      ],
+      "changes_vs_previous_day": {
+        "new": [
+          "培育钻石"
+        ],
+        "strengthened": [
+          "军工装备",
+          "航空装备"
+        ],
+        "weakened": [
+          "农业回落"
+        ],
+        "expanded": [
+          "玻璃玻纤"
+        ],
+        "realized": [],
+        "invalidated": []
+      }
+    },
+    "prior_official_review": {
+      "status": "AVAILABLE",
+      "date": "2026-09-08",
+      "main_themes": [
+        {
+          "name": "农化制品",
+          "scores": {
+            "base_logic": {
+              "raw_score": null,
+              "available_score": 0,
+              "subcomponents": [],
+              "evidence": [],
+              "reason": "No same-date qualifying fundamental evidence; unavailable rather than inferred from price."
+            },
+            "realization": {
+              "raw_score": null,
+              "available_score": 0,
+              "subcomponents": [],
+              "evidence": [],
+              "reason": "No same-date qualifying order/earnings/price-cycle realization evidence."
+            },
+            "expectation_gap": {
+              "raw_score": null,
+              "available_score": 0,
+              "subcomponents": [],
+              "evidence": [],
+              "reason": "Exact previous formal review is unavailable, so no formal expectation baseline exists."
+            },
+            "continuity": {
+              "raw_score": 10.0,
+              "available_score": 10,
+              "subcomponents": [],
+              "evidence": [],
+              "reason": "Objective short-window continuity support from formal_review_support."
+            },
+            "market_confirmation": {
+              "raw_score": 10.0,
+              "available_score": 10,
+              "subcomponents": [],
+              "evidence": [],
+              "reason": "Objective theme return/breadth/limit-up/liquidity confirmation."
+            },
+            "risk_deduction": {
+              "raw_score": 0.0,
+              "available_score": 8,
+              "subcomponents": [],
+              "evidence": [],
+              "reason": "No explicit supported deduction is applied; unavailable risks are not assumed absent."
+            },
+            "total_score": 78.0,
+            "rating": "A"
+          },
+          "stage": "VALIDATION",
+          "rank": 1,
+          "drivers": [
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 37,
+              "name": "龙头效应与补涨",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 38,
+              "name": "风格切换/高低切",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 38,
+              "name": "风格切换/高低切",
+              "evidence_level": "C"
+            }
+          ],
+          "risks": [
+            "No same-date qualifying fundamental factor confirmed; classification is market-structure-led.",
+            "Parent chemical-products theme overlaps and is not double-counted as a separate formal mainline."
+          ]
+        },
+        {
+          "name": "出版",
+          "scores": {
+            "base_logic": {
+              "raw_score": null,
+              "available_score": 0,
+              "subcomponents": [],
+              "evidence": [],
+              "reason": "No same-date qualifying fundamental evidence; unavailable rather than inferred from price."
+            },
+            "realization": {
+              "raw_score": null,
+              "available_score": 0,
+              "subcomponents": [],
+              "evidence": [],
+              "reason": "No same-date qualifying order/earnings/price-cycle realization evidence."
+            },
+            "expectation_gap": {
+              "raw_score": null,
+              "available_score": 0,
+              "subcomponents": [],
+              "evidence": [],
+              "reason": "Exact previous formal review is unavailable, so no formal expectation baseline exists."
+            },
+            "continuity": {
+              "raw_score": 8.2422,
+              "available_score": 10,
+              "subcomponents": [],
+              "evidence": [],
+              "reason": "Objective short-window continuity support from formal_review_support."
+            },
+            "market_confirmation": {
+              "raw_score": 10.0,
+              "available_score": 10,
+              "subcomponents": [],
+              "evidence": [],
+              "reason": "Objective theme return/breadth/limit-up/liquidity confirmation."
+            },
+            "risk_deduction": {
+              "raw_score": 0.0,
+              "available_score": 8,
+              "subcomponents": [],
+              "evidence": [],
+              "reason": "No explicit supported deduction is applied; unavailable risks are not assumed absent."
+            },
+            "total_score": 74.0,
+            "rating": "B"
+          },
+          "stage": "MAIN_UP",
+          "rank": 2,
+          "drivers": [
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 36,
+              "name": "筹码出清/突破",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 36,
+              "name": "筹码出清/突破",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 38,
+              "name": "风格切换/高低切",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 38,
+              "name": "风格切换/高低切",
+              "evidence_level": "C"
+            }
+          ],
+          "risks": [
+            "No same-date qualifying fundamental factor confirmed; current strength is primarily technical/market-structure evidence."
+          ]
+        },
+        {
+          "name": "农产品加工",
+          "scores": {
+            "base_logic": {
+              "raw_score": null,
+              "available_score": 0,
+              "subcomponents": [],
+              "evidence": [],
+              "reason": "No same-date qualifying fundamental evidence; unavailable rather than inferred from price."
+            },
+            "realization": {
+              "raw_score": null,
+              "available_score": 0,
+              "subcomponents": [],
+              "evidence": [],
+              "reason": "No same-date qualifying order/earnings/price-cycle realization evidence."
+            },
+            "expectation_gap": {
+              "raw_score": null,
+              "available_score": 0,
+              "subcomponents": [],
+              "evidence": [],
+              "reason": "Exact previous formal review is unavailable, so no formal expectation baseline exists."
+            },
+            "continuity": {
+              "raw_score": 10.0,
+              "available_score": 10,
+              "subcomponents": [],
+              "evidence": [],
+              "reason": "Objective short-window continuity support from formal_review_support."
+            },
+            "market_confirmation": {
+              "raw_score": 10.0,
+              "available_score": 10,
+              "subcomponents": [],
+              "evidence": [],
+              "reason": "Objective theme return/breadth/limit-up/liquidity confirmation."
+            },
+            "risk_deduction": {
+              "raw_score": 0.0,
+              "available_score": 8,
+              "subcomponents": [],
+              "evidence": [],
+              "reason": "No explicit supported deduction is applied; unavailable risks are not assumed absent."
+            },
+            "total_score": 72.0,
+            "rating": "B"
+          },
+          "stage": "VALIDATION",
+          "rank": 3,
+          "drivers": [
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 36,
+              "name": "筹码出清/突破",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 37,
+              "name": "龙头效应与补涨",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 38,
+              "name": "风格切换/高低切",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 38,
+              "name": "风格切换/高低切",
+              "evidence_level": "C"
+            }
+          ],
+          "risks": [
+            "No same-date qualifying fundamental factor confirmed; current thesis is market-structure-led."
+          ]
+        }
+      ],
+      "stocks": [
+        {
+          "code": "002470.SZ",
+          "name": "金正大",
+          "theme": "农化制品",
+          "role": "leader",
+          "drivers": [
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 37,
+              "name": "龙头效应与补涨",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 38,
+              "name": "风格切换/高低切",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 38,
+              "name": "风格切换/高低切",
+              "evidence_level": "C"
+            }
+          ]
+        },
+        {
+          "code": "600227.SH",
+          "name": "赤天化",
+          "theme": "农化制品",
+          "role": "capacity",
+          "drivers": [
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 37,
+              "name": "龙头效应与补涨",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 38,
+              "name": "风格切换/高低切",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 38,
+              "name": "风格切换/高低切",
+              "evidence_level": "C"
+            }
+          ]
+        },
+        {
+          "code": "603077.SH",
+          "name": "和邦生物",
+          "theme": "农化制品",
+          "role": "trend_core",
+          "drivers": [
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 37,
+              "name": "龙头效应与补涨",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 38,
+              "name": "风格切换/高低切",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 38,
+              "name": "风格切换/高低切",
+              "evidence_level": "C"
+            }
+          ]
+        },
+        {
+          "code": "300788.SZ",
+          "name": "中信出版",
+          "theme": "出版",
+          "role": "leader",
+          "drivers": [
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 36,
+              "name": "筹码出清/突破",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 36,
+              "name": "筹码出清/突破",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 38,
+              "name": "风格切换/高低切",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 38,
+              "name": "风格切换/高低切",
+              "evidence_level": "C"
+            }
+          ]
+        },
+        {
+          "code": "601999.SH",
+          "name": "出版传媒",
+          "theme": "出版",
+          "role": "capacity",
+          "drivers": [
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 36,
+              "name": "筹码出清/突破",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 36,
+              "name": "筹码出清/突破",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 38,
+              "name": "风格切换/高低切",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 38,
+              "name": "风格切换/高低切",
+              "evidence_level": "C"
+            }
+          ]
+        },
+        {
+          "code": "920371.BJ",
+          "name": "欧福蛋业",
+          "theme": "农产品加工",
+          "role": "leader",
+          "drivers": [
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 36,
+              "name": "筹码出清/突破",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 37,
+              "name": "龙头效应与补涨",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 38,
+              "name": "风格切换/高低切",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 38,
+              "name": "风格切换/高低切",
+              "evidence_level": "C"
+            }
+          ]
+        },
+        {
+          "code": "600127.SH",
+          "name": "金健米业",
+          "theme": "农产品加工",
+          "role": "capacity",
+          "drivers": [
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 36,
+              "name": "筹码出清/突破",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 37,
+              "name": "龙头效应与补涨",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 38,
+              "name": "风格切换/高低切",
+              "evidence_level": "C"
+            },
+            {
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_type": "objective_calculation",
+              "source_date": "2026-09-08",
+              "tier": 3,
+              "confidence": "MEDIUM",
+              "code": 38,
+              "name": "风格切换/高低切",
+              "evidence_level": "C"
+            }
+          ]
+        }
+      ],
+      "tomorrow_checks": [
+        {
+          "entity_type": "theme",
+          "entity_key": "农化制品",
+          "description": "主题成交额与广度继续保持前列",
+          "validation_point": "主题成交额与广度继续保持前列",
+          "strengthening_condition": "竞价板块正向广度>=60%，容量股同步不掉队",
+          "weakening_condition": "板块广度下降或仅高标独强",
+          "falsification_condition": "龙头与容量同时转弱且板块广度跌破40%"
+        },
+        {
+          "entity_type": "theme",
+          "entity_key": "农化制品",
+          "description": "容量与弹性共振",
+          "validation_point": "容量与弹性共振",
+          "strengthening_condition": "赤天化竞价量能达到自身历史60分位以上，且金正大保持板块领先",
+          "weakening_condition": "仅金正大高开而赤天化/和邦生物明显偏弱",
+          "falsification_condition": "容量与趋势核心同步低于板块且开盘后无法修复"
+        },
+        {
+          "entity_type": "theme",
+          "entity_key": "出版",
+          "description": "主升结构是否由容量确认",
+          "validation_point": "主升结构是否由容量确认",
+          "strengthening_condition": "出版传媒竞价量能达到历史60分位以上且板块正向广度>=60%",
+          "weakening_condition": "中信出版独强、出版传媒和板块广度明显走弱",
+          "falsification_condition": "龙头与容量同步转弱且突破结构失守"
+        },
+        {
+          "entity_type": "theme",
+          "entity_key": "出版",
+          "description": "突破结构延续",
+          "validation_point": "突破结构延续",
+          "strengthening_condition": "前一日确认的高量突破个股竞价/开盘后不出现集体回落",
+          "weakening_condition": "突破股分化但容量仍稳",
+          "falsification_condition": "突破股与容量同时失守"
+        },
+        {
+          "entity_type": "theme",
+          "entity_key": "农产品加工",
+          "description": "龙头与容量共振",
+          "validation_point": "龙头与容量共振",
+          "strengthening_condition": "欧福蛋业保持相对强势，金健米业竞价量能>=自身历史60分位",
+          "weakening_condition": "弹性股独强、金健米业明显偏弱",
+          "falsification_condition": "欧福蛋业与金健米业同时转弱且板块广度跌破40%"
+        },
+        {
+          "entity_type": "theme",
+          "entity_key": "农产品加工",
+          "description": "板块广度持续",
+          "validation_point": "板块广度持续",
+          "strengthening_condition": "竞价板块正向广度>=60%",
+          "weakening_condition": "板块广度40%-60%",
+          "falsification_condition": "板块广度<40%且核心同步弱"
+        },
+        {
+          "id": "agro_breadth_0909",
+          "entity_type": "theme",
+          "entity_key": "农化制品",
+          "metric": "sector_positive_ratio",
+          "operator": ">=",
+          "threshold": 0.6,
+          "time_window": "auction",
+          "description": "农化制品竞价正向广度至少60%"
+        },
+        {
+          "id": "agro_capacity_0909",
+          "entity_type": "stock",
+          "entity_key": "600227.SH",
+          "metric": "auction_amount_percentile",
+          "operator": ">=",
+          "threshold": 60,
+          "time_window": "auction",
+          "description": "赤天化竞价金额达到自身历史60分位以上"
+        },
+        {
+          "id": "publishing_breadth_0909",
+          "entity_type": "theme",
+          "entity_key": "出版",
+          "metric": "sector_positive_ratio",
+          "operator": ">=",
+          "threshold": 0.6,
+          "time_window": "auction",
+          "description": "出版板块竞价正向广度至少60%"
+        },
+        {
+          "id": "publishing_capacity_0909",
+          "entity_type": "stock",
+          "entity_key": "601999.SH",
+          "metric": "auction_amount_percentile",
+          "operator": ">=",
+          "threshold": 60,
+          "time_window": "auction",
+          "description": "出版传媒竞价金额达到自身历史60分位以上"
+        },
+        {
+          "id": "food_breadth_0909",
+          "entity_type": "theme",
+          "entity_key": "农产品加工",
+          "metric": "sector_positive_ratio",
+          "operator": ">=",
+          "threshold": 0.6,
+          "time_window": "auction",
+          "description": "农产品加工竞价正向广度至少60%"
+        },
+        {
+          "id": "food_capacity_0909",
+          "entity_type": "stock",
+          "entity_key": "600127.SH",
+          "metric": "auction_amount_percentile",
+          "operator": ">=",
+          "threshold": 60,
+          "time_window": "auction",
+          "description": "金健米业竞价金额达到自身历史60分位以上"
+        }
+      ]
+    },
+    "auction_previous_mainline_validation": null,
+    "auction_transition_status": null
+  },
+  "risk_and_falsification_candidates": [
+    {
+      "entity": "000978",
+      "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+      "fact": "股票交易异常波动公告",
+      "evidence_level": "A",
+      "candidate_only": true
+    },
+    {
+      "entity": "002470",
+      "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+      "fact": "股票交易异常波动的公告",
+      "evidence_level": "A",
+      "candidate_only": true
+    },
+    {
+      "entity": "002579",
+      "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+      "fact": "股票交易异常波动公告",
+      "evidence_level": "A",
+      "candidate_only": true
+    },
+    {
+      "entity": "600108",
+      "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+      "fact": "亚盛集团股票交易异常波动公告",
+      "evidence_level": "A",
+      "candidate_only": true
+    },
+    {
+      "entity": "600354",
+      "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+      "fact": "甘肃省敦煌种业集团股份有限公司股票交易风险提示公告",
+      "evidence_level": "A",
+      "candidate_only": true
+    },
+    {
+      "entity": "600403",
+      "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+      "fact": "河南大有能源股份有限公司关于控股股东部分股份解除质押的公告",
+      "evidence_level": "A",
+      "candidate_only": true
+    },
+    {
+      "entity": "600865",
+      "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+      "fact": "百大集团股份有限公司股票交易异常波动公告",
+      "evidence_level": "A",
+      "candidate_only": true
+    },
+    {
+      "entity": "601595",
+      "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+      "fact": "关于上海电影股份有限公司股票交易异常波动询问函的回复",
+      "evidence_level": "A",
+      "candidate_only": true
+    },
+    {
+      "entity": "601595",
+      "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+      "fact": "关于股票交易异常波动的公告",
+      "evidence_level": "A",
+      "candidate_only": true
+    },
+    {
+      "entity": "601949",
+      "type": "OFFICIAL_RISK_ANNOUNCEMENT",
+      "fact": "中国出版传媒股份有限公司股票交易风险提示公告",
+      "evidence_level": "A",
+      "candidate_only": true
+    },
+    {
+      "entity": "920870.BJ",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的0.36倍",
+        "最近回调/上涨段成交额比0.44"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "301263.SZ",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的0.44倍",
+        "最近回调/上涨段成交额比0.48"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "688118.SH",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的0.62倍",
+        "最近回调/上涨段成交额比0.59"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "688095.SH",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的0.53倍",
+        "最近回调/上涨段成交额比0.60"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "603863.SH",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的0.51倍",
+        "最近回调/上涨段成交额比0.65"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "002199.SZ",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的0.61倍",
+        "最近回调/上涨段成交额比0.59"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "300251.SZ",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的0.89倍",
+        "最近回调/上涨段成交额比0.68"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "603589.SH",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的2.54倍"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "300058.SZ",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的0.65倍",
+        "最近回调/上涨段成交额比0.50"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    },
+    {
+      "entity": "603360.SH",
+      "type": "TREND_BROKEN",
+      "fact": [
+        "当日成交额为此前20日均值的1.07倍",
+        "最近回调/上涨段成交额比0.64"
+      ],
+      "evidence_level": "OBJECTIVE_MARKET_DATA",
+      "candidate_only": true
+    }
+  ],
+  "historical_changes": {
+    "cycle_feature_change_1d": {
+      "new_theme_count": 0.0,
+      "strengthening_theme_count": -13.0,
+      "weakening_theme_count": 8.0,
+      "limit_up_breadth": 0.5392083454457008,
+      "continuous_board_height": 1.0,
+      "promotion_rate": null,
+      "previous_limit_feedback": -1.78,
+      "high_level_stock_return": -0.029094696044921875,
+      "mid_level_stock_return": -0.014006319500150965,
+      "low_level_first_board_count": -22.0,
+      "failed_limit_rate": 2.363636363636367,
+      "large_loss_count": null
+    },
+    "cycle_feature_change_5d": {
+      "new_theme_count": -11.0,
+      "strengthening_theme_count": 5.0,
+      "weakening_theme_count": 15.0,
+      "limit_up_breadth": -0.698846902610692,
+      "continuous_board_height": 1.0,
+      "promotion_rate": null,
+      "previous_limit_feedback": 1.87,
+      "high_level_stock_return": -0.03956747055053711,
+      "mid_level_stock_return": -0.02583416406210226,
+      "low_level_first_board_count": -6.0,
+      "failed_limit_rate": 13.611940298507463,
+      "large_loss_count": null
+    },
+    "cycle_feature_change_20d": {
+      "new_theme_count": 0.0,
+      "strengthening_theme_count": -79.0,
+      "weakening_theme_count": 23.0,
+      "limit_up_breadth": 0.1562054393196961,
+      "continuous_board_height": -2.0,
+      "promotion_rate": null,
+      "previous_limit_feedback": null,
+      "high_level_stock_return": null,
+      "mid_level_stock_return": null,
+      "low_level_first_board_count": -71.0,
+      "failed_limit_rate": null,
+      "large_loss_count": null
+    },
+    "market_operability_change_1d": -2.9200000000000017,
+    "market_operability_change_5d": 3.6199999999999974,
+    "market_operability_change_20d": 8.589999999999996
+  },
+  "data_quality": {
+    "status": "PARTIAL",
+    "checks": [
+      {
+        "name": "daily_market_coverage",
+        "actual": 5550,
+        "threshold": 5000,
+        "passed": true
+      },
+      {
+        "name": "market_packet_source",
+        "actual": "MARKET_PACKET",
+        "threshold": "MARKET_PACKET",
+        "passed": true,
+        "reason": ""
+      },
+      {
+        "name": "theme_feature_count",
+        "actual": 201,
+        "threshold": 10,
+        "passed": true
+      },
+      {
+        "name": "role_candidate_count",
+        "actual": 93,
+        "threshold": 1,
+        "passed": true
+      },
+      {
+        "name": "theme_return_coverage",
+        "actual": 1.0,
+        "threshold": 0.9,
+        "passed": true,
+        "reason": ""
+      },
+      {
+        "name": "market_cap_sample_count",
+        "actual": 134,
+        "threshold": 100,
+        "passed": true
+      },
+      {
+        "name": "turnover_sample_count",
+        "actual": 156,
+        "threshold": 100,
+        "passed": true
+      },
+      {
+        "name": "inflection_link",
+        "actual": 5506,
+        "threshold": 1,
+        "passed": true,
+        "reason": ""
+      },
+      {
+        "name": "auction_link",
+        "actual": 0,
+        "threshold": 1,
+        "passed": false,
+        "reason": "auction facts are optional outside their available date"
+      },
+      {
+        "name": "history_1d",
+        "actual": true,
+        "threshold": true,
+        "passed": true
+      },
+      {
+        "name": "history_5d",
+        "actual": true,
+        "threshold": true,
+        "passed": true
+      },
+      {
+        "name": "history_20d",
+        "actual": true,
+        "threshold": true,
+        "passed": true
+      },
+      {
+        "name": "catalyst_response_history",
+        "actual": "UNAVAILABLE",
+        "threshold": "AVAILABLE",
+        "passed": false,
+        "reason": "two comparable catalyst response windows are not available"
+      }
+    ],
+    "known_gaps": [
+      "historical theme snapshots are unavailable before Market Packet archives; industry aggregation is used as a labeled proxy",
+      "full-market market-cap and turnover-rate coverage is incomplete",
+      "catalyst fatigue remains unavailable until two comparable positive events have complete forward response windows"
+    ]
+  }
+}

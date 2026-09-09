@@ -42,7 +42,9 @@ class CapitalPreferencePipeline:
         intelligence, intelligence_path = self._required("review_intelligence", target)
         market, market_path = self._optional("market_packets", target)
         inflection, inflection_path = self._optional("inflection", target)
-        auction, auction_path = self._optional("auction_packets", target)
+        from src.auction.production import optional_review_input
+        accepted_auction, _ = optional_review_input(self.root, target)
+        auction, auction_path = accepted_auction.get("packet", {}), accepted_auction.get("path")
         official, official_path = self._optional("official_reviews", target)
         daily = (
             daily_history

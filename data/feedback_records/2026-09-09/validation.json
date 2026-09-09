@@ -1,0 +1,204 @@
+{
+  "meta": {
+    "schema_version": "integrated_validation.1",
+    "prediction_date": "2026-09-09",
+    "validation_date": null,
+    "status": "WAITING_FOR_MARKET_DATA",
+    "available_horizons": [],
+    "source_review": "review_context:544e1d931e5d27dc",
+    "hypothesis_kind": "OBJECTIVE_SUPPORT_HYPOTHESIS",
+    "formal_hit_rate_eligible": false
+  },
+  "actual_market_state": {
+    "return_1d": null,
+    "return_5d": null,
+    "return_10d": null,
+    "return_20d": null
+  },
+  "actual_theme_result": [
+    {
+      "theme": "电网设备",
+      "candidate_codes": [
+        "002121.SZ",
+        "600869.SH",
+        "601126.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "汽车零部",
+      "candidate_codes": [
+        "600698.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "通用设备",
+      "candidate_codes": [
+        "002046.SZ",
+        "603308.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "农产品加",
+      "candidate_codes": [
+        "000019.SZ",
+        "000930.SZ",
+        "600737.SH",
+        "920371.BJ"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "旅游及景",
+      "candidate_codes": [
+        "000978.SZ"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "元件",
+      "candidate_codes": [
+        "002579.SZ",
+        "603115.SH",
+        "603186.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "工业金属",
+      "candidate_codes": [
+        "002295.SZ"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "非白酒",
+      "candidate_codes": [
+        "600059.SH",
+        "601579.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "金属新材",
+      "candidate_codes": [
+        "600255.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "一般零售",
+      "candidate_codes": [
+        "000679.SZ",
+        "000759.SZ",
+        "600865.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "煤炭开采",
+      "candidate_codes": [
+        "600121.SH",
+        "600348.SH",
+        "600403.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "自动化设",
+      "candidate_codes": [
+        "000988.SZ"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "农化制品",
+      "candidate_codes": [
+        "000912.SZ",
+        "600227.SH",
+        "600596.SH",
+        "600691.SH",
+        "603077.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "渔业",
+      "candidate_codes": [
+        "000798.SZ",
+        "002086.SZ"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "炼化及贸",
+      "candidate_codes": [
+        "002377.SZ",
+        "603353.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    }
+  ],
+  "theme_return_5d": {},
+  "theme_return_10d": {},
+  "theme_return_20d": {},
+  "leader_result": [],
+  "inflection_result": [],
+  "auction_result": {
+    "source_validation": [],
+    "stock_results": []
+  },
+  "stock_result": [],
+  "max_gain": null,
+  "max_drawdown": null,
+  "error_type": [
+    "DATA_LIMITATION"
+  ]
+}

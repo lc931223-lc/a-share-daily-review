@@ -1,0 +1,11 @@
+{
+  "trade_date": "2026-09-09",
+  "objective_support_path": "data/formal_review_support/2026-09-09.json",
+  "review_context_path": "data/review_context/2026-09-09.json",
+  "status": "WAITING_FOR_CHATGPT_REVIEW",
+  "official_review_required": true,
+  "official_review_path": null,
+  "validation_status": "PENDING",
+  "chatgpt_review_input_path": "data/chatgpt_review_inputs/2026-09-09.json",
+  "chatgpt_review_input_compact_path": "data/chatgpt_review_inputs/2026-09-09_compact.json"
+}

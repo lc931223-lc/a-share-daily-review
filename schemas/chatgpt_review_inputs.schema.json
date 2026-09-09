@@ -534,6 +534,7 @@
         "required": [
           "theme_name",
           "return",
+          "theme_type",
           "breadth",
           "limit_up_count",
           "failed_limit_count",
@@ -560,10 +561,10 @@
             "type": "string"
           },
           "return": {
-            "type": [
-              "number",
-              "null"
-            ]
+            "type": ["number", "null"]
+          },
+          "theme_type": {
+            "enum": ["INDUSTRY", "CONCEPT", "EVENT", "STYLE_TAG", "OWNERSHIP_TAG", "FINANCING_TAG", "PERFORMANCE_TAG", "INDEX_TAG", "OTHER"]
           },
           "breadth": {
             "type": [
@@ -1479,6 +1480,7 @@
               "condition_type",
               "condition",
               "metric",
+              "metric_name",
               "operator",
               "actual_value",
               "threshold",
@@ -1508,6 +1510,9 @@
                 ]
               },
               "metric": {
+                "type": ["string", "null"]
+              },
+              "metric_name": {
                 "type": [
                   "string",
                   "null"

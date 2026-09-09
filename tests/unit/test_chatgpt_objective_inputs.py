@@ -54,7 +54,7 @@ def root(tmp_path):
     setup(tmp_path)
     market = dict(
         meta=dict(trade_date=str(DAY)),
-        data_quality=dict(status="PARTIAL"),
+        data_quality=dict(status="PARTIAL", checks=[{"item": "全市场日线", "status": "PASS"}]),
         market_overview=dict(
             total_market_turnover=300,
             rise_count=4,

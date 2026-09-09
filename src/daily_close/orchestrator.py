@@ -138,6 +138,13 @@ class DailyCloseOrchestrator:
                 manifest["failed_step"] = name
                 return self._finish(manifest)
 
+        from src.formal_review.delivery import update_queue
+        try:
+            manifest["formal_review_queue"] = update_queue(self.root, str(target))
+        except Exception as exc:
+            manifest.update(status="FAILED", failed_step="chatgpt_review_inputs")
+            manifest["blockers"].append({"step": "chatgpt_review_inputs", "error": redact(f"{type(exc).__name__}: {exc}")[:500]})
+            return self._finish(manifest)
         manifest["steps"]["auction"] = self._optional_artifact("auction_packets", target)
         feedback = self._execute_feedback(target)
         manifest["steps"]["feedback"] = feedback
@@ -346,6 +353,11 @@ class DailyCloseOrchestrator:
                 )
 
     def _optional_artifact(self, folder: str, target: date) -> dict[str, Any]:
+        if folder == "auction_packets":
+            from src.auction.production import optional_review_input
+            accepted, health = optional_review_input(self.root, target)
+            if not accepted:
+                return self._step_record("UNAVAILABLE", None, target, None, self.now(), 0, health["reason"], False, None) | {"acceptance_checks": health["checks"]}
         path = self.root / "data" / folder / f"{target.isoformat()}.json"
         if not path.is_file():
             return self._step_record("UNAVAILABLE", None, target, None, self.now(), 0, None, False, None)
@@ -366,7 +378,7 @@ class DailyCloseOrchestrator:
 
     def _finish(self, manifest: dict[str, Any]) -> dict[str, Any]:
         from src.formal_review.delivery import update_queue
-        if "formal_review_support" in manifest["steps"]:
+        if not manifest.get("formal_review_queue") and manifest.get("failed_step") != "chatgpt_review_inputs" and all(manifest["steps"].get(name, {}).get("status") in {"PASS", "PARTIAL"} for name in ARTIFACTS):
             try:
                 manifest["formal_review_queue"] = update_queue(self.root, manifest["trade_date"] if "trade_date" in manifest else manifest["date"])
             except Exception as exc:
@@ -396,6 +408,16 @@ class DailyCloseOrchestrator:
         manifest["retry_count"] = sum(step.get("retry_count", 0) for step in manifest["steps"].values())
         if manifest["failed_step"] is None:
             manifest["failed_step"] = next((name for name, step in manifest["steps"].items() if step["status"] in {"FAILED", "BLOCKED"}), None)
+        manifest["started_at"] = manifest["pipeline_started_at"]
+        manifest["completed_at"] = manifest["pipeline_completed_at"]
+        manifest["blocker"] = [row.get("error") for row in manifest["blockers"]]
+        manifest["source_health"] = manifest["source_availability"]
+        manifest["upstream_available"] = [name for name in ARTIFACTS if manifest["steps"].get(name, {}).get("status") in {"PASS", "PARTIAL"}]
+        manifest["upstream_missing"] = [name for name in ARTIFACTS if name not in manifest["upstream_available"]]
+        if not manifest.get("formal_review_queue", {}).get("chatgpt_review_input_path"):
+            manifest["upstream_missing"].append("chatgpt_review_inputs")
+        else:
+            manifest["upstream_available"].append("chatgpt_review_inputs")
         manifest = redact(manifest)
         schema = json.loads(
             (self.root / "schemas" / "daily_run_manifest.schema.json").read_text(encoding="utf-8")
@@ -419,7 +441,7 @@ class DailyCloseOrchestrator:
             packet = json.loads(path.read_text(encoding="utf-8"))
             if _payload_date(packet) != str(target):
                 return []
-            return [{"dataset": row.get("dataset"), "status": row.get("status"), "data_date": row.get("data_date")} for row in (packet.get("data_quality") or {}).get("sources", [])]
+            return [{"dataset": row.get("dataset"), "status": row.get("quality") or row.get("status"), "data_date": row.get("data_date")} for row in (packet.get("data_quality") or {}).get("sources", [])]
         except (OSError, ValueError):
             return []
 
