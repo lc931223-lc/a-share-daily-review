@@ -2,7 +2,7 @@
   "meta": {
     "schema_version": "market_packet.1",
     "trade_date": "2026-09-09",
-    "generated_at": "2026-09-09T14:33:25.277697Z",
+    "generated_at": "2026-09-09T15:05:58.370521Z",
     "generated_by": "codex_market_packet_phase1",
     "codex_role": "data_engineer_data_validator_research_clerk",
     "final_judgement_owner": "chatgpt"
@@ -80,9 +80,9 @@
     },
     "sh_sz_turnover": null,
     "total_market_turnover": 1873067039783.31,
-    "previous_turnover": 2051048681166.63,
-    "turnover_delta": -177981641383.32,
-    "turnover_delta_pct": -8.68,
+    "previous_turnover": 1978217126610.82,
+    "turnover_delta": -105150086827.51,
+    "turnover_delta_pct": -5.32,
     "rise_count": 1794,
     "fall_count": 3642,
     "flat_count": 114,
@@ -4457,7 +4457,7 @@
       {
         "source": "tushare.stock_basic",
         "dataset": "tushare_stock_basic",
-        "quality": "PASS"
+        "quality": "FAIL"
       },
       {
         "source": "tushare.daily",
@@ -4480,7 +4480,7 @@
         "quality": "UNAVAILABLE"
       },
       {
-        "source": "tushare.daily",
+        "source": "akshare.stock_zh_a_hist; fallback akshare.stock_zh_a_hist_tx/stock_zh_a_daily",
         "dataset": "stock_top_ohlcv",
         "quality": "PASS"
       },

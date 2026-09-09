@@ -11,19 +11,19 @@
       "status": "AVAILABLE",
       "data_date": "2026-09-09",
       "quality_status": "PARTIAL",
-      "sha256": "98f11703f9c625cadbc64427c612ff892fcdc6da3cdf6e63a15701fcd5bf097f"
+      "sha256": "4ee1b9cb56bfae32fca15ee8c468fd805a27a3974417eee97cfca383e6703418"
     },
     "review_intelligence": {
       "status": "AVAILABLE",
       "data_date": "2026-09-09",
       "quality_status": "PARTIAL",
-      "sha256": "393002174b0345c5c0b5152c094f11be3fae76e4ea352466c19b3a8ee97ca730"
+      "sha256": "4a1c1a3928ec276079c40f0a2f42667f970ec3ee17853302379f08de51a4016a"
     },
     "inflection_scanner": {
       "status": "AVAILABLE",
       "data_date": "2026-09-09",
       "quality_status": "PARTIAL",
-      "sha256": "d91367753e38f06aec150c1d30aeec6f5d920e910a29e52b7370d629d3deb735"
+      "sha256": "1d614ac3f4b157e65175823ae227c2b411e94fae7f3b1dd722f7d025325febb6"
     },
     "prior_official_review": {
       "status": "AVAILABLE",
@@ -34,7 +34,7 @@
       "status": "AVAILABLE",
       "data_date": "2026-09-09",
       "quality_status": "PARTIAL",
-      "sha256": "4cd64e319d71b0f9002f8ab29f006b2134d0b8b084e0af5fb611a325e7ffb92e"
+      "sha256": "0890198eef7514787ec0eb412af8c5d4c39bf75f9609967821098e3b048535c8"
     },
     "auction_packet": {
       "status": "UNAVAILABLE",
@@ -45,7 +45,7 @@
   },
   "market_environment": {
     "total_turnover": 1873067039783.31,
-    "turnover_change_pct": -8.68,
+    "turnover_change_pct": -5.32,
     "rise_count": 1794,
     "fall_count": 3642,
     "flat_count": 114,
@@ -63,10 +63,10 @@
     "promotion_rate": null,
     "large_loss_count": null,
     "high_level_loss_count": null,
-    "market_operability_score": 46.91,
+    "market_operability_score": 48.59,
     "market_operability_available_max": 90,
     "operability_components": {
-      "liquidity": 3.66,
+      "liquidity": 5.34,
       "breadth": 4.95,
       "limit_structure": 11.32,
       "previous_limit_feedback": 10.28,
@@ -1388,9 +1388,9 @@
         "failed_limit_rate": null,
         "large_loss_count": null
       },
-      "market_operability_change_1d": -2.9200000000000017,
-      "market_operability_change_5d": 3.6199999999999974,
-      "market_operability_change_20d": 8.589999999999996
+      "market_operability_change_1d": -1.2399999999999949,
+      "market_operability_change_5d": 5.300000000000004,
+      "market_operability_change_20d": 10.270000000000003
     }
   },
   "core_theme_roles": [

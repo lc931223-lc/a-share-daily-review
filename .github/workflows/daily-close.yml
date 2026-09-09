@@ -40,6 +40,15 @@ jobs:
           cache: pip
       - name: Install dependencies
         run: pip install -r requirements.txt
+      - name: Credential presence (no secret values)
+        shell: bash
+        run: |
+          if [[ -n "${TUSHARE_TOKEN//[[:space:]]/}" ]]; then
+            echo "TUSHARE_TOKEN = AVAILABLE"
+          else
+            echo "TUSHARE_TOKEN = MISSING"
+          fi
+          # The CLI owns blocking and persistence of the failure manifest.
       - name: Run close pipeline with retries
         id: close
         shell: bash

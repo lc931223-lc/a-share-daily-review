@@ -98,8 +98,8 @@ class MarketPacketCollector:
         self.refresh_datasets = {item.strip().lower() for item in (refresh_datasets or set())}
         self.as_of_time = as_of_time
         self.source_router = SourceRouter()
-        self.fact_store = FactStore(fact_root)
-        self.reference_root = reference_root or PROJECT_ROOT / "data" / "reference"
+        self.fact_store = FactStore(fact_root or (raw_root / "facts" if raw_root else None))
+        self.reference_root = reference_root or (raw_root / "reference" if raw_root else PROJECT_ROOT / "data" / "reference")
 
     def _should_refresh(self, *names: str) -> bool:
         return self.refresh or any(name.lower() in self.refresh_datasets for name in names)
@@ -233,7 +233,10 @@ class MarketPacketCollector:
         pro = ts.pro_api(token)
         cal_start = trade_date - timedelta(days=14)
         datasets["tushare_trade_cal"] = self._collect_tushare_trade_cal(pro, trade_date)
-        previous_trade_date = _previous_trade_date(datasets["tushare_trade_cal"].rows, trade_date)
+        from src.market_packet.trading_calendar import load_trading_calendar
+
+        calendar = load_trading_calendar(trade_date, cache_root=self.reference_root)
+        previous_trade_date = max((row.cal_date for row in calendar if row.is_open and row.cal_date < trade_date), default=None)
         datasets["tushare_stock_basic"] = self._collect_tushare_stock_basic(pro, trade_date)
         datasets["tushare_daily_all"] = self._collect_frame(
             "tushare_daily_all",
@@ -282,6 +285,11 @@ class MarketPacketCollector:
 
     def _collect_tushare_trade_cal(self, pro, trade_date: date) -> CollectedDataset:
         name = "tushare_trade_cal"
+        shared_path = self.reference_root / f"trade_calendar_{trade_date.year}.json"
+        if shared_path.exists() and not self.refresh:
+            payload = json.loads(shared_path.read_text(encoding="utf-8"))
+            if any(str(row.get("cal_date")) == _compact(trade_date) for row in payload.get("rows", [])):
+                return self._dataset_from_cache(name, payload.get("source", "trading_calendar"), trade_date, "historical", shared_path, payload)
         ref_path = self.reference_root / f"{name}_{trade_date.year}.json"
         if ref_path.exists() and not self.refresh:
             payload = json.loads(ref_path.read_text(encoding="utf-8"))
@@ -347,14 +355,11 @@ class MarketPacketCollector:
             rows = payload["rows"]
             data_date = _date_from_payload(payload.get("data_date"))
             error = payload.get("error")
-            return CollectedDataset(name, "tushare.daily", data_date, datetime.now(UTC), rows, "PASS" if rows else "FAIL", "historical" if rows else "missing", True, str(cache), error)
+            if data_date == previous_trade_date and rows and all(str(row.get("trade_date")) == _compact(previous_trade_date) for row in rows):
+                return CollectedDataset(name, "tushare.daily", data_date, datetime.now(UTC), rows, "PASS", "historical", True, str(cache), error)
         candidates = []
         if previous_trade_date:
             candidates.append(previous_trade_date)
-        for offset in range(1, 8):
-            candidate = trade_date - timedelta(days=offset)
-            if candidate not in candidates:
-                candidates.append(candidate)
         errors: list[str] = []
         for candidate in candidates:
             try:

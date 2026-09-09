@@ -8,7 +8,7 @@
   },
   "market_operability": {
     "total_turnover": 1873067039783.31,
-    "turnover_change_pct": -8.68,
+    "turnover_change_pct": -5.32,
     "rise_count": 1794,
     "fall_count": 3642,
     "limit_up_count": 48,
@@ -24,10 +24,10 @@
     "index_strength_dispersion": 1.94204360779025,
     "sector_concentration": 15.76,
     "theme_concentration": 22.59,
-    "market_operability_score": 46.91,
+    "market_operability_score": 48.59,
     "available_max_score": 90,
     "feature_components": {
-      "liquidity": 3.66,
+      "liquidity": 5.34,
       "breadth": 4.95,
       "limit_structure": 11.32,
       "previous_limit_feedback": 10.28,
@@ -19769,9 +19769,9 @@
       "failed_limit_rate": null,
       "large_loss_count": null
     },
-    "market_operability_change_1d": -2.9200000000000017,
-    "market_operability_change_5d": 3.6199999999999974,
-    "market_operability_change_20d": 8.589999999999996
+    "market_operability_change_1d": -1.2399999999999949,
+    "market_operability_change_5d": 5.300000000000004,
+    "market_operability_change_20d": 10.270000000000003
   },
   "data_quality": {
     "status": "PARTIAL",

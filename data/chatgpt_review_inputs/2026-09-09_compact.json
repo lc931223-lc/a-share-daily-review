@@ -3289,36 +3289,36 @@
     "market_packets": {
       "path": "data/market_packets/2026-09-09.json",
       "source_date": "2026-09-09",
-      "sha256": "a889f1208f8620d64fedb4fdfef10c39de5ffea88fc6ece5816128bc18a08909",
-      "canonical_sha256": "98f11703f9c625cadbc64427c612ff892fcdc6da3cdf6e63a15701fcd5bf097f",
+      "sha256": "02ee0ef99d47b78560c247e3985c246febff9be55eb409f95bb3e28f03dda1e9",
+      "canonical_sha256": "4ee1b9cb56bfae32fca15ee8c468fd805a27a3974417eee97cfca383e6703418",
       "status": "PARTIAL"
     },
     "review_intelligence": {
       "path": "data/review_intelligence/2026-09-09.json",
       "source_date": "2026-09-09",
-      "sha256": "e4cbc35daf722bc11fbb5bee8fbc2cc07b78ebf36c31f5dc049b59922960e847",
-      "canonical_sha256": "393002174b0345c5c0b5152c094f11be3fae76e4ea352466c19b3a8ee97ca730",
+      "sha256": "27e17585f009ab48e73ee26aa3a0418aa63f796b640f948de44b5adbf7fb3cf8",
+      "canonical_sha256": "4a1c1a3928ec276079c40f0a2f42667f970ec3ee17853302379f08de51a4016a",
       "status": "PARTIAL"
     },
     "capital_preference": {
       "path": "data/capital_preference/2026-09-09.json",
       "source_date": "2026-09-09",
-      "sha256": "a4e140ca829bc2ccb3b78bd1e3f90e249815e4ce06b56ba2b92eed85872410c1",
-      "canonical_sha256": "321f08c314ae94c3721f9d41733a246e17f28da1c959237d6c00354ac2e89a3c",
+      "sha256": "791f895036331724f9e69c4aa1923c9aca28c7940beb9be090fa5c9abfed60e5",
+      "canonical_sha256": "a87995436e4ceefa45da379aa7c6662fc00d424a733e4a6cf68c2e674769a1de",
       "status": "PARTIAL"
     },
     "review_context": {
       "path": "data/review_context/2026-09-09.json",
       "source_date": "2026-09-09",
-      "sha256": "630b76176a6e9e037112c17bdaead0207692e0bab5a74fb932b8958a430c5ae3",
-      "canonical_sha256": "c8b671aa579cc21375990680bad0d2585f5cba821b2f0a2b0aa72227343ddf07",
+      "sha256": "79f51c84ac427f1b25af14d976196d766bd7df61902644207d803b8b429282c7",
+      "canonical_sha256": "480bbc224774f6b86419d96ebf9198ae426be863288727ce51a7c7786bd7ccb8",
       "status": "PARTIAL"
     },
     "formal_review_support": {
       "path": "data/formal_review_support/2026-09-09.json",
       "source_date": "2026-09-09",
-      "sha256": "ccf9d327b9f3e62637676db4b76e2c6308f3ec49e6c5e813973e182ca4771a84",
-      "canonical_sha256": "4ee58bd1a82ffced369a0eec37484d16d690e029a35d9a6d2f07387ebb0711ef",
+      "sha256": "bba96d34a76480d71b6a92871f262d568bbb4997a57edcbdd351264bd71b7530",
+      "canonical_sha256": "cfce7fa619fd545046ea128f36726ec407a86c6318dfe32d1c5f1ecba614409b",
       "status": "PARTIAL"
     },
     "auction_packets": {

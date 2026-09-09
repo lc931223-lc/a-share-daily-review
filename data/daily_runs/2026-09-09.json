@@ -8,6 +8,8 @@
   },
   "source_availability": {
     "full_market_daily": "PASS",
+    "tushare_daily_api": "AVAILABLE",
+    "trade_cal": "AVAILABLE",
     "market_packet_sources": [
       {
         "dataset": "limit_up",
@@ -77,12 +79,12 @@
       {
         "dataset": "tushare_trade_cal",
         "status": "PASS",
-        "data_date": "2026-09-04"
+        "data_date": "2026-09-09"
       },
       {
         "dataset": "tushare_stock_basic",
-        "status": "PASS",
-        "data_date": "2026-09-04"
+        "status": "FAIL",
+        "data_date": "2026-09-09"
       },
       {
         "dataset": "tushare_daily_all",
@@ -92,7 +94,7 @@
       {
         "dataset": "tushare_previous_daily_all",
         "status": "PASS",
-        "data_date": "2026-09-04"
+        "data_date": "2026-09-08"
       },
       {
         "dataset": "tushare_daily_basic_all",
@@ -171,88 +173,88 @@
   "is_trade_day": true,
   "calendar_status": "CHECKED",
   "market_closed": true,
-  "pipeline_started_at": "2026-09-09T22:42:45.266794+08:00",
-  "pipeline_completed_at": "2026-09-09T22:43:06.427049+08:00",
+  "pipeline_started_at": "2026-09-09T23:06:38.894966+08:00",
+  "pipeline_completed_at": "2026-09-09T23:07:00.949927+08:00",
   "steps": {
     "market_packet": {
       "status": "PARTIAL",
       "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\market_packets\\2026-09-09.json",
       "source_date": "2026-09-09",
       "quality": "PARTIAL",
-      "started_at": "2026-09-09T22:42:45.275770+08:00",
-      "completed_at": "2026-09-09T22:42:45.311672+08:00",
+      "started_at": "2026-09-09T23:06:41.155779+08:00",
+      "completed_at": "2026-09-09T23:06:41.181150+08:00",
       "error": null,
       "retry_count": 0,
       "reused": true,
-      "provenance_sha256": "a889f1208f8620d64fedb4fdfef10c39de5ffea88fc6ece5816128bc18a08909"
+      "provenance_sha256": "02ee0ef99d47b78560c247e3985c246febff9be55eb409f95bb3e28f03dda1e9"
     },
     "inflection": {
       "status": "PARTIAL",
       "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\inflection\\2026-09-09.json",
       "source_date": "2026-09-09",
       "quality": "PARTIAL",
-      "started_at": "2026-09-09T22:42:45.319652+08:00",
-      "completed_at": "2026-09-09T22:42:45.358548+08:00",
+      "started_at": "2026-09-09T23:06:41.189092+08:00",
+      "completed_at": "2026-09-09T23:06:41.224032+08:00",
       "error": null,
       "retry_count": 0,
       "reused": true,
-      "provenance_sha256": "653b628b28ab476acf5b98782fcc9d3f7f9e97421f4f1841b77f1a95614b5302"
+      "provenance_sha256": "8b5e214d477ae0fef5f0c5b85d0a4a5ac0dfbc1af4f8d1bcc5acd8ec665ea4e5"
     },
     "review_intelligence": {
       "status": "PARTIAL",
       "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\review_intelligence\\2026-09-09.json",
       "source_date": "2026-09-09",
       "quality": "PARTIAL",
-      "started_at": "2026-09-09T22:42:45.358548+08:00",
-      "completed_at": "2026-09-09T22:42:45.369521+08:00",
+      "started_at": "2026-09-09T23:06:41.224032+08:00",
+      "completed_at": "2026-09-09T23:06:41.233972+08:00",
       "error": null,
       "retry_count": 0,
       "reused": true,
-      "provenance_sha256": "e4cbc35daf722bc11fbb5bee8fbc2cc07b78ebf36c31f5dc049b59922960e847"
+      "provenance_sha256": "27e17585f009ab48e73ee26aa3a0418aa63f796b640f948de44b5adbf7fb3cf8"
     },
     "capital_preference": {
       "status": "PARTIAL",
       "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\capital_preference\\2026-09-09.json",
       "source_date": "2026-09-09",
       "quality": "PARTIAL",
-      "started_at": "2026-09-09T22:42:45.369521+08:00",
-      "completed_at": "2026-09-09T22:42:45.424420+08:00",
+      "started_at": "2026-09-09T23:06:41.233972+08:00",
+      "completed_at": "2026-09-09T23:06:41.287828+08:00",
       "error": null,
       "retry_count": 0,
       "reused": true,
-      "provenance_sha256": "a4e140ca829bc2ccb3b78bd1e3f90e249815e4ce06b56ba2b92eed85872410c1"
+      "provenance_sha256": "791f895036331724f9e69c4aa1923c9aca28c7940beb9be090fa5c9abfed60e5"
     },
     "review_context": {
       "status": "PARTIAL",
       "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\review_context\\2026-09-09.json",
       "source_date": "2026-09-09",
       "quality": "PARTIAL",
-      "started_at": "2026-09-09T22:42:45.424420+08:00",
-      "completed_at": "2026-09-09T22:42:46.007383+08:00",
+      "started_at": "2026-09-09T23:06:41.287828+08:00",
+      "completed_at": "2026-09-09T23:06:41.764197+08:00",
       "error": null,
       "retry_count": 0,
       "reused": false,
-      "provenance_sha256": "630b76176a6e9e037112c17bdaead0207692e0bab5a74fb932b8958a430c5ae3"
+      "provenance_sha256": "79f51c84ac427f1b25af14d976196d766bd7df61902644207d803b8b429282c7"
     },
     "formal_review_support": {
       "status": "PARTIAL",
       "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\formal_review_support\\2026-09-09.json",
       "source_date": "2026-09-09",
       "quality": "PARTIAL",
-      "started_at": "2026-09-09T22:42:46.007383+08:00",
-      "completed_at": "2026-09-09T22:42:46.178104+08:00",
+      "started_at": "2026-09-09T23:06:41.764197+08:00",
+      "completed_at": "2026-09-09T23:06:41.913468+08:00",
       "error": null,
       "retry_count": 0,
       "reused": false,
-      "provenance_sha256": "ccf9d327b9f3e62637676db4b76e2c6308f3ec49e6c5e813973e182ca4771a84"
+      "provenance_sha256": "bba96d34a76480d71b6a92871f262d568bbb4997a57edcbdd351264bd71b7530"
     },
     "auction": {
       "status": "UNAVAILABLE",
       "artifact_path": null,
       "source_date": null,
       "quality": null,
-      "started_at": "2026-09-09T22:42:47.802467+08:00",
-      "completed_at": "2026-09-09T22:42:47.802467+08:00",
+      "started_at": "2026-09-09T23:06:43.370105+08:00",
+      "completed_at": "2026-09-09T23:06:43.370105+08:00",
       "error": "AUCTION_ACCEPTANCE_FAILED",
       "retry_count": 0,
       "reused": false,
@@ -272,8 +274,8 @@
       "artifact_path": null,
       "source_date": null,
       "quality": "WAITING",
-      "started_at": "2026-09-09T22:42:47.802467+08:00",
-      "completed_at": "2026-09-09T22:43:06.268930+08:00",
+      "started_at": "2026-09-09T23:06:43.370105+08:00",
+      "completed_at": "2026-09-09T23:07:00.806310+08:00",
       "error": null,
       "retry_count": 0,
       "reused": false,
@@ -493,11 +495,13 @@
       "detail": "no probable plaintext secrets found"
     }
   ],
-  "started_at": "2026-09-09T22:42:45.266794+08:00",
-  "completed_at": "2026-09-09T22:43:06.427049+08:00",
+  "started_at": "2026-09-09T23:06:38.894966+08:00",
+  "completed_at": "2026-09-09T23:07:00.949927+08:00",
   "blocker": [],
   "source_health": {
     "full_market_daily": "PASS",
+    "tushare_daily_api": "AVAILABLE",
+    "trade_cal": "AVAILABLE",
     "market_packet_sources": [
       {
         "dataset": "limit_up",
@@ -567,12 +571,12 @@
       {
         "dataset": "tushare_trade_cal",
         "status": "PASS",
-        "data_date": "2026-09-04"
+        "data_date": "2026-09-09"
       },
       {
         "dataset": "tushare_stock_basic",
-        "status": "PASS",
-        "data_date": "2026-09-04"
+        "status": "FAIL",
+        "data_date": "2026-09-09"
       },
       {
         "dataset": "tushare_daily_all",
@@ -582,7 +586,7 @@
       {
         "dataset": "tushare_previous_daily_all",
         "status": "PASS",
-        "data_date": "2026-09-04"
+        "data_date": "2026-09-08"
       },
       {
         "dataset": "tushare_daily_basic_all",

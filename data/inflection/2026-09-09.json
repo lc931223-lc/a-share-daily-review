@@ -14,8 +14,8 @@
     },
     "history": {
       "requested_dates": 280,
-      "cached_dates": 279,
-      "loaded_dates": 1,
+      "cached_dates": 280,
+      "loaded_dates": 0,
       "failed_dates": []
     }
   },

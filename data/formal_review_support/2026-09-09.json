@@ -9,12 +9,12 @@
     "review_context": {
       "path": "data/review_context/2026-09-09.json",
       "source_date": "2026-09-09",
-      "sha256": "630b76176a6e9e037112c17bdaead0207692e0bab5a74fb932b8958a430c5ae3"
+      "sha256": "79f51c84ac427f1b25af14d976196d766bd7df61902644207d803b8b429282c7"
     },
     "market_packet": {
       "path": "data/market_packets/2026-09-09.json",
       "source_date": "2026-09-09",
-      "sha256": "a889f1208f8620d64fedb4fdfef10c39de5ffea88fc6ece5816128bc18a08909"
+      "sha256": "02ee0ef99d47b78560c247e3985c246febff9be55eb409f95bb3e28f03dda1e9"
     },
     "previous_support_date": "2026-09-08",
     "previous_formal_review": {

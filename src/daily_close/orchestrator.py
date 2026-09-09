@@ -13,7 +13,7 @@ from zoneinfo import ZoneInfo
 from jsonschema import Draft202012Validator
 
 from src.capital_preference.pipeline import CapitalPreferencePipeline
-from src.daily_close.credentials import credential_health, redact
+from src.daily_close.credentials import credential_health, daily_api_health, redact
 from src.feedback.forward import advance_feedback
 from src.formal_review.support import build_formal_review_support
 from src.formal_review.persistence import import_inbox, load_previous_formal
@@ -65,6 +65,7 @@ class DailyCloseOrchestrator:
         )
         self.max_retries = max_retries
         self.runners = self._default_runners() | (runners or {})
+        self.native_market_producer = "market_packet" not in (runners or {})
         # Injected market producers may be offline fixtures or non-Tushare sources.
         # The production CLI always uses the native Tushare-dependent producer.
         self.requires_tushare = ("market_packet" not in (runners or {})) if requires_tushare is None else requires_tushare
@@ -114,6 +115,17 @@ class DailyCloseOrchestrator:
         if not market_closed:
             manifest["status"] = "MARKET_NOT_CLOSED"
             return self._finish(manifest)
+
+        if self.requires_tushare and self.native_market_producer:
+            health = daily_api_health(target)
+            manifest["source_availability"]["tushare_daily_api"] = health
+            manifest["source_availability"]["trade_cal"] = "AVAILABLE"
+            if health != "AVAILABLE":
+                blocker = "TUSHARE_DAILY_" + health
+                manifest.update(status="FAILED", failed_step="credential_preflight")
+                manifest["blockers"].append({"step": "credential_preflight", "error": blocker})
+                manifest["steps"]["credential_preflight"] = self._step_record("FAILED", None, target, None, started, 0, blocker, False, None)
+                return self._finish(manifest)
 
         manifest["formal_review_imports"] = import_inbox(self.root)
 

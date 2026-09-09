@@ -2,7 +2,7 @@
   "meta": {
     "schema_version": "market_packet.1",
     "trade_date": "2026-09-09",
-    "generated_at": "2026-09-09T14:33:25.277697Z",
+    "generated_at": "2026-09-09T15:05:58.370521Z",
     "generated_by": "codex_market_packet_phase1",
     "codex_role": "data_engineer_data_validator_research_clerk",
     "final_judgement_owner": "chatgpt"
@@ -150,7 +150,7 @@
         "data_date": "2026-09-09",
         "freshness": "historical",
         "quality": "PASS",
-        "is_cached": false,
+        "is_cached": true,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-09\\limit_up.json",
         "error": null,
         "record_count": 48,
@@ -167,7 +167,7 @@
         "data_date": "2026-09-09",
         "freshness": "historical",
         "quality": "PASS",
-        "is_cached": false,
+        "is_cached": true,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-09\\failed_limit.json",
         "error": null,
         "record_count": 27,
@@ -184,7 +184,7 @@
         "data_date": "2026-09-09",
         "freshness": "historical",
         "quality": "PASS",
-        "is_cached": false,
+        "is_cached": true,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-09\\limit_down.json",
         "error": null,
         "record_count": 7,
@@ -201,7 +201,7 @@
         "data_date": "2026-09-09",
         "freshness": "historical",
         "quality": "PASS",
-        "is_cached": false,
+        "is_cached": true,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-09\\previous_limit.json",
         "error": null,
         "record_count": 73,
@@ -218,7 +218,7 @@
         "data_date": "2026-09-09",
         "freshness": "historical",
         "quality": "PASS",
-        "is_cached": false,
+        "is_cached": true,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-09\\dragon_tiger_daily.json",
         "error": null,
         "record_count": 66,
@@ -235,7 +235,7 @@
         "data_date": null,
         "freshness": "historical",
         "quality": "PASS",
-        "is_cached": false,
+        "is_cached": true,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-09\\northbound_hist.json",
         "error": null,
         "record_count": 2749,
@@ -252,7 +252,7 @@
         "data_date": null,
         "freshness": "current_only",
         "quality": "PASS",
-        "is_cached": false,
+        "is_cached": true,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-09\\hsgt_summary.json",
         "error": null,
         "record_count": 4,
@@ -262,27 +262,27 @@
         "retry_after": null
       },
       {
-        "empty_state": "SOURCE_FAILURE",
+        "empty_state": "EMPTY_UNVERIFIED",
         "source": "sse.official.queryMargin",
         "dataset": "sse_margin",
-        "retrieved_at": "2026-09-09T14:32:43.643361Z",
+        "retrieved_at": "2026-09-09T14:59:34.090788Z",
         "data_date": "2026-09-09",
         "freshness": "historical",
         "quality": "FAIL",
-        "is_cached": false,
+        "is_cached": true,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-09\\sse_margin.json",
-        "error": "AdapterError: sse.margin connection_error",
+        "error": "empty response",
         "record_count": 0,
-        "cache_created_at": "2026-09-09T14:32:43.643361Z",
-        "last_attempt_at": "2026-09-09T14:32:43.643361Z",
-        "error_type": "network",
-        "retry_after": "2026-09-09T14:47:43.643361Z"
+        "cache_created_at": "2026-09-09T14:59:34.090788Z",
+        "last_attempt_at": "2026-09-09T14:59:34.090788Z",
+        "error_type": "empty",
+        "retry_after": "2026-09-09T15:29:34.090788Z"
       },
       {
         "empty_state": "EMPTY_UNVERIFIED",
         "source": "szse.official.ShowReport",
         "dataset": "szse_margin",
-        "retrieved_at": "2026-09-09T14:32:43.847782Z",
+        "retrieved_at": "2026-09-09T15:05:55.582858Z",
         "data_date": "2026-09-09",
         "freshness": "historical",
         "quality": "FAIL",
@@ -290,16 +290,16 @@
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-09\\szse_margin.json",
         "error": "empty response",
         "record_count": 0,
-        "cache_created_at": "2026-09-09T14:32:43.847782Z",
-        "last_attempt_at": "2026-09-09T14:32:43.847782Z",
+        "cache_created_at": "2026-09-09T15:05:55.582858Z",
+        "last_attempt_at": "2026-09-09T15:05:55.582858Z",
         "error_type": "empty",
-        "retry_after": "2026-09-09T15:02:43.847782Z"
+        "retry_after": "2026-09-09T15:35:55.582858Z"
       },
       {
         "empty_state": "EMPTY_UNVERIFIED",
         "source": "akshare.stock_margin_detail_szse",
         "dataset": "szse_margin_detail",
-        "retrieved_at": "2026-09-09T14:32:44.405222Z",
+        "retrieved_at": "2026-09-09T15:05:56.063606Z",
         "data_date": "2026-09-09",
         "freshness": "historical",
         "quality": "FAIL",
@@ -307,10 +307,10 @@
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-09\\szse_margin_detail.json",
         "error": "empty response",
         "record_count": 0,
-        "cache_created_at": "2026-09-09T14:32:44.405222Z",
-        "last_attempt_at": "2026-09-09T14:32:44.405222Z",
+        "cache_created_at": "2026-09-09T15:05:56.063606Z",
+        "last_attempt_at": "2026-09-09T15:05:56.063606Z",
         "error_type": "empty",
-        "retry_after": "2026-09-09T15:02:44.405222Z"
+        "retry_after": "2026-09-09T15:35:56.063606Z"
       },
       {
         "empty_state": "NOT_EMPTY",
@@ -320,7 +320,7 @@
         "data_date": null,
         "freshness": "current_only",
         "quality": "PASS",
-        "is_cached": false,
+        "is_cached": true,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-09\\industry_fund_flow_current.json",
         "error": null,
         "record_count": 90,
@@ -337,7 +337,7 @@
         "data_date": null,
         "freshness": "current_only",
         "quality": "PASS",
-        "is_cached": false,
+        "is_cached": true,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-09\\concept_fund_flow_current.json",
         "error": null,
         "record_count": 387,
@@ -350,7 +350,7 @@
         "empty_state": "NOT_EMPTY",
         "source": "project_root.env",
         "dataset": "tushare_credential",
-        "retrieved_at": "2026-09-09T14:32:45.938252Z",
+        "retrieved_at": "2026-09-09T15:05:56.067595Z",
         "data_date": "2026-09-09",
         "freshness": "unknown",
         "quality": "PASS",
@@ -367,33 +367,33 @@
         "empty_state": "NOT_EMPTY",
         "source": "tushare.trade_cal",
         "dataset": "tushare_trade_cal",
-        "retrieved_at": "2026-09-04T17:25:15.169850Z",
-        "data_date": "2026-09-04",
+        "retrieved_at": "2026-09-05T21:30:14.326901+08:00",
+        "data_date": "2026-09-09",
         "freshness": "historical",
         "quality": "PASS",
         "is_cached": true,
-        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\reference\\tushare_trade_cal_2026.json",
+        "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\reference\\trade_calendar_2026.json",
         "error": null,
-        "record_count": 1,
-        "cache_created_at": "2026-09-04T17:25:15.169850Z",
-        "last_attempt_at": "2026-09-04T17:25:15.169850Z",
+        "record_count": 365,
+        "cache_created_at": "2026-09-05T21:30:14.326901+08:00",
+        "last_attempt_at": "2026-09-05T21:30:14.326901+08:00",
         "error_type": null,
         "retry_after": null
       },
       {
-        "empty_state": "NOT_EMPTY",
+        "empty_state": "SOURCE_FAILURE",
         "source": "tushare.stock_basic",
         "dataset": "tushare_stock_basic",
-        "retrieved_at": "2026-09-09T12:52:30.226219Z",
-        "data_date": "2026-09-04",
+        "retrieved_at": "2026-09-09T15:05:58.212906Z",
+        "data_date": "2026-09-09",
         "freshness": "historical",
-        "quality": "PASS",
-        "is_cached": true,
+        "quality": "FAIL",
+        "is_cached": false,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\reference\\tushare_stock_basic.json",
-        "error": null,
-        "record_count": 1,
-        "cache_created_at": "2026-09-09T12:52:30.226219Z",
-        "last_attempt_at": "2026-09-09T12:52:30.226219Z",
+        "error": "Exception: 抱歉，您访问接口(stock_basic)频率超限(1次/小时)，具体频次详情：https://tushare.pro/document/1?doc_id=108。",
+        "record_count": 0,
+        "cache_created_at": null,
+        "last_attempt_at": null,
         "error_type": null,
         "retry_after": null
       },
@@ -405,7 +405,7 @@
         "data_date": "2026-09-09",
         "freshness": "historical",
         "quality": "PASS",
-        "is_cached": false,
+        "is_cached": true,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-09\\tushare_daily_all.json",
         "error": null,
         "record_count": 5550,
@@ -418,14 +418,14 @@
         "empty_state": "NOT_EMPTY",
         "source": "tushare.daily",
         "dataset": "tushare_previous_daily_all",
-        "retrieved_at": "2026-09-09T14:32:51.320607Z",
-        "data_date": "2026-09-04",
+        "retrieved_at": "2026-09-09T15:05:58.274775Z",
+        "data_date": "2026-09-08",
         "freshness": "historical",
         "quality": "PASS",
-        "is_cached": false,
+        "is_cached": true,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-09\\tushare_previous_daily_all.json",
         "error": null,
-        "record_count": 5548,
+        "record_count": 5549,
         "cache_created_at": null,
         "last_attempt_at": null,
         "error_type": null,
@@ -435,7 +435,7 @@
         "empty_state": "SOURCE_FAILURE",
         "source": "tushare.daily_basic",
         "dataset": "tushare_daily_basic_all",
-        "retrieved_at": "2026-09-09T14:32:51.320607Z",
+        "retrieved_at": "2026-09-09T15:05:58.275773Z",
         "data_date": "2026-09-09",
         "freshness": "missing",
         "quality": "UNAVAILABLE",
@@ -452,7 +452,7 @@
         "empty_state": "SOURCE_FAILURE",
         "source": "tushare.adj_factor",
         "dataset": "tushare_adj_factor_all",
-        "retrieved_at": "2026-09-09T14:32:51.321604Z",
+        "retrieved_at": "2026-09-09T15:05:58.275773Z",
         "data_date": "2026-09-09",
         "freshness": "missing",
         "quality": "UNAVAILABLE",
@@ -467,13 +467,13 @@
       },
       {
         "empty_state": "NOT_EMPTY",
-        "source": "tushare.daily",
+        "source": "akshare.stock_zh_a_hist; fallback akshare.stock_zh_a_hist_tx/stock_zh_a_daily",
         "dataset": "stock_top_ohlcv",
-        "retrieved_at": "2026-09-09T14:32:51.331577Z",
+        "retrieved_at": "2026-09-09T15:05:58.277736Z",
         "data_date": "2026-09-09",
         "freshness": "historical",
         "quality": "PASS",
-        "is_cached": false,
+        "is_cached": true,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-09\\stock_top_ohlcv.json",
         "error": null,
         "record_count": 120,
@@ -486,16 +486,16 @@
         "empty_state": "NOT_EMPTY",
         "source": "ths.industry_summary",
         "dataset": "industry_board_daily",
-        "retrieved_at": "2026-09-09T14:32:56.833838Z",
+        "retrieved_at": "2026-09-09T14:32:56.799197Z",
         "data_date": "2026-09-09",
         "freshness": "historical",
         "quality": "PASS",
-        "is_cached": false,
+        "is_cached": true,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-09\\industry_board_daily.json",
         "error": null,
         "record_count": 90,
-        "cache_created_at": null,
-        "last_attempt_at": null,
+        "cache_created_at": "2026-09-09T14:32:56.799197Z",
+        "last_attempt_at": "2026-09-09T14:32:56.799197Z",
         "error_type": null,
         "retry_after": null
       },
@@ -503,16 +503,16 @@
         "empty_state": "NOT_EMPTY",
         "source": "sina.concept_snapshot",
         "dataset": "concept_board_daily",
-        "retrieved_at": "2026-09-09T14:33:13.031239Z",
+        "retrieved_at": "2026-09-09T14:33:12.995838Z",
         "data_date": "2026-09-09",
         "freshness": "historical",
         "quality": "PASS",
-        "is_cached": false,
+        "is_cached": true,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-09\\concept_board_daily.json",
         "error": null,
         "record_count": 175,
-        "cache_created_at": null,
-        "last_attempt_at": null,
+        "cache_created_at": "2026-09-09T14:33:12.995838Z",
+        "last_attempt_at": "2026-09-09T14:33:12.995838Z",
         "error_type": null,
         "retry_after": null
       },
@@ -520,7 +520,7 @@
         "empty_state": "NOT_EMPTY",
         "source": "announcement_collector.cninfo_exchange_ir",
         "dataset": "official_announcements",
-        "retrieved_at": "2026-09-09T14:33:20.257404Z",
+        "retrieved_at": "2026-09-09T15:05:58.284717Z",
         "data_date": "2026-09-09",
         "freshness": "historical",
         "quality": "PASS",
@@ -537,7 +537,7 @@
         "empty_state": "NOT_EMPTY",
         "source": "announcement_collector",
         "dataset": "official_announcements_meta",
-        "retrieved_at": "2026-09-09T14:33:20.257404Z",
+        "retrieved_at": "2026-09-09T15:05:58.284717Z",
         "data_date": "2026-09-09",
         "freshness": "historical",
         "quality": "PASS",
@@ -554,7 +554,7 @@
         "empty_state": "SOURCE_FAILURE",
         "source": "policy_collector.official_sources",
         "dataset": "official_policies",
-        "retrieved_at": "2026-09-09T14:33:23.431470Z",
+        "retrieved_at": "2026-09-09T15:05:58.284717Z",
         "data_date": "2026-09-09",
         "freshness": "historical",
         "quality": "PARTIAL",
@@ -571,7 +571,7 @@
         "empty_state": "NOT_EMPTY",
         "source": "policy_collector",
         "dataset": "official_policies_meta",
-        "retrieved_at": "2026-09-09T14:33:23.431470Z",
+        "retrieved_at": "2026-09-09T15:05:58.284717Z",
         "data_date": "2026-09-09",
         "freshness": "historical",
         "quality": "PARTIAL",
@@ -592,7 +592,7 @@
         "data_date": "2026-09-09",
         "freshness": "historical",
         "quality": "PASS",
-        "is_cached": false,
+        "is_cached": true,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-09\\index_000001.SH.json",
         "error": null,
         "record_count": 8722,
@@ -609,7 +609,7 @@
         "data_date": "2026-09-09",
         "freshness": "historical",
         "quality": "PASS",
-        "is_cached": false,
+        "is_cached": true,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-09\\index_399001.SZ.json",
         "error": null,
         "record_count": 8630,
@@ -626,7 +626,7 @@
         "data_date": "2026-09-09",
         "freshness": "historical",
         "quality": "PASS",
-        "is_cached": false,
+        "is_cached": true,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-09\\index_399006.SZ.json",
         "error": null,
         "record_count": 3954,
@@ -643,7 +643,7 @@
         "data_date": "2026-09-09",
         "freshness": "historical",
         "quality": "PASS",
-        "is_cached": false,
+        "is_cached": true,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-09\\index_000688.SH.json",
         "error": null,
         "record_count": 1622,
@@ -660,7 +660,7 @@
         "data_date": "2026-09-09",
         "freshness": "historical",
         "quality": "PASS",
-        "is_cached": false,
+        "is_cached": true,
         "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\raw\\market_packets\\2026-09-09\\index_899050.BJ.json",
         "error": null,
         "record_count": 1059,
@@ -784,9 +784,9 @@
     },
     "sh_sz_turnover": null,
     "total_market_turnover": 1873067039783.31,
-    "previous_turnover": 2051048681166.63,
-    "turnover_delta": -177981641383.32,
-    "turnover_delta_pct": -8.68,
+    "previous_turnover": 1978217126610.82,
+    "turnover_delta": -105150086827.51,
+    "turnover_delta_pct": -5.32,
     "rise_count": 1794,
     "fall_count": 3642,
     "flat_count": 114,
@@ -881,9 +881,9 @@
   "liquidity": {
     "sh_sz_turnover": null,
     "total_market_turnover": 1873067039783.31,
-    "previous_turnover": 2051048681166.63,
-    "turnover_delta": -177981641383.32,
-    "turnover_delta_pct": -8.68,
+    "previous_turnover": 1978217126610.82,
+    "turnover_delta": -105150086827.51,
+    "turnover_delta_pct": -5.32,
     "source": "tushare.daily amount sum; index amount when available"
   },
   "limit_up_down": {
@@ -18110,7 +18110,7 @@
         "summary": "《改善普通高中学校办学条件补助资金管理办法》修订印发 2026-09-01",
         "confirmed_fact": "《改善普通高中学校办学条件补助资金管理办法》修订印发",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:21.428703+00:00",
+        "retrieved_at": "2026-09-09T14:59:38.667775+00:00",
         "data_date": "2026-09-01"
       },
       {
@@ -18130,7 +18130,7 @@
         "summary": "《会计师事务所职业责任保险实施办法》修订印发 2026-08-28",
         "confirmed_fact": "《会计师事务所职业责任保险实施办法》修订印发",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:21.428703+00:00",
+        "retrieved_at": "2026-09-09T14:59:38.667775+00:00",
         "data_date": "2026-08-28"
       },
       {
@@ -18150,7 +18150,7 @@
         "summary": "财政部等三部门联合发文部署进一步做好财政金融协同促内需政策有关工作 2026-08-21",
         "confirmed_fact": "财政部等三部门联合发文部署进一步做好财政金融协同促内需政策有关工作",
         "action_type": "finance",
-        "retrieved_at": "2026-09-09T14:33:21.428703+00:00",
+        "retrieved_at": "2026-09-09T14:59:38.667775+00:00",
         "data_date": "2026-08-21"
       },
       {
@@ -18170,7 +18170,7 @@
         "summary": "四部门出台健全金融机构治理实施意见 2026-07-31",
         "confirmed_fact": "四部门出台健全金融机构治理实施意见",
         "action_type": "finance",
-        "retrieved_at": "2026-09-09T14:33:21.428703+00:00",
+        "retrieved_at": "2026-09-09T14:59:38.667775+00:00",
         "data_date": "2026-07-31"
       },
       {
@@ -18190,7 +18190,7 @@
         "summary": "财政部 税务总局关于调整部分能源资源行业企业城镇土地使用税政策的公告 2026-07-28",
         "confirmed_fact": "财政部 税务总局关于调整部分能源资源行业企业城镇土地使用税政策的公告",
         "action_type": "tax",
-        "retrieved_at": "2026-09-09T14:33:21.428703+00:00",
+        "retrieved_at": "2026-09-09T14:59:38.667775+00:00",
         "data_date": "2026-07-28"
       },
       {
@@ -18210,7 +18210,7 @@
         "summary": "财政部 税务总局关于离岸信托 个人所得税有关事项的公告 2026-07-24",
         "confirmed_fact": "财政部 税务总局关于离岸信托 个人所得税有关事项的公告",
         "action_type": "tax",
-        "retrieved_at": "2026-09-09T14:33:21.428703+00:00",
+        "retrieved_at": "2026-09-09T14:59:38.667775+00:00",
         "data_date": "2026-07-24"
       },
       {
@@ -18230,7 +18230,7 @@
         "summary": "财政部等三部门印发《征收挥发性有机物环境保护税试点实施办法》 2026-07-24",
         "confirmed_fact": "财政部等三部门印发《征收挥发性有机物环境保护税试点实施办法》",
         "action_type": "pilot",
-        "retrieved_at": "2026-09-09T14:33:21.428703+00:00",
+        "retrieved_at": "2026-09-09T14:59:38.667775+00:00",
         "data_date": "2026-07-24"
       },
       {
@@ -18250,7 +18250,7 @@
         "summary": "财政部 税务总局 工业和信息化部关于调整节能汽车、新能源汽车车船税优惠政策的公告 2026-07-03",
         "confirmed_fact": "财政部 税务总局 工业和信息化部关于调整节能汽车、新能源汽车车船税优惠政策的公告",
         "action_type": "tax",
-        "retrieved_at": "2026-09-09T14:33:21.428703+00:00",
+        "retrieved_at": "2026-09-09T14:59:38.667775+00:00",
         "data_date": "2026-07-03"
       },
       {
@@ -18270,7 +18270,7 @@
         "summary": "《管理会计应用指引第804号——财务共享服务》印发 2026-07-01",
         "confirmed_fact": "《管理会计应用指引第804号——财务共享服务》印发",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:21.428703+00:00",
+        "retrieved_at": "2026-09-09T14:59:38.667775+00:00",
         "data_date": "2026-07-01"
       },
       {
@@ -18290,7 +18290,7 @@
         "summary": "财政部、商务部修订印发《服务业发展资金管理办法》 2026-06-10",
         "confirmed_fact": "财政部、商务部修订印发《服务业发展资金管理办法》",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:21.428703+00:00",
+        "retrieved_at": "2026-09-09T14:59:38.667775+00:00",
         "data_date": "2026-06-10"
       },
       {
@@ -18310,7 +18310,7 @@
         "summary": "国务院关税税则委员会关于对非洲建交国实施零关税举措的公告 2026-04-28",
         "confirmed_fact": "国务院关税税则委员会关于对非洲建交国实施零关税举措的公告",
         "action_type": "tax",
-        "retrieved_at": "2026-09-09T14:33:21.428703+00:00",
+        "retrieved_at": "2026-09-09T14:59:38.667775+00:00",
         "data_date": "2026-04-28"
       },
       {
@@ -18330,7 +18330,7 @@
         "summary": "财政部、退役军人事务部制定印发《中央专项彩票公益金支持光荣院能力提升项目资金管理办法》 2026-04-27",
         "confirmed_fact": "财政部、退役军人事务部制定印发《中央专项彩票公益金支持光荣院能力提升项目资金管理办法》",
         "action_type": "support",
-        "retrieved_at": "2026-09-09T14:33:21.428703+00:00",
+        "retrieved_at": "2026-09-09T14:59:38.667775+00:00",
         "data_date": "2026-04-27"
       },
       {
@@ -18350,7 +18350,7 @@
         "summary": "国务院关税税则委员会关于对原产于刚果（布）的部分进口货物实施共同发展经济伙伴关系协定早期收获安排协定税率的公告 2026-03-27",
         "confirmed_fact": "国务院关税税则委员会关于对原产于刚果（布）的部分进口货物实施共同发展经济伙伴关系协定早期收获安排协定税率的公告",
         "action_type": "tax",
-        "retrieved_at": "2026-09-09T14:33:21.428703+00:00",
+        "retrieved_at": "2026-09-09T14:59:38.667775+00:00",
         "data_date": "2026-03-27"
       },
       {
@@ -18370,7 +18370,7 @@
         "summary": "中国国际服务贸易交易会展期内销售的进口展品税收优惠政策明确 2026-03-05",
         "confirmed_fact": "中国国际服务贸易交易会展期内销售的进口展品税收优惠政策明确",
         "action_type": "tax",
-        "retrieved_at": "2026-09-09T14:33:21.428703+00:00",
+        "retrieved_at": "2026-09-09T14:59:38.667775+00:00",
         "data_date": "2026-03-05"
       },
       {
@@ -18390,7 +18390,7 @@
         "summary": "“十五五”期间相关展会展期内销售的进口展品税收优惠政策明确 2026-03-05",
         "confirmed_fact": "“十五五”期间相关展会展期内销售的进口展品税收优惠政策明确",
         "action_type": "tax",
-        "retrieved_at": "2026-09-09T14:33:21.428703+00:00",
+        "retrieved_at": "2026-09-09T14:59:38.667775+00:00",
         "data_date": "2026-03-05"
       },
       {
@@ -18410,7 +18410,7 @@
         "summary": "“十五五”期间广交会展期内销售的进口展品税收优惠政策明确 2026-03-05",
         "confirmed_fact": "“十五五”期间广交会展期内销售的进口展品税收优惠政策明确",
         "action_type": "tax",
-        "retrieved_at": "2026-09-09T14:33:21.428703+00:00",
+        "retrieved_at": "2026-09-09T14:59:38.667775+00:00",
         "data_date": "2026-03-05"
       },
       {
@@ -18430,7 +18430,7 @@
         "summary": "四部门印发通知要求做好帮扶小额信贷工作 2026-03-03",
         "confirmed_fact": "四部门印发通知要求做好帮扶小额信贷工作",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:21.428703+00:00",
+        "retrieved_at": "2026-09-09T14:59:38.667775+00:00",
         "data_date": "2026-03-03"
       },
       {
@@ -18450,7 +18450,7 @@
         "summary": "国务院关税税则委员会关于调整对原产于加拿大的部分进口商品加征关税措施的公告 2026-02-27",
         "confirmed_fact": "国务院关税税则委员会关于调整对原产于加拿大的部分进口商品加征关税措施的公告",
         "action_type": "tax",
-        "retrieved_at": "2026-09-09T14:33:21.428703+00:00",
+        "retrieved_at": "2026-09-09T14:59:38.667775+00:00",
         "data_date": "2026-02-27"
       },
       {
@@ -18470,7 +18470,7 @@
         "summary": "天然气基础设施建设与运营管理办法 2017-11-03",
         "confirmed_fact": "天然气基础设施建设与运营管理办法",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:22.310465+00:00",
+        "retrieved_at": "2026-09-09T14:59:39.498547+00:00",
         "data_date": "2017-11-03"
       },
       {
@@ -18490,7 +18490,7 @@
         "summary": "2024-12-25 中华人民共和国科学技术普及法（2024年修订） 2024-12-25",
         "confirmed_fact": "中华人民共和国科学技术普及法（2024年修订）",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:22.658114+00:00",
+        "retrieved_at": "2026-09-09T14:59:39.695816+00:00",
         "data_date": "2024-12-25"
       },
       {
@@ -18510,7 +18510,7 @@
         "summary": "2024-05-30 国家科学技术奖励条例（国务院令第782号第四次修订） 2024-05-30",
         "confirmed_fact": "国家科学技术奖励条例（国务院令第782号第四次修订）",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:22.658114+00:00",
+        "retrieved_at": "2026-09-09T14:59:39.695816+00:00",
         "data_date": "2024-05-30"
       },
       {
@@ -18530,7 +18530,7 @@
         "summary": "2021-12-24 中华人民共和国科学技术进步法(2021年修订) 2021-12-24",
         "confirmed_fact": "中华人民共和国科学技术进步法(2021年修订)",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:22.658114+00:00",
+        "retrieved_at": "2026-09-09T14:59:39.695816+00:00",
         "data_date": "2021-12-24"
       },
       {
@@ -18550,7 +18550,7 @@
         "summary": "2026-02-11 科学技术部令第24号 科学技术活动违规行为调查处理规定 2026-02-11",
         "confirmed_fact": "科学技术部令第24号 科学技术活动违规行为调查处理规定",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:22.658114+00:00",
+        "retrieved_at": "2026-09-09T14:59:39.695816+00:00",
         "data_date": "2026-02-11"
       },
       {
@@ -18570,7 +18570,7 @@
         "summary": "2025-08-05 科学技术部令第23号 科技部关于废止部分规章的决定 2025-08-05",
         "confirmed_fact": "科学技术部令第23号 科技部关于废止部分规章的决定",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:22.658114+00:00",
+        "retrieved_at": "2026-09-09T14:59:39.695816+00:00",
         "data_date": "2025-08-05"
       },
       {
@@ -18590,7 +18590,7 @@
         "summary": "2025-06-30 科学技术部令第22号 国家科学技术奖励条例实施细则 2025-06-30",
         "confirmed_fact": "科学技术部令第22号 国家科学技术奖励条例实施细则",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:22.658114+00:00",
+        "retrieved_at": "2026-09-09T14:59:39.695816+00:00",
         "data_date": "2025-06-30"
       },
       {
@@ -18610,7 +18610,7 @@
         "summary": "2026-03-02 科技部 金融监管总局 工业和信息化部 国家知识产权局印发《关于加快推动科技保险高质量发展 有力支撑高水平科技自立自强的若干意见》的通知 2026-03-02",
         "confirmed_fact": "科技部 金融监管总局 工业和信息化部 国家知识产权局印发《关于加快推动科技保险高质量发展 有力支撑高水平科技自立自强的若干意见》的通知",
         "action_type": "regulation",
-        "retrieved_at": "2026-09-09T14:33:22.658114+00:00",
+        "retrieved_at": "2026-09-09T14:59:39.695816+00:00",
         "data_date": "2026-03-02"
       },
       {
@@ -18630,7 +18630,7 @@
         "summary": "2026-01-16 科技部办公厅关于印发《国家重大科研基础设施和大型科研仪器开放共享评价考核实施细则》的通知 2026-01-16",
         "confirmed_fact": "科技部办公厅关于印发《国家重大科研基础设施和大型科研仪器开放共享评价考核实施细则》的通知",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:22.658114+00:00",
+        "retrieved_at": "2026-09-09T14:59:39.695816+00:00",
         "data_date": "2026-01-16"
       },
       {
@@ -18650,7 +18650,7 @@
         "summary": "2025-08-05 科技部关于宣布失效部分规范性文件的决定 2025-08-05",
         "confirmed_fact": "科技部关于宣布失效部分规范性文件的决定",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:22.658114+00:00",
+        "retrieved_at": "2026-09-09T14:59:39.695816+00:00",
         "data_date": "2025-08-05"
       },
       {
@@ -18670,7 +18670,7 @@
         "summary": "2025-05-13 科技部 中国人民银行 金融监管总局 中国证监会 国家发展改革委 财政部 国务院国资委 关于印发《加快构建科技金融体制 有力支撑高水平科技自立自强的若干政策举措》的通知 2025-05-13",
         "confirmed_fact": "科技部 中国人民银行 金融监管总局 中国证监会 国家发展改革委 财政部 国务院国资委 关于印发《加快构建科技金融体制 有力支撑高水平科技自立自强的若干政策举措》的通知",
         "action_type": "regulation",
-        "retrieved_at": "2026-09-09T14:33:22.658114+00:00",
+        "retrieved_at": "2026-09-09T14:59:39.695816+00:00",
         "data_date": "2025-05-13"
       },
       {
@@ -18690,7 +18690,7 @@
         "summary": "2024-08-13 科技部办公厅关于印发《“创新积分制”工作指引（全国试行版）》的通知 2024-08-13",
         "confirmed_fact": "科技部办公厅关于印发《“创新积分制”工作指引（全国试行版）》的通知",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:22.658114+00:00",
+        "retrieved_at": "2026-09-09T14:59:39.695816+00:00",
         "data_date": "2024-08-13"
       },
       {
@@ -18710,7 +18710,7 @@
         "summary": "2024-04-22 科技部 财政部关于印发《国家重点研发计划管理暂行办法》的通知 2024-04-22",
         "confirmed_fact": "科技部 财政部关于印发《国家重点研发计划管理暂行办法》的通知",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:22.658114+00:00",
+        "retrieved_at": "2026-09-09T14:59:39.695816+00:00",
         "data_date": "2024-04-22"
       },
       {
@@ -18730,7 +18730,7 @@
         "summary": "2024-01-25 科技部办公厅 民政部办公厅 中国科协办公厅关于开展促进科技类社会团体发挥学术自律自净作用专项行动的通知 2024-01-25",
         "confirmed_fact": "科技部办公厅 民政部办公厅 中国科协办公厅关于开展促进科技类社会团体发挥学术自律自净作用专项行动的通知",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:22.658114+00:00",
+        "retrieved_at": "2026-09-09T14:59:39.695816+00:00",
         "data_date": "2024-01-25"
       },
       {
@@ -18750,7 +18750,7 @@
         "summary": "2023-12-12 科技部关于印发《国家科学技术奖提名办法》的通知 2023-12-12",
         "confirmed_fact": "科技部关于印发《国家科学技术奖提名办法》的通知",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:22.658114+00:00",
+        "retrieved_at": "2026-09-09T14:59:39.695816+00:00",
         "data_date": "2023-12-12"
       },
       {
@@ -18770,7 +18770,7 @@
         "summary": "2017-11-13 财政部 科技部 国资委关于《国有科技型企业股权和分红激励暂行办法》的问题解答 2017-11-13",
         "confirmed_fact": "财政部 科技部 国资委关于《国有科技型企业股权和分红激励暂行办法》的问题解答",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:22.658114+00:00",
+        "retrieved_at": "2026-09-09T14:59:39.696782+00:00",
         "data_date": "2017-11-13"
       },
       {
@@ -18790,7 +18790,7 @@
         "summary": "2023-07-07 研发费用加计扣除政策执行指引（2.0版） 2023-07-07",
         "confirmed_fact": "研发费用加计扣除政策执行指引（2.0版）",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:22.658114+00:00",
+        "retrieved_at": "2026-09-09T14:59:39.696782+00:00",
         "data_date": "2023-07-07"
       },
       {
@@ -18810,7 +18810,7 @@
         "summary": "2024-03-13 我国支持科技创新主要税费优惠政策指引 2024-03-13",
         "confirmed_fact": "我国支持科技创新主要税费优惠政策指引",
         "action_type": "support",
-        "retrieved_at": "2026-09-09T14:33:22.658114+00:00",
+        "retrieved_at": "2026-09-09T14:59:39.696782+00:00",
         "data_date": "2024-03-13"
       },
       {
@@ -18830,7 +18830,7 @@
         "summary": "中华人民共和国农村集体经济组织法（2024年6月28日第十四届全国人民代表大会常务委员会第十次会议通过） 2024-06-28",
         "confirmed_fact": "中华人民共和国农村集体经济组织法（2024年6月28日第十四届全国人民代表大会常务委员会第十次会议通过）",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:23.233189+00:00",
+        "retrieved_at": "2026-09-09T14:59:40.240149+00:00",
         "data_date": "2024-06-28"
       },
       {
@@ -18850,7 +18850,7 @@
         "summary": "中华人民共和国农业技术推广法 2024-04-26",
         "confirmed_fact": "中华人民共和国农业技术推广法",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:23.233189+00:00",
+        "retrieved_at": "2026-09-09T14:59:40.240149+00:00",
         "data_date": "2024-04-26"
       },
       {
@@ -18870,7 +18870,7 @@
         "summary": "中华人民共和国乡村振兴促进法 2021-05-07",
         "confirmed_fact": "中华人民共和国乡村振兴促进法",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:23.233189+00:00",
+        "retrieved_at": "2026-09-09T14:59:40.240149+00:00",
         "data_date": "2021-05-07"
       },
       {
@@ -18890,7 +18890,7 @@
         "summary": "国务院关于印发《深入实施以人为本的 新型城镇化战略五年行动计划》的通知 国发〔2024〕17号 2024-10-24",
         "confirmed_fact": "国务院关于印发《深入实施以人为本的 新型城镇化战略五年行动计划》的通知 国发〔2024〕17号",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:23.233189+00:00",
+        "retrieved_at": "2026-09-09T14:59:40.240149+00:00",
         "data_date": "2024-10-24"
       },
       {
@@ -18910,7 +18910,7 @@
         "summary": "中共中央办公厅 国务院办公厅关于加强耕地保护提升耕地质量完善占补平衡的意见 2024-10-24",
         "confirmed_fact": "中共中央办公厅 国务院办公厅关于加强耕地保护提升耕地质量完善占补平衡的意见",
         "action_type": "other",
-        "retrieved_at": "2026-09-09T14:33:23.233189+00:00",
+        "retrieved_at": "2026-09-09T14:59:40.240149+00:00",
         "data_date": "2024-10-24"
       }
     ],
@@ -19032,7 +19032,7 @@
       "evidence_level": "B",
       "source": "project_root.env",
       "dataset": "tushare_credential",
-      "retrieved_at": "2026-09-09T14:32:45.938252+00:00",
+      "retrieved_at": "2026-09-09T15:05:56.067595+00:00",
       "data_date": "2026-09-09",
       "record_count": 1,
       "url": null,
@@ -19042,21 +19042,11 @@
       "evidence_level": "B",
       "source": "tushare.trade_cal",
       "dataset": "tushare_trade_cal",
-      "retrieved_at": "2026-09-04T17:25:15.169850+00:00",
-      "data_date": "2026-09-04",
-      "record_count": 1,
+      "retrieved_at": "2026-09-05T21:30:14.326901+08:00",
+      "data_date": "2026-09-09",
+      "record_count": 365,
       "url": null,
-      "fact": "tushare_trade_cal returned 1 rows"
-    },
-    {
-      "evidence_level": "B",
-      "source": "tushare.stock_basic",
-      "dataset": "tushare_stock_basic",
-      "retrieved_at": "2026-09-09T12:52:30.226219+00:00",
-      "data_date": "2026-09-04",
-      "record_count": 1,
-      "url": null,
-      "fact": "tushare_stock_basic returned 1 rows"
+      "fact": "tushare_trade_cal returned 365 rows"
     },
     {
       "evidence_level": "B",
@@ -19072,17 +19062,17 @@
       "evidence_level": "B",
       "source": "tushare.daily",
       "dataset": "tushare_previous_daily_all",
-      "retrieved_at": "2026-09-09T14:32:51.320607+00:00",
-      "data_date": "2026-09-04",
-      "record_count": 5548,
+      "retrieved_at": "2026-09-09T15:05:58.274775+00:00",
+      "data_date": "2026-09-08",
+      "record_count": 5549,
       "url": null,
-      "fact": "tushare_previous_daily_all returned 5548 rows"
+      "fact": "tushare_previous_daily_all returned 5549 rows"
     },
     {
       "evidence_level": "B",
-      "source": "tushare.daily",
+      "source": "akshare.stock_zh_a_hist; fallback akshare.stock_zh_a_hist_tx/stock_zh_a_daily",
       "dataset": "stock_top_ohlcv",
-      "retrieved_at": "2026-09-09T14:32:51.331577+00:00",
+      "retrieved_at": "2026-09-09T15:05:58.277736+00:00",
       "data_date": "2026-09-09",
       "record_count": 120,
       "url": null,
@@ -19092,7 +19082,7 @@
       "evidence_level": "B",
       "source": "ths.industry_summary",
       "dataset": "industry_board_daily",
-      "retrieved_at": "2026-09-09T14:32:56.833838+00:00",
+      "retrieved_at": "2026-09-09T14:32:56.799197+00:00",
       "data_date": "2026-09-09",
       "record_count": 90,
       "url": null,
@@ -19102,7 +19092,7 @@
       "evidence_level": "B",
       "source": "sina.concept_snapshot",
       "dataset": "concept_board_daily",
-      "retrieved_at": "2026-09-09T14:33:13.031239+00:00",
+      "retrieved_at": "2026-09-09T14:33:12.995838+00:00",
       "data_date": "2026-09-09",
       "record_count": 175,
       "url": null,
@@ -19112,7 +19102,7 @@
       "evidence_level": "B",
       "source": "announcement_collector.cninfo_exchange_ir",
       "dataset": "official_announcements",
-      "retrieved_at": "2026-09-09T14:33:20.257404+00:00",
+      "retrieved_at": "2026-09-09T15:05:58.284717+00:00",
       "data_date": "2026-09-09",
       "record_count": 55,
       "url": null,
@@ -19122,7 +19112,7 @@
       "evidence_level": "B",
       "source": "announcement_collector",
       "dataset": "official_announcements_meta",
-      "retrieved_at": "2026-09-09T14:33:20.257404+00:00",
+      "retrieved_at": "2026-09-09T15:05:58.284717+00:00",
       "data_date": "2026-09-09",
       "record_count": 1,
       "url": null,
