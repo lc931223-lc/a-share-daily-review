@@ -7,7 +7,13 @@ import pandas as pd
 import hashlib
 
 from src.storage.fact_store import FactStore
-from src.opportunity_radar.contracts import normalize, stamp
+from src.opportunity_radar.contracts import normalize, stamp, digest
+
+
+def semantic_key(row):
+    return digest({k: row.get(k) for k in (
+        "signal_type", "entity", "theme", "stock_code", "metric", "unit", "currency", "value",
+        "source_date", "published_at", "source", "url", "body_evidence", "title", "facts")})
 
 
 def receipt_matches(data, expected):
@@ -32,13 +38,14 @@ class ObservationStore:
         for path in sorted(folder.glob("trade_date=*/*.parquet")):
             for record in pd.read_parquet(path).to_dict("records"):
                 row = json.loads(record["payload_json"])
-                old = result.get(row["observation_id"])
+                key = semantic_key(row)
+                old = result.get(key)
                 if old is None or row["first_seen_at"] < old["first_seen_at"]:
-                    result[row["observation_id"]] = row
+                    result[key] = row
         return list(result.values())
 
     def append(self, rows):
-        known = {r["observation_id"] for r in self.all()}
+        known = {semantic_key(r) for r in self.all()}
         partitions = {}
         content = {}
         for raw in rows:
@@ -58,9 +65,10 @@ class ObservationStore:
             seen = stamp(row["first_seen_at"])
             if not seen:
                 raise ValueError("FIRST_SEEN_TIMESTAMP_REQUIRED")
-            if row["observation_id"] in known:
+            key = semantic_key(row)
+            if key in known:
                 continue
-            known.add(row["observation_id"])
+            known.add(key)
             partitions.setdefault(seen.date(), []).append({
                 "observation_id": row["observation_id"], "source_date": row["source_date"],
                 "first_seen_at": row["first_seen_at"], "payload_json": json.dumps(row, ensure_ascii=False, allow_nan=False),

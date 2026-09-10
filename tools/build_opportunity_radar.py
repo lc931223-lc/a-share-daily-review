@@ -32,6 +32,7 @@ def main(argv=None):
     parser.add_argument("--as-of")
     parser.add_argument("--collect", action="store_true")
     parser.add_argument("--collect-only", action="store_true")
+    parser.add_argument("--enrich", action="store_true")
     parser.add_argument("--import-json", type=Path)
     parser.add_argument("--replay", action="store_true")
     parser.add_argument("--replay-start", type=date.fromisoformat)
@@ -48,6 +49,17 @@ def main(argv=None):
     pipeline = RadarPipeline(ROOT)
     rows, receipts = archived_disclosures(ROOT)
     pipeline.store.append(rows)
+    if args.enrich:
+        from src.opportunity_radar.enrichment import collect_enrichment
+        fresh, results, edges = collect_enrichment(ROOT, day)
+        pipeline.store.append(fresh)
+        receipts.extend(results)
+        relation_path = ROOT / "data/reference/opportunity_relations.json"
+        old = json.loads(relation_path.read_text(encoding="utf-8")) if relation_path.exists() else []
+        from src.opportunity_radar.contracts import digest
+        from src.auction.production import write
+        from src.opportunity_radar.relations import merge_relations
+        write(relation_path, merge_relations(old + edges))
     if args.import_json:
         # Imported records retain their source publication and observation timestamps.
         pipeline.store.append(json.loads(args.import_json.read_text(encoding="utf-8")))
@@ -56,7 +68,7 @@ def main(argv=None):
         fresh, results = fetch_series(ROOT, end-timedelta(days=550), end)
         pipeline.store.append(fresh)
         receipts.extend(results)
-    if args.collect or args.collect_only:
+    if args.collect or args.collect_only or args.enrich:
         path = ROOT / "data/opportunity_radar/diagnostics" / (now.strftime("%Y%m%dT%H%M%S") + ".json")
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps({"retrieved_at": now.isoformat(), "sources": receipts}, ensure_ascii=False, indent=2), encoding="utf-8")

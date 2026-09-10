@@ -12,7 +12,7 @@ from pathlib import Path
 from jsonschema import Draft202012Validator, ValidationError
 
 from src.market_packet.trading_calendar import load_trading_calendar
-from src.opportunity_radar.contracts import CATEGORIES, SHANGHAI, VERSION, digest, objective_guard, stamp, visible
+from src.opportunity_radar.contracts import CATEGORIES, SHANGHAI, VERSION, digest, objective_guard, stamp, visible, evidence_eligible
 from src.opportunity_radar.changes import latest_changes
 from src.opportunity_radar.feedback import measure, market_validation_rows
 from src.opportunity_radar.relations import transmission_paths
@@ -36,6 +36,12 @@ def mechanical_key(row):
 def candidates(observations):
     positive, negative = [], []
     for row in observations:
+        if row.get("facts", {}).get("observation_mode") in {"RETROSPECTIVE_SERIES", "SYNTHETIC_TEST"}:
+            continue
+        if row.get("facts", {}).get("period_basis") == "YTD":
+            continue
+        if (row.get("provenance") or {}).get("kind") == "FETCHED_SERIES_NOT_HISTORICAL_FIRST_SEEN":
+            continue
         delta = row["changes"].get("delta")
         event = row["facts"].get("current_stage") or row["facts"].get("event_type") or row["facts"].get("action") or row["facts"].get("policy_stage")
         direction = None
@@ -56,6 +62,7 @@ def candidates(observations):
                      "semantics": "OBSERVED_CHANGE_NOT_EXPECTED_STOCK_RETURN",
                      "changes": row["changes"], "source_tier": row["source_tier"],
                      "first_seen_at": row["first_seen_at"], "data_gaps": row["data_gaps"]}
+        candidate["observation_mode"] = row.get("facts", {}).get("observation_mode", "ARCHIVED_POINT_IN_TIME")
         (positive if direction == "INCREASE" else negative).append(candidate)
     return sorted(positive, key=mechanical_key), sorted(negative, key=mechanical_key)
 
@@ -70,18 +77,27 @@ def validate(packet):
         raise ValueError("MORNING_FREEZE_DEADLINE_PASSED")
     for field in CATEGORIES.values():
         for row in packet[field]:
+            if not evidence_eligible(row):
+                raise ValueError("WITHDRAWN_EXTRACTION_EVIDENCE")
             if not visible(row, cutoff) or not row["as_of_valid"]:
                 raise ValueError("AS_OF_GATE_FAILED")
 
 
 def compact(packet):
     result = copy.deepcopy(packet)
+    preference_order = {}
+    for field, cap in (("negative_risk_candidates", 10), ("company_specific_candidates", 20), ("positive_change_candidates", 20)):
+        for row in result[field][:cap]:
+            preference_order.setdefault(row["observation_id"], len(preference_order))
+    preferred = set(preference_order)
+    for field in CATEGORIES.values():
+        result[field].sort(key=lambda r: (preference_order.get(r["observation_id"], 1000), mechanical_key(r)))
     counts = {k: len(result[k]) for k in CATEGORIES.values()}
     counts.update({k: len(result[k]) for k in LIMITS})
     for field, limit in LIMITS.items():
         result[field] = result[field][:limit]
     disclosures = [row for key in CATEGORIES.values() if key not in {"commodity_observations", "macro_observations", "overseas_lead_observations", "market_structure_observations"} for row in result[key]]
-    keep = {r["observation_id"] for r in sorted(disclosures, key=mechanical_key)[:30]}
+    keep = {r["observation_id"] for r in sorted(disclosures, key=lambda r: (preference_order.get(r["observation_id"], 1000), mechanical_key(r)))[:30]}
     for field in CATEGORIES.values():
         if field not in {"commodity_observations", "macro_observations", "overseas_lead_observations", "market_structure_observations"}:
             result[field] = [r for r in result[field] if r["observation_id"] in keep]
@@ -98,6 +114,37 @@ def compact(packet):
                                   "available_counts": counts,
                                   "retained_counts": {k: len(result[k]) for k in counts},
                                   "full_packet_required_for_complete_history": True}
+    result["technology_supply_chain_mapping"] = {"reference": "config/opportunity_radar_taxonomy.json",
+        "semantics": "CLASSIFICATION_ONLY_NOT_VERIFIED_RELATIONS"}
+    # Full retains every fact and source receipt; compact retains required schema fields.
+    for field in CATEGORIES.values():
+        for row in result[field]:
+            row["history_references"] = row["history_references"][-2:]
+            if row.get("body_evidence"):
+                row["body_evidence"] = row["body_evidence"][:500]
+    result["signal_history"] = []
+    result["data_gaps"] = list({(g.get("signal_type"), g.get("reason")): g for g in result["data_gaps"]}.values())
+    needed = {r["source_path"] for f in CATEGORIES.values() for r in result[f]}
+    result["source_manifest"] = [r for r in result["source_manifest"] if r["path"] in needed]
+    # Trim evidence rows rather than deleting mandatory fields or provenance.
+    while len(json.dumps(result, ensure_ascii=False, indent=2).encode()) > 190_000:
+        choices = [f for f in CATEGORIES.values() if len(result[f]) > 1]
+        if not choices:
+            break
+        # Discard non-candidate evidence first; never evict every company/risk example for bulk prices.
+        ordinary = [f for f in choices if any(r["observation_id"] not in preferred for r in result[f])]
+        field = max(ordinary or choices, key=lambda f: len(json.dumps(result[f], ensure_ascii=False).encode()))
+        index = next((i for i in range(len(result[field])-1, -1, -1) if result[field][i]["observation_id"] not in preferred), len(result[field])-1)
+        result[field].pop(index)
+        retained = {r["observation_id"] for f in CATEGORIES.values() for r in result[f]}
+        for name in ("positive_change_candidates", "negative_risk_candidates", "theme_candidates", "company_specific_candidates", "factor41_mapping"):
+            result[name] = [r for r in result[name] if r["observation_id"] in retained]
+        paths = {r["source_path"] for f in CATEGORIES.values() for r in result[f]}
+        result["source_manifest"] = [s for s in result["source_manifest"] if s["path"] in paths]
+    result["compact_metadata"]["retained_counts"] = {k: len(result[k]) for k in counts}
+    sizes = {k: len(json.dumps(v, ensure_ascii=False, indent=2).encode()) for k, v in result.items()}
+    result["compact_metadata"]["compact_size_warning"] = sum(sizes.values()) > 300_000
+    result["compact_metadata"]["largest_modules"] = sorted(sizes, key=sizes.get, reverse=True)[:5]
     validate(result)
     return result
 
@@ -135,6 +182,11 @@ def _verify_sources(root, packet):
         archive = Path(root) / "data/raw/opportunity_radar/provenance" / f"{sha}.json"
         if not any(p.is_file() and p.resolve().is_relative_to(Path(root).resolve()) and receipt_matches(p.read_bytes(), sha) for p in (original, archive)):
             raise ValueError("RADAR_SOURCE_PROVENANCE_UNAVAILABLE")
+        provenance = source.get("provenance") or {}
+        if provenance.get("raw_path"):
+            raw = (Path(root) / provenance["raw_path"]).resolve()
+            if not raw.is_relative_to(Path(root).resolve()) or not raw.is_file() or hashlib.sha256(raw.read_bytes()).hexdigest() != provenance.get("raw_sha256"):
+                raise ValueError("RADAR_RAW_BODY_HASH_MISMATCH")
 
 
 class RadarPipeline:
@@ -158,6 +210,8 @@ class RadarPipeline:
         if not replay and snapshot == "EOD" and current < datetime.combine(day, time(15, 5), SHANGHAI):
             raise ValueError("MARKET_NOT_CLOSED")
         history = rows if rows is not None else self.store.all()
+        quarantined = sum(not evidence_eligible(r) for r in history)
+        history = [r for r in history if evidence_eligible(r)]
         selected = latest_changes(history, cutoff)
         # A stale/non-reconciled partial daily history is not a daily change signal.
         calendar = load_trading_calendar(day, cache_root=self.root / "data/reference")
@@ -174,6 +228,8 @@ class RadarPipeline:
         combined = sorted(positive + negative, key=mechanical_key)
         gaps = [{"signal_type": category, "status": "UNAVAILABLE", "reason": "NO_AS_OF_ADMISSIBLE_OBSERVATIONS"}
                 for category in CATEGORIES if not any(r["signal_type"] == category for r in selected)]
+        if quarantined:
+            gaps.append({"status": "UNAVAILABLE", "reason": "WITHDRAWN_PARSER_VERSION_OBSERVATIONS_EXCLUDED", "count": quarantined})
         excluded = sum(not visible(r, cutoff) for r in history)
         if excluded:
             gaps.append({"status": "UNAVAILABLE", "reason": "FUTURE_OR_UNTIMED_OBSERVATIONS_EXCLUDED", "count": excluded})
@@ -181,6 +237,10 @@ class RadarPipeline:
                   "reason": ";".join(r["data_gaps"])} for r in selected if r["data_gaps"]]
         relation_path = self.root / "data/reference/opportunity_relations.json"
         edges = json.loads(relation_path.read_text(encoding="utf-8")) if relation_path.exists() else []
+        for edge in edges:
+            if edge.get("source_tier") == 4 or not edge.get("evidence"):
+                raise ValueError("UNVERIFIED_PRODUCTION_RELATION")
+            _verify_sources(self.root, {"source_manifest": [{"path": edge.get("source_path"), "provenance": edge.get("provenance")} ]})
         relations = transmission_paths(edges, cutoff)
         if not relations:
             gaps.append({"status": "UNAVAILABLE", "reason": "NO_VERIFIED_COMPANY_OR_TRANSMISSION_EDGES; taxonomy is not evidence"})
@@ -298,6 +358,7 @@ def read_only_summary(root, day):
     context["signals"] = [{"entity": r["entity"], "theme": r["theme"], "stock_code": r["stock_code"],
                            "radar_first_seen_date": r["signal_first_seen_date"],
                            "radar_signal_types": [r["signal_type"]],
+                           "radar_source_tiers": [r.get("source_tier")],
                            "lead_days_before_market_confirmation": leads.get((r["entity"], r["signal_type"])),
                            "observation_id": r["observation_id"]} for r in records[:30]]
     context["as_of"] = packet["meta"]["as_of"]

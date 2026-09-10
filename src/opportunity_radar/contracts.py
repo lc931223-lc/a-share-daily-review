@@ -26,6 +26,7 @@ CATEGORIES = dict(zip((
     "market_structure_observations",
 )))
 FORBIDDEN = set("opportunity_rank opportunity_score final_opportunity buy_priority sell_priority recommendation conviction expected_return target_price final_mainline mainline_prediction final_lifecycle final_stock_role final_rating final_six_dimension_score causal_conclusion valuation_conclusion market_regime_conclusion investment_conclusion final_judgement market_priced_pct fully_priced underpriced overpriced".split())
+FORBIDDEN.update("beneficiary_priority undervalued overvalued".split())
 FINAL_STATES = set("DISCOVERED EARLY WATCH PRE_HEAT CONFIRMED CROWDED INVALIDATED".split())
 STAGES = {
     "CAPACITY_AND_UTILIZATION": "ANNOUNCED_CAPACITY UNDER_CONSTRUCTION COMMISSIONING PRODUCTION_STARTED EFFECTIVE_OUTPUT".split(),
@@ -117,6 +118,15 @@ def visible(row, cutoff):
                 and source_day and source_day <= cutoff.date().isoformat())
 
 
+def evidence_eligible(row):
+    facts = row.get("facts") or {}
+    if facts.get("body_parsed") and row.get("stock_code") and facts.get("parser_version") != "DISCLOSURE_BODY_V21_3":
+        return False
+    if row.get("source") == "NBS" and row.get("metric") == "reported_production":
+        return False
+    return True
+
+
 def normalize(row):
     objective_guard(row)
     category = row["signal_type"]
@@ -136,7 +146,7 @@ def normalize(row):
     # A structured, sourced statement is necessary. A title is never such a statement.
     if stage in HARD_STAGES and (source_tier == 4 or not row.get("body_evidence")):
         raise ValueError("UNSUPPORTED_HARD_CONFIRMATION")
-    negations = ("尚未", "未形成", "未实现", "未量产", "仍在研发", "验证中", "客户验证", "未认证", "可用于", "拟", "预计", "框架协议", "战略协议", "战略合作", "合作意向", "海外同行上涨", "not yet", "no order", "no revenue")
+    negations = ("尚未", "尚处", "未形成", "未实现", "未量产", "仍在研发", "验证中", "客户验证", "未认证", "可用于", "拟", "预计", "有望", "可能", "不排除", "暂无", "未与", "不涉及", "框架协议", "战略协议", "战略合作", "合作意向", "海外同行上涨", "not yet", "no order", "no revenue")
     if stage in HARD_STAGES and any(word in str(row.get("body_evidence") or "").lower() for word in negations):
         raise ValueError("NEGATED_OR_PROSPECTIVE_HARD_CONFIRMATION")
     for key in ("current_stage", "previous_stage", "policy_stage"):

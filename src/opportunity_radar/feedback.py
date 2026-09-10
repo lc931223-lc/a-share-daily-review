@@ -20,6 +20,8 @@ def measure(signals, market_rows, trading_days, as_of):
     days = sorted(str(day) for day in trading_days if str(day) <= str(as_of))
     records = []
     for signal in signals:
+        if signal.get("observation_mode", "ARCHIVED_POINT_IN_TIME") not in {"LIVE_OBSERVED", "ARCHIVED_POINT_IN_TIME"}:
+            continue
         first = signal["signal_first_seen_date"]
         window = [day for day in days if day > first][:20]
         context_window = [day for day in days if day <= first][-20:] + window

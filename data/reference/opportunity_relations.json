@@ -1,0 +1,54 @@
+[
+  {
+    "source": "巨潮资讯",
+    "url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491753.PDF",
+    "source_path": "data/raw/opportunity_radar/body_receipts/ef2795eb70ad36944f2b10db30c5555cc141b67e77d9a9d7a653753b7d68c795.json",
+    "first_seen_at": "2026-09-11T00:50:13.596164+08:00",
+    "provenance": {
+      "sha256": "f92a0359d515800f61e3996aeee9b9a7edf64a5e6887f9ba7c51f151d5a030d2",
+      "raw_sha256": "e0ecd7c365c65e90b1fa4b4616ba3f4649449d64451e0ba0b1b78ba9ce3170bf",
+      "raw_path": "data/raw/opportunity_radar/bodies/e0ecd7c365c65e90b1fa4b4616ba3f4649449d64451e0ba0b1b78ba9ce3170bf.pdf",
+      "kind": "SOURCE_BODY"
+    },
+    "source_tier": 1,
+    "published_at": "2026-08-22",
+    "source_date": "2026-08-22",
+    "event_date": "2026-08-22",
+    "from": "中际旭创",
+    "to": "光模块",
+    "company_name": "中际旭创",
+    "stock_code": "300308",
+    "relationship_type": "PRODUCER",
+    "transmission_depth": 1,
+    "evidence": "（四）经营模式1、采购模式公司生产的高速光通信模块产品所需原材料主要包括光器件、集成电路芯片以及结构件等，高速光模块产品生产的能源消耗主要为电力",
+    "confidence": 1.0,
+    "revenue_exposure": null,
+    "cost_exposure": null
+  },
+  {
+    "source": "深交所",
+    "url": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-28/328c12d7-c3e9-4280-a2c2-9a37c15cff4f.PDF",
+    "source_path": "data/raw/opportunity_radar/body_receipts/66bffff00392e16d695a63e9d7f033d79d4639e1e91e813eb0253ec052d3636a.json",
+    "first_seen_at": "2026-09-11T00:54:30.003766+08:00",
+    "provenance": {
+      "sha256": "5cfd9ee5ce75b41b2676318d93b67698061bd0a8fdf60f9b075cafeda457c48e",
+      "raw_sha256": "25a0351b968aeb19aba61222df2050cce4e5535836a1591317317a2f9d71f595",
+      "raw_path": "data/raw/opportunity_radar/bodies/25a0351b968aeb19aba61222df2050cce4e5535836a1591317317a2f9d71f595.pdf",
+      "kind": "SOURCE_BODY"
+    },
+    "source_tier": 1,
+    "published_at": "2026-08-28",
+    "source_date": "2026-08-28",
+    "event_date": "2026-08-28",
+    "from": "三环集团",
+    "to": "MLCC",
+    "company_name": "三环集团",
+    "stock_code": "300408",
+    "relationship_type": "PRODUCER",
+    "transmission_depth": 1,
+    "evidence": "其中，公司MLCC产品受益于客户认可度提升以及行业景气度提升，部分规格产品价格修复至原有合理价值，销售量和销售额同比有较大幅度增长",
+    "confidence": 1.0,
+    "revenue_exposure": null,
+    "cost_exposure": null
+  }
+]

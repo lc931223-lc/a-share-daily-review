@@ -6,9 +6,17 @@ from src.opportunity_radar.contracts import digest, visible
 RELATION_TYPES = set("PRODUCER CONSUMER PRICE_BENEFICIARY COST_BENEFICIARY COST_VICTIM EQUIPMENT_SUPPLIER MATERIAL_SUPPLIER SERVICE_PROVIDER DOWNSTREAM_DEMAND SUBSTITUTE COMPLEMENTARY".split())
 
 
+def merge_relations(edges):
+    result = {}
+    for edge in sorted(edges, key=lambda r: r["first_seen_at"]):
+        key = digest({k: edge.get(k) for k in ("from", "to", "stock_code", "relationship_type", "evidence", "url", "published_at")})
+        result.setdefault(key, edge)
+    return list(result.values())
+
+
 def transmission_paths(edges, cutoff):
     graph = defaultdict(list)
-    for edge in edges:
+    for edge in merge_relations(edges):
         if edge.get("relationship_type") not in RELATION_TYPES:
             raise ValueError("UNKNOWN_RELATIONSHIP_TYPE")
         if not visible(edge, cutoff) or not edge.get("provenance") or not (edge.get("url") or edge.get("source_path")):

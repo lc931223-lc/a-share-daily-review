@@ -1,0 +1,8 @@
+{
+  "full_path": "data\\opportunity_radar\\2026-09-11_morning.json",
+  "full_canonical_sha256": "07b43ab1608582f3cf7ead36a202a92cd21b12edbac0b986d2d08d122b58c43c",
+  "compact_canonical_sha256": "71495dc914e460e35492ae6b628016955622a77a518651ba344a5aa46c8037d1",
+  "exported_at": "2026-09-11T01:00:15.075199+08:00",
+  "transform": "V21_COMPACT_SELECTION",
+  "semantics": "SAME_FROZEN_FACTS_NOT_A_NEW_SIGNAL_SNAPSHOT"
+}

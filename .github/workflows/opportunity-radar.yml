@@ -1,0 +1,77 @@
+name: Opportunity Radar production
+on:
+  schedule:
+    - cron: '10 0 * * 1-5'
+    - cron: '10 8 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      trade_date:
+        description: 'YYYY-MM-DD or auto; historical dates require replay'
+        default: auto
+        type: string
+      snapshot:
+        type: choice
+        options: [AUTO, MORNING, EOD]
+        default: AUTO
+      replay:
+        type: boolean
+        default: false
+permissions:
+  contents: write
+concurrency:
+  group: opportunity-radar-production
+  cancel-in-progress: false
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      TZ: Asia/Shanghai
+      TUSHARE_TOKEN: ${{ secrets.TUSHARE_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Produce with bounded retries
+        env:
+          DAY: ${{ inputs.trade_date || 'auto' }}
+          SNAPSHOT: ${{ inputs.snapshot || 'AUTO' }}
+          REPLAY: ${{ inputs.replay }}
+        run: |
+          args=(--date "$DAY" --snapshot "$SNAPSHOT")
+          if [[ "$REPLAY" == true ]]; then args+=(--replay); fi
+          for attempt in 1 2; do
+            if RADAR_ATTEMPT="$attempt" python tools/run_opportunity_radar_production.py "${args[@]}"; then exit 0; fi
+            sleep 10
+          done
+          exit 1
+      - name: Persist snapshots or failure diagnostics
+        if: always()
+        env:
+          RESULT: ${{ job.status }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if [[ "$RESULT" == success ]]; then
+            for path in data/opportunity_radar data/raw/opportunity_radar data/facts/dataset=opportunity_observation data/reference/opportunity_relations.json; do
+              if [[ -e "$path" ]]; then git add -f -- "$path"; fi
+            done
+          elif [[ -d data/opportunity_radar/diagnostics ]]; then
+            git add -f data/opportunity_radar/diagnostics
+          fi
+          git diff --cached --quiet && exit 0
+          git commit -m 'data: persist opportunity radar production receipt'
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: opportunity-radar-diagnostics
+          path: data/opportunity_radar/diagnostics/

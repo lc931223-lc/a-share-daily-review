@@ -474,6 +474,8 @@ class AuctionPipeline:
             for key, value in previous_context.items()
             if key not in {"official_review", "review_context", "market_packet"}
         }
+        from src.opportunity_radar.pipeline import read_only_summary
+        packet["previous_context"]["morning_radar_context"] = read_only_summary(self.root, trade_date)
         packet["sector_breadth"] = sectors
         packet["auction_market_environment"] = previous_context["auction_market"]
         packet["tomorrow_check_validation"] = tomorrow_validation
