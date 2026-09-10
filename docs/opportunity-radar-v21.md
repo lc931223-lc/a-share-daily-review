@@ -7,6 +7,14 @@ immutable snapshots and objective-only boundary remain in use. This delivery is
 PARTIAL coverage, not complete V2.1 acceptance. No investment conclusions or
 scoring changes are introduced.
 
+GitHub Actions run `34507915708` completed successfully on September 11:
+`https://github.com/lc931223-lc/a-share-daily-review/actions/runs/34507915708`.
+This manual Morning dispatch verified/reused the frozen production packet,
+committed its `FROZEN_ALREADY_EXISTS` receipt to main and uploaded diagnostics.
+It did not fetch a second live sample. The initial collection diagnostics remain
+in commit `9d74f07ca840dd8eb0f41a52d046d759839afd3b`; the separate coverage
+artifact remains available at the current main revision.
+
 The verified local production snapshot is `2026-09-11_morning`, frozen at
 `2026-09-11T01:13:26.314630+08:00`. Full size is 4,217,766 bytes; compact size is
 194,660 bytes. This is an early-morning observation, not a complete overnight
@@ -101,3 +109,8 @@ relations/provenance, compact limits, production failure persistence and
 objective-only integration. Full non-real-data tests and compileall are run for
 delivery. Auction receives only read-only Morning context after its scoring;
 Daily Review scores are unchanged.
+
+Final checks: targeted suite 173 passed; full non-real-data suite 563 passed,
+one real-data test deselected; compileall passed. Full/compact schema and raw
+provenance validation passed, including historical replay. Staged frozen bytes
+matched the working copies and the credential-value leak scan found zero hits.
