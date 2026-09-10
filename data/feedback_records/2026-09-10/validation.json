@@ -1,0 +1,199 @@
+{
+  "meta": {
+    "schema_version": "integrated_validation.1",
+    "prediction_date": "2026-09-10",
+    "validation_date": null,
+    "status": "WAITING_FOR_MARKET_DATA",
+    "available_horizons": [],
+    "source_review": "review_context:123193e586c1b4ea",
+    "hypothesis_kind": "OBJECTIVE_SUPPORT_HYPOTHESIS",
+    "formal_hit_rate_eligible": false
+  },
+  "actual_market_state": {
+    "return_1d": null,
+    "return_5d": null,
+    "return_10d": null,
+    "return_20d": null
+  },
+  "actual_theme_result": [
+    {
+      "theme": "多元金融",
+      "candidate_codes": [
+        "000532.SZ",
+        "600318.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "旅游及景",
+      "candidate_codes": [
+        "000978.SZ"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "食品加工",
+      "candidate_codes": [
+        "002661.SZ"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "炼化及贸",
+      "candidate_codes": [
+        "002377.SZ"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "元件",
+      "candidate_codes": [
+        "000823.SZ",
+        "002636.SZ",
+        "301176.SZ",
+        "603186.SH",
+        "603328.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "工业金属",
+      "candidate_codes": [
+        "002295.SZ"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "半导体",
+      "candidate_codes": [
+        "002077.SZ",
+        "603316.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "化学制药",
+      "candidate_codes": [
+        "002365.SZ",
+        "600488.SH",
+        "600812.SH",
+        "605177.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "出版",
+      "candidate_codes": [
+        "601949.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "综合Ⅱ",
+      "candidate_codes": [
+        "000523.SZ"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "小家电",
+      "candidate_codes": [
+        "002242.SZ"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "一般零售",
+      "candidate_codes": [
+        "000759.SZ",
+        "600712.SH",
+        "600778.SH",
+        "600865.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "消费电子",
+      "candidate_codes": [
+        "601231.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "橡胶",
+      "candidate_codes": [
+        "002068.SZ",
+        "603650.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "煤炭开采",
+      "candidate_codes": [
+        "600121.SH",
+        "600403.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    }
+  ],
+  "theme_return_5d": {},
+  "theme_return_10d": {},
+  "theme_return_20d": {},
+  "leader_result": [],
+  "inflection_result": [],
+  "auction_result": {
+    "source_validation": [],
+    "stock_results": []
+  },
+  "stock_result": [],
+  "max_gain": null,
+  "max_drawdown": null,
+  "error_type": [
+    "DATA_LIMITATION"
+  ]
+}

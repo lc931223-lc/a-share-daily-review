@@ -1,8 +1,8 @@
 {
   "meta": {
     "schema_version": "integrated_feedback_review.1",
-    "prediction_date": "2026-09-09",
-    "status": "PARTIAL_REVIEW"
+    "prediction_date": "2026-09-10",
+    "status": "WAITING_FOR_VALIDATION"
   },
   "correct_parts": [],
   "incorrect_parts": [],
@@ -10,54 +10,19 @@
     "DATA_LIMITATION"
   ],
   "actual_market_state": {
-    "return_1d": -0.01357665,
+    "return_1d": null,
     "return_5d": null,
     "return_10d": null,
     "return_20d": null
   },
   "actual_theme_result": [
     {
-      "theme": "电网设备",
+      "theme": "多元金融",
       "candidate_codes": [
-        "002121.SZ",
-        "600869.SH",
-        "601126.SH"
+        "000532.SZ",
+        "600318.SH"
       ],
-      "return_1d": -0.03151378,
-      "return_5d": null,
-      "return_10d": null,
-      "return_20d": null
-    },
-    {
-      "theme": "汽车零部",
-      "candidate_codes": [
-        "600698.SH"
-      ],
-      "return_1d": -0.06443914,
-      "return_5d": null,
-      "return_10d": null,
-      "return_20d": null
-    },
-    {
-      "theme": "通用设备",
-      "candidate_codes": [
-        "002046.SZ",
-        "603308.SH"
-      ],
-      "return_1d": -0.02215524,
-      "return_5d": null,
-      "return_10d": null,
-      "return_20d": null
-    },
-    {
-      "theme": "农产品加",
-      "candidate_codes": [
-        "000019.SZ",
-        "000930.SZ",
-        "600737.SH",
-        "920371.BJ"
-      ],
-      "return_1d": -0.0758553,
+      "return_1d": null,
       "return_5d": null,
       "return_10d": null,
       "return_20d": null
@@ -67,7 +32,27 @@
       "candidate_codes": [
         "000978.SZ"
       ],
-      "return_1d": 0.09988649,
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "食品加工",
+      "candidate_codes": [
+        "002661.SZ"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "炼化及贸",
+      "candidate_codes": [
+        "002377.SZ"
+      ],
+      "return_1d": null,
       "return_5d": null,
       "return_10d": null,
       "return_20d": null
@@ -75,11 +60,13 @@
     {
       "theme": "元件",
       "candidate_codes": [
-        "002579.SZ",
-        "603115.SH",
-        "603186.SH"
+        "000823.SZ",
+        "002636.SZ",
+        "301176.SZ",
+        "603186.SH",
+        "603328.SH"
       ],
-      "return_1d": 0.01859189,
+      "return_1d": null,
       "return_5d": null,
       "return_10d": null,
       "return_20d": null
@@ -89,28 +76,61 @@
       "candidate_codes": [
         "002295.SZ"
       ],
-      "return_1d": 0.06390328,
+      "return_1d": null,
       "return_5d": null,
       "return_10d": null,
       "return_20d": null
     },
     {
-      "theme": "非白酒",
+      "theme": "半导体",
       "candidate_codes": [
-        "600059.SH",
-        "601579.SH"
+        "002077.SZ",
+        "603316.SH"
       ],
-      "return_1d": -0.04328904,
+      "return_1d": null,
       "return_5d": null,
       "return_10d": null,
       "return_20d": null
     },
     {
-      "theme": "金属新材",
+      "theme": "化学制药",
       "candidate_codes": [
-        "600255.SH"
+        "002365.SZ",
+        "600488.SH",
+        "600812.SH",
+        "605177.SH"
       ],
-      "return_1d": -0.04113111,
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "出版",
+      "candidate_codes": [
+        "601949.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "综合Ⅱ",
+      "candidate_codes": [
+        "000523.SZ"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "小家电",
+      "candidate_codes": [
+        "002242.SZ"
+      ],
+      "return_1d": null,
       "return_5d": null,
       "return_10d": null,
       "return_20d": null
@@ -118,11 +138,33 @@
     {
       "theme": "一般零售",
       "candidate_codes": [
-        "000679.SZ",
         "000759.SZ",
+        "600712.SH",
+        "600778.SH",
         "600865.SH"
       ],
-      "return_1d": -0.01157625,
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "消费电子",
+      "candidate_codes": [
+        "601231.SH"
+      ],
+      "return_1d": null,
+      "return_5d": null,
+      "return_10d": null,
+      "return_20d": null
+    },
+    {
+      "theme": "橡胶",
+      "candidate_codes": [
+        "002068.SZ",
+        "603650.SH"
+      ],
+      "return_1d": null,
       "return_5d": null,
       "return_10d": null,
       "return_20d": null
@@ -131,56 +173,9 @@
       "theme": "煤炭开采",
       "candidate_codes": [
         "600121.SH",
-        "600348.SH",
         "600403.SH"
       ],
-      "return_1d": 0.00041776,
-      "return_5d": null,
-      "return_10d": null,
-      "return_20d": null
-    },
-    {
-      "theme": "自动化设",
-      "candidate_codes": [
-        "000988.SZ"
-      ],
-      "return_1d": -0.02748414,
-      "return_5d": null,
-      "return_10d": null,
-      "return_20d": null
-    },
-    {
-      "theme": "农化制品",
-      "candidate_codes": [
-        "000912.SZ",
-        "600227.SH",
-        "600596.SH",
-        "600691.SH",
-        "603077.SH"
-      ],
-      "return_1d": -0.06640681,
-      "return_5d": null,
-      "return_10d": null,
-      "return_20d": null
-    },
-    {
-      "theme": "渔业",
-      "candidate_codes": [
-        "000798.SZ",
-        "002086.SZ"
-      ],
-      "return_1d": -0.06300394,
-      "return_5d": null,
-      "return_10d": null,
-      "return_20d": null
-    },
-    {
-      "theme": "炼化及贸",
-      "candidate_codes": [
-        "002377.SZ",
-        "603353.SH"
-      ],
-      "return_1d": 0.04405266,
+      "return_1d": null,
       "return_5d": null,
       "return_10d": null,
       "return_20d": null

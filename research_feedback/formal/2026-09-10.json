@@ -1,0 +1,19 @@
+{
+  "records": [],
+  "prediction_count": 0,
+  "confirmed_count": 0,
+  "partial_count": 0,
+  "failed_count": 0,
+  "not_evaluable_count": 0,
+  "hit_rate": null,
+  "weighted_hit_rate": null,
+  "status": "PREVIOUS_FORMAL_REVIEW_UNAVAILABLE",
+  "source": {
+    "status": "PREVIOUS_FORMAL_REVIEW_UNAVAILABLE",
+    "expected_date": "2026-09-09",
+    "data_date": null,
+    "path": null,
+    "sha256": null
+  },
+  "hypothesis_kind": "FORMAL_REVIEW_HYPOTHESIS"
+}
