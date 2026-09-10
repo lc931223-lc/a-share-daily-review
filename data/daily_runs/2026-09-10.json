@@ -1,0 +1,103 @@
+{
+  "date": "2026-09-10",
+  "run_id": "34451384717",
+  "workflow_run_attempt": "1",
+  "workflow_retry_count": 0,
+  "credential_health": {
+    "tushare_token": "MISSING"
+  },
+  "source_availability": {
+    "full_market_daily": "BLOCKED_MISSING_CREDENTIAL"
+  },
+  "failed_step": "credential_preflight",
+  "retry_count": 0,
+  "is_trade_day": null,
+  "calendar_status": "NOT_CHECKED",
+  "market_closed": true,
+  "pipeline_started_at": "2026-09-10T15:44:02.732719+08:00",
+  "pipeline_completed_at": "2026-09-10T15:44:02.793621+08:00",
+  "steps": {
+    "credential_preflight": {
+      "status": "FAILED",
+      "artifact_path": null,
+      "source_date": null,
+      "quality": null,
+      "started_at": "2026-09-10T15:44:02.732719+08:00",
+      "completed_at": "2026-09-10T15:44:02.732788+08:00",
+      "error": "MISSING_TUSHARE_TOKEN",
+      "retry_count": 0,
+      "reused": false,
+      "provenance_sha256": null
+    }
+  },
+  "status": "FAILED",
+  "blockers": [
+    {
+      "step": "credential_preflight",
+      "error": "MISSING_TUSHARE_TOKEN"
+    }
+  ],
+  "upstream_warnings": [],
+  "degraded_inputs": [
+    {
+      "step": "credential_preflight",
+      "quality": null,
+      "optional_missing": false
+    }
+  ],
+  "readiness_checks": [
+    {
+      "name": "real_trading_calendar",
+      "passed": false,
+      "detail": "target is present as open in the cached/fetched A-share calendar"
+    },
+    {
+      "name": "market_close_gate",
+      "passed": true,
+      "detail": "target session is closed under Asia/Shanghai close policy"
+    },
+    {
+      "name": "daily_rows_completeness",
+      "passed": false,
+      "detail": "Market Packet full-market daily rows passed its hard gate"
+    },
+    {
+      "name": "same_date_core_artifacts",
+      "passed": false,
+      "detail": "all generated core artifacts must carry the requested trade date"
+    },
+    {
+      "name": "schema_and_provenance_sha256",
+      "passed": false,
+      "detail": "all available core artifacts passed schema validation and have a digest"
+    },
+    {
+      "name": "idempotent_reuse_contract",
+      "passed": false,
+      "detail": "validated artifacts are content-addressed and reusable on rerun"
+    },
+    {
+      "name": "no_plaintext_secrets",
+      "passed": true,
+      "detail": "no probable plaintext secrets found"
+    }
+  ],
+  "started_at": "2026-09-10T15:44:02.732719+08:00",
+  "completed_at": "2026-09-10T15:44:02.793621+08:00",
+  "blocker": [
+    "MISSING_TUSHARE_TOKEN"
+  ],
+  "source_health": {
+    "full_market_daily": "BLOCKED_MISSING_CREDENTIAL"
+  },
+  "upstream_available": [],
+  "upstream_missing": [
+    "market_packet",
+    "inflection",
+    "review_intelligence",
+    "capital_preference",
+    "review_context",
+    "formal_review_support",
+    "chatgpt_review_inputs"
+  ]
+}
