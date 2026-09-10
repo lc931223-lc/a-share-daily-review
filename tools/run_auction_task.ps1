@@ -1,4 +1,4 @@
-param([ValidateSet('live','post-open','eod','watchdog','retry')][string]$Stage = 'live', [switch]$DryRun, [string]$SyncDate)
+param([ValidateSet('live','post-open','eod','watchdog','retry')][string]$Stage = 'live', [switch]$DryRun, [string]$SyncDate, [string]$DryRunDate)
 $ErrorActionPreference = 'Stop'
 $Root = Split-Path -Parent $PSScriptRoot
 $Day = Get-Date -Format 'yyyy-MM-dd'
@@ -9,6 +9,7 @@ $env:AUCTION_SCHEDULER_TRIGGERED_AT = Get-Date -Format o
 $env:PYTHONUTF8 = '1'
 @{event='scheduler_triggered_at'; timestamp=$env:AUCTION_SCHEDULER_TRIGGERED_AT; stage=$Stage; repo_path=$Root; username=$env:USERNAME; hostname=$env:COMPUTERNAME} | ConvertTo-Json -Compress | Add-Content -LiteralPath $Log -Encoding UTF8
 try {
+    if ($DryRunDate -and (-not $DryRun -or $Stage -eq 'retry')) { throw 'DryRunDate requires a non-retry DryRun' }
     Set-Location -LiteralPath $Root
     $Python = Join-Path $Root '.venv\Scripts\python.exe'
     $Script = Join-Path $Root 'tools\run_auction_scheduled.py'
@@ -20,6 +21,7 @@ try {
         $ArgsList = @((Join-Path $Root 'tools\retry_auction_sync.py'), '--date', $SyncDate)
     }
     if ($DryRun) { $ArgsList += '--dry-run' }
+    if ($DryRunDate) { $ArgsList += @('--dry-run-date', $DryRunDate) }
     & $Python @ArgsList >> (Join-Path $Folder 'process.log') 2>&1
     $Code = $LASTEXITCODE
     @{event='python_exit'; timestamp=(Get-Date -Format o); exit_code=$Code} | ConvertTo-Json -Compress | Add-Content -LiteralPath $Log -Encoding UTF8

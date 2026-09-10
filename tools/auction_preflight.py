@@ -44,7 +44,12 @@ def preflight(root=ROOT, *, now=None, source_factory=EltdxAuctionSource):
         result["source_error"] = type(exc).__name__
     finally:
         source.close()
-    result["status"] = "PASS" if result["source_health"] != "FAIL" else "FAIL"
+    result["blockers"] = []
+    if result["source_health"] == "FAIL":
+        result["blockers"].append("SOURCE_CONNECTION_FAILED")
+    if result["previous_review_status"] != "READY":
+        result["blockers"].append("PREVIOUS_FORMAL_REVIEW_UNAVAILABLE")
+    result["status"] = "FAIL" if result["blockers"] else "PASS"
     return result
 
 

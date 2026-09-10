@@ -1,4 +1,4 @@
-param([string]$Root = (Split-Path -Parent $PSScriptRoot), [switch]$ProbeSource)
+param([string]$Root = (Split-Path -Parent $PSScriptRoot), [switch]$ProbeSource, [datetime]$AuditDate = [datetime]::Today)
 $ErrorActionPreference = 'Continue'
 $Root = (Resolve-Path -LiteralPath $Root).Path
 Set-Location -LiteralPath $Root
@@ -17,11 +17,11 @@ $Tasks = @(Get-ScheduledTask -TaskName 'Ashare-Auction-*' | ForEach-Object {
         WorkingDirectory=$t.Actions.WorkingDirectory; Program=$t.Actions.Execute; Arguments=$t.Actions.Arguments
         ProgramExists=(Test-Path -LiteralPath $t.Actions.Execute)}
 })
-$Events = @(Get-WinEvent -FilterHashtable @{LogName='System'; Id=12,13,42,1074,6006,6008; StartTime=[datetime]::Today} -ErrorAction SilentlyContinue | Select-Object TimeCreated,Id,ProviderName,Message)
+$Events = @(Get-WinEvent -FilterHashtable @{LogName='System'; Id=12,13,42,1074,6006,6008; StartTime=$AuditDate.Date; EndTime=$AuditDate.Date.AddDays(1)} -ErrorAction SilentlyContinue | Select-Object TimeCreated,Id,ProviderName,Message)
 $Copies = @(Get-ChildItem -LiteralPath (Split-Path -Parent (Split-Path -Parent $Root)),"$env:USERPROFILE\Documents",'D:\CodexData' -Directory -Recurse -Depth 4 -ErrorAction SilentlyContinue | Where-Object Name -Match '^a[-_]share[-_]daily[-_]review')
-$Files = @($Copies | ForEach-Object { Get-ChildItem -LiteralPath $_.FullName -Recurse -File -Filter '*2026-09-09*' -ErrorAction SilentlyContinue } | Where-Object FullName -Match 'auction' | Select-Object FullName,Length,CreationTime,LastWriteTime)
+$Files = @($Copies | ForEach-Object { Get-ChildItem -LiteralPath $_.FullName -Recurse -File -Filter "*$($AuditDate.ToString('yyyy-MM-dd'))*" -ErrorAction SilentlyContinue } | Where-Object FullName -Match 'auction' | Select-Object FullName,Length,CreationTime,LastWriteTime)
 $Proxy = Get-ItemProperty 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings'
-$Result = [ordered]@{observed_at=(Get-Date -Format o); hostname=$env:COMPUTERNAME; username=$env:USERNAME
+$Result = [ordered]@{observed_at=(Get-Date -Format o); audit_date=$AuditDate.ToString('yyyy-MM-dd'); hostname=$env:COMPUTERNAME; username=$env:USERNAME
     current_power_state='AWAKE_AT_PROBE_TIME'; last_boot=(Get-CimInstance Win32_OperatingSystem).LastBootUpTime
     wake_timer_policy=@(powercfg /query SCHEME_CURRENT SUB_SLEEP RTCWAKE); wake_timers=@(powercfg /waketimers 2>&1 | Out-String)
     power_capabilities=@(powercfg /a); network=@(Get-NetConnectionProfile | Select-Object Name,IPv4Connectivity)

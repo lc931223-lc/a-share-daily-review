@@ -8,7 +8,7 @@ import platform
 import socket
 import sys
 import traceback
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -64,8 +64,13 @@ def main(argv=None):
     parser.add_argument("--force", action="store_true")
     parser.add_argument("--sync", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--dry-run-date", type=date.fromisoformat)
     args = parser.parse_args(argv)
+    if args.dry_run_date and not args.dry_run:
+        parser.error("--dry-run-date requires --dry-run; historical collection is forbidden")
     now = datetime.now(ZoneInfo("Asia/Shanghai"))
+    if args.dry_run_date and args.dry_run_date > now.date():
+        parser.error("--dry-run-date cannot be in the future")
     day = now.date()
     receipt_root = (
         ROOT / "data/auction_dry_runs" / now.strftime("%Y%m%d-%H%M%S") if args.dry_run else ROOT
@@ -135,7 +140,19 @@ def main(argv=None):
                     from tools.probe_auction_host_source import probe
 
                     update_run(receipt_root, day, "PREFLIGHT_RUNNING")
-                    result = preflight(ROOT)
+                    evaluation_time = (
+                        now.replace(
+                            year=args.dry_run_date.year,
+                            month=args.dry_run_date.month,
+                            day=args.dry_run_date.day,
+                        )
+                        if args.dry_run_date
+                        else now
+                    )
+                    result = preflight(ROOT, now=evaluation_time)
+                    result["started_at"] = now.isoformat()
+                    result["diagnostic_observed_at"] = now.isoformat()
+                    result["scope"] = "HOST_DIAGNOSTIC_NOT_LIVE_ACCEPTANCE"
                     result["source_probe"] = probe()
                     result["git_access"] = git(ROOT, "ls-remote", "origin", "refs/heads/main")
                     result["git_push_dry_run"] = git(
@@ -145,7 +162,7 @@ def main(argv=None):
                     code = (
                         0
                         if result["status"] == "PASS"
-                        and result["previous_review_status"] == "READY"
+                        and result.get("previous_review_status") == "READY"
                         and result["source_probe"]["connect_result"] == "PASS"
                         and result["source_probe"]["success_count"] == 15
                         else 1
