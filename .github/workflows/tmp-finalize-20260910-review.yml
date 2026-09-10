@@ -39,5 +39,7 @@ jobs:
           git add -f data/formal_reviews/2026-09-10.json data/official_reviews/2026-09-10.json data/formal_review_queue/2026-09-10.json
           git diff --cached --quiet && exit 0
           git commit -m 'data: import ChatGPT formal review for 2026-09-10'
+          # publish_official also refreshes derived ChatGPT input files; they are not part of this immutable formal-review commit.
+          git restore --worktree .
           git pull --rebase origin main
           git push origin HEAD:main
