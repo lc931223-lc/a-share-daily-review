@@ -1,6 +1,6 @@
 {
   "date": "2026-09-10",
-  "run_id": "34451384717",
+  "run_id": "34495304612",
   "workflow_run_attempt": "1",
   "workflow_retry_count": 0,
   "credential_health": {
@@ -14,16 +14,16 @@
   "is_trade_day": null,
   "calendar_status": "NOT_CHECKED",
   "market_closed": true,
-  "pipeline_started_at": "2026-09-10T15:44:02.732719+08:00",
-  "pipeline_completed_at": "2026-09-10T15:44:02.793621+08:00",
+  "pipeline_started_at": "2026-09-10T23:23:57.434059+08:00",
+  "pipeline_completed_at": "2026-09-10T23:23:57.483795+08:00",
   "steps": {
     "credential_preflight": {
       "status": "FAILED",
       "artifact_path": null,
       "source_date": null,
       "quality": null,
-      "started_at": "2026-09-10T15:44:02.732719+08:00",
-      "completed_at": "2026-09-10T15:44:02.732788+08:00",
+      "started_at": "2026-09-10T23:23:57.434059+08:00",
+      "completed_at": "2026-09-10T23:23:57.434171+08:00",
       "error": "MISSING_TUSHARE_TOKEN",
       "retry_count": 0,
       "reused": false,
@@ -82,8 +82,8 @@
       "detail": "no probable plaintext secrets found"
     }
   ],
-  "started_at": "2026-09-10T15:44:02.732719+08:00",
-  "completed_at": "2026-09-10T15:44:02.793621+08:00",
+  "started_at": "2026-09-10T23:23:57.434059+08:00",
+  "completed_at": "2026-09-10T23:23:57.483795+08:00",
   "blocker": [
     "MISSING_TUSHARE_TOKEN"
   ],
