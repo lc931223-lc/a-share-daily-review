@@ -2,10 +2,10 @@
   "trade_date": "2026-09-10",
   "objective_support_path": "data/formal_review_support/2026-09-10.json",
   "review_context_path": "data/review_context/2026-09-10.json",
-  "status": "WAITING_FOR_CHATGPT_REVIEW",
+  "status": "FORMAL_REVIEW_READY",
   "official_review_required": true,
-  "official_review_path": null,
-  "validation_status": "PENDING",
+  "official_review_path": "data/official_reviews/2026-09-10.json",
+  "validation_status": "PASS",
   "chatgpt_review_input_path": "data/chatgpt_review_inputs/2026-09-10.json",
   "chatgpt_review_input_compact_path": "data/chatgpt_review_inputs/2026-09-10_compact.json"
 }

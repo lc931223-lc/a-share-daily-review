@@ -1,0 +1,1297 @@
+{
+  "changes_vs_previous_day": {
+    "diffused": [],
+    "falsified": [],
+    "new": [],
+    "realized": [],
+    "strengthened": [],
+    "weakened": []
+  },
+  "date": "2026-09-10",
+  "final_judgement_owner": "chatgpt",
+  "main_themes": [
+    {
+      "41_factors": [
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 1,
+          "factor_name": "0→1技术突破",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 2,
+          "factor_name": "1→10渗透率提升",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 3,
+          "factor_name": "国产替代/自主可控",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 4,
+          "factor_name": "海外产业映射",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 5,
+          "factor_name": "国家级产业政策",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 6,
+          "factor_name": "财政刺激/补贴",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 7,
+          "factor_name": "货币与流动性政策",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 8,
+          "factor_name": "监管边际改善/行业松绑",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 9,
+          "factor_name": "反内卷/供给侧改革",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 10,
+          "factor_name": "国企改革/市值管理",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 11,
+          "factor_name": "国际重大事件",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 12,
+          "factor_name": "国内重大会议/重要文件",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 13,
+          "factor_name": "行业大会/产品发布会",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 14,
+          "factor_name": "突发供给事故",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 15,
+          "factor_name": "需求型涨价",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 16,
+          "factor_name": "供给收缩型涨价",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 17,
+          "factor_name": "库存周期/补库",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 18,
+          "factor_name": "成本下降+售价稳定",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 19,
+          "factor_name": "大额订单",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 20,
+          "factor_name": "订单超预期",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 21,
+          "factor_name": "下游资本开支爆发",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 22,
+          "factor_name": "排产/交期/稼动率",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 23,
+          "factor_name": "业绩超预期",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 24,
+          "factor_name": "亏损转盈利/困境反转",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 25,
+          "factor_name": "利润率提升",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 26,
+          "factor_name": "业绩加速",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 27,
+          "factor_name": "并购重组",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 28,
+          "factor_name": "资产注入/控制权变更",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 29,
+          "factor_name": "股权激励",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 30,
+          "factor_name": "回购/增持/高分红",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 31,
+          "factor_name": "重大客户认证/新供应链",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 32,
+          "factor_name": "行业出清",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 33,
+          "factor_name": "估值修复",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 34,
+          "factor_name": "增量资金",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 35,
+          "factor_name": "指数纳入/被动配置",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 36,
+          "factor_name": "筹码出清/突破",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 37,
+          "factor_name": "龙头效应与补涨",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "MEDIUM",
+          "evidence": [
+            {
+              "confidence": "MEDIUM",
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_date": "2026-09-10",
+              "source_type": "objective_calculation",
+              "tier": 3
+            }
+          ],
+          "factor_id": 38,
+          "factor_name": "风格切换/高低切",
+          "status": "PARTIAL"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 39,
+          "factor_name": "名称玄学",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 40,
+          "factor_name": "生肖/谐音/数字/地名",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 41,
+          "factor_name": "情绪抱团/妖股",
+          "status": "UNCONFIRMED"
+        }
+      ],
+      "base_logic_score": null,
+      "continuity_score": 9.24,
+      "core_stocks": [
+        {
+          "code": "600318.SH",
+          "confirmed_evidence": [],
+          "name": "新力金融",
+          "reason": [
+            "ChatGPT role judgement from objective candidate scores"
+          ],
+          "role": "ELASTICITY",
+          "role_confidence": "MEDIUM",
+          "role_score": 94.03,
+          "unconfirmed_claims": [
+            "No same-date hard fundamental catalyst confirmed."
+          ]
+        }
+      ],
+      "expectation_gap_score": null,
+      "lifecycle": {
+        "confidence": "MEDIUM",
+        "current_state": "VALIDATION",
+        "negative_evidence": [
+          "Only 955 advancers vs 4512 decliners",
+          "Total turnover contracted materially",
+          "No same-date hard fundamental factor confirmed"
+        ],
+        "positive_evidence": [
+          "Objective relative strength is available"
+        ],
+        "previous_state": null,
+        "transition_reason": "Weak-market relative strength and a sharp financial-style rotation support a validation state, but no same-date hard fundamental catalyst is confirmed."
+      },
+      "market_confirmation_score": 7.0,
+      "next_day_validation": [
+        {
+          "falsification_condition": "新力金融与板块同步转弱且开盘后无法修复",
+          "strengthening_condition": "竞价板块正向广度>=60%，且新力金融相对强度继续为正",
+          "validation_point": "弱市中的独立强度能否延续",
+          "weakening_condition": "仅单一高标强而板块无扩散"
+        }
+      ],
+      "previous_lifecycle": null,
+      "rating": "B",
+      "realization_score": null,
+      "risk_deduction": 2.0,
+      "scores": {
+        "base_logic": {
+          "available_score": 0,
+          "evidence": [],
+          "raw_score": null,
+          "reason": "No same-date qualifying fundamental evidence; not inferred from price.",
+          "subcomponents": []
+        },
+        "continuity": {
+          "available_score": 10,
+          "evidence": [],
+          "raw_score": 9.24,
+          "reason": "Objective one-day theme strength change.",
+          "subcomponents": []
+        },
+        "expectation_gap": {
+          "available_score": 0,
+          "evidence": [],
+          "raw_score": null,
+          "reason": "Exact previous formal review for 2026-09-09 is unavailable.",
+          "subcomponents": []
+        },
+        "market_confirmation": {
+          "available_score": 10,
+          "evidence": [],
+          "raw_score": 7.0,
+          "reason": "Relative objective strength under a weak overall market.",
+          "subcomponents": []
+        },
+        "rating": "B",
+        "realization": {
+          "available_score": 0,
+          "evidence": [],
+          "raw_score": null,
+          "reason": "No same-date qualifying order/earnings realization evidence.",
+          "subcomponents": []
+        },
+        "risk_deduction": {
+          "available_score": 8,
+          "evidence": [],
+          "raw_score": 2.0,
+          "reason": "Weak full-market breadth and shrinking turnover are explicit macro risk.",
+          "subcomponents": []
+        },
+        "total_score": 68.0
+      },
+      "theme_name": "多元金融",
+      "theme_rank": 1,
+      "total_score": 68.0,
+      "uncertainties": [
+        "Exact 2026-09-09 formal review unavailable; lifecycle comparison is not formal-delta eligible.",
+        "Theme strength is primarily market-structure evidence, not order/earnings validation."
+      ]
+    },
+    {
+      "41_factors": [
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 1,
+          "factor_name": "0→1技术突破",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 2,
+          "factor_name": "1→10渗透率提升",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 3,
+          "factor_name": "国产替代/自主可控",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 4,
+          "factor_name": "海外产业映射",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 5,
+          "factor_name": "国家级产业政策",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 6,
+          "factor_name": "财政刺激/补贴",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 7,
+          "factor_name": "货币与流动性政策",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 8,
+          "factor_name": "监管边际改善/行业松绑",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 9,
+          "factor_name": "反内卷/供给侧改革",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 10,
+          "factor_name": "国企改革/市值管理",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 11,
+          "factor_name": "国际重大事件",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 12,
+          "factor_name": "国内重大会议/重要文件",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 13,
+          "factor_name": "行业大会/产品发布会",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 14,
+          "factor_name": "突发供给事故",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 15,
+          "factor_name": "需求型涨价",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 16,
+          "factor_name": "供给收缩型涨价",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 17,
+          "factor_name": "库存周期/补库",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 18,
+          "factor_name": "成本下降+售价稳定",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 19,
+          "factor_name": "大额订单",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 20,
+          "factor_name": "订单超预期",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 21,
+          "factor_name": "下游资本开支爆发",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 22,
+          "factor_name": "排产/交期/稼动率",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 23,
+          "factor_name": "业绩超预期",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 24,
+          "factor_name": "亏损转盈利/困境反转",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 25,
+          "factor_name": "利润率提升",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 26,
+          "factor_name": "业绩加速",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 27,
+          "factor_name": "并购重组",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 28,
+          "factor_name": "资产注入/控制权变更",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 29,
+          "factor_name": "股权激励",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 30,
+          "factor_name": "回购/增持/高分红",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 31,
+          "factor_name": "重大客户认证/新供应链",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 32,
+          "factor_name": "行业出清",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 33,
+          "factor_name": "估值修复",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 34,
+          "factor_name": "增量资金",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 35,
+          "factor_name": "指数纳入/被动配置",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "MEDIUM",
+          "evidence": [
+            {
+              "confidence": "MEDIUM",
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_date": "2026-09-10",
+              "source_type": "objective_calculation",
+              "tier": 3
+            }
+          ],
+          "factor_id": 36,
+          "factor_name": "筹码出清/突破",
+          "status": "CONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 37,
+          "factor_name": "龙头效应与补涨",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "MEDIUM",
+          "evidence": [
+            {
+              "confidence": "MEDIUM",
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_date": "2026-09-10",
+              "source_type": "objective_calculation",
+              "tier": 3
+            }
+          ],
+          "factor_id": 38,
+          "factor_name": "风格切换/高低切",
+          "status": "PARTIAL"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 39,
+          "factor_name": "名称玄学",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 40,
+          "factor_name": "生肖/谐音/数字/地名",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 41,
+          "factor_name": "情绪抱团/妖股",
+          "status": "UNCONFIRMED"
+        }
+      ],
+      "base_logic_score": null,
+      "continuity_score": 5.0,
+      "core_stocks": [
+        {
+          "code": "000978.SZ",
+          "confirmed_evidence": [],
+          "name": "桂林旅游",
+          "reason": [
+            "ChatGPT role judgement from objective candidate scores"
+          ],
+          "role": "CAPACITY",
+          "role_confidence": "MEDIUM",
+          "role_score": 78.95,
+          "unconfirmed_claims": [
+            "No same-date hard fundamental catalyst confirmed."
+          ]
+        }
+      ],
+      "expectation_gap_score": null,
+      "lifecycle": {
+        "confidence": "MEDIUM",
+        "current_state": "VALIDATION",
+        "negative_evidence": [
+          "Only 955 advancers vs 4512 decliners",
+          "Total turnover contracted materially",
+          "No same-date hard fundamental factor confirmed"
+        ],
+        "positive_evidence": [
+          "Objective relative strength is available"
+        ],
+        "previous_state": null,
+        "transition_reason": "Objective strength remains elevated and 桂林旅游 has a confirmed high-volume breakout; unchanged one-day strength and absent fundamental evidence keep this as validation rather than main-up."
+      },
+      "market_confirmation_score": 6.0,
+      "next_day_validation": [
+        {
+          "falsification_condition": "桂林旅游跌破关键突破结构且板块同步弱",
+          "strengthening_condition": "桂林旅游竞价量能>=自身历史60分位且竞价后不快速失守",
+          "validation_point": "突破结构是否保持",
+          "weakening_condition": "竞价量能偏弱或突破后快速回落"
+        }
+      ],
+      "previous_lifecycle": null,
+      "rating": "B",
+      "realization_score": null,
+      "risk_deduction": 1.0,
+      "scores": {
+        "base_logic": {
+          "available_score": 0,
+          "evidence": [],
+          "raw_score": null,
+          "reason": "No same-date qualifying fundamental evidence; not inferred from price.",
+          "subcomponents": []
+        },
+        "continuity": {
+          "available_score": 10,
+          "evidence": [],
+          "raw_score": 5.0,
+          "reason": "Objective one-day theme strength change.",
+          "subcomponents": []
+        },
+        "expectation_gap": {
+          "available_score": 0,
+          "evidence": [],
+          "raw_score": null,
+          "reason": "Exact previous formal review for 2026-09-09 is unavailable.",
+          "subcomponents": []
+        },
+        "market_confirmation": {
+          "available_score": 10,
+          "evidence": [],
+          "raw_score": 6.0,
+          "reason": "Relative objective strength under a weak overall market.",
+          "subcomponents": []
+        },
+        "rating": "B",
+        "realization": {
+          "available_score": 0,
+          "evidence": [],
+          "raw_score": null,
+          "reason": "No same-date qualifying order/earnings realization evidence.",
+          "subcomponents": []
+        },
+        "risk_deduction": {
+          "available_score": 8,
+          "evidence": [],
+          "raw_score": 1.0,
+          "reason": "Weak full-market breadth and shrinking turnover are explicit macro risk.",
+          "subcomponents": []
+        },
+        "total_score": 64.0
+      },
+      "theme_name": "旅游及景区",
+      "theme_rank": 2,
+      "total_score": 64.0,
+      "uncertainties": [
+        "Exact 2026-09-09 formal review unavailable; lifecycle comparison is not formal-delta eligible.",
+        "Theme strength is primarily market-structure evidence, not order/earnings validation."
+      ]
+    },
+    {
+      "41_factors": [
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 1,
+          "factor_name": "0→1技术突破",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 2,
+          "factor_name": "1→10渗透率提升",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 3,
+          "factor_name": "国产替代/自主可控",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 4,
+          "factor_name": "海外产业映射",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 5,
+          "factor_name": "国家级产业政策",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 6,
+          "factor_name": "财政刺激/补贴",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 7,
+          "factor_name": "货币与流动性政策",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 8,
+          "factor_name": "监管边际改善/行业松绑",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 9,
+          "factor_name": "反内卷/供给侧改革",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 10,
+          "factor_name": "国企改革/市值管理",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 11,
+          "factor_name": "国际重大事件",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 12,
+          "factor_name": "国内重大会议/重要文件",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 13,
+          "factor_name": "行业大会/产品发布会",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 14,
+          "factor_name": "突发供给事故",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 15,
+          "factor_name": "需求型涨价",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 16,
+          "factor_name": "供给收缩型涨价",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 17,
+          "factor_name": "库存周期/补库",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 18,
+          "factor_name": "成本下降+售价稳定",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 19,
+          "factor_name": "大额订单",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 20,
+          "factor_name": "订单超预期",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 21,
+          "factor_name": "下游资本开支爆发",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 22,
+          "factor_name": "排产/交期/稼动率",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 23,
+          "factor_name": "业绩超预期",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 24,
+          "factor_name": "亏损转盈利/困境反转",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 25,
+          "factor_name": "利润率提升",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 26,
+          "factor_name": "业绩加速",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 27,
+          "factor_name": "并购重组",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 28,
+          "factor_name": "资产注入/控制权变更",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 29,
+          "factor_name": "股权激励",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 30,
+          "factor_name": "回购/增持/高分红",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 31,
+          "factor_name": "重大客户认证/新供应链",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 32,
+          "factor_name": "行业出清",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 33,
+          "factor_name": "估值修复",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 34,
+          "factor_name": "增量资金",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 35,
+          "factor_name": "指数纳入/被动配置",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "MEDIUM",
+          "evidence": [
+            {
+              "confidence": "MEDIUM",
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_date": "2026-09-10",
+              "source_type": "objective_calculation",
+              "tier": 3
+            }
+          ],
+          "factor_id": 36,
+          "factor_name": "筹码出清/突破",
+          "status": "CONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 37,
+          "factor_name": "龙头效应与补涨",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "MEDIUM",
+          "evidence": [
+            {
+              "confidence": "MEDIUM",
+              "source": "MarketPacket/ReviewIntelligence",
+              "source_date": "2026-09-10",
+              "source_type": "objective_calculation",
+              "tier": 3
+            }
+          ],
+          "factor_id": 38,
+          "factor_name": "风格切换/高低切",
+          "status": "PARTIAL"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 39,
+          "factor_name": "名称玄学",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 40,
+          "factor_name": "生肖/谐音/数字/地名",
+          "status": "UNCONFIRMED"
+        },
+        {
+          "confidence": "NONE",
+          "evidence": [],
+          "factor_id": 41,
+          "factor_name": "情绪抱团/妖股",
+          "status": "UNCONFIRMED"
+        }
+      ],
+      "base_logic_score": null,
+      "continuity_score": 10.0,
+      "core_stocks": [
+        {
+          "code": "002661.SZ",
+          "confirmed_evidence": [],
+          "name": "克明食品",
+          "reason": [
+            "ChatGPT role judgement from objective candidate scores"
+          ],
+          "role": "CAPACITY",
+          "role_confidence": "MEDIUM",
+          "role_score": 74.8,
+          "unconfirmed_claims": [
+            "No same-date hard fundamental catalyst confirmed."
+          ]
+        }
+      ],
+      "expectation_gap_score": null,
+      "lifecycle": {
+        "confidence": "MEDIUM",
+        "current_state": "VALIDATION",
+        "negative_evidence": [
+          "Only 955 advancers vs 4512 decliners",
+          "Total turnover contracted materially",
+          "No same-date hard fundamental factor confirmed"
+        ],
+        "positive_evidence": [
+          "Objective relative strength is available"
+        ],
+        "previous_state": null,
+        "transition_reason": "Strong one-day objective-strength acceleration and a confirmed breakout candidate support a tactical validation line, but the broader market is risk-off and no hard fundamental driver is confirmed."
+      },
+      "market_confirmation_score": 6.0,
+      "next_day_validation": [
+        {
+          "falsification_condition": "克明食品与板块同时转弱且无承接",
+          "strengthening_condition": "克明食品竞价量能>=自身历史60分位且板块正向广度>=55%",
+          "validation_point": "防御/消费轮动是否获得容量确认",
+          "weakening_condition": "容量股偏弱且仅小票活跃"
+        }
+      ],
+      "previous_lifecycle": null,
+      "rating": "C",
+      "realization_score": null,
+      "risk_deduction": 1.0,
+      "scores": {
+        "base_logic": {
+          "available_score": 0,
+          "evidence": [],
+          "raw_score": null,
+          "reason": "No same-date qualifying fundamental evidence; not inferred from price.",
+          "subcomponents": []
+        },
+        "continuity": {
+          "available_score": 10,
+          "evidence": [],
+          "raw_score": 10.0,
+          "reason": "Objective one-day theme strength change.",
+          "subcomponents": []
+        },
+        "expectation_gap": {
+          "available_score": 0,
+          "evidence": [],
+          "raw_score": null,
+          "reason": "Exact previous formal review for 2026-09-09 is unavailable.",
+          "subcomponents": []
+        },
+        "market_confirmation": {
+          "available_score": 10,
+          "evidence": [],
+          "raw_score": 6.0,
+          "reason": "Relative objective strength under a weak overall market.",
+          "subcomponents": []
+        },
+        "rating": "C",
+        "realization": {
+          "available_score": 0,
+          "evidence": [],
+          "raw_score": null,
+          "reason": "No same-date qualifying order/earnings realization evidence.",
+          "subcomponents": []
+        },
+        "risk_deduction": {
+          "available_score": 8,
+          "evidence": [],
+          "raw_score": 1.0,
+          "reason": "Weak full-market breadth and shrinking turnover are explicit macro risk.",
+          "subcomponents": []
+        },
+        "total_score": 62.0
+      },
+      "theme_name": "食品加工",
+      "theme_rank": 3,
+      "total_score": 62.0,
+      "uncertainties": [
+        "Exact 2026-09-09 formal review unavailable; lifecycle comparison is not formal-delta eligible.",
+        "Theme strength is primarily market-structure evidence, not order/earnings validation."
+      ]
+    }
+  ],
+  "market_overview": {
+    "failed_limit_count": 22,
+    "failed_limit_rate": 38.6,
+    "fall_count": 4512,
+    "highest_board": 4,
+    "interpretation": "Broad risk-off session with sharply negative breadth and shrinking turnover; only localized theme/limit-up style strength remained.",
+    "limit_down_count": 11,
+    "limit_up_count": 35,
+    "median_return": -1.4908,
+    "rise_count": 955,
+    "total_turnover": 1662337526004.42,
+    "turnover_change_abs": -210729513778.89
+  },
+  "market_regime": "风险收缩、广度显著恶化、成交缩量；局部抱团与防御轮动替代全面主线进攻",
+  "previous_day_validation": {
+    "confirmed_count": 0,
+    "failed_count": 0,
+    "hit_rate": null,
+    "not_evaluable_count": 0,
+    "partial_count": 0,
+    "prediction_count": 0,
+    "records": [],
+    "weighted_hit_rate": null
+  },
+  "previous_trade_date": "2026-09-09",
+  "schema_version": "formal_review.3",
+  "tomorrow_checks": [
+    {
+      "description": "多元金融竞价正向广度至少60%",
+      "entity_key": "多元金融",
+      "entity_type": "theme",
+      "id": "fin_breadth_0911",
+      "metric": "sector_positive_ratio",
+      "operator": ">=",
+      "threshold": 0.6,
+      "time_window": "auction"
+    },
+    {
+      "description": "新力金融竞价相对强度保持非负",
+      "entity_key": "600318.SH",
+      "entity_type": "stock",
+      "id": "fin_rel_0911",
+      "metric": "relative_strength",
+      "operator": ">=",
+      "threshold": 0,
+      "time_window": "auction"
+    },
+    {
+      "description": "桂林旅游竞价金额达到自身历史60分位以上",
+      "entity_key": "000978.SZ",
+      "entity_type": "stock",
+      "id": "tourism_amt_0911",
+      "metric": "auction_amount_percentile",
+      "operator": ">=",
+      "threshold": 60,
+      "time_window": "auction"
+    },
+    {
+      "description": "克明食品竞价金额达到自身历史60分位以上",
+      "entity_key": "002661.SZ",
+      "entity_type": "stock",
+      "id": "food_amt_0911",
+      "metric": "auction_amount_percentile",
+      "operator": ">=",
+      "threshold": 60,
+      "time_window": "auction"
+    }
+  ],
+  "uncertainties": [
+    "Exact 2026-09-09 formal review is unavailable, so formal previous-day hit-rate is intentionally unavailable.",
+    "2026-09-10 objective support quality is PARTIAL.",
+    "No top formal theme has same-date qualifying hard fundamental evidence; price strength must not be restated as order/earnings confirmation."
+  ]
+}

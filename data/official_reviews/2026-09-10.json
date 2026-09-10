@@ -1,0 +1,382 @@
+{
+  "date": "2026-09-10",
+  "data_kind": "official",
+  "projection_of": "formal_review.3",
+  "source_sha256": "98820e055a2effd0870fa2b38facf5790c6ba8828a5d19b72af8cd6695ce1ac2",
+  "market_regime": "风险收缩、广度显著恶化、成交缩量；局部抱团与防御轮动替代全面主线进攻",
+  "main_themes": [
+    {
+      "name": "多元金融",
+      "scores": {
+        "base_logic": {
+          "raw_score": null,
+          "available_score": 0,
+          "subcomponents": [],
+          "evidence": [],
+          "reason": "No same-date qualifying fundamental evidence; not inferred from price."
+        },
+        "realization": {
+          "raw_score": null,
+          "available_score": 0,
+          "subcomponents": [],
+          "evidence": [],
+          "reason": "No same-date qualifying order/earnings realization evidence."
+        },
+        "expectation_gap": {
+          "raw_score": null,
+          "available_score": 0,
+          "subcomponents": [],
+          "evidence": [],
+          "reason": "Exact previous formal review for 2026-09-09 is unavailable."
+        },
+        "continuity": {
+          "raw_score": 9.24,
+          "available_score": 10,
+          "subcomponents": [],
+          "evidence": [],
+          "reason": "Objective one-day theme strength change."
+        },
+        "market_confirmation": {
+          "raw_score": 7.0,
+          "available_score": 10,
+          "subcomponents": [],
+          "evidence": [],
+          "reason": "Relative objective strength under a weak overall market."
+        },
+        "risk_deduction": {
+          "raw_score": 2.0,
+          "available_score": 8,
+          "subcomponents": [],
+          "evidence": [],
+          "reason": "Weak full-market breadth and shrinking turnover are explicit macro risk."
+        },
+        "total_score": 68.0,
+        "rating": "B"
+      },
+      "stage": "VALIDATION",
+      "rank": 1,
+      "drivers": [
+        {
+          "source": "MarketPacket/ReviewIntelligence",
+          "source_type": "objective_calculation",
+          "source_date": "2026-09-10",
+          "tier": 3,
+          "confidence": "MEDIUM",
+          "code": 38,
+          "name": "风格切换/高低切",
+          "evidence_level": "C"
+        }
+      ],
+      "risks": [
+        "Exact 2026-09-09 formal review unavailable; lifecycle comparison is not formal-delta eligible.",
+        "Theme strength is primarily market-structure evidence, not order/earnings validation."
+      ]
+    },
+    {
+      "name": "旅游及景区",
+      "scores": {
+        "base_logic": {
+          "raw_score": null,
+          "available_score": 0,
+          "subcomponents": [],
+          "evidence": [],
+          "reason": "No same-date qualifying fundamental evidence; not inferred from price."
+        },
+        "realization": {
+          "raw_score": null,
+          "available_score": 0,
+          "subcomponents": [],
+          "evidence": [],
+          "reason": "No same-date qualifying order/earnings realization evidence."
+        },
+        "expectation_gap": {
+          "raw_score": null,
+          "available_score": 0,
+          "subcomponents": [],
+          "evidence": [],
+          "reason": "Exact previous formal review for 2026-09-09 is unavailable."
+        },
+        "continuity": {
+          "raw_score": 5.0,
+          "available_score": 10,
+          "subcomponents": [],
+          "evidence": [],
+          "reason": "Objective one-day theme strength change."
+        },
+        "market_confirmation": {
+          "raw_score": 6.0,
+          "available_score": 10,
+          "subcomponents": [],
+          "evidence": [],
+          "reason": "Relative objective strength under a weak overall market."
+        },
+        "risk_deduction": {
+          "raw_score": 1.0,
+          "available_score": 8,
+          "subcomponents": [],
+          "evidence": [],
+          "reason": "Weak full-market breadth and shrinking turnover are explicit macro risk."
+        },
+        "total_score": 64.0,
+        "rating": "B"
+      },
+      "stage": "VALIDATION",
+      "rank": 2,
+      "drivers": [
+        {
+          "source": "MarketPacket/ReviewIntelligence",
+          "source_type": "objective_calculation",
+          "source_date": "2026-09-10",
+          "tier": 3,
+          "confidence": "MEDIUM",
+          "code": 36,
+          "name": "筹码出清/突破",
+          "evidence_level": "C"
+        },
+        {
+          "source": "MarketPacket/ReviewIntelligence",
+          "source_type": "objective_calculation",
+          "source_date": "2026-09-10",
+          "tier": 3,
+          "confidence": "MEDIUM",
+          "code": 38,
+          "name": "风格切换/高低切",
+          "evidence_level": "C"
+        }
+      ],
+      "risks": [
+        "Exact 2026-09-09 formal review unavailable; lifecycle comparison is not formal-delta eligible.",
+        "Theme strength is primarily market-structure evidence, not order/earnings validation."
+      ]
+    },
+    {
+      "name": "食品加工",
+      "scores": {
+        "base_logic": {
+          "raw_score": null,
+          "available_score": 0,
+          "subcomponents": [],
+          "evidence": [],
+          "reason": "No same-date qualifying fundamental evidence; not inferred from price."
+        },
+        "realization": {
+          "raw_score": null,
+          "available_score": 0,
+          "subcomponents": [],
+          "evidence": [],
+          "reason": "No same-date qualifying order/earnings realization evidence."
+        },
+        "expectation_gap": {
+          "raw_score": null,
+          "available_score": 0,
+          "subcomponents": [],
+          "evidence": [],
+          "reason": "Exact previous formal review for 2026-09-09 is unavailable."
+        },
+        "continuity": {
+          "raw_score": 10.0,
+          "available_score": 10,
+          "subcomponents": [],
+          "evidence": [],
+          "reason": "Objective one-day theme strength change."
+        },
+        "market_confirmation": {
+          "raw_score": 6.0,
+          "available_score": 10,
+          "subcomponents": [],
+          "evidence": [],
+          "reason": "Relative objective strength under a weak overall market."
+        },
+        "risk_deduction": {
+          "raw_score": 1.0,
+          "available_score": 8,
+          "subcomponents": [],
+          "evidence": [],
+          "reason": "Weak full-market breadth and shrinking turnover are explicit macro risk."
+        },
+        "total_score": 62.0,
+        "rating": "C"
+      },
+      "stage": "VALIDATION",
+      "rank": 3,
+      "drivers": [
+        {
+          "source": "MarketPacket/ReviewIntelligence",
+          "source_type": "objective_calculation",
+          "source_date": "2026-09-10",
+          "tier": 3,
+          "confidence": "MEDIUM",
+          "code": 36,
+          "name": "筹码出清/突破",
+          "evidence_level": "C"
+        },
+        {
+          "source": "MarketPacket/ReviewIntelligence",
+          "source_type": "objective_calculation",
+          "source_date": "2026-09-10",
+          "tier": 3,
+          "confidence": "MEDIUM",
+          "code": 38,
+          "name": "风格切换/高低切",
+          "evidence_level": "C"
+        }
+      ],
+      "risks": [
+        "Exact 2026-09-09 formal review unavailable; lifecycle comparison is not formal-delta eligible.",
+        "Theme strength is primarily market-structure evidence, not order/earnings validation."
+      ]
+    }
+  ],
+  "stocks": [
+    {
+      "code": "600318.SH",
+      "name": "新力金融",
+      "theme": "多元金融",
+      "role": "sentiment_core",
+      "drivers": [
+        {
+          "source": "MarketPacket/ReviewIntelligence",
+          "source_type": "objective_calculation",
+          "source_date": "2026-09-10",
+          "tier": 3,
+          "confidence": "MEDIUM",
+          "code": 38,
+          "name": "风格切换/高低切",
+          "evidence_level": "C"
+        }
+      ]
+    },
+    {
+      "code": "000978.SZ",
+      "name": "桂林旅游",
+      "theme": "旅游及景区",
+      "role": "capacity",
+      "drivers": [
+        {
+          "source": "MarketPacket/ReviewIntelligence",
+          "source_type": "objective_calculation",
+          "source_date": "2026-09-10",
+          "tier": 3,
+          "confidence": "MEDIUM",
+          "code": 36,
+          "name": "筹码出清/突破",
+          "evidence_level": "C"
+        },
+        {
+          "source": "MarketPacket/ReviewIntelligence",
+          "source_type": "objective_calculation",
+          "source_date": "2026-09-10",
+          "tier": 3,
+          "confidence": "MEDIUM",
+          "code": 38,
+          "name": "风格切换/高低切",
+          "evidence_level": "C"
+        }
+      ]
+    },
+    {
+      "code": "002661.SZ",
+      "name": "克明食品",
+      "theme": "食品加工",
+      "role": "capacity",
+      "drivers": [
+        {
+          "source": "MarketPacket/ReviewIntelligence",
+          "source_type": "objective_calculation",
+          "source_date": "2026-09-10",
+          "tier": 3,
+          "confidence": "MEDIUM",
+          "code": 36,
+          "name": "筹码出清/突破",
+          "evidence_level": "C"
+        },
+        {
+          "source": "MarketPacket/ReviewIntelligence",
+          "source_type": "objective_calculation",
+          "source_date": "2026-09-10",
+          "tier": 3,
+          "confidence": "MEDIUM",
+          "code": 38,
+          "name": "风格切换/高低切",
+          "evidence_level": "C"
+        }
+      ]
+    }
+  ],
+  "tomorrow_checks": [
+    {
+      "entity_type": "theme",
+      "entity_key": "多元金融",
+      "description": "弱市中的独立强度能否延续",
+      "validation_point": "弱市中的独立强度能否延续",
+      "strengthening_condition": "竞价板块正向广度>=60%，且新力金融相对强度继续为正",
+      "weakening_condition": "仅单一高标强而板块无扩散",
+      "falsification_condition": "新力金融与板块同步转弱且开盘后无法修复"
+    },
+    {
+      "entity_type": "theme",
+      "entity_key": "旅游及景区",
+      "description": "突破结构是否保持",
+      "validation_point": "突破结构是否保持",
+      "strengthening_condition": "桂林旅游竞价量能>=自身历史60分位且竞价后不快速失守",
+      "weakening_condition": "竞价量能偏弱或突破后快速回落",
+      "falsification_condition": "桂林旅游跌破关键突破结构且板块同步弱"
+    },
+    {
+      "entity_type": "theme",
+      "entity_key": "食品加工",
+      "description": "防御/消费轮动是否获得容量确认",
+      "validation_point": "防御/消费轮动是否获得容量确认",
+      "strengthening_condition": "克明食品竞价量能>=自身历史60分位且板块正向广度>=55%",
+      "weakening_condition": "容量股偏弱且仅小票活跃",
+      "falsification_condition": "克明食品与板块同时转弱且无承接"
+    },
+    {
+      "id": "fin_breadth_0911",
+      "entity_type": "theme",
+      "entity_key": "多元金融",
+      "metric": "sector_positive_ratio",
+      "operator": ">=",
+      "threshold": 0.6,
+      "time_window": "auction",
+      "description": "多元金融竞价正向广度至少60%"
+    },
+    {
+      "id": "fin_rel_0911",
+      "entity_type": "stock",
+      "entity_key": "600318.SH",
+      "metric": "relative_strength",
+      "operator": ">=",
+      "threshold": 0,
+      "time_window": "auction",
+      "description": "新力金融竞价相对强度保持非负"
+    },
+    {
+      "id": "tourism_amt_0911",
+      "entity_type": "stock",
+      "entity_key": "000978.SZ",
+      "metric": "auction_amount_percentile",
+      "operator": ">=",
+      "threshold": 60,
+      "time_window": "auction",
+      "description": "桂林旅游竞价金额达到自身历史60分位以上"
+    },
+    {
+      "id": "food_amt_0911",
+      "entity_type": "stock",
+      "entity_key": "002661.SZ",
+      "metric": "auction_amount_percentile",
+      "operator": ">=",
+      "threshold": 60,
+      "time_window": "auction",
+      "description": "克明食品竞价金额达到自身历史60分位以上"
+    }
+  ],
+  "final_judgement_owner": "chatgpt",
+  "evidence": [],
+  "risk_events": [
+    "Exact 2026-09-09 formal review is unavailable, so formal previous-day hit-rate is intentionally unavailable.",
+    "2026-09-10 objective support quality is PARTIAL.",
+    "No top formal theme has same-date qualifying hard fundamental evidence; price strength must not be restated as order/earnings confirmation."
+  ]
+}
