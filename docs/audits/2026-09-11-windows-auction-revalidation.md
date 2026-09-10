@@ -123,3 +123,17 @@ No future live session is claimed to have occurred at this midnight audit.
 
 Current readiness: PARTIALLY_READY. Missing 9/10 formal review, unverified logged-out
 operation and lack of a newly completed live session prevent a stronger claim.
+
+## Actual Scheduler-Identity Push Verification
+
+After the code commit was published, a second temporary task cloned the same
+production identity/action and invoked -Stage retry -SyncDate 2026-09-09.
+It started 2026-09-11 00:25:19, completed at 00:25:29 with exit code 0,
+and performed real commit and push, not just --dry-run.
+The acknowledged data commit is 671a7e3245f856c22a69d7d24c471ac2d79c51bf;
+the subsequent successful receipt was published as well.
+Remote full/compact bytes and local raw SHA were verified again unchanged.
+The remote receipt records PUSHED at 00:25:25 on 9/11 for the original 9/9 data.
+This is delayed distribution of an existing FAIL-quality report, not a new
+successful live session. Both temporary audit tasks were removed after completion;
+the six production tasks and all local failure/diagnostic logs were retained.
