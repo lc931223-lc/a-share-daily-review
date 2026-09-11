@@ -1,0 +1,107 @@
+{
+  "date": "2026-09-11",
+  "run_id": "34575667854",
+  "workflow_run_attempt": "1",
+  "workflow_retry_count": 2,
+  "credential_health": {
+    "tushare_token": "AVAILABLE"
+  },
+  "source_availability": {
+    "full_market_daily": "NOT_ATTEMPTED",
+    "tushare_daily_api": "EMPTY_RESPONSE",
+    "trade_cal": "AVAILABLE"
+  },
+  "failed_step": "credential_preflight",
+  "retry_count": 0,
+  "is_trade_day": true,
+  "calendar_status": "CHECKED",
+  "market_closed": true,
+  "pipeline_started_at": "2026-09-11T15:46:34.002907+08:00",
+  "pipeline_completed_at": "2026-09-11T15:46:34.496943+08:00",
+  "steps": {
+    "credential_preflight": {
+      "status": "FAILED",
+      "artifact_path": null,
+      "source_date": null,
+      "quality": null,
+      "started_at": "2026-09-11T15:46:34.002907+08:00",
+      "completed_at": "2026-09-11T15:46:34.436104+08:00",
+      "error": "TUSHARE_DAILY_EMPTY_RESPONSE",
+      "retry_count": 0,
+      "reused": false,
+      "provenance_sha256": null
+    }
+  },
+  "status": "FAILED",
+  "blockers": [
+    {
+      "step": "credential_preflight",
+      "error": "TUSHARE_DAILY_EMPTY_RESPONSE"
+    }
+  ],
+  "upstream_warnings": [],
+  "degraded_inputs": [
+    {
+      "step": "credential_preflight",
+      "quality": null,
+      "optional_missing": false
+    }
+  ],
+  "readiness_checks": [
+    {
+      "name": "real_trading_calendar",
+      "passed": true,
+      "detail": "target is present as open in the cached/fetched A-share calendar"
+    },
+    {
+      "name": "market_close_gate",
+      "passed": true,
+      "detail": "target session is closed under Asia/Shanghai close policy"
+    },
+    {
+      "name": "daily_rows_completeness",
+      "passed": false,
+      "detail": "Market Packet full-market daily rows passed its hard gate"
+    },
+    {
+      "name": "same_date_core_artifacts",
+      "passed": false,
+      "detail": "all generated core artifacts must carry the requested trade date"
+    },
+    {
+      "name": "schema_and_provenance_sha256",
+      "passed": false,
+      "detail": "all available core artifacts passed schema validation and have a digest"
+    },
+    {
+      "name": "idempotent_reuse_contract",
+      "passed": false,
+      "detail": "validated artifacts are content-addressed and reusable on rerun"
+    },
+    {
+      "name": "no_plaintext_secrets",
+      "passed": true,
+      "detail": "no probable plaintext secrets found"
+    }
+  ],
+  "started_at": "2026-09-11T15:46:34.002907+08:00",
+  "completed_at": "2026-09-11T15:46:34.496943+08:00",
+  "blocker": [
+    "TUSHARE_DAILY_EMPTY_RESPONSE"
+  ],
+  "source_health": {
+    "full_market_daily": "NOT_ATTEMPTED",
+    "tushare_daily_api": "EMPTY_RESPONSE",
+    "trade_cal": "AVAILABLE"
+  },
+  "upstream_available": [],
+  "upstream_missing": [
+    "market_packet",
+    "inflection",
+    "review_intelligence",
+    "capital_preference",
+    "review_context",
+    "formal_review_support",
+    "chatgpt_review_inputs"
+  ]
+}
