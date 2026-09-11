@@ -1,0 +1,2017 @@
+{
+  "source": "eastmoney.industry_index",
+  "url": "https://datacenter-web.eastmoney.com/api/data/v1/get",
+  "retrieved_at": "2026-09-11T16:23:40.400092+08:00",
+  "payload": {
+    "version": "a0bf2a34c49f8f68ff16047cf628ac60",
+    "result": {
+      "pages": 20,
+      "data": [
+        {
+          "REPORT_DATE": "2026-09-10 00:00:00",
+          "INDICATOR_VALUE": 3521
+        },
+        {
+          "REPORT_DATE": "2026-09-09 00:00:00",
+          "INDICATOR_VALUE": 3620
+        },
+        {
+          "REPORT_DATE": "2026-09-08 00:00:00",
+          "INDICATOR_VALUE": 3584
+        },
+        {
+          "REPORT_DATE": "2026-09-07 00:00:00",
+          "INDICATOR_VALUE": 3575
+        },
+        {
+          "REPORT_DATE": "2026-09-04 00:00:00",
+          "INDICATOR_VALUE": 3628
+        },
+        {
+          "REPORT_DATE": "2026-09-03 00:00:00",
+          "INDICATOR_VALUE": 3488
+        },
+        {
+          "REPORT_DATE": "2026-09-02 00:00:00",
+          "INDICATOR_VALUE": 3331
+        },
+        {
+          "REPORT_DATE": "2026-09-01 00:00:00",
+          "INDICATOR_VALUE": 3157
+        },
+        {
+          "REPORT_DATE": "2026-08-28 00:00:00",
+          "INDICATOR_VALUE": 3186
+        },
+        {
+          "REPORT_DATE": "2026-08-27 00:00:00",
+          "INDICATOR_VALUE": 3107
+        },
+        {
+          "REPORT_DATE": "2026-08-26 00:00:00",
+          "INDICATOR_VALUE": 3056
+        },
+        {
+          "REPORT_DATE": "2026-08-25 00:00:00",
+          "INDICATOR_VALUE": 2926
+        },
+        {
+          "REPORT_DATE": "2026-08-24 00:00:00",
+          "INDICATOR_VALUE": 2882
+        },
+        {
+          "REPORT_DATE": "2026-08-21 00:00:00",
+          "INDICATOR_VALUE": 2841
+        },
+        {
+          "REPORT_DATE": "2026-08-20 00:00:00",
+          "INDICATOR_VALUE": 2791
+        },
+        {
+          "REPORT_DATE": "2026-08-19 00:00:00",
+          "INDICATOR_VALUE": 2776
+        },
+        {
+          "REPORT_DATE": "2026-08-18 00:00:00",
+          "INDICATOR_VALUE": 2815
+        },
+        {
+          "REPORT_DATE": "2026-08-17 00:00:00",
+          "INDICATOR_VALUE": 2878
+        },
+        {
+          "REPORT_DATE": "2026-08-14 00:00:00",
+          "INDICATOR_VALUE": 2863
+        },
+        {
+          "REPORT_DATE": "2026-08-13 00:00:00",
+          "INDICATOR_VALUE": 2844
+        },
+        {
+          "REPORT_DATE": "2026-08-12 00:00:00",
+          "INDICATOR_VALUE": 2939
+        },
+        {
+          "REPORT_DATE": "2026-08-11 00:00:00",
+          "INDICATOR_VALUE": 3046
+        },
+        {
+          "REPORT_DATE": "2026-08-10 00:00:00",
+          "INDICATOR_VALUE": 3083
+        },
+        {
+          "REPORT_DATE": "2026-08-07 00:00:00",
+          "INDICATOR_VALUE": 3089
+        },
+        {
+          "REPORT_DATE": "2026-08-06 00:00:00",
+          "INDICATOR_VALUE": 3057
+        },
+        {
+          "REPORT_DATE": "2026-08-05 00:00:00",
+          "INDICATOR_VALUE": 3063
+        },
+        {
+          "REPORT_DATE": "2026-08-04 00:00:00",
+          "INDICATOR_VALUE": 2936
+        },
+        {
+          "REPORT_DATE": "2026-08-03 00:00:00",
+          "INDICATOR_VALUE": 2843
+        },
+        {
+          "REPORT_DATE": "2026-07-31 00:00:00",
+          "INDICATOR_VALUE": 2732
+        },
+        {
+          "REPORT_DATE": "2026-07-30 00:00:00",
+          "INDICATOR_VALUE": 2673
+        },
+        {
+          "REPORT_DATE": "2026-07-29 00:00:00",
+          "INDICATOR_VALUE": 2632
+        },
+        {
+          "REPORT_DATE": "2026-07-28 00:00:00",
+          "INDICATOR_VALUE": 2664
+        },
+        {
+          "REPORT_DATE": "2026-07-27 00:00:00",
+          "INDICATOR_VALUE": 2696
+        },
+        {
+          "REPORT_DATE": "2026-07-24 00:00:00",
+          "INDICATOR_VALUE": 2743
+        },
+        {
+          "REPORT_DATE": "2026-07-23 00:00:00",
+          "INDICATOR_VALUE": 2725
+        },
+        {
+          "REPORT_DATE": "2026-07-22 00:00:00",
+          "INDICATOR_VALUE": 2715
+        },
+        {
+          "REPORT_DATE": "2026-07-21 00:00:00",
+          "INDICATOR_VALUE": 2670
+        },
+        {
+          "REPORT_DATE": "2026-07-20 00:00:00",
+          "INDICATOR_VALUE": 2671
+        },
+        {
+          "REPORT_DATE": "2026-07-17 00:00:00",
+          "INDICATOR_VALUE": 2752
+        },
+        {
+          "REPORT_DATE": "2026-07-16 00:00:00",
+          "INDICATOR_VALUE": 2840
+        },
+        {
+          "REPORT_DATE": "2026-07-15 00:00:00",
+          "INDICATOR_VALUE": 2929
+        },
+        {
+          "REPORT_DATE": "2026-07-14 00:00:00",
+          "INDICATOR_VALUE": 2980
+        },
+        {
+          "REPORT_DATE": "2026-07-13 00:00:00",
+          "INDICATOR_VALUE": 2960
+        },
+        {
+          "REPORT_DATE": "2026-07-10 00:00:00",
+          "INDICATOR_VALUE": 2944
+        },
+        {
+          "REPORT_DATE": "2026-07-09 00:00:00",
+          "INDICATOR_VALUE": 2910
+        },
+        {
+          "REPORT_DATE": "2026-07-08 00:00:00",
+          "INDICATOR_VALUE": 2871
+        },
+        {
+          "REPORT_DATE": "2026-07-07 00:00:00",
+          "INDICATOR_VALUE": 2875
+        },
+        {
+          "REPORT_DATE": "2026-07-06 00:00:00",
+          "INDICATOR_VALUE": 2797
+        },
+        {
+          "REPORT_DATE": "2026-07-03 00:00:00",
+          "INDICATOR_VALUE": 2717
+        },
+        {
+          "REPORT_DATE": "2026-07-02 00:00:00",
+          "INDICATOR_VALUE": 2650
+        },
+        {
+          "REPORT_DATE": "2026-07-01 00:00:00",
+          "INDICATOR_VALUE": 2562
+        },
+        {
+          "REPORT_DATE": "2026-06-30 00:00:00",
+          "INDICATOR_VALUE": 2501
+        },
+        {
+          "REPORT_DATE": "2026-06-29 00:00:00",
+          "INDICATOR_VALUE": 2490
+        },
+        {
+          "REPORT_DATE": "2026-06-26 00:00:00",
+          "INDICATOR_VALUE": 2524
+        },
+        {
+          "REPORT_DATE": "2026-06-25 00:00:00",
+          "INDICATOR_VALUE": 2591
+        },
+        {
+          "REPORT_DATE": "2026-06-24 00:00:00",
+          "INDICATOR_VALUE": 2634
+        },
+        {
+          "REPORT_DATE": "2026-06-23 00:00:00",
+          "INDICATOR_VALUE": 2667
+        },
+        {
+          "REPORT_DATE": "2026-06-22 00:00:00",
+          "INDICATOR_VALUE": 2684
+        },
+        {
+          "REPORT_DATE": "2026-06-19 00:00:00",
+          "INDICATOR_VALUE": 2722
+        },
+        {
+          "REPORT_DATE": "2026-06-18 00:00:00",
+          "INDICATOR_VALUE": 2659
+        },
+        {
+          "REPORT_DATE": "2026-06-17 00:00:00",
+          "INDICATOR_VALUE": 2653
+        },
+        {
+          "REPORT_DATE": "2026-06-16 00:00:00",
+          "INDICATOR_VALUE": 2670
+        },
+        {
+          "REPORT_DATE": "2026-06-15 00:00:00",
+          "INDICATOR_VALUE": 2720
+        },
+        {
+          "REPORT_DATE": "2026-06-12 00:00:00",
+          "INDICATOR_VALUE": 2729
+        },
+        {
+          "REPORT_DATE": "2026-06-11 00:00:00",
+          "INDICATOR_VALUE": 2729
+        },
+        {
+          "REPORT_DATE": "2026-06-10 00:00:00",
+          "INDICATOR_VALUE": 2771
+        },
+        {
+          "REPORT_DATE": "2026-06-09 00:00:00",
+          "INDICATOR_VALUE": 2818
+        },
+        {
+          "REPORT_DATE": "2026-06-08 00:00:00",
+          "INDICATOR_VALUE": 2916
+        },
+        {
+          "REPORT_DATE": "2026-06-05 00:00:00",
+          "INDICATOR_VALUE": 2981
+        },
+        {
+          "REPORT_DATE": "2026-06-04 00:00:00",
+          "INDICATOR_VALUE": 3037
+        },
+        {
+          "REPORT_DATE": "2026-06-03 00:00:00",
+          "INDICATOR_VALUE": 3124
+        },
+        {
+          "REPORT_DATE": "2026-06-02 00:00:00",
+          "INDICATOR_VALUE": 3205
+        },
+        {
+          "REPORT_DATE": "2026-06-01 00:00:00",
+          "INDICATOR_VALUE": 3222
+        },
+        {
+          "REPORT_DATE": "2026-05-29 00:00:00",
+          "INDICATOR_VALUE": 3224
+        },
+        {
+          "REPORT_DATE": "2026-05-28 00:00:00",
+          "INDICATOR_VALUE": 3226
+        },
+        {
+          "REPORT_DATE": "2026-05-27 00:00:00",
+          "INDICATOR_VALUE": 3124
+        },
+        {
+          "REPORT_DATE": "2026-05-26 00:00:00",
+          "INDICATOR_VALUE": 3085
+        },
+        {
+          "REPORT_DATE": "2026-05-22 00:00:00",
+          "INDICATOR_VALUE": 2991
+        },
+        {
+          "REPORT_DATE": "2026-05-21 00:00:00",
+          "INDICATOR_VALUE": 2964
+        },
+        {
+          "REPORT_DATE": "2026-05-20 00:00:00",
+          "INDICATOR_VALUE": 3005
+        },
+        {
+          "REPORT_DATE": "2026-05-19 00:00:00",
+          "INDICATOR_VALUE": 3054
+        },
+        {
+          "REPORT_DATE": "2026-05-18 00:00:00",
+          "INDICATOR_VALUE": 3092
+        },
+        {
+          "REPORT_DATE": "2026-05-15 00:00:00",
+          "INDICATOR_VALUE": 3151
+        },
+        {
+          "REPORT_DATE": "2026-05-14 00:00:00",
+          "INDICATOR_VALUE": 3195
+        },
+        {
+          "REPORT_DATE": "2026-05-13 00:00:00",
+          "INDICATOR_VALUE": 3189
+        },
+        {
+          "REPORT_DATE": "2026-05-12 00:00:00",
+          "INDICATOR_VALUE": 3063
+        },
+        {
+          "REPORT_DATE": "2026-05-11 00:00:00",
+          "INDICATOR_VALUE": 3001
+        },
+        {
+          "REPORT_DATE": "2026-05-08 00:00:00",
+          "INDICATOR_VALUE": 2978
+        },
+        {
+          "REPORT_DATE": "2026-05-07 00:00:00",
+          "INDICATOR_VALUE": 3034
+        },
+        {
+          "REPORT_DATE": "2026-05-06 00:00:00",
+          "INDICATOR_VALUE": 2991
+        },
+        {
+          "REPORT_DATE": "2026-05-05 00:00:00",
+          "INDICATOR_VALUE": 2832
+        },
+        {
+          "REPORT_DATE": "2026-05-01 00:00:00",
+          "INDICATOR_VALUE": 2730
+        },
+        {
+          "REPORT_DATE": "2026-04-30 00:00:00",
+          "INDICATOR_VALUE": 2686
+        },
+        {
+          "REPORT_DATE": "2026-04-29 00:00:00",
+          "INDICATOR_VALUE": 2670
+        },
+        {
+          "REPORT_DATE": "2026-04-28 00:00:00",
+          "INDICATOR_VALUE": 2677
+        },
+        {
+          "REPORT_DATE": "2026-04-27 00:00:00",
+          "INDICATOR_VALUE": 2666
+        },
+        {
+          "REPORT_DATE": "2026-04-24 00:00:00",
+          "INDICATOR_VALUE": 2665
+        },
+        {
+          "REPORT_DATE": "2026-04-23 00:00:00",
+          "INDICATOR_VALUE": 2673
+        },
+        {
+          "REPORT_DATE": "2026-04-22 00:00:00",
+          "INDICATOR_VALUE": 2675
+        },
+        {
+          "REPORT_DATE": "2026-04-21 00:00:00",
+          "INDICATOR_VALUE": 2640
+        },
+        {
+          "REPORT_DATE": "2026-04-20 00:00:00",
+          "INDICATOR_VALUE": 2633
+        },
+        {
+          "REPORT_DATE": "2026-04-17 00:00:00",
+          "INDICATOR_VALUE": 2567
+        },
+        {
+          "REPORT_DATE": "2026-04-16 00:00:00",
+          "INDICATOR_VALUE": 2523
+        },
+        {
+          "REPORT_DATE": "2026-04-15 00:00:00",
+          "INDICATOR_VALUE": 2484
+        },
+        {
+          "REPORT_DATE": "2026-04-14 00:00:00",
+          "INDICATOR_VALUE": 2354
+        },
+        {
+          "REPORT_DATE": "2026-04-13 00:00:00",
+          "INDICATOR_VALUE": 2250
+        },
+        {
+          "REPORT_DATE": "2026-04-10 00:00:00",
+          "INDICATOR_VALUE": 2201
+        },
+        {
+          "REPORT_DATE": "2026-04-09 00:00:00",
+          "INDICATOR_VALUE": 2161
+        },
+        {
+          "REPORT_DATE": "2026-04-08 00:00:00",
+          "INDICATOR_VALUE": 2139
+        },
+        {
+          "REPORT_DATE": "2026-04-07 00:00:00",
+          "INDICATOR_VALUE": 2095
+        },
+        {
+          "REPORT_DATE": "2026-04-02 00:00:00",
+          "INDICATOR_VALUE": 2066
+        },
+        {
+          "REPORT_DATE": "2026-04-01 00:00:00",
+          "INDICATOR_VALUE": 2030
+        },
+        {
+          "REPORT_DATE": "2026-03-31 00:00:00",
+          "INDICATOR_VALUE": 1995
+        },
+        {
+          "REPORT_DATE": "2026-03-30 00:00:00",
+          "INDICATOR_VALUE": 2017
+        },
+        {
+          "REPORT_DATE": "2026-03-27 00:00:00",
+          "INDICATOR_VALUE": 2031
+        },
+        {
+          "REPORT_DATE": "2026-03-26 00:00:00",
+          "INDICATOR_VALUE": 2014
+        },
+        {
+          "REPORT_DATE": "2026-03-25 00:00:00",
+          "INDICATOR_VALUE": 2001
+        },
+        {
+          "REPORT_DATE": "2026-03-24 00:00:00",
+          "INDICATOR_VALUE": 1989
+        },
+        {
+          "REPORT_DATE": "2026-03-23 00:00:00",
+          "INDICATOR_VALUE": 2037
+        },
+        {
+          "REPORT_DATE": "2026-03-20 00:00:00",
+          "INDICATOR_VALUE": 2056
+        },
+        {
+          "REPORT_DATE": "2026-03-19 00:00:00",
+          "INDICATOR_VALUE": 2057
+        },
+        {
+          "REPORT_DATE": "2026-03-18 00:00:00",
+          "INDICATOR_VALUE": 2064
+        },
+        {
+          "REPORT_DATE": "2026-03-17 00:00:00",
+          "INDICATOR_VALUE": 2024
+        },
+        {
+          "REPORT_DATE": "2026-03-16 00:00:00",
+          "INDICATOR_VALUE": 2038
+        },
+        {
+          "REPORT_DATE": "2026-03-13 00:00:00",
+          "INDICATOR_VALUE": 2028
+        },
+        {
+          "REPORT_DATE": "2026-03-12 00:00:00",
+          "INDICATOR_VALUE": 1972
+        },
+        {
+          "REPORT_DATE": "2026-03-11 00:00:00",
+          "INDICATOR_VALUE": 1926
+        },
+        {
+          "REPORT_DATE": "2026-03-10 00:00:00",
+          "INDICATOR_VALUE": 1919
+        },
+        {
+          "REPORT_DATE": "2026-03-09 00:00:00",
+          "INDICATOR_VALUE": 2066
+        },
+        {
+          "REPORT_DATE": "2026-03-06 00:00:00",
+          "INDICATOR_VALUE": 2010
+        },
+        {
+          "REPORT_DATE": "2026-03-05 00:00:00",
+          "INDICATOR_VALUE": 2138
+        },
+        {
+          "REPORT_DATE": "2026-03-04 00:00:00",
+          "INDICATOR_VALUE": 2233
+        },
+        {
+          "REPORT_DATE": "2026-03-03 00:00:00",
+          "INDICATOR_VALUE": 2242
+        },
+        {
+          "REPORT_DATE": "2026-03-02 00:00:00",
+          "INDICATOR_VALUE": 2187
+        },
+        {
+          "REPORT_DATE": "2026-02-27 00:00:00",
+          "INDICATOR_VALUE": 2140
+        },
+        {
+          "REPORT_DATE": "2026-02-26 00:00:00",
+          "INDICATOR_VALUE": 2117
+        },
+        {
+          "REPORT_DATE": "2026-02-25 00:00:00",
+          "INDICATOR_VALUE": 2121
+        },
+        {
+          "REPORT_DATE": "2026-02-24 00:00:00",
+          "INDICATOR_VALUE": 2129
+        },
+        {
+          "REPORT_DATE": "2026-02-23 00:00:00",
+          "INDICATOR_VALUE": 2112
+        },
+        {
+          "REPORT_DATE": "2026-02-20 00:00:00",
+          "INDICATOR_VALUE": 2043
+        },
+        {
+          "REPORT_DATE": "2026-02-19 00:00:00",
+          "INDICATOR_VALUE": 2019
+        },
+        {
+          "REPORT_DATE": "2026-02-18 00:00:00",
+          "INDICATOR_VALUE": 2063
+        },
+        {
+          "REPORT_DATE": "2026-02-17 00:00:00",
+          "INDICATOR_VALUE": 2095
+        },
+        {
+          "REPORT_DATE": "2026-02-16 00:00:00",
+          "INDICATOR_VALUE": 2100
+        },
+        {
+          "REPORT_DATE": "2026-02-13 00:00:00",
+          "INDICATOR_VALUE": 2083
+        },
+        {
+          "REPORT_DATE": "2026-02-12 00:00:00",
+          "INDICATOR_VALUE": 2095
+        },
+        {
+          "REPORT_DATE": "2026-02-11 00:00:00",
+          "INDICATOR_VALUE": 1958
+        },
+        {
+          "REPORT_DATE": "2026-02-10 00:00:00",
+          "INDICATOR_VALUE": 1882
+        },
+        {
+          "REPORT_DATE": "2026-02-09 00:00:00",
+          "INDICATOR_VALUE": 1895
+        },
+        {
+          "REPORT_DATE": "2026-02-06 00:00:00",
+          "INDICATOR_VALUE": 1923
+        },
+        {
+          "REPORT_DATE": "2026-02-05 00:00:00",
+          "INDICATOR_VALUE": 1936
+        },
+        {
+          "REPORT_DATE": "2026-02-04 00:00:00",
+          "INDICATOR_VALUE": 1955
+        },
+        {
+          "REPORT_DATE": "2026-02-03 00:00:00",
+          "INDICATOR_VALUE": 2028
+        },
+        {
+          "REPORT_DATE": "2026-02-02 00:00:00",
+          "INDICATOR_VALUE": 2124
+        },
+        {
+          "REPORT_DATE": "2026-01-30 00:00:00",
+          "INDICATOR_VALUE": 2148
+        },
+        {
+          "REPORT_DATE": "2026-01-29 00:00:00",
+          "INDICATOR_VALUE": 2002
+        },
+        {
+          "REPORT_DATE": "2026-01-28 00:00:00",
+          "INDICATOR_VALUE": 2016
+        },
+        {
+          "REPORT_DATE": "2026-01-27 00:00:00",
+          "INDICATOR_VALUE": 1999
+        },
+        {
+          "REPORT_DATE": "2026-01-26 00:00:00",
+          "INDICATOR_VALUE": 1780
+        },
+        {
+          "REPORT_DATE": "2026-01-23 00:00:00",
+          "INDICATOR_VALUE": 1762
+        },
+        {
+          "REPORT_DATE": "2026-01-22 00:00:00",
+          "INDICATOR_VALUE": 1761
+        },
+        {
+          "REPORT_DATE": "2026-01-21 00:00:00",
+          "INDICATOR_VALUE": 1803
+        },
+        {
+          "REPORT_DATE": "2026-01-20 00:00:00",
+          "INDICATOR_VALUE": 1729
+        },
+        {
+          "REPORT_DATE": "2026-01-19 00:00:00",
+          "INDICATOR_VALUE": 1650
+        },
+        {
+          "REPORT_DATE": "2026-01-16 00:00:00",
+          "INDICATOR_VALUE": 1567
+        },
+        {
+          "REPORT_DATE": "2026-01-15 00:00:00",
+          "INDICATOR_VALUE": 1532
+        },
+        {
+          "REPORT_DATE": "2026-01-14 00:00:00",
+          "INDICATOR_VALUE": 1566
+        },
+        {
+          "REPORT_DATE": "2026-01-13 00:00:00",
+          "INDICATOR_VALUE": 1608
+        },
+        {
+          "REPORT_DATE": "2026-01-12 00:00:00",
+          "INDICATOR_VALUE": 1659
+        },
+        {
+          "REPORT_DATE": "2026-01-09 00:00:00",
+          "INDICATOR_VALUE": 1688
+        },
+        {
+          "REPORT_DATE": "2026-01-08 00:00:00",
+          "INDICATOR_VALUE": 1718
+        },
+        {
+          "REPORT_DATE": "2026-01-07 00:00:00",
+          "INDICATOR_VALUE": 1776
+        },
+        {
+          "REPORT_DATE": "2026-01-06 00:00:00",
+          "INDICATOR_VALUE": 1830
+        },
+        {
+          "REPORT_DATE": "2026-01-05 00:00:00",
+          "INDICATOR_VALUE": 1851
+        },
+        {
+          "REPORT_DATE": "2026-01-02 00:00:00",
+          "INDICATOR_VALUE": 1882
+        },
+        {
+          "REPORT_DATE": "2025-12-24 00:00:00",
+          "INDICATOR_VALUE": 1877
+        },
+        {
+          "REPORT_DATE": "2025-12-23 00:00:00",
+          "INDICATOR_VALUE": 1889
+        },
+        {
+          "REPORT_DATE": "2025-12-22 00:00:00",
+          "INDICATOR_VALUE": 1979
+        },
+        {
+          "REPORT_DATE": "2025-12-19 00:00:00",
+          "INDICATOR_VALUE": 2023
+        },
+        {
+          "REPORT_DATE": "2025-12-18 00:00:00",
+          "INDICATOR_VALUE": 2071
+        },
+        {
+          "REPORT_DATE": "2025-12-17 00:00:00",
+          "INDICATOR_VALUE": 2121
+        },
+        {
+          "REPORT_DATE": "2025-12-16 00:00:00",
+          "INDICATOR_VALUE": 2204
+        },
+        {
+          "REPORT_DATE": "2025-12-15 00:00:00",
+          "INDICATOR_VALUE": 2193
+        },
+        {
+          "REPORT_DATE": "2025-12-12 00:00:00",
+          "INDICATOR_VALUE": 2205
+        },
+        {
+          "REPORT_DATE": "2025-12-11 00:00:00",
+          "INDICATOR_VALUE": 2294
+        },
+        {
+          "REPORT_DATE": "2025-12-10 00:00:00",
+          "INDICATOR_VALUE": 2430
+        },
+        {
+          "REPORT_DATE": "2025-12-09 00:00:00",
+          "INDICATOR_VALUE": 2557
+        },
+        {
+          "REPORT_DATE": "2025-12-08 00:00:00",
+          "INDICATOR_VALUE": 2694
+        },
+        {
+          "REPORT_DATE": "2025-12-05 00:00:00",
+          "INDICATOR_VALUE": 2727
+        },
+        {
+          "REPORT_DATE": "2025-12-04 00:00:00",
+          "INDICATOR_VALUE": 2814
+        },
+        {
+          "REPORT_DATE": "2025-12-03 00:00:00",
+          "INDICATOR_VALUE": 2845
+        },
+        {
+          "REPORT_DATE": "2025-12-02 00:00:00",
+          "INDICATOR_VALUE": 2600
+        },
+        {
+          "REPORT_DATE": "2025-12-01 00:00:00",
+          "INDICATOR_VALUE": 2583
+        },
+        {
+          "REPORT_DATE": "2025-11-28 00:00:00",
+          "INDICATOR_VALUE": 2560
+        },
+        {
+          "REPORT_DATE": "2025-11-27 00:00:00",
+          "INDICATOR_VALUE": 2480
+        },
+        {
+          "REPORT_DATE": "2025-11-26 00:00:00",
+          "INDICATOR_VALUE": 2401
+        },
+        {
+          "REPORT_DATE": "2025-11-25 00:00:00",
+          "INDICATOR_VALUE": 2309
+        },
+        {
+          "REPORT_DATE": "2025-11-24 00:00:00",
+          "INDICATOR_VALUE": 2295
+        },
+        {
+          "REPORT_DATE": "2025-11-21 00:00:00",
+          "INDICATOR_VALUE": 2275
+        },
+        {
+          "REPORT_DATE": "2025-11-20 00:00:00",
+          "INDICATOR_VALUE": 2270
+        },
+        {
+          "REPORT_DATE": "2025-11-19 00:00:00",
+          "INDICATOR_VALUE": 2260
+        },
+        {
+          "REPORT_DATE": "2025-11-18 00:00:00",
+          "INDICATOR_VALUE": 2216
+        },
+        {
+          "REPORT_DATE": "2025-11-17 00:00:00",
+          "INDICATOR_VALUE": 2153
+        },
+        {
+          "REPORT_DATE": "2025-11-14 00:00:00",
+          "INDICATOR_VALUE": 2125
+        },
+        {
+          "REPORT_DATE": "2025-11-13 00:00:00",
+          "INDICATOR_VALUE": 2077
+        },
+        {
+          "REPORT_DATE": "2025-11-12 00:00:00",
+          "INDICATOR_VALUE": 2030
+        },
+        {
+          "REPORT_DATE": "2025-11-11 00:00:00",
+          "INDICATOR_VALUE": 2072
+        },
+        {
+          "REPORT_DATE": "2025-11-10 00:00:00",
+          "INDICATOR_VALUE": 2084
+        },
+        {
+          "REPORT_DATE": "2025-11-07 00:00:00",
+          "INDICATOR_VALUE": 2104
+        },
+        {
+          "REPORT_DATE": "2025-11-06 00:00:00",
+          "INDICATOR_VALUE": 2063
+        },
+        {
+          "REPORT_DATE": "2025-11-05 00:00:00",
+          "INDICATOR_VALUE": 2003
+        },
+        {
+          "REPORT_DATE": "2025-11-04 00:00:00",
+          "INDICATOR_VALUE": 1958
+        },
+        {
+          "REPORT_DATE": "2025-11-03 00:00:00",
+          "INDICATOR_VALUE": 1945
+        },
+        {
+          "REPORT_DATE": "2025-10-31 00:00:00",
+          "INDICATOR_VALUE": 1966
+        },
+        {
+          "REPORT_DATE": "2025-10-30 00:00:00",
+          "INDICATOR_VALUE": 1983
+        },
+        {
+          "REPORT_DATE": "2025-10-29 00:00:00",
+          "INDICATOR_VALUE": 1961
+        },
+        {
+          "REPORT_DATE": "2025-10-28 00:00:00",
+          "INDICATOR_VALUE": 1950
+        },
+        {
+          "REPORT_DATE": "2025-10-27 00:00:00",
+          "INDICATOR_VALUE": 1976
+        },
+        {
+          "REPORT_DATE": "2025-10-24 00:00:00",
+          "INDICATOR_VALUE": 1991
+        },
+        {
+          "REPORT_DATE": "2025-10-23 00:00:00",
+          "INDICATOR_VALUE": 2057
+        },
+        {
+          "REPORT_DATE": "2025-10-22 00:00:00",
+          "INDICATOR_VALUE": 2092
+        },
+        {
+          "REPORT_DATE": "2025-10-21 00:00:00",
+          "INDICATOR_VALUE": 2094
+        },
+        {
+          "REPORT_DATE": "2025-10-20 00:00:00",
+          "INDICATOR_VALUE": 2071
+        },
+        {
+          "REPORT_DATE": "2025-10-17 00:00:00",
+          "INDICATOR_VALUE": 2069
+        },
+        {
+          "REPORT_DATE": "2025-10-16 00:00:00",
+          "INDICATOR_VALUE": 2046
+        },
+        {
+          "REPORT_DATE": "2025-10-15 00:00:00",
+          "INDICATOR_VALUE": 1997
+        },
+        {
+          "REPORT_DATE": "2025-10-14 00:00:00",
+          "INDICATOR_VALUE": 2022
+        },
+        {
+          "REPORT_DATE": "2025-10-13 00:00:00",
+          "INDICATOR_VALUE": 2144
+        },
+        {
+          "REPORT_DATE": "2025-10-10 00:00:00",
+          "INDICATOR_VALUE": 1936
+        },
+        {
+          "REPORT_DATE": "2025-10-09 00:00:00",
+          "INDICATOR_VALUE": 1923
+        },
+        {
+          "REPORT_DATE": "2025-10-08 00:00:00",
+          "INDICATOR_VALUE": 1963
+        },
+        {
+          "REPORT_DATE": "2025-10-07 00:00:00",
+          "INDICATOR_VALUE": 1947
+        },
+        {
+          "REPORT_DATE": "2025-10-06 00:00:00",
+          "INDICATOR_VALUE": 1932
+        },
+        {
+          "REPORT_DATE": "2025-10-03 00:00:00",
+          "INDICATOR_VALUE": 1901
+        },
+        {
+          "REPORT_DATE": "2025-10-02 00:00:00",
+          "INDICATOR_VALUE": 1909
+        },
+        {
+          "REPORT_DATE": "2025-10-01 00:00:00",
+          "INDICATOR_VALUE": 1980
+        },
+        {
+          "REPORT_DATE": "2025-09-30 00:00:00",
+          "INDICATOR_VALUE": 2134
+        },
+        {
+          "REPORT_DATE": "2025-09-29 00:00:00",
+          "INDICATOR_VALUE": 2220
+        },
+        {
+          "REPORT_DATE": "2025-09-26 00:00:00",
+          "INDICATOR_VALUE": 2259
+        },
+        {
+          "REPORT_DATE": "2025-09-25 00:00:00",
+          "INDICATOR_VALUE": 2266
+        },
+        {
+          "REPORT_DATE": "2025-09-24 00:00:00",
+          "INDICATOR_VALUE": 2240
+        },
+        {
+          "REPORT_DATE": "2025-09-23 00:00:00",
+          "INDICATOR_VALUE": 2200
+        },
+        {
+          "REPORT_DATE": "2025-09-22 00:00:00",
+          "INDICATOR_VALUE": 2172
+        },
+        {
+          "REPORT_DATE": "2025-09-19 00:00:00",
+          "INDICATOR_VALUE": 2203
+        },
+        {
+          "REPORT_DATE": "2025-09-18 00:00:00",
+          "INDICATOR_VALUE": 2205
+        },
+        {
+          "REPORT_DATE": "2025-09-17 00:00:00",
+          "INDICATOR_VALUE": 2180
+        },
+        {
+          "REPORT_DATE": "2025-09-16 00:00:00",
+          "INDICATOR_VALUE": 2154
+        },
+        {
+          "REPORT_DATE": "2025-09-15 00:00:00",
+          "INDICATOR_VALUE": 2153
+        },
+        {
+          "REPORT_DATE": "2025-09-12 00:00:00",
+          "INDICATOR_VALUE": 2126
+        },
+        {
+          "REPORT_DATE": "2025-09-11 00:00:00",
+          "INDICATOR_VALUE": 2111
+        },
+        {
+          "REPORT_DATE": "2025-09-10 00:00:00",
+          "INDICATOR_VALUE": 2112
+        },
+        {
+          "REPORT_DATE": "2025-09-09 00:00:00",
+          "INDICATOR_VALUE": 2079
+        },
+        {
+          "REPORT_DATE": "2025-09-08 00:00:00",
+          "INDICATOR_VALUE": 2019
+        },
+        {
+          "REPORT_DATE": "2025-09-05 00:00:00",
+          "INDICATOR_VALUE": 1979
+        },
+        {
+          "REPORT_DATE": "2025-09-04 00:00:00",
+          "INDICATOR_VALUE": 1963
+        },
+        {
+          "REPORT_DATE": "2025-09-03 00:00:00",
+          "INDICATOR_VALUE": 1940
+        },
+        {
+          "REPORT_DATE": "2025-09-02 00:00:00",
+          "INDICATOR_VALUE": 1986
+        },
+        {
+          "REPORT_DATE": "2025-09-01 00:00:00",
+          "INDICATOR_VALUE": 2024
+        },
+        {
+          "REPORT_DATE": "2025-08-29 00:00:00",
+          "INDICATOR_VALUE": 2025
+        },
+        {
+          "REPORT_DATE": "2025-08-28 00:00:00",
+          "INDICATOR_VALUE": 2017
+        },
+        {
+          "REPORT_DATE": "2025-08-27 00:00:00",
+          "INDICATOR_VALUE": 2046
+        },
+        {
+          "REPORT_DATE": "2025-08-26 00:00:00",
+          "INDICATOR_VALUE": 2041
+        },
+        {
+          "REPORT_DATE": "2025-08-22 00:00:00",
+          "INDICATOR_VALUE": 1944
+        },
+        {
+          "REPORT_DATE": "2025-08-21 00:00:00",
+          "INDICATOR_VALUE": 1893
+        },
+        {
+          "REPORT_DATE": "2025-08-20 00:00:00",
+          "INDICATOR_VALUE": 1927
+        },
+        {
+          "REPORT_DATE": "2025-08-19 00:00:00",
+          "INDICATOR_VALUE": 1964
+        },
+        {
+          "REPORT_DATE": "2025-08-18 00:00:00",
+          "INDICATOR_VALUE": 2022
+        },
+        {
+          "REPORT_DATE": "2025-08-15 00:00:00",
+          "INDICATOR_VALUE": 2044
+        },
+        {
+          "REPORT_DATE": "2025-08-14 00:00:00",
+          "INDICATOR_VALUE": 2039
+        },
+        {
+          "REPORT_DATE": "2025-08-13 00:00:00",
+          "INDICATOR_VALUE": 2025
+        },
+        {
+          "REPORT_DATE": "2025-08-12 00:00:00",
+          "INDICATOR_VALUE": 2017
+        },
+        {
+          "REPORT_DATE": "2025-08-11 00:00:00",
+          "INDICATOR_VALUE": 2038
+        },
+        {
+          "REPORT_DATE": "2025-08-08 00:00:00",
+          "INDICATOR_VALUE": 2051
+        },
+        {
+          "REPORT_DATE": "2025-08-07 00:00:00",
+          "INDICATOR_VALUE": 2008
+        },
+        {
+          "REPORT_DATE": "2025-08-06 00:00:00",
+          "INDICATOR_VALUE": 1994
+        },
+        {
+          "REPORT_DATE": "2025-08-05 00:00:00",
+          "INDICATOR_VALUE": 1921
+        },
+        {
+          "REPORT_DATE": "2025-08-04 00:00:00",
+          "INDICATOR_VALUE": 1970
+        },
+        {
+          "REPORT_DATE": "2025-08-01 00:00:00",
+          "INDICATOR_VALUE": 2018
+        },
+        {
+          "REPORT_DATE": "2025-07-31 00:00:00",
+          "INDICATOR_VALUE": 2003
+        },
+        {
+          "REPORT_DATE": "2025-07-30 00:00:00",
+          "INDICATOR_VALUE": 1995
+        },
+        {
+          "REPORT_DATE": "2025-07-29 00:00:00",
+          "INDICATOR_VALUE": 2109
+        },
+        {
+          "REPORT_DATE": "2025-07-28 00:00:00",
+          "INDICATOR_VALUE": 2226
+        },
+        {
+          "REPORT_DATE": "2025-07-25 00:00:00",
+          "INDICATOR_VALUE": 2257
+        },
+        {
+          "REPORT_DATE": "2025-07-24 00:00:00",
+          "INDICATOR_VALUE": 2258
+        },
+        {
+          "REPORT_DATE": "2025-07-23 00:00:00",
+          "INDICATOR_VALUE": 2120
+        },
+        {
+          "REPORT_DATE": "2025-07-22 00:00:00",
+          "INDICATOR_VALUE": 2035
+        },
+        {
+          "REPORT_DATE": "2025-07-21 00:00:00",
+          "INDICATOR_VALUE": 2016
+        },
+        {
+          "REPORT_DATE": "2025-07-18 00:00:00",
+          "INDICATOR_VALUE": 2052
+        },
+        {
+          "REPORT_DATE": "2025-07-17 00:00:00",
+          "INDICATOR_VALUE": 2030
+        },
+        {
+          "REPORT_DATE": "2025-07-16 00:00:00",
+          "INDICATOR_VALUE": 1906
+        },
+        {
+          "REPORT_DATE": "2025-07-15 00:00:00",
+          "INDICATOR_VALUE": 1866
+        },
+        {
+          "REPORT_DATE": "2025-07-14 00:00:00",
+          "INDICATOR_VALUE": 1783
+        },
+        {
+          "REPORT_DATE": "2025-07-11 00:00:00",
+          "INDICATOR_VALUE": 1663
+        },
+        {
+          "REPORT_DATE": "2025-07-10 00:00:00",
+          "INDICATOR_VALUE": 1465
+        },
+        {
+          "REPORT_DATE": "2025-07-09 00:00:00",
+          "INDICATOR_VALUE": 1423
+        },
+        {
+          "REPORT_DATE": "2025-07-08 00:00:00",
+          "INDICATOR_VALUE": 1431
+        },
+        {
+          "REPORT_DATE": "2025-07-07 00:00:00",
+          "INDICATOR_VALUE": 1436
+        },
+        {
+          "REPORT_DATE": "2025-07-04 00:00:00",
+          "INDICATOR_VALUE": 1436
+        },
+        {
+          "REPORT_DATE": "2025-07-03 00:00:00",
+          "INDICATOR_VALUE": 1434
+        },
+        {
+          "REPORT_DATE": "2025-07-02 00:00:00",
+          "INDICATOR_VALUE": 1443
+        },
+        {
+          "REPORT_DATE": "2025-07-01 00:00:00",
+          "INDICATOR_VALUE": 1458
+        },
+        {
+          "REPORT_DATE": "2025-06-30 00:00:00",
+          "INDICATOR_VALUE": 1489
+        },
+        {
+          "REPORT_DATE": "2025-06-27 00:00:00",
+          "INDICATOR_VALUE": 1521
+        },
+        {
+          "REPORT_DATE": "2025-06-26 00:00:00",
+          "INDICATOR_VALUE": 1553
+        },
+        {
+          "REPORT_DATE": "2025-06-25 00:00:00",
+          "INDICATOR_VALUE": 1665
+        },
+        {
+          "REPORT_DATE": "2025-06-24 00:00:00",
+          "INDICATOR_VALUE": 1681
+        },
+        {
+          "REPORT_DATE": "2025-06-23 00:00:00",
+          "INDICATOR_VALUE": 1674
+        },
+        {
+          "REPORT_DATE": "2025-06-20 00:00:00",
+          "INDICATOR_VALUE": 1689
+        },
+        {
+          "REPORT_DATE": "2025-06-19 00:00:00",
+          "INDICATOR_VALUE": 1751
+        },
+        {
+          "REPORT_DATE": "2025-06-18 00:00:00",
+          "INDICATOR_VALUE": 1874
+        },
+        {
+          "REPORT_DATE": "2025-06-17 00:00:00",
+          "INDICATOR_VALUE": 1952
+        },
+        {
+          "REPORT_DATE": "2025-06-16 00:00:00",
+          "INDICATOR_VALUE": 1975
+        },
+        {
+          "REPORT_DATE": "2025-06-13 00:00:00",
+          "INDICATOR_VALUE": 1968
+        },
+        {
+          "REPORT_DATE": "2025-06-12 00:00:00",
+          "INDICATOR_VALUE": 1904
+        },
+        {
+          "REPORT_DATE": "2025-06-11 00:00:00",
+          "INDICATOR_VALUE": 1738
+        },
+        {
+          "REPORT_DATE": "2025-06-10 00:00:00",
+          "INDICATOR_VALUE": 1680
+        },
+        {
+          "REPORT_DATE": "2025-06-09 00:00:00",
+          "INDICATOR_VALUE": 1691
+        },
+        {
+          "REPORT_DATE": "2025-06-06 00:00:00",
+          "INDICATOR_VALUE": 1633
+        },
+        {
+          "REPORT_DATE": "2025-06-05 00:00:00",
+          "INDICATOR_VALUE": 1626
+        },
+        {
+          "REPORT_DATE": "2025-06-04 00:00:00",
+          "INDICATOR_VALUE": 1489
+        },
+        {
+          "REPORT_DATE": "2025-06-03 00:00:00",
+          "INDICATOR_VALUE": 1430
+        },
+        {
+          "REPORT_DATE": "2025-06-02 00:00:00",
+          "INDICATOR_VALUE": 1422
+        },
+        {
+          "REPORT_DATE": "2025-05-30 00:00:00",
+          "INDICATOR_VALUE": 1418
+        },
+        {
+          "REPORT_DATE": "2025-05-29 00:00:00",
+          "INDICATOR_VALUE": 1353
+        },
+        {
+          "REPORT_DATE": "2025-05-28 00:00:00",
+          "INDICATOR_VALUE": 1303
+        },
+        {
+          "REPORT_DATE": "2025-05-27 00:00:00",
+          "INDICATOR_VALUE": 1296
+        },
+        {
+          "REPORT_DATE": "2025-05-23 00:00:00",
+          "INDICATOR_VALUE": 1340
+        },
+        {
+          "REPORT_DATE": "2025-05-22 00:00:00",
+          "INDICATOR_VALUE": 1341
+        },
+        {
+          "REPORT_DATE": "2025-05-21 00:00:00",
+          "INDICATOR_VALUE": 1337
+        },
+        {
+          "REPORT_DATE": "2025-05-20 00:00:00",
+          "INDICATOR_VALUE": 1340
+        },
+        {
+          "REPORT_DATE": "2025-05-19 00:00:00",
+          "INDICATOR_VALUE": 1347
+        },
+        {
+          "REPORT_DATE": "2025-05-16 00:00:00",
+          "INDICATOR_VALUE": 1388
+        },
+        {
+          "REPORT_DATE": "2025-05-15 00:00:00",
+          "INDICATOR_VALUE": 1305
+        },
+        {
+          "REPORT_DATE": "2025-05-14 00:00:00",
+          "INDICATOR_VALUE": 1267
+        },
+        {
+          "REPORT_DATE": "2025-05-13 00:00:00",
+          "INDICATOR_VALUE": 1280
+        },
+        {
+          "REPORT_DATE": "2025-05-12 00:00:00",
+          "INDICATOR_VALUE": 1304
+        },
+        {
+          "REPORT_DATE": "2025-05-09 00:00:00",
+          "INDICATOR_VALUE": 1299
+        },
+        {
+          "REPORT_DATE": "2025-05-08 00:00:00",
+          "INDICATOR_VALUE": 1316
+        },
+        {
+          "REPORT_DATE": "2025-05-07 00:00:00",
+          "INDICATOR_VALUE": 1374
+        },
+        {
+          "REPORT_DATE": "2025-05-06 00:00:00",
+          "INDICATOR_VALUE": 1406
+        },
+        {
+          "REPORT_DATE": "2025-05-02 00:00:00",
+          "INDICATOR_VALUE": 1421
+        },
+        {
+          "REPORT_DATE": "2025-05-01 00:00:00",
+          "INDICATOR_VALUE": 1411
+        },
+        {
+          "REPORT_DATE": "2025-04-30 00:00:00",
+          "INDICATOR_VALUE": 1386
+        },
+        {
+          "REPORT_DATE": "2025-04-29 00:00:00",
+          "INDICATOR_VALUE": 1398
+        },
+        {
+          "REPORT_DATE": "2025-04-28 00:00:00",
+          "INDICATOR_VALUE": 1403
+        },
+        {
+          "REPORT_DATE": "2025-04-25 00:00:00",
+          "INDICATOR_VALUE": 1373
+        },
+        {
+          "REPORT_DATE": "2025-04-24 00:00:00",
+          "INDICATOR_VALUE": 1353
+        },
+        {
+          "REPORT_DATE": "2025-04-23 00:00:00",
+          "INDICATOR_VALUE": 1300
+        },
+        {
+          "REPORT_DATE": "2025-04-22 00:00:00",
+          "INDICATOR_VALUE": 1261
+        },
+        {
+          "REPORT_DATE": "2025-04-17 00:00:00",
+          "INDICATOR_VALUE": 1261
+        },
+        {
+          "REPORT_DATE": "2025-04-16 00:00:00",
+          "INDICATOR_VALUE": 1241
+        },
+        {
+          "REPORT_DATE": "2025-04-15 00:00:00",
+          "INDICATOR_VALUE": 1263
+        },
+        {
+          "REPORT_DATE": "2025-04-14 00:00:00",
+          "INDICATOR_VALUE": 1282
+        },
+        {
+          "REPORT_DATE": "2025-04-11 00:00:00",
+          "INDICATOR_VALUE": 1274
+        },
+        {
+          "REPORT_DATE": "2025-04-10 00:00:00",
+          "INDICATOR_VALUE": 1269
+        },
+        {
+          "REPORT_DATE": "2025-04-09 00:00:00",
+          "INDICATOR_VALUE": 1259
+        },
+        {
+          "REPORT_DATE": "2025-04-08 00:00:00",
+          "INDICATOR_VALUE": 1342
+        },
+        {
+          "REPORT_DATE": "2025-04-07 00:00:00",
+          "INDICATOR_VALUE": 1401
+        },
+        {
+          "REPORT_DATE": "2025-04-04 00:00:00",
+          "INDICATOR_VALUE": 1489
+        },
+        {
+          "REPORT_DATE": "2025-04-03 00:00:00",
+          "INDICATOR_VALUE": 1540
+        },
+        {
+          "REPORT_DATE": "2025-04-02 00:00:00",
+          "INDICATOR_VALUE": 1583
+        },
+        {
+          "REPORT_DATE": "2025-04-01 00:00:00",
+          "INDICATOR_VALUE": 1587
+        },
+        {
+          "REPORT_DATE": "2025-03-31 00:00:00",
+          "INDICATOR_VALUE": 1598
+        },
+        {
+          "REPORT_DATE": "2025-03-28 00:00:00",
+          "INDICATOR_VALUE": 1602
+        },
+        {
+          "REPORT_DATE": "2025-03-27 00:00:00",
+          "INDICATOR_VALUE": 1621
+        },
+        {
+          "REPORT_DATE": "2025-03-26 00:00:00",
+          "INDICATOR_VALUE": 1634
+        },
+        {
+          "REPORT_DATE": "2025-03-25 00:00:00",
+          "INDICATOR_VALUE": 1642
+        },
+        {
+          "REPORT_DATE": "2025-03-24 00:00:00",
+          "INDICATOR_VALUE": 1652
+        },
+        {
+          "REPORT_DATE": "2025-03-21 00:00:00",
+          "INDICATOR_VALUE": 1643
+        },
+        {
+          "REPORT_DATE": "2025-03-20 00:00:00",
+          "INDICATOR_VALUE": 1635
+        },
+        {
+          "REPORT_DATE": "2025-03-19 00:00:00",
+          "INDICATOR_VALUE": 1637
+        },
+        {
+          "REPORT_DATE": "2025-03-18 00:00:00",
+          "INDICATOR_VALUE": 1650
+        },
+        {
+          "REPORT_DATE": "2025-03-17 00:00:00",
+          "INDICATOR_VALUE": 1658
+        },
+        {
+          "REPORT_DATE": "2025-03-14 00:00:00",
+          "INDICATOR_VALUE": 1669
+        },
+        {
+          "REPORT_DATE": "2025-03-13 00:00:00",
+          "INDICATOR_VALUE": 1650
+        },
+        {
+          "REPORT_DATE": "2025-03-12 00:00:00",
+          "INDICATOR_VALUE": 1559
+        },
+        {
+          "REPORT_DATE": "2025-03-11 00:00:00",
+          "INDICATOR_VALUE": 1436
+        },
+        {
+          "REPORT_DATE": "2025-03-10 00:00:00",
+          "INDICATOR_VALUE": 1424
+        },
+        {
+          "REPORT_DATE": "2025-03-07 00:00:00",
+          "INDICATOR_VALUE": 1400
+        },
+        {
+          "REPORT_DATE": "2025-03-06 00:00:00",
+          "INDICATOR_VALUE": 1286
+        },
+        {
+          "REPORT_DATE": "2025-03-05 00:00:00",
+          "INDICATOR_VALUE": 1228
+        },
+        {
+          "REPORT_DATE": "2025-03-04 00:00:00",
+          "INDICATOR_VALUE": 1262
+        },
+        {
+          "REPORT_DATE": "2025-03-03 00:00:00",
+          "INDICATOR_VALUE": 1276
+        },
+        {
+          "REPORT_DATE": "2025-02-28 00:00:00",
+          "INDICATOR_VALUE": 1229
+        },
+        {
+          "REPORT_DATE": "2025-02-27 00:00:00",
+          "INDICATOR_VALUE": 1159
+        },
+        {
+          "REPORT_DATE": "2025-02-26 00:00:00",
+          "INDICATOR_VALUE": 1112
+        },
+        {
+          "REPORT_DATE": "2025-02-25 00:00:00",
+          "INDICATOR_VALUE": 1039
+        },
+        {
+          "REPORT_DATE": "2025-02-24 00:00:00",
+          "INDICATOR_VALUE": 1002
+        },
+        {
+          "REPORT_DATE": "2025-02-21 00:00:00",
+          "INDICATOR_VALUE": 981
+        },
+        {
+          "REPORT_DATE": "2025-02-20 00:00:00",
+          "INDICATOR_VALUE": 941
+        },
+        {
+          "REPORT_DATE": "2025-02-19 00:00:00",
+          "INDICATOR_VALUE": 904
+        },
+        {
+          "REPORT_DATE": "2025-02-18 00:00:00",
+          "INDICATOR_VALUE": 841
+        },
+        {
+          "REPORT_DATE": "2025-02-17 00:00:00",
+          "INDICATOR_VALUE": 806
+        },
+        {
+          "REPORT_DATE": "2025-02-14 00:00:00",
+          "INDICATOR_VALUE": 792
+        },
+        {
+          "REPORT_DATE": "2025-02-13 00:00:00",
+          "INDICATOR_VALUE": 780
+        },
+        {
+          "REPORT_DATE": "2025-02-12 00:00:00",
+          "INDICATOR_VALUE": 776
+        },
+        {
+          "REPORT_DATE": "2025-02-11 00:00:00",
+          "INDICATOR_VALUE": 801
+        },
+        {
+          "REPORT_DATE": "2025-02-10 00:00:00",
+          "INDICATOR_VALUE": 809
+        },
+        {
+          "REPORT_DATE": "2025-02-07 00:00:00",
+          "INDICATOR_VALUE": 815
+        },
+        {
+          "REPORT_DATE": "2025-02-06 00:00:00",
+          "INDICATOR_VALUE": 793
+        },
+        {
+          "REPORT_DATE": "2025-02-05 00:00:00",
+          "INDICATOR_VALUE": 771
+        },
+        {
+          "REPORT_DATE": "2025-02-04 00:00:00",
+          "INDICATOR_VALUE": 753
+        },
+        {
+          "REPORT_DATE": "2025-01-31 00:00:00",
+          "INDICATOR_VALUE": 735
+        },
+        {
+          "REPORT_DATE": "2025-01-30 00:00:00",
+          "INDICATOR_VALUE": 715
+        },
+        {
+          "REPORT_DATE": "2025-01-29 00:00:00",
+          "INDICATOR_VALUE": 726
+        },
+        {
+          "REPORT_DATE": "2025-01-28 00:00:00",
+          "INDICATOR_VALUE": 746
+        },
+        {
+          "REPORT_DATE": "2025-01-27 00:00:00",
+          "INDICATOR_VALUE": 761
+        },
+        {
+          "REPORT_DATE": "2025-01-24 00:00:00",
+          "INDICATOR_VALUE": 778
+        },
+        {
+          "REPORT_DATE": "2025-01-23 00:00:00",
+          "INDICATOR_VALUE": 824
+        },
+        {
+          "REPORT_DATE": "2025-01-22 00:00:00",
+          "INDICATOR_VALUE": 893
+        },
+        {
+          "REPORT_DATE": "2025-01-21 00:00:00",
+          "INDICATOR_VALUE": 928
+        },
+        {
+          "REPORT_DATE": "2025-01-20 00:00:00",
+          "INDICATOR_VALUE": 957
+        },
+        {
+          "REPORT_DATE": "2025-01-17 00:00:00",
+          "INDICATOR_VALUE": 987
+        },
+        {
+          "REPORT_DATE": "2025-01-16 00:00:00",
+          "INDICATOR_VALUE": 1023
+        },
+        {
+          "REPORT_DATE": "2025-01-15 00:00:00",
+          "INDICATOR_VALUE": 1063
+        },
+        {
+          "REPORT_DATE": "2025-01-14 00:00:00",
+          "INDICATOR_VALUE": 1080
+        },
+        {
+          "REPORT_DATE": "2025-01-13 00:00:00",
+          "INDICATOR_VALUE": 1093
+        },
+        {
+          "REPORT_DATE": "2025-01-10 00:00:00",
+          "INDICATOR_VALUE": 1048
+        },
+        {
+          "REPORT_DATE": "2025-01-09 00:00:00",
+          "INDICATOR_VALUE": 969
+        },
+        {
+          "REPORT_DATE": "2025-01-08 00:00:00",
+          "INDICATOR_VALUE": 966
+        },
+        {
+          "REPORT_DATE": "2025-01-07 00:00:00",
+          "INDICATOR_VALUE": 1015
+        },
+        {
+          "REPORT_DATE": "2025-01-06 00:00:00",
+          "INDICATOR_VALUE": 1043
+        },
+        {
+          "REPORT_DATE": "2025-01-03 00:00:00",
+          "INDICATOR_VALUE": 1072
+        },
+        {
+          "REPORT_DATE": "2025-01-02 00:00:00",
+          "INDICATOR_VALUE": 1029
+        },
+        {
+          "REPORT_DATE": "2024-12-24 00:00:00",
+          "INDICATOR_VALUE": 997
+        },
+        {
+          "REPORT_DATE": "2024-12-23 00:00:00",
+          "INDICATOR_VALUE": 994
+        },
+        {
+          "REPORT_DATE": "2024-12-20 00:00:00",
+          "INDICATOR_VALUE": 990
+        },
+        {
+          "REPORT_DATE": "2024-12-19 00:00:00",
+          "INDICATOR_VALUE": 976
+        },
+        {
+          "REPORT_DATE": "2024-12-18 00:00:00",
+          "INDICATOR_VALUE": 1028
+        },
+        {
+          "REPORT_DATE": "2024-12-17 00:00:00",
+          "INDICATOR_VALUE": 1053
+        },
+        {
+          "REPORT_DATE": "2024-12-16 00:00:00",
+          "INDICATOR_VALUE": 1071
+        },
+        {
+          "REPORT_DATE": "2024-12-13 00:00:00",
+          "INDICATOR_VALUE": 1051
+        },
+        {
+          "REPORT_DATE": "2024-12-12 00:00:00",
+          "INDICATOR_VALUE": 1055
+        },
+        {
+          "REPORT_DATE": "2024-12-11 00:00:00",
+          "INDICATOR_VALUE": 1106
+        },
+        {
+          "REPORT_DATE": "2024-12-10 00:00:00",
+          "INDICATOR_VALUE": 1156
+        },
+        {
+          "REPORT_DATE": "2024-12-09 00:00:00",
+          "INDICATOR_VALUE": 1168
+        },
+        {
+          "REPORT_DATE": "2024-12-06 00:00:00",
+          "INDICATOR_VALUE": 1167
+        },
+        {
+          "REPORT_DATE": "2024-12-05 00:00:00",
+          "INDICATOR_VALUE": 1160
+        },
+        {
+          "REPORT_DATE": "2024-12-04 00:00:00",
+          "INDICATOR_VALUE": 1180
+        },
+        {
+          "REPORT_DATE": "2024-12-03 00:00:00",
+          "INDICATOR_VALUE": 1237
+        },
+        {
+          "REPORT_DATE": "2024-12-02 00:00:00",
+          "INDICATOR_VALUE": 1298
+        },
+        {
+          "REPORT_DATE": "2024-11-29 00:00:00",
+          "INDICATOR_VALUE": 1354
+        },
+        {
+          "REPORT_DATE": "2024-11-28 00:00:00",
+          "INDICATOR_VALUE": 1419
+        },
+        {
+          "REPORT_DATE": "2024-11-27 00:00:00",
+          "INDICATOR_VALUE": 1509
+        },
+        {
+          "REPORT_DATE": "2024-11-26 00:00:00",
+          "INDICATOR_VALUE": 1581
+        },
+        {
+          "REPORT_DATE": "2024-11-25 00:00:00",
+          "INDICATOR_VALUE": 1529
+        },
+        {
+          "REPORT_DATE": "2024-11-22 00:00:00",
+          "INDICATOR_VALUE": 1537
+        },
+        {
+          "REPORT_DATE": "2024-11-21 00:00:00",
+          "INDICATOR_VALUE": 1576
+        },
+        {
+          "REPORT_DATE": "2024-11-20 00:00:00",
+          "INDICATOR_VALUE": 1616
+        },
+        {
+          "REPORT_DATE": "2024-11-19 00:00:00",
+          "INDICATOR_VALUE": 1627
+        },
+        {
+          "REPORT_DATE": "2024-11-18 00:00:00",
+          "INDICATOR_VALUE": 1756
+        },
+        {
+          "REPORT_DATE": "2024-11-15 00:00:00",
+          "INDICATOR_VALUE": 1785
+        },
+        {
+          "REPORT_DATE": "2024-11-14 00:00:00",
+          "INDICATOR_VALUE": 1692
+        },
+        {
+          "REPORT_DATE": "2024-11-13 00:00:00",
+          "INDICATOR_VALUE": 1630
+        },
+        {
+          "REPORT_DATE": "2024-11-12 00:00:00",
+          "INDICATOR_VALUE": 1634
+        },
+        {
+          "REPORT_DATE": "2024-11-11 00:00:00",
+          "INDICATOR_VALUE": 1558
+        },
+        {
+          "REPORT_DATE": "2024-11-08 00:00:00",
+          "INDICATOR_VALUE": 1495
+        },
+        {
+          "REPORT_DATE": "2024-11-07 00:00:00",
+          "INDICATOR_VALUE": 1451
+        },
+        {
+          "REPORT_DATE": "2024-11-06 00:00:00",
+          "INDICATOR_VALUE": 1427
+        },
+        {
+          "REPORT_DATE": "2024-11-05 00:00:00",
+          "INDICATOR_VALUE": 1405
+        },
+        {
+          "REPORT_DATE": "2024-11-04 00:00:00",
+          "INDICATOR_VALUE": 1374
+        },
+        {
+          "REPORT_DATE": "2024-11-01 00:00:00",
+          "INDICATOR_VALUE": 1378
+        },
+        {
+          "REPORT_DATE": "2024-10-31 00:00:00",
+          "INDICATOR_VALUE": 1388
+        },
+        {
+          "REPORT_DATE": "2024-10-30 00:00:00",
+          "INDICATOR_VALUE": 1397
+        },
+        {
+          "REPORT_DATE": "2024-10-29 00:00:00",
+          "INDICATOR_VALUE": 1402
+        },
+        {
+          "REPORT_DATE": "2024-10-28 00:00:00",
+          "INDICATOR_VALUE": 1382
+        },
+        {
+          "REPORT_DATE": "2024-10-25 00:00:00",
+          "INDICATOR_VALUE": 1410
+        },
+        {
+          "REPORT_DATE": "2024-10-24 00:00:00",
+          "INDICATOR_VALUE": 1417
+        },
+        {
+          "REPORT_DATE": "2024-10-23 00:00:00",
+          "INDICATOR_VALUE": 1445
+        },
+        {
+          "REPORT_DATE": "2024-10-22 00:00:00",
+          "INDICATOR_VALUE": 1480
+        },
+        {
+          "REPORT_DATE": "2024-10-21 00:00:00",
+          "INDICATOR_VALUE": 1546
+        },
+        {
+          "REPORT_DATE": "2024-10-18 00:00:00",
+          "INDICATOR_VALUE": 1576
+        },
+        {
+          "REPORT_DATE": "2024-10-17 00:00:00",
+          "INDICATOR_VALUE": 1594
+        },
+        {
+          "REPORT_DATE": "2024-10-16 00:00:00",
+          "INDICATOR_VALUE": 1676
+        },
+        {
+          "REPORT_DATE": "2024-10-15 00:00:00",
+          "INDICATOR_VALUE": 1766
+        },
+        {
+          "REPORT_DATE": "2024-10-14 00:00:00",
+          "INDICATOR_VALUE": 1814
+        },
+        {
+          "REPORT_DATE": "2024-10-11 00:00:00",
+          "INDICATOR_VALUE": 1809
+        },
+        {
+          "REPORT_DATE": "2024-10-10 00:00:00",
+          "INDICATOR_VALUE": 1790
+        },
+        {
+          "REPORT_DATE": "2024-10-09 00:00:00",
+          "INDICATOR_VALUE": 1799
+        },
+        {
+          "REPORT_DATE": "2024-10-08 00:00:00",
+          "INDICATOR_VALUE": 1860
+        },
+        {
+          "REPORT_DATE": "2024-10-07 00:00:00",
+          "INDICATOR_VALUE": 1907
+        },
+        {
+          "REPORT_DATE": "2024-10-02 00:00:00",
+          "INDICATOR_VALUE": 1978
+        },
+        {
+          "REPORT_DATE": "2024-10-01 00:00:00",
+          "INDICATOR_VALUE": 2030
+        },
+        {
+          "REPORT_DATE": "2024-09-30 00:00:00",
+          "INDICATOR_VALUE": 2084
+        },
+        {
+          "REPORT_DATE": "2024-09-27 00:00:00",
+          "INDICATOR_VALUE": 2110
+        },
+        {
+          "REPORT_DATE": "2024-09-26 00:00:00",
+          "INDICATOR_VALUE": 2091
+        },
+        {
+          "REPORT_DATE": "2024-09-25 00:00:00",
+          "INDICATOR_VALUE": 2016
+        },
+        {
+          "REPORT_DATE": "2024-09-24 00:00:00",
+          "INDICATOR_VALUE": 2014
+        },
+        {
+          "REPORT_DATE": "2024-09-23 00:00:00",
+          "INDICATOR_VALUE": 1999
+        },
+        {
+          "REPORT_DATE": "2024-09-20 00:00:00",
+          "INDICATOR_VALUE": 1977
+        },
+        {
+          "REPORT_DATE": "2024-09-19 00:00:00",
+          "INDICATOR_VALUE": 1976
+        },
+        {
+          "REPORT_DATE": "2024-09-18 00:00:00",
+          "INDICATOR_VALUE": 1890
+        },
+        {
+          "REPORT_DATE": "2024-09-17 00:00:00",
+          "INDICATOR_VALUE": 1901
+        },
+        {
+          "REPORT_DATE": "2024-09-16 00:00:00",
+          "INDICATOR_VALUE": 1896
+        },
+        {
+          "REPORT_DATE": "2024-09-13 00:00:00",
+          "INDICATOR_VALUE": 1890
+        },
+        {
+          "REPORT_DATE": "2024-09-12 00:00:00",
+          "INDICATOR_VALUE": 1927
+        },
+        {
+          "REPORT_DATE": "2024-09-11 00:00:00",
+          "INDICATOR_VALUE": 1963
+        },
+        {
+          "REPORT_DATE": "2024-09-10 00:00:00",
+          "INDICATOR_VALUE": 1941
+        },
+        {
+          "REPORT_DATE": "2024-09-09 00:00:00",
+          "INDICATOR_VALUE": 1958
+        },
+        {
+          "REPORT_DATE": "2024-09-06 00:00:00",
+          "INDICATOR_VALUE": 1941
+        }
+      ],
+      "count": 9536
+    },
+    "success": true,
+    "message": "ok",
+    "code": 0
+  }
+}
