@@ -6,22 +6,27 @@
   "post_open_started_at": null,
   "post_open_completed_at": null,
   "eod_completed_at": null,
-  "status": "PUSHED",
+  "status": "GIT_SYNC_PENDING",
   "failures": [
     {
       "stage": "live",
       "error_type": "ValueError",
       "error": "live auction collection cannot start after market open"
+    },
+    {
+      "stage": "eod",
+      "error_type": "FileNotFoundError",
+      "error": "Auction Packet not found: D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\auction_packets\\2026-09-11.json"
     }
   ],
   "retry_count": 0,
   "packet_path": null,
   "compact_path": null,
   "workflow_run_id": null,
-  "stage": "PUSHED",
-  "script_started_at": "2026-09-11T12:17:27.249051+08:00",
-  "scheduler_triggered_at": "2026-09-11T12:17:26.0826910+08:00",
-  "last_successful_stage": "PUSHED",
+  "stage": "GIT_SYNC_PENDING",
+  "script_started_at": "2026-09-11T15:15:03.201180+08:00",
+  "scheduler_triggered_at": "2026-09-11T15:15:02.4933488+08:00",
+  "last_successful_stage": "GIT_SYNC_PENDING",
   "stage_history": [
     {
       "timestamp": "2026-09-11T12:17:27.249051+08:00",
@@ -71,13 +76,53 @@
       "push_result": "PASS",
       "distributed_commit": "655b38db17fba2e34a0aa3152144217115186c40",
       "git_sync_completed_at": "2026-09-11T12:17:42.897822+08:00"
+    },
+    {
+      "timestamp": "2026-09-11T15:15:03.208131+08:00",
+      "event": "SCHEDULER_STARTED",
+      "script_started_at": "2026-09-11T15:15:03.201180+08:00",
+      "scheduler_triggered_at": "2026-09-11T15:15:02.4933488+08:00"
+    },
+    {
+      "timestamp": "2026-09-11T15:15:07.549593+08:00",
+      "event": "PREFLIGHT_RUNNING"
+    },
+    {
+      "timestamp": "2026-09-11T15:15:07.619400+08:00",
+      "event": "PREFLIGHT_RUNNING",
+      "previous_trade_date": "2026-09-10",
+      "previous_official_review_status": "READY"
+    },
+    {
+      "timestamp": "2026-09-11T15:15:07.629374+08:00",
+      "event": "PREFLIGHT_FAILED",
+      "exception_type": "FileNotFoundError",
+      "exception_traceback": "Traceback (most recent call last):\n  File \"D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\tools\\run_auction_scheduled.py\", line 188, in main\n    code = execute(args, ROOT, day)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\tools\\run_auction_scheduled.py\", line 58, in execute\n    return 0 if pipeline.reconcile_eod(day)[\"status\"] == \"PASS\" else 1\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\src\\auction\\pipeline.py\", line 188, in reconcile_eod\n    raise FileNotFoundError(f\"Auction Packet not found: {packet_path}\")\nFileNotFoundError: Auction Packet not found: D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\auction_packets\\2026-09-11.json\n",
+      "failures": [
+        {
+          "stage": "live",
+          "error_type": "ValueError",
+          "error": "live auction collection cannot start after market open"
+        },
+        {
+          "stage": "eod",
+          "error_type": "FileNotFoundError",
+          "error": "Auction Packet not found: D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\auction_packets\\2026-09-11.json"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-11T15:15:07.635358+08:00",
+      "event": "GIT_SYNC_PENDING",
+      "git_sync_started_at": "2026-09-11T15:15:07.634360+08:00",
+      "local_report_status": "UNAVAILABLE"
     }
   ],
   "previous_trade_date": "2026-09-10",
   "previous_official_review_status": "READY",
-  "exception_type": "ValueError",
-  "exception_traceback": "Traceback (most recent call last):\n  File \"D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\tools\\run_auction_scheduled.py\", line 188, in main\n    code = execute(args, ROOT, day)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\tools\\run_auction_scheduled.py\", line 43, in execute\n    result = pipeline.run_live(day, force=args.force)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\src\\auction\\pipeline.py\", line 166, in run_live\n    collection = LiveAuctionRunner(self.source_factory(), **runner_kwargs).collect(trade_date, stocks)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\src\\auction\\live_runner.py\", line 39, in collect\n    raise ValueError(\"live auction collection cannot start after market open\")\nValueError: live auction collection cannot start after market open\n",
-  "git_sync_started_at": "2026-09-11T12:17:36.086901+08:00",
+  "exception_type": "FileNotFoundError",
+  "exception_traceback": "Traceback (most recent call last):\n  File \"D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\tools\\run_auction_scheduled.py\", line 188, in main\n    code = execute(args, ROOT, day)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\tools\\run_auction_scheduled.py\", line 58, in execute\n    return 0 if pipeline.reconcile_eod(day)[\"status\"] == \"PASS\" else 1\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\src\\auction\\pipeline.py\", line 188, in reconcile_eod\n    raise FileNotFoundError(f\"Auction Packet not found: {packet_path}\")\nFileNotFoundError: Auction Packet not found: D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\auction_packets\\2026-09-11.json\n",
+  "git_sync_started_at": "2026-09-11T15:15:07.634360+08:00",
   "local_report_status": "UNAVAILABLE",
   "sync_status": "PUSHED",
   "git_sync_result": "PASS",
