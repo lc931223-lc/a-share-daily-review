@@ -1,10 +1,11 @@
 {
   "trade_date": "2026-09-11",
   "snapshot": "MORNING",
-  "observed_at": "2026-09-11T01:24:05.817530+08:00",
-  "status": "FROZEN_ALREADY_EXISTS",
-  "run_id": "34507915708",
-  "retry_count": 0,
+  "observed_at": "2026-09-11T08:30:28.325945+08:00",
+  "status": "FAILED",
+  "run_id": "34546708460",
+  "retry_count": 1,
   "sources": [],
-  "full": "/home/runner/work/a-share-daily-review/a-share-daily-review/data/opportunity_radar/2026-09-11_morning.json"
+  "blocker": "MORNING_FREEZE_DEADLINE_PASSED_USE_REPLAY",
+  "error_type": "ValueError"
 }
