@@ -24,6 +24,7 @@ def advance_feedback(root: Path, as_of: date) -> dict[str, Any]:
     validated = 0
     still_waiting = 0
     cycles = []
+    snapshots = []
     for context_path in sorted((root / "data" / "review_context").glob("????-??-??.json")):
         prediction_date = date.fromisoformat(context_path.stem)
         if prediction_date > as_of:
@@ -41,20 +42,28 @@ def advance_feedback(root: Path, as_of: date) -> dict[str, Any]:
             old_horizons = set(old_meta.get("available_horizons") or [])
             waiting_before += old_status == "WAITING_FOR_MARKET_DATA"
         prediction = _read(prediction_path) if prediction_path.is_file() else _context_prediction(root, context_path)
-        validation = validate_integrated_prediction(root, prediction, daily)
+        validation = validate_integrated_prediction(root, prediction, daily, persist=False)
         formal_eligible = prediction["meta"].get("official_review_kind") == "FORMAL_OFFICIAL_REVIEW"
         validation["meta"]["hypothesis_kind"] = "FORMAL_REVIEW_HYPOTHESIS" if formal_eligible else "OBJECTIVE_SUPPORT_HYPOTHESIS"
         validation["meta"]["formal_hit_rate_eligible"] = formal_eligible
         new_horizons = set((validation.get("meta") or {}).get("available_horizons") or [])
-        if old_validation is not None and not old_horizons.issubset(new_horizons):
-            validation = old_validation
-            validation_path.write_text(
-                json.dumps(validation, ensure_ascii=False, indent=2), encoding="utf-8"
-            )
-            new_horizons = old_horizons
-        validation_path.write_text(json.dumps(validation, ensure_ascii=False, indent=2), encoding="utf-8")
-        review = build_review_record(root, prediction, validation)
-        correction = build_correction_record(root, prediction, validation, review)
+        can_advance = old_validation is None or old_horizons < new_horizons
+        if old_validation is not None and old_horizons == new_horizons:
+            old_date = old_validation["meta"].get("validation_date")
+            if old_date is None or old_date <= str(as_of):
+                validation = old_validation
+        review = build_review_record(root, prediction, validation, persist=False)
+        correction = build_correction_record(root, prediction, validation, review, persist=False)
+        if can_advance:
+            if old_validation is not None:
+                from src.auction.production import write
+                import hashlib
+                encoded = json.dumps(old_validation, ensure_ascii=False, sort_keys=True).encode()
+                write(folder / "validation_history" / f"{hashlib.sha256(encoded).hexdigest()}.json", old_validation)
+            for name, payload in (("validation", validation), ("review", review), ("correction", correction)):
+                (folder / f"{name}.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        snapshots.append({"prediction_date": str(prediction_date), "validation": validation,
+                          "review": review, "correction": correction})
         status = validation["meta"]["status"]
         if len(new_horizons) > len(old_horizons):
             newly_validated += 1
@@ -65,12 +74,12 @@ def advance_feedback(root: Path, as_of: date) -> dict[str, Any]:
         normalized = prediction["normalized_prediction_record"]
         persist_predictions(root / "data" / "a_share_review.db", [normalized])
         stored = _validation_for_storage(prediction, validation)
-        if stored:
+        if stored and can_advance:
             persist_validations(root / "data" / "a_share_review.db", [stored])
         cycles.append(
             {
                 "prediction_date": prediction_date.isoformat(),
-                "previous_status": old_status,
+                "previous_status": old_status if not old_validation or not old_validation["meta"].get("validation_date") or old_validation["meta"]["validation_date"] <= str(as_of) else None,
                 "validation_status": status,
                 "available_horizons": validation["meta"]["available_horizons"],
                 "review_status": review["meta"]["status"],
@@ -85,6 +94,9 @@ def advance_feedback(root: Path, as_of: date) -> dict[str, Any]:
         folder = root / "research_feedback/formal"
         folder.mkdir(parents=True, exist_ok=True)
         (folder / f"{as_of}.json").write_text(json.dumps(formal_feedback, ensure_ascii=False, indent=2), encoding="utf-8")
+    from src.auction.production import write
+    snapshot_path = root / "research_feedback/as_of" / f"{as_of}.json"
+    write(snapshot_path, {"as_of": str(as_of), "cycles": snapshots})
     return {
         "status": "PASS",
         "as_of": as_of.isoformat(),

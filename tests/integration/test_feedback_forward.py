@@ -56,8 +56,13 @@ def test_waiting_feedback_advances_when_next_trading_day_facts_arrive(tmp_path):
         )
     )
     assert backward["newly_validated_count"] == 0
+    assert backward["still_waiting_count"] == 1
+    assert backward["cycles"][0]["available_horizons"] == []
+    snapshot = json.loads((tmp_path / "research_feedback/as_of/2026-09-07.json").read_text(encoding="utf-8"))
+    assert snapshot["cycles"][0]["validation"]["meta"]["validation_date"] is None
     assert retained["meta"]["status"] == "PARTIAL_FORWARD_WINDOW"
     assert retained["meta"]["available_horizons"] == [1]
 
     repeated = advance_feedback(tmp_path, date(2026, 9, 8))
     assert repeated["newly_validated_count"] == 0
+    assert len(list((tmp_path / "data/feedback_records/2026-09-07/validation_history").glob("*.json"))) == 1

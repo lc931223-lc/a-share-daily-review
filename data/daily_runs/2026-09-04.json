@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-07",
-  "run_id": "daily-close:2026-09-07",
+  "date": "2026-09-04",
+  "run_id": "daily-close:2026-09-04",
   "workflow_run_attempt": "1",
   "workflow_retry_count": 0,
   "credential_health": {
@@ -14,27 +14,27 @@
       {
         "dataset": "limit_up",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "failed_limit",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "limit_down",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "previous_limit",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "dragon_tiger_daily",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "northbound_hist",
@@ -48,18 +48,18 @@
       },
       {
         "dataset": "sse_margin",
-        "status": "PASS",
-        "data_date": "2026-09-07"
+        "status": "FAIL",
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "szse_margin",
-        "status": "PASS",
-        "data_date": "2026-09-07"
+        "status": "FAIL",
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "szse_margin_detail",
-        "status": "PASS",
-        "data_date": "2026-09-07"
+        "status": "FAIL",
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "industry_fund_flow_current",
@@ -74,7 +74,7 @@
       {
         "dataset": "tushare_credential",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "tushare_trade_cal",
@@ -83,88 +83,88 @@
       },
       {
         "dataset": "tushare_stock_basic",
-        "status": "PASS",
-        "data_date": "2026-09-04"
+        "status": "FAIL",
+        "data_date": "2026-09-01"
       },
       {
         "dataset": "tushare_daily_all",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "tushare_previous_daily_all",
         "status": "PASS",
-        "data_date": "2026-09-04"
+        "data_date": "2026-09-03"
       },
       {
         "dataset": "tushare_daily_basic_all",
         "status": "UNAVAILABLE",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "tushare_adj_factor_all",
         "status": "UNAVAILABLE",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "stock_top_ohlcv",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "industry_board_daily",
-        "status": "UNAVAILABLE",
-        "data_date": "2026-09-07"
+        "status": "FAIL",
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "concept_board_daily",
-        "status": "UNAVAILABLE",
-        "data_date": "2026-09-07"
+        "status": "FAIL",
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "official_announcements",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "official_announcements_meta",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "official_policies",
         "status": "PARTIAL",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "official_policies_meta",
         "status": "PARTIAL",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "index_000001.SH",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "index_399001.SZ",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "index_399006.SZ",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "index_000688.SH",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "index_899050.BJ",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       }
     ]
   },
@@ -173,16 +173,16 @@
   "is_trade_day": true,
   "calendar_status": "CHECKED",
   "market_closed": true,
-  "pipeline_started_at": "2026-09-14T00:06:56.883313+08:00",
-  "pipeline_completed_at": "2026-09-14T00:07:14.425361+08:00",
+  "pipeline_started_at": "2026-09-13T23:59:34.302280+08:00",
+  "pipeline_completed_at": "2026-09-13T23:59:44.415158+08:00",
   "steps": {
     "daily_data_preflight": {
       "status": "PASS",
       "artifact_path": null,
       "source_date": null,
       "quality": "PASS",
-      "started_at": "2026-09-14T00:06:56.883313+08:00",
-      "completed_at": "2026-09-14T00:06:59.204523+08:00",
+      "started_at": "2026-09-13T23:59:34.302280+08:00",
+      "completed_at": "2026-09-13T23:59:36.442914+08:00",
       "error": null,
       "retry_count": 0,
       "reused": false,
@@ -190,119 +190,113 @@
     },
     "market_packet": {
       "status": "PARTIAL",
-      "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\market_packets\\2026-09-07.json",
-      "source_date": "2026-09-07",
+      "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\market_packets\\2026-09-04.json",
+      "source_date": "2026-09-04",
       "quality": "PARTIAL",
-      "started_at": "2026-09-14T00:06:59.205520+08:00",
-      "completed_at": "2026-09-14T00:06:59.228190+08:00",
+      "started_at": "2026-09-13T23:59:36.443912+08:00",
+      "completed_at": "2026-09-13T23:59:36.468216+08:00",
       "error": null,
       "retry_count": 0,
       "reused": true,
-      "provenance_sha256": "109a921dac9774e39e77a8bc0565622113fce64ec6c53ca5d9bea64f7a2734b9"
+      "provenance_sha256": "4c911460b4a237bce21543edb4ae672ac6bf1d715e86c0071593376cefe95deb"
     },
     "inflection": {
       "status": "PARTIAL",
-      "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\inflection\\2026-09-07.json",
-      "source_date": "2026-09-07",
+      "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\inflection\\2026-09-04.json",
+      "source_date": "2026-09-04",
       "quality": "PARTIAL",
-      "started_at": "2026-09-14T00:06:59.234140+08:00",
-      "completed_at": "2026-09-14T00:06:59.257078+08:00",
+      "started_at": "2026-09-13T23:59:36.475230+08:00",
+      "completed_at": "2026-09-13T23:59:36.532520+08:00",
       "error": null,
       "retry_count": 0,
       "reused": true,
-      "provenance_sha256": "9b4fc27a1980903bbae1ab33c5b0cee4d0f7ecdc4312b3cd6530ae71d32c0a1c"
+      "provenance_sha256": "a16e4f86ea9c7bc33f43c84055748373ce3d9f20432b873d97b0f65652020c00"
     },
     "review_intelligence": {
       "status": "PARTIAL",
-      "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\review_intelligence\\2026-09-07.json",
-      "source_date": "2026-09-07",
+      "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\review_intelligence\\2026-09-04.json",
+      "source_date": "2026-09-04",
       "quality": "PARTIAL",
-      "started_at": "2026-09-14T00:06:59.257078+08:00",
-      "completed_at": "2026-09-14T00:06:59.267088+08:00",
+      "started_at": "2026-09-13T23:59:36.532520+08:00",
+      "completed_at": "2026-09-13T23:59:36.539533+08:00",
       "error": null,
       "retry_count": 0,
       "reused": true,
-      "provenance_sha256": "fd82f1d72b6a3377ee0f271f94a21a25248c98f0b9df89795853afc0f1addd7a"
+      "provenance_sha256": "dd0f1faaea746fb8382aaf1fc3ba32e4c434b2941aebc57639d508bab6437bbc"
     },
     "capital_preference": {
       "status": "PARTIAL",
-      "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\capital_preference\\2026-09-07.json",
-      "source_date": "2026-09-07",
+      "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\capital_preference\\2026-09-04.json",
+      "source_date": "2026-09-04",
       "quality": "PARTIAL",
-      "started_at": "2026-09-14T00:06:59.267088+08:00",
-      "completed_at": "2026-09-14T00:06:59.322939+08:00",
+      "started_at": "2026-09-13T23:59:36.539533+08:00",
+      "completed_at": "2026-09-13T23:59:36.615330+08:00",
       "error": null,
       "retry_count": 0,
       "reused": true,
-      "provenance_sha256": "a22425057d88830aca98934bca43437c6f9f548519acde07506662ee8e3b175e"
+      "provenance_sha256": "6af2bc8fed95485ea78a367d81a9687d89ac1d3e03733f63eeda2912a8d07074"
     },
     "review_context": {
       "status": "PARTIAL",
-      "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\review_context\\2026-09-07.json",
-      "source_date": "2026-09-07",
+      "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\review_context\\2026-09-04.json",
+      "source_date": "2026-09-04",
       "quality": "PARTIAL",
-      "started_at": "2026-09-14T00:06:59.322939+08:00",
-      "completed_at": "2026-09-14T00:06:59.411665+08:00",
+      "started_at": "2026-09-13T23:59:36.615330+08:00",
+      "completed_at": "2026-09-13T23:59:37.125486+08:00",
       "error": null,
       "retry_count": 0,
-      "reused": true,
-      "provenance_sha256": "0a0e2c09fbcbe5a2a22dfcc60dc48046b0e145b331693715e2584d0d7f4ca3f7"
+      "reused": false,
+      "provenance_sha256": "e52336c76d9a336e890d0a754a5ea6272fe514f138ebc9162a1cf556fee876c5"
     },
     "formal_review_support": {
       "status": "PARTIAL",
-      "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\formal_review_support\\2026-09-07.json",
-      "source_date": "2026-09-07",
+      "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\formal_review_support\\2026-09-04.json",
+      "source_date": "2026-09-04",
       "quality": "PARTIAL",
-      "started_at": "2026-09-14T00:06:59.411665+08:00",
-      "completed_at": "2026-09-14T00:06:59.442583+08:00",
+      "started_at": "2026-09-13T23:59:37.125486+08:00",
+      "completed_at": "2026-09-13T23:59:37.206303+08:00",
       "error": null,
       "retry_count": 0,
-      "reused": true,
-      "provenance_sha256": "f43ea04554fe935a7ce64a9610b196a71caff3637d536e8f6160ddc0a6cd7189"
+      "reused": false,
+      "provenance_sha256": "ff66ede887af9bd956c2d117569d7e229b28bec3090e762a19c877bd1b5a7294"
     },
     "auction": {
       "status": "UNAVAILABLE",
       "artifact_path": null,
       "source_date": null,
       "quality": null,
-      "started_at": "2026-09-14T00:07:00.259273+08:00",
-      "completed_at": "2026-09-14T00:07:00.259273+08:00",
-      "error": "MISSING",
+      "started_at": "2026-09-13T23:59:38.084071+08:00",
+      "completed_at": "2026-09-13T23:59:38.084071+08:00",
+      "error": "ValueError",
       "retry_count": 0,
       "reused": false,
       "provenance_sha256": null,
-      "acceptance_checks": {},
+      "acceptance_checks": {
+        "same_date": false,
+        "frozen": false,
+        "schema_valid": true
+      },
       "optional_missing": true
     },
     "feedback": {
-      "status": "WAITING",
+      "status": "PASS",
       "artifact_path": null,
       "source_date": null,
       "quality": "WAITING",
-      "started_at": "2026-09-14T00:07:00.259273+08:00",
-      "completed_at": "2026-09-14T00:07:14.276728+08:00",
+      "started_at": "2026-09-13T23:59:38.084071+08:00",
+      "completed_at": "2026-09-13T23:59:44.270560+08:00",
       "error": null,
       "retry_count": 0,
       "reused": false,
       "provenance_sha256": null,
-      "as_of": "2026-09-07",
+      "as_of": "2026-09-04",
       "pending_count": 0,
       "newly_validated_count": 0,
       "still_waiting_count": 1,
-      "validated_count": 1,
+      "validated_count": 0,
       "cycles": [
         {
           "prediction_date": "2026-09-04",
-          "previous_status": null,
-          "validation_status": "PARTIAL_FORWARD_WINDOW",
-          "available_horizons": [
-            1
-          ],
-          "review_status": "PARTIAL_REVIEW",
-          "correction_status": "ERRORS_RECORDED"
-        },
-        {
-          "prediction_date": "2026-09-07",
           "previous_status": null,
           "validation_status": "WAITING_FOR_MARKET_DATA",
           "available_horizons": [],
@@ -322,7 +316,7 @@
         "status": "PREVIOUS_FORMAL_REVIEW_UNAVAILABLE",
         "source": {
           "status": "PREVIOUS_FORMAL_REVIEW_UNAVAILABLE",
-          "expected_date": "2026-09-04",
+          "expected_date": "2026-09-03",
           "data_date": null,
           "path": null,
           "sha256": null
@@ -378,15 +372,15 @@
   ],
   "formal_review_imports": [],
   "formal_review_queue": {
-    "trade_date": "2026-09-07",
-    "objective_support_path": "data/formal_review_support/2026-09-07.json",
-    "review_context_path": "data/review_context/2026-09-07.json",
+    "trade_date": "2026-09-04",
+    "objective_support_path": "data/formal_review_support/2026-09-04.json",
+    "review_context_path": "data/review_context/2026-09-04.json",
     "status": "WAITING_FOR_CHATGPT_REVIEW",
     "official_review_required": true,
     "official_review_path": null,
     "validation_status": "PENDING",
-    "chatgpt_review_input_path": "data/chatgpt_review_inputs/2026-09-07.json",
-    "chatgpt_review_input_compact_path": "data/chatgpt_review_inputs/2026-09-07_compact.json"
+    "chatgpt_review_input_path": "data/chatgpt_review_inputs/2026-09-04.json",
+    "chatgpt_review_input_compact_path": "data/chatgpt_review_inputs/2026-09-04_compact.json"
   },
   "readiness_checks": [
     {
@@ -425,8 +419,8 @@
       "detail": "no probable plaintext secrets found"
     }
   ],
-  "started_at": "2026-09-14T00:06:56.883313+08:00",
-  "completed_at": "2026-09-14T00:07:14.425361+08:00",
+  "started_at": "2026-09-13T23:59:34.302280+08:00",
+  "completed_at": "2026-09-13T23:59:44.415158+08:00",
   "blocker": [],
   "source_health": {
     "full_market_daily": "PASS",
@@ -436,27 +430,27 @@
       {
         "dataset": "limit_up",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "failed_limit",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "limit_down",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "previous_limit",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "dragon_tiger_daily",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "northbound_hist",
@@ -470,18 +464,18 @@
       },
       {
         "dataset": "sse_margin",
-        "status": "PASS",
-        "data_date": "2026-09-07"
+        "status": "FAIL",
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "szse_margin",
-        "status": "PASS",
-        "data_date": "2026-09-07"
+        "status": "FAIL",
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "szse_margin_detail",
-        "status": "PASS",
-        "data_date": "2026-09-07"
+        "status": "FAIL",
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "industry_fund_flow_current",
@@ -496,7 +490,7 @@
       {
         "dataset": "tushare_credential",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "tushare_trade_cal",
@@ -505,88 +499,88 @@
       },
       {
         "dataset": "tushare_stock_basic",
-        "status": "PASS",
-        "data_date": "2026-09-04"
+        "status": "FAIL",
+        "data_date": "2026-09-01"
       },
       {
         "dataset": "tushare_daily_all",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "tushare_previous_daily_all",
         "status": "PASS",
-        "data_date": "2026-09-04"
+        "data_date": "2026-09-03"
       },
       {
         "dataset": "tushare_daily_basic_all",
         "status": "UNAVAILABLE",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "tushare_adj_factor_all",
         "status": "UNAVAILABLE",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "stock_top_ohlcv",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "industry_board_daily",
-        "status": "UNAVAILABLE",
-        "data_date": "2026-09-07"
+        "status": "FAIL",
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "concept_board_daily",
-        "status": "UNAVAILABLE",
-        "data_date": "2026-09-07"
+        "status": "FAIL",
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "official_announcements",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "official_announcements_meta",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "official_policies",
         "status": "PARTIAL",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "official_policies_meta",
         "status": "PARTIAL",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "index_000001.SH",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "index_399001.SZ",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "index_399006.SZ",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "index_000688.SH",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       },
       {
         "dataset": "index_899050.BJ",
         "status": "PASS",
-        "data_date": "2026-09-07"
+        "data_date": "2026-09-04"
       }
     ]
   },

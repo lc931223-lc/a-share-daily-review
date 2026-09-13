@@ -39,6 +39,8 @@ def setup(root):
     # handoff components, including formal import, context, support and manifest.
     for name in ("market_packet", "inflection", "review_intelligence", "capital_preference"):
         write(root / "schemas" / ARTIFACTS[name][1], {"type": "object"})
+        if name != "market_packet":
+            write(root / "schemas" / f"{name}_compact.schema.json", {"type": "object"})
     write(
         root / "data/reference/trade_calendar_2026.json",
         {"rows": [{"cal_date": d.cal_date.strftime("%Y%m%d"), "is_open": 1} for d in DAYS]},
@@ -138,7 +140,7 @@ def upstream(root, name, day):
             checks=[{"item": "全市场日线", "status": "PASS"}], sources=[]
         )
     write(root / "data" / folder / f"{day}.json", payload)
-    if name == "capital_preference":
+    if name in {"inflection", "review_intelligence", "capital_preference"}:
         write(root / "data" / folder / f"{day}_compact.json", payload)
 
 

@@ -170,7 +170,7 @@ def build_integrated_prediction(root: Path, target: date) -> dict[str, Any]:
 
 
 def validate_integrated_prediction(
-    root: Path, packet: dict[str, Any], daily: pd.DataFrame
+    root: Path, packet: dict[str, Any], daily: pd.DataFrame, *, persist: bool = True
 ) -> dict[str, Any]:
     prediction_date = packet["meta"]["prediction_date"]
     frame = daily.copy()
@@ -245,12 +245,13 @@ def validate_integrated_prediction(
         "max_drawdown": max_drawdown,
         "error_type": errors,
     }
-    _write(root, date.fromisoformat(prediction_date), "validation.json", result)
+    if persist:
+        _write(root, date.fromisoformat(prediction_date), "validation.json", result)
     return result
 
 
 def build_review_record(
-    root: Path, prediction: dict[str, Any], validation: dict[str, Any]
+    root: Path, prediction: dict[str, Any], validation: dict[str, Any], *, persist: bool = True
 ) -> dict[str, Any]:
     errors = validation.get("error_type") or []
     status = (
@@ -282,12 +283,8 @@ def build_review_record(
         "actual_market_state": validation.get("actual_market_state") or {},
         "actual_theme_result": validation.get("actual_theme_result") or [],
     }
-    _write(
-        root,
-        date.fromisoformat(prediction["meta"]["prediction_date"]),
-        "review.json",
-        result,
-    )
+    if persist:
+        _write(root, date.fromisoformat(prediction["meta"]["prediction_date"]), "review.json", result)
     return result
 
 
@@ -296,6 +293,7 @@ def build_correction_record(
     prediction: dict[str, Any],
     validation: dict[str, Any],
     review: dict[str, Any] | None = None,
+    *, persist: bool = True,
 ) -> dict[str, Any]:
     errors = validation.get("error_type") or []
     result = {
@@ -317,12 +315,8 @@ def build_correction_record(
         "weight_change_applied": False,
         "automatic_recommendation_generated": False,
     }
-    _write(
-        root,
-        date.fromisoformat(prediction["meta"]["prediction_date"]),
-        "correction.json",
-        result,
-    )
+    if persist:
+        _write(root, date.fromisoformat(prediction["meta"]["prediction_date"]), "correction.json", result)
     return result
 
 

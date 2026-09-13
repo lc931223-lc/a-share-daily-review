@@ -1489,3 +1489,14 @@ Regenerated a larger black Songti-style version:
 - Second-pass testing found that the browser service resolves the `plugins` junction to `D:\CodexData\.codex-live\plugins`; added junction targets to `NODE_REPL_TRUSTED_CODE_PATHS` and updated `tools\migrate_codex_home.ps1` to apply this rule on future runs.
 - Browser control must be retested after restarting Codex because restarting only the Node REPL closes the current MCP transport.
 - The Codex app project API currently lists the local project and the ChatGPT project `股海愚者`, but no repository-backed Cloud project. A Cloud ChatGPT Work task was queued as a connectivity probe; repository mounting remains unverified until browser control or the Cloud environment UI succeeds.
+
+## 2026-09-14 Daily Production Recovery Audit
+
+- Contexts already cover September 4 and September 7-11; old sample checkpoints are not current production status.
+- Reused the existing daily orchestrator and Actions workflow. Fixed default-day routing, earlier holes, compact validation and ignored Market Packet hard gates.
+- Feedback backward replay now writes as-of snapshots without borrowing or overwriting later canonical validation. WAITING remains a real step status.
+- Real September 7 rerun: PARTIAL, no blockers. September 8 rerun: FAILED at limit-ecology hard gate (empty unverified pool; stk_limit permission unavailable), despite 5,549 valid daily rows.
+- Recovery repaired missing September 4 delivery artifacts, then stopped explicitly at September 8. No incomplete packet was promoted; failed recheck payloads are diagnostics only.
+- Formal September 7 review remains unavailable; do not invent a September 7-8 formal hit rate or lifecycle transition.
+- Details: `docs/daily-close-forward-acceptance.md`; machine-readable example: `reports/daily_close_acceptance/2026-09-14.json`.
+- Not complete: historical September 8 data verification is still required for uninterrupted backfill.

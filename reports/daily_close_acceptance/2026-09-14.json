@@ -1,0 +1,624 @@
+{
+  "audit_date": "2026-09-14",
+  "execution_environment": "LOCAL_CODEX_NOT_CLOUD",
+  "days": {
+    "2026-09-07": {
+      "status": "PARTIAL",
+      "blockers": [],
+      "artifacts": {
+        "market_packet": {
+          "valid": true,
+          "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\market_packets\\2026-09-07.json",
+          "error": null,
+          "quality": "PARTIAL",
+          "sha256": "109a921dac9774e39e77a8bc0565622113fce64ec6c53ca5d9bea64f7a2734b9"
+        },
+        "inflection": {
+          "valid": true,
+          "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\inflection\\2026-09-07.json",
+          "error": null,
+          "quality": "PARTIAL",
+          "sha256": "9b4fc27a1980903bbae1ab33c5b0cee4d0f7ecdc4312b3cd6530ae71d32c0a1c"
+        },
+        "review_intelligence": {
+          "valid": true,
+          "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\review_intelligence\\2026-09-07.json",
+          "error": null,
+          "quality": "PARTIAL",
+          "sha256": "fd82f1d72b6a3377ee0f271f94a21a25248c98f0b9df89795853afc0f1addd7a"
+        },
+        "capital_preference": {
+          "valid": true,
+          "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\capital_preference\\2026-09-07.json",
+          "error": null,
+          "quality": "PARTIAL",
+          "sha256": "a22425057d88830aca98934bca43437c6f9f548519acde07506662ee8e3b175e"
+        },
+        "review_context": {
+          "valid": true,
+          "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\review_context\\2026-09-07.json",
+          "error": null,
+          "quality": "PARTIAL",
+          "sha256": "0a0e2c09fbcbe5a2a22dfcc60dc48046b0e145b331693715e2584d0d7f4ca3f7"
+        },
+        "formal_review_support": {
+          "valid": true,
+          "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\formal_review_support\\2026-09-07.json",
+          "error": null,
+          "quality": "PARTIAL",
+          "sha256": "f43ea04554fe935a7ce64a9610b196a71caff3637d536e8f6160ddc0a6cd7189"
+        }
+      },
+      "feedback": {
+        "retry_count": 0,
+        "pending_count": 0,
+        "newly_validated_count": 0,
+        "still_waiting_count": 1,
+        "validated_count": 1
+      },
+      "accepted_chain": true
+    },
+    "2026-09-08": {
+      "status": "FAILED",
+      "blockers": [
+        {
+          "step": "market_packet",
+          "error": "RuntimeError: Market Packet production gate failed: ['涨跌停']",
+          "missing_upstream": []
+        }
+      ],
+      "artifacts": {
+        "market_packet": {
+          "valid": false,
+          "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\market_packets\\2026-09-08.json",
+          "error": "Market Packet production gate failed: ['涨跌停']",
+          "quality": null,
+          "sha256": null
+        },
+        "inflection": {
+          "valid": true,
+          "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\inflection\\2026-09-08.json",
+          "error": null,
+          "quality": "PARTIAL",
+          "sha256": "31e8f8f686d9663a8cbe00b639bdc7f5316e0856df1797e46b5c64516446a913"
+        },
+        "review_intelligence": {
+          "valid": true,
+          "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\review_intelligence\\2026-09-08.json",
+          "error": null,
+          "quality": "PARTIAL",
+          "sha256": "0e5f67ccaeeb71ca59c2d3fdaf5e6b9743b30037d3dab6cd36886f2cf81add03"
+        },
+        "capital_preference": {
+          "valid": true,
+          "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\capital_preference\\2026-09-08.json",
+          "error": null,
+          "quality": "PARTIAL",
+          "sha256": "3e6101cd179ca768e2b0244f0f82124891d543d46ec343a3249c3d257a8009f8"
+        },
+        "review_context": {
+          "valid": true,
+          "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\review_context\\2026-09-08.json",
+          "error": null,
+          "quality": "PARTIAL",
+          "sha256": "8725cc6d32b15118e8caf8c2f978f6c6aacbf7705dfe55992da7888a844244a2"
+        },
+        "formal_review_support": {
+          "valid": false,
+          "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\formal_review_support\\2026-09-08.json",
+          "error": "upstream quality gate failed: formal_review_support=PARTIAL_WITH_UPSTREAM_FAILURE",
+          "quality": null,
+          "sha256": null
+        }
+      },
+      "feedback": {},
+      "accepted_chain": false
+    }
+  },
+  "factor_example": {
+    "scope": "OBJECTIVE_THEME_CANDIDATE_NOT_FINAL_MAINLINE",
+    "source": "data/formal_review_support/2026-09-07.json",
+    "theme": "元件",
+    "41_factors": [
+      {
+        "factor_id": 1,
+        "factor_name": "0→1技术突破",
+        "evidence_domain": "COMPANY_DISCLOSURE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 2,
+        "factor_name": "1→10渗透率提升",
+        "evidence_domain": "COMPANY_DISCLOSURE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 3,
+        "factor_name": "国产替代/自主可控",
+        "evidence_domain": "COMPANY_DISCLOSURE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 4,
+        "factor_name": "海外产业映射",
+        "evidence_domain": "COMPANY_DISCLOSURE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 5,
+        "factor_name": "国家级产业政策",
+        "evidence_domain": "OFFICIAL_POLICY",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 6,
+        "factor_name": "财政刺激/补贴",
+        "evidence_domain": "OFFICIAL_POLICY",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 7,
+        "factor_name": "货币与流动性政策",
+        "evidence_domain": "OFFICIAL_POLICY",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 8,
+        "factor_name": "监管边际改善/行业松绑",
+        "evidence_domain": "OFFICIAL_POLICY",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 9,
+        "factor_name": "反内卷/供给侧改革",
+        "evidence_domain": "OFFICIAL_POLICY",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 10,
+        "factor_name": "国企改革/市值管理",
+        "evidence_domain": "OFFICIAL_POLICY",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 11,
+        "factor_name": "国际重大事件",
+        "evidence_domain": "COMPANY_DISCLOSURE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 12,
+        "factor_name": "国内重大会议/重要文件",
+        "evidence_domain": "OFFICIAL_POLICY",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 13,
+        "factor_name": "行业大会/产品发布会",
+        "evidence_domain": "COMPANY_DISCLOSURE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 14,
+        "factor_name": "突发供给事故",
+        "evidence_domain": "INDUSTRY_PRICE_AND_CYCLE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 15,
+        "factor_name": "需求型涨价",
+        "evidence_domain": "INDUSTRY_PRICE_AND_CYCLE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 16,
+        "factor_name": "供给收缩型涨价",
+        "evidence_domain": "INDUSTRY_PRICE_AND_CYCLE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 17,
+        "factor_name": "库存周期/补库",
+        "evidence_domain": "INDUSTRY_PRICE_AND_CYCLE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 18,
+        "factor_name": "成本下降+售价稳定",
+        "evidence_domain": "INDUSTRY_PRICE_AND_CYCLE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 19,
+        "factor_name": "大额订单",
+        "evidence_domain": "COMPANY_DISCLOSURE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 20,
+        "factor_name": "订单超预期",
+        "evidence_domain": "COMPANY_DISCLOSURE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 21,
+        "factor_name": "下游资本开支爆发",
+        "evidence_domain": "INDUSTRY_PRICE_AND_CYCLE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 22,
+        "factor_name": "排产/交期/稼动率",
+        "evidence_domain": "INDUSTRY_PRICE_AND_CYCLE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 23,
+        "factor_name": "业绩超预期",
+        "evidence_domain": "COMPANY_DISCLOSURE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 24,
+        "factor_name": "亏损转盈利/困境反转",
+        "evidence_domain": "COMPANY_DISCLOSURE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 25,
+        "factor_name": "利润率提升",
+        "evidence_domain": "COMPANY_DISCLOSURE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 26,
+        "factor_name": "业绩加速",
+        "evidence_domain": "COMPANY_DISCLOSURE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 27,
+        "factor_name": "并购重组",
+        "evidence_domain": "COMPANY_DISCLOSURE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 28,
+        "factor_name": "资产注入/控制权变更",
+        "evidence_domain": "COMPANY_DISCLOSURE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 29,
+        "factor_name": "股权激励",
+        "evidence_domain": "COMPANY_DISCLOSURE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 30,
+        "factor_name": "回购/增持/高分红",
+        "evidence_domain": "COMPANY_DISCLOSURE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 31,
+        "factor_name": "重大客户认证/新供应链",
+        "evidence_domain": "COMPANY_DISCLOSURE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 32,
+        "factor_name": "行业出清",
+        "evidence_domain": "INDUSTRY_PRICE_AND_CYCLE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 33,
+        "factor_name": "估值修复",
+        "evidence_domain": "VALUATION_BASELINE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 34,
+        "factor_name": "增量资金",
+        "evidence_domain": "MARKET_STRUCTURE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 35,
+        "factor_name": "指数纳入/被动配置",
+        "evidence_domain": "MARKET_STRUCTURE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 36,
+        "factor_name": "筹码出清/突破",
+        "evidence_domain": "MARKET_STRUCTURE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 37,
+        "factor_name": "龙头效应与补涨",
+        "evidence_domain": "MARKET_STRUCTURE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 38,
+        "factor_name": "风格切换/高低切",
+        "evidence_domain": "MARKET_STRUCTURE",
+        "status": "PARTIAL",
+        "evidence": [
+          {
+            "factor_id": 38,
+            "kind": "market_structure",
+            "domain": "MARKET_STRUCTURE",
+            "source": "MarketPacket/ReviewIntelligence",
+            "source_type": "objective_calculation",
+            "source_date": "2026-09-07",
+            "tier": 3,
+            "confidence": "MEDIUM",
+            "related_themes": [
+              "元件"
+            ],
+            "inputs": {
+              "style": "large_cap",
+              "change_1d": 42.8246406537042,
+              "breadth": 97.14285714285714
+            },
+            "evaluation_status": "PARTIAL"
+          },
+          {
+            "factor_id": 38,
+            "kind": "market_structure",
+            "domain": "MARKET_STRUCTURE",
+            "source": "MarketPacket/ReviewIntelligence",
+            "source_type": "objective_calculation",
+            "source_date": "2026-09-07",
+            "tier": 3,
+            "confidence": "MEDIUM",
+            "related_themes": [
+              "元件"
+            ],
+            "inputs": {
+              "style": "short_term_speculation",
+              "change_1d": 11.520174648869002,
+              "breadth": 92.7536231884058
+            },
+            "evaluation_status": "PARTIAL"
+          },
+          {
+            "factor_id": 38,
+            "kind": "market_structure",
+            "domain": "MARKET_STRUCTURE",
+            "source": "MarketPacket/ReviewIntelligence",
+            "source_type": "objective_calculation",
+            "source_date": "2026-09-07",
+            "tier": 3,
+            "confidence": "MEDIUM",
+            "related_themes": [
+              "元件"
+            ],
+            "inputs": {
+              "style": "high_turnover",
+              "change_1d": 31.292210425122896,
+              "breadth": 76.19047619047619
+            },
+            "evaluation_status": "PARTIAL"
+          },
+          {
+            "factor_id": 38,
+            "kind": "market_structure",
+            "domain": "MARKET_STRUCTURE",
+            "source": "MarketPacket/ReviewIntelligence",
+            "source_type": "objective_calculation",
+            "source_date": "2026-09-07",
+            "tier": 3,
+            "confidence": "MEDIUM",
+            "related_themes": [
+              "元件"
+            ],
+            "inputs": {
+              "style": "high_price_position",
+              "change_1d": 36.17931094791912,
+              "breadth": 70.41036717062636
+            },
+            "evaluation_status": "PARTIAL"
+          },
+          {
+            "factor_id": 38,
+            "kind": "market_structure",
+            "domain": "MARKET_STRUCTURE",
+            "source": "MarketPacket/ReviewIntelligence",
+            "source_type": "objective_calculation",
+            "source_date": "2026-09-07",
+            "tier": 3,
+            "confidence": "MEDIUM",
+            "related_themes": [
+              "元件"
+            ],
+            "inputs": {
+              "style": "growth",
+              "change_1d": 20.078953265509007,
+              "breadth": 62.38709677419355
+            },
+            "evaluation_status": "PARTIAL"
+          },
+          {
+            "factor_id": 38,
+            "kind": "market_structure",
+            "domain": "MARKET_STRUCTURE",
+            "source": "MarketPacket/ReviewIntelligence",
+            "source_type": "objective_calculation",
+            "source_date": "2026-09-07",
+            "tier": 3,
+            "confidence": "MEDIUM",
+            "related_themes": [
+              "元件"
+            ],
+            "inputs": {
+              "style": "cyclical",
+              "change_1d": 15.309157194612153,
+              "breadth": 60.77537058152793
+            },
+            "evaluation_status": "PARTIAL"
+          }
+        ],
+        "confidence": "MEDIUM",
+        "reason": "same-date theme-linked evidence available"
+      },
+      {
+        "factor_id": 39,
+        "factor_name": "名称玄学",
+        "evidence_domain": "MARKET_STRUCTURE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 40,
+        "factor_name": "生肖/谐音/数字/地名",
+        "evidence_domain": "MARKET_STRUCTURE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      },
+      {
+        "factor_id": 41,
+        "factor_name": "情绪抱团/妖股",
+        "evidence_domain": "MARKET_STRUCTURE",
+        "status": "UNCONFIRMED",
+        "evidence": [],
+        "confidence": "NONE",
+        "reason": "no same-date qualifying theme-linked evidence"
+      }
+    ]
+  },
+  "previous_day_formal_validation": {
+    "status": "PREVIOUS_FORMAL_REVIEW_UNAVAILABLE",
+    "expected_date": "2026-09-07",
+    "records": [],
+    "hit_rate": null
+  },
+  "verified_real_lifecycle_transition": {
+    "status": "UNAVAILABLE",
+    "reason": "Missing exact previous formal record; existing stored claims are not independently verified transitions"
+  },
+  "source_blocker": {
+    "limit_down_pool": "EMPTY_UNVERIFIED",
+    "tushare_stk_limit": "PERMISSION_DENIED",
+    "daily_rows_20260908": 5549
+  }
+}

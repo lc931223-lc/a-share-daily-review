@@ -1,0 +1,2568 @@
+{
+  "meta": {
+    "schema_version": "chatgpt_review_inputs_compact.1",
+    "trade_date": "2026-09-07",
+    "as_of": "2026-09-07T23:59:59+08:00",
+    "data_role": "OBJECTIVE_RESEARCH_INPUT",
+    "final_judgement_owner": "chatgpt"
+  },
+  "market_snapshot": {
+    "total_amount": 1964235737790.84,
+    "amount_change_vs_previous": -86812943375.7898,
+    "rise_count": 3167.0,
+    "fall_count": 2196.0,
+    "median_return": 0.3374,
+    "limit_up_count": 93.0,
+    "limit_down_count": 2.0,
+    "failed_limit_count": 19.0,
+    "failed_limit_rate": 16.96,
+    "highest_board": 6.0,
+    "promotion_rate": null,
+    "new_limit_up_count": 80.0,
+    "theme_limit_down_count": null,
+    "large_cap_return": 10.080331428571428,
+    "small_cap_return": 7.35324705882353,
+    "growth_return": 1.3743587096774192,
+    "value_return": 0.770818929732433,
+    "high_beta_return": null,
+    "dividend_return": null,
+    "board_distribution": {
+      "2": 9.0,
+      "3": 3.0,
+      "4": 0.0,
+      "5+": 1.0,
+      "1": 80.0
+    },
+    "strongest_style": "limit_up_style",
+    "weakest_style": "financial",
+    "style_observations": [
+      {
+        "style": "limit_up_style",
+        "return_pct": 11.644867272727273,
+        "sample_count": 110.0,
+        "coverage_status": "PASS",
+        "source_coverage": 1.0,
+        "methodology": "full-market daily facts"
+      },
+      {
+        "style": "large_cap",
+        "return_pct": 10.080331428571428,
+        "sample_count": 35.0,
+        "coverage_status": "PARTIAL",
+        "source_coverage": 0.025049558479005227,
+        "methodology": "market-cap sample proxy"
+      },
+      {
+        "style": "short_term_speculation",
+        "return_pct": 9.666758695652174,
+        "sample_count": 138.0,
+        "coverage_status": "PARTIAL",
+        "source_coverage": 0.0297350874031357,
+        "methodology": "turnover sample proxy"
+      },
+      {
+        "style": "institutional_trend",
+        "return_pct": 9.489627272727272,
+        "sample_count": 11.0,
+        "coverage_status": "PARTIAL",
+        "source_coverage": 0.025049558479005227,
+        "methodology": "market-cap sample proxy"
+      },
+      {
+        "style": "small_cap",
+        "return_pct": 7.35324705882353,
+        "sample_count": 34.0,
+        "coverage_status": "PARTIAL",
+        "source_coverage": 0.025049558479005227,
+        "methodology": "market-cap sample proxy"
+      },
+      {
+        "style": "trend_style",
+        "return_pct": 6.056832911392405,
+        "sample_count": 79.0,
+        "coverage_status": "PASS",
+        "source_coverage": 1.0,
+        "methodology": "full-market daily facts"
+      },
+      {
+        "style": "low_turnover",
+        "return_pct": 8.016558536585366,
+        "sample_count": 41.0,
+        "coverage_status": "PARTIAL",
+        "source_coverage": 0.0297350874031357,
+        "methodology": "turnover sample proxy"
+      },
+      {
+        "style": "high_turnover",
+        "return_pct": 6.108004761904762,
+        "sample_count": 42.0,
+        "coverage_status": "PARTIAL",
+        "source_coverage": 0.0297350874031357,
+        "methodology": "turnover sample proxy"
+      },
+      {
+        "style": "high_price_position",
+        "return_pct": 2.2904816414686824,
+        "sample_count": 1389.0,
+        "coverage_status": "PASS",
+        "source_coverage": 1.0,
+        "methodology": "full-market daily facts"
+      },
+      {
+        "style": "consumer",
+        "return_pct": 1.6921420168067227,
+        "sample_count": 238.0,
+        "coverage_status": "PASS",
+        "source_coverage": 1.0,
+        "methodology": "full-market daily facts"
+      },
+      {
+        "style": "technology",
+        "return_pct": 1.0545931972789115,
+        "sample_count": 1176.0,
+        "coverage_status": "PASS",
+        "source_coverage": 1.0,
+        "methodology": "full-market daily facts"
+      },
+      {
+        "style": "value",
+        "return_pct": 0.770818929732433,
+        "sample_count": 3999.0,
+        "coverage_status": "PARTIAL",
+        "source_coverage": 1.0,
+        "methodology": "non-growth-board proxy; valuation factors unavailable"
+      },
+      {
+        "style": "growth",
+        "return_pct": 1.3743587096774192,
+        "sample_count": 1550.0,
+        "coverage_status": "PASS",
+        "source_coverage": 1.0,
+        "methodology": "full-market daily facts"
+      },
+      {
+        "style": "low_price_position",
+        "return_pct": 0.4339992800575954,
+        "sample_count": 1389.0,
+        "coverage_status": "PASS",
+        "source_coverage": 1.0,
+        "methodology": "full-market daily facts"
+      },
+      {
+        "style": "cyclical",
+        "return_pct": 0.9459145952109463,
+        "sample_count": 877.0,
+        "coverage_status": "PASS",
+        "source_coverage": 1.0,
+        "methodology": "full-market daily facts"
+      },
+      {
+        "style": "financial",
+        "return_pct": -1.3868483333333332,
+        "sample_count": 120.0,
+        "coverage_status": "PASS",
+        "source_coverage": 1.0,
+        "methodology": "full-market daily facts"
+      }
+    ],
+    "style_selection_method": "observed_sample_return_max_min; not full-market inference"
+  },
+  "market_divergence_candidates": {},
+  "theme_candidates": [
+    {
+      "return": 2.5616840206185567,
+      "breadth": 83.93782383419689,
+      "limit_up_count": 0.0,
+      "failed_limit_count": null,
+      "amount": 229570819998.88,
+      "amount_change": null,
+      "leader_strength": null,
+      "capacity_strength": 90.884,
+      "persistence_1d": 1.0,
+      "persistence_3d": null,
+      "persistence_5d": null,
+      "evidence_count_tier1": 0,
+      "evidence_count_tier2": 0,
+      "evidence_count_total": 0,
+      "price_factor_count": 0,
+      "policy_factor_count": 0,
+      "earnings_factor_count": 0,
+      "order_factor_count": 0,
+      "risk_factor_count": 0,
+      "theme_type": "INDUSTRY",
+      "theme_name": "半导体",
+      "source": "tushare.daily industry proxy",
+      "coverage_status": "PARTIAL"
+    },
+    {
+      "return": null,
+      "breadth": 100.0,
+      "limit_up_count": 14.0,
+      "failed_limit_count": null,
+      "amount": 38396429440.0,
+      "amount_change": null,
+      "leader_strength": null,
+      "capacity_strength": 100.0,
+      "persistence_1d": null,
+      "persistence_3d": null,
+      "persistence_5d": null,
+      "evidence_count_tier1": 0,
+      "evidence_count_tier2": 0,
+      "evidence_count_total": 0,
+      "price_factor_count": 0,
+      "policy_factor_count": 0,
+      "earnings_factor_count": 0,
+      "order_factor_count": 0,
+      "risk_factor_count": 0,
+      "theme_type": "INDUSTRY",
+      "theme_name": "元件",
+      "source": "Eastmoney limit pools via AKShare",
+      "coverage_status": "PARTIAL"
+    },
+    {
+      "return": null,
+      "breadth": 100.0,
+      "limit_up_count": 8.0,
+      "failed_limit_count": null,
+      "amount": 14953037399.0,
+      "amount_change": null,
+      "leader_strength": null,
+      "capacity_strength": 100.0,
+      "persistence_1d": null,
+      "persistence_3d": null,
+      "persistence_5d": null,
+      "evidence_count_tier1": 0,
+      "evidence_count_tier2": 0,
+      "evidence_count_total": 0,
+      "price_factor_count": 0,
+      "policy_factor_count": 0,
+      "earnings_factor_count": 0,
+      "order_factor_count": 0,
+      "risk_factor_count": 0,
+      "theme_type": "INDUSTRY",
+      "theme_name": "通信设备",
+      "source": "Eastmoney limit pools via AKShare",
+      "coverage_status": "PARTIAL"
+    },
+    {
+      "return": -2.000252,
+      "breadth": 12.5,
+      "limit_up_count": 0.0,
+      "failed_limit_count": null,
+      "amount": 12847732482.89,
+      "amount_change": null,
+      "leader_strength": null,
+      "capacity_strength": 54.594,
+      "persistence_1d": 0.0,
+      "persistence_3d": null,
+      "persistence_5d": null,
+      "evidence_count_tier1": 0,
+      "evidence_count_tier2": 0,
+      "evidence_count_total": 0,
+      "price_factor_count": 0,
+      "policy_factor_count": 0,
+      "earnings_factor_count": 0,
+      "order_factor_count": 0,
+      "risk_factor_count": 0,
+      "theme_type": "INDUSTRY",
+      "theme_name": "煤炭开采",
+      "source": "tushare.daily industry proxy",
+      "coverage_status": "PARTIAL"
+    },
+    {
+      "return": null,
+      "breadth": 33.33333333333333,
+      "limit_up_count": 1.0,
+      "failed_limit_count": 2.0,
+      "amount": 8347751344.0,
+      "amount_change": null,
+      "leader_strength": null,
+      "capacity_strength": 100.0,
+      "persistence_1d": null,
+      "persistence_3d": null,
+      "persistence_5d": null,
+      "evidence_count_tier1": 0,
+      "evidence_count_tier2": 0,
+      "evidence_count_total": 0,
+      "price_factor_count": 0,
+      "policy_factor_count": 0,
+      "earnings_factor_count": 0,
+      "order_factor_count": 0,
+      "risk_factor_count": 0,
+      "theme_type": "INDUSTRY",
+      "theme_name": "电子化学",
+      "source": "Eastmoney limit pools via AKShare",
+      "coverage_status": "PARTIAL"
+    },
+    {
+      "return": -1.0350695652173914,
+      "breadth": 13.043478260869565,
+      "limit_up_count": 0.0,
+      "failed_limit_count": null,
+      "amount": 6345010859.24,
+      "amount_change": null,
+      "leader_strength": null,
+      "capacity_strength": 75.939,
+      "persistence_1d": 0.0,
+      "persistence_3d": null,
+      "persistence_5d": null,
+      "evidence_count_tier1": 0,
+      "evidence_count_tier2": 0,
+      "evidence_count_total": 0,
+      "price_factor_count": 0,
+      "policy_factor_count": 0,
+      "earnings_factor_count": 0,
+      "order_factor_count": 0,
+      "risk_factor_count": 0,
+      "theme_type": "INDUSTRY",
+      "theme_name": "多元金融",
+      "source": "tushare.daily industry proxy",
+      "coverage_status": "PARTIAL"
+    },
+    {
+      "return": null,
+      "breadth": 77.77777777777779,
+      "limit_up_count": 7.0,
+      "failed_limit_count": 2.0,
+      "amount": 5933440672.0,
+      "amount_change": null,
+      "leader_strength": null,
+      "capacity_strength": 100.0,
+      "persistence_1d": null,
+      "persistence_3d": null,
+      "persistence_5d": null,
+      "evidence_count_tier1": 0,
+      "evidence_count_tier2": 0,
+      "evidence_count_total": 0,
+      "price_factor_count": 0,
+      "policy_factor_count": 0,
+      "earnings_factor_count": 0,
+      "order_factor_count": 0,
+      "risk_factor_count": 0,
+      "theme_type": "INDUSTRY",
+      "theme_name": "汽车零部",
+      "source": "Eastmoney limit pools via AKShare",
+      "coverage_status": "PARTIAL"
+    },
+    {
+      "return": null,
+      "breadth": 80.0,
+      "limit_up_count": 4.0,
+      "failed_limit_count": 1.0,
+      "amount": 4959584130.0,
+      "amount_change": null,
+      "leader_strength": 100.0,
+      "capacity_strength": 100.0,
+      "persistence_1d": null,
+      "persistence_3d": null,
+      "persistence_5d": null,
+      "evidence_count_tier1": 0,
+      "evidence_count_tier2": 0,
+      "evidence_count_total": 0,
+      "price_factor_count": 0,
+      "policy_factor_count": 0,
+      "earnings_factor_count": 0,
+      "order_factor_count": 0,
+      "risk_factor_count": 0,
+      "theme_type": "INDUSTRY",
+      "theme_name": "种植业",
+      "source": "Eastmoney limit pools via AKShare",
+      "coverage_status": "PARTIAL"
+    },
+    {
+      "return": 5.0734,
+      "breadth": 100.0,
+      "limit_up_count": 0.0,
+      "failed_limit_count": null,
+      "amount": 4169067653.23,
+      "amount_change": null,
+      "leader_strength": null,
+      "capacity_strength": 75.367,
+      "persistence_1d": 1.0,
+      "persistence_3d": null,
+      "persistence_5d": null,
+      "evidence_count_tier1": 0,
+      "evidence_count_tier2": 0,
+      "evidence_count_total": 0,
+      "price_factor_count": 0,
+      "policy_factor_count": 0,
+      "earnings_factor_count": 0,
+      "order_factor_count": 0,
+      "risk_factor_count": 0,
+      "theme_type": "INDUSTRY",
+      "theme_name": "林业Ⅱ",
+      "source": "tushare.daily industry proxy",
+      "coverage_status": "PARTIAL"
+    },
+    {
+      "return": 0.9512916666666666,
+      "breadth": 69.44444444444444,
+      "limit_up_count": 1.0,
+      "failed_limit_count": null,
+      "amount": 3784704326.1400003,
+      "amount_change": null,
+      "leader_strength": null,
+      "capacity_strength": 100.0,
+      "persistence_1d": 1.0,
+      "persistence_3d": null,
+      "persistence_5d": null,
+      "evidence_count_tier1": 0,
+      "evidence_count_tier2": 0,
+      "evidence_count_total": 0,
+      "price_factor_count": 0,
+      "policy_factor_count": 0,
+      "earnings_factor_count": 0,
+      "order_factor_count": 0,
+      "risk_factor_count": 0,
+      "theme_type": "INDUSTRY",
+      "theme_name": "医药商业",
+      "source": "tushare.daily industry proxy",
+      "coverage_status": "PARTIAL"
+    }
+  ],
+  "theme_evidence": [
+    {
+      "fact_type": "disclosure",
+      "status": "DISCLOSED_UNVERIFIED",
+      "date": "2026-09-07T00:00:00+08:00",
+      "value": {
+        "title": "股票交易异常波动公告"
+      },
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-07/1225549782.PDF",
+      "source_type": "official",
+      "tier": 1,
+      "related_theme": [
+        "小家电"
+      ],
+      "related_company": "002403",
+      "factor_id": null,
+      "risk_flags": [
+        "异常波动"
+      ],
+      "evidence_id": "87b077d76a6b1097ed23"
+    }
+  ],
+  "factor41_evidence": [
+    {
+      "factor_id": 1,
+      "factor_name": "0→1技术突破",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 2,
+      "factor_name": "1→10渗透率提升",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 3,
+      "factor_name": "国产替代/自主可控",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 4,
+      "factor_name": "海外产业映射",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 5,
+      "factor_name": "国家级产业政策",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 6,
+      "factor_name": "财政刺激/补贴",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 7,
+      "factor_name": "货币与流动性政策",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 8,
+      "factor_name": "监管边际改善/行业松绑",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 9,
+      "factor_name": "反内卷/供给侧改革",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 10,
+      "factor_name": "国企改革/市值管理",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 11,
+      "factor_name": "国际重大事件",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 12,
+      "factor_name": "国内重大会议/重要文件",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 13,
+      "factor_name": "行业大会/产品发布会",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 14,
+      "factor_name": "突发供给事故",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 15,
+      "factor_name": "需求型涨价",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 16,
+      "factor_name": "供给收缩型涨价",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 17,
+      "factor_name": "库存周期/补库",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 18,
+      "factor_name": "成本下降+售价稳定",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 19,
+      "factor_name": "大额订单",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 20,
+      "factor_name": "订单超预期",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 21,
+      "factor_name": "下游资本开支爆发",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 22,
+      "factor_name": "排产/交期/稼动率",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 23,
+      "factor_name": "业绩超预期",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 24,
+      "factor_name": "亏损转盈利/困境反转",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 25,
+      "factor_name": "利润率提升",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 26,
+      "factor_name": "业绩加速",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 27,
+      "factor_name": "并购重组",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 28,
+      "factor_name": "资产注入/控制权变更",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 29,
+      "factor_name": "股权激励",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 30,
+      "factor_name": "回购/增持/高分红",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 31,
+      "factor_name": "重大客户认证/新供应链",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 32,
+      "factor_name": "行业出清",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 33,
+      "factor_name": "估值修复",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 34,
+      "factor_name": "增量资金",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 35,
+      "factor_name": "指数纳入/被动配置",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 36,
+      "factor_name": "筹码出清/突破",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 37,
+      "factor_name": "龙头效应与补涨",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 38,
+      "factor_name": "风格切换/高低切",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 39,
+      "factor_name": "名称玄学",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 40,
+      "factor_name": "生肖/谐音/数字/地名",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    },
+    {
+      "factor_id": 41,
+      "factor_name": "情绪抱团/妖股",
+      "evidence_status": "DATA_UNAVAILABLE",
+      "evidence": [],
+      "source_type": [],
+      "source_date": [],
+      "tier": null,
+      "confidence": "NONE",
+      "data_available": false
+    }
+  ],
+  "realization_facts": [
+    {
+      "evidence_id": "87b077d76a6b1097ed23",
+      "related_theme": [
+        "小家电"
+      ],
+      "related_company": "002403",
+      "fact_level": "UNKNOWN"
+    }
+  ],
+  "stock_role_candidates": [
+    {
+      "leader_candidate_score": null,
+      "capacity_candidate_score": null,
+      "trend_candidate_score": null,
+      "elasticity_score": null,
+      "catch_up_score": null,
+      "follower_score": null,
+      "amount": 37634550213.7,
+      "market_cap": null,
+      "relative_strength": null,
+      "board_height": null,
+      "persistence": null,
+      "announcement_support": 0,
+      "earnings_support": 0,
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "theme_linkage": [
+        "通信设备"
+      ],
+      "risk_flags": []
+    },
+    {
+      "leader_candidate_score": null,
+      "capacity_candidate_score": null,
+      "trend_candidate_score": null,
+      "elasticity_score": null,
+      "catch_up_score": null,
+      "follower_score": null,
+      "amount": 20918001944.5,
+      "market_cap": null,
+      "relative_strength": null,
+      "board_height": null,
+      "persistence": null,
+      "announcement_support": 0,
+      "earnings_support": 0,
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "theme_linkage": [
+        "通信设备"
+      ],
+      "risk_flags": []
+    },
+    {
+      "leader_candidate_score": null,
+      "capacity_candidate_score": null,
+      "trend_candidate_score": null,
+      "elasticity_score": null,
+      "catch_up_score": null,
+      "follower_score": null,
+      "amount": 20492700668.0,
+      "market_cap": null,
+      "relative_strength": null,
+      "board_height": null,
+      "persistence": null,
+      "announcement_support": 0,
+      "earnings_support": 0,
+      "stock_code": "688825",
+      "stock_name": "长鑫科技",
+      "theme_linkage": [
+        "半导体"
+      ],
+      "risk_flags": []
+    },
+    {
+      "leader_candidate_score": null,
+      "capacity_candidate_score": null,
+      "trend_candidate_score": null,
+      "elasticity_score": null,
+      "catch_up_score": null,
+      "follower_score": null,
+      "amount": 13606540719.6,
+      "market_cap": null,
+      "relative_strength": null,
+      "board_height": null,
+      "persistence": null,
+      "announcement_support": 0,
+      "earnings_support": 0,
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "theme_linkage": [
+        "通信设备"
+      ],
+      "risk_flags": []
+    },
+    {
+      "leader_candidate_score": null,
+      "capacity_candidate_score": null,
+      "trend_candidate_score": null,
+      "elasticity_score": null,
+      "catch_up_score": null,
+      "follower_score": null,
+      "amount": 13412085197.0,
+      "market_cap": null,
+      "relative_strength": null,
+      "board_height": null,
+      "persistence": null,
+      "announcement_support": 0,
+      "earnings_support": 0,
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "theme_linkage": [
+        "半导体"
+      ],
+      "risk_flags": []
+    },
+    {
+      "leader_candidate_score": null,
+      "capacity_candidate_score": null,
+      "trend_candidate_score": null,
+      "elasticity_score": null,
+      "catch_up_score": null,
+      "follower_score": null,
+      "amount": 11506069535.0,
+      "market_cap": null,
+      "relative_strength": null,
+      "board_height": null,
+      "persistence": null,
+      "announcement_support": 0,
+      "earnings_support": 0,
+      "stock_code": "601138",
+      "stock_name": "工业富联",
+      "theme_linkage": [
+        "通信设备"
+      ],
+      "risk_flags": []
+    },
+    {
+      "leader_candidate_score": null,
+      "capacity_candidate_score": null,
+      "trend_candidate_score": null,
+      "elasticity_score": null,
+      "catch_up_score": null,
+      "follower_score": null,
+      "amount": 11026357487.0,
+      "market_cap": null,
+      "relative_strength": null,
+      "board_height": null,
+      "persistence": null,
+      "announcement_support": 0,
+      "earnings_support": 0,
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "theme_linkage": [
+        "半导体"
+      ],
+      "risk_flags": []
+    },
+    {
+      "leader_candidate_score": 54.45,
+      "capacity_candidate_score": 82.71,
+      "trend_candidate_score": 8.8,
+      "elasticity_score": 66.25,
+      "catch_up_score": 77.64,
+      "follower_score": 51.59,
+      "amount": 9613926291.92,
+      "market_cap": 236023187690.40002,
+      "relative_strength": 10.0,
+      "board_height": 1.0,
+      "persistence": 1.0,
+      "announcement_support": 0,
+      "earnings_support": 0,
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "theme_linkage": [
+        "元件"
+      ],
+      "risk_flags": []
+    },
+    {
+      "leader_candidate_score": null,
+      "capacity_candidate_score": null,
+      "trend_candidate_score": null,
+      "elasticity_score": null,
+      "catch_up_score": null,
+      "follower_score": null,
+      "amount": 8934349208.0,
+      "market_cap": null,
+      "relative_strength": null,
+      "board_height": null,
+      "persistence": null,
+      "announcement_support": 0,
+      "earnings_support": 0,
+      "stock_code": "600487",
+      "stock_name": "亨通光电",
+      "theme_linkage": [
+        "通信设备"
+      ],
+      "risk_flags": []
+    },
+    {
+      "leader_candidate_score": 54.45,
+      "capacity_candidate_score": 85.15,
+      "trend_candidate_score": 11.2,
+      "elasticity_score": 68.17,
+      "catch_up_score": 47.43,
+      "follower_score": 51.26,
+      "amount": 7691316761.2699995,
+      "market_cap": 152713274039.04,
+      "relative_strength": 10.0,
+      "board_height": 1.0,
+      "persistence": 1.0,
+      "announcement_support": 0,
+      "earnings_support": 0,
+      "stock_code": "002281",
+      "stock_name": "光迅科技",
+      "theme_linkage": [
+        "通信设备"
+      ],
+      "risk_flags": []
+    },
+    {
+      "leader_candidate_score": null,
+      "capacity_candidate_score": null,
+      "trend_candidate_score": null,
+      "elasticity_score": null,
+      "catch_up_score": null,
+      "follower_score": null,
+      "amount": 7472378902.0,
+      "market_cap": null,
+      "relative_strength": null,
+      "board_height": null,
+      "persistence": null,
+      "announcement_support": 0,
+      "earnings_support": 0,
+      "stock_code": "688008",
+      "stock_name": "澜起科技",
+      "theme_linkage": [
+        "半导体"
+      ],
+      "risk_flags": []
+    },
+    {
+      "leader_candidate_score": null,
+      "capacity_candidate_score": null,
+      "trend_candidate_score": null,
+      "elasticity_score": null,
+      "catch_up_score": null,
+      "follower_score": null,
+      "amount": 5648127324.0,
+      "market_cap": null,
+      "relative_strength": null,
+      "board_height": null,
+      "persistence": null,
+      "announcement_support": 0,
+      "earnings_support": 0,
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "theme_linkage": [
+        "半导体"
+      ],
+      "risk_flags": []
+    },
+    {
+      "leader_candidate_score": null,
+      "capacity_candidate_score": null,
+      "trend_candidate_score": null,
+      "elasticity_score": null,
+      "catch_up_score": null,
+      "follower_score": null,
+      "amount": 5642632845.0,
+      "market_cap": null,
+      "relative_strength": null,
+      "board_height": null,
+      "persistence": null,
+      "announcement_support": 0,
+      "earnings_support": 0,
+      "stock_code": "600584",
+      "stock_name": "长电科技",
+      "theme_linkage": [
+        "半导体"
+      ],
+      "risk_flags": []
+    },
+    {
+      "leader_candidate_score": null,
+      "capacity_candidate_score": null,
+      "trend_candidate_score": null,
+      "elasticity_score": null,
+      "catch_up_score": null,
+      "follower_score": null,
+      "amount": 5417398960.0,
+      "market_cap": null,
+      "relative_strength": null,
+      "board_height": null,
+      "persistence": null,
+      "announcement_support": 0,
+      "earnings_support": 0,
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "theme_linkage": [
+        "半导体"
+      ],
+      "risk_flags": []
+    },
+    {
+      "leader_candidate_score": null,
+      "capacity_candidate_score": null,
+      "trend_candidate_score": null,
+      "elasticity_score": null,
+      "catch_up_score": null,
+      "follower_score": null,
+      "amount": 5314211739.99,
+      "market_cap": null,
+      "relative_strength": null,
+      "board_height": null,
+      "persistence": null,
+      "announcement_support": 0,
+      "earnings_support": 0,
+      "stock_code": "002371",
+      "stock_name": "北方华创",
+      "theme_linkage": [
+        "半导体"
+      ],
+      "risk_flags": []
+    },
+    {
+      "leader_candidate_score": 54.44,
+      "capacity_candidate_score": 81.46,
+      "trend_candidate_score": 56.0,
+      "elasticity_score": 67.7,
+      "catch_up_score": 76.21,
+      "follower_score": 51.58,
+      "amount": 5269098174.0,
+      "market_cap": 106107042099.52,
+      "relative_strength": 9.9958,
+      "board_height": 1.0,
+      "persistence": 1.0,
+      "announcement_support": 0,
+      "earnings_support": 0,
+      "stock_code": "603228",
+      "stock_name": "景旺电子",
+      "theme_linkage": [
+        "元件"
+      ],
+      "risk_flags": []
+    },
+    {
+      "leader_candidate_score": null,
+      "capacity_candidate_score": null,
+      "trend_candidate_score": null,
+      "elasticity_score": null,
+      "catch_up_score": null,
+      "follower_score": null,
+      "amount": 4912282839.0,
+      "market_cap": null,
+      "relative_strength": null,
+      "board_height": null,
+      "persistence": null,
+      "announcement_support": 0,
+      "earnings_support": 0,
+      "stock_code": "601869",
+      "stock_name": "长飞光纤",
+      "theme_linkage": [
+        "通信设备"
+      ],
+      "risk_flags": []
+    },
+    {
+      "leader_candidate_score": null,
+      "capacity_candidate_score": null,
+      "trend_candidate_score": null,
+      "elasticity_score": null,
+      "catch_up_score": null,
+      "follower_score": null,
+      "amount": 4598300639.29,
+      "market_cap": null,
+      "relative_strength": null,
+      "board_height": null,
+      "persistence": null,
+      "announcement_support": 0,
+      "earnings_support": 0,
+      "stock_code": "300604",
+      "stock_name": "长川科技",
+      "theme_linkage": [
+        "半导体"
+      ],
+      "risk_flags": []
+    },
+    {
+      "leader_candidate_score": null,
+      "capacity_candidate_score": null,
+      "trend_candidate_score": null,
+      "elasticity_score": null,
+      "catch_up_score": null,
+      "follower_score": null,
+      "amount": 4523666761.26,
+      "market_cap": null,
+      "relative_strength": null,
+      "board_height": null,
+      "persistence": null,
+      "announcement_support": 0,
+      "earnings_support": 0,
+      "stock_code": "300570",
+      "stock_name": "太辰光",
+      "theme_linkage": [
+        "通信设备"
+      ],
+      "risk_flags": []
+    },
+    {
+      "leader_candidate_score": null,
+      "capacity_candidate_score": null,
+      "trend_candidate_score": null,
+      "elasticity_score": null,
+      "catch_up_score": null,
+      "follower_score": null,
+      "amount": 4516204894.55,
+      "market_cap": 31256781781.76,
+      "relative_strength": null,
+      "board_height": null,
+      "persistence": null,
+      "announcement_support": 0,
+      "earnings_support": 0,
+      "stock_code": "300684",
+      "stock_name": "中石科技",
+      "theme_linkage": [
+        "电子化学"
+      ],
+      "risk_flags": []
+    }
+  ],
+  "lifecycle_vectors": [
+    {
+      "theme_name": "元件",
+      "first_seen_date": "2026-09-01",
+      "active_days": 4,
+      "strength_change_1d": null,
+      "strength_change_3d": null,
+      "breadth_change": null,
+      "amount_change": 23734815264.0,
+      "leader_persistence": null,
+      "capacity_persistence": null,
+      "new_subtheme_count": null,
+      "catch_up_count": null,
+      "failed_leader_count": null,
+      "theme_limit_down_count": null,
+      "catalyst_age": null,
+      "realization_level": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "theme_name": "医药商业",
+      "first_seen_date": "2026-08-31",
+      "active_days": 4,
+      "strength_change_1d": null,
+      "strength_change_3d": null,
+      "breadth_change": null,
+      "amount_change": 2884069958.1400003,
+      "leader_persistence": null,
+      "capacity_persistence": null,
+      "new_subtheme_count": null,
+      "catch_up_count": null,
+      "failed_leader_count": null,
+      "theme_limit_down_count": null,
+      "catalyst_age": null,
+      "realization_level": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "theme_name": "半导体",
+      "first_seen_date": "2026-08-31",
+      "active_days": 4,
+      "strength_change_1d": null,
+      "strength_change_3d": null,
+      "breadth_change": null,
+      "amount_change": 228401640894.88,
+      "leader_persistence": null,
+      "capacity_persistence": null,
+      "new_subtheme_count": null,
+      "catch_up_count": null,
+      "failed_leader_count": null,
+      "theme_limit_down_count": null,
+      "catalyst_age": null,
+      "realization_level": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "theme_name": "多元金融",
+      "first_seen_date": "2026-08-31",
+      "active_days": 6,
+      "strength_change_1d": null,
+      "strength_change_3d": null,
+      "breadth_change": -36.95652173913044,
+      "amount_change": 5504947739.24,
+      "leader_persistence": null,
+      "capacity_persistence": null,
+      "new_subtheme_count": null,
+      "catch_up_count": null,
+      "failed_leader_count": null,
+      "theme_limit_down_count": null,
+      "catalyst_age": null,
+      "realization_level": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "theme_name": "林业Ⅱ",
+      "first_seen_date": "2026-09-01",
+      "active_days": 5,
+      "strength_change_1d": null,
+      "strength_change_3d": null,
+      "breadth_change": 0.0,
+      "amount_change": 1697499957.23,
+      "leader_persistence": null,
+      "capacity_persistence": null,
+      "new_subtheme_count": null,
+      "catch_up_count": null,
+      "failed_leader_count": null,
+      "theme_limit_down_count": null,
+      "catalyst_age": null,
+      "realization_level": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "theme_name": "汽车零部",
+      "first_seen_date": "2026-09-01",
+      "active_days": 5,
+      "strength_change_1d": null,
+      "strength_change_3d": null,
+      "breadth_change": 49.206349206349216,
+      "amount_change": 293521790.0,
+      "leader_persistence": null,
+      "capacity_persistence": null,
+      "new_subtheme_count": null,
+      "catch_up_count": null,
+      "failed_leader_count": null,
+      "theme_limit_down_count": null,
+      "catalyst_age": null,
+      "realization_level": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "theme_name": "煤炭开采",
+      "first_seen_date": "2026-08-31",
+      "active_days": 6,
+      "strength_change_1d": null,
+      "strength_change_3d": null,
+      "breadth_change": null,
+      "amount_change": null,
+      "leader_persistence": null,
+      "capacity_persistence": null,
+      "new_subtheme_count": null,
+      "catch_up_count": null,
+      "failed_leader_count": null,
+      "theme_limit_down_count": null,
+      "catalyst_age": null,
+      "realization_level": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "theme_name": "电子化学",
+      "first_seen_date": "2026-09-03",
+      "active_days": 2,
+      "strength_change_1d": null,
+      "strength_change_3d": null,
+      "breadth_change": null,
+      "amount_change": null,
+      "leader_persistence": null,
+      "capacity_persistence": null,
+      "new_subtheme_count": null,
+      "catch_up_count": null,
+      "failed_leader_count": null,
+      "theme_limit_down_count": null,
+      "catalyst_age": null,
+      "realization_level": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "theme_name": "种植业",
+      "first_seen_date": "2026-08-31",
+      "active_days": 6,
+      "strength_change_1d": null,
+      "strength_change_3d": null,
+      "breadth_change": -20.0,
+      "amount_change": 2774995474.0,
+      "leader_persistence": null,
+      "capacity_persistence": null,
+      "new_subtheme_count": null,
+      "catch_up_count": null,
+      "failed_leader_count": null,
+      "theme_limit_down_count": null,
+      "catalyst_age": null,
+      "realization_level": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "theme_name": "通信设备",
+      "first_seen_date": "2026-08-31",
+      "active_days": 6,
+      "strength_change_1d": null,
+      "strength_change_3d": null,
+      "breadth_change": 50.0,
+      "amount_change": 11006400647.0,
+      "leader_persistence": null,
+      "capacity_persistence": null,
+      "new_subtheme_count": null,
+      "catch_up_count": null,
+      "failed_leader_count": null,
+      "theme_limit_down_count": null,
+      "catalyst_age": null,
+      "realization_level": [
+        "UNKNOWN"
+      ]
+    }
+  ],
+  "six_dimension_inputs": [
+    {
+      "theme_name": "元件",
+      "base_logic_inputs": {
+        "tier1_policy_count": 0,
+        "price_evidence": [],
+        "industry_data": [],
+        "earnings_evidence": []
+      },
+      "realization_inputs": {
+        "evidence": []
+      },
+      "expectation_gap_inputs": {
+        "consensus_estimate": null,
+        "prior_guidance": null,
+        "actual_reported": null
+      },
+      "continuity_inputs": {
+        "persistence_1d": null,
+        "persistence_3d": null,
+        "persistence_5d": null
+      },
+      "market_confirmation_inputs": {
+        "amount": 38396429440.0,
+        "breadth": 100.0,
+        "limit_up_count": 14.0,
+        "leader_strength": null,
+        "capacity_strength": 100.0
+      },
+      "risk_inputs": {
+        "amount_percentile": 98.33333333333333,
+        "volatility": 5.038904759222915,
+        "turnover_history_percentile": null,
+        "leader_dependency": null,
+        "failed_limit_count": null,
+        "valuation": null,
+        "disclosure_flags": []
+      }
+    },
+    {
+      "theme_name": "医药商业",
+      "base_logic_inputs": {
+        "tier1_policy_count": 0,
+        "price_evidence": [],
+        "industry_data": [],
+        "earnings_evidence": []
+      },
+      "realization_inputs": {
+        "evidence": []
+      },
+      "expectation_gap_inputs": {
+        "consensus_estimate": null,
+        "prior_guidance": null,
+        "actual_reported": null
+      },
+      "continuity_inputs": {
+        "persistence_1d": 1.0,
+        "persistence_3d": null,
+        "persistence_5d": null
+      },
+      "market_confirmation_inputs": {
+        "amount": 3784704326.1400003,
+        "breadth": 69.44444444444444,
+        "limit_up_count": 1.0,
+        "leader_strength": null,
+        "capacity_strength": 100.0
+      },
+      "risk_inputs": {
+        "amount_percentile": 85.0,
+        "volatility": 2.7135439877946372,
+        "turnover_history_percentile": null,
+        "leader_dependency": null,
+        "failed_limit_count": null,
+        "valuation": null,
+        "disclosure_flags": []
+      }
+    },
+    {
+      "theme_name": "半导体",
+      "base_logic_inputs": {
+        "tier1_policy_count": 0,
+        "price_evidence": [],
+        "industry_data": [],
+        "earnings_evidence": []
+      },
+      "realization_inputs": {
+        "evidence": []
+      },
+      "expectation_gap_inputs": {
+        "consensus_estimate": null,
+        "prior_guidance": null,
+        "actual_reported": null
+      },
+      "continuity_inputs": {
+        "persistence_1d": 1.0,
+        "persistence_3d": null,
+        "persistence_5d": null
+      },
+      "market_confirmation_inputs": {
+        "amount": 229570819998.88,
+        "breadth": 83.93782383419689,
+        "limit_up_count": 0.0,
+        "leader_strength": null,
+        "capacity_strength": 90.884
+      },
+      "risk_inputs": {
+        "amount_percentile": 100.0,
+        "volatility": 4.467703726456273,
+        "turnover_history_percentile": null,
+        "leader_dependency": null,
+        "failed_limit_count": null,
+        "valuation": null,
+        "disclosure_flags": []
+      }
+    },
+    {
+      "theme_name": "多元金融",
+      "base_logic_inputs": {
+        "tier1_policy_count": 0,
+        "price_evidence": [],
+        "industry_data": [],
+        "earnings_evidence": []
+      },
+      "realization_inputs": {
+        "evidence": []
+      },
+      "expectation_gap_inputs": {
+        "consensus_estimate": null,
+        "prior_guidance": null,
+        "actual_reported": null
+      },
+      "continuity_inputs": {
+        "persistence_1d": 0.0,
+        "persistence_3d": null,
+        "persistence_5d": null
+      },
+      "market_confirmation_inputs": {
+        "amount": 6345010859.24,
+        "breadth": 13.043478260869565,
+        "limit_up_count": 0.0,
+        "leader_strength": null,
+        "capacity_strength": 75.939
+      },
+      "risk_inputs": {
+        "amount_percentile": 91.66666666666667,
+        "volatility": 2.1598046284397725,
+        "turnover_history_percentile": null,
+        "leader_dependency": null,
+        "failed_limit_count": null,
+        "valuation": null,
+        "disclosure_flags": []
+      }
+    },
+    {
+      "theme_name": "林业Ⅱ",
+      "base_logic_inputs": {
+        "tier1_policy_count": 0,
+        "price_evidence": [],
+        "industry_data": [],
+        "earnings_evidence": []
+      },
+      "realization_inputs": {
+        "evidence": []
+      },
+      "expectation_gap_inputs": {
+        "consensus_estimate": null,
+        "prior_guidance": null,
+        "actual_reported": null
+      },
+      "continuity_inputs": {
+        "persistence_1d": 1.0,
+        "persistence_3d": null,
+        "persistence_5d": null
+      },
+      "market_confirmation_inputs": {
+        "amount": 4169067653.23,
+        "breadth": 100.0,
+        "limit_up_count": 0.0,
+        "leader_strength": null,
+        "capacity_strength": 75.367
+      },
+      "risk_inputs": {
+        "amount_percentile": 86.66666666666667,
+        "volatility": 4.711542947641853,
+        "turnover_history_percentile": null,
+        "leader_dependency": null,
+        "failed_limit_count": null,
+        "valuation": null,
+        "disclosure_flags": []
+      }
+    },
+    {
+      "theme_name": "汽车零部",
+      "base_logic_inputs": {
+        "tier1_policy_count": 0,
+        "price_evidence": [],
+        "industry_data": [],
+        "earnings_evidence": []
+      },
+      "realization_inputs": {
+        "evidence": []
+      },
+      "expectation_gap_inputs": {
+        "consensus_estimate": null,
+        "prior_guidance": null,
+        "actual_reported": null
+      },
+      "continuity_inputs": {
+        "persistence_1d": null,
+        "persistence_3d": null,
+        "persistence_5d": null
+      },
+      "market_confirmation_inputs": {
+        "amount": 5933440672.0,
+        "breadth": 77.77777777777779,
+        "limit_up_count": 7.0,
+        "leader_strength": null,
+        "capacity_strength": 100.0
+      },
+      "risk_inputs": {
+        "amount_percentile": 90.0,
+        "volatility": 4.704362525622116,
+        "turnover_history_percentile": null,
+        "leader_dependency": null,
+        "failed_limit_count": 2.0,
+        "valuation": null,
+        "disclosure_flags": []
+      }
+    },
+    {
+      "theme_name": "煤炭开采",
+      "base_logic_inputs": {
+        "tier1_policy_count": 0,
+        "price_evidence": [],
+        "industry_data": [],
+        "earnings_evidence": []
+      },
+      "realization_inputs": {
+        "evidence": []
+      },
+      "expectation_gap_inputs": {
+        "consensus_estimate": null,
+        "prior_guidance": null,
+        "actual_reported": null
+      },
+      "continuity_inputs": {
+        "persistence_1d": 0.0,
+        "persistence_3d": null,
+        "persistence_5d": null
+      },
+      "market_confirmation_inputs": {
+        "amount": 12847732482.89,
+        "breadth": 12.5,
+        "limit_up_count": 0.0,
+        "leader_strength": null,
+        "capacity_strength": 54.594
+      },
+      "risk_inputs": {
+        "amount_percentile": 95.0,
+        "volatility": 2.49795404102271,
+        "turnover_history_percentile": null,
+        "leader_dependency": null,
+        "failed_limit_count": null,
+        "valuation": null,
+        "disclosure_flags": []
+      }
+    },
+    {
+      "theme_name": "电子化学",
+      "base_logic_inputs": {
+        "tier1_policy_count": 0,
+        "price_evidence": [],
+        "industry_data": [],
+        "earnings_evidence": []
+      },
+      "realization_inputs": {
+        "evidence": []
+      },
+      "expectation_gap_inputs": {
+        "consensus_estimate": null,
+        "prior_guidance": null,
+        "actual_reported": null
+      },
+      "continuity_inputs": {
+        "persistence_1d": null,
+        "persistence_3d": null,
+        "persistence_5d": null
+      },
+      "market_confirmation_inputs": {
+        "amount": 8347751344.0,
+        "breadth": 33.33333333333333,
+        "limit_up_count": 1.0,
+        "leader_strength": null,
+        "capacity_strength": 100.0
+      },
+      "risk_inputs": {
+        "amount_percentile": 93.33333333333333,
+        "volatility": 6.516168809877755,
+        "turnover_history_percentile": null,
+        "leader_dependency": null,
+        "failed_limit_count": 2.0,
+        "valuation": null,
+        "disclosure_flags": []
+      }
+    },
+    {
+      "theme_name": "种植业",
+      "base_logic_inputs": {
+        "tier1_policy_count": 0,
+        "price_evidence": [],
+        "industry_data": [],
+        "earnings_evidence": []
+      },
+      "realization_inputs": {
+        "evidence": []
+      },
+      "expectation_gap_inputs": {
+        "consensus_estimate": null,
+        "prior_guidance": null,
+        "actual_reported": null
+      },
+      "continuity_inputs": {
+        "persistence_1d": null,
+        "persistence_3d": null,
+        "persistence_5d": null
+      },
+      "market_confirmation_inputs": {
+        "amount": 4959584130.0,
+        "breadth": 80.0,
+        "limit_up_count": 4.0,
+        "leader_strength": 100.0,
+        "capacity_strength": 100.0
+      },
+      "risk_inputs": {
+        "amount_percentile": 88.33333333333333,
+        "volatility": 5.4589827059779275,
+        "turnover_history_percentile": null,
+        "leader_dependency": null,
+        "failed_limit_count": 1.0,
+        "valuation": null,
+        "disclosure_flags": []
+      }
+    },
+    {
+      "theme_name": "通信设备",
+      "base_logic_inputs": {
+        "tier1_policy_count": 0,
+        "price_evidence": [],
+        "industry_data": [],
+        "earnings_evidence": []
+      },
+      "realization_inputs": {
+        "evidence": []
+      },
+      "expectation_gap_inputs": {
+        "consensus_estimate": null,
+        "prior_guidance": null,
+        "actual_reported": null
+      },
+      "continuity_inputs": {
+        "persistence_1d": null,
+        "persistence_3d": null,
+        "persistence_5d": null
+      },
+      "market_confirmation_inputs": {
+        "amount": 14953037399.0,
+        "breadth": 100.0,
+        "limit_up_count": 8.0,
+        "leader_strength": null,
+        "capacity_strength": 100.0
+      },
+      "risk_inputs": {
+        "amount_percentile": 96.66666666666667,
+        "volatility": 3.413661242176987,
+        "turnover_history_percentile": null,
+        "leader_dependency": null,
+        "failed_limit_count": null,
+        "valuation": null,
+        "disclosure_flags": []
+      }
+    }
+  ],
+  "previous_review_actual_results": {
+    "status": "PREVIOUS_FORMAL_REVIEW_UNAVAILABLE",
+    "source": {
+      "status": "PREVIOUS_FORMAL_REVIEW_UNAVAILABLE",
+      "expected_date": "2026-09-04",
+      "data_date": null,
+      "path": null,
+      "sha256": null
+    },
+    "records": []
+  },
+  "cross_market_facts": [],
+  "abnormal_data_candidates": [
+    {
+      "candidate_type": "very_high_turnover",
+      "stock_code": "301516",
+      "metric_a": 42.203147888183594,
+      "metric_b": 30.0,
+      "source_date": "2026-09-07",
+      "evidence": []
+    },
+    {
+      "candidate_type": "very_high_turnover",
+      "stock_code": "000560",
+      "metric_a": 33.4014,
+      "metric_b": 30.0,
+      "source_date": "2026-09-07",
+      "evidence": []
+    },
+    {
+      "candidate_type": "very_high_turnover",
+      "stock_code": "002354",
+      "metric_a": 31.4298,
+      "metric_b": 30.0,
+      "source_date": "2026-09-07",
+      "evidence": []
+    },
+    {
+      "candidate_type": "very_high_turnover",
+      "stock_code": "300189",
+      "metric_a": 39.123,
+      "metric_b": 30.0,
+      "source_date": "2026-09-07",
+      "evidence": []
+    },
+    {
+      "candidate_type": "very_high_turnover",
+      "stock_code": "600540",
+      "metric_a": 31.838756561279297,
+      "metric_b": 30.0,
+      "source_date": "2026-09-07",
+      "evidence": []
+    },
+    {
+      "candidate_type": "very_high_turnover",
+      "stock_code": "000892",
+      "metric_a": 44.45117950439453,
+      "metric_b": 30.0,
+      "source_date": "2026-09-07",
+      "evidence": []
+    },
+    {
+      "candidate_type": "very_high_turnover",
+      "stock_code": "603448",
+      "metric_a": 71.1887,
+      "metric_b": 30.0,
+      "source_date": "2026-09-07",
+      "evidence": []
+    },
+    {
+      "candidate_type": "very_high_turnover",
+      "stock_code": "003005",
+      "metric_a": 33.9767,
+      "metric_b": 30.0,
+      "source_date": "2026-09-07",
+      "evidence": []
+    },
+    {
+      "candidate_type": "very_high_turnover",
+      "stock_code": "301591",
+      "metric_a": 32.7319,
+      "metric_b": 30.0,
+      "source_date": "2026-09-07",
+      "evidence": []
+    },
+    {
+      "candidate_type": "very_high_turnover",
+      "stock_code": "603270",
+      "metric_a": 33.5829,
+      "metric_b": 30.0,
+      "source_date": "2026-09-07",
+      "evidence": []
+    },
+    {
+      "candidate_type": "very_high_turnover",
+      "stock_code": "920071",
+      "metric_a": 58.8483,
+      "metric_b": 30.0,
+      "source_date": "2026-09-07",
+      "evidence": []
+    },
+    {
+      "candidate_type": "very_high_turnover",
+      "stock_code": "920176",
+      "metric_a": 36.3019,
+      "metric_b": 30.0,
+      "source_date": "2026-09-07",
+      "evidence": []
+    },
+    {
+      "candidate_type": "very_high_turnover",
+      "stock_code": "920222",
+      "metric_a": 32.1506,
+      "metric_b": 30.0,
+      "source_date": "2026-09-07",
+      "evidence": []
+    },
+    {
+      "candidate_type": "very_high_turnover",
+      "stock_code": "920289",
+      "metric_a": 59.1064,
+      "metric_b": 30.0,
+      "source_date": "2026-09-07",
+      "evidence": []
+    },
+    {
+      "candidate_type": "very_high_turnover",
+      "stock_code": "920970",
+      "metric_a": 31.1324,
+      "metric_b": 30.0,
+      "source_date": "2026-09-07",
+      "evidence": []
+    }
+  ],
+  "inflection_observations": [
+    {
+      "stock_code": "601086",
+      "trend_score": 56.0,
+      "chip_inputs": {
+        "pullback_volume_ratio": null,
+        "amount_percentile": 99.16666666666667,
+        "turnover_percentile": null,
+        "volatility_percentile": 100.0,
+        "upper_shadow_frequency": 0.05,
+        "large_negative_frequency": 0.0
+      },
+      "weekly_inputs": {
+        "wma5": 10.052,
+        "wma10": 8.673,
+        "wma20": 8.243500000000001,
+        "slope_wma20": 0.0434810126582279
+      },
+      "hold_days": 1.0
+    },
+    {
+      "stock_code": "300860",
+      "trend_score": 56.0,
+      "chip_inputs": {
+        "pullback_volume_ratio": null,
+        "amount_percentile": 99.16666666666667,
+        "turnover_percentile": null,
+        "volatility_percentile": 79.16666666666666,
+        "upper_shadow_frequency": 0.05,
+        "large_negative_frequency": 0.0
+      },
+      "weekly_inputs": {
+        "wma5": 28.826,
+        "wma10": 26.890000000000004,
+        "wma20": 26.281,
+        "slope_wma20": 0.051997438155471976
+      },
+      "hold_days": 1.0
+    },
+    {
+      "stock_code": "603991",
+      "trend_score": 54.0,
+      "chip_inputs": {
+        "pullback_volume_ratio": null,
+        "amount_percentile": 85.83333333333333,
+        "turnover_percentile": null,
+        "volatility_percentile": 15.833333333333332,
+        "upper_shadow_frequency": 0.0,
+        "large_negative_frequency": 0.0
+      },
+      "weekly_inputs": {
+        "wma5": 146.13,
+        "wma10": 139.523,
+        "wma20": 130.7825,
+        "slope_wma20": 0.08286965737658769
+      },
+      "hold_days": 1.0
+    },
+    {
+      "stock_code": "603161",
+      "trend_score": 53.0,
+      "chip_inputs": {
+        "pullback_volume_ratio": null,
+        "amount_percentile": null,
+        "turnover_percentile": null,
+        "volatility_percentile": null,
+        "upper_shadow_frequency": null,
+        "large_negative_frequency": null
+      },
+      "weekly_inputs": {
+        "wma5": 16.686,
+        "wma10": 15.169,
+        "wma20": 14.703,
+        "slope_wma20": 0.039081272084805496
+      },
+      "hold_days": 1.0
+    },
+    {
+      "stock_code": "605296",
+      "trend_score": 53.0,
+      "chip_inputs": {
+        "pullback_volume_ratio": null,
+        "amount_percentile": 95.83333333333334,
+        "turnover_percentile": null,
+        "volatility_percentile": 32.5,
+        "upper_shadow_frequency": 0.0,
+        "large_negative_frequency": 0.0
+      },
+      "weekly_inputs": {
+        "wma5": 33.142,
+        "wma10": 31.500999999999998,
+        "wma20": 29.657999999999998,
+        "slope_wma20": 0.0388272999527135
+      },
+      "hold_days": 1.0
+    },
+    {
+      "stock_code": "600857",
+      "trend_score": 52.0,
+      "chip_inputs": {
+        "pullback_volume_ratio": null,
+        "amount_percentile": null,
+        "turnover_percentile": null,
+        "volatility_percentile": null,
+        "upper_shadow_frequency": null,
+        "large_negative_frequency": null
+      },
+      "weekly_inputs": {
+        "wma5": 20.964,
+        "wma10": 19.381999999999998,
+        "wma20": 17.464499999999997,
+        "slope_wma20": 0.14841361170475076
+      },
+      "hold_days": 1.0
+    },
+    {
+      "stock_code": "300864",
+      "trend_score": 52.0,
+      "chip_inputs": {
+        "pullback_volume_ratio": null,
+        "amount_percentile": null,
+        "turnover_percentile": null,
+        "volatility_percentile": null,
+        "upper_shadow_frequency": null,
+        "large_negative_frequency": null
+      },
+      "weekly_inputs": {
+        "wma5": 25.832,
+        "wma10": 22.257999999999996,
+        "wma20": 22.211000000000006,
+        "slope_wma20": 0.06300701141448717
+      },
+      "hold_days": 1.0
+    },
+    {
+      "stock_code": "600975",
+      "trend_score": 51.0,
+      "chip_inputs": {
+        "pullback_volume_ratio": null,
+        "amount_percentile": 100.0,
+        "turnover_percentile": null,
+        "volatility_percentile": 85.83333333333333,
+        "upper_shadow_frequency": 0.05,
+        "large_negative_frequency": 0.0
+      },
+      "weekly_inputs": {
+        "wma5": 5.298,
+        "wma10": 5.135,
+        "wma20": 5.068500000000001,
+        "slope_wma20": -0.00753867241041728
+      },
+      "hold_days": 1.0
+    },
+    {
+      "stock_code": "300684",
+      "trend_score": 50.0,
+      "chip_inputs": {
+        "pullback_volume_ratio": null,
+        "amount_percentile": null,
+        "turnover_percentile": null,
+        "volatility_percentile": null,
+        "upper_shadow_frequency": null,
+        "large_negative_frequency": null
+      },
+      "weekly_inputs": {
+        "wma5": 87.264,
+        "wma10": 70.184,
+        "wma20": 64.33500000000001,
+        "slope_wma20": 0.15070918814502132
+      },
+      "hold_days": 1.0
+    },
+    {
+      "stock_code": "603587",
+      "trend_score": 50.0,
+      "chip_inputs": {
+        "pullback_volume_ratio": null,
+        "amount_percentile": 100.0,
+        "turnover_percentile": null,
+        "volatility_percentile": 98.33333333333333,
+        "upper_shadow_frequency": 0.0,
+        "large_negative_frequency": 0.0
+      },
+      "weekly_inputs": {
+        "wma5": 12.434000000000001,
+        "wma10": 11.958,
+        "wma20": 12.204000000000002,
+        "slope_wma20": 0.0018470631695604034
+      },
+      "hold_days": 1.0
+    }
+  ],
+  "data_gaps": [
+    {
+      "field": "abnormal_data_candidates",
+      "reason": "TURNOVER_GE_30_PERCENT_ONLY; no comparable price/fundamental baseline"
+    },
+    {
+      "field": "auction_packets",
+      "reason": "MISSING"
+    },
+    {
+      "field": "cross_market_facts",
+      "reason": "NO_VERIFIED_TIMESTAMPED_CROSS_MARKET_DATA"
+    },
+    {
+      "field": "factor41_evidence",
+      "reason": "UNMAPPED_IS_UNAVAILABLE_NOT_ABSENCE; category links do not prove driver"
+    },
+    {
+      "field": "lifecycle_vectors.amount_change",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "lifecycle_vectors.breadth_change",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "lifecycle_vectors.capacity_persistence",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "lifecycle_vectors.catalyst_age",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "lifecycle_vectors.catch_up_count",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "lifecycle_vectors.failed_leader_count",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "lifecycle_vectors.first_seen_date",
+      "reason": "FIRST_OBSERVED_IN_SIX_SESSION_ARCHIVE_NOT_INCEPTION"
+    },
+    {
+      "field": "lifecycle_vectors.leader_persistence",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "lifecycle_vectors.new_subtheme_count",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "lifecycle_vectors.strength_change_1d",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "lifecycle_vectors.strength_change_3d",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "lifecycle_vectors.theme_limit_down_count",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "market_divergence_candidates",
+      "reason": "ONLY_COMPUTABLE_PAIRS; NO_SEVERITY_MODEL"
+    },
+    {
+      "field": "market_packets.data_quality.sources",
+      "reason": "AS_OF_EXCLUDED"
+    },
+    {
+      "field": "market_snapshot.dividend_return",
+      "reason": "METRIC_UNAVAILABLE"
+    },
+    {
+      "field": "market_snapshot.high_beta_return",
+      "reason": "METRIC_UNAVAILABLE"
+    },
+    {
+      "field": "market_snapshot.promotion_rate",
+      "reason": "METRIC_UNAVAILABLE"
+    },
+    {
+      "field": "market_snapshot.theme_limit_down_count",
+      "reason": "METRIC_UNAVAILABLE"
+    },
+    {
+      "field": "review_context",
+      "reason": "NONFINITE_SOURCE_VALUES_AS_NULL"
+    },
+    {
+      "field": "review_intelligence",
+      "reason": "NONFINITE_SOURCE_VALUES_AS_NULL"
+    },
+    {
+      "field": "source_manifest",
+      "reason": "BYTE_SHA_IS_LOCAL_ARCHIVE; canonical_sha256 bridges JSON newline differences; local history/FactStore may not be versioned"
+    },
+    {
+      "field": "stock_role_candidates",
+      "reason": "SUPPORT_COUNTS_ARE_OBSERVED_NODE_COUNTS_NOT_FULL_COVERAGE"
+    },
+    {
+      "field": "stock_role_candidates.amount",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "stock_role_candidates.board_height",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "stock_role_candidates.capacity_candidate_score",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "stock_role_candidates.catch_up_score",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "stock_role_candidates.elasticity_score",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "stock_role_candidates.follower_score",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "stock_role_candidates.leader_candidate_score",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "stock_role_candidates.market_cap",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "stock_role_candidates.persistence",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "stock_role_candidates.relative_strength",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "stock_role_candidates.trend_candidate_score",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "theme_candidates.amount",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "theme_candidates.amount",
+      "reason": "THS_RAW_AMOUNT_UNIT_UNVERIFIED"
+    },
+    {
+      "field": "theme_candidates.amount_change",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "theme_candidates.breadth",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "theme_candidates.capacity_strength",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "theme_candidates.failed_limit_count",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "theme_candidates.leader_strength",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "theme_candidates.limit_up_count",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "theme_candidates.persistence_1d",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "theme_candidates.persistence_3d",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "theme_candidates.persistence_5d",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "theme_candidates.return",
+      "reason": "PARTIAL_OR_UNAVAILABLE_OBSERVATIONS"
+    },
+    {
+      "field": "compact",
+      "reason": "BOUNDED_SELECTION_NOT_ABSENCE; consult full packet for omitted evidence"
+    }
+  ],
+  "source_manifest": {
+    "market_packets": {
+      "path": "data/market_packets/2026-09-07.json",
+      "source_date": "2026-09-07",
+      "sha256": "109a921dac9774e39e77a8bc0565622113fce64ec6c53ca5d9bea64f7a2734b9",
+      "canonical_sha256": "8d1f1abe30ae640a27ef888d7d5d60db62cd180fd71a5137a9d6c6d9fbe5ed16",
+      "status": "PARTIAL"
+    },
+    "review_intelligence": {
+      "path": "data/review_intelligence/2026-09-07.json",
+      "source_date": "2026-09-07",
+      "sha256": "fd82f1d72b6a3377ee0f271f94a21a25248c98f0b9df89795853afc0f1addd7a",
+      "canonical_sha256": "2ff75b533c7e3f3bc8d6d32d5fc663537ed3a6fa62174207e75a113f5f5945f3",
+      "status": "PARTIAL"
+    },
+    "capital_preference": {
+      "path": "data/capital_preference/2026-09-07.json",
+      "source_date": "2026-09-07",
+      "sha256": "a22425057d88830aca98934bca43437c6f9f548519acde07506662ee8e3b175e",
+      "canonical_sha256": "0989f3b4e60865cda56432b475672b6c4e37ec977dfeafedfd8643370829024b",
+      "status": "PARTIAL"
+    },
+    "review_context": {
+      "path": "data/review_context/2026-09-07.json",
+      "source_date": "2026-09-07",
+      "sha256": "0a0e2c09fbcbe5a2a22dfcc60dc48046b0e145b331693715e2584d0d7f4ca3f7",
+      "canonical_sha256": "9b2ff0b13af4a45b2a2a1aca4a127b258e36be25b38a8d1024db5bb2babf650e",
+      "status": "PARTIAL"
+    },
+    "formal_review_support": {
+      "path": "data/formal_review_support/2026-09-07.json",
+      "source_date": "2026-09-07",
+      "sha256": "f43ea04554fe935a7ce64a9610b196a71caff3637d536e8f6160ddc0a6cd7189",
+      "canonical_sha256": "ccb7bdeba597858f91139fc854774c3bad95ca56d2de2f2c59bdb02a17ec5383",
+      "status": "PARTIAL"
+    },
+    "auction_packets": {
+      "path": null,
+      "source_date": null,
+      "sha256": null,
+      "status": "UNAVAILABLE"
+    },
+    "previous_market_packet": {
+      "path": "data/market_packets/2026-09-04.json",
+      "source_date": "2026-09-04",
+      "sha256": "4c911460b4a237bce21543edb4ae672ac6bf1d715e86c0071593376cefe95deb",
+      "canonical_sha256": "7b33fea2db78a241febbe94a2ca905c1abf2319c71b1c1fbfa3ef7762c7a0473",
+      "status": "PARTIAL"
+    },
+    "review_intelligence_2026-08-31": {
+      "path": "data/review_intelligence/2026-08-31.json",
+      "source_date": "2026-08-31",
+      "sha256": "3aff91c1054f66b22a47b7454bc21d317e99644a12e0dbfe2780b5dc4e494556",
+      "canonical_sha256": "f07c2852b58ae5e0fcd8f63891dd780604d55c6b88d8183b88f714e02b8760ff",
+      "status": "PARTIAL"
+    },
+    "review_intelligence_2026-09-01": {
+      "path": "data/review_intelligence/2026-09-01.json",
+      "source_date": "2026-09-01",
+      "sha256": "979a376cbe3022d4b0f05cfe51b77d73f9479515e501dfddcbf14f78ea7a1f82",
+      "canonical_sha256": "1cadb5a11f7da94dd795793a18a3bdce632847336ab0e706cf05cdb2097023a4",
+      "status": "PARTIAL"
+    },
+    "review_intelligence_2026-09-02": {
+      "path": "data/review_intelligence/2026-09-02.json",
+      "source_date": "2026-09-02",
+      "sha256": "7bfc5273c21d10d3da4dbc0c811c3ca0d17a877d4c944eb9f744c53a7c56e70b",
+      "canonical_sha256": "a5c350708c2047ae99dadfe4ab7025e526f571213952c68df61e4f79eb9efbb5",
+      "status": "PARTIAL"
+    },
+    "review_intelligence_2026-09-03": {
+      "path": "data/review_intelligence/2026-09-03.json",
+      "source_date": "2026-09-03",
+      "sha256": "a24a5d1047f4d9d9da76eaa606721f24718d23ab0f63f4cd4df776ef9d501040",
+      "canonical_sha256": "5dee51dc9c60ea0407659facbece9501d34e0388966bf849cf6478f5dae4be38",
+      "status": "PARTIAL"
+    },
+    "review_intelligence_2026-09-04": {
+      "path": "data/review_intelligence/2026-09-04.json",
+      "source_date": "2026-09-04",
+      "sha256": "dd0f1faaea746fb8382aaf1fc3ba32e4c434b2941aebc57639d508bab6437bbc",
+      "canonical_sha256": "a7d412e34907c18b31f0c2180f4ca2d7330379fe40ca1fa81b0341194dab1b2e",
+      "status": "PARTIAL"
+    },
+    "daily_fact_partition_0": {
+      "path": "data/facts/dataset=stock_daily_ohlcv/trade_date=2026-09-07/part-d13242bec85afc19.parquet",
+      "source_date": "2026-09-07",
+      "sha256": "4cc85f7a935ff595900111dc6c49573ad9966d9b466dcb80b8ff7cb613534a64",
+      "status": "AVAILABLE"
+    }
+  },
+  "selection_metadata": {
+    "type_filter_applied": false,
+    "available_by_type": {
+      "INDUSTRY": 60,
+      "CONCEPT": 0,
+      "EVENT": 0,
+      "STYLE_TAG": 0,
+      "OWNERSHIP_TAG": 0,
+      "FINANCING_TAG": 0,
+      "PERFORMANCE_TAG": 0,
+      "INDEX_TAG": 0,
+      "OTHER": 0
+    },
+    "retained_by_type": {
+      "INDUSTRY": 10,
+      "CONCEPT": 0,
+      "EVENT": 0,
+      "STYLE_TAG": 0,
+      "OWNERSHIP_TAG": 0,
+      "FINANCING_TAG": 0,
+      "PERFORMANCE_TAG": 0,
+      "INDEX_TAG": 0,
+      "OTHER": 0
+    },
+    "truncated_by_type": {
+      "INDUSTRY": 50,
+      "CONCEPT": 0,
+      "EVENT": 0,
+      "STYLE_TAG": 0,
+      "OWNERSHIP_TAG": 0,
+      "FINANCING_TAG": 0,
+      "PERFORMANCE_TAG": 0,
+      "INDEX_TAG": 0,
+      "OTHER": 0
+    }
+  },
+  "selection": {
+    "method": "amount_desc_then_identity; evidence_risk_first_then_tier",
+    "theme_limit": 10,
+    "stock_limit": 20,
+    "evidence_limit": 30,
+    "full_theme_count": 60,
+    "full_evidence_count": 1
+  }
+}

@@ -205,6 +205,17 @@ class DailyCloseOrchestrator:
         )
         return self._finish(manifest)
 
+    def run_today(self, *, force: bool = False) -> list[dict[str, Any]]:
+        current = self.now().astimezone(SHANGHAI)
+        try:
+            days = self.calendar_loader(current.date())
+        except Exception:
+            return [self.run_date(current.date(), force=force)]
+        is_open = any(row.cal_date == current.date() and row.is_open for row in days)
+        if not is_open or current.time() < CLOSE_READY:
+            return [self.run_date(current.date(), force=force)]
+        return self.run_latest(backfill_missing=True, force=force)
+
     def run_latest(self, *, backfill_missing: bool = False, force: bool = False) -> list[dict[str, Any]]:
         current = self.now().astimezone(SHANGHAI)
         if self.requires_tushare and credential_health(self.root)["tushare_token"] == "MISSING":
@@ -225,14 +236,12 @@ class DailyCloseOrchestrator:
         latest = closed_days[-1]
         if not backfill_missing:
             return [self.run_date(latest, force=force)]
-        completed = {
-            path.stem
-            for path in (self.root / "data" / "review_context").glob("????-??-??.json")
-        }
-        missing = [day for day in closed_days if day.isoformat() not in completed]
-        if completed:
-            anchor = max(completed)
-            missing = [day for day in missing if day.isoformat() > anchor]
+        config_path = self.root / "config/daily_close.json"
+        known = [date.fromisoformat(path.stem) for path in
+                 (self.root / "data/review_context").glob("????-??-??.json")]
+        config = json.loads(config_path.read_text(encoding="utf-8")) if config_path.exists() else {}
+        anchor = date.fromisoformat(config["production_start_date"]) if config.get("production_start_date") else min(known, default=latest)
+        missing = [day for day in closed_days if day >= anchor and not self._delivery_complete(day)]
         if not missing:
             return [self.run_date(latest, force=force)]
         results = []
@@ -243,10 +252,50 @@ class DailyCloseOrchestrator:
                 break
         return results
 
+    def _delivery_complete(self, target: date) -> bool:
+        if not all(self._validate_artifact(name, target)["valid"] for name in ARTIFACTS):
+            return False
+        for name in ("inflection", "review_intelligence", "capital_preference", "review_context"):
+            if not self._compact_valid(name, target):
+                return False
+        for suffix, schema in (("", "chatgpt_review_inputs.schema.json"), ("_compact", "chatgpt_review_inputs_compact.schema.json")):
+            path = self.root / "data/chatgpt_review_inputs" / f"{target}{suffix}.json"
+            try:
+                payload = json.loads(path.read_text(encoding="utf-8"))
+                Draft202012Validator(json.loads((self.root / "schemas" / schema).read_text(encoding="utf-8"))).validate(payload)
+                if _payload_date(payload) != str(target):
+                    return False
+                for reference in payload.get("source_manifest", {}).values():
+                    if not isinstance(reference, dict) or not reference.get("sha256") or not reference.get("path"):
+                        continue
+                    if hashlib.sha256((self.root / reference["path"]).read_bytes()).hexdigest() != reference["sha256"]:
+                        return False
+            except Exception:
+                return False
+        queue_path = self.root / "data/formal_review_queue" / f"{target}.json"
+        manifest_path = self.root / "data/daily_runs" / f"{target}.json"
+        try:
+            queue = json.loads(queue_path.read_text(encoding="utf-8"))
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            return queue.get("trade_date") == str(target) and manifest.get("status") in {"PASS", "PARTIAL"}
+        except (OSError, ValueError):
+            return False
+
+    def _compact_valid(self, name: str, target: date) -> bool:
+        try:
+            payload = json.loads((self.root / "data" / name / f"{target}_compact.json").read_text(encoding="utf-8"))
+            schema = json.loads((self.root / "schemas" / f"{name}_compact.schema.json").read_text(encoding="utf-8"))
+            Draft202012Validator(schema).validate(payload)
+            return _payload_date(payload) == str(target)
+        except Exception:
+            return False
+
     def _execute_step(self, name: str, target: date, *, force: bool) -> dict[str, Any]:
         started = self.now().astimezone(SHANGHAI)
         if not force:
             existing = self._validate_artifact(name, target)
+            if name in {"inflection", "review_intelligence", "capital_preference", "review_context"} and not self._compact_valid(name, target):
+                existing["valid"] = False
             if existing["valid"]:
                 return self._step_record(
                     "PASS" if existing["quality"] == "PASS" else "PARTIAL",
@@ -266,6 +315,8 @@ class DailyCloseOrchestrator:
                 artifact = self._validate_artifact(name, target)
                 if not artifact["valid"]:
                     raise RuntimeError(artifact["error"] or "artifact validation failed")
+                if name in {"inflection", "review_intelligence", "capital_preference", "review_context"} and not self._compact_valid(name, target):
+                    raise RuntimeError(f"same-date compact schema validation failed: {name}")
                 return self._step_record(
                     "PASS" if artifact["quality"] == "PASS" else "PARTIAL",
                     artifact["path"],
@@ -306,7 +357,7 @@ class DailyCloseOrchestrator:
                 error=None,
                 reused=False,
                 sha256=None,
-            ) | result
+            ) | result | {"status": status}
         except Exception as exc:
             return self._step_record(
                 "FAILED",
@@ -349,6 +400,8 @@ class DailyCloseOrchestrator:
                         if hashlib.sha256(upstream_path.read_bytes()).hexdigest() != reference.get("sha256"):
                             raise ValueError("formal support upstream content changed")
             quality = (payload.get("data_quality") or {}).get("status") or "PASS"
+            if quality in {"FAIL", "FAILED", "INVALID", "PARTIAL_WITH_UPSTREAM_FAILURE"}:
+                raise ValueError(f"upstream quality gate failed: {name}={quality}")
             return {
                 "valid": True,
                 "path": str(path),
@@ -386,6 +439,10 @@ class DailyCloseOrchestrator:
         daily = checks.get("全市场日线") or {}
         if daily.get("status") != "PASS":
             raise ValueError("full-market daily rows did not pass the production gate")
+        failed = [row.get("item") for row in checks.values()
+                  if row.get("hard_gate") and row.get("status") not in {"PASS", "EMPTY_VALID"}]
+        if failed:
+            raise ValueError(f"Market Packet production gate failed: {failed}")
         for source in (payload.get("data_quality") or {}).get("sources") or []:
             value = str(source.get("data_date") or "")[:10]
             if value and value > target.isoformat():

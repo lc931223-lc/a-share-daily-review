@@ -1,227 +1,233 @@
 {
   "date": "2026-09-08",
   "run_id": "daily-close:2026-09-08",
+  "workflow_run_attempt": "1",
+  "workflow_retry_count": 0,
+  "credential_health": {
+    "tushare_token": "AVAILABLE"
+  },
+  "source_availability": {
+    "full_market_daily": "FAILED_PRODUCTION_GATE",
+    "tushare_daily_api": "AVAILABLE",
+    "trade_cal": "AVAILABLE",
+    "market_packet_sources": [
+      {
+        "dataset": "limit_up",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "failed_limit",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "limit_down",
+        "status": "UNAVAILABLE",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "previous_limit",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "dragon_tiger_daily",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "northbound_hist",
+        "status": "PASS",
+        "data_date": null
+      },
+      {
+        "dataset": "hsgt_summary",
+        "status": "PASS",
+        "data_date": null
+      },
+      {
+        "dataset": "sse_margin",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "szse_margin",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "szse_margin_detail",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "industry_fund_flow_current",
+        "status": "PASS",
+        "data_date": null
+      },
+      {
+        "dataset": "concept_fund_flow_current",
+        "status": "PASS",
+        "data_date": null
+      },
+      {
+        "dataset": "tushare_credential",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "tushare_trade_cal",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "tushare_stock_basic",
+        "status": "PASS",
+        "data_date": "2026-09-11"
+      },
+      {
+        "dataset": "tushare_daily_all",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "tushare_previous_daily_all",
+        "status": "PASS",
+        "data_date": "2026-09-07"
+      },
+      {
+        "dataset": "daily_price_limits",
+        "status": "FAIL",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "tushare_daily_basic_all",
+        "status": "UNAVAILABLE",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "tushare_adj_factor_all",
+        "status": "UNAVAILABLE",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "limit_down_verification",
+        "status": "PARTIAL",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "stock_top_ohlcv",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "industry_board_daily",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "concept_board_daily",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "official_announcements",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "official_announcements_meta",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "official_policies",
+        "status": "PARTIAL",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "official_policies_meta",
+        "status": "PARTIAL",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "index_000001.SH",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "index_399001.SZ",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "index_399006.SZ",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "index_000688.SH",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "index_899050.BJ",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      }
+    ]
+  },
+  "failed_step": "market_packet",
+  "retry_count": 2,
   "is_trade_day": true,
+  "calendar_status": "CHECKED",
   "market_closed": true,
-  "pipeline_started_at": "2026-09-09T01:28:35.964643+08:00",
-  "pipeline_completed_at": "2026-09-09T01:28:51.834114+08:00",
+  "pipeline_started_at": "2026-09-13T23:59:44.421111+08:00",
+  "pipeline_completed_at": "2026-09-13T23:59:48.337930+08:00",
   "steps": {
-    "market_packet": {
-      "status": "PARTIAL",
-      "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\market_packets\\2026-09-08.json",
-      "source_date": "2026-09-08",
-      "quality": "FAIL",
-      "started_at": "2026-09-09T01:28:35.970593+08:00",
-      "completed_at": "2026-09-09T01:28:35.998553+08:00",
-      "error": null,
-      "retry_count": 0,
-      "reused": true,
-      "provenance_sha256": "8e17f5449e86647dcdd83dd9ad0a1fcc1219f98b3de4a8b7a749a12bcb4c79a6"
-    },
-    "inflection": {
-      "status": "PARTIAL",
-      "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\inflection\\2026-09-08.json",
-      "source_date": "2026-09-08",
-      "quality": "PARTIAL",
-      "started_at": "2026-09-09T01:28:35.998553+08:00",
-      "completed_at": "2026-09-09T01:28:36.026478+08:00",
-      "error": null,
-      "retry_count": 0,
-      "reused": true,
-      "provenance_sha256": "31e8f8f686d9663a8cbe00b639bdc7f5316e0856df1797e46b5c64516446a913"
-    },
-    "review_intelligence": {
-      "status": "PARTIAL",
-      "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\review_intelligence\\2026-09-08.json",
-      "source_date": "2026-09-08",
-      "quality": "PARTIAL",
-      "started_at": "2026-09-09T01:28:36.026478+08:00",
-      "completed_at": "2026-09-09T01:28:36.036419+08:00",
-      "error": null,
-      "retry_count": 0,
-      "reused": true,
-      "provenance_sha256": "0e5f67ccaeeb71ca59c2d3fdaf5e6b9743b30037d3dab6cd36886f2cf81add03"
-    },
-    "capital_preference": {
-      "status": "PARTIAL",
-      "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\capital_preference\\2026-09-08.json",
-      "source_date": "2026-09-08",
-      "quality": "PARTIAL",
-      "started_at": "2026-09-09T01:28:36.036419+08:00",
-      "completed_at": "2026-09-09T01:28:36.098298+08:00",
-      "error": null,
-      "retry_count": 0,
-      "reused": true,
-      "provenance_sha256": "3e6101cd179ca768e2b0244f0f82124891d543d46ec343a3249c3d257a8009f8"
-    },
-    "review_context": {
-      "status": "PARTIAL",
-      "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\review_context\\2026-09-08.json",
-      "source_date": "2026-09-08",
-      "quality": "PARTIAL",
-      "started_at": "2026-09-09T01:28:36.098298+08:00",
-      "completed_at": "2026-09-09T01:28:36.204637+08:00",
-      "error": null,
-      "retry_count": 0,
-      "reused": true,
-      "provenance_sha256": "8725cc6d32b15118e8caf8c2f978f6c6aacbf7705dfe55992da7888a844244a2"
-    },
-    "formal_review_support": {
-      "status": "PARTIAL",
-      "artifact_path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\formal_review_support\\2026-09-08.json",
-      "source_date": "2026-09-08",
-      "quality": "PARTIAL_WITH_UPSTREAM_FAILURE",
-      "started_at": "2026-09-09T01:28:36.204637+08:00",
-      "completed_at": "2026-09-09T01:28:36.238545+08:00",
-      "error": null,
-      "retry_count": 0,
-      "reused": true,
-      "provenance_sha256": "dcfdfd8eb78a0d689f1217dbfb28a56689566e431893413a671dd657dec6a04f"
-    },
-    "auction": {
-      "status": "UNAVAILABLE",
-      "artifact_path": null,
-      "source_date": null,
-      "quality": null,
-      "started_at": "2026-09-09T01:28:36.239544+08:00",
-      "completed_at": "2026-09-09T01:28:36.239544+08:00",
-      "error": null,
-      "retry_count": 0,
-      "reused": false,
-      "provenance_sha256": null,
-      "optional_missing": true
-    },
-    "feedback": {
+    "daily_data_preflight": {
       "status": "PASS",
       "artifact_path": null,
       "source_date": null,
-      "quality": "WAITING",
-      "started_at": "2026-09-09T01:28:36.239544+08:00",
-      "completed_at": "2026-09-09T01:28:51.626670+08:00",
+      "quality": "PASS",
+      "started_at": "2026-09-13T23:59:44.421111+08:00",
+      "completed_at": "2026-09-13T23:59:46.510970+08:00",
       "error": null,
       "retry_count": 0,
       "reused": false,
-      "provenance_sha256": null,
-      "as_of": "2026-09-08",
-      "pending_count": 1,
-      "newly_validated_count": 0,
-      "still_waiting_count": 1,
-      "validated_count": 2,
-      "cycles": [
-        {
-          "prediction_date": "2026-09-04",
-          "previous_status": "PARTIAL_FORWARD_WINDOW",
-          "validation_status": "PARTIAL_FORWARD_WINDOW",
-          "available_horizons": [
-            1
-          ],
-          "review_status": "PARTIAL_REVIEW",
-          "correction_status": "ERRORS_RECORDED"
-        },
-        {
-          "prediction_date": "2026-09-07",
-          "previous_status": "PARTIAL_FORWARD_WINDOW",
-          "validation_status": "PARTIAL_FORWARD_WINDOW",
-          "available_horizons": [
-            1
-          ],
-          "review_status": "PARTIAL_REVIEW",
-          "correction_status": "ERRORS_RECORDED"
-        },
-        {
-          "prediction_date": "2026-09-08",
-          "previous_status": "WAITING_FOR_MARKET_DATA",
-          "validation_status": "WAITING_FOR_MARKET_DATA",
-          "available_horizons": [],
-          "review_status": "WAITING_FOR_VALIDATION",
-          "correction_status": "WAITING_FOR_REVIEW"
-        }
-      ],
-      "formal_review_validation": {
-        "records": [],
-        "prediction_count": 0,
-        "confirmed_count": 0,
-        "partial_count": 0,
-        "failed_count": 0,
-        "not_evaluable_count": 0,
-        "hit_rate": null,
-        "weighted_hit_rate": null,
-        "status": "PREVIOUS_FORMAL_REVIEW_UNAVAILABLE",
-        "source": {
-          "status": "PREVIOUS_FORMAL_REVIEW_UNAVAILABLE",
-          "expected_date": "2026-09-07",
-          "data_date": null,
-          "path": null,
-          "sha256": null
-        },
-        "hypothesis_kind": "FORMAL_REVIEW_HYPOTHESIS"
-      }
+      "provenance_sha256": null
+    },
+    "market_packet": {
+      "status": "FAILED",
+      "artifact_path": null,
+      "source_date": null,
+      "quality": null,
+      "started_at": "2026-09-13T23:59:46.510970+08:00",
+      "completed_at": "2026-09-13T23:59:48.179561+08:00",
+      "error": "RuntimeError: Market Packet production gate failed: ['涨跌停']",
+      "retry_count": 2,
+      "reused": false,
+      "provenance_sha256": null
     }
   },
-  "status": "PARTIAL",
-  "blockers": [],
-  "upstream_warnings": [
+  "status": "FAILED",
+  "blockers": [
     {
       "step": "market_packet",
-      "quality": "FAIL"
-    },
-    {
-      "step": "formal_review_support",
-      "quality": "PARTIAL_WITH_UPSTREAM_FAILURE"
+      "error": "RuntimeError: Market Packet production gate failed: ['涨跌停']",
+      "missing_upstream": []
     }
   ],
+  "upstream_warnings": [],
   "degraded_inputs": [
     {
       "step": "market_packet",
-      "quality": "FAIL",
-      "optional_missing": false
-    },
-    {
-      "step": "inflection",
-      "quality": "PARTIAL",
-      "optional_missing": false
-    },
-    {
-      "step": "review_intelligence",
-      "quality": "PARTIAL",
-      "optional_missing": false
-    },
-    {
-      "step": "capital_preference",
-      "quality": "PARTIAL",
-      "optional_missing": false
-    },
-    {
-      "step": "review_context",
-      "quality": "PARTIAL",
-      "optional_missing": false
-    },
-    {
-      "step": "formal_review_support",
-      "quality": "PARTIAL_WITH_UPSTREAM_FAILURE",
-      "optional_missing": false
-    },
-    {
-      "step": "auction",
       "quality": null,
-      "optional_missing": true
-    },
-    {
-      "step": "feedback",
-      "quality": "WAITING",
       "optional_missing": false
     }
   ],
   "formal_review_imports": [],
-  "formal_review_queue": {
-    "trade_date": "2026-09-08",
-    "objective_support_path": "data/formal_review_support/2026-09-08.json",
-    "review_context_path": "data/review_context/2026-09-08.json",
-    "status": "WAITING_FOR_CHATGPT_REVIEW",
-    "official_review_required": true,
-    "official_review_path": null,
-    "validation_status": "PENDING"
-  },
   "readiness_checks": [
     {
       "name": "real_trading_calendar",
@@ -235,22 +241,22 @@
     },
     {
       "name": "daily_rows_completeness",
-      "passed": true,
+      "passed": false,
       "detail": "Market Packet full-market daily rows passed its hard gate"
     },
     {
       "name": "same_date_core_artifacts",
-      "passed": true,
+      "passed": false,
       "detail": "all generated core artifacts must carry the requested trade date"
     },
     {
       "name": "schema_and_provenance_sha256",
-      "passed": true,
+      "passed": false,
       "detail": "all available core artifacts passed schema validation and have a digest"
     },
     {
       "name": "idempotent_reuse_contract",
-      "passed": true,
+      "passed": false,
       "detail": "validated artifacts are content-addressed and reusable on rerun"
     },
     {
@@ -258,5 +264,192 @@
       "passed": true,
       "detail": "no probable plaintext secrets found"
     }
+  ],
+  "started_at": "2026-09-13T23:59:44.421111+08:00",
+  "completed_at": "2026-09-13T23:59:48.337930+08:00",
+  "blocker": [
+    "RuntimeError: Market Packet production gate failed: ['涨跌停']"
+  ],
+  "source_health": {
+    "full_market_daily": "FAILED_PRODUCTION_GATE",
+    "tushare_daily_api": "AVAILABLE",
+    "trade_cal": "AVAILABLE",
+    "market_packet_sources": [
+      {
+        "dataset": "limit_up",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "failed_limit",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "limit_down",
+        "status": "UNAVAILABLE",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "previous_limit",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "dragon_tiger_daily",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "northbound_hist",
+        "status": "PASS",
+        "data_date": null
+      },
+      {
+        "dataset": "hsgt_summary",
+        "status": "PASS",
+        "data_date": null
+      },
+      {
+        "dataset": "sse_margin",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "szse_margin",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "szse_margin_detail",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "industry_fund_flow_current",
+        "status": "PASS",
+        "data_date": null
+      },
+      {
+        "dataset": "concept_fund_flow_current",
+        "status": "PASS",
+        "data_date": null
+      },
+      {
+        "dataset": "tushare_credential",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "tushare_trade_cal",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "tushare_stock_basic",
+        "status": "PASS",
+        "data_date": "2026-09-11"
+      },
+      {
+        "dataset": "tushare_daily_all",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "tushare_previous_daily_all",
+        "status": "PASS",
+        "data_date": "2026-09-07"
+      },
+      {
+        "dataset": "daily_price_limits",
+        "status": "FAIL",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "tushare_daily_basic_all",
+        "status": "UNAVAILABLE",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "tushare_adj_factor_all",
+        "status": "UNAVAILABLE",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "limit_down_verification",
+        "status": "PARTIAL",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "stock_top_ohlcv",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "industry_board_daily",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "concept_board_daily",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "official_announcements",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "official_announcements_meta",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "official_policies",
+        "status": "PARTIAL",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "official_policies_meta",
+        "status": "PARTIAL",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "index_000001.SH",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "index_399001.SZ",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "index_399006.SZ",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "index_000688.SH",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      },
+      {
+        "dataset": "index_899050.BJ",
+        "status": "PASS",
+        "data_date": "2026-09-08"
+      }
+    ]
+  },
+  "upstream_available": [],
+  "upstream_missing": [
+    "market_packet",
+    "inflection",
+    "review_intelligence",
+    "capital_preference",
+    "review_context",
+    "formal_review_support",
+    "chatgpt_review_inputs"
   ]
 }

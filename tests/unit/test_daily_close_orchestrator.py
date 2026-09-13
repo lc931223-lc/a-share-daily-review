@@ -16,6 +16,8 @@ def _schemas(root: Path):
     folder.mkdir()
     for _, schema in ARTIFACTS.values():
         (folder / schema).write_text('{"type":"object"}', encoding="utf-8")
+    for name in ("inflection", "review_intelligence", "capital_preference", "review_context"):
+        (folder / f"{name}_compact.schema.json").write_text('{"type":"object"}', encoding="utf-8")
     source = Path(__file__).resolve().parents[2] / "schemas" / "daily_run_manifest.schema.json"
     (folder / source.name).write_text(source.read_text(encoding="utf-8"), encoding="utf-8")
 
@@ -54,6 +56,8 @@ def _write_artifact(root, name, target, *, source_date=None, quality="PASS"):
             )
         } | {"auction_packet": {"status": "UNAVAILABLE", "data_date": None}}
     path.write_text(json.dumps(payload), encoding="utf-8")
+    if name in {"inflection", "review_intelligence", "capital_preference", "review_context"}:
+        path.with_name(f"{target.isoformat()}_compact.json").write_text(json.dumps(payload), encoding="utf-8")
 
 
 def _runners(root, calls, fail_market_once=False):
@@ -186,7 +190,7 @@ def test_backfill_runs_missing_trading_days_in_order(tmp_path):
         runners=_runners(tmp_path, calls),
     )
     results = pipeline.run_latest(backfill_missing=True)
-    assert [row["date"] for row in results] == ["2026-09-07", "2026-09-08"]
+    assert [row["date"] for row in results] == ["2026-09-04", "2026-09-07", "2026-09-08"]
     assert all(row["status"] == "PASS" for row in results)
 
 

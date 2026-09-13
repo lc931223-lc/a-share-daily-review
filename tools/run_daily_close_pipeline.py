@@ -23,11 +23,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--force", action="store_true", help="Regenerate valid existing artifacts")
     args = parser.parse_args(argv)
     pipeline = DailyCloseOrchestrator()
-    results = (
-        [pipeline.run_date(date.fromisoformat(args.date), force=args.force)]
-        if args.date
-        else pipeline.run_latest(backfill_missing=args.backfill_missing, force=args.force)
-    )
+    if args.date:
+        results = [pipeline.run_date(date.fromisoformat(args.date), force=args.force)]
+    elif args.latest or args.backfill_missing:
+        results = pipeline.run_latest(backfill_missing=args.backfill_missing, force=args.force)
+    else:
+        results = pipeline.run_today(force=args.force)
     for result in results:
         print(
             json.dumps(
