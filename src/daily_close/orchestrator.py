@@ -4,6 +4,8 @@ import hashlib
 import json
 import os
 import re
+import time as time_module
+from copy import deepcopy
 from collections.abc import Callable
 from datetime import date, datetime, time
 from pathlib import Path
@@ -33,6 +35,7 @@ FINAL_STATUSES = {
     "FAILED",
     "NON_TRADING_DAY",
     "MARKET_NOT_CLOSED",
+    "DATA_NOT_READY",
 }
 
 ARTIFACTS = {
@@ -55,6 +58,8 @@ class DailyCloseOrchestrator:
         runners: dict[str, Callable[[date], Any]] | None = None,
         max_retries: int = 2,
         requires_tushare: bool | None = None,
+        data_retry_delays: tuple[int, ...] = (60, 180, 600),
+        sleep: Callable[[float], None] = time_module.sleep,
     ):
         self.root = root
         self.now = now or (lambda: datetime.now(SHANGHAI))
@@ -64,6 +69,8 @@ class DailyCloseOrchestrator:
             )
         )
         self.max_retries = max_retries
+        self.data_retry_delays = data_retry_delays
+        self.sleep = sleep
         self.runners = self._default_runners() | (runners or {})
         self.native_market_producer = "market_packet" not in (runners or {})
         # Injected market producers may be offline fixtures or non-Tushare sources.
@@ -118,13 +125,35 @@ class DailyCloseOrchestrator:
 
         if self.requires_tushare and self.native_market_producer:
             health = daily_api_health(target)
+            attempts = 0
+            for delay in self.data_retry_delays:
+                if health != "DATA_NOT_READY":
+                    break
+                manifest["source_availability"]["tushare_daily_api"] = health
+                manifest["status"] = "DATA_NOT_READY"
+                manifest["failed_step"] = "daily_data_preflight"
+                manifest["blockers"] = [{"step": "daily_data_preflight", "error": "TUSHARE_DAILY_DATA_NOT_READY"}]
+                manifest["steps"]["daily_data_preflight"] = self._step_record(
+                    "DATA_NOT_READY", None, target, None, started, attempts,
+                    "TUSHARE_DAILY_DATA_NOT_READY", False, None)
+                manifest["next_retry_delay_seconds"] = delay
+                self._finish(deepcopy(manifest))
+                self.sleep(delay)
+                attempts += 1
+                health = daily_api_health(target)
+            manifest.pop("next_retry_delay_seconds", None)
+            manifest.update(status="BLOCKED", failed_step=None, blockers=[])
+            manifest["steps"]["daily_data_preflight"] = self._step_record(
+                "PASS" if health == "AVAILABLE" else health, None, target,
+                "PASS" if health == "AVAILABLE" else None, started, attempts,
+                None if health == "AVAILABLE" else "TUSHARE_DAILY_" + health, False, None)
             manifest["source_availability"]["tushare_daily_api"] = health
             manifest["source_availability"]["trade_cal"] = "AVAILABLE"
             if health != "AVAILABLE":
                 blocker = "TUSHARE_DAILY_" + health
-                manifest.update(status="FAILED", failed_step="credential_preflight")
-                manifest["blockers"].append({"step": "credential_preflight", "error": blocker})
-                manifest["steps"]["credential_preflight"] = self._step_record("FAILED", None, target, None, started, 0, blocker, False, None)
+                manifest.update(status="DATA_NOT_READY" if health == "DATA_NOT_READY" else "FAILED", failed_step="daily_data_preflight")
+                manifest["source_availability"]["full_market_daily"] = health
+                manifest["blockers"].append({"step": "daily_data_preflight", "error": blocker})
                 return self._finish(manifest)
 
         manifest["formal_review_imports"] = import_inbox(self.root)
@@ -210,7 +239,7 @@ class DailyCloseOrchestrator:
         for day in missing:
             result = self.run_date(day, force=force)
             results.append(result)
-            if result["status"] in {"BLOCKED", "FAILED"}:
+            if result["status"] in {"BLOCKED", "FAILED", "DATA_NOT_READY"}:
                 break
         return results
 

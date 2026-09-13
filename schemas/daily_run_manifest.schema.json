@@ -25,7 +25,7 @@
         "required": ["status", "artifact_path", "source_date", "quality", "started_at", "completed_at", "error", "retry_count"]
       }
     },
-    "status": {"enum": ["PASS", "PARTIAL", "BLOCKED", "FAILED", "NON_TRADING_DAY", "MARKET_NOT_CLOSED"]},
+    "status": {"enum": ["PASS", "PARTIAL", "BLOCKED", "FAILED", "NON_TRADING_DAY", "MARKET_NOT_CLOSED", "DATA_NOT_READY"]},
     "blockers": {"type": "array"},
     "readiness_checks": {
       "type": "array",

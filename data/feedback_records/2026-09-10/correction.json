@@ -2,9 +2,9 @@
   "meta": {
     "schema_version": "integrated_correction.1",
     "prediction_date": "2026-09-10",
-    "status": "WAITING_FOR_REVIEW"
+    "status": "ERRORS_RECORDED"
   },
-  "review_status": "WAITING_FOR_VALIDATION",
+  "review_status": "PARTIAL_REVIEW",
   "registered_error_types": [
     "DATA_LIMITATION"
   ],

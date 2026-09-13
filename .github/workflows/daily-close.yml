@@ -3,6 +3,10 @@ name: A-share daily close production
 on:
   schedule:
     - cron: "30 7 * * 1-5"
+    - cron: "45 7 * * 1-5"
+    - cron: "15 8 * * 1-5"
+    - cron: "0 9 * * 1-5"
+    - cron: "0 12 * * 1-5"
   workflow_dispatch:
     inputs:
       trade_date:
@@ -73,6 +77,8 @@ jobs:
             fi
             # Missing credentials cannot be repaired by sleeping and retrying.
             [[ "$code" == "3" ]] && exit 3
+            # Data retries are bounded inside the CLI; a later schedule can retry.
+            [[ "$code" == "4" ]] && exit 4
             [[ "$attempt" == "3" ]] && exit 1
             sleep $((attempt * 60))
           done

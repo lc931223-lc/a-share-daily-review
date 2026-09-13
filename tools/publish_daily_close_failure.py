@@ -31,7 +31,7 @@ def failed_manifests(root, run_id, attempt):
             attempt
         ):
             continue
-        if value.get("status") not in {"FAILED", "BLOCKED", "MARKET_NOT_CLOSED", "NON_TRADING_DAY"}:
+        if value.get("status") not in {"FAILED", "BLOCKED", "MARKET_NOT_CLOSED", "NON_TRADING_DAY", "DATA_NOT_READY"}:
             continue
         if (
             not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value.get("date", ""))

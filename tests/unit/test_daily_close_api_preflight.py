@@ -23,7 +23,7 @@ def test_provider_error_is_classified_without_leak(message, status):
 
 
 @pytest.mark.parametrize("rows,status", [
-    ([], "EMPTY_RESPONSE"),
+    ([], "DATA_NOT_READY"),
     ([{"trade_date": "20260908"}], "SOURCE_DATE_MISMATCH"),
     ([{"trade_date": "20260909"}], "AVAILABLE"),
 ])
@@ -59,9 +59,76 @@ def test_native_api_failure_persists_and_stops_collection(tmp_path, monkeypatch)
     pipeline = DailyCloseOrchestrator(tmp_path, now=lambda: datetime(2026, 9, 8, 16, tzinfo=SHANGHAI), calendar_loader=lambda _: _calendar())
     result = pipeline.run_date(date(2026, 9, 8))
     assert result["status"] == "FAILED"
-    assert result["failed_step"] == "credential_preflight"
+    assert result["failed_step"] == "daily_data_preflight"
     assert result["blocker"] == ["TUSHARE_DAILY_PERMISSION_DENIED"]
     stored = json.loads((tmp_path / "data/daily_runs/2026-09-08.json").read_text(encoding="utf-8"))
     assert stored["source_health"]["tushare_daily_api"] == "PERMISSION_DENIED"
     assert "fixture-only-secret" not in json.dumps(stored)
     assert not (tmp_path / "data/review_context").exists()
+
+
+@pytest.mark.parametrize("health_sequence,expected,delays", [
+    (["DATA_NOT_READY"] * 4, "DATA_NOT_READY", [1, 2, 3]),
+    (["DATA_NOT_READY", "AVAILABLE"], "AVAILABLE", [1]),
+    (["AUTH_FAILED"], "AUTH_FAILED", []),
+])
+def test_data_not_ready_retries_without_credential_failure(tmp_path, monkeypatch, health_sequence, expected, delays):
+    from datetime import datetime
+    from src.daily_close.orchestrator import DailyCloseOrchestrator
+    from tests.unit.test_daily_close_orchestrator import _schemas, _calendar, SHANGHAI
+    from tools.publish_daily_close_failure import failed_manifests
+    _schemas(tmp_path)
+    monkeypatch.setenv("TUSHARE_TOKEN", "fixture-only-secret")
+    states = iter(health_sequence)
+    monkeypatch.setattr("src.daily_close.orchestrator.daily_api_health", lambda _: next(states))
+    waits = []
+    path = tmp_path / "data/daily_runs/2026-09-08.json"
+
+    def sleep(delay):
+        pending = json.loads(path.read_text(encoding="utf-8"))
+        assert pending["status"] == "DATA_NOT_READY"
+        assert pending["credential_health"] == {"tushare_token": "AVAILABLE"}
+        waits.append(delay)
+
+    pipeline = DailyCloseOrchestrator(tmp_path,
+        now=lambda: datetime(2026, 9, 8, 16, tzinfo=SHANGHAI),
+        calendar_loader=lambda _: _calendar(), data_retry_delays=(1, 2, 3), sleep=sleep)
+    calls = []
+    def market(name, target, **kwargs):
+        calls.append(name)
+        return pipeline._step_record("FAILED", None, target, None, pipeline.now(), 0,
+            "FIXTURE_STOP_AFTER_RECOVERED_PREFLIGHT", False, None)
+    monkeypatch.setattr(pipeline, "_execute_step", market)
+    result = pipeline.run_date(date(2026, 9, 8))
+    assert waits == delays
+    assert result["source_health"]["tushare_daily_api"] == expected
+    assert result["credential_health"] == {"tushare_token": "AVAILABLE"}
+    assert result["retry_count"] == len(delays)
+    assert result["failed_step"] != "credential_preflight"
+    assert calls == (["market_packet"] if expected == "AVAILABLE" else [])
+    assert "fixture-only-secret" not in path.read_text(encoding="utf-8")
+    assert not (tmp_path / "data/review_context").exists()
+    if expected == "DATA_NOT_READY":
+        assert result["status"] == "DATA_NOT_READY"
+        assert failed_manifests(tmp_path, result["run_id"], result["workflow_run_attempt"]) == [path]
+    if expected == "AVAILABLE":
+        assert not any(row["step"] == "daily_data_preflight" for row in result["degraded_inputs"])
+
+
+def test_data_not_ready_has_distinct_cli_exit(monkeypatch):
+    from tools import run_daily_close_pipeline as cli
+    class Pipeline:
+        def run_date(self, *args, **kwargs):
+            return dict(date="2026-09-11", status="DATA_NOT_READY", manifest_path="fixture",
+                        blockers=[{"error": "TUSHARE_DAILY_DATA_NOT_READY"}],
+                        credential_health={"tushare_token": "AVAILABLE"})
+    monkeypatch.setattr(cli, "DailyCloseOrchestrator", Pipeline)
+    assert cli.main(["--date", "2026-09-11"]) == 4
+
+
+def test_delayed_workflow_schedule_and_exit_boundary():
+    from pathlib import Path
+    workflow = (Path(__file__).resolve().parents[2] / ".github/workflows/daily-close.yml").read_text(encoding="utf-8")
+    for cron in ("45 7", "15 8", "0 9", "0 12"):
+        assert f'{cron} * * 1-5' in workflow
+    assert '[[ "$code" == "4" ]] && exit 4' in workflow

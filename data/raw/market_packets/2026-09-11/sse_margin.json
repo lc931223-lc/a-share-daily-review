@@ -1,0 +1,30 @@
+{
+  "source": "sse.official.queryMargin",
+  "dataset": "sse_margin",
+  "retrieved_at": "2026-09-13T15:36:45.488163+00:00",
+  "cache_created_at": "2026-09-13T15:36:45.488163+00:00",
+  "last_attempt_at": "2026-09-13T15:36:45.488163+00:00",
+  "data_date": "2026-09-11",
+  "rows": [
+    {
+      "ROWNUM_": null,
+      "opDate": "20260911",
+      "rqchl": null,
+      "rqmcl": 86905311,
+      "rqyl": 3129288693,
+      "rqylje": 18472436352,
+      "rw": null,
+      "rzche": 91945168248,
+      "rzmre": 85672994649,
+      "rzrqjyzl": 1349537114167,
+      "rzye": 1331064677815,
+      "securityAbbr": null,
+      "stockCode": null
+    }
+  ],
+  "quality": "PASS",
+  "error": null,
+  "error_type": null,
+  "retry_after": null,
+  "sha256": "86d90223a3289ff46979ee15c8d7108c5780025be32fb004603d159951ad5e0b"
+}

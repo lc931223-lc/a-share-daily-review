@@ -4,14 +4,17 @@
     "prediction_date": "2026-09-04",
     "status": "PARTIAL_REVIEW"
   },
-  "correct_parts": [],
+  "correct_parts": [
+    "Existing leader candidates include a positive five-day result.",
+    "Evaluable existing theme candidate baskets are not negative at five days."
+  ],
   "incorrect_parts": [],
   "error_type": [
     "DATA_LIMITATION"
   ],
   "actual_market_state": {
     "return_1d": 0.00925315,
-    "return_5d": null,
+    "return_5d": -0.02233887,
     "return_10d": null,
     "return_20d": null
   },
@@ -22,7 +25,7 @@
         "300308.SZ"
       ],
       "return_1d": 0.10375921,
-      "return_5d": null,
+      "return_5d": 0.13759214,
       "return_10d": null,
       "return_20d": null
     },
@@ -34,7 +37,7 @@
         "600975.SH"
       ],
       "return_1d": 0.06818452,
-      "return_5d": null,
+      "return_5d": -0.00698427,
       "return_10d": null,
       "return_20d": null
     },
@@ -45,7 +48,7 @@
         "600506.SH"
       ],
       "return_1d": -0.02309132,
-      "return_5d": null,
+      "return_5d": -0.07884832,
       "return_10d": null,
       "return_20d": null
     },
@@ -56,7 +59,7 @@
         "600354.SH"
       ],
       "return_1d": 0.10068966,
-      "return_5d": null,
+      "return_5d": 0.17580302,
       "return_10d": null,
       "return_20d": null
     },
@@ -67,7 +70,7 @@
         "002862.SZ"
       ],
       "return_1d": 0.02795147,
-      "return_5d": null,
+      "return_5d": -0.02796425,
       "return_10d": null,
       "return_20d": null
     },
@@ -78,7 +81,7 @@
         "600802.SH"
       ],
       "return_1d": -0.00629837,
-      "return_5d": null,
+      "return_5d": 0.00587115,
       "return_10d": null,
       "return_20d": null
     },
@@ -89,7 +92,7 @@
         "002186.SZ"
       ],
       "return_1d": 0.05964477,
-      "return_5d": null,
+      "return_5d": -0.02039073,
       "return_10d": null,
       "return_20d": null
     },
@@ -99,7 +102,7 @@
         "920075.BJ"
       ],
       "return_1d": -0.05956848,
-      "return_5d": null,
+      "return_5d": -0.18761726,
       "return_10d": null,
       "return_20d": null
     },
@@ -114,7 +117,7 @@
         "603151.SH"
       ],
       "return_1d": 0.02679871,
-      "return_5d": null,
+      "return_5d": -0.04660605,
       "return_10d": null,
       "return_20d": null
     },
@@ -124,7 +127,7 @@
         "603162.SH"
       ],
       "return_1d": -0.03483607,
-      "return_5d": null,
+      "return_5d": -0.03278689,
       "return_10d": null,
       "return_20d": null
     },
@@ -134,7 +137,7 @@
         "000892.SZ"
       ],
       "return_1d": 0.04830054,
-      "return_5d": null,
+      "return_5d": -0.1627907,
       "return_10d": null,
       "return_20d": null
     },
@@ -144,7 +147,7 @@
         "002403.SZ"
       ],
       "return_1d": 0.1001773,
-      "return_5d": null,
+      "return_5d": -0.06648936,
       "return_10d": null,
       "return_20d": null
     },
@@ -154,7 +157,7 @@
         "002868.SZ"
       ],
       "return_1d": -0.00542005,
-      "return_5d": null,
+      "return_5d": -0.09020519,
       "return_10d": null,
       "return_20d": null
     },
@@ -164,7 +167,7 @@
         "002702.SZ"
       ],
       "return_1d": 0.09982175,
-      "return_5d": null,
+      "return_5d": -0.03386809,
       "return_10d": null,
       "return_20d": null
     },
@@ -174,7 +177,7 @@
         "603122.SH"
       ],
       "return_1d": 0.01474926,
-      "return_5d": null,
+      "return_5d": -0.09660767,
       "return_10d": null,
       "return_20d": null
     },
@@ -184,7 +187,7 @@
         "000798.SZ"
       ],
       "return_1d": 0.09960552,
-      "return_5d": null,
+      "return_5d": 0.04635108,
       "return_10d": null,
       "return_20d": null
     },
@@ -194,7 +197,7 @@
         "000592.SZ"
       ],
       "return_1d": 0.05073431,
-      "return_5d": null,
+      "return_5d": 0.03471295,
       "return_10d": null,
       "return_20d": null
     },
@@ -204,7 +207,7 @@
         "603696.SH"
       ],
       "return_1d": 0.09980172,
-      "return_5d": null,
+      "return_5d": -0.04163913,
       "return_10d": null,
       "return_20d": null
     },
@@ -216,7 +219,7 @@
         "601579.SH"
       ],
       "return_1d": -0.0214107,
-      "return_5d": null,
+      "return_5d": -0.03655902,
       "return_10d": null,
       "return_20d": null
     },
@@ -227,7 +230,7 @@
         "605577.SH"
       ],
       "return_1d": 0.09990348,
-      "return_5d": null,
+      "return_5d": 0.07375643,
       "return_10d": null,
       "return_20d": null
     },
@@ -238,7 +241,7 @@
         "601086.SH"
       ],
       "return_1d": 0.1004179,
-      "return_5d": null,
+      "return_5d": 0.22730233,
       "return_10d": null,
       "return_20d": null
     }

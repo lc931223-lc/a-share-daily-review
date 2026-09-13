@@ -47,6 +47,8 @@ def main(argv: list[str] | None = None) -> int:
         for blocker in row["blockers"]
     ):
         return 3
+    if any(row["status"] == "DATA_NOT_READY" for row in results):
+        return 4
     return 0 if results and all(row["status"] in {"PASS", "PARTIAL"} for row in results) else 2
 
 

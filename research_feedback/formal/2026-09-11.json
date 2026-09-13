@@ -1,0 +1,47 @@
+{
+  "records": [
+    {
+      "hypothesis": "弱市中的独立强度能否延续",
+      "expected_condition": "竞价板块正向广度>=60%，且新力金融相对强度继续为正",
+      "actual_result": null,
+      "result": "NOT_EVALUABLE",
+      "evidence": [],
+      "reason": "No machine-readable predicate; free-text conditions require explicit evaluation",
+      "hypothesis_kind": "FORMAL_REVIEW_HYPOTHESIS"
+    },
+    {
+      "hypothesis": "突破结构是否保持",
+      "expected_condition": "桂林旅游竞价量能>=自身历史60分位且竞价后不快速失守",
+      "actual_result": null,
+      "result": "NOT_EVALUABLE",
+      "evidence": [],
+      "reason": "No machine-readable predicate; free-text conditions require explicit evaluation",
+      "hypothesis_kind": "FORMAL_REVIEW_HYPOTHESIS"
+    },
+    {
+      "hypothesis": "防御/消费轮动是否获得容量确认",
+      "expected_condition": "克明食品竞价量能>=自身历史60分位且板块正向广度>=55%",
+      "actual_result": null,
+      "result": "NOT_EVALUABLE",
+      "evidence": [],
+      "reason": "No machine-readable predicate; free-text conditions require explicit evaluation",
+      "hypothesis_kind": "FORMAL_REVIEW_HYPOTHESIS"
+    }
+  ],
+  "prediction_count": 3,
+  "confirmed_count": 0,
+  "partial_count": 0,
+  "failed_count": 0,
+  "not_evaluable_count": 3,
+  "hit_rate": null,
+  "weighted_hit_rate": null,
+  "status": "FORMAL_REVIEW_HYPOTHESES_LOADED",
+  "source": {
+    "status": "AVAILABLE",
+    "expected_date": "2026-09-10",
+    "data_date": "2026-09-10",
+    "path": "D:\\桌面\\新建文件夹\\a_share_daily_review_codex-sync\\data\\formal_reviews\\2026-09-10.json",
+    "sha256": "98820e055a2effd0870fa2b38facf5790c6ba8828a5d19b72af8cd6695ce1ac2"
+  },
+  "hypothesis_kind": "FORMAL_REVIEW_HYPOTHESIS"
+}

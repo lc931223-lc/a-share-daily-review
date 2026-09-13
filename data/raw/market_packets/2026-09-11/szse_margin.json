@@ -1,0 +1,14 @@
+{
+  "source": "szse.official.ShowReport",
+  "dataset": "szse_margin",
+  "retrieved_at": "2026-09-13T15:36:45.715933+00:00",
+  "cache_created_at": "2026-09-13T15:36:45.715933+00:00",
+  "last_attempt_at": "2026-09-13T15:36:45.715933+00:00",
+  "data_date": "2026-09-11",
+  "rows": [],
+  "quality": "FAIL",
+  "error": "empty response",
+  "error_type": "empty",
+  "retry_after": "2026-09-13T16:06:45.715933+00:00",
+  "sha256": "12edd9c952b2e77aaa429117fdb6f7c1578c40dbefb47608475206213682a382"
+}

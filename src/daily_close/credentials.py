@@ -35,7 +35,7 @@ def daily_api_health(target, client=None):
             client = ts.pro_api(os.environ["TUSHARE_TOKEN"], timeout=20)
         frame = client.daily(trade_date=target.strftime("%Y%m%d"))
         if frame is None or frame.empty:
-            return "EMPTY_RESPONSE"
+            return "DATA_NOT_READY"
         if "trade_date" not in frame or not frame.trade_date.astype(str).eq(target.strftime("%Y%m%d")).all():
             return "SOURCE_DATE_MISMATCH"
         return "AVAILABLE"
