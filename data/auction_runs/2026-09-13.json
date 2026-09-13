@@ -1,0 +1,43 @@
+{
+  "trade_date": "2026-09-13",
+  "started_at": "2026-09-13T19:22:44.550453+08:00",
+  "auction_frozen_at": null,
+  "report_generated_at": null,
+  "post_open_started_at": null,
+  "post_open_completed_at": null,
+  "eod_completed_at": null,
+  "status": "GIT_SYNC_PENDING",
+  "failures": [],
+  "retry_count": 0,
+  "packet_path": null,
+  "compact_path": null,
+  "workflow_run_id": null,
+  "stage": "GIT_SYNC_PENDING",
+  "script_started_at": "2026-09-13T19:22:44.544469+08:00",
+  "scheduler_triggered_at": "2026-09-13T19:22:43.2498823+08:00",
+  "last_successful_stage": "GIT_SYNC_PENDING",
+  "stage_history": [
+    {
+      "timestamp": "2026-09-13T19:22:44.551451+08:00",
+      "event": "SCHEDULER_STARTED",
+      "script_started_at": "2026-09-13T19:22:44.544469+08:00",
+      "scheduler_triggered_at": "2026-09-13T19:22:43.2498823+08:00"
+    },
+    {
+      "timestamp": "2026-09-13T19:22:48.688046+08:00",
+      "event": "PREFLIGHT_RUNNING"
+    },
+    {
+      "timestamp": "2026-09-13T19:22:48.698963+08:00",
+      "event": "NOT_STARTED"
+    },
+    {
+      "timestamp": "2026-09-13T19:22:48.704114+08:00",
+      "event": "GIT_SYNC_PENDING",
+      "git_sync_started_at": "2026-09-13T19:22:48.704114+08:00",
+      "local_report_status": "UNAVAILABLE"
+    }
+  ],
+  "git_sync_started_at": "2026-09-13T19:22:48.704114+08:00",
+  "local_report_status": "UNAVAILABLE"
+}
