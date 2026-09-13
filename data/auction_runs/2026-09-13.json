@@ -6,16 +6,16 @@
   "post_open_started_at": null,
   "post_open_completed_at": null,
   "eod_completed_at": null,
-  "status": "GIT_SYNC_PENDING",
+  "status": "PUSHED",
   "failures": [],
   "retry_count": 0,
   "packet_path": null,
   "compact_path": null,
   "workflow_run_id": null,
-  "stage": "GIT_SYNC_PENDING",
+  "stage": "PUSHED",
   "script_started_at": "2026-09-13T19:22:44.544469+08:00",
   "scheduler_triggered_at": "2026-09-13T19:22:43.2498823+08:00",
-  "last_successful_stage": "GIT_SYNC_PENDING",
+  "last_successful_stage": "PUSHED",
   "stage_history": [
     {
       "timestamp": "2026-09-13T19:22:44.551451+08:00",
@@ -36,8 +36,22 @@
       "event": "GIT_SYNC_PENDING",
       "git_sync_started_at": "2026-09-13T19:22:48.704114+08:00",
       "local_report_status": "UNAVAILABLE"
+    },
+    {
+      "timestamp": "2026-09-13T19:22:59.940993+08:00",
+      "event": "PUSHED",
+      "sync_status": "PUSHED",
+      "git_sync_result": "PASS",
+      "push_result": "PASS",
+      "distributed_commit": "f5a4046b4ff6c22160d59e0323835c69d391026a",
+      "git_sync_completed_at": "2026-09-13T19:22:59.939996+08:00"
     }
   ],
   "git_sync_started_at": "2026-09-13T19:22:48.704114+08:00",
-  "local_report_status": "UNAVAILABLE"
+  "local_report_status": "UNAVAILABLE",
+  "sync_status": "PUSHED",
+  "git_sync_result": "PASS",
+  "push_result": "PASS",
+  "distributed_commit": "f5a4046b4ff6c22160d59e0323835c69d391026a",
+  "git_sync_completed_at": "2026-09-13T19:22:59.939996+08:00"
 }
