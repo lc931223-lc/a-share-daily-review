@@ -18,6 +18,7 @@ from src.opportunity_radar.feedback import measure, market_validation_rows
 from src.opportunity_radar.relations import transmission_paths
 from src.opportunity_radar.schema import schema
 from src.opportunity_radar.storage import ObservationStore, receipt_matches
+from src.opportunity_radar.company_evidence import valid_relation
 
 LIMITS = {"positive_change_candidates": 20, "negative_risk_candidates": 10, "theme_candidates": 15,
           "company_specific_candidates": 20, "commodity_observations": 20, "macro_observations": 15,
@@ -36,7 +37,7 @@ def mechanical_key(row):
 def candidates(observations):
     positive, negative = [], []
     for row in observations:
-        if row.get("facts", {}).get("observation_mode") in {"RETROSPECTIVE_SERIES", "SYNTHETIC_TEST"}:
+        if row.get("facts", {}).get("observation_mode") in {"RETROSPECTIVE_SERIES", "HISTORICAL_BACKFILL", "DERIVED_CURRENT_AS_OF", "SYNTHETIC_TEST"}:
             continue
         if row.get("facts", {}).get("period_basis") == "YTD":
             continue
@@ -85,6 +86,19 @@ def validate(packet):
 
 def compact(packet):
     result = copy.deepcopy(packet)
+    for company in result["company_specific_candidates"]:
+        if "score_version" not in company:
+            continue
+        company["evidence"] = company["evidence"][:3]
+        company["verified_relations"] = company["verified_relations"][:2]
+        for edge in company["verified_relations"]:
+            edge["evidence"] = (edge.get("evidence") or "")[:180]
+        company["expectation_revision"] = company["expectation_revision"][-1:]
+        company["evidence_location"] = "FULL_PACKET_AND_SOURCE_RECEIPTS_FOR_COMPLETE_SUPPORT"
+    for theme in result["theme_candidates"]:
+        for key in ("supporting_observations", "contradicting_observations"):
+            if key in theme:
+                theme[key] = theme[key][:8]
     preference_order = {}
     for field, cap in (("negative_risk_candidates", 10), ("company_specific_candidates", 20), ("positive_change_candidates", 20)):
         for row in result[field][:cap]:
@@ -176,8 +190,24 @@ def _freeze_receipt(full, small, packet):
 
 
 def _verify_sources(root, packet):
-    for source in packet["source_manifest"]:
+    sources = list(packet["source_manifest"])
+    # Verify both sides of a guidance comparison and nested candidate evidence.
+    def nested(value):
+        if isinstance(value, dict):
+            if value.get("source_path") and value.get("provenance", {}).get("sha256"):
+                sources.append({"path": value["source_path"], "provenance": value["provenance"]})
+            for child in value.values():
+                nested(child)
+        elif isinstance(value, list):
+            for child in value:
+                nested(child)
+    nested(packet)
+    checked = set()
+    for source in sources:
         sha = (source.get("provenance") or {}).get("sha256")
+        if sha in checked:
+            continue
+        checked.add(sha)
         original = Path(root) / str(source.get("path") or "")
         archive = Path(root) / "data/raw/opportunity_radar/provenance" / f"{sha}.json"
         if not any(p.is_file() and p.resolve().is_relative_to(Path(root).resolve()) and receipt_matches(p.read_bytes(), sha) for p in (original, archive)):
@@ -238,6 +268,8 @@ class RadarPipeline:
         relation_path = self.root / "data/reference/opportunity_relations.json"
         edges = json.loads(relation_path.read_text(encoding="utf-8")) if relation_path.exists() else []
         for edge in edges:
+            if edge.get("relation_status") and not valid_relation(edge):
+                continue
             if edge.get("source_tier") == 4 or not edge.get("evidence"):
                 raise ValueError("UNVERIFIED_PRODUCTION_RELATION")
             _verify_sources(self.root, {"source_manifest": [{"path": edge.get("source_path"), "provenance": edge.get("provenance")} ]})
@@ -273,6 +305,13 @@ class RadarPipeline:
                   "signal_history": [{k: r[k] for k in ("observation_id", "entity", "metric", "value", "source_date", "first_seen_at")} for r in history if visible(r, cutoff)],
                   "lead_time_statistics": measure(combined, market_validation_rows(history, opens, cutoff), opens, day),
                   "data_gaps": gaps, "source_manifest": list(manifest.values())}
+        if (self.root / "config/opportunity_radar_evidence_sources.json").exists():
+            from src.opportunity_radar.objective_scoring import enrich_candidates, freshness
+            companies, themes = enrich_candidates(selected, edges, cutoff, packet["company_specific_candidates"], packet["theme_candidates"])
+            packet["company_specific_candidates"], packet["theme_candidates"] = companies, themes
+            for field in CATEGORIES.values():
+                for row in packet[field]:
+                    row["facts"]["freshness"] = freshness(row, cutoff)
         validate(packet)
         return packet
 

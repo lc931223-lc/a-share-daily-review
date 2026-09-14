@@ -59,7 +59,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           if [[ "$RESULT" == success ]]; then
-            for path in data/opportunity_radar data/raw/opportunity_radar data/facts/dataset=opportunity_observation data/reference/opportunity_relations.json; do
+            for path in data/opportunity_radar data/raw/opportunity_radar data/facts/dataset=opportunity_observation data/facts/dataset=stock_daily_ohlcv data/reference/opportunity_relations.json; do
               if [[ -e "$path" ]]; then git add -f -- "$path"; fi
             done
           elif [[ -d data/opportunity_radar/diagnostics ]]; then

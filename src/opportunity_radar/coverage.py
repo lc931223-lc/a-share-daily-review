@@ -2,6 +2,7 @@
 from collections import Counter
 
 from src.opportunity_radar.contracts import CATEGORIES, stamp, visible, evidence_eligible
+from src.opportunity_radar.objective_scoring import freshness
 
 
 def coverage_matrix(rows, cutoff):
@@ -19,6 +20,8 @@ def coverage_matrix(rows, cutoff):
             "production_status": "PARTIAL" if group else "UNAVAILABLE",
             "latest_observation_date": max((r["source_date"] for r in group), default=None),
             "observation_count": len(group), "evidence_observation_count": len(body),
+            "stale_observation_count": sum(freshness(r, cutoff)["status"] == "STALE" for r in group),
+            "backfill_observation_count": sum(r.get("facts", {}).get("observation_mode") in {"HISTORICAL_BACKFILL", "RETROSPECTIVE_SERIES"} for r in group),
             "major_gaps": sorted({g for r in group for g in r.get("data_gaps", [])}) or [
                 "CONTINUOUS_COVERAGE_NOT_PROVEN" if group else "NO_PRODUCTION_OBSERVATIONS"],
         })

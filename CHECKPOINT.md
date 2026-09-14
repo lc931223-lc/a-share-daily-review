@@ -1500,3 +1500,16 @@ Regenerated a larger black Songti-style version:
 - Formal September 7 review remains unavailable; do not invent a September 7-8 formal hit rate or lifecycle transition.
 - Details: `docs/daily-close-forward-acceptance.md`; machine-readable example: `reports/daily_close_acceptance/2026-09-14.json`.
 - Not complete: historical September 8 data verification is still required for uninterrupted backfill.
+
+## 2026-09-15 Opportunity Radar Evidence Enrichment
+
+- Added objective company evidence, issuer guidance comparisons, terminal economic
+  relations, decomposed evidence scores and existing-FactStore price features.
+- Real September 15 Morning full/compact/coverage/receipt generated; evidence
+  coverage remains PARTIAL despite all 16 categories having records.
+- Existing September 10/11/14 LIVE freezes preserved. September 14 enhanced EOD is
+  explicitly a replay; no September 15 EOD has been fabricated.
+- Acceptance and full top-20 evidence detail: `reports/opportunity_radar_acceptance/2026-09-15_morning.json`.
+- Methodology/limits: `docs/radar-company-evidence-acceptance.md`.
+- Compile PASS; focused tests 208 passed; full tests 623 passed and 1 legacy real-data
+  quality-gate skip. No Auction, Formal Review or Daily Close scoring changed.

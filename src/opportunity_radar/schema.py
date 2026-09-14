@@ -31,6 +31,7 @@ def schema():
                                 "first_seen_at": {"type": "string"}}}
     for key in ("theme_candidates", "company_specific_candidates", "positive_change_candidates", "negative_risk_candidates"):
         top[key]["items"] = candidate
+    candidate["properties"]["objective_opportunity_score"] = {"type": ["number", "null"], "minimum": 0, "maximum": 100}
     top["lead_time_statistics"]["required"] = ["records", "status"]
     top["lead_time_statistics"]["properties"] = {"records": {"type": "array", "items": {
         "type": "object", "required": ["entity", "signal_type", "lead_trading_days"],

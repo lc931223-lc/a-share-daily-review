@@ -50,7 +50,9 @@ def latest_changes(rows, cutoff):
     for row in rows:
         if visible(row, cutoff):
             key = tuple(row.get(k) for k in ("signal_type", "entity", "metric", "source", "unit", "currency"))
-            if row["value"] is None:
+            versioned_fact = row["signal_type"] == "EXPECTATION_REVISION" and row["facts"].get("period")
+            versioned_fact = versioned_fact or (row["signal_type"] == "VALUATION_FUNDAMENTAL_DIVERGENCE" and "stock_return_20d" in row["facts"])
+            if row["value"] is None and not versioned_fact:
                 key += (row["observation_id"],)
             groups[key].append(row)
     result = []
@@ -87,7 +89,7 @@ def latest_changes(rows, cutoff):
                 field = {"revenue_yoy": "revenue_acceleration", "profit_yoy": "profit_acceleration"}.get(metric)
                 if field:
                     latest["facts"][field] = numeric[-1]-2*numeric[-2]+numeric[-3]
-        if latest["signal_type"] == "VALUATION_FUNDAMENTAL_DIVERGENCE":
+        if latest["signal_type"] == "VALUATION_FUNDAMENTAL_DIVERGENCE" and "stock_return_20d" not in latest["facts"]:
             latest["facts"]["divergence_candidate"] = divergence(number(latest["facts"].get("fundamental_delta")), number(latest["facts"].get("return_5d")))
         latest["history_references"] = [r["observation_id"] for r in ordered]
         result.append(latest)

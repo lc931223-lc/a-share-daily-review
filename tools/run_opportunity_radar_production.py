@@ -46,6 +46,10 @@ def run(root, day, snapshot, *, replay=False):
         if not fresh:
             raise ValueError("NO_CURRENT_SOURCE_OBSERVATIONS")
         pipeline.store.append(fresh)
+        from src.opportunity_radar.objective_features import collect_price_evidence
+        prices, price_receipt = collect_price_evidence(root, day, snapshot)
+        pipeline.store.append(prices)
+        receipt["sources"].append(price_receipt)
         from src.opportunity_radar.contracts import digest
         relation_path = root / "data/reference/opportunity_relations.json"
         prior = json.loads(relation_path.read_text(encoding="utf-8")) if relation_path.exists() else []
@@ -80,4 +84,5 @@ if __name__ == "__main__":
     now = datetime.now(SHANGHAI)
     day = now.date() if args.date == "auto" else date.fromisoformat(args.date)
     snapshot = ("MORNING" if now.hour < 12 else "EOD") if args.snapshot == "AUTO" else args.snapshot
-    print(json.dumps(run(ROOT, day, snapshot, replay=args.replay), ensure_ascii=False))
+    result = run(ROOT, day, snapshot, replay=args.replay)
+    print(json.dumps({k: result.get(k) for k in ("trade_date", "snapshot", "status", "full", "compact", "mode", "blocker")}, ensure_ascii=False))

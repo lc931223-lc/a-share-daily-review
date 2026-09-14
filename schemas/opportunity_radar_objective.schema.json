@@ -223,6 +223,14 @@
           },
           "first_seen_at": {
             "type": "string"
+          },
+          "objective_opportunity_score": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 100
           }
         }
       }
@@ -310,6 +318,14 @@
           },
           "first_seen_at": {
             "type": "string"
+          },
+          "objective_opportunity_score": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 100
           }
         }
       }
@@ -397,6 +413,14 @@
           },
           "first_seen_at": {
             "type": "string"
+          },
+          "objective_opportunity_score": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 100
           }
         }
       }
@@ -484,6 +508,14 @@
           },
           "first_seen_at": {
             "type": "string"
+          },
+          "objective_opportunity_score": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 100
           }
         }
       }

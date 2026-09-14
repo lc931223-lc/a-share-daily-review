@@ -8,6 +8,10 @@
 
 ## 功能
 
+Opportunity Radar 的公司正文证据、预期对照、客观评分与真实快照验收见
+[证据补强验收说明](docs/radar-company-evidence-acceptance.md)。评分不是最终机会排名；
+16 类信号有记录不代表数据完整，未知敞口、估值和预期保持 null。
+
 竞价生产化 A2.1 的时间轴、运行约束、正式复盘导入队列和验收结果见
 [生产验收记录](docs/audits/2026-09-09-auction-a21-production.md)。09:25 报告冻结后，
 post-open 与 EOD 结果独立存储，不覆盖原始竞价评分。当前 Live 验收待真实交易日完成。

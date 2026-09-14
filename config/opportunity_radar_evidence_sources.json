@@ -1,0 +1,25 @@
+{
+  "version": "radar-evidence-sources.1",
+  "watchlist_semantics": "DISCOVERY_SCOPE_NOT_VERIFIED_RELATIONS",
+  "issuers": [
+    ["300308", "中际旭创", "光通信"], ["300502", "新易盛", "光通信"],
+    ["300394", "天孚通信", "光通信"], ["688498", "源杰科技", "光通信"],
+    ["688313", "仕佳光子", "光通信"], ["002281", "光迅科技", "光通信"],
+    ["002916", "深南电路", "PCB/CCL"], ["600183", "生益科技", "PCB/CCL"],
+    ["002463", "沪电股份", "PCB/CCL"], ["300476", "胜宏科技", "PCB/CCL"],
+    ["300408", "三环集团", "MLCC"], ["600460", "士兰微", "半导体"],
+    ["300604", "长川科技", "探针/测试"], ["688200", "华峰测控", "探针/测试"],
+    ["688206", "概伦电子", "探针/测试"], ["688525", "佰维存储", "存储"],
+    ["688110", "东芯股份", "存储"], ["688008", "澜起科技", "存储"],
+    ["600584", "长电科技", "先进封装"], ["002156", "通富微电", "先进封装"],
+    ["300054", "鼎龙股份", "先进封装"], ["002837", "英维克", "液冷"]
+  ],
+  "official_releases": [
+    {"source":"AMD_IR","stock_code":"AMD.US","stock_name":"AMD","theme":"AI芯片","published_at":"2026-05-05","url":"https://ir.amd.com/news-events/press-releases/detail/1284/amd-reports-first-quarter-2026-financial-results"},
+    {"source":"AMD_IR","stock_code":"AMD.US","stock_name":"AMD","theme":"AI芯片","published_at":"2026-08-04","url":"https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results"},
+    {"source":"NVIDIA_NEWSROOM","stock_code":"NVDA.US","stock_name":"NVIDIA","theme":"AI芯片","published_at":"2026-05-31","url":"https://nvidianews.nvidia.com/news/vera-rubin-full-production-agentic-ai-factory"}
+  ],
+  "discovery_feeds": [
+    {"source":"AMD_IR","stock_code":"AMD.US","stock_name":"AMD","theme":"AI芯片","url":"https://ir.amd.com/news-events/press-releases"}
+  ]
+}

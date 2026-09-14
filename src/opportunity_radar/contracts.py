@@ -31,7 +31,7 @@ FINAL_STATES = set("DISCOVERED EARLY WATCH PRE_HEAT CONFIRMED CROWDED INVALIDATE
 STAGES = {
     "CAPACITY_AND_UTILIZATION": "ANNOUNCED_CAPACITY UNDER_CONSTRUCTION COMMISSIONING PRODUCTION_STARTED EFFECTIVE_OUTPUT".split(),
     "POLICY_AND_FISCAL": "GUIDANCE PLAN FUNDING IMPLEMENTATION PROJECT TENDER PROCUREMENT TAX_INCENTIVE SUBSIDY REGULATORY_RELAXATION REGULATORY_TIGHTENING".split(),
-    "TECHNOLOGY_BREAKTHROUGH": "LAB ENGINEERING_SAMPLE PRODUCT_VALIDATION CUSTOMER_VALIDATION SMALL_BATCH MASS_PRODUCTION".split(),
+    "TECHNOLOGY_BREAKTHROUGH": "LAB RESEARCH ENGINEERING_SAMPLE PRODUCT_VALIDATION CUSTOMER_VALIDATION SMALL_BATCH SMALL_SCALE_PRODUCTION MASS_PRODUCTION RAPID_PENETRATION".split(),
     "PRODUCT_COMMERCIALIZATION": "RESEARCH LAB_VALIDATION ENGINEERING_SAMPLE PRODUCT_VALIDATION CUSTOMER_VALIDATION SMALL_BATCH MASS_PRODUCTION COMMERCIAL_REVENUE SCALE_REVENUE".split(),
     "CUSTOMER_AND_ORDER": "CUSTOMER_VALIDATION CUSTOMER_ENTRY FRAMEWORK_AGREEMENT TENDER_WIN ORDER_CONFIRMED SHIPMENT_CONFIRMED REVENUE_CONFIRMED ORDER_CANCELLED CUSTOMER_LOSS CUSTOMER_EXPANSION".split(),
     "M&A_AND_CAPITAL_OPERATION": "INTENTION PLAN BOARD_APPROVED REGULATORY_ACCEPTED APPROVED CLOSED".split(),
@@ -114,13 +114,17 @@ def visible(row, cutoff):
     event = str(row.get("event_date") or "")[:10]
     if event and event > cutoff.date().isoformat():
         return False
+    if seen and event and event > seen.date().isoformat():
+        return False
     return bool(seen and seen <= cutoff and (not published or published <= cutoff)
                 and source_day and source_day <= cutoff.date().isoformat())
 
 
 def evidence_eligible(row):
     facts = row.get("facts") or {}
-    if facts.get("body_parsed") and row.get("stock_code") and facts.get("parser_version") != "DISCLOSURE_BODY_V21_3":
+    if facts.get("parser_version") == "COMPANY_EVIDENCE_V2" and row.get("signal_type") == "TECHNOLOGY_BREAKTHROUGH" and len(row.get("body_evidence") or "") > 600 and row.get("source") not in {"AMD_IR", "NVIDIA_NEWSROOM"}:
+        return False
+    if facts.get("body_parsed") and row.get("stock_code") and facts.get("parser_version") not in {"DISCLOSURE_BODY_V21_3", "COMPANY_EVIDENCE_V2"}:
         return False
     if row.get("source") == "NBS" and row.get("metric") == "reported_production":
         return False
@@ -137,7 +141,7 @@ def normalize(row):
         raise ValueError("INVALID_SOURCE_TIER")
     if source_tier == 1:
         host = (urlparse(row.get("url") or "").hostname or "").lower()
-        official = ("gov.cn", "cninfo.com.cn", "sse.com.cn", "szse.cn", "bse.cn", "pbc.gov.cn")
+        official = ("gov.cn", "cninfo.com.cn", "sse.com.cn", "szse.cn", "bse.cn", "pbc.gov.cn", "ir.amd.com", "nvidianews.nvidia.com")
         if not any(host == d or host.endswith("." + d) for d in official):
             source_tier = 4
     facts = {key: None for key in FIELDS[category].split()}

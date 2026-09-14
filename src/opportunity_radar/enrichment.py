@@ -49,8 +49,22 @@ def fetch(root, source, url, session):
         raise ValueError("SOURCE_BODY_TOO_LARGE")
     seen = datetime.now(SHANGHAI).isoformat()
     is_pdf = response.content.startswith(b"%PDF")
-    text = pdf_text(response.content) if is_pdf else response.content.decode(response.encoding if response.encoding and response.encoding.lower() != "iso-8859-1" else "utf-8", errors="replace")
     raw_sha = hashlib.sha256(response.content).hexdigest()
+    if is_pdf:
+        cache = getattr(session, "_radar_pdf_text", None)
+        if cache is None:
+            cache = {}
+            for path in (root / "data/raw/opportunity_radar/body_receipts").glob("*.json"):
+                old = json.loads(path.read_text(encoding="utf-8"))
+                if old.get("raw_sha256") and old.get("extracted_text") and digest(old) == path.stem:
+                    cache[old["raw_sha256"]] = old["extracted_text"]
+            session._radar_pdf_text = cache
+        text = cache.get(raw_sha)
+        if text is None:
+            text = pdf_text(response.content)
+            cache[raw_sha] = text
+    else:
+        text = response.content.decode(response.encoding if response.encoding and response.encoding.lower() != "iso-8859-1" else "utf-8", errors="replace")
     binary = root / "data/raw/opportunity_radar/bodies" / (raw_sha + (".pdf" if is_pdf else ".bin"))
     binary.parent.mkdir(parents=True, exist_ok=True)
     if not binary.exists():
@@ -64,7 +78,7 @@ def fetch(root, source, url, session):
 
 
 def observation(base, category, entity, metric, value, published, facts=None, **extra):
-    facts = {"observation_mode": "LIVE_OBSERVED", "revision_version": base["provenance"]["raw_sha256"],
+    facts = {"observation_mode": "LIVE_OBSERVED", "revision_version": base["provenance"].get("raw_sha256") or base["provenance"]["sha256"],
              "update_frequency": "SOURCE_RELEASE", **(facts or {})}
     return {**base, "signal_type": category, "entity": entity, "metric": metric, "value": value,
             "published_at": published, "source_date": published[:10], "event_date": published[:10],
@@ -204,6 +218,7 @@ def collect_enrichment(root, day, *, session=None, max_disclosures=50):
     session = session or requests.Session()
     session.headers.update({"User-Agent": "a-share-daily-review public-data-research https://github.com/lc931223-lc/a-share-daily-review"})
     rows, diagnostics, relations = [], [], []
+    expectation_inputs = []
 
     def collect(name, url, tier, parser):
         try:
@@ -236,6 +251,15 @@ def collect_enrichment(root, day, *, session=None, max_disclosures=50):
     collect("SEC", REGISTRY["sec"]["url"], 2, parse_sec)
     seed_path = root / "config/opportunity_radar_disclosures.json"
     seeds = json.loads(seed_path.read_text(encoding="utf-8")) if seed_path.exists() else []
+    from src.opportunity_radar.evidence_collection import discover_issuers, collect_official_releases
+    if (root / "config/opportunity_radar_evidence_sources.json").exists():
+        discovered, discovery_receipts = discover_issuers(root, day, session)
+        seeds += discovered
+        diagnostics.extend(discovery_receipts)
+        official, official_receipts, official_edges = collect_official_releases(root, day, session)
+        rows.extend(official)
+        diagnostics.extend(official_receipts)
+        relations.extend(official_edges)
     disclosures = {r["url"]: ("announcements", r) for r in seeds if r["published_at"][:10] <= str(day)}
     try:
         response = session.post(REGISTRY["cninfo"]["url"], data={"pageNum": 1, "pageSize": 30,
@@ -285,8 +309,17 @@ def collect_enrichment(root, day, *, session=None, max_disclosures=50):
                 stock_code=item["stock_code"], stock_name=item.get("stock_name"), theme=item.get("theme"), title=item["title"], body_evidence=e["body_evidence"]) for e in events]
             edge_base = {**base, "published_at": published, "source_date": published, "event_date": published}
             relations.extend(verified_body_relations(body, item.get("stock_name") or item["stock_code"], item["stock_code"], edge_base))
+            from src.opportunity_radar.company_evidence import body_facts, issuer_expectations
+            extra, economic_edges = body_facts(body, {**item, "published_at": published}, base)
+            expectation_inputs.extend(issuer_expectations(body, {**item, "published_at": published}, base, extra))
+            relations.extend(economic_edges)
+            parsed.extend(observation(base, e["signal_type"], item["stock_code"], e["metric"], e["value"], published, e["facts"],
+                stock_code=item["stock_code"], stock_name=item.get("stock_name"), theme=e["theme"],
+                title=item["title"], body_evidence=e["body_evidence"]) for e in extra)
             return parsed
         collect(item.get("source") or item.get("agency") or "OfficialDisclosure", url, 1, parse)
+    from src.opportunity_radar.evidence_collection import paired_expectation_rows
+    rows.extend(paired_expectation_rows(expectation_inputs))
     diagnostics.extend({"source": key, "status": "UNAVAILABLE", "rows": 0, "reason": reason,
                         "impact": "No substitute data or inferred confirmation", "retry_status": "NOT_CONNECTED"}
                        for key, reason in UNCONNECTED.items())
