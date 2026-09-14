@@ -1,0 +1,1138 @@
+{
+  "trade_date": "2026-09-14",
+  "snapshot": "EOD",
+  "observed_at": "2026-09-14T16:24:01.922501+08:00",
+  "status": "PARTIAL",
+  "run_id": "34822459429",
+  "retry_count": 0,
+  "sources": [
+    {
+      "source": "焦煤连续",
+      "status": "PARTIAL",
+      "rows": 368,
+      "fetched_at": "2026-09-14T16:24:08.847100+08:00",
+      "path": "data/raw/opportunity_radar/焦煤连续/8530ff84ce1397c4ac790d9b0637f4c76a34f98c16989e857f9b7987dee20e67.json",
+      "sha256": "c8977492cd572758dba642745bbf6d89dd62999c4af98fe6721b45d726364f21",
+      "gap": "PUBLICATION_TIMESTAMP_UNAVAILABLE; backfilled series excluded from earlier as-of replay"
+    },
+    {
+      "source": "焦炭连续",
+      "status": "PARTIAL",
+      "rows": 368,
+      "fetched_at": "2026-09-14T16:24:09.545015+08:00",
+      "path": "data/raw/opportunity_radar/焦炭连续/9de0144b51dbe2edd2cfc826bb8e7a592a48dbbdc91f70a32f67e393630dcb5d.json",
+      "sha256": "6b13d3f64c9ca0f3e726f8968928604efb9d2de09cef8f3eeb8750a6ec8a2be8",
+      "gap": "PUBLICATION_TIMESTAMP_UNAVAILABLE; backfilled series excluded from earlier as-of replay"
+    },
+    {
+      "source": "玉米连续",
+      "status": "PARTIAL",
+      "rows": 368,
+      "fetched_at": "2026-09-14T16:24:10.293944+08:00",
+      "path": "data/raw/opportunity_radar/玉米连续/db6055f497fea825d665f2fab845f0eab02a244aaea46e5774df2f0f1877a893.json",
+      "sha256": "84f3ff47a41834ce2523bdf64e536def1f0d207b86f757f1ef6277fee5ff9585",
+      "gap": "PUBLICATION_TIMESTAMP_UNAVAILABLE; backfilled series excluded from earlier as-of replay"
+    },
+    {
+      "source": "豆粕连续",
+      "status": "PARTIAL",
+      "rows": 368,
+      "fetched_at": "2026-09-14T16:24:10.898028+08:00",
+      "path": "data/raw/opportunity_radar/豆粕连续/aebcef8d82322313b8d5f56dca3921adcb4b820845c1bb2433f32c8547013c87.json",
+      "sha256": "f6646be571392bde49b5a4d2c01b50eb0466b96036a6ce158168d2d041b94e19",
+      "gap": "PUBLICATION_TIMESTAMP_UNAVAILABLE; backfilled series excluded from earlier as-of replay"
+    },
+    {
+      "source": "甲醇连续",
+      "status": "PARTIAL",
+      "rows": 368,
+      "fetched_at": "2026-09-14T16:24:11.374413+08:00",
+      "path": "data/raw/opportunity_radar/甲醇连续/f9ec5a7220c5abbf45ad2a6eb82f3023b3593e809f64d2f43d7b3fd719f4e76c.json",
+      "sha256": "9b03991c2e9d353e4f640e32c1a2bf684a9c71090c2489e44d5fa03ac96dbd5b",
+      "gap": "PUBLICATION_TIMESTAMP_UNAVAILABLE; backfilled series excluded from earlier as-of replay"
+    },
+    {
+      "source": "铜连续",
+      "status": "PARTIAL",
+      "rows": 368,
+      "fetched_at": "2026-09-14T16:24:12.492228+08:00",
+      "path": "data/raw/opportunity_radar/铜连续/df2ea3accc341411ff229c9f198c9ab58abb8acb29a8199a2fac473f9f1e9644.json",
+      "sha256": "58d02865c72c666786da846ed5795108ef8d5f440b70dae9234301e27c891231",
+      "gap": "PUBLICATION_TIMESTAMP_UNAVAILABLE; backfilled series excluded from earlier as-of replay"
+    },
+    {
+      "source": "铝连续",
+      "status": "PARTIAL",
+      "rows": 369,
+      "fetched_at": "2026-09-14T16:24:13.062872+08:00",
+      "path": "data/raw/opportunity_radar/铝连续/cdf3f178d989fa8d471a85c667d025c3856fe6c76022d4f39b1ef5fd86db4f70.json",
+      "sha256": "3af5b492daca5e7633a86667d64a3eec14042a1ade8214ef4780d03f44c49502",
+      "gap": "PUBLICATION_TIMESTAMP_UNAVAILABLE; backfilled series excluded from earlier as-of replay"
+    },
+    {
+      "source": "BDI",
+      "status": "PARTIAL",
+      "rows": 376,
+      "fetched_at": "2026-09-14T16:24:14.232444+08:00",
+      "path": "data/raw/opportunity_radar/BDI/fb030e155f1a32879204f9ca44fa55bfabbe5cf68d08ff2a384ec7f1a50776a9.json",
+      "sha256": "7254fc3e55c8c9d1796658a67d2afccccf98e3cd344cfee2427f1a4327c6e0f8",
+      "gap": "PUBLICATION_TIMESTAMP_UNAVAILABLE; backfilled series excluded from earlier as-of replay"
+    },
+    {
+      "source": "NBS",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "NBS",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202609/t20260914_1965293.html",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 100,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "NBS",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202609/t20260909_1965263.html",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 2,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "NBS",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202609/t20260909_1965262.html",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 2,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "NBS",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202609/t20260903_1965182.html",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 100,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "NBS",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202608/t20260831_1965154.html",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 2,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "NBS",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202608/t20260821_1965093.html",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 100,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "NBS",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202607/t20260715_1964130.html",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 38,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "NBS",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202608/t20260817_1965051.html",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 12,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "DRAMeXchange",
+      "url": "https://www.dramexchange.com/",
+      "source_tier": 3,
+      "status": "PARTIAL",
+      "rows": 17,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "TWSE",
+      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap05_L",
+      "source_tier": 2,
+      "status": "PARTIAL",
+      "rows": 10,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "TPEX",
+      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap05_O",
+      "source_tier": 2,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "SSLError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "SEC",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+      "source_tier": 2,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "CNINFO_DISCOVERY",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "Overnight discovery incomplete; archive reuse only",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "深交所",
+      "url": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-28/328c12d7-c3e9-4280-a2c2-9a37c15cff4f.PDF",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 80,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491753.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-11/1225558464.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-11/1225557583.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-11/1225558923.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-11/1225558924.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-11/1225558931.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-11/1225558934.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-11/1225558922.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-11/1225556826.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-11/1225559384.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-11/1225561564.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-11/1225560976.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "财政部",
+      "url": "http://jrs.mof.gov.cn/zhengcefabu/phjr/202609/t20260911_3997257.htm",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-10/1225555342.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-10/1225555563.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-10/1225556291.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-10/1225555617.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-09/1225552964.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-09/1225554212.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-09/1225554366.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-09/1225554442.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-09/1225554443.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-09/1225554451.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-08/1225552135.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-08/1225550562.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-08/1225550558.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-08/1225552534.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-08/1225551451.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-08/1225550660.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-08/1225551035.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-08/1225550782.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-04/1225546543.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-04/1225546430.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-04/1225546425.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-04/1225546424.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-04/1225546636.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-04/1225547087.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-03/1225543867.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-03/1225544975.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-03/1225544973.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-03/1225544974.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-03/1225544417.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-03/1225544757.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-03/1225544901.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-03/1225544910.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-03/1225544906.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-03/1225544909.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-02/1225541286.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "http://static.cninfo.com.cn/finalpage/2026-09-02/1225541283.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "consensus_estimates",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "No licensed stable consensus feed; research title counts are not estimates",
+      "impact": "No substitute data or inferred confirmation",
+      "retry_status": "NOT_CONNECTED"
+    },
+    {
+      "source": "memory_contract_HBM",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "Public spot quotes do not cover licensed contracts, HBM price or supply",
+      "impact": "No substitute data or inferred confirmation",
+      "retry_status": "NOT_CONNECTED"
+    },
+    {
+      "source": "inventory",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "No operational point-in-time inventory feed; production is not inventory",
+      "impact": "No substitute data or inferred confirmation",
+      "retry_status": "NOT_CONNECTED"
+    },
+    {
+      "source": "optical_800G_1600G",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "Annual disclosures are available, but shipment/price/Capex time series are not connected",
+      "impact": "No substitute data or inferred confirmation",
+      "retry_status": "NOT_CONNECTED"
+    },
+    {
+      "source": "pcb_material_prices",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "Issuer total revenue is not CCL, copper foil or glass cloth price",
+      "impact": "No substitute data or inferred confirmation",
+      "retry_status": "NOT_CONNECTED"
+    },
+    {
+      "source": "mlcc_utilization_lead_time",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "Company disclosures are not continuous channel inventory/utilization data",
+      "impact": "No substitute data or inferred confirmation",
+      "retry_status": "NOT_CONNECTED"
+    },
+    {
+      "source": "probe_HBM_orders",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "Issuer monthly revenue is not probe-card orders or HBM test demand",
+      "impact": "No substitute data or inferred confirmation",
+      "retry_status": "NOT_CONNECTED"
+    },
+    {
+      "source": "overseas_IR",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "Samsung, SK hynix, Japanese suppliers and cloud Capex IR adapters not connected",
+      "impact": "No substitute data or inferred confirmation",
+      "retry_status": "NOT_CONNECTED"
+    },
+    {
+      "source": "macro_vintages",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "Only retained NBS publication bodies; original first-release vintage and FX/rate feeds incomplete",
+      "impact": "No substitute data or inferred confirmation",
+      "retry_status": "NOT_CONNECTED"
+    },
+    {
+      "source": "historic_lead_time",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "Cold-start series have no original first-seen history",
+      "impact": "No substitute data or inferred confirmation",
+      "retry_status": "NOT_CONNECTED"
+    }
+  ],
+  "full": "data/opportunity_radar/2026-09-14_eod.json",
+  "compact": "data/opportunity_radar/2026-09-14_eod_compact.json",
+  "mode": "LIVE",
+  "coverage": {
+    "matrix": [
+      {
+        "signal_type": "COMMODITY_PRICE",
+        "schema_supported": true,
+        "live_source_count": 2,
+        "historical_source_count": 2,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          1,
+          3
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-09-14",
+        "observation_count": 4521,
+        "evidence_observation_count": 4521,
+        "major_gaps": [
+          "published_at"
+        ]
+      },
+      {
+        "signal_type": "SUPPLY_DEMAND",
+        "schema_supported": true,
+        "live_source_count": 1,
+        "historical_source_count": 0,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          1
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-08-17",
+        "observation_count": 6,
+        "evidence_observation_count": 6,
+        "major_gaps": [
+          "CONTINUOUS_COVERAGE_NOT_PROVEN"
+        ]
+      },
+      {
+        "signal_type": "CAPACITY_AND_UTILIZATION",
+        "schema_supported": true,
+        "live_source_count": 2,
+        "historical_source_count": 1,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          1
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-09-10",
+        "observation_count": 27,
+        "evidence_observation_count": 27,
+        "major_gaps": [
+          "CONTINUOUS_COVERAGE_NOT_PROVEN"
+        ]
+      },
+      {
+        "signal_type": "POLICY_AND_FISCAL",
+        "schema_supported": true,
+        "live_source_count": 1,
+        "historical_source_count": 1,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          1
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-09-11",
+        "observation_count": 3,
+        "evidence_observation_count": 1,
+        "major_gaps": [
+          "quantitative_or_body_evidence"
+        ]
+      },
+      {
+        "signal_type": "TECHNOLOGY_BREAKTHROUGH",
+        "schema_supported": true,
+        "live_source_count": 0,
+        "historical_source_count": 0,
+        "point_in_time_available": false,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [],
+        "production_status": "UNAVAILABLE",
+        "latest_observation_date": null,
+        "observation_count": 0,
+        "evidence_observation_count": 0,
+        "major_gaps": [
+          "NO_PRODUCTION_OBSERVATIONS"
+        ]
+      },
+      {
+        "signal_type": "PRODUCT_COMMERCIALIZATION",
+        "schema_supported": true,
+        "live_source_count": 0,
+        "historical_source_count": 2,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          1
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-08-28",
+        "observation_count": 49,
+        "evidence_observation_count": 49,
+        "major_gaps": [
+          "CONTINUOUS_COVERAGE_NOT_PROVEN"
+        ]
+      },
+      {
+        "signal_type": "CUSTOMER_AND_ORDER",
+        "schema_supported": true,
+        "live_source_count": 1,
+        "historical_source_count": 2,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          1
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-09-11",
+        "observation_count": 58,
+        "evidence_observation_count": 53,
+        "major_gaps": [
+          "quantitative_or_body_evidence"
+        ]
+      },
+      {
+        "signal_type": "REVENUE_PROFIT_MARGIN",
+        "schema_supported": true,
+        "live_source_count": 1,
+        "historical_source_count": 2,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          1
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-09-10",
+        "observation_count": 36,
+        "evidence_observation_count": 35,
+        "major_gaps": [
+          "quantitative_or_body_evidence"
+        ]
+      },
+      {
+        "signal_type": "EXPECTATION_REVISION",
+        "schema_supported": true,
+        "live_source_count": 0,
+        "historical_source_count": 0,
+        "point_in_time_available": false,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [],
+        "production_status": "UNAVAILABLE",
+        "latest_observation_date": null,
+        "observation_count": 0,
+        "evidence_observation_count": 0,
+        "major_gaps": [
+          "NO_PRODUCTION_OBSERVATIONS"
+        ]
+      },
+      {
+        "signal_type": "INDUSTRY_COMPETITION",
+        "schema_supported": true,
+        "live_source_count": 0,
+        "historical_source_count": 0,
+        "point_in_time_available": false,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [],
+        "production_status": "UNAVAILABLE",
+        "latest_observation_date": null,
+        "observation_count": 0,
+        "evidence_observation_count": 0,
+        "major_gaps": [
+          "NO_PRODUCTION_OBSERVATIONS"
+        ]
+      },
+      {
+        "signal_type": "M&A_AND_CAPITAL_OPERATION",
+        "schema_supported": true,
+        "live_source_count": 1,
+        "historical_source_count": 2,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          1
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-09-10",
+        "observation_count": 86,
+        "evidence_observation_count": 78,
+        "major_gaps": [
+          "quantitative_or_body_evidence"
+        ]
+      },
+      {
+        "signal_type": "SHAREHOLDER_MANAGEMENT_ACTION",
+        "schema_supported": true,
+        "live_source_count": 1,
+        "historical_source_count": 2,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          1
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-09-11",
+        "observation_count": 74,
+        "evidence_observation_count": 64,
+        "major_gaps": [
+          "quantitative_or_body_evidence"
+        ]
+      },
+      {
+        "signal_type": "OVERSEAS_LEAD",
+        "schema_supported": true,
+        "live_source_count": 2,
+        "historical_source_count": 0,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          2
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-09-13",
+        "observation_count": 26,
+        "evidence_observation_count": 26,
+        "major_gaps": [
+          "CONTINUOUS_COVERAGE_NOT_PROVEN"
+        ]
+      },
+      {
+        "signal_type": "MACRO_LIQUIDITY_FX_RATES",
+        "schema_supported": true,
+        "live_source_count": 1,
+        "historical_source_count": 0,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          1
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-09-09",
+        "observation_count": 3,
+        "evidence_observation_count": 3,
+        "major_gaps": [
+          "CONTINUOUS_COVERAGE_NOT_PROVEN"
+        ]
+      },
+      {
+        "signal_type": "VALUATION_FUNDAMENTAL_DIVERGENCE",
+        "schema_supported": true,
+        "live_source_count": 0,
+        "historical_source_count": 0,
+        "point_in_time_available": false,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [],
+        "production_status": "UNAVAILABLE",
+        "latest_observation_date": null,
+        "observation_count": 0,
+        "evidence_observation_count": 0,
+        "major_gaps": [
+          "NO_PRODUCTION_OBSERVATIONS"
+        ]
+      },
+      {
+        "signal_type": "MARKET_STRUCTURE_AND_FLOW",
+        "schema_supported": true,
+        "live_source_count": 0,
+        "historical_source_count": 2,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          3
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-09-11",
+        "observation_count": 533,
+        "evidence_observation_count": 533,
+        "major_gaps": [
+          "published_at"
+        ]
+      }
+    ],
+    "category_coverage_ratio": 0.75,
+    "live_source_count": 6,
+    "tier1_observation_count": 492,
+    "company_body_parsed_count": 16,
+    "historical_point_in_time_days": 8,
+    "technology_chain_coverage": {
+      "存储": {
+        "observation_count": 57,
+        "scope": "DOCUMENT_OR_ISSUER_TOTAL_REVENUE_NOT_COMPLETE_PRODUCT_METRICS"
+      },
+      "光通信": {
+        "observation_count": 82,
+        "scope": "DOCUMENT_OR_ISSUER_TOTAL_REVENUE_NOT_COMPLETE_PRODUCT_METRICS"
+      },
+      "PCB/CCL": {
+        "observation_count": 8,
+        "scope": "DOCUMENT_OR_ISSUER_TOTAL_REVENUE_NOT_COMPLETE_PRODUCT_METRICS"
+      },
+      "MLCC": {
+        "observation_count": 81,
+        "scope": "DOCUMENT_OR_ISSUER_TOTAL_REVENUE_NOT_COMPLETE_PRODUCT_METRICS"
+      },
+      "探针/测试": {
+        "observation_count": 2,
+        "scope": "DOCUMENT_OR_ISSUER_TOTAL_REVENUE_NOT_COMPLETE_PRODUCT_METRICS"
+      },
+      "先进封装": {
+        "observation_count": 2,
+        "scope": "DOCUMENT_OR_ISSUER_TOTAL_REVENUE_NOT_COMPLETE_PRODUCT_METRICS"
+      }
+    },
+    "signal_type_counts": {
+      "CUSTOMER_AND_ORDER": 58,
+      "SHAREHOLDER_MANAGEMENT_ACTION": 74,
+      "POLICY_AND_FISCAL": 3,
+      "MARKET_STRUCTURE_AND_FLOW": 533,
+      "M&A_AND_CAPITAL_OPERATION": 86,
+      "COMMODITY_PRICE": 4521,
+      "REVENUE_PROFIT_MARGIN": 36,
+      "PRODUCT_COMMERCIALIZATION": 49,
+      "CAPACITY_AND_UTILIZATION": 27,
+      "SUPPLY_DEMAND": 6,
+      "MACRO_LIQUIDITY_FX_RATES": 3,
+      "OVERSEAS_LEAD": 26
+    },
+    "verified_relation_count": 2,
+    "company_alpha_count": 12,
+    "morning_candidate_count": 258,
+    "compact_size": 184511,
+    "full_size": 5055193
+  }
+}
