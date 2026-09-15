@@ -1,6 +1,6 @@
 {
   "date": "2026-09-08",
-  "run_id": "34947081364",
+  "run_id": "34951067404",
   "workflow_run_attempt": "1",
   "workflow_retry_count": 2,
   "credential_health": {
@@ -63,12 +63,12 @@
       },
       {
         "dataset": "industry_fund_flow_current",
-        "status": "PASS",
+        "status": "FAIL",
         "data_date": null
       },
       {
         "dataset": "concept_fund_flow_current",
-        "status": "PASS",
+        "status": "FAIL",
         "data_date": null
       },
       {
@@ -83,7 +83,7 @@
       },
       {
         "dataset": "tushare_stock_basic",
-        "status": "FAIL",
+        "status": "PASS",
         "data_date": "2026-09-08"
       },
       {
@@ -183,16 +183,16 @@
   "is_trade_day": true,
   "calendar_status": "CHECKED",
   "market_closed": true,
-  "pipeline_started_at": "2026-09-15T16:35:22.044838+08:00",
-  "pipeline_completed_at": "2026-09-15T16:35:24.420971+08:00",
+  "pipeline_started_at": "2026-09-15T17:17:56.788622+08:00",
+  "pipeline_completed_at": "2026-09-15T17:17:59.216230+08:00",
   "steps": {
     "daily_data_preflight": {
       "status": "PASS",
       "artifact_path": null,
       "source_date": null,
       "quality": "PASS",
-      "started_at": "2026-09-15T16:35:22.044838+08:00",
-      "completed_at": "2026-09-15T16:35:23.446071+08:00",
+      "started_at": "2026-09-15T17:17:56.788622+08:00",
+      "completed_at": "2026-09-15T17:17:58.296418+08:00",
       "error": null,
       "retry_count": 0,
       "reused": false,
@@ -203,8 +203,8 @@
       "artifact_path": null,
       "source_date": null,
       "quality": null,
-      "started_at": "2026-09-15T16:35:23.446347+08:00",
-      "completed_at": "2026-09-15T16:35:24.351870+08:00",
+      "started_at": "2026-09-15T17:17:58.296656+08:00",
+      "completed_at": "2026-09-15T17:17:59.183131+08:00",
       "error": "RuntimeError: Market Packet production gate failed: ['涨跌停']",
       "retry_count": 2,
       "reused": false,
@@ -265,8 +265,8 @@
       "detail": "no probable plaintext secrets found"
     }
   ],
-  "started_at": "2026-09-15T16:35:22.044838+08:00",
-  "completed_at": "2026-09-15T16:35:24.420971+08:00",
+  "started_at": "2026-09-15T17:17:56.788622+08:00",
+  "completed_at": "2026-09-15T17:17:59.216230+08:00",
   "blocker": [
     "RuntimeError: Market Packet production gate failed: ['涨跌停']"
   ],
@@ -327,12 +327,12 @@
       },
       {
         "dataset": "industry_fund_flow_current",
-        "status": "PASS",
+        "status": "FAIL",
         "data_date": null
       },
       {
         "dataset": "concept_fund_flow_current",
-        "status": "PASS",
+        "status": "FAIL",
         "data_date": null
       },
       {
@@ -347,7 +347,7 @@
       },
       {
         "dataset": "tushare_stock_basic",
-        "status": "FAIL",
+        "status": "PASS",
         "data_date": "2026-09-08"
       },
       {
