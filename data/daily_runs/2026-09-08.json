@@ -1,6 +1,6 @@
 {
   "date": "2026-09-08",
-  "run_id": "35077731682",
+  "run_id": "35094152967",
   "workflow_run_attempt": "1",
   "workflow_retry_count": 2,
   "credential_health": {
@@ -53,12 +53,12 @@
       },
       {
         "dataset": "szse_margin",
-        "status": "FAIL",
+        "status": "PASS",
         "data_date": "2026-09-08"
       },
       {
         "dataset": "szse_margin_detail",
-        "status": "FAIL",
+        "status": "PASS",
         "data_date": "2026-09-08"
       },
       {
@@ -133,12 +133,12 @@
       },
       {
         "dataset": "official_announcements",
-        "status": "FAIL",
+        "status": "PARTIAL",
         "data_date": "2026-09-08"
       },
       {
         "dataset": "official_announcements_meta",
-        "status": "FAIL",
+        "status": "PARTIAL",
         "data_date": "2026-09-08"
       },
       {
@@ -183,16 +183,16 @@
   "is_trade_day": true,
   "calendar_status": "CHECKED",
   "market_closed": true,
-  "pipeline_started_at": "2026-09-16T17:17:31.523713+08:00",
-  "pipeline_completed_at": "2026-09-16T17:17:34.062829+08:00",
+  "pipeline_started_at": "2026-09-16T20:15:59.130041+08:00",
+  "pipeline_completed_at": "2026-09-16T20:16:01.363995+08:00",
   "steps": {
     "daily_data_preflight": {
       "status": "PASS",
       "artifact_path": null,
       "source_date": null,
       "quality": "PASS",
-      "started_at": "2026-09-16T17:17:31.523713+08:00",
-      "completed_at": "2026-09-16T17:17:33.291554+08:00",
+      "started_at": "2026-09-16T20:15:59.130041+08:00",
+      "completed_at": "2026-09-16T20:16:00.316005+08:00",
       "error": null,
       "retry_count": 0,
       "reused": false,
@@ -203,8 +203,8 @@
       "artifact_path": null,
       "source_date": null,
       "quality": null,
-      "started_at": "2026-09-16T17:17:33.291787+08:00",
-      "completed_at": "2026-09-16T17:17:34.010180+08:00",
+      "started_at": "2026-09-16T20:16:00.316258+08:00",
+      "completed_at": "2026-09-16T20:16:01.295661+08:00",
       "error": "RuntimeError: Market Packet production gate failed: ['涨跌停']",
       "retry_count": 2,
       "reused": false,
@@ -265,8 +265,8 @@
       "detail": "no probable plaintext secrets found"
     }
   ],
-  "started_at": "2026-09-16T17:17:31.523713+08:00",
-  "completed_at": "2026-09-16T17:17:34.062829+08:00",
+  "started_at": "2026-09-16T20:15:59.130041+08:00",
+  "completed_at": "2026-09-16T20:16:01.363995+08:00",
   "blocker": [
     "RuntimeError: Market Packet production gate failed: ['涨跌停']"
   ],
@@ -317,12 +317,12 @@
       },
       {
         "dataset": "szse_margin",
-        "status": "FAIL",
+        "status": "PASS",
         "data_date": "2026-09-08"
       },
       {
         "dataset": "szse_margin_detail",
-        "status": "FAIL",
+        "status": "PASS",
         "data_date": "2026-09-08"
       },
       {
@@ -397,12 +397,12 @@
       },
       {
         "dataset": "official_announcements",
-        "status": "FAIL",
+        "status": "PARTIAL",
         "data_date": "2026-09-08"
       },
       {
         "dataset": "official_announcements_meta",
-        "status": "FAIL",
+        "status": "PARTIAL",
         "data_date": "2026-09-08"
       },
       {
