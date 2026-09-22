@@ -1,6 +1,6 @@
 {
   "date": "2026-09-08",
-  "run_id": "35700897467",
+  "run_id": "35701937635",
   "workflow_run_attempt": "1",
   "workflow_retry_count": 2,
   "credential_health": {
@@ -48,7 +48,7 @@
       },
       {
         "dataset": "sse_margin",
-        "status": "PASS",
+        "status": "FAIL",
         "data_date": "2026-09-08"
       },
       {
@@ -183,16 +183,16 @@
   "is_trade_day": true,
   "calendar_status": "CHECKED",
   "market_closed": true,
-  "pipeline_started_at": "2026-09-22T15:48:10.172517+08:00",
-  "pipeline_completed_at": "2026-09-22T15:48:13.193890+08:00",
+  "pipeline_started_at": "2026-09-22T16:00:31.308102+08:00",
+  "pipeline_completed_at": "2026-09-22T16:00:34.215451+08:00",
   "steps": {
     "daily_data_preflight": {
       "status": "PASS",
       "artifact_path": null,
       "source_date": null,
       "quality": "PASS",
-      "started_at": "2026-09-22T15:48:10.172517+08:00",
-      "completed_at": "2026-09-22T15:48:12.015860+08:00",
+      "started_at": "2026-09-22T16:00:31.308102+08:00",
+      "completed_at": "2026-09-22T16:00:33.103263+08:00",
       "error": null,
       "retry_count": 0,
       "reused": false,
@@ -203,8 +203,8 @@
       "artifact_path": null,
       "source_date": null,
       "quality": null,
-      "started_at": "2026-09-22T15:48:12.016109+08:00",
-      "completed_at": "2026-09-22T15:48:13.123529+08:00",
+      "started_at": "2026-09-22T16:00:33.103541+08:00",
+      "completed_at": "2026-09-22T16:00:34.147673+08:00",
       "error": "RuntimeError: Market Packet production gate failed: ['涨跌停']",
       "retry_count": 2,
       "reused": false,
@@ -265,8 +265,8 @@
       "detail": "no probable plaintext secrets found"
     }
   ],
-  "started_at": "2026-09-22T15:48:10.172517+08:00",
-  "completed_at": "2026-09-22T15:48:13.193890+08:00",
+  "started_at": "2026-09-22T16:00:31.308102+08:00",
+  "completed_at": "2026-09-22T16:00:34.215451+08:00",
   "blocker": [
     "RuntimeError: Market Packet production gate failed: ['涨跌停']"
   ],
@@ -312,7 +312,7 @@
       },
       {
         "dataset": "sse_margin",
-        "status": "PASS",
+        "status": "FAIL",
         "data_date": "2026-09-08"
       },
       {
