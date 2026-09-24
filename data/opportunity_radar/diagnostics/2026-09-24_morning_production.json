@@ -1,0 +1,11 @@
+{
+  "trade_date": "2026-09-24",
+  "snapshot": "MORNING",
+  "observed_at": "2026-09-24T08:29:53.342599+08:00",
+  "status": "FAILED",
+  "run_id": "35938605994",
+  "retry_count": 1,
+  "sources": [],
+  "blocker": "MORNING_FREEZE_DEADLINE_PASSED_USE_REPLAY",
+  "error_type": "ValueError"
+}
