@@ -1,6 +1,6 @@
 {
   "date": "2026-09-08",
-  "run_id": "36566277918",
+  "run_id": "36685572352",
   "workflow_run_attempt": "1",
   "workflow_retry_count": 2,
   "credential_health": {
@@ -13,12 +13,12 @@
     "market_packet_sources": [
       {
         "dataset": "limit_up",
-        "status": "PASS",
+        "status": "FAIL",
         "data_date": "2026-09-08"
       },
       {
         "dataset": "failed_limit",
-        "status": "PASS",
+        "status": "FAIL",
         "data_date": "2026-09-08"
       },
       {
@@ -28,7 +28,7 @@
       },
       {
         "dataset": "previous_limit",
-        "status": "PASS",
+        "status": "FAIL",
         "data_date": "2026-09-08"
       },
       {
@@ -48,7 +48,7 @@
       },
       {
         "dataset": "sse_margin",
-        "status": "PASS",
+        "status": "FAIL",
         "data_date": "2026-09-08"
       },
       {
@@ -118,7 +118,7 @@
       },
       {
         "dataset": "stock_top_ohlcv",
-        "status": "PASS",
+        "status": "PARTIAL",
         "data_date": "2026-09-08"
       },
       {
@@ -183,16 +183,16 @@
   "is_trade_day": true,
   "calendar_status": "CHECKED",
   "market_closed": true,
-  "pipeline_started_at": "2026-09-29T20:15:50.834765+08:00",
-  "pipeline_completed_at": "2026-09-29T20:15:53.984548+08:00",
+  "pipeline_started_at": "2026-09-30T15:52:02.716125+08:00",
+  "pipeline_completed_at": "2026-09-30T15:52:05.378683+08:00",
   "steps": {
     "daily_data_preflight": {
       "status": "PASS",
       "artifact_path": null,
       "source_date": null,
       "quality": "PASS",
-      "started_at": "2026-09-29T20:15:50.834765+08:00",
-      "completed_at": "2026-09-29T20:15:52.812387+08:00",
+      "started_at": "2026-09-30T15:52:02.716125+08:00",
+      "completed_at": "2026-09-30T15:52:04.301067+08:00",
       "error": null,
       "retry_count": 0,
       "reused": false,
@@ -203,9 +203,9 @@
       "artifact_path": null,
       "source_date": null,
       "quality": null,
-      "started_at": "2026-09-29T20:15:52.812639+08:00",
-      "completed_at": "2026-09-29T20:15:53.927777+08:00",
-      "error": "RuntimeError: Market Packet production gate failed: ['涨跌停']",
+      "started_at": "2026-09-30T15:52:04.301311+08:00",
+      "completed_at": "2026-09-30T15:52:05.311263+08:00",
+      "error": "RuntimeError: Market Packet production gate failed: ['交易日判断', '涨跌停']",
       "retry_count": 2,
       "reused": false,
       "provenance_sha256": null
@@ -215,7 +215,7 @@
   "blockers": [
     {
       "step": "market_packet",
-      "error": "RuntimeError: Market Packet production gate failed: ['涨跌停']",
+      "error": "RuntimeError: Market Packet production gate failed: ['交易日判断', '涨跌停']",
       "missing_upstream": []
     }
   ],
@@ -265,10 +265,10 @@
       "detail": "no probable plaintext secrets found"
     }
   ],
-  "started_at": "2026-09-29T20:15:50.834765+08:00",
-  "completed_at": "2026-09-29T20:15:53.984548+08:00",
+  "started_at": "2026-09-30T15:52:02.716125+08:00",
+  "completed_at": "2026-09-30T15:52:05.378683+08:00",
   "blocker": [
-    "RuntimeError: Market Packet production gate failed: ['涨跌停']"
+    "RuntimeError: Market Packet production gate failed: ['交易日判断', '涨跌停']"
   ],
   "source_health": {
     "full_market_daily": "FAILED_PRODUCTION_GATE",
@@ -277,12 +277,12 @@
     "market_packet_sources": [
       {
         "dataset": "limit_up",
-        "status": "PASS",
+        "status": "FAIL",
         "data_date": "2026-09-08"
       },
       {
         "dataset": "failed_limit",
-        "status": "PASS",
+        "status": "FAIL",
         "data_date": "2026-09-08"
       },
       {
@@ -292,7 +292,7 @@
       },
       {
         "dataset": "previous_limit",
-        "status": "PASS",
+        "status": "FAIL",
         "data_date": "2026-09-08"
       },
       {
@@ -312,7 +312,7 @@
       },
       {
         "dataset": "sse_margin",
-        "status": "PASS",
+        "status": "FAIL",
         "data_date": "2026-09-08"
       },
       {
@@ -382,7 +382,7 @@
       },
       {
         "dataset": "stock_top_ohlcv",
-        "status": "PASS",
+        "status": "PARTIAL",
         "data_date": "2026-09-08"
       },
       {
