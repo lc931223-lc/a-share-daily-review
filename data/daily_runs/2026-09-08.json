@@ -1,6 +1,6 @@
 {
   "date": "2026-09-08",
-  "run_id": "37351287215",
+  "run_id": "37478660846",
   "workflow_run_attempt": "1",
   "workflow_retry_count": 2,
   "credential_health": {
@@ -183,16 +183,16 @@
   "is_trade_day": true,
   "calendar_status": "CHECKED",
   "market_closed": true,
-  "pipeline_started_at": "2026-10-06T01:55:14.823229+08:00",
-  "pipeline_completed_at": "2026-10-06T01:55:17.556671+08:00",
+  "pipeline_started_at": "2026-10-06T22:30:59.766958+08:00",
+  "pipeline_completed_at": "2026-10-06T22:31:02.245438+08:00",
   "steps": {
     "daily_data_preflight": {
       "status": "PASS",
       "artifact_path": null,
       "source_date": null,
       "quality": "PASS",
-      "started_at": "2026-10-06T01:55:14.823229+08:00",
-      "completed_at": "2026-10-06T01:55:16.911371+08:00",
+      "started_at": "2026-10-06T22:30:59.766958+08:00",
+      "completed_at": "2026-10-06T22:31:01.418202+08:00",
       "error": null,
       "retry_count": 0,
       "reused": false,
@@ -203,8 +203,8 @@
       "artifact_path": null,
       "source_date": null,
       "quality": null,
-      "started_at": "2026-10-06T01:55:16.911556+08:00",
-      "completed_at": "2026-10-06T01:55:17.525361+08:00",
+      "started_at": "2026-10-06T22:31:01.418449+08:00",
+      "completed_at": "2026-10-06T22:31:02.192788+08:00",
       "error": "RuntimeError: Market Packet production gate failed: ['交易日判断', '涨跌停']",
       "retry_count": 2,
       "reused": false,
@@ -265,8 +265,8 @@
       "detail": "no probable plaintext secrets found"
     }
   ],
-  "started_at": "2026-10-06T01:55:14.823229+08:00",
-  "completed_at": "2026-10-06T01:55:17.556671+08:00",
+  "started_at": "2026-10-06T22:30:59.766958+08:00",
+  "completed_at": "2026-10-06T22:31:02.245438+08:00",
   "blocker": [
     "RuntimeError: Market Packet production gate failed: ['交易日判断', '涨跌停']"
   ],
