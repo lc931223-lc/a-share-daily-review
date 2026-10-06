@@ -1,6 +1,6 @@
 {
   "date": "2026-09-08",
-  "run_id": "37489424145",
+  "run_id": "37506052494",
   "workflow_run_attempt": "1",
   "workflow_retry_count": 2,
   "credential_health": {
@@ -53,7 +53,7 @@
       },
       {
         "dataset": "szse_margin",
-        "status": "PASS",
+        "status": "FAIL",
         "data_date": "2026-09-08"
       },
       {
@@ -83,7 +83,7 @@
       },
       {
         "dataset": "tushare_stock_basic",
-        "status": "FAIL",
+        "status": "PASS",
         "data_date": "2026-09-08"
       },
       {
@@ -183,16 +183,16 @@
   "is_trade_day": true,
   "calendar_status": "CHECKED",
   "market_closed": true,
-  "pipeline_started_at": "2026-10-06T23:46:42.183569+08:00",
-  "pipeline_completed_at": "2026-10-06T23:46:44.521631+08:00",
+  "pipeline_started_at": "2026-10-07T01:52:00.255462+08:00",
+  "pipeline_completed_at": "2026-10-07T01:52:02.506265+08:00",
   "steps": {
     "daily_data_preflight": {
       "status": "PASS",
       "artifact_path": null,
       "source_date": null,
       "quality": "PASS",
-      "started_at": "2026-10-06T23:46:42.183569+08:00",
-      "completed_at": "2026-10-06T23:46:43.608543+08:00",
+      "started_at": "2026-10-07T01:52:00.255462+08:00",
+      "completed_at": "2026-10-07T01:52:01.715930+08:00",
       "error": null,
       "retry_count": 0,
       "reused": false,
@@ -203,8 +203,8 @@
       "artifact_path": null,
       "source_date": null,
       "quality": null,
-      "started_at": "2026-10-06T23:46:43.608843+08:00",
-      "completed_at": "2026-10-06T23:46:44.461331+08:00",
+      "started_at": "2026-10-07T01:52:01.716156+08:00",
+      "completed_at": "2026-10-07T01:52:02.455977+08:00",
       "error": "RuntimeError: Market Packet production gate failed: ['交易日判断', '涨跌停']",
       "retry_count": 2,
       "reused": false,
@@ -265,8 +265,8 @@
       "detail": "no probable plaintext secrets found"
     }
   ],
-  "started_at": "2026-10-06T23:46:42.183569+08:00",
-  "completed_at": "2026-10-06T23:46:44.521631+08:00",
+  "started_at": "2026-10-07T01:52:00.255462+08:00",
+  "completed_at": "2026-10-07T01:52:02.506265+08:00",
   "blocker": [
     "RuntimeError: Market Packet production gate failed: ['交易日判断', '涨跌停']"
   ],
@@ -317,7 +317,7 @@
       },
       {
         "dataset": "szse_margin",
-        "status": "PASS",
+        "status": "FAIL",
         "data_date": "2026-09-08"
       },
       {
@@ -347,7 +347,7 @@
       },
       {
         "dataset": "tushare_stock_basic",
-        "status": "FAIL",
+        "status": "PASS",
         "data_date": "2026-09-08"
       },
       {
