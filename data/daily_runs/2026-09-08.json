@@ -1,6 +1,6 @@
 {
   "date": "2026-09-08",
-  "run_id": "38597210383",
+  "run_id": "38737352334",
   "workflow_run_attempt": "1",
   "workflow_retry_count": 2,
   "credential_health": {
@@ -88,7 +88,7 @@
       },
       {
         "dataset": "tushare_daily_all",
-        "status": "PASS",
+        "status": "FAIL",
         "data_date": "2026-09-08"
       },
       {
@@ -183,16 +183,16 @@
   "is_trade_day": true,
   "calendar_status": "CHECKED",
   "market_closed": true,
-  "pipeline_started_at": "2026-10-15T00:26:11.783474+08:00",
-  "pipeline_completed_at": "2026-10-15T00:26:14.242021+08:00",
+  "pipeline_started_at": "2026-10-15T20:56:43.117968+08:00",
+  "pipeline_completed_at": "2026-10-15T20:56:45.101266+08:00",
   "steps": {
     "daily_data_preflight": {
       "status": "PASS",
       "artifact_path": null,
       "source_date": null,
       "quality": "PASS",
-      "started_at": "2026-10-15T00:26:11.783474+08:00",
-      "completed_at": "2026-10-15T00:26:13.232646+08:00",
+      "started_at": "2026-10-15T20:56:43.117968+08:00",
+      "completed_at": "2026-10-15T20:56:44.658145+08:00",
       "error": null,
       "retry_count": 0,
       "reused": false,
@@ -203,9 +203,9 @@
       "artifact_path": null,
       "source_date": null,
       "quality": null,
-      "started_at": "2026-10-15T00:26:13.232901+08:00",
-      "completed_at": "2026-10-15T00:26:14.172453+08:00",
-      "error": "RuntimeError: Market Packet production gate failed: ['交易日判断', '涨跌停']",
+      "started_at": "2026-10-15T20:56:44.658392+08:00",
+      "completed_at": "2026-10-15T20:56:45.064297+08:00",
+      "error": "RuntimeError: full-market daily rows did not pass the production gate",
       "retry_count": 2,
       "reused": false,
       "provenance_sha256": null
@@ -215,7 +215,7 @@
   "blockers": [
     {
       "step": "market_packet",
-      "error": "RuntimeError: Market Packet production gate failed: ['交易日判断', '涨跌停']",
+      "error": "RuntimeError: full-market daily rows did not pass the production gate",
       "missing_upstream": []
     }
   ],
@@ -265,10 +265,10 @@
       "detail": "no probable plaintext secrets found"
     }
   ],
-  "started_at": "2026-10-15T00:26:11.783474+08:00",
-  "completed_at": "2026-10-15T00:26:14.242021+08:00",
+  "started_at": "2026-10-15T20:56:43.117968+08:00",
+  "completed_at": "2026-10-15T20:56:45.101266+08:00",
   "blocker": [
-    "RuntimeError: Market Packet production gate failed: ['交易日判断', '涨跌停']"
+    "RuntimeError: full-market daily rows did not pass the production gate"
   ],
   "source_health": {
     "full_market_daily": "FAILED_PRODUCTION_GATE",
@@ -352,7 +352,7 @@
       },
       {
         "dataset": "tushare_daily_all",
-        "status": "PASS",
+        "status": "FAIL",
         "data_date": "2026-09-08"
       },
       {
