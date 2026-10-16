@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta charset="utf-8">
+                        <link rel="alternate" type="application/rss+xml" title="Advanced Micro Devices, Inc. - Recent News" href="https://ir.amd.com/news-events/press-releases/rss" />
+                
+        <title>Introducing AMD Helion, Agentic AI Compute at Rack Scale :: Advanced Micro Devices, Inc. (AMD)</title>
+        
+        <link rel="canonical" href="https://ir.amd.com/news-events/press-releases/detail/1301/introducing-amd-helion-agentic-ai-compute-at-rack-scale">
+<meta property="og:url" content="https://ir.amd.com/news-events/press-releases/detail/1301/introducing-amd-helion-agentic-ai-compute-at-rack-scale">
+
+
+<meta property="og:site_name" content="Advanced Micro Devices, Inc.">
+<meta property="og:title" content="Introducing AMD Helion, Agentic AI Compute at Rack Scale">
+<meta property="og:type" content="website">
+
+<meta property="og:image" content="https://d1io3yog0oux5.cloudfront.net/_d22fb6007d12335ff19068b92f2958b1/amd/db/834/7308/social_image_resized.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:description" content="News Highlights:    
+AMD Helion lets customers tailor CPU core density, performance and power to agentic workloads, with CPU-only configurations for…...">
+<meta name="description" content="News Highlights:    
+AMD Helion lets customers tailor CPU core density, performance and power to agentic workloads, with CPU-only configurations for…...">
+
+
+
+<script type="application/ld+json">
+	{"@context":"http:\/\/schema.org","@type":"Corporation","name":"Advanced Micro Devices, Inc.","address":{"@type":"PostalAddress","streetAddress":"2485 Augustine Drive ","addressLocality":"Santa Clara, CA","postalCode":"95054","addressCountry":""},"legalName":"Advanced Micro Devices, Inc.","description":"For more than 55 years AMD has driven innovation in high-performance computing, graphics and visualization technologies \u2015 the building blocks for gaming, immersive platforms and the data center. Hundreds of millions of consumers, leading Fortune 500 businesses and cutting-edge scientific research facilities around the world rely on AMD technology daily to improve how they live, work and play. AMD employees around the world are focused on building great products that push the boundaries of what is possible.","tickerSymbol":": AMD","url":"https:\/\/ir.amd.com","logo":"https:\/\/d1io3yog0oux5.cloudfront.net\/_d22fb6007d12335ff19068b92f2958b1\/amd\/logo.png","image":"https:\/\/d1io3yog0oux5.cloudfront.net\/_d22fb6007d12335ff19068b92f2958b1\/amd\/db\/834\/7308\/social_image_resized.jpg","sameAs":[]}</script>
+
+<!-- Elastic Search -->
+        <meta class="elastic" name="published_time" content="2026-10-12">
+        <meta class="elastic" name="published_day" content="6138.54">
+ 
+    
+    <meta class="elastic" name="el_description" content="News Highlights:    
+AMD Helion lets customers tailor CPU core density, performance and power to agentic workloads, with CPU-only configurations for hyperscale deployments and integrated CPU/GPU configurations for…">
+ 
+        <meta name="viewport" content="initial-scale=1.0, width=device-width">
+        
+                <link rel="preconnect" href="https://d1io3yog0oux5.cloudfront.net">
+        <link rel="preconnect" href="https://qmod.quotemedia.com">
+        
+                        <link href="https://d1io3yog0oux5.cloudfront.net/_d22fb6007d12335ff19068b92f2958b1/amd/files/theme/css/ir.stockpr.css" rel="stylesheet" type="text/css" media="screen" />
+                <link rel="stylesheet" href="https://d1io3yog0oux5.cloudfront.net/_d22fb6007d12335ff19068b92f2958b1/amd/files/theme/css/style.css">
+                        
+                <link rel="shortcut icon" href="https://d1io3yog0oux5.cloudfront.net/_d22fb6007d12335ff19068b92f2958b1/amd/files/theme/images/favicons/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://d1io3yog0oux5.cloudfront.net/_d22fb6007d12335ff19068b92f2958b1/amd/files/theme/images/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="https://d1io3yog0oux5.cloudfront.net/_d22fb6007d12335ff19068b92f2958b1/amd/files/theme/images/favicons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="https://d1io3yog0oux5.cloudfront.net/_d22fb6007d12335ff19068b92f2958b1/amd/files/theme/images/favicons/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="https://d1io3yog0oux5.cloudfront.net/_d22fb6007d12335ff19068b92f2958b1/amd/files/theme/images/favicons/manifest.json">
+        <link rel="mask-icon" href="https://d1io3yog0oux5.cloudfront.net/_d22fb6007d12335ff19068b92f2958b1/amd/files/theme/images/favicons/safari-pinned-tab.svg">
+        <meta name="theme-color" content="#ffffff">  
+    
+                
+<script type="text/plain" class="optanon-category-C0002">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', '', 'ir.amd.com');
+    
+    (function() {
+        var opts = {};
+        var prefix = "/investors";
+        if (location.hostname.indexOf('stockpr.com') == 0) {
+            opts.cookiePath = location.pathname.substring(0, location.pathname.indexOf('/', 1) + 1)
+            opts.page = prefix + location.pathname.substring(location.pathname.indexOf('/', 1));
+        } else if (location.hostname.match(/^ir\./)) {
+            opts.page = prefix + location.pathname;
+        }
+        ga('send', 'pageview', opts);
+    })();
+    
+    /**
+        * Function that tracks a click on an outbound link in Analytics.
+        * This function takes a valid URL string as an argument, and uses that URL string
+        * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+        * using 'navigator.sendBeacon' in browser that support it.
+        */
+        var trackOutboundLink = function(url,category) {
+            if (!category) category = 'outbound';
+           ga('send', 'event', category, 'click', url, {
+             'transport': 'beacon'
+           });
+        }
+        
+        // Add outbound link tracking in GA
+        jq('a').not('.fancybox').each(function(){
+            var href = jq(this).attr('href');
+            if (typeof href === "undefined") return;
+            if (href.indexOf('http') >= 0 
+                && ( href.indexOf(website_base_url) < 0 && href.indexOf(ir_base_url) < 0 && href.indexOf('eqcdn') < 0 && href.indexOf('amazonaws') < 0)) {
+                jq(this).attr('onclick', 'trackOutboundLink("' + href + '")');    
+            }else {
+                // It's not an outbound link, but if it's a link to a file, we want to track that.
+                if (href.match(/(\.pdf|\.jpg|\.png|\.gif|\.ppt|\.jpeg|\.mp3|\.mp4|\.wav|\.docx|\.doc|\.xsl|\.cslx)/g)) {
+                    jq(this).attr('onclick', 'trackOutboundLink("' + href + '", "documents-and-files")');
+                }
+            }
+        });
+</script>
+        <script type="text/plain" class="optanon-category-C0004">
+    _linkedin_partner_id = "78508";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script>
+<script type="text/plain" class="optanon-category-C0004">
+    (function(){var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})();
+</script>    </head>    <body class="pg-107610 page-type-ir-section-ir-news ir  has-sub-nav">
+        <div class="general-wrapper">
+            <nav id="header" class="affixed" aria-label="Main">
+    <div id="skipLinks">
+        <a href="#mainContent">Skip to main content</a>
+                <a class="sub-navigation-link" href="#sectionNav">Skip to section navigation</a>
+                <a href="#footer">Skip to footer</a>
+    </div>
+        <div class="logo-wrapper">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <div class="logo">
+                    <a href="/">
+                        <img src="https://d1io3yog0oux5.cloudfront.net/_d22fb6007d12335ff19068b92f2958b1/amd/db/867/8386/image.svg"
+                            width="110"
+                            height="26"
+                            alt="Advanced Micro Devices, Inc. IR Overview">
+                    </a>
+                                        <div class="ir-logo-text">Investor Relations</div>
+                                                        </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav-wrapper">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <button class="mobile-nav-trigger" id="showRight" aria-label="Expand main navigation" aria-expanded="false"
+                    aria-controls="mobile-nav">
+                    <span class="meat"></span>
+                    <span class="meat"></span>
+                    <span class="meat"></span>
+                </button>
+                <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right main-nav" id="mobile-nav" aria-label="Main Navigation">
+                    <ul class="main-menu">
+        <li class="" data-submenu-id="submenu-overview">
+        <a href="/" 
+        target="_self"
+                >IR Overview</a>
+            </li>
+        <li class="has-children active" data-submenu-id="submenu-news-events">
+        <a href="/news-events" 
+        target="_self"
+        aria-current="true"        >News &amp; Events</a>
+                <ul id="submenu-news-events">
+                        <li class="active active-landing">
+                <a href="/news-events/press-releases" 
+                target="_self"
+                aria-current="page"                    >Press Releases</a>
+            </li>
+                        <li class="">
+                <a href="/news-events/ir-calendar" 
+                target="_self"
+                                    >IR Calendar</a>
+            </li>
+                        <li class="">
+                <a href="/news-events/financial-analyst-day" 
+                target="_self"
+                                    >Financial Analyst Day</a>
+            </li>
+                        <li class="">
+                <a href="/news-events/annual-meeting-of-stockholders" 
+                target="_self"
+                                    >Annual Meeting of Stockholders</a>
+            </li>
+                    </ul>
+            </li>
+        <li class="has-children" data-submenu-id="submenu-stock-data">
+        <a href="/stock-data" 
+        target="_self"
+                >Stock Data</a>
+                <ul id="submenu-stock-data">
+                        <li class="">
+                <a href="/stock-data/stock-data" 
+                target="_self"
+                                    >Stock Data</a>
+            </li>
+                        <li class="">
+                <a href="/stock-data/price-history" 
+                target="_self"
+                                    >Price History</a>
+            </li>
+                        <li class="">
+                <a href="/stock-data/stock-split-history" 
+                target="_self"
+                                    >Stock Split History</a>
+            </li>
+                        <li class="">
+                <a href="/stock-data/analyst-coverage" 
+                target="_self"
+                                    >Analyst Coverage</a>
+            </li>
+                        <li class="">
+                <a href="/stock-data/transfer-agent" 
+                target="_self"
+                                    >Transfer Agent</a>
+            </li>
+                    </ul>
+            </li>
+        <li class="has-children" data-submenu-id="submenu-financial-information">
+        <a href="/financial-information" 
+        target="_self"
+                >Financial Information</a>
+                <ul id="submenu-financial-information">
+                        <li class="">
+                <a href="/financial-information/financial-results" 
+                target="_self"
+                                    >Financial Results</a>
+            </li>
+                        <li class="">
+                <a href="/financial-information/sec-filings" 
+                target="_self"
+                                    >SEC Filings</a>
+            </li>
+                    </ul>
+            </li>
+        <li class="has-children" data-submenu-id="submenu-governance">
+        <a href="/governance" 
+        target="_self"
+                >Governance</a>
+                <ul id="submenu-governance">
+                        <li class="">
+                <a href="/governance/board-of-directors" 
+                target="_self"
+                                    >Board of Directors</a>
+            </li>
+                        <li class="">
+                <a href="https://www.amd.com/en/corporate/leadership.html" 
+                target="_blank"
+                                    rel="noopener">Leadership</a>
+            </li>
+                        <li class="">
+                <a href="/governance/board-committees" 
+                target="_self"
+                                    >Board Committees</a>
+            </li>
+                        <li class="">
+                <a href="/governance/governance-documents" 
+                target="_self"
+                                    >Governance Documents</a>
+            </li>
+                        <li class="">
+                <a href="https://www.amd.com/en/corporate/corporate-responsibility.html" 
+                target="_blank"
+                                    rel="noopener">Corporate Responsibility</a>
+            </li>
+                    </ul>
+            </li>
+        <li class="has-children last-item" data-submenu-id="submenu-contacts-faq">
+        <a href="/contacts-faq" 
+        target="_self"
+                >Contacts &amp; FAQ</a>
+                <ul id="submenu-contacts-faq">
+                        <li class="">
+                <a href="/contacts-faq/contacts" 
+                target="_self"
+                                    >Contacts</a>
+            </li>
+                        <li class="">
+                <a href="/contacts-faq/email-alerts" 
+                target="_self"
+                                    >Email Alerts</a>
+            </li>
+                        <li class="">
+                <a href="/contacts-faq/faq" 
+                target="_self"
+                                    >FAQ</a>
+            </li>
+                    </ul>
+            </li>
+    </ul>                </nav>
+            </div>
+        </div>
+    </div>
+</nav>
+
+            <div class="eq-container">
+                <header class="page-banner overlay dark" style="background: url(https://d1io3yog0oux5.cloudfront.net/_d22fb6007d12335ff19068b92f2958b1/amd/db/938/9068/image_resized.jpg);background-position: 50% 50%;background-repeat: no-repeat;background-size: cover;background-color: #333;">
+    	<div class="container">
+	    <div class="row justify-content-start text-left">
+	        <div class="col-lg-10">
+                            <span class="heading--h1">
+                <!-- If a page banner is on a specific Press Release, display Press Release instead of Press Releases. -->
+                                    Press Release
+                <!-- If NOT then display the page banner title normally for Press Releases and all other pages. -->
+                                </span>
+	            	    </div>
+        </div>
+    </div>
+    </header>                                <nav id="sectionNav" class="sub-navigation-wrapper" aria-label="News &amp; Events Section">
+    <div class="sub-navigation affixed">
+    	<div class="container">
+            <a class="visible-xs visible-sm mobile-sub-nav-trigger collapsed" role="button" data-toggle="collapse" data-target="#sub-navigation">
+                <div class="trigger-container">
+            		<div class="meat"></div>
+              		<div class="meat"></div>
+              		<div class="meat"></div>
+              	</div>
+            	News &amp; Events            </a>
+            <div class="collapse sb-nav clearfix"  id="sub-navigation">
+                <h3>News &amp; Events</h3>
+                <ul>
+                                        <li class="active active-landing">
+                        <a href="/news-events/press-releases"
+                            target="_self"
+                                                        aria-current="page"                        >Press Releases</a>
+                                            </li>
+                	                    <li class="">
+                        <a href="/news-events/ir-calendar"
+                            target="_self"
+                                                                                >IR Calendar</a>
+                                            </li>
+                	                    <li class="">
+                        <a href="/news-events/financial-analyst-day"
+                            target="_self"
+                                                                                >Financial Analyst Day</a>
+                                            </li>
+                	                    <li class="">
+                        <a href="/news-events/annual-meeting-of-stockholders"
+                            target="_self"
+                                                                                >Annual Meeting of Stockholders</a>
+                                            </li>
+                	                </ul>
+            </div>
+        </div>
+    </div>
+</nav>                                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-12">
+                            <main id="mainContent" class="main-content has-tertiary-nav">
+                                    <article class="full-news-article">
+        <h1 class="article-heading">Introducing AMD Helion, Agentic AI Compute at Rack Scale</h1>
+        <div class="related-documents-line hidden-print row justify-content-between align-items-center">  
+            <time datetime="2026-10-12T09:00:00" class="date">
+                October 12, 2026 9:00 am EDT            </time>
+                            <a href="https://d1io3yog0oux5.cloudfront.net/_d22fb6007d12335ff19068b92f2958b1/amd/news/2026-10-12_Introducing_AMD_Helion_Agentic_AI_Compute_at_Rack__1301.pdf"
+                               class="link pull-right"
+                   title="PDF: Introducing AMD Helion, Agentic AI Compute at Rack Scale"
+                   target="_blank">
+                   <span class="eqicon-PDF" aria-hidden="true"></span>Download as PDF
+                </a>
+        </div>
+        
+        
+    	<p><em>News Highlights:</em></p>    <ul type="disc">
+<li style="margin-bottom:8pt;">AMD Helion lets customers tailor CPU core density, performance and power to agentic workloads, with CPU-only configurations for hyperscale deployments and integrated CPU/GPU configurations for enterprises.</li>
+<li style="margin-bottom:8pt;">AMD Helion combines open hardware and software with an integrated token router that directs agents’ model calls across frontier and open-source models.</li>
+</ul>    <p>SANTA CLARA, Calif., Oct.  12, 2026  (GLOBE NEWSWIRE) -- <a href="http://www.amd.com" rel="nofollow" target="_blank">AMD</a> (NASDAQ: AMD) today introduced the AMD Helion agentic AI rack, an open blueprint for agentic AI infrastructure based on an Open Compute Project spec-design and powered by AMD compute.</p>    <p>Building on the open-platform approach of the AMD Helios™ rackscale solution, AMD Helion is designed to provide partners and customers with the flexibility they need for agentic AI infrastructure. With AMD Helion, customers can match CPU performance, core density and power with GPU acceleration for the work their AI agents perform.</p>    <p>“Agentic AI is not a single workload. It spans personal agents, enterprise applications, code execution and complex workflows, each with different compute requirements,” said Dan McNamara, senior vice president and general manager, Compute and Enterprise AI, AMD. “To do that takes optimized compute and infrastructure that can adapt to different workloads. With AMD Helion, we are bringing AMD EPYC™ performance, open software and flexible rack designs together so our partners can build systems around customer needs and make efficient use of available power.”</p>    <p>AMD Helion’s OCP spec-based rack blueprint supports open software and can come in flexible configurations, including liquid- and air-cooled versions, allowing customers to create virtually any configuration needed for their needs. Some examples of this include:</p>    <ul type="disc">
+<li style="margin-bottom:8pt;">A CPU-only rack powered by 6th Gen AMD EPYC™ processors that can support up to 32,768 CPU cores. This rack is designed for hyperscale customers, providing dedicated capacity for agent execution and connections to separate model inference infrastructure.</li>
+<li style="margin-bottom:8pt;">An all-in-one rack that combines AMD EPYC CPU nodes, AMD Instinct™ MI350P GPU nodes and general-purpose compute on one platform. This rack is designed to provide partners and customers an all-in-one concept for enterprise agentic AI.</li>
+</ul>    <p>AMD Helion enables customers to deploy agentic AI in the IT infrastructure they already have, turning existing investments into a foundation for new AI capabilities. Partners can tailor CPU and GPU configurations to customer workloads, matching agent execution, model inference and supporting compute to each deployment’s performance, power and cost requirements.</p>    <p>AMD plans to contribute the AMD Helion specification to OCP, making it available to the community for further development and adoption. AMD Helion agentic rack configurations are currently under development with ecosystem partners and are planned to be available in November 2026.</p>    <p><strong role="heading" aria-level="2">Ecosystem Support</strong></p>    <p>AMD is helping shape the next phase of AI infrastructure through open, flexible platforms, a broad portfolio of workload-optimized compute and collaboration across the ecosystem. AMD Helion brings that approach to agentic AI, helping partners match software and compute to the work agents perform and giving customers flexibility to scale as their requirements evolve.</p>    <ul type="disc">
+<li>“Agentic AI is changing what customers need from their infrastructure. It's not just about compute performance, but how the entire system is connected, managed and secured. Architectures like AMD Helion, combined with Cisco's full-stack infrastructure capabilities, can give customers greater flexibility to deploy, operate and scale agentic workloads into their environments as their needs evolve.” - <strong class="">Jeremy Foster, Senior Vice President and General Manager, Cisco Compute</strong><br>
+</li>
+<li style="margin-top:0cm; margin-bottom:0cm;">“Dell PowerRack gives customers choice without compromise, and our support for AMD Helion Agentic Rack Reference Design extends that promise to the next generation of agentic AI. By combining AMD's rack-scale architecture with Dell's proven engineering expertise, along with the flexibility to extend deployments with Dell PowerRack for Networking and Storage, we're giving customers a complete, validated path to deploy agentic compute at scale with the manageability and reliability they expect from Dell.” - <strong class="">Arun Narayanan, Senior Vice President, Compute and Networking, Dell Technologies</strong><br>
+</li>
+<li>“Hon Hai Technology Group continues to deepen its collaboration with AMD on AI infrastructure, supporting the new AMD Helion Agentic AI Rack reference design. Built on an open architecture, the platform combines 6th Gen AMD EPYC processors with flexible CPU and GPU configurations to address hyperscale data center and enterprise Agentic AI workloads. The Group will continue to leverage its strengths in rack-level system integration and global manufacturing, working with ecosystem partners to advance rack-scale Agentic AI solutions and accelerate next-generation AI infrastructure deployment.” – <strong class="">Hon Hai Technology Group</strong><br>
+</li>
+<li>“Next-generation AI workloads require scale, efficiency, and flexibility that open, rack-scale architectures deliver, as demonstrated by our recent customer agreement to deploy AMD Helios. For decades, HPE and AMD have jointly championed open standards, and we are continuing to advance those efforts with AMD Helion. Together, we are ushering in the next era of AI with open large-scale systems, enhanced with air-cooled and direct liquid-cooled networking, supported by decades of HPE expertise and innovation.” – <strong class="">Trish Damkroger, Senior Vice President and General Manager, HPC &amp; AI Infrastructure Solutions, HPE</strong><br>
+</li>
+<li>“As agentic AI moves into production, customers need flexibility in how and where they deploy it. That’s at the core of the Lenovo Hybrid AI Advantage, and AMD Helion will give added versatility to meet customers where they are and support the workloads they want to run.” - <strong class="">Scott Patti, VP, Infrastructure Solutions Group, Lenovo</strong><br>
+</li>
+<li style="margin-top:0cm; margin-bottom:0cm;">“Agentic AI will require a range of system designs to serve different customer needs. AMD Helion provides an open blueprint that gives QCT the flexibility to tailor compute configurations and bring system design and customization expertise to those requirements.” - Mike Yang, President of QCT<strong><br></strong>
+</li>
+<li>“Supermicro is accelerating the deployment of next-generation agentic AI infrastructure by bringing AMD’s Helion - the open, ORv3 compliant rack-scale architecture to market through our Data Center Building Block Solutions® (DCBBS). With our proven expertise in OCP accepted™ rack-scale design, integration, liquid cooling, software, and deployment services, we transform advanced Agentic AI architectures into production-ready solutions. Together with AMD, we enable customers to deploy faster, scale efficiently, and accelerate time to online for agentic AI.” -<strong class=""> Vik Malyala, Chief Business Officer, Supermicro</strong><br>
+</li>
+<li>“AMD Helion provides an open, flexible foundation for agentic AI infrastructure. Wiwynn is excited to collaborate with AMD, bringing our expertise in rack-level integration and advanced cooling to help hyperscaler customers tailor systems that meet the demanding workloads, power requirements, and data center environments of the agentic AI era.” - <strong class="">William Lin, President and CEO, Wiwynn</strong><br>
+</li>
+</ul>    <p><strong role="heading" aria-level="2">Supporting Resources</strong>&nbsp;</p>    <ul type="disc">
+<li>Learn more about <a href="https://www.amd.com/en/products/rackscale-solutions/helion.html" rel="nofollow" target="_blank">AMD Helion</a>
+</li>
+<li>Learn more about <a href="https://www.amd.com/en/products/accelerators/instinct.html" rel="nofollow" target="_blank">AMD Instinct GPUs</a>
+</li>
+<li>Learn more about <a href="https://www.amd.com/en/products/processors/server/epyc/9006-series.html" rel="nofollow" target="_blank">AMD EPYC CPUs</a>
+</li>
+<li>Follow AMD on <a href="https://www.linkedin.com/company/amd/" rel="nofollow" target="_blank">LinkedIn</a>
+</li>
+<li>Follow AMD on <a href="https://x.com/AMD?lang=en" rel="nofollow" target="_blank">X</a>&nbsp;<br>
+</li>
+</ul>    <p class=""><strong role="heading" aria-level="2">About AMD</strong><br>AMD (NASDAQ: AMD) drives innovation in high-performance and AI computing to solve the world’s most important challenges. Today, AMD technology powers billions of experiences across cloud and AI infrastructure, embedded systems, AI PCs and gaming. With a broad portfolio of AI-optimized CPUs, GPUs, networking and software, AMD delivers full-stack AI solutions that provide the performance and scalability needed for a new era of intelligent computing. Learn more at&nbsp;<a href="http://www.amd.com/" rel="nofollow" target="_blank">www.amd.com</a>.</p>    <p class="">AMD, EPYC, Instinct and the AMD Arrow logo and the combination thereof are trademarks of Advanced Micro Devices, Inc. Other names are for informational purposes only and may be trademarks of their respective owners.</p>    <h2 class=""><strong class=""><em class="">CAUTIONARY STATEMENT</em></strong></h2>    <p class="">This press release contains forward-looking statements concerning Advanced Micro Devices, Inc. (AMD) such as the features, functionality, performance, availability, timing and expected benefits of AMD Helion, which are made pursuant to the Safe Harbor provisions of the Private Securities Litigation Reform Act of 1995. Forward-looking statements are commonly identified by words such as "would," "may," "expects," "believes," "plans," "intends," "projects" and other terms with similar meaning. Investors are cautioned that the forward-looking statements in this press release are based on current beliefs, assumptions and expectations, speak only as of the date of this press release and involve risks and uncertainties that could cause actual results to differ materially from current expectations. Such statements are subject to certain known and unknown risks and uncertainties, many of which are difficult to predict and are generally beyond AMD's control, that could cause actual results and other future events to differ materially from those expressed in, or implied or projected by, the forward-looking information and statements. Material factors that could cause actual results to differ materially from current expectations include, without limitation, the following: impact of government actions and regulations such as export regulations, national-security-based regulations, import tariffs, trade protection measures, and licensing requirements; competitive markets in which AMD’s products are sold; the cyclical nature of the semiconductor industry; market conditions of the industries in which AMD products are sold; AMD’s ability to introduce products on a timely basis with expected features and performance levels; loss of a significant customer; economic and market uncertainty; quarterly and seasonal sales patterns; AMD's ability to adequately protect its technology or other intellectual property; unfavorable currency exchange rate fluctuations; ability of third party manufacturers to manufacture AMD's products on a timely basis in sufficient quantities and using competitive technologies; availability of essential equipment, materials, components (such as memory supply), substrates or manufacturing processes; ability to achieve expected manufacturing yields for AMD’s products; AMD's ability to generate revenue from its semi-custom SoC products; potential security vulnerabilities; potential security incidents including IT outages, data loss, data breaches and cyberattacks; uncertainties involving the ordering and shipment of AMD’s products; AMD’s reliance on third-party intellectual property to design and introduce new products; AMD's reliance on third-party companies for design, manufacture and supply of motherboards, software, memory and other computer platform components; AMD's reliance on Microsoft and other software vendors' support to design and develop software to run on AMD’s products; AMD’s reliance on third-party distributors and add-in-board partners; impact of modification or interruption of AMD’s internal business processes and information systems; compatibility of AMD’s products with some or all industry-standard software and hardware; costs related to defective products; failure to maintain an efficient supply chain as customer demand changes; AMD's ability to rely on third party supply-chain logistics functions; AMD’s ability to effectively control sales of its products on the gray market; impact of climate change on AMD’s business; AMD’s ability to realize its deferred tax assets; potential tax liabilities; current and future claims and litigation; impact of environmental laws, conflict minerals related provisions and other laws or regulations; evolving expectations from governments, investors, customers and other stakeholders regarding corporate responsibility matters; issues related to the responsible use of AI; restrictions imposed by agreements governing AMD’s notes, the guarantees of Xilinx’s notes and the revolving credit agreement; AMD’s ability to satisfy financial obligations under guarantees, leases and other commercial commitments; impact of acquisitions, joint ventures and/or investments on AMD’s business and AMD’s ability to integrate acquired businesses; impact of any impairment of the combined company’s assets; political, legal and economic risks and natural disasters; future impairments of technology license purchases; AMD’s ability to attract and retain key employees; and AMD’s stock price volatility. Investors are urged to review in detail the risks and uncertainties in AMD’s Securities and Exchange Commission filings, including but not limited to AMD’s most recent reports on Forms 10-K and 10-Q.&nbsp;<strong><em>&nbsp;&nbsp;</em></strong></p>  <br><pre>Contacts
+Aaron Grabein
+AMD Communications
+aaron.grabein@amd.com
+
+Liz Stine
+AMD Investor Relations
+investor.relations@amd.com</pre>
+<p><a href="https://www.globenewswire.com/NewsRoom/AttachmentNg/9782a337-07ac-424b-9c5a-f9cde47d8d55"><img src="https://ml.globenewswire.com/media/9782a337-07ac-424b-9c5a-f9cde47d8d55/small/amd-logo-black-jpg.jpg" border="0" width="150" height="58" alt="AMD logo" class=""></a></p>
+Source: Advanced Micro Devices, Inc.
+
+    	<p class="spr-ir-news-article-date">Released October 12, 2026</p>
+    </article>
+                                                                </main>
+                        </div>    
+                    </div>
+                </div><!-- //container-->
+            </div>
+            <footer id="footer" >
+    <div class="footer-main">
+    	<div class="container">
+    	    <div class="row">
+    	        <div class="col-md-6">
+    	            <div class="logo-wrapper">
+            	        <a href="/">
+                            <img src="https://d1io3yog0oux5.cloudfront.net/_d22fb6007d12335ff19068b92f2958b1/amd/db/867/8386/image.svg"
+                                class="footer-logo"
+                                width="182"
+                                height="44"
+                                alt="Advanced Micro Devices, Inc. IR Overview">
+                        </a>
+                		<div class="ir-logo-text">Investor Relations</div>
+            		</div>
+    	        </div>
+    	        <div class="col-md-6">
+                                <div class="col-lg-auto">
+                    <nav id="social-navigation" class="footer-social">
+                        <ul>
+                                                    <li
+                                                        >
+                                <a href="https://www.linkedin.com/company/amd/" target="_blank" rel="noopener" class="">
+                                                                    <img class="icon-img-link" src="https://d1io3yog0oux5.cloudfront.net/_d22fb6007d12335ff19068b92f2958b1/amd/db/836/9074/icon/icon-linkedin.svg" alt="Visit us on LinkedIn" />
+                                                                </a>
+                                                	    		                            </li>
+                                                    <li
+                            class="dropdown--menu"                            >
+                                <a href="https://x.com/amd" target="_blank" rel="noopener" class="">
+                                                                    <img class="icon-img-link" src="https://d1io3yog0oux5.cloudfront.net/_d22fb6007d12335ff19068b92f2958b1/amd/db/836/9076/icon/X_logo_2023_original.svg" alt="Visit us on X" />
+                                                                </a>
+                                                				<ul class="dropdown-menu dropdown-menu-end">
+                					<li>
+                						<div class="dropdown-pointer"></div>
+                					</li>
+                					<li>
+                                        <ul class="dropdown-menu-content">
+                                            <li>
+                                                <a class="dropdown-item" href="https://x.com/AMD" target="_blank">AMD</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="https://x.com/AIatAMD" target="_blank">AI</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="https://x.com/AMDServer" target="_blank">Server</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="https://x.com/AMDRyzen" target="_blank">Ryzen</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="https://x.com/AMDRadeon" target="_blank">Radeon</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="https://x.com/AMDEmbedded" target="_blank">Embedded</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="https://x.com/AMDGaming" target="_blank">Gaming</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                    			</ul>
+                    			                	    		                            </li>
+                                                    <li
+                                                        >
+                                <a href="https://www.instagram.com/amd" target="_blank" rel="noopener" class="">
+                                                                    <img class="icon-img-link" src="https://d1io3yog0oux5.cloudfront.net/_d22fb6007d12335ff19068b92f2958b1/amd/db/836/9073/icon/icon-instagram.svg" alt="Visit us on Instagram" />
+                                                                </a>
+                                                	    		                            </li>
+                                                    <li
+                            class="dropdown--menu"                            >
+                                <a href="https://www.youtube.com/user/amd?reload=9&amp;sub_confirmation=1" target="_blank" rel="noopener" class="">
+                                                                    <img class="icon-img-link" src="https://d1io3yog0oux5.cloudfront.net/_d22fb6007d12335ff19068b92f2958b1/amd/db/836/9077/icon/icon-youtube.svg" alt="Visit us on YouTube" />
+                                                                </a>
+                                                	    		                    			<ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <div class="dropdown-pointer"></div>
+                                    </li>
+                                    <li>
+                    					<ul class="dropdown-menu-content">
+                    						<li>
+                    					   		<a class="dropdown-item" href="https://www.youtube.com/user/amd" target="_blank">AMD</a>
+                                            </li>
+                    						<li>
+                    					   		<a class="dropdown-item" href="https://www.youtube.com/@AMDDevCentral" target="_blank">Developers</a>
+                                            </li>
+                    						<li>
+                    						    <a class="dropdown-item" href="https://www.youtube.com/@Gaming-AMD" target="_blank">Gaming</a>
+                                            </li>
+                    					</ul>
+                					</li>
+                				</ul>
+                				                            </li>
+                                                    <li
+                                                        >
+                                <a href="https://www.facebook.com/amd" target="_blank" rel="noopener" class="">
+                                                                    <img class="icon-img-link" src="https://d1io3yog0oux5.cloudfront.net/_d22fb6007d12335ff19068b92f2958b1/amd/db/836/9072/icon/icon-facebook.svg" alt="Visit us on Facebook" />
+                                                                </a>
+                                                	    		                            </li>
+                                                    <li
+                                                        >
+                                <a href="https://www.amd.com/en/corporate/subscriptions" target="_blank" rel="noopener" class="">
+                                                                    <img class="icon-img-link" src="https://d1io3yog0oux5.cloudfront.net/_d22fb6007d12335ff19068b92f2958b1/amd/db/836/9078/icon/footer-email.svg" alt="Visit us on Subscriptions" />
+                                                                </a>
+                                                	    		                            </li>
+                                                </ul>
+                    </nav>
+                </div>
+                    	        </div>
+    	    </div>
+	    </div>
+	    	    <div class="container-fluid">
+    	    <div class="row justify-content-center">
+                <div class="col-lg-auto">
+                    <div class="footer-links">
+            			<a href="https://www.amd.com/en/legal/copyright.html" target="_blank" rel="noopener">Terms and Conditions</a>
+<a href="https://www.amd.com/en/corporate/privacy" target="_blank" rel="noopener">Privacy</a>
+<a href="https://www.amd.com/en/corporate/trademarks" target="_blank" rel="noopener">Trademarks</a>
+<a href="https://www.amd.com/content/dam/amd/en/documents/corporate/cr/supply-chain-transparency.pdf" target="_blank" rel="noopener">Supply Chain Transparency</a>
+<a href="https://www.amd.com/en/corporate/competition" target="_blank" rel="noopener">Fair &amp; Open Competition</a>
+<a href="https://www.amd.com/system/files/documents/amd-uk-tax-strategy.pdf" target="_blank" rel="noopener">UK Tax Strategy</a>
+<a href="/accessibility-statement">Accessibility Statement</a>
+<a href="https://www.amd.com/en/corporate/cookies" target="_blank" rel="noopener">Cookies Policy</a>
+                        <a class="ot-sdk-show-settings" id="ot-sdk-btn">Cookies Settings</a>
+                    </div>
+                </div>
+    	        <div class="col-12 center">
+                    <p class="copyright">&copy; <time datetime="2026">2026</time> Advanced Micro Devices, Inc. </p>                            
+    	        </div>
+	        </div>
+    	</div>
+	</div>
+</footer>
+<script id="companyVars" type="application/json">
+{
+    "asset_url": "https:\/\/d1io3yog0oux5.cloudfront.net\/_d22fb6007d12335ff19068b92f2958b1\/amd",
+    "website_base_url": "https:\/\/ir.amd.com",
+    "ir_base_url": "",
+    "hCaptchaSiteKey": "778a5748-d323-4b73-a06c-9625642de8bc",
+    "isQmod": false,
+    "autorefresh": false,
+    "userSnapEnabled" : false}
+</script>
+
+
+<script src="https://d1io3yog0oux5.cloudfront.net/_d22fb6007d12335ff19068b92f2958b1/amd/files/theme/js/_js/all.js"></script>
+
+<script type="text/javascript" async="" src="https://download.amd.com/js/analytics/analyticsinit.js"></script>
+
+<noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=78508&fmt=gif" />
+</noscript>        </div><!-- //general-wrapper-->
+    </body>
+</html>
