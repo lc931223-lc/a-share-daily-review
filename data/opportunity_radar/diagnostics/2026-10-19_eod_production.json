@@ -1,11 +1,1437 @@
 {
   "trade_date": "2026-10-19",
   "snapshot": "EOD",
-  "observed_at": "2026-10-19T12:33:42.592990+08:00",
-  "status": "FAILED",
-  "run_id": "39199963537",
-  "retry_count": 1,
-  "sources": [],
-  "blocker": "MARKET_NOT_CLOSED",
-  "error_type": "ValueError"
+  "observed_at": "2026-10-19T23:32:29.502393+08:00",
+  "status": "PARTIAL",
+  "run_id": "39278657085",
+  "retry_count": 0,
+  "sources": [
+    {
+      "source": "焦煤连续",
+      "status": "PARTIAL",
+      "rows": 364,
+      "fetched_at": "2026-10-19T23:33:23.118177+08:00",
+      "path": "data/raw/opportunity_radar/焦煤连续/99fd9ce773e72535abe84711d96b1ffc87d998bc6872b6594d79f7571ec1bf37.json",
+      "sha256": "bfe6340309c2d8464dd6c980759f45d96f58f3a162e4a5ab25fe1eadcea87365",
+      "gap": "PUBLICATION_TIMESTAMP_UNAVAILABLE; backfilled series excluded from earlier as-of replay"
+    },
+    {
+      "source": "焦炭连续",
+      "status": "PARTIAL",
+      "rows": 364,
+      "fetched_at": "2026-10-19T23:33:23.460929+08:00",
+      "path": "data/raw/opportunity_radar/焦炭连续/c3596e02a5546c0b3102d3ab322665ddf8cef38ed89de3aea6339caf89ce1c26.json",
+      "sha256": "38089b997eec3fdecebbadfbe41837dc8ddc951e626994dafcce4e57d7eb4dd5",
+      "gap": "PUBLICATION_TIMESTAMP_UNAVAILABLE; backfilled series excluded from earlier as-of replay"
+    },
+    {
+      "source": "玉米连续",
+      "status": "PARTIAL",
+      "rows": 364,
+      "fetched_at": "2026-10-19T23:33:23.901064+08:00",
+      "path": "data/raw/opportunity_radar/玉米连续/0b757fda7d59872ce1626174a9f2f865ebb916b93c15899b1ac05e0707f5a02a.json",
+      "sha256": "b81c8f5e0b3c924a951cbde86a1a8a3cb07d734b30e69d98d67705540d29a4c6",
+      "gap": "PUBLICATION_TIMESTAMP_UNAVAILABLE; backfilled series excluded from earlier as-of replay"
+    },
+    {
+      "source": "豆粕连续",
+      "status": "PARTIAL",
+      "rows": 364,
+      "fetched_at": "2026-10-19T23:33:24.270974+08:00",
+      "path": "data/raw/opportunity_radar/豆粕连续/f6bbc1568dcbb80c6e82e40b5c4b058719977ab6aa7d163a8c9f42ff96f0769e.json",
+      "sha256": "52bf7978569437395c7ec3264e54cff5a01fdf3cee87ee714ff830d4eeb408e5",
+      "gap": "PUBLICATION_TIMESTAMP_UNAVAILABLE; backfilled series excluded from earlier as-of replay"
+    },
+    {
+      "source": "甲醇连续",
+      "status": "PARTIAL",
+      "rows": 364,
+      "fetched_at": "2026-10-19T23:33:24.620032+08:00",
+      "path": "data/raw/opportunity_radar/甲醇连续/8f6c14583502c1a69f392321fc8a7ac464b8417b3430c9567f3a3671f8ed316f.json",
+      "sha256": "c447fb0452622eaa473d8d06d65ee5ee2109bfd877fe814573bc0db5b63186cf",
+      "gap": "PUBLICATION_TIMESTAMP_UNAVAILABLE; backfilled series excluded from earlier as-of replay"
+    },
+    {
+      "source": "铜连续",
+      "status": "PARTIAL",
+      "rows": 364,
+      "fetched_at": "2026-10-19T23:33:26.821326+08:00",
+      "path": "data/raw/opportunity_radar/铜连续/b7d51f5f60de126391ffb7c565e1a7f6a29fc84afaf3b4bbb62ae845a8966a7d.json",
+      "sha256": "cec605c5c481186a800a86b5a23586120bdf08d5eb23c01448ae58a6458a2f3f",
+      "gap": "PUBLICATION_TIMESTAMP_UNAVAILABLE; backfilled series excluded from earlier as-of replay"
+    },
+    {
+      "source": "铝连续",
+      "status": "PARTIAL",
+      "rows": 364,
+      "fetched_at": "2026-10-19T23:33:27.192273+08:00",
+      "path": "data/raw/opportunity_radar/铝连续/f8626acebca3170ffdb69c9361cbbb0a5583edc641ea26fc561b40637549d5f0.json",
+      "sha256": "786fb86bfbb76aa1f68ff07a6c51f2a35e56dfa82bc1c0a0b45a07277f09127d",
+      "gap": "PUBLICATION_TIMESTAMP_UNAVAILABLE; backfilled series excluded from earlier as-of replay"
+    },
+    {
+      "source": "BDI",
+      "status": "PARTIAL",
+      "rows": 377,
+      "fetched_at": "2026-10-19T23:33:29.784430+08:00",
+      "path": "data/raw/opportunity_radar/BDI/8cd91d02118354ed67dd1a5f1fd0d90f145681d6ec2c113ad9e683f198a5c754.json",
+      "sha256": "56e72522a4f2a98a0f6548b64ee0af5630bea2a972d3683efb608e6fedaa2c1c",
+      "gap": "PUBLICATION_TIMESTAMP_UNAVAILABLE; backfilled series excluded from earlier as-of replay"
+    },
+    {
+      "source": "NBS",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "NBS",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261019_1965613.html",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 12,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "NBS",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261019_1965611.html",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 38,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "NBS",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261014_1965477.html",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 2,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "NBS",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261014_1965476.html",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 2,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "NBS",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202607/t20260715_1964130.html",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 38,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "NBS",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202608/t20260817_1965051.html",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 12,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "DRAMeXchange",
+      "url": "https://www.dramexchange.com/",
+      "source_tier": 3,
+      "status": "PARTIAL",
+      "rows": 17,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "TWSE",
+      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap05_L",
+      "source_tier": 2,
+      "status": "PARTIAL",
+      "rows": 10,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "TPEX",
+      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap05_O",
+      "source_tier": 2,
+      "status": "PARTIAL",
+      "rows": 6,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "SEC",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+      "source_tier": 2,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "HTTPError",
+      "impact": "No observations imported",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "CNINFO_ISSUER_DISCOVERY",
+      "stock_code": "300308",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "BOUNDED_H1_DISCOVERY_NOT_ALL_DISCLOSURES",
+      "retry_status": "CACHED"
+    },
+    {
+      "source": "CNINFO_ISSUER_DISCOVERY",
+      "stock_code": "300502",
+      "status": "PARTIAL",
+      "rows": 1,
+      "reason": "BOUNDED_H1_DISCOVERY_NOT_ALL_DISCLOSURES",
+      "retry_status": "CACHED"
+    },
+    {
+      "source": "CNINFO_ISSUER_DISCOVERY",
+      "stock_code": "300394",
+      "status": "PARTIAL",
+      "rows": 1,
+      "reason": "BOUNDED_H1_DISCOVERY_NOT_ALL_DISCLOSURES",
+      "retry_status": "CACHED"
+    },
+    {
+      "source": "CNINFO_ISSUER_DISCOVERY",
+      "stock_code": "688498",
+      "status": "PARTIAL",
+      "rows": 1,
+      "reason": "BOUNDED_H1_DISCOVERY_NOT_ALL_DISCLOSURES",
+      "retry_status": "CACHED"
+    },
+    {
+      "source": "CNINFO_ISSUER_DISCOVERY",
+      "stock_code": "688313",
+      "status": "PARTIAL",
+      "rows": 1,
+      "reason": "BOUNDED_H1_DISCOVERY_NOT_ALL_DISCLOSURES",
+      "retry_status": "CACHED"
+    },
+    {
+      "source": "CNINFO_ISSUER_DISCOVERY",
+      "stock_code": "002281",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "BOUNDED_H1_DISCOVERY_NOT_ALL_DISCLOSURES",
+      "retry_status": "CACHED"
+    },
+    {
+      "source": "CNINFO_ISSUER_DISCOVERY",
+      "stock_code": "002916",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "BOUNDED_H1_DISCOVERY_NOT_ALL_DISCLOSURES",
+      "retry_status": "CACHED"
+    },
+    {
+      "source": "CNINFO_ISSUER_DISCOVERY",
+      "stock_code": "600183",
+      "status": "PARTIAL",
+      "rows": 1,
+      "reason": "BOUNDED_H1_DISCOVERY_NOT_ALL_DISCLOSURES",
+      "retry_status": "CACHED"
+    },
+    {
+      "source": "CNINFO_ISSUER_DISCOVERY",
+      "stock_code": "002463",
+      "status": "PARTIAL",
+      "rows": 2,
+      "reason": "BOUNDED_H1_DISCOVERY_NOT_ALL_DISCLOSURES",
+      "retry_status": "CACHED"
+    },
+    {
+      "source": "CNINFO_ISSUER_DISCOVERY",
+      "stock_code": "300476",
+      "status": "PARTIAL",
+      "rows": 1,
+      "reason": "BOUNDED_H1_DISCOVERY_NOT_ALL_DISCLOSURES",
+      "retry_status": "CACHED"
+    },
+    {
+      "source": "CNINFO_ISSUER_DISCOVERY",
+      "stock_code": "300408",
+      "status": "PARTIAL",
+      "rows": 1,
+      "reason": "BOUNDED_H1_DISCOVERY_NOT_ALL_DISCLOSURES",
+      "retry_status": "CACHED"
+    },
+    {
+      "source": "CNINFO_ISSUER_DISCOVERY",
+      "stock_code": "600460",
+      "status": "PARTIAL",
+      "rows": 2,
+      "reason": "BOUNDED_H1_DISCOVERY_NOT_ALL_DISCLOSURES",
+      "retry_status": "CACHED"
+    },
+    {
+      "source": "CNINFO_ISSUER_DISCOVERY",
+      "stock_code": "300604",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "BOUNDED_H1_DISCOVERY_NOT_ALL_DISCLOSURES",
+      "retry_status": "CACHED"
+    },
+    {
+      "source": "CNINFO_ISSUER_DISCOVERY",
+      "stock_code": "688200",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "BOUNDED_H1_DISCOVERY_NOT_ALL_DISCLOSURES",
+      "retry_status": "CACHED"
+    },
+    {
+      "source": "CNINFO_ISSUER_DISCOVERY",
+      "stock_code": "688206",
+      "status": "PARTIAL",
+      "rows": 1,
+      "reason": "BOUNDED_H1_DISCOVERY_NOT_ALL_DISCLOSURES",
+      "retry_status": "CACHED"
+    },
+    {
+      "source": "CNINFO_ISSUER_DISCOVERY",
+      "stock_code": "688525",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "BOUNDED_H1_DISCOVERY_NOT_ALL_DISCLOSURES",
+      "retry_status": "CACHED"
+    },
+    {
+      "source": "CNINFO_ISSUER_DISCOVERY",
+      "stock_code": "688110",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "BOUNDED_H1_DISCOVERY_NOT_ALL_DISCLOSURES",
+      "retry_status": "CACHED"
+    },
+    {
+      "source": "CNINFO_ISSUER_DISCOVERY",
+      "stock_code": "688008",
+      "status": "PARTIAL",
+      "rows": 1,
+      "reason": "BOUNDED_H1_DISCOVERY_NOT_ALL_DISCLOSURES",
+      "retry_status": "CACHED"
+    },
+    {
+      "source": "CNINFO_ISSUER_DISCOVERY",
+      "stock_code": "600584",
+      "status": "PARTIAL",
+      "rows": 1,
+      "reason": "BOUNDED_H1_DISCOVERY_NOT_ALL_DISCLOSURES",
+      "retry_status": "CACHED"
+    },
+    {
+      "source": "CNINFO_ISSUER_DISCOVERY",
+      "stock_code": "002156",
+      "status": "PARTIAL",
+      "rows": 2,
+      "reason": "BOUNDED_H1_DISCOVERY_NOT_ALL_DISCLOSURES",
+      "retry_status": "CACHED"
+    },
+    {
+      "source": "CNINFO_ISSUER_DISCOVERY",
+      "stock_code": "300054",
+      "status": "PARTIAL",
+      "rows": 2,
+      "reason": "BOUNDED_H1_DISCOVERY_NOT_ALL_DISCLOSURES",
+      "retry_status": "CACHED"
+    },
+    {
+      "source": "CNINFO_ISSUER_DISCOVERY",
+      "stock_code": "002837",
+      "status": "PARTIAL",
+      "rows": 1,
+      "reason": "BOUNDED_H1_DISCOVERY_NOT_ALL_DISCLOSURES",
+      "retry_status": "CACHED"
+    },
+    {
+      "source": "AMD_IR_DISCOVERY",
+      "rows": 8,
+      "status": "PARTIAL",
+      "reason": "BOUNDED_OFFICIAL_FEED"
+    },
+    {
+      "source": "AMD_IR",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/1294/aai-2026-amd-delivers-full-stack-compute-for-the-agentic-ai-era",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "BODY_PARSED_WITH_ACTUAL_FIRST_SEEN",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "AMD_IR",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "BODY_PARSED_WITH_ACTUAL_FIRST_SEEN",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "AMD_IR",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/1296/amd-acquires-taalas-to-advance-compute-solutions-for-rapidly-growing-ai-inference-market",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "BODY_PARSED_WITH_ACTUAL_FIRST_SEEN",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "AMD_IR",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/1297/amd-appoints-tim-ryan-to-board-of-directors",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "BODY_PARSED_WITH_ACTUAL_FIRST_SEEN",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "AMD_IR",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/1298/amd-cisco-and-humain-expand-saudi-arabias-ai-infrastructure-as-amd-instinct-systems-go-live",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "BODY_PARSED_WITH_ACTUAL_FIRST_SEEN",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "AMD_IR",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/1299/amd-to-acquire-world-labs-to-advance-the-future-of-ai-compute",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "BODY_PARSED_WITH_ACTUAL_FIRST_SEEN",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "AMD_IR",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/1300/amd-to-report-fiscal-third-quarter-2026-financial-results",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "BODY_PARSED_WITH_ACTUAL_FIRST_SEEN",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "AMD_IR",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/1301/introducing-amd-helion-agentic-ai-compute-at-rack-scale",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "BODY_PARSED_WITH_ACTUAL_FIRST_SEEN",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "NVIDIA_NEWSROOM",
+      "url": "https://nvidianews.nvidia.com/news/vera-rubin-full-production-agentic-ai-factory",
+      "status": "PARTIAL",
+      "rows": 1,
+      "reason": "BODY_PARSED_WITH_ACTUAL_FIRST_SEEN",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "AMD_IR",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/1284/amd-reports-first-quarter-2026-financial-results",
+      "status": "PARTIAL",
+      "rows": 1,
+      "reason": "BODY_PARSED_WITH_ACTUAL_FIRST_SEEN",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "CNINFO_DISCOVERY",
+      "status": "PARTIAL",
+      "rows": 30,
+      "reason": "BOUNDED_FIRST_PAGE_NOT_FULL_MARKET_COVERAGE",
+      "impact": "Additional overnight discovery",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225527905.PDF",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 80,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225530486.PDF",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 80,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225527099.PDF",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 82,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "深交所",
+      "url": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-28/328c12d7-c3e9-4280-a2c2-9a37c15cff4f.PDF",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 82,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "深交所",
+      "url": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-28/df60c9ec-07cc-4c91-bfa5-7b40801df61b.PDF",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 82,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225522515.PDF",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 83,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225516992.PDF",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 82,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225512708.PDF",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 83,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514208.PDF",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 80,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225502252.PDF",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 82,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225507131.PDF",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 85,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225499406.PDF",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 84,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225497134.PDF",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 81,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225495981.PDF",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 82,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491753.PDF",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 82,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-21/1225487900.PDF",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 81,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-19/1225480328.PDF",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 80,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-15/1225475783.PDF",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 80,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-01/1225451928.PDF",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 81,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-07-15/1225423117.PDF",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 8,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-07-15/1225423192.PDF",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 2,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-07-14/1225421314.PDF",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 3,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-07-10/1225417683.PDF",
+      "source_tier": 1,
+      "status": "PARTIAL",
+      "rows": 11,
+      "reason": "CONTINUITY_AND_HISTORICAL_VINTAGES_NOT_PROVEN",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611484.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611451.pdf",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611222.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611272.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611236.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611235.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611217.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611216.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611215.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611095.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611089.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611093.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611107.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611101.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611106.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611137.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611102.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611141.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611162.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611091.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611100.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611138.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611140.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611103.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611104.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611105.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-19/1225611108.PDF",
+      "source_tier": 1,
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "NO_PARSEABLE_AS_OF_FACTS",
+      "impact": "Missing facts remain unavailable",
+      "retry_status": "ATTEMPTED"
+    },
+    {
+      "source": "consensus_estimates",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "No licensed stable consensus feed; research title counts are not estimates",
+      "impact": "No substitute data or inferred confirmation",
+      "retry_status": "NOT_CONNECTED"
+    },
+    {
+      "source": "memory_contract_HBM",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "Public spot quotes do not cover licensed contracts, HBM price or supply",
+      "impact": "No substitute data or inferred confirmation",
+      "retry_status": "NOT_CONNECTED"
+    },
+    {
+      "source": "inventory",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "No operational point-in-time inventory feed; production is not inventory",
+      "impact": "No substitute data or inferred confirmation",
+      "retry_status": "NOT_CONNECTED"
+    },
+    {
+      "source": "optical_800G_1600G",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "Annual disclosures are available, but shipment/price/Capex time series are not connected",
+      "impact": "No substitute data or inferred confirmation",
+      "retry_status": "NOT_CONNECTED"
+    },
+    {
+      "source": "pcb_material_prices",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "Issuer total revenue is not CCL, copper foil or glass cloth price",
+      "impact": "No substitute data or inferred confirmation",
+      "retry_status": "NOT_CONNECTED"
+    },
+    {
+      "source": "mlcc_utilization_lead_time",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "Company disclosures are not continuous channel inventory/utilization data",
+      "impact": "No substitute data or inferred confirmation",
+      "retry_status": "NOT_CONNECTED"
+    },
+    {
+      "source": "probe_HBM_orders",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "Issuer monthly revenue is not probe-card orders or HBM test demand",
+      "impact": "No substitute data or inferred confirmation",
+      "retry_status": "NOT_CONNECTED"
+    },
+    {
+      "source": "overseas_IR",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "Samsung, SK hynix, Japanese suppliers and cloud Capex IR adapters not connected",
+      "impact": "No substitute data or inferred confirmation",
+      "retry_status": "NOT_CONNECTED"
+    },
+    {
+      "source": "macro_vintages",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "Only retained NBS publication bodies; original first-release vintage and FX/rate feeds incomplete",
+      "impact": "No substitute data or inferred confirmation",
+      "retry_status": "NOT_CONNECTED"
+    },
+    {
+      "source": "historic_lead_time",
+      "status": "UNAVAILABLE",
+      "rows": 0,
+      "reason": "Cold-start series have no original first-seen history",
+      "impact": "No substitute data or inferred confirmation",
+      "retry_status": "NOT_CONNECTED"
+    },
+    {
+      "source": "FACTSTORE_PRICE_WINDOWS",
+      "status": "PARTIAL",
+      "rows": 35,
+      "source_date": "2026-10-19",
+      "history_health": {
+        "requested_dates": 60,
+        "cached_dates": 59,
+        "loaded_dates": 1,
+        "failed_dates": []
+      },
+      "reason": "PE_FORWARD_AND_VALUATION_VINTAGES_UNAVAILABLE_NO_SECOND_QUOTE_DATABASE"
+    }
+  ],
+  "full": "data/opportunity_radar/2026-10-19_eod.json",
+  "compact": "data/opportunity_radar/2026-10-19_eod_compact.json",
+  "mode": "LIVE",
+  "coverage": {
+    "matrix": [
+      {
+        "signal_type": "COMMODITY_PRICE",
+        "schema_supported": true,
+        "live_source_count": 2,
+        "historical_source_count": 2,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          1,
+          3
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-10-19",
+        "observation_count": 5143,
+        "evidence_observation_count": 5143,
+        "stale_observation_count": 5043,
+        "backfill_observation_count": 3142,
+        "major_gaps": [
+          "published_at"
+        ]
+      },
+      {
+        "signal_type": "SUPPLY_DEMAND",
+        "schema_supported": true,
+        "live_source_count": 1,
+        "historical_source_count": 0,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          1
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-10-19",
+        "observation_count": 18,
+        "evidence_observation_count": 18,
+        "stale_observation_count": 6,
+        "backfill_observation_count": 0,
+        "major_gaps": [
+          "CONTINUOUS_COVERAGE_NOT_PROVEN"
+        ]
+      },
+      {
+        "signal_type": "CAPACITY_AND_UTILIZATION",
+        "schema_supported": true,
+        "live_source_count": 2,
+        "historical_source_count": 2,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          1
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-10-19",
+        "observation_count": 178,
+        "evidence_observation_count": 178,
+        "stale_observation_count": 0,
+        "backfill_observation_count": 137,
+        "major_gaps": [
+          "CONTINUOUS_COVERAGE_NOT_PROVEN"
+        ]
+      },
+      {
+        "signal_type": "POLICY_AND_FISCAL",
+        "schema_supported": true,
+        "live_source_count": 1,
+        "historical_source_count": 1,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          1
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-09-11",
+        "observation_count": 5,
+        "evidence_observation_count": 3,
+        "stale_observation_count": 0,
+        "backfill_observation_count": 0,
+        "major_gaps": [
+          "quantitative_or_body_evidence"
+        ]
+      },
+      {
+        "signal_type": "TECHNOLOGY_BREAKTHROUGH",
+        "schema_supported": true,
+        "live_source_count": 0,
+        "historical_source_count": 2,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          1
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-08-28",
+        "observation_count": 17,
+        "evidence_observation_count": 17,
+        "stale_observation_count": 0,
+        "backfill_observation_count": 17,
+        "major_gaps": [
+          "CONTINUOUS_COVERAGE_NOT_PROVEN"
+        ]
+      },
+      {
+        "signal_type": "PRODUCT_COMMERCIALIZATION",
+        "schema_supported": true,
+        "live_source_count": 1,
+        "historical_source_count": 2,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          1
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-09-11",
+        "observation_count": 798,
+        "evidence_observation_count": 798,
+        "stale_observation_count": 0,
+        "backfill_observation_count": 795,
+        "major_gaps": [
+          "CONTINUOUS_COVERAGE_NOT_PROVEN"
+        ]
+      },
+      {
+        "signal_type": "CUSTOMER_AND_ORDER",
+        "schema_supported": true,
+        "live_source_count": 1,
+        "historical_source_count": 2,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          1
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-09-11",
+        "observation_count": 393,
+        "evidence_observation_count": 388,
+        "stale_observation_count": 0,
+        "backfill_observation_count": 357,
+        "major_gaps": [
+          "quantitative_or_body_evidence"
+        ]
+      },
+      {
+        "signal_type": "REVENUE_PROFIT_MARGIN",
+        "schema_supported": true,
+        "live_source_count": 1,
+        "historical_source_count": 2,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          1
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-09-11",
+        "observation_count": 414,
+        "evidence_observation_count": 413,
+        "stale_observation_count": 0,
+        "backfill_observation_count": 410,
+        "major_gaps": [
+          "quantitative_or_body_evidence"
+        ]
+      },
+      {
+        "signal_type": "EXPECTATION_REVISION",
+        "schema_supported": true,
+        "live_source_count": 0,
+        "historical_source_count": 2,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          1
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-08-26",
+        "observation_count": 39,
+        "evidence_observation_count": 39,
+        "stale_observation_count": 0,
+        "backfill_observation_count": 39,
+        "major_gaps": [
+          "CONTINUOUS_COVERAGE_NOT_PROVEN"
+        ]
+      },
+      {
+        "signal_type": "INDUSTRY_COMPETITION",
+        "schema_supported": true,
+        "live_source_count": 0,
+        "historical_source_count": 2,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          1
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-08-26",
+        "observation_count": 16,
+        "evidence_observation_count": 16,
+        "stale_observation_count": 0,
+        "backfill_observation_count": 16,
+        "major_gaps": [
+          "CONTINUOUS_COVERAGE_NOT_PROVEN"
+        ]
+      },
+      {
+        "signal_type": "M&A_AND_CAPITAL_OPERATION",
+        "schema_supported": true,
+        "live_source_count": 1,
+        "historical_source_count": 2,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          1
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-09-11",
+        "observation_count": 149,
+        "evidence_observation_count": 141,
+        "stale_observation_count": 0,
+        "backfill_observation_count": 64,
+        "major_gaps": [
+          "quantitative_or_body_evidence"
+        ]
+      },
+      {
+        "signal_type": "SHAREHOLDER_MANAGEMENT_ACTION",
+        "schema_supported": true,
+        "live_source_count": 1,
+        "historical_source_count": 2,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          1
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-09-11",
+        "observation_count": 200,
+        "evidence_observation_count": 190,
+        "stale_observation_count": 0,
+        "backfill_observation_count": 119,
+        "major_gaps": [
+          "quantitative_or_body_evidence"
+        ]
+      },
+      {
+        "signal_type": "OVERSEAS_LEAD",
+        "schema_supported": true,
+        "live_source_count": 2,
+        "historical_source_count": 0,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          2
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-10-17",
+        "observation_count": 158,
+        "evidence_observation_count": 158,
+        "stale_observation_count": 16,
+        "backfill_observation_count": 0,
+        "major_gaps": [
+          "CONTINUOUS_COVERAGE_NOT_PROVEN"
+        ]
+      },
+      {
+        "signal_type": "MACRO_LIQUIDITY_FX_RATES",
+        "schema_supported": true,
+        "live_source_count": 1,
+        "historical_source_count": 0,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          1
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-10-14",
+        "observation_count": 6,
+        "evidence_observation_count": 6,
+        "stale_observation_count": 1,
+        "backfill_observation_count": 0,
+        "major_gaps": [
+          "CONTINUOUS_COVERAGE_NOT_PROVEN"
+        ]
+      },
+      {
+        "signal_type": "VALUATION_FUNDAMENTAL_DIVERGENCE",
+        "schema_supported": true,
+        "live_source_count": 0,
+        "historical_source_count": 1,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          2
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-10-19",
+        "observation_count": 805,
+        "evidence_observation_count": 805,
+        "stale_observation_count": 700,
+        "backfill_observation_count": 0,
+        "major_gaps": [
+          "CONTINUOUS_COVERAGE_NOT_PROVEN"
+        ]
+      },
+      {
+        "signal_type": "MARKET_STRUCTURE_AND_FLOW",
+        "schema_supported": true,
+        "live_source_count": 0,
+        "historical_source_count": 2,
+        "point_in_time_available": true,
+        "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+        "source_tier": [
+          3
+        ],
+        "production_status": "PARTIAL",
+        "latest_observation_date": "2026-09-11",
+        "observation_count": 533,
+        "evidence_observation_count": 533,
+        "stale_observation_count": 533,
+        "backfill_observation_count": 0,
+        "major_gaps": [
+          "published_at"
+        ]
+      }
+    ],
+    "category_coverage_ratio": 1.0,
+    "live_source_count": 6,
+    "tier1_observation_count": 2483,
+    "company_body_parsed_count": 55,
+    "historical_point_in_time_days": 26,
+    "technology_chain_coverage": {
+      "存储": {
+        "observation_count": 760,
+        "scope": "DOCUMENT_OR_ISSUER_TOTAL_REVENUE_NOT_COMPLETE_PRODUCT_METRICS"
+      },
+      "光通信": {
+        "observation_count": 550,
+        "scope": "DOCUMENT_OR_ISSUER_TOTAL_REVENUE_NOT_COMPLETE_PRODUCT_METRICS"
+      },
+      "PCB/CCL": {
+        "observation_count": 470,
+        "scope": "DOCUMENT_OR_ISSUER_TOTAL_REVENUE_NOT_COMPLETE_PRODUCT_METRICS"
+      },
+      "MLCC": {
+        "observation_count": 207,
+        "scope": "DOCUMENT_OR_ISSUER_TOTAL_REVENUE_NOT_COMPLETE_PRODUCT_METRICS"
+      },
+      "探针/测试": {
+        "observation_count": 402,
+        "scope": "DOCUMENT_OR_ISSUER_TOTAL_REVENUE_NOT_COMPLETE_PRODUCT_METRICS"
+      },
+      "先进封装": {
+        "observation_count": 353,
+        "scope": "DOCUMENT_OR_ISSUER_TOTAL_REVENUE_NOT_COMPLETE_PRODUCT_METRICS"
+      }
+    },
+    "signal_type_counts": {
+      "CUSTOMER_AND_ORDER": 393,
+      "SHAREHOLDER_MANAGEMENT_ACTION": 200,
+      "POLICY_AND_FISCAL": 5,
+      "MARKET_STRUCTURE_AND_FLOW": 533,
+      "M&A_AND_CAPITAL_OPERATION": 149,
+      "COMMODITY_PRICE": 5143,
+      "REVENUE_PROFIT_MARGIN": 414,
+      "PRODUCT_COMMERCIALIZATION": 798,
+      "CAPACITY_AND_UTILIZATION": 178,
+      "SUPPLY_DEMAND": 18,
+      "MACRO_LIQUIDITY_FX_RATES": 6,
+      "OVERSEAS_LEAD": 158,
+      "TECHNOLOGY_BREAKTHROUGH": 17,
+      "INDUSTRY_COMPETITION": 16,
+      "EXPECTATION_REVISION": 39,
+      "VALUATION_FUNDAMENTAL_DIVERGENCE": 805
+    },
+    "verified_relation_count": 238,
+    "company_alpha_count": 38,
+    "morning_candidate_count": 272,
+    "compact_size": 185273,
+    "full_size": 13208987
+  }
 }
