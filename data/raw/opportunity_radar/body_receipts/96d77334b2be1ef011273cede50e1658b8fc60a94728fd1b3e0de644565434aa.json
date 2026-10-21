@@ -1,0 +1,8 @@
+{
+  "url": "https://openapi.twse.com.tw/v1/opendata/t187ap05_L",
+  "source": "TWSE",
+  "retrieved_at": "2026-10-21T21:43:59.165449+08:00",
+  "raw_path": "data/raw/opportunity_radar/bodies/a58c04b3bdc2b94632027018ca4f09f6ad053848addb7b9580b372626542fc17.bin",
+  "raw_sha256": "a58c04b3bdc2b94632027018ca4f09f6ad053848addb7b9580b372626542fc17",
+  "extracted_text": null
+}
