@@ -9488,5 +9488,41 @@
     "verification_basis": "ISSUER_OWN_PRODUCT_BODY",
     "observation_mode": "LIVE_OBSERVED",
     "parser_version": "COMPANY_EVIDENCE_V2"
+  },
+  {
+    "source": "巨潮资讯",
+    "url": "https://static.cninfo.com.cn/finalpage/2026-10-23/1225621313.PDF",
+    "source_path": "data/raw/opportunity_radar/body_receipts/4ec5e992a09d306bb62c272d9e9aab892320248e460398b807ff8563230f97c5.json",
+    "first_seen_at": "2026-10-23T21:22:22.766046+08:00",
+    "provenance": {
+      "sha256": "768ca1a90dcaaa9f8eb4a0776abe69ef86f11a352f65a0d5500e36c4f96afda7",
+      "raw_sha256": "2820171451534f54b55184195d45dfc198620268fbde9e4b0a61b2881dbb8eab",
+      "raw_path": "data/raw/opportunity_radar/bodies/2820171451534f54b55184195d45dfc198620268fbde9e4b0a61b2881dbb8eab.pdf",
+      "kind": "SOURCE_BODY"
+    },
+    "source_tier": 1,
+    "published_at": "2026-10-23",
+    "source_date": "2026-10-23",
+    "event_date": "2026-10-23",
+    "from": "光器件",
+    "to": "朗特智能",
+    "stock_code": "300916",
+    "stock_name": "朗特智能",
+    "company_name": "朗特智能",
+    "upstream_theme": "光通信",
+    "downstream_theme": "光通信",
+    "relationship_type": "core_producer",
+    "product": "光器件",
+    "revenue_exposure": null,
+    "profit_exposure": null,
+    "customer_exposure": null,
+    "capacity_exposure": null,
+    "evidence": "标的公司聚焦于光通信领域无源光器件产品的研发、制造与销售",
+    "evidence_date": "2026-10-23",
+    "confidence": 1.0,
+    "relation_status": "VERIFIED",
+    "verification_basis": "ISSUER_OWN_PRODUCT_BODY",
+    "observation_mode": "LIVE_OBSERVED",
+    "parser_version": "COMPANY_EVIDENCE_V2"
   }
 ]
