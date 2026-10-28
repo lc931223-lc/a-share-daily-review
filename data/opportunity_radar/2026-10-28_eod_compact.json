@@ -1,0 +1,4888 @@
+{
+  "meta": {
+    "schema_version": "opportunity_radar_objective.2",
+    "trade_date": "2026-10-28",
+    "snapshot_type": "EOD",
+    "as_of": "2026-10-28T23:06:26.735150+08:00",
+    "data_role": "OBJECTIVE_OPPORTUNITY_EVIDENCE",
+    "final_judgement_owner": "chatgpt",
+    "execution_mode": "LIVE"
+  },
+  "commodity_observations": [
+    {
+      "entity": "磷酸铁锂（普通动力型）",
+      "theme": null,
+      "stock_code": null,
+      "stock_name": null,
+      "metric": "circulation_spot_price",
+      "unit": "CNY/吨",
+      "currency": "CNY",
+      "event_date": "2026-10-24",
+      "published_at": "2026-10-24T09:30:00+08:00",
+      "first_seen_at": "2026-10-26T23:09:32.903486+08:00",
+      "effective_date": "2026-10-24",
+      "source_date": "2026-10-24",
+      "source": "NBS",
+      "source_path": "data/raw/opportunity_radar/body_receipts/d7e6fd46f3fed1c3e9c78edb8528ea2fafef258d39921a435e7967b2580a2a0e.json",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261023_1965679.html",
+      "provenance": {
+        "sha256": "2d7793c124a8108a91d2c1310b5c61dcc46a355d4198ec59baae1ed7a82edb09",
+        "raw_sha256": "f0d9d6256a48a96c1b971ff15babf6df40938063d97221703a08d7a0df9fee3e",
+        "raw_path": "data/raw/opportunity_radar/bodies/f0d9d6256a48a96c1b971ff15babf6df40938063d97221703a08d7a0df9fee3e.bin",
+        "kind": "SOURCE_BODY"
+      },
+      "body_evidence": "磷酸铁锂（普通动力型） | 吨 | 46005.9 | -5223.9 | -10.2",
+      "title": null,
+      "signal_type": "COMMODITY_PRICE",
+      "source_tier": 1,
+      "facts": {
+        "instrument": "磷酸铁锂（普通动力型）",
+        "category": "SPOT_SURVEY_PRICE",
+        "latest_value": 46005.9,
+        "unit": null,
+        "currency": null,
+        "change_1d": -10.196994717918084,
+        "change_3d": -17.55333256870869,
+        "change_5d": -18.014238743996646,
+        "change_10d": null,
+        "change_20d": null,
+        "percentile_20d": null,
+        "percentile_60d": null,
+        "percentile_250d": null,
+        "new_high_20d": null,
+        "new_high_60d": null,
+        "new_low_20d": null,
+        "slope_3d": -2937.5999999999985,
+        "slope_10d": null,
+        "slope_20d": null,
+        "acceleration_3d_vs_20d": null,
+        "historical_volatility": null,
+        "observation_mode": "LIVE_OBSERVED",
+        "revision_version": "f0d9d6256a48a96c1b971ff15babf6df40938063d97221703a08d7a0df9fee3e",
+        "update_frequency": "SOURCE_RELEASE",
+        "period": "2026年10月中旬流通领域重要生产资料市场价格变动情况",
+        "reported_change_abs": -5223.9,
+        "reported_change_pct": -10.2,
+        "series_caveat": "Ten-day circulation survey price, not futures or contract settlement",
+        "freshness": {
+          "age_calendar_days": 4,
+          "max_age_days": 7,
+          "status": "WITHIN_WINDOW"
+        }
+      },
+      "value": 46005.9,
+      "data_quality": "PASS",
+      "confidence": "HIGH",
+      "data_gaps": [],
+      "as_of_valid": true,
+      "mapped_factor_ids": [
+        15,
+        16,
+        18
+      ],
+      "mapping_confidence": "LOW",
+      "mapping_method": "CATEGORY_ASSOCIATION_NOT_CAUSAL",
+      "mapping_source": "src/domain/constants.py:DRIVER_TYPES",
+      "observation_id": "d45f51b1d52bf8d6930c277d6a3b25d29bce6c877e4c8b85e413d5ec318b3994",
+      "changes": {
+        "level": 46005.9,
+        "delta": -5223.9000000000015,
+        "observation_count": 6,
+        "window_basis": "SOURCE_OBSERVATIONS_NOT_CALENDAR_DAYS",
+        "change_1d": -10.196994717918084,
+        "change_3d": -17.55333256870869,
+        "change_5d": -18.014238743996646,
+        "change_7d": null,
+        "change_10d": null,
+        "change_20d": null,
+        "change_30d": null,
+        "percentile_20d": null,
+        "percentile_60d": null,
+        "percentile_250d": null,
+        "new_high_20d": null,
+        "new_high_60d": null,
+        "new_low_20d": null,
+        "slope_3d": -2937.5999999999985,
+        "slope_10d": null,
+        "slope_20d": null,
+        "acceleration_3d_vs_20d": null,
+        "historical_volatility": null,
+        "zscore_20": null,
+        "change_label": null
+      },
+      "history_references": [
+        "5c74ab17fa5f7c9c99be171d8c5284aa7321fa7ed95f2ef5a06cc2fdab732c22",
+        "d45f51b1d52bf8d6930c277d6a3b25d29bce6c877e4c8b85e413d5ec318b3994"
+      ]
+    }
+  ],
+  "supply_demand_observations": [
+    {
+      "entity": "原煤",
+      "theme": "原煤",
+      "stock_code": null,
+      "stock_name": null,
+      "metric": "production_monthly",
+      "unit": "亿吨",
+      "currency": null,
+      "event_date": "2026-10-19",
+      "published_at": "2026-10-19T10:00:00+08:00",
+      "first_seen_at": "2026-10-19T23:33:42.245964+08:00",
+      "effective_date": "2026-10-19",
+      "source_date": "2026-10-19",
+      "source": "NBS",
+      "source_path": "data/raw/opportunity_radar/body_receipts/07eba9835ad8c341c73db0459658f92c4bc89c1b5b4dd858efd36d93f01e97ca.json",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261019_1965613.html",
+      "provenance": {
+        "sha256": "09c841782fe3982fea83915a68c4a833bd26149f52ca12ae8f4b3aa58256cba4",
+        "raw_sha256": "966dc49ed6650f6f0f649021f0f90a4455172ee82028e302323379d2bc0ce93a",
+        "raw_path": "data/raw/opportunity_radar/bodies/966dc49ed6650f6f0f649021f0f90a4455172ee82028e302323379d2bc0ce93a.bin",
+        "kind": "SOURCE_BODY"
+      },
+      "body_evidence": "9月份，规上工业原煤产量3.9亿吨",
+      "title": null,
+      "signal_type": "SUPPLY_DEMAND",
+      "source_tier": 1,
+      "facts": {
+        "metric": "production",
+        "industry": null,
+        "current_value": 3.9,
+        "previous_value": 3.6,
+        "change_abs": 0.2999999999999998,
+        "change_pct": 8.333333333333325,
+        "percentile": null,
+        "zscore": null,
+        "trend_5d": null,
+        "trend_20d": null,
+        "observation_mode": "LIVE_OBSERVED",
+        "revision_version": "966dc49ed6650f6f0f649021f0f90a4455172ee82028e302323379d2bc0ce93a",
+        "update_frequency": "SOURCE_RELEASE",
+        "period": "2026年9月份",
+        "period_basis": "MONTHLY",
+        "series_caveat": "Monthly and cumulative series kept separate; comparable enterprise scope retained",
+        "freshness": {
+          "age_calendar_days": 9,
+          "max_age_days": 45,
+          "status": "WITHIN_WINDOW"
+        }
+      },
+      "value": 3.9,
+      "data_quality": "PASS",
+      "confidence": "HIGH",
+      "data_gaps": [],
+      "as_of_valid": true,
+      "mapped_factor_ids": [
+        17
+      ],
+      "mapping_confidence": "LOW",
+      "mapping_method": "CATEGORY_ASSOCIATION_NOT_CAUSAL",
+      "mapping_source": "src/domain/constants.py:DRIVER_TYPES",
+      "observation_id": "5ce195386c7950664dfc8a2fbb95c57fe79c770ea9e2ec7b7e8d445cf85f5fee",
+      "changes": {
+        "level": 3.9,
+        "delta": 0.2999999999999998,
+        "observation_count": 3,
+        "window_basis": "SOURCE_OBSERVATIONS_NOT_CALENDAR_DAYS",
+        "change_1d": 8.333333333333325,
+        "change_3d": null,
+        "change_5d": null,
+        "change_7d": null,
+        "change_10d": null,
+        "change_20d": null,
+        "change_30d": null,
+        "percentile_20d": null,
+        "percentile_60d": null,
+        "percentile_250d": null,
+        "new_high_20d": null,
+        "new_high_60d": null,
+        "new_low_20d": null,
+        "slope_3d": 0.25,
+        "slope_10d": null,
+        "slope_20d": null,
+        "acceleration_3d_vs_20d": null,
+        "historical_volatility": null,
+        "zscore_20": null,
+        "change_label": null
+      },
+      "history_references": [
+        "d1f0ba4a789f8b9807f073d52116fab4ccc6829ee30a3acf88d4c5a571ea8452",
+        "5ce195386c7950664dfc8a2fbb95c57fe79c770ea9e2ec7b7e8d445cf85f5fee"
+      ]
+    }
+  ],
+  "capacity_utilization_observations": [
+    {
+      "entity": "汽车制造业",
+      "theme": "汽车制造业",
+      "stock_code": null,
+      "stock_name": null,
+      "metric": "capacity_utilization_rate",
+      "unit": "percent",
+      "currency": null,
+      "event_date": "2026-10-19",
+      "published_at": "2026-10-19T10:00:00+08:00",
+      "first_seen_at": "2026-10-19T23:33:44.868627+08:00",
+      "effective_date": "2026-10-19",
+      "source_date": "2026-10-19",
+      "source": "NBS",
+      "source_path": "data/raw/opportunity_radar/body_receipts/d2557f0d300ce589cdd697542567d099bd4a6fff1a419092372a56eb0971e265.json",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261019_1965611.html",
+      "provenance": {
+        "sha256": "a26114e312fbde4380def86152a8bd7ecf038bcee7a8d6ce832f96e2cd0e3ef4",
+        "raw_sha256": "16d1b3681a88112e345cc82fd8e289a50c10f862c832303adf12c53b1026a21a",
+        "raw_path": "data/raw/opportunity_radar/bodies/16d1b3681a88112e345cc82fd8e289a50c10f862c832303adf12c53b1026a21a.bin",
+        "kind": "SOURCE_BODY"
+      },
+      "body_evidence": "汽车制造业 | 66.2 | -7.1 | 69.0 | -3.2",
+      "title": null,
+      "signal_type": "CAPACITY_AND_UTILIZATION",
+      "source_tier": 1,
+      "facts": {
+        "industry": null,
+        "company": null,
+        "metric": null,
+        "current": 66.2,
+        "previous": 70.8,
+        "delta": -4.599999999999994,
+        "historical_percentile": null,
+        "event_type": null,
+        "announced_capacity": null,
+        "effective_capacity": null,
+        "observation_mode": "LIVE_OBSERVED",
+        "revision_version": "16d1b3681a88112e345cc82fd8e289a50c10f862c832303adf12c53b1026a21a",
+        "update_frequency": "SOURCE_RELEASE",
+        "period": "2026年三季度全国规模以上工业产能利用率为73.1%",
+        "reported_yoy_pp": -7.1,
+        "freshness": {
+          "age_calendar_days": 9,
+          "max_age_days": 120,
+          "status": "WITHIN_WINDOW"
+        }
+      },
+      "value": 66.2,
+      "data_quality": "PASS",
+      "confidence": "HIGH",
+      "data_gaps": [],
+      "as_of_valid": true,
+      "mapped_factor_ids": [
+        22
+      ],
+      "mapping_confidence": "LOW",
+      "mapping_method": "CATEGORY_ASSOCIATION_NOT_CAUSAL",
+      "mapping_source": "src/domain/constants.py:DRIVER_TYPES",
+      "observation_id": "5587fa906071cd944d363251960dce48fddf165466a8f55eec0e2650915929da",
+      "changes": {
+        "level": 66.2,
+        "delta": -4.599999999999994,
+        "observation_count": 2,
+        "window_basis": "SOURCE_OBSERVATIONS_NOT_CALENDAR_DAYS",
+        "change_1d": -6.497175141242928,
+        "change_3d": null,
+        "change_5d": null,
+        "change_7d": null,
+        "change_10d": null,
+        "change_20d": null,
+        "change_30d": null,
+        "percentile_20d": null,
+        "percentile_60d": null,
+        "percentile_250d": null,
+        "new_high_20d": null,
+        "new_high_60d": null,
+        "new_low_20d": null,
+        "slope_3d": null,
+        "slope_10d": null,
+        "slope_20d": null,
+        "acceleration_3d_vs_20d": null,
+        "historical_volatility": null,
+        "zscore_20": null,
+        "change_label": null
+      },
+      "history_references": [
+        "723d40080aa7153db15084008ed09171ea0e42e74c78c1764fa70b19bf7ff86b",
+        "5587fa906071cd944d363251960dce48fddf165466a8f55eec0e2650915929da"
+      ]
+    }
+  ],
+  "policy_observations": [],
+  "technology_breakthrough_observations": [
+    {
+      "entity": "NVIDIA",
+      "theme": "光通信",
+      "stock_code": "NVDA.US",
+      "stock_name": "NVIDIA",
+      "metric": "technology_stage:CPO",
+      "unit": null,
+      "currency": null,
+      "event_date": "2026-05-31",
+      "published_at": "2026-05-31",
+      "first_seen_at": "2026-10-13T23:56:26.915022+08:00",
+      "effective_date": "2026-05-31",
+      "source_date": "2026-05-31",
+      "source": "NVIDIA_NEWSROOM",
+      "source_path": "data/raw/opportunity_radar/body_receipts/a3d86efdd0c1f6e16da8070115ce8ac24ccfa25f75c0aa1ad1966273a2cba4e1.json",
+      "url": "https://nvidianews.nvidia.com/news/vera-rubin-full-production-agentic-ai-factory",
+      "provenance": {
+        "sha256": "aaefbde9cb7d2b01178a8b6a09a3dd6f4c6dba74d854abf2524bf42676043b80",
+        "raw_sha256": "ec9b766598245d3a368e72684cdd26f360d3fcd49f79069e0fb00305b1796d2f",
+        "raw_path": "data/raw/opportunity_radar/bodies/ec9b766598245d3a368e72684cdd26f360d3fcd49f79069e0fb00305b1796d2f.bin",
+        "kind": "SOURCE_BODY"
+      },
+      "body_evidence": "Building the Fabric for Million-GPU AI Factories To support scale-out and scale-across AI factory deployments, the Vera Rubin platform introduces NVIDIA Spectrum-X™ Ethernet Photonics, the world’s first co-packaged-optics (CPO)-based switches with 200Gb/s SerDes — now in production",
+      "title": "NVIDIA Vera Rubin Ramps Into Full Production to Power Agentic AI Factories Worldwide | NVIDIA Newsroom",
+      "signal_type": "TECHNOLOGY_BREAKTHROUGH",
+      "source_tier": 1,
+      "facts": {
+        "technology": "CPO",
+        "institution": null,
+        "company": "NVIDIA",
+        "milestone_type": "DISCLOSED_STAGE_NOT_ASSUMED_BREAKTHROUGH",
+        "previous_stage": null,
+        "current_stage": "MASS_PRODUCTION",
+        "quantitative_improvement": null,
+        "observation_mode": "HISTORICAL_BACKFILL",
+        "revision_version": "ec9b766598245d3a368e72684cdd26f360d3fcd49f79069e0fb00305b1796d2f",
+        "update_frequency": "SOURCE_RELEASE",
+        "body_parsed": true,
+        "parser_version": "COMPANY_EVIDENCE_V2",
+        "historical_backfill": true,
+        "technology_name": "CPO",
+        "technology_category": "光通信",
+        "technology_stage": "MASS_PRODUCTION",
+        "commercialization_stage": "MASS_PRODUCTION",
+        "affected_industries": [
+          "光通信"
+        ],
+        "affected_products": [
+          "CPO"
+        ],
+        "possible_beneficiaries": [],
+        "beneficiary_status": "REQUIRES_SEPARATE_ECONOMIC_RELATION",
+        "freshness": {
+          "age_calendar_days": 150,
+          "max_age_days": 180,
+          "status": "WITHIN_WINDOW"
+        }
+      },
+      "value": null,
+      "data_quality": "PASS",
+      "confidence": "HIGH",
+      "data_gaps": [],
+      "as_of_valid": true,
+      "mapped_factor_ids": [
+        1,
+        3
+      ],
+      "mapping_confidence": "LOW",
+      "mapping_method": "CATEGORY_ASSOCIATION_NOT_CAUSAL",
+      "mapping_source": "src/domain/constants.py:DRIVER_TYPES",
+      "observation_id": "d7de519b31533d2dd4e5f630540173c58b1772267ba1df43ed91f90f887e5bd8",
+      "changes": {},
+      "history_references": [
+        "d7de519b31533d2dd4e5f630540173c58b1772267ba1df43ed91f90f887e5bd8"
+      ]
+    }
+  ],
+  "product_commercialization_observations": [],
+  "customer_order_observations": [],
+  "fundamental_change_observations": [
+    {
+      "entity": "300476",
+      "theme": "PCB/CCL",
+      "stock_code": "300476",
+      "stock_name": "胜宏科技",
+      "metric": "reported_earnings",
+      "unit": null,
+      "currency": null,
+      "event_date": "2026-08-28",
+      "published_at": "2026-08-28",
+      "first_seen_at": "2026-09-14T23:50:39.432599+08:00",
+      "effective_date": "2026-08-28",
+      "source_date": "2026-08-28",
+      "source": "巨潮资讯",
+      "source_path": "data/raw/opportunity_radar/body_receipts/e6f24de672394fe178a9ec3d3fec73db70d6dbaa3e6ff4a0e2091411b21f3eda.json",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225522515.PDF",
+      "provenance": {
+        "sha256": "45e58c617255d054143aa1c12e40bc60fd9520533c8e10364510fba86bbcec8d",
+        "raw_sha256": "1f1a47ec94dd2d6b18db72e59e2920511cf15213ff5dde41ff302bfcd1c723d7",
+        "raw_path": "data/raw/opportunity_radar/bodies/1f1a47ec94dd2d6b18db72e59e2920511cf15213ff5dde41ff302bfcd1c723d7.pdf",
+        "kind": "SOURCE_BODY"
+      },
+      "body_evidence": "归属于上市公司股东的净利润（元） 2,856,778,938.24 2,143,119,809.25 33.30%",
+      "title": "2026年半年度报告",
+      "signal_type": "REVENUE_PROFIT_MARGIN",
+      "source_tier": 1,
+      "facts": {
+        "revenue_yoy": null,
+        "revenue_qoq": null,
+        "revenue_acceleration": null,
+        "profit_yoy": null,
+        "profit_qoq": null,
+        "profit_acceleration": null,
+        "gross_margin": null,
+        "gross_margin_change": null,
+        "net_margin": null,
+        "cash_flow": null,
+        "ROE": null,
+        "backlog": null,
+        "segment_growth": null,
+        "monthly_operation_data": null,
+        "observation_mode": "HISTORICAL_BACKFILL",
+        "revision_version": "1f1a47ec94dd2d6b18db72e59e2920511cf15213ff5dde41ff302bfcd1c723d7",
+        "update_frequency": "SOURCE_RELEASE",
+        "body_parsed": true,
+        "parser_version": "COMPANY_EVIDENCE_V2",
+        "historical_backfill": true,
+        "financial_metric": "earnings",
+        "current_value": 2856778938.24,
+        "prior_value": 2143119809.25,
+        "fundamental_change_pct": 33.30001084912512,
+        "comparison_basis": "REPORTED_YOY_NOT_EXPECTATION_REVISION",
+        "financial_scope": "CONSOLIDATED_REPORTED_TABLE",
+        "period_basis": "H1",
+        "freshness": {
+          "age_calendar_days": 61,
+          "max_age_days": 180,
+          "status": "WITHIN_WINDOW"
+        }
+      },
+      "value": 2856778938.24,
+      "data_quality": "PASS",
+      "confidence": "HIGH",
+      "data_gaps": [],
+      "as_of_valid": true,
+      "mapped_factor_ids": [
+        24,
+        25,
+        26
+      ],
+      "mapping_confidence": "LOW",
+      "mapping_method": "CATEGORY_ASSOCIATION_NOT_CAUSAL",
+      "mapping_source": "src/domain/constants.py:DRIVER_TYPES",
+      "observation_id": "b6ef9c29adca018e5ff5245de13eceb73eab5530b1adf91d657739e18ad027a3",
+      "changes": {
+        "level": 2856778938.24,
+        "delta": null,
+        "observation_count": 1,
+        "window_basis": "SOURCE_OBSERVATIONS_NOT_CALENDAR_DAYS",
+        "change_1d": null,
+        "change_3d": null,
+        "change_5d": null,
+        "change_7d": null,
+        "change_10d": null,
+        "change_20d": null,
+        "change_30d": null,
+        "percentile_20d": null,
+        "percentile_60d": null,
+        "percentile_250d": null,
+        "new_high_20d": null,
+        "new_high_60d": null,
+        "new_low_20d": null,
+        "slope_3d": null,
+        "slope_10d": null,
+        "slope_20d": null,
+        "acceleration_3d_vs_20d": null,
+        "historical_volatility": null,
+        "zscore_20": null,
+        "change_label": null
+      },
+      "history_references": [
+        "b6ef9c29adca018e5ff5245de13eceb73eab5530b1adf91d657739e18ad027a3"
+      ]
+    }
+  ],
+  "expectation_revision_observations": [
+    {
+      "entity": "鼎龙股份",
+      "theme": "先进封装",
+      "stock_code": "300054",
+      "stock_name": "鼎龙股份",
+      "metric": "earnings_revision:2026H1",
+      "unit": "CNY",
+      "currency": null,
+      "event_date": "2026-08-26",
+      "published_at": "2026-08-26",
+      "first_seen_at": "2026-10-28T23:06:02.745166+08:00",
+      "effective_date": "2026-08-26",
+      "source_date": "2026-08-26",
+      "source": "巨潮资讯",
+      "source_path": "data/raw/opportunity_radar/body_receipts/7f171a18c7e4a880c721a7347276e541af630d6bfe8804c3c995c1f0993c062c.json",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225507131.PDF",
+      "provenance": {
+        "sha256": "17738479632d748b5010e5a018e7a8ddf38a665c4c125854b4c799387c120b0c",
+        "raw_sha256": "2af3806a34001579fb14ea4b4a27698383841bd39a4f836519fa76a7d712f169",
+        "raw_path": "data/raw/opportunity_radar/bodies/2af3806a34001579fb14ea4b4a27698383841bd39a4f836519fa76a7d712f169.pdf",
+        "kind": "SOURCE_BODY"
+      },
+      "body_evidence": "归属于上市公司股东的净利润（元） 529,436,710.39 311,042,363.19 70.21%",
+      "title": null,
+      "signal_type": "EXPECTATION_REVISION",
+      "source_tier": 1,
+      "facts": {
+        "consensus_eps_current": null,
+        "consensus_eps_previous": null,
+        "consensus_profit_current": null,
+        "consensus_profit_previous": null,
+        "revision_7d": null,
+        "revision_30d": null,
+        "number_of_upgrades": null,
+        "number_of_downgrades": null,
+        "company_guidance_change": null,
+        "broker_estimate_change": null,
+        "observation_mode": "HISTORICAL_BACKFILL",
+        "revision_version": "2af3806a34001579fb14ea4b4a27698383841bd39a4f836519fa76a7d712f169",
+        "update_frequency": "SOURCE_RELEASE",
+        "expectation_metric": "earnings_revision",
+        "prior_expectation": 525000000.0,
+        "latest_expectation": 529436710.39,
+        "guidance_low": 509999999.99999994,
+        "guidance_high": 540000000.0,
+        "guidance_comparison_basis": "DISCLOSED_RANGE_MIDPOINT",
+        "outside_guidance_range": false,
+        "revision_abs": 4436710.389999986,
+        "revision_pct": 0.8450876933333306,
+        "revision_direction": "UP",
+        "expectation_source_type": "COMPANY_PRIOR_GUIDANCE",
+        "latest_source_type": "LATEST_REPORTED_FACT",
+        "period": "2026H1",
+        "unit": "CNY",
+        "basis": "NET_PROFIT_ATTRIBUTABLE_PARENT",
+        "prior_evidence": {
+          "published_at": "2026-07-10",
+          "first_seen_at": "2026-10-28T23:06:02.745166+08:00",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-07-10/1225417683.PDF",
+          "source_path": "data/raw/opportunity_radar/body_receipts/1545f8233f1f6e52df3b70c378561ff6202c2d0e909707d34b3a0c6c1758711a.json",
+          "provenance": {
+            "sha256": "b088b312373e7763ffd76028b82a84adce498439c22923c449407d2757fe357f",
+            "raw_sha256": "0924c6ea463cce54861af2cd64fbd5fe8b9578352194be52fef17eda7b83c777",
+            "raw_path": "data/raw/opportunity_radar/bodies/0924c6ea463cce54861af2cd64fbd5fe8b9578352194be52fef17eda7b83c777.pdf",
+            "kind": "SOURCE_BODY"
+          },
+          "body_evidence": "归属于上市公司股东的净利润5.1亿元~5.4亿元"
+        },
+        "latest_evidence": {
+          "published_at": "2026-08-26",
+          "first_seen_at": "2026-10-28T23:05:59.747094+08:00",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225507131.PDF",
+          "source_path": "data/raw/opportunity_radar/body_receipts/7f171a18c7e4a880c721a7347276e541af630d6bfe8804c3c995c1f0993c062c.json",
+          "provenance": {
+            "sha256": "17738479632d748b5010e5a018e7a8ddf38a665c4c125854b4c799387c120b0c",
+            "raw_sha256": "2af3806a34001579fb14ea4b4a27698383841bd39a4f836519fa76a7d712f169",
+            "raw_path": "data/raw/opportunity_radar/bodies/2af3806a34001579fb14ea4b4a27698383841bd39a4f836519fa76a7d712f169.pdf",
+            "kind": "SOURCE_BODY"
+          },
+          "body_evidence": "归属于上市公司股东的净利润（元） 529,436,710.39 311,042,363.19 70.21%"
+        },
+        "comparison_semantics": "SOURCE_GUIDANCE_NOT_ASSUMED_MARKET_CONSENSUS",
+        "body_parsed": true,
+        "parser_version": "COMPANY_EVIDENCE_V2",
+        "historical_backfill": true,
+        "freshness": {
+          "age_calendar_days": 63,
+          "max_age_days": 90,
+          "status": "WITHIN_WINDOW"
+        }
+      },
+      "value": null,
+      "data_quality": "PASS",
+      "confidence": "HIGH",
+      "data_gaps": [],
+      "as_of_valid": true,
+      "mapped_factor_ids": [
+        23
+      ],
+      "mapping_confidence": "LOW",
+      "mapping_method": "CATEGORY_ASSOCIATION_NOT_CAUSAL",
+      "mapping_source": "src/domain/constants.py:DRIVER_TYPES",
+      "observation_id": "91a10a684908486167c597b70ef6b5e3e0680ced063428fb07e727b40a43c50e",
+      "changes": {},
+      "history_references": [
+        "91a10a684908486167c597b70ef6b5e3e0680ced063428fb07e727b40a43c50e"
+      ]
+    }
+  ],
+  "industry_competition_observations": [],
+  "capital_operation_observations": [],
+  "shareholder_management_observations": [],
+  "overseas_lead_observations": [
+    {
+      "entity": "精測",
+      "theme": "探针/测试",
+      "stock_code": "6510.TW",
+      "stock_name": "精測",
+      "metric": "monthly_revenue",
+      "unit": "TWD_thousand",
+      "currency": "TWD",
+      "event_date": "2026-10-17",
+      "published_at": "2026-10-17",
+      "first_seen_at": "2026-10-19T23:34:01.133196+08:00",
+      "effective_date": "2026-10-17",
+      "source_date": "2026-10-17",
+      "source": "TPEX",
+      "source_path": "data/raw/opportunity_radar/body_receipts/3b5ca44cfa39a6ed133517b13881f2088b49c3bb381ec7408bc1ed7b7510fa71.json",
+      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap05_O",
+      "provenance": {
+        "sha256": "be480dbe541bbc1d766a825fd74c694cd9878e2e7017966d4e55ba3b4cc5bcf5",
+        "raw_sha256": "a27fea120daa8ef4543bcbf6e31426cad2e0201111ee8d97916fbb5fce2727a6",
+        "raw_path": "data/raw/opportunity_radar/bodies/a27fea120daa8ef4543bcbf6e31426cad2e0201111ee8d97916fbb5fce2727a6.bin",
+        "kind": "SOURCE_BODY"
+      },
+      "body_evidence": null,
+      "title": null,
+      "signal_type": "OVERSEAS_LEAD",
+      "source_tier": 2,
+      "facts": {
+        "market": "TW",
+        "instrument": "6510",
+        "related_theme": null,
+        "move_1d": null,
+        "move_3d": null,
+        "move_5d": null,
+        "event_type": null,
+        "observation_mode": "LIVE_OBSERVED",
+        "revision_version": "a27fea120daa8ef4543bcbf6e31426cad2e0201111ee8d97916fbb5fce2727a6",
+        "update_frequency": "SOURCE_RELEASE",
+        "period": "11509",
+        "revenue": 651760.0,
+        "monthly_operation_data": {
+          "出表日期": "1151017",
+          "資料年月": "11509",
+          "公司代號": "6510",
+          "公司名稱": "精測",
+          "產業別": "半導體業",
+          "營業收入-當月營收": "651760",
+          "營業收入-上月營收": "638311",
+          "營業收入-去年當月營收": "418192",
+          "營業收入-上月比較增減(%)": "2.106966666718888",
+          "營業收入-去年同月增減(%)": "55.851857519990816",
+          "累計營業收入-當月累計營收": "4901661",
+          "累計營業收入-去年累計營收": "3610143",
+          "累計營業收入-前期比較增減(%)": "35.774704769312464",
+          "備註": "本月持續受惠於高效能運算 (HPC) 相關高速測試載板訂單增長，致營收變動達50%以上。"
+        },
+        "theme_mapping_basis": "ISSUER_WATCHLIST_NOT_VERIFIED_RELATION",
+        "series_caveat": "Company total monthly revenue in TWD thousand, not product revenue",
+        "freshness": {
+          "age_calendar_days": 11,
+          "max_age_days": 45,
+          "status": "WITHIN_WINDOW"
+        }
+      },
+      "value": 651760.0,
+      "data_quality": "PASS",
+      "confidence": "HIGH",
+      "data_gaps": [],
+      "as_of_valid": true,
+      "mapped_factor_ids": [
+        4
+      ],
+      "mapping_confidence": "LOW",
+      "mapping_method": "CATEGORY_ASSOCIATION_NOT_CAUSAL",
+      "mapping_source": "src/domain/constants.py:DRIVER_TYPES",
+      "observation_id": "0932e31249e3de7ab6b9dd0fa2e57d327f1a44fd17a3192a4858786dfb9c996e",
+      "changes": {
+        "level": 651760.0,
+        "delta": 0.0,
+        "observation_count": 5,
+        "window_basis": "SOURCE_OBSERVATIONS_NOT_CALENDAR_DAYS",
+        "change_1d": 0.0,
+        "change_3d": 2.106966666718879,
+        "change_5d": null,
+        "change_7d": null,
+        "change_10d": null,
+        "change_20d": null,
+        "change_30d": null,
+        "percentile_20d": null,
+        "percentile_60d": null,
+        "percentile_250d": null,
+        "new_high_20d": null,
+        "new_high_60d": null,
+        "new_low_20d": null,
+        "slope_3d": 6724.5,
+        "slope_10d": null,
+        "slope_20d": null,
+        "acceleration_3d_vs_20d": null,
+        "historical_volatility": null,
+        "zscore_20": null,
+        "change_label": null
+      },
+      "history_references": [
+        "8fd07b492cfc9febe5119bb80e33c25783579f67912c74d10e6050e1a9ec4ac2",
+        "0932e31249e3de7ab6b9dd0fa2e57d327f1a44fd17a3192a4858786dfb9c996e"
+      ]
+    }
+  ],
+  "macro_observations": [
+    {
+      "entity": "PPI_yoy",
+      "theme": null,
+      "stock_code": null,
+      "stock_name": null,
+      "metric": "PPI_yoy",
+      "unit": "percent",
+      "currency": null,
+      "event_date": "2026-10-14",
+      "published_at": "2026-10-14T09:30:00+08:00",
+      "first_seen_at": "2026-10-14T21:40:41.330650+08:00",
+      "effective_date": "2026-10-14",
+      "source_date": "2026-10-14",
+      "source": "NBS",
+      "source_path": "data/raw/opportunity_radar/body_receipts/1437f5b6a2f445b430579cec06d19cbd28f697ffcdf3f81ea5c57a8c57196b7e.json",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261014_1965476.html",
+      "provenance": {
+        "sha256": "41d2184a919039d80205cc3dc44bf0bac49e67299f388e7f5643ec8a6094a727",
+        "raw_sha256": "22e3e579d61dab0bbed26f55844d9e008110e7e07354c80ce73067875a09daba",
+        "raw_path": "data/raw/opportunity_radar/bodies/22e3e579d61dab0bbed26f55844d9e008110e7e07354c80ce73067875a09daba.bin",
+        "kind": "SOURCE_BODY"
+      },
+      "body_evidence": "2026年9月份，全国工业生产者出厂价格同比上涨5.0%，环比上涨1.2%。工业生产者购进价格同比上涨6.9%，环比上涨1.2%。1—9月平均，工业生产者出厂价格比上年同期上涨2.3%，工业生产者购进价格上涨3.6%。",
+      "title": null,
+      "signal_type": "MACRO_LIQUIDITY_FX_RATES",
+      "source_tier": 1,
+      "facts": {
+        "metric": null,
+        "current": 5.0,
+        "previous": 3.8,
+        "surprise_vs_expectation": null,
+        "trend": null,
+        "observation_mode": "LIVE_OBSERVED",
+        "revision_version": "22e3e579d61dab0bbed26f55844d9e008110e7e07354c80ce73067875a09daba",
+        "update_frequency": "SOURCE_RELEASE",
+        "period": "2026年9月份工业生产者出厂价格同比上涨5.0% 环比上涨1.2%",
+        "revision_at": null,
+        "series_caveat": "First retrieved release version; original first publication vintage not certified",
+        "freshness": {
+          "age_calendar_days": 14,
+          "max_age_days": 45,
+          "status": "WITHIN_WINDOW"
+        }
+      },
+      "value": 5.0,
+      "data_quality": "PASS",
+      "confidence": "HIGH",
+      "data_gaps": [],
+      "as_of_valid": true,
+      "mapped_factor_ids": [
+        7,
+        11
+      ],
+      "mapping_confidence": "LOW",
+      "mapping_method": "CATEGORY_ASSOCIATION_NOT_CAUSAL",
+      "mapping_source": "src/domain/constants.py:DRIVER_TYPES",
+      "observation_id": "b56e580de3b324e238316112414c6de1be45d82f3e69668be30306a740017ff7",
+      "changes": {
+        "level": 5.0,
+        "delta": 1.2000000000000002,
+        "observation_count": 2,
+        "window_basis": "SOURCE_OBSERVATIONS_NOT_CALENDAR_DAYS",
+        "change_1d": 31.578947368421062,
+        "change_3d": null,
+        "change_5d": null,
+        "change_7d": null,
+        "change_10d": null,
+        "change_20d": null,
+        "change_30d": null,
+        "percentile_20d": null,
+        "percentile_60d": null,
+        "percentile_250d": null,
+        "new_high_20d": null,
+        "new_high_60d": null,
+        "new_low_20d": null,
+        "slope_3d": null,
+        "slope_10d": null,
+        "slope_20d": null,
+        "acceleration_3d_vs_20d": null,
+        "historical_volatility": null,
+        "zscore_20": null,
+        "change_label": null
+      },
+      "history_references": [
+        "d14585c350ad488a2f314ba5b831b316c85ccb1198cb533e56f53cf0f096a59e",
+        "b56e580de3b324e238316112414c6de1be45d82f3e69668be30306a740017ff7"
+      ]
+    }
+  ],
+  "valuation_fundamental_divergence_candidates": [
+    {
+      "entity": "002463",
+      "theme": "PCB/CCL",
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "metric": "fundamental_price_features",
+      "unit": null,
+      "currency": null,
+      "event_date": "2026-10-28",
+      "published_at": "2026-10-28T23:06:25.550831+08:00",
+      "first_seen_at": "2026-10-28T23:06:25.550831+08:00",
+      "effective_date": "2026-10-28",
+      "source_date": "2026-10-28",
+      "source": "EXISTING_FACTSTORE_DAILY",
+      "source_path": "data/raw/opportunity_radar/price_windows/c49006519233f9fa14d2710ab3b66733530ed41d83bb713c0b38e7c00a47a179.json",
+      "url": null,
+      "provenance": {
+        "sha256": "3bc114bb625eb3319082b39756661e6a491489c8ade9d5024b913686df1c30a7",
+        "kind": "DERIVED_FROM_EXISTING_FACTSTORE_CAPTURED_NOW"
+      },
+      "body_evidence": "Existing FactStore exchange percentage changes; underlying rows and partition hashes are in source_path.",
+      "title": null,
+      "signal_type": "VALUATION_FUNDAMENTAL_DIVERGENCE",
+      "source_tier": 2,
+      "facts": {
+        "revenue": null,
+        "profit": null,
+        "margin": null,
+        "order": null,
+        "price": null,
+        "supply_demand": null,
+        "expectation_revision": null,
+        "return_1d": null,
+        "return_5d": null,
+        "return_20d": null,
+        "PE": null,
+        "PB": null,
+        "PS": null,
+        "valuation_percentile": null,
+        "sector_relative_valuation": null,
+        "observation_mode": "DERIVED_CURRENT_AS_OF",
+        "revision_version": "3bc114bb625eb3319082b39756661e6a491489c8ade9d5024b913686df1c30a7",
+        "update_frequency": "SOURCE_RELEASE",
+        "stock_return_1d": 5.413299999999999,
+        "stock_return_5d": -9.045841984728654,
+        "stock_return_20d": -16.437521611774507,
+        "stock_return_60d": -1.115655413853478,
+        "sector_return_20d": null,
+        "relative_return_20d": null,
+        "earnings_revision_20d": null,
+        "revenue_revision_20d": null,
+        "margin_revision": null,
+        "valuation_change_20d": null,
+        "pe_ttm": null,
+        "pe_forward": null,
+        "pb": null,
+        "ps": null,
+        "fundamental_change_score": null,
+        "price_reaction_score": 33.56247838822549,
+        "amount": 5612956708.139999,
+        "turnover_rate": null,
+        "price_source_date": "2026-10-28",
+        "price_basis": "COMPOUNDED_EXCHANGE_PCT_CHG_NOT_TOTAL_RETURN",
+        "missing_windows": [],
+        "conflicting_days": [],
+        "fundamental_delta": null,
+        "fundamental_change_basis": "REPORTED_YOY_NOT_EXPECTATION",
+        "fundamental_observation_id": null,
+        "divergence_candidate": null,
+        "historical_backfill": false,
+        "evidence_scope": "DESCRIPTIVE_FUNDAMENTALS_PRICE_COMPARISON_NOT_UNDERVALUATION",
+        "missing_data": [
+          "sector_return_20d",
+          "relative_return_20d",
+          "earnings_revision_20d",
+          "revenue_revision_20d",
+          "margin_revision",
+          "valuation_change_20d",
+          "pe_ttm",
+          "pe_forward",
+          "pb",
+          "ps",
+          "valuation_percentile",
+          "fundamental_change_score"
+        ],
+        "freshness": {
+          "age_calendar_days": 0,
+          "max_age_days": 4,
+          "status": "WITHIN_WINDOW"
+        }
+      },
+      "value": null,
+      "data_quality": "PASS",
+      "confidence": "HIGH",
+      "data_gaps": [],
+      "as_of_valid": true,
+      "mapped_factor_ids": [
+        33
+      ],
+      "mapping_confidence": "LOW",
+      "mapping_method": "CATEGORY_ASSOCIATION_NOT_CAUSAL",
+      "mapping_source": "src/domain/constants.py:DRIVER_TYPES",
+      "observation_id": "d2970458f0247448b3fad1579a369e555205e16967141fba2b3b2ae04b306a36",
+      "changes": {},
+      "history_references": [
+        "8de501bd054d23b8d446c4082a519013cd2dedbd6800a5d805d5366e4effa1b0",
+        "d2970458f0247448b3fad1579a369e555205e16967141fba2b3b2ae04b306a36"
+      ]
+    }
+  ],
+  "market_structure_observations": [
+    {
+      "entity": "游戏Ⅱ",
+      "theme": "游戏Ⅱ",
+      "stock_code": null,
+      "stock_name": null,
+      "metric": "board_amount",
+      "unit": "CNY",
+      "currency": "CNY",
+      "event_date": "2026-09-03",
+      "published_at": null,
+      "first_seen_at": "2026-09-04T17:55:03.159736Z",
+      "effective_date": "2026-09-03",
+      "source_date": "2026-09-03",
+      "source": "Eastmoney limit pools via AKShare",
+      "source_path": "data/market_packets/2026-09-03.json",
+      "url": null,
+      "provenance": {
+        "sha256": "5c5281639b927d0703a191241e7730875072bb95a6c74bbb31ba5d20002a2683",
+        "kind": "ARCHIVED_MARKET_FACT"
+      },
+      "body_evidence": null,
+      "title": null,
+      "signal_type": "MARKET_STRUCTURE_AND_FLOW",
+      "source_tier": 3,
+      "facts": {
+        "return_1d": null,
+        "return_3d": null,
+        "return_5d": null,
+        "return_10d": null,
+        "return_20d": null,
+        "relative_return_5d": null,
+        "relative_return_20d": null,
+        "breadth": null,
+        "amount": 1345328016.0,
+        "amount_change": null,
+        "limit_up_count": null,
+        "failed_limit_count": null,
+        "turnover": null,
+        "historical_percentile": null,
+        "relative_strength": null,
+        "rise_count": null,
+        "fall_count": 1,
+        "benchmark_return_1d": null,
+        "freshness": {
+          "age_calendar_days": 55,
+          "max_age_days": 4,
+          "status": "STALE"
+        }
+      },
+      "value": 1345328016.0,
+      "data_quality": "PARTIAL",
+      "confidence": "LOW",
+      "data_gaps": [
+        "published_at"
+      ],
+      "as_of_valid": true,
+      "mapped_factor_ids": [
+        34,
+        35,
+        36,
+        38
+      ],
+      "mapping_confidence": "LOW",
+      "mapping_method": "CATEGORY_ASSOCIATION_NOT_CAUSAL",
+      "mapping_source": "src/domain/constants.py:DRIVER_TYPES",
+      "observation_id": "6f98a8eb31381ca27cee605e2aed08d690af698cb52f1e151d50e102211d2d2f",
+      "changes": {
+        "level": 1345328016.0,
+        "delta": 1285323486.0,
+        "observation_count": 2,
+        "window_basis": "SOURCE_OBSERVATIONS_NOT_CALENDAR_DAYS",
+        "change_1d": 2142.044085671532,
+        "change_3d": null,
+        "change_5d": null,
+        "change_7d": null,
+        "change_10d": null,
+        "change_20d": null,
+        "change_30d": null,
+        "percentile_20d": null,
+        "percentile_60d": null,
+        "percentile_250d": null,
+        "new_high_20d": null,
+        "new_high_60d": null,
+        "new_low_20d": null,
+        "slope_3d": null,
+        "slope_10d": null,
+        "slope_20d": null,
+        "acceleration_3d_vs_20d": null,
+        "historical_volatility": null,
+        "zscore_20": null,
+        "change_label": null
+      },
+      "history_references": [
+        "d80c4b928d5d440c1f0fc0f822ca80376c3937e3573f5b68a2f6e3ca0540c816",
+        "6f98a8eb31381ca27cee605e2aed08d690af698cb52f1e151d50e102211d2d2f"
+      ]
+    }
+  ],
+  "market_context": {
+    "status": "UNAVAILABLE",
+    "source_date": null
+  },
+  "technology_supply_chain_mapping": {
+    "reference": "config/opportunity_radar_taxonomy.json",
+    "semantics": "CLASSIFICATION_ONLY_NOT_VERIFIED_RELATIONS"
+  },
+  "industry_transmission_mapping": [
+    {
+      "variable": "中际旭创",
+      "upstream_theme": "中际旭创",
+      "downstream_theme": "光模块",
+      "stock_code": "300308",
+      "relationship_type": "PRODUCER",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491753.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "efdbb948b2a5c7df6c1477ddd19e65bb5d33a5d4e1ac92be2121ec08c7b96b5e"
+      ],
+      "product": null,
+      "stock_name": "中际旭创",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-22"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "三环集团",
+      "upstream_theme": "三环集团",
+      "downstream_theme": "MLCC",
+      "stock_code": "300408",
+      "relationship_type": "PRODUCER",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-28/328c12d7-c3e9-4280-a2c2-9a37c15cff4f.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "f54534b658ea45ab6c25f51078b56362838cf07ac08d46da1d88e1772ca8059e"
+      ],
+      "product": null,
+      "stock_name": "三环集团",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-28"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "三环集团",
+      "upstream_theme": "三环集团",
+      "downstream_theme": "MLCC",
+      "stock_code": "300408",
+      "relationship_type": "PRODUCER",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-28/1225516992.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "85d5390eed1fa5038317bb142cdb68f685e2494ef9c2222608ce7f3728d80754"
+      ],
+      "product": null,
+      "stock_name": "三环集团",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-28"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "深南电路",
+      "upstream_theme": "深南电路",
+      "downstream_theme": "印制电路板",
+      "stock_code": "002916",
+      "relationship_type": "PRODUCER",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225512708.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "1eb2cb758aeb4658c2d53cd550cf5a742824ab5c432de3de713a0f312c923b72"
+      ],
+      "product": null,
+      "stock_name": "深南电路",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-27"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "深南电路",
+      "upstream_theme": "深南电路",
+      "downstream_theme": "印制电路板",
+      "stock_code": "002916",
+      "relationship_type": "PRODUCER",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225512708.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "de019e8af391292c21c49e7e2a900347a7b23954ecf3372544469853104f150d"
+      ],
+      "product": null,
+      "stock_name": "深南电路",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-27"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "深南电路",
+      "upstream_theme": "深南电路",
+      "downstream_theme": "印制电路板",
+      "stock_code": "002916",
+      "relationship_type": "PRODUCER",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225512708.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "a8f01c94a95d42335726293b46c36534f81268328e2ec56738653fb3bfecb984"
+      ],
+      "product": null,
+      "stock_name": "深南电路",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-27"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "深南电路",
+      "upstream_theme": "深南电路",
+      "downstream_theme": "印制电路板",
+      "stock_code": "002916",
+      "relationship_type": "PRODUCER",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225512708.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "73186e2f432b1b304599d58cdc5f6e1ed80a43f2222d26c364a9b1844d6bec35"
+      ],
+      "product": null,
+      "stock_name": "深南电路",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-27"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "沪电股份",
+      "upstream_theme": "沪电股份",
+      "downstream_theme": "覆铜板",
+      "stock_code": "002463",
+      "relationship_type": "PRODUCER",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225502252.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "7467506f0861d32292d322705772e7e679c89222df333b67350a69237494fb85"
+      ],
+      "product": null,
+      "stock_name": "沪电股份",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-26"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "沪电股份",
+      "upstream_theme": "沪电股份",
+      "downstream_theme": "印制电路板",
+      "stock_code": "002463",
+      "relationship_type": "PRODUCER",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225502252.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "2d29c7b5beff2f8feecc9f6c1515e0bac1f3b7dd81c3e52457602a5dd0f7e077"
+      ],
+      "product": null,
+      "stock_name": "沪电股份",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-26"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "HDI",
+      "upstream_theme": "HDI",
+      "downstream_theme": "胜宏科技",
+      "stock_code": "300476",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-28/1225522515.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "b4ba694aa370c2b67b2dbab3b9a7593d639005bb750ab15ba31b8dd0eb92d961"
+      ],
+      "product": "HDI",
+      "stock_name": "胜宏科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-28"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "HDI",
+      "upstream_theme": "HDI",
+      "downstream_theme": "胜宏科技",
+      "stock_code": "300476",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-28/1225522515.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "d5d2ef2f7e6cb5118d0123436f2fb5bf2e9783742a99330d7f6ca13df5b3db82"
+      ],
+      "product": "HDI",
+      "stock_name": "胜宏科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-28"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "MLCC",
+      "upstream_theme": "MLCC",
+      "downstream_theme": "三环集团",
+      "stock_code": "300408",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-28/1225516992.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "5b7cc817ba343cbd0c68f2f803166b7602d3217eee623c29cfdcd04a86050233"
+      ],
+      "product": "MLCC",
+      "stock_name": "三环集团",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-28"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "MLCC",
+      "upstream_theme": "MLCC",
+      "downstream_theme": "三环集团",
+      "stock_code": "300408",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-28/1225516992.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "4d9eaf4ff082a812c4113a13327059708d402c49b25205f8b13c86f97f4274e7"
+      ],
+      "product": "MLCC",
+      "stock_name": "三环集团",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-28"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "MLCC",
+      "upstream_theme": "MLCC",
+      "downstream_theme": "三环集团",
+      "stock_code": "300408",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-28/328c12d7-c3e9-4280-a2c2-9a37c15cff4f.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "91523785987ee018edd3b128ab5511f2ce226889702a2681eb51a4a62a787618"
+      ],
+      "product": "MLCC",
+      "stock_name": "三环集团",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-28"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "MLCC",
+      "upstream_theme": "MLCC",
+      "downstream_theme": "三环集团",
+      "stock_code": "300408",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-28/328c12d7-c3e9-4280-a2c2-9a37c15cff4f.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "792ddac1ac5e88779b64aefa78eedba41836f24f73ed14aef80813ac88f18a85"
+      ],
+      "product": "MLCC",
+      "stock_name": "三环集团",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-28"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "分选机",
+      "upstream_theme": "分选机",
+      "downstream_theme": "长川科技",
+      "stock_code": "300604",
+      "relationship_type": "equipment_supplier",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-28/1225523202.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "7b3c21416e8bca29386a28ad60880c8da773e8f53b7dc8c0fb912bb2da190563"
+      ],
+      "product": "分选机",
+      "stock_name": "长川科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-28"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "分选机",
+      "upstream_theme": "分选机",
+      "downstream_theme": "长川科技",
+      "stock_code": "300604",
+      "relationship_type": "equipment_supplier",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-28/1225523202.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "960da5af2c335a310cca768334cf011a4f42c8759598da464c02e74c0ef640c2"
+      ],
+      "product": "分选机",
+      "stock_name": "长川科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-28"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "分选机",
+      "upstream_theme": "分选机",
+      "downstream_theme": "长川科技",
+      "stock_code": "300604",
+      "relationship_type": "equipment_supplier",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-28/df60c9ec-07cc-4c91-bfa5-7b40801df61b.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "7302e5a1f0d75cc8f4a43884d11a2e10385e0cc89ced1e592c79c7f609a9c15e"
+      ],
+      "product": "分选机",
+      "stock_name": "长川科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-28"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "分选机",
+      "upstream_theme": "分选机",
+      "downstream_theme": "长川科技",
+      "stock_code": "300604",
+      "relationship_type": "equipment_supplier",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-28/df60c9ec-07cc-4c91-bfa5-7b40801df61b.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "cf4062996ebdd6b71962ddd9bb0defaf390dfe5c3f0499b86ddfa6be60d2d188"
+      ],
+      "product": "分选机",
+      "stock_name": "长川科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-28"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "测试机",
+      "upstream_theme": "测试机",
+      "downstream_theme": "长川科技",
+      "stock_code": "300604",
+      "relationship_type": "equipment_supplier",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-28/1225523202.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "2e7dfa25ffeaf84f4185838aac04a29fa5dc5d73dd558efee4ef8d7056c6ede6"
+      ],
+      "product": "测试机",
+      "stock_name": "长川科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-28"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "测试机",
+      "upstream_theme": "测试机",
+      "downstream_theme": "长川科技",
+      "stock_code": "300604",
+      "relationship_type": "equipment_supplier",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-28/df60c9ec-07cc-4c91-bfa5-7b40801df61b.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "48c1014c7fafe158f0bc59ec8054472118dd76ccc0645a6c869516d6d5f2d2e3"
+      ],
+      "product": "测试机",
+      "stock_name": "长川科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-28"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "新易盛",
+      "upstream_theme": "新易盛",
+      "downstream_theme": "光模块",
+      "stock_code": "300502",
+      "relationship_type": "PRODUCER",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225499406.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "b07dcf98e76b20b405f78da51569e29a84097e8659da84d38b4f84d5669d3baa"
+      ],
+      "product": null,
+      "stock_name": "新易盛",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-25"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "新易盛",
+      "stock_code": "300502",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225499406.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "c228a2f1f1449eb7c28f24ed67167532b7e125ebbf704f8af1da68b02468ae59"
+      ],
+      "product": "光模块",
+      "stock_name": "新易盛",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-25"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "新易盛",
+      "stock_code": "300502",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225499406.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "8e23f00628f8d0fb578a5f97d203494ff283ef39938589792b1f5d8fbdcb60e2"
+      ],
+      "product": "光模块",
+      "stock_name": "新易盛",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-25"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "新易盛",
+      "stock_code": "300502",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225499406.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "4bafcc0de37883ff22658ade4665dd837866fef8b29a683b8b40570cd97de96f"
+      ],
+      "product": "光模块",
+      "stock_name": "新易盛",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-25"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "中际旭创",
+      "stock_code": "300308",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491753.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "04e1400979c9507c25ff26ec2c91ee3d29f0c4500e9b6c53ea2891d306b554c2"
+      ],
+      "product": "光模块",
+      "stock_name": "中际旭创",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-22"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "中际旭创",
+      "stock_code": "300308",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491753.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "a7082df23c77d7062f20698b45f7b8631246d4e89be37df43bcf808a038da9ae"
+      ],
+      "product": "光模块",
+      "stock_name": "中际旭创",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-08-22"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "光库科技",
+      "stock_code": "300620",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-10-13/1225603597.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "e51b4117232387882f7950c594289e1cddd4f606618ce96252a2390e89736dfe"
+      ],
+      "product": "光模块",
+      "stock_name": "光库科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-10-13"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "光库科技",
+      "stock_code": "300620",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-10-13/1225603597.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "bc1b782865cec4992bf524c43ecfe79bb767f83b63fc5c5599b7f24733d2355a"
+      ],
+      "product": "光模块",
+      "stock_name": "光库科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-10-13"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "光库科技",
+      "stock_code": "300620",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-10-13/1225603595.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "30618cad38b874b3935c2a774d2d9449192836b643397b98ba6c92fea7360c11"
+      ],
+      "product": "光模块",
+      "stock_name": "光库科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-10-13"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "光库科技",
+      "stock_code": "300620",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-10-13/1225603595.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "d45f04c15f361be37f5dc3eea9d1e3c5625964a68b299361da24e63c15bb9468"
+      ],
+      "product": "光模块",
+      "stock_name": "光库科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-10-13"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "光库科技",
+      "stock_code": "300620",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-10-13/1225603595.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "eb56786cb3b4f8a826f84ad3f373279a0bcefc6bf07402c660c28d6836adfe1f"
+      ],
+      "product": "光模块",
+      "stock_name": "光库科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-10-13"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "光库科技",
+      "stock_code": "300620",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-10-13/1225603595.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "f2e053a828de472a5001702938b7553732ff8624cd65657b5513833230acc010"
+      ],
+      "product": "光模块",
+      "stock_name": "光库科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-10-13"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "光库科技",
+      "stock_code": "300620",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-10-13/1225603595.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "f100939f921bd9c12c5112e5478c6ac3f2fe2842f68929bc3b2de66050258ff7"
+      ],
+      "product": "光模块",
+      "stock_name": "光库科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-10-13"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "光库科技",
+      "stock_code": "300620",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-10-13/1225603595.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "6da8bce46097217087a668482208f8be3609beb837de2365c8cf478e877552f8"
+      ],
+      "product": "光模块",
+      "stock_name": "光库科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-10-13"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "光库科技",
+      "stock_code": "300620",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-10-13/1225603595.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "68af7320022c6f66a8a0512b5ab28775a3d22a4fd4afc044fe424511ca4c7058"
+      ],
+      "product": "光模块",
+      "stock_name": "光库科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-10-13"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "光库科技",
+      "stock_code": "300620",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-10-13/1225603595.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "42f39922dabf3c634243d9b95e039cbb9c304fcf300787ae03576e8ac7bd85a1"
+      ],
+      "product": "光模块",
+      "stock_name": "光库科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-10-13"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "光库科技",
+      "stock_code": "300620",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-10-13/1225603595.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "85581edec461c7ca371a50ee8fbb465287491488bdc7eadc8494a4f098375ebe"
+      ],
+      "product": "光模块",
+      "stock_name": "光库科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-10-13"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "光库科技",
+      "stock_code": "300620",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-10-13/1225603595.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "ff6304938a49f241bc9d4490978fb15b91f07fb27f633847e3fc84571c15903f"
+      ],
+      "product": "光模块",
+      "stock_name": "光库科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-10-13"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "光库科技",
+      "stock_code": "300620",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-10-13/1225603595.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "bad53ebd663001c46a4c051a626642ece52927c3047cbc91a15a62dd32e3fbf4"
+      ],
+      "product": "光模块",
+      "stock_name": "光库科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-10-13"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "光库科技",
+      "stock_code": "300620",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-10-13/1225603595.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "3d3077b288522997a5656c7e0c615d443ac1461cd4a799f87e811bf90da1eb5a"
+      ],
+      "product": "光模块",
+      "stock_name": "光库科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-10-13"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "光库科技",
+      "stock_code": "300620",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-10-13/1225603595.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "6e2c2328796316daf41e0342df2320afe997510d345ac7146fd8f4469f597334"
+      ],
+      "product": "光模块",
+      "stock_name": "光库科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-10-13"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "光库科技",
+      "stock_code": "300620",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-10-13/1225603595.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "7efcd0c760baad7631ec851704e926913771a8897efb5085e39ec042433ab4e5"
+      ],
+      "product": "光模块",
+      "stock_name": "光库科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-10-13"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "光库科技",
+      "stock_code": "300620",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-10-13/1225603595.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "f7e33da8ba1522328421a5b4529d31e723195eed6b5e198d67277bf224d58ee7"
+      ],
+      "product": "光模块",
+      "stock_name": "光库科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-10-13"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "光库科技",
+      "stock_code": "300620",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-10-13/1225603595.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "1da6ad62c07469240e5303677c153430d0a45ca80ad0310025ebc147d6338b0c"
+      ],
+      "product": "光模块",
+      "stock_name": "光库科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-10-13"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "光库科技",
+      "stock_code": "300620",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-10-13/1225603595.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "6e6771abfc71e7ef3add0b2171a3a7708b1bdeb89a53a441d5920e4852779b85"
+      ],
+      "product": "光模块",
+      "stock_name": "光库科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-10-13"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "光库科技",
+      "stock_code": "300620",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-10-13/1225603595.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "f40be99364457bf126247f9a4d1b776704c6092c80c4a770849b1c04f5ce6875"
+      ],
+      "product": "光模块",
+      "stock_name": "光库科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-10-13"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "光库科技",
+      "stock_code": "300620",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-10-13/1225603595.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "c97a5cd22e193e47069b9718183703f7a279fc218d843bfb9cee266ba04dee32"
+      ],
+      "product": "光模块",
+      "stock_name": "光库科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-10-13"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "光库科技",
+      "stock_code": "300620",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-10-13/1225603595.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "386600b0a38244da906e3ca4930764ea275e83aafd4101a14f4bfd5091e34072"
+      ],
+      "product": "光模块",
+      "stock_name": "光库科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-10-13"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    },
+    {
+      "variable": "光模块",
+      "upstream_theme": "光模块",
+      "downstream_theme": "光库科技",
+      "stock_code": "300620",
+      "relationship_type": "core_producer",
+      "transmission_depth": 1,
+      "revenue_exposure": null,
+      "cost_exposure": null,
+      "production_exposure": null,
+      "source": [
+        "https://static.cninfo.com.cn/finalpage/2026-10-13/1225603595.PDF"
+      ],
+      "confidence": 1.0,
+      "evidence": [
+        "6a379785611118bc3f03cf5ef187aa2a01c0942356b267e3938ca4f822285c09"
+      ],
+      "product": "光模块",
+      "stock_name": "光库科技",
+      "profit_exposure": null,
+      "customer_exposure": null,
+      "capacity_exposure": null,
+      "relation_status": "VERIFIED",
+      "evidence_dates": [
+        "2026-10-13"
+      ],
+      "transmission_semantics": "EVIDENCED_EXPOSURE_PATH_NOT_DEMAND_OR_EARNINGS_CAUSAL_PROOF"
+    }
+  ],
+  "positive_change_candidates": [
+    {
+      "entity": "PPI_yoy",
+      "theme": null,
+      "stock_code": null,
+      "candidate_type": "THEME_LEVEL_CANDIDATE",
+      "signal_type": "MACRO_LIQUIDITY_FX_RATES",
+      "observation_id": "b56e580de3b324e238316112414c6de1be45d82f3e69668be30306a740017ff7",
+      "signal_first_seen_date": "2026-10-14",
+      "signal_first_seen_at": "2026-10-14T21:40:41.330650+08:00",
+      "source_date": "2026-10-14",
+      "direction": "INCREASE",
+      "semantics": "OBSERVED_CHANGE_NOT_EXPECTED_STOCK_RETURN",
+      "changes": {
+        "level": 5.0,
+        "delta": 1.2000000000000002,
+        "observation_count": 2,
+        "window_basis": "SOURCE_OBSERVATIONS_NOT_CALENDAR_DAYS",
+        "change_1d": 31.578947368421062,
+        "change_3d": null,
+        "change_5d": null,
+        "change_7d": null,
+        "change_10d": null,
+        "change_20d": null,
+        "change_30d": null,
+        "percentile_20d": null,
+        "percentile_60d": null,
+        "percentile_250d": null,
+        "new_high_20d": null,
+        "new_high_60d": null,
+        "new_low_20d": null,
+        "slope_3d": null,
+        "slope_10d": null,
+        "slope_20d": null,
+        "acceleration_3d_vs_20d": null,
+        "historical_volatility": null,
+        "zscore_20": null,
+        "change_label": null
+      },
+      "source_tier": 1,
+      "first_seen_at": "2026-10-14T21:40:41.330650+08:00",
+      "data_gaps": [],
+      "observation_mode": "LIVE_OBSERVED"
+    },
+    {
+      "entity": "原煤",
+      "theme": "原煤",
+      "stock_code": null,
+      "candidate_type": "THEME_LEVEL_CANDIDATE",
+      "signal_type": "SUPPLY_DEMAND",
+      "observation_id": "5ce195386c7950664dfc8a2fbb95c57fe79c770ea9e2ec7b7e8d445cf85f5fee",
+      "signal_first_seen_date": "2026-09-15",
+      "signal_first_seen_at": "2026-09-15T16:25:35.132752+08:00",
+      "source_date": "2026-10-19",
+      "direction": "INCREASE",
+      "semantics": "OBSERVED_CHANGE_NOT_EXPECTED_STOCK_RETURN",
+      "changes": {
+        "level": 3.9,
+        "delta": 0.2999999999999998,
+        "observation_count": 3,
+        "window_basis": "SOURCE_OBSERVATIONS_NOT_CALENDAR_DAYS",
+        "change_1d": 8.333333333333325,
+        "change_3d": null,
+        "change_5d": null,
+        "change_7d": null,
+        "change_10d": null,
+        "change_20d": null,
+        "change_30d": null,
+        "percentile_20d": null,
+        "percentile_60d": null,
+        "percentile_250d": null,
+        "new_high_20d": null,
+        "new_high_60d": null,
+        "new_low_20d": null,
+        "slope_3d": 0.25,
+        "slope_10d": null,
+        "slope_20d": null,
+        "acceleration_3d_vs_20d": null,
+        "historical_volatility": null,
+        "zscore_20": null,
+        "change_label": null
+      },
+      "source_tier": 1,
+      "first_seen_at": "2026-10-19T23:33:42.245964+08:00",
+      "data_gaps": [],
+      "observation_mode": "LIVE_OBSERVED"
+    }
+  ],
+  "negative_risk_candidates": [
+    {
+      "entity": "磷酸铁锂（普通动力型）",
+      "theme": null,
+      "stock_code": null,
+      "candidate_type": "THEME_LEVEL_CANDIDATE",
+      "signal_type": "COMMODITY_PRICE",
+      "observation_id": "d45f51b1d52bf8d6930c277d6a3b25d29bce6c877e4c8b85e413d5ec318b3994",
+      "signal_first_seen_date": "2026-09-14",
+      "signal_first_seen_at": "2026-09-14T16:24:29.618338+08:00",
+      "source_date": "2026-10-24",
+      "direction": "DECREASE",
+      "semantics": "OBSERVED_CHANGE_NOT_EXPECTED_STOCK_RETURN",
+      "changes": {
+        "level": 46005.9,
+        "delta": -5223.9000000000015,
+        "observation_count": 6,
+        "window_basis": "SOURCE_OBSERVATIONS_NOT_CALENDAR_DAYS",
+        "change_1d": -10.196994717918084,
+        "change_3d": -17.55333256870869,
+        "change_5d": -18.014238743996646,
+        "change_7d": null,
+        "change_10d": null,
+        "change_20d": null,
+        "change_30d": null,
+        "percentile_20d": null,
+        "percentile_60d": null,
+        "percentile_250d": null,
+        "new_high_20d": null,
+        "new_high_60d": null,
+        "new_low_20d": null,
+        "slope_3d": -2937.5999999999985,
+        "slope_10d": null,
+        "slope_20d": null,
+        "acceleration_3d_vs_20d": null,
+        "historical_volatility": null,
+        "zscore_20": null,
+        "change_label": null
+      },
+      "source_tier": 1,
+      "first_seen_at": "2026-10-26T23:09:32.903486+08:00",
+      "data_gaps": [],
+      "observation_mode": "LIVE_OBSERVED"
+    },
+    {
+      "entity": "汽车制造业",
+      "theme": "汽车制造业",
+      "stock_code": null,
+      "candidate_type": "THEME_LEVEL_CANDIDATE",
+      "signal_type": "CAPACITY_AND_UTILIZATION",
+      "observation_id": "5587fa906071cd944d363251960dce48fddf165466a8f55eec0e2650915929da",
+      "signal_first_seen_date": "2026-10-19",
+      "signal_first_seen_at": "2026-10-19T23:33:44.868627+08:00",
+      "source_date": "2026-10-19",
+      "direction": "DECREASE",
+      "semantics": "OBSERVED_CHANGE_NOT_EXPECTED_STOCK_RETURN",
+      "changes": {
+        "level": 66.2,
+        "delta": -4.599999999999994,
+        "observation_count": 2,
+        "window_basis": "SOURCE_OBSERVATIONS_NOT_CALENDAR_DAYS",
+        "change_1d": -6.497175141242928,
+        "change_3d": null,
+        "change_5d": null,
+        "change_7d": null,
+        "change_10d": null,
+        "change_20d": null,
+        "change_30d": null,
+        "percentile_20d": null,
+        "percentile_60d": null,
+        "percentile_250d": null,
+        "new_high_20d": null,
+        "new_high_60d": null,
+        "new_low_20d": null,
+        "slope_3d": null,
+        "slope_10d": null,
+        "slope_20d": null,
+        "acceleration_3d_vs_20d": null,
+        "historical_volatility": null,
+        "zscore_20": null,
+        "change_label": null
+      },
+      "source_tier": 1,
+      "first_seen_at": "2026-10-19T23:33:44.868627+08:00",
+      "data_gaps": [],
+      "observation_mode": "LIVE_OBSERVED"
+    }
+  ],
+  "theme_candidates": [
+    {
+      "entity": "原煤",
+      "theme": "原煤",
+      "stock_code": null,
+      "candidate_type": "THEME_LEVEL_CANDIDATE",
+      "signal_type": "SUPPLY_DEMAND",
+      "observation_id": "5ce195386c7950664dfc8a2fbb95c57fe79c770ea9e2ec7b7e8d445cf85f5fee",
+      "source_date": "2026-10-19",
+      "signal_first_seen_date": "2026-10-19",
+      "first_seen_at": "2026-10-19T23:33:42.245964+08:00",
+      "direction": "INCREASE",
+      "changes": {
+        "level": 3.9,
+        "delta": 0.2999999999999998,
+        "observation_count": 3,
+        "window_basis": "SOURCE_OBSERVATIONS_NOT_CALENDAR_DAYS",
+        "change_1d": 8.333333333333325,
+        "change_3d": null,
+        "change_5d": null,
+        "change_7d": null,
+        "change_10d": null,
+        "change_20d": null,
+        "change_30d": null,
+        "percentile_20d": null,
+        "percentile_60d": null,
+        "percentile_250d": null,
+        "new_high_20d": null,
+        "new_high_60d": null,
+        "new_low_20d": null,
+        "slope_3d": 0.25,
+        "slope_10d": null,
+        "slope_20d": null,
+        "acceleration_3d_vs_20d": null,
+        "historical_volatility": null,
+        "zscore_20": null,
+        "change_label": null
+      },
+      "source_tier": 1,
+      "signal_direction": "POSITIVE_EVIDENCE",
+      "signal_strength": {
+        "support_count": 2,
+        "contradiction_count": 0,
+        "semantics": "EVIDENCE_COUNTS_NOT_RETURN_FORECAST"
+      },
+      "main_drivers": [
+        "SUPPLY_DEMAND"
+      ],
+      "supporting_observations": [
+        "5ce195386c7950664dfc8a2fbb95c57fe79c770ea9e2ec7b7e8d445cf85f5fee",
+        "b9ba8d82489035a6906d20a49f29a69b54809c7f1d7fc239367cad078896d708"
+      ],
+      "contradicting_observations": [],
+      "sustainability": null,
+      "confidence": "LOW",
+      "quality_gaps": [
+        "PERSISTENCE_AND_CAUSALITY_NOT_ESTABLISHED"
+      ]
+    }
+  ],
+  "company_specific_candidates": [
+    {
+      "entity": "鼎龙股份",
+      "theme": "先进封装",
+      "stock_code": "300054",
+      "candidate_type": "COMPANY_SPECIFIC_CANDIDATE",
+      "signal_type": "EXPECTATION_REVISION",
+      "observation_id": "91a10a684908486167c597b70ef6b5e3e0680ced063428fb07e727b40a43c50e",
+      "source_date": "2026-08-26",
+      "signal_first_seen_date": "2026-10-28",
+      "first_seen_at": "2026-10-28T23:06:02.745166+08:00",
+      "direction": "INCREASE",
+      "changes": {},
+      "source_tier": 1,
+      "objective_opportunity_score": 37.8,
+      "fundamental_change_score": 85.1068492664766,
+      "expectation_revision_score": 50.84508769333333,
+      "industry_strength_score": null,
+      "technology_score": 40.0,
+      "supply_demand_score": null,
+      "valuation_headroom_score": null,
+      "price_confirmation_score": 32.45392514039863,
+      "catalyst_score": null,
+      "evidence_quality_score": 99.79591836734694,
+      "crowding_risk_score": 0,
+      "downside_risk_score": null,
+      "score_version": "objective_evidence.1",
+      "score_weights": {
+        "fundamental_change": 20,
+        "expectation_revision": 20,
+        "industry_strength": 15,
+        "technology": 10,
+        "supply_demand": 10,
+        "valuation_headroom": 10,
+        "price_confirmation": 5,
+        "catalyst": 5,
+        "evidence_quality": 5
+      },
+      "weighted_contributions": {
+        "fundamental_change": 17.0214,
+        "expectation_revision": 10.169,
+        "industry_strength": null,
+        "technology": 4.0,
+        "supply_demand": null,
+        "valuation_headroom": null,
+        "price_confirmation": 1.6227,
+        "catalyst": null,
+        "evidence_quality": 4.9898
+      },
+      "risk_deductions": {
+        "crowding_risk": 0.0,
+        "downside_risk": null
+      },
+      "score_coverage_pct": 60,
+      "missing_components": [
+        "industry_strength",
+        "supply_demand",
+        "valuation_headroom",
+        "catalyst"
+      ],
+      "confidence": "MEDIUM",
+      "score_status": "PARTIAL",
+      "score_semantics": "FIXED_WEIGHT_EVIDENCE_POINTS_NOT_INVESTMENT_RANKING; UNKNOWN_RISK_NOT_ASSUMED_ABSENT",
+      "stock_name": "鼎龙股份",
+      "signal_types": [
+        "CAPACITY_AND_UTILIZATION",
+        "CUSTOMER_AND_ORDER",
+        "EXPECTATION_REVISION",
+        "INDUSTRY_COMPETITION",
+        "M&A_AND_CAPITAL_OPERATION",
+        "PRODUCT_COMMERCIALIZATION",
+        "REVENUE_PROFIT_MARGIN",
+        "TECHNOLOGY_BREAKTHROUGH",
+        "VALUATION_FUNDAMENTAL_DIVERGENCE"
+      ],
+      "main_driver": {
+        "signal_type": "EXPECTATION_REVISION",
+        "metric": "earnings_revision:2026H1",
+        "observation_id": "91a10a684908486167c597b70ef6b5e3e0680ced063428fb07e727b40a43c50e"
+      },
+      "verified_relations": [],
+      "expectation_revision": [
+        {
+          "consensus_eps_current": null,
+          "consensus_eps_previous": null,
+          "consensus_profit_current": null,
+          "consensus_profit_previous": null,
+          "revision_7d": null,
+          "revision_30d": null,
+          "number_of_upgrades": null,
+          "number_of_downgrades": null,
+          "company_guidance_change": null,
+          "broker_estimate_change": null,
+          "observation_mode": "HISTORICAL_BACKFILL",
+          "revision_version": "2af3806a34001579fb14ea4b4a27698383841bd39a4f836519fa76a7d712f169",
+          "update_frequency": "SOURCE_RELEASE",
+          "expectation_metric": "earnings_revision",
+          "prior_expectation": 525000000.0,
+          "latest_expectation": 529436710.39,
+          "guidance_low": 509999999.99999994,
+          "guidance_high": 540000000.0,
+          "guidance_comparison_basis": "DISCLOSED_RANGE_MIDPOINT",
+          "outside_guidance_range": false,
+          "revision_abs": 4436710.389999986,
+          "revision_pct": 0.8450876933333306,
+          "revision_direction": "UP",
+          "expectation_source_type": "COMPANY_PRIOR_GUIDANCE",
+          "latest_source_type": "LATEST_REPORTED_FACT",
+          "period": "2026H1",
+          "unit": "CNY",
+          "basis": "NET_PROFIT_ATTRIBUTABLE_PARENT",
+          "prior_evidence": {
+            "published_at": "2026-07-10",
+            "first_seen_at": "2026-10-28T23:06:02.745166+08:00",
+            "url": "https://static.cninfo.com.cn/finalpage/2026-07-10/1225417683.PDF",
+            "source_path": "data/raw/opportunity_radar/body_receipts/1545f8233f1f6e52df3b70c378561ff6202c2d0e909707d34b3a0c6c1758711a.json",
+            "provenance": {
+              "sha256": "b088b312373e7763ffd76028b82a84adce498439c22923c449407d2757fe357f",
+              "raw_sha256": "0924c6ea463cce54861af2cd64fbd5fe8b9578352194be52fef17eda7b83c777",
+              "raw_path": "data/raw/opportunity_radar/bodies/0924c6ea463cce54861af2cd64fbd5fe8b9578352194be52fef17eda7b83c777.pdf",
+              "kind": "SOURCE_BODY"
+            },
+            "body_evidence": "归属于上市公司股东的净利润5.1亿元~5.4亿元"
+          },
+          "latest_evidence": {
+            "published_at": "2026-08-26",
+            "first_seen_at": "2026-10-28T23:05:59.747094+08:00",
+            "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225507131.PDF",
+            "source_path": "data/raw/opportunity_radar/body_receipts/7f171a18c7e4a880c721a7347276e541af630d6bfe8804c3c995c1f0993c062c.json",
+            "provenance": {
+              "sha256": "17738479632d748b5010e5a018e7a8ddf38a665c4c125854b4c799387c120b0c",
+              "raw_sha256": "2af3806a34001579fb14ea4b4a27698383841bd39a4f836519fa76a7d712f169",
+              "raw_path": "data/raw/opportunity_radar/bodies/2af3806a34001579fb14ea4b4a27698383841bd39a4f836519fa76a7d712f169.pdf",
+              "kind": "SOURCE_BODY"
+            },
+            "body_evidence": "归属于上市公司股东的净利润（元） 529,436,710.39 311,042,363.19 70.21%"
+          },
+          "comparison_semantics": "SOURCE_GUIDANCE_NOT_ASSUMED_MARKET_CONSENSUS",
+          "body_parsed": true,
+          "parser_version": "COMPANY_EVIDENCE_V2",
+          "historical_backfill": true,
+          "freshness": {
+            "age_calendar_days": 63,
+            "max_age_days": 90,
+            "status": "WITHIN_WINDOW"
+          }
+        }
+      ],
+      "fundamental_change": {
+        "revenue_yoy": null,
+        "revenue_qoq": null,
+        "revenue_acceleration": null,
+        "profit_yoy": null,
+        "profit_qoq": null,
+        "profit_acceleration": null,
+        "gross_margin": null,
+        "gross_margin_change": null,
+        "net_margin": null,
+        "cash_flow": null,
+        "ROE": null,
+        "backlog": null,
+        "segment_growth": null,
+        "monthly_operation_data": null,
+        "observation_mode": "HISTORICAL_BACKFILL",
+        "revision_version": "2af3806a34001579fb14ea4b4a27698383841bd39a4f836519fa76a7d712f169",
+        "update_frequency": "SOURCE_RELEASE",
+        "body_parsed": true,
+        "parser_version": "COMPANY_EVIDENCE_V2",
+        "historical_backfill": true,
+        "financial_metric": "earnings",
+        "current_value": 529436710.39,
+        "prior_value": 311042363.19,
+        "fundamental_change_pct": 70.2136985329532,
+        "comparison_basis": "REPORTED_YOY_NOT_EXPECTATION_REVISION",
+        "financial_scope": "CONSOLIDATED_REPORTED_TABLE",
+        "period_basis": "H1",
+        "freshness": {
+          "age_calendar_days": 63,
+          "max_age_days": 180,
+          "status": "WITHIN_WINDOW"
+        }
+      },
+      "valuation_fundamental_divergence": "FUNDAMENTALS_UP_PRICE_LAGGING",
+      "price_confirmation": {
+        "revenue": null,
+        "profit": null,
+        "margin": null,
+        "order": null,
+        "price": null,
+        "supply_demand": null,
+        "expectation_revision": null,
+        "return_1d": null,
+        "return_5d": null,
+        "return_20d": null,
+        "PE": null,
+        "PB": null,
+        "PS": null,
+        "valuation_percentile": null,
+        "sector_relative_valuation": null,
+        "observation_mode": "DERIVED_CURRENT_AS_OF",
+        "revision_version": "3bc114bb625eb3319082b39756661e6a491489c8ade9d5024b913686df1c30a7",
+        "update_frequency": "SOURCE_RELEASE",
+        "stock_return_1d": 4.344700000000001,
+        "stock_return_5d": 0.6872686333106781,
+        "stock_return_20d": -17.54607485960137,
+        "stock_return_60d": -17.82340333781076,
+        "sector_return_20d": null,
+        "relative_return_20d": null,
+        "earnings_revision_20d": null,
+        "revenue_revision_20d": null,
+        "margin_revision": null,
+        "valuation_change_20d": null,
+        "pe_ttm": null,
+        "pe_forward": null,
+        "pb": null,
+        "ps": null,
+        "fundamental_change_score": 85.1068492664766,
+        "price_reaction_score": 32.45392514039863,
+        "amount": 1379235826.01,
+        "turnover_rate": null,
+        "price_source_date": "2026-10-28",
+        "price_basis": "COMPOUNDED_EXCHANGE_PCT_CHG_NOT_TOTAL_RETURN",
+        "missing_windows": [],
+        "conflicting_days": [],
+        "fundamental_delta": 70.2136985329532,
+        "fundamental_change_basis": "REPORTED_YOY_NOT_EXPECTATION",
+        "fundamental_observation_id": "67bc3c8d373ae228692cfae3f319f1d9dfea93d74acb992cc3a19ddea9252b48",
+        "divergence_candidate": "FUNDAMENTALS_UP_PRICE_LAGGING",
+        "historical_backfill": false,
+        "evidence_scope": "DESCRIPTIVE_FUNDAMENTALS_PRICE_COMPARISON_NOT_UNDERVALUATION",
+        "missing_data": [
+          "sector_return_20d",
+          "relative_return_20d",
+          "earnings_revision_20d",
+          "revenue_revision_20d",
+          "margin_revision",
+          "valuation_change_20d",
+          "pe_ttm",
+          "pe_forward",
+          "pb",
+          "ps",
+          "valuation_percentile"
+        ],
+        "freshness": {
+          "age_calendar_days": 0,
+          "max_age_days": 4,
+          "status": "WITHIN_WINDOW"
+        }
+      },
+      "catalyst": [],
+      "risks": [
+        "VERIFIED_ECONOMIC_RELATION_UNAVAILABLE",
+        "VALUATION_VINTAGES_UNAVAILABLE",
+        "ECONOMIC_EXPOSURE_MAGNITUDE_UNKNOWN"
+      ],
+      "evidence": [
+        {
+          "observation_id": "c0176ef65cb499c04b10fe65135cac76011c35680a0d26b5526bd503e7b2efe3",
+          "url": null,
+          "source_path": "data/raw/opportunity_radar/price_windows/c49006519233f9fa14d2710ab3b66733530ed41d83bb713c0b38e7c00a47a179.json",
+          "provenance": {
+            "sha256": "3bc114bb625eb3319082b39756661e6a491489c8ade9d5024b913686df1c30a7",
+            "kind": "DERIVED_FROM_EXISTING_FACTSTORE_CAPTURED_NOW"
+          },
+          "published_at": "2026-10-28T23:06:25.550831+08:00",
+          "first_seen_at": "2026-10-28T23:06:25.550831+08:00",
+          "observation_mode": "DERIVED_CURRENT_AS_OF"
+        },
+        {
+          "observation_id": "03fa1c7e72e7cf14a1759eb4530c38908c1e1195eca698e5a014e5d0475acb98",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225507131.PDF",
+          "source_path": "data/raw/opportunity_radar/body_receipts/96ca6894ee2467d357fa7333c771451ccb8cf1863b9fe71ac608068581ac449c.json",
+          "provenance": {
+            "sha256": "a99405571cff02e82c9e99181729e9254439d59b0c03a6ba4f09ba8d031af2ca",
+            "raw_sha256": "2af3806a34001579fb14ea4b4a27698383841bd39a4f836519fa76a7d712f169",
+            "raw_path": "data/raw/opportunity_radar/bodies/2af3806a34001579fb14ea4b4a27698383841bd39a4f836519fa76a7d712f169.pdf",
+            "kind": "SOURCE_BODY"
+          },
+          "published_at": "2026-08-26",
+          "first_seen_at": "2026-09-14T23:51:44.039253+08:00",
+          "observation_mode": "RETROSPECTIVE_SERIES"
+        },
+        {
+          "observation_id": "0648602fbc7a237925952047299b9caedb80abc0c834db5fac3e6083f6870ce0",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225507131.PDF",
+          "source_path": "data/raw/opportunity_radar/body_receipts/96ca6894ee2467d357fa7333c771451ccb8cf1863b9fe71ac608068581ac449c.json",
+          "provenance": {
+            "sha256": "a99405571cff02e82c9e99181729e9254439d59b0c03a6ba4f09ba8d031af2ca",
+            "raw_sha256": "2af3806a34001579fb14ea4b4a27698383841bd39a4f836519fa76a7d712f169",
+            "raw_path": "data/raw/opportunity_radar/bodies/2af3806a34001579fb14ea4b4a27698383841bd39a4f836519fa76a7d712f169.pdf",
+            "kind": "SOURCE_BODY"
+          },
+          "published_at": "2026-08-26",
+          "first_seen_at": "2026-09-14T23:51:44.039253+08:00",
+          "observation_mode": "RETROSPECTIVE_SERIES"
+        }
+      ],
+      "candidate_scope": "EVIDENCE_SCREEN_NOT_OVERNIGHT_EVENT_OR_STOCK_RECOMMENDATION",
+      "evidence_location": "FULL_PACKET_AND_SOURCE_RECEIPTS_FOR_COMPLETE_SUPPORT"
+    },
+    {
+      "entity": "300476",
+      "theme": "PCB/CCL",
+      "stock_code": "300476",
+      "candidate_type": "COMPANY_SPECIFIC_CANDIDATE",
+      "signal_type": "REVENUE_PROFIT_MARGIN",
+      "observation_id": "b6ef9c29adca018e5ff5245de13eceb73eab5530b1adf91d657739e18ad027a3",
+      "source_date": "2026-08-28",
+      "signal_first_seen_date": "2026-09-14",
+      "first_seen_at": "2026-09-14T23:50:39.432599+08:00",
+      "direction": "INCREASE",
+      "changes": {
+        "level": 2856778938.24,
+        "delta": null,
+        "observation_count": 1,
+        "window_basis": "SOURCE_OBSERVATIONS_NOT_CALENDAR_DAYS",
+        "change_1d": null,
+        "change_3d": null,
+        "change_5d": null,
+        "change_7d": null,
+        "change_10d": null,
+        "change_20d": null,
+        "change_30d": null,
+        "percentile_20d": null,
+        "percentile_60d": null,
+        "percentile_250d": null,
+        "new_high_20d": null,
+        "new_high_60d": null,
+        "new_low_20d": null,
+        "slope_3d": null,
+        "slope_10d": null,
+        "slope_20d": null,
+        "acceleration_3d_vs_20d": null,
+        "historical_volatility": null,
+        "zscore_20": null,
+        "change_label": null
+      },
+      "source_tier": 1,
+      "objective_opportunity_score": 27.54,
+      "fundamental_change_score": 66.65000542456256,
+      "expectation_revision_score": null,
+      "industry_strength_score": null,
+      "technology_score": 80.0,
+      "supply_demand_score": null,
+      "valuation_headroom_score": null,
+      "price_confirmation_score": 24.47735972346752,
+      "catalyst_score": null,
+      "evidence_quality_score": 99.74683544303798,
+      "crowding_risk_score": 0,
+      "downside_risk_score": null,
+      "score_version": "objective_evidence.1",
+      "score_weights": {
+        "fundamental_change": 20,
+        "expectation_revision": 20,
+        "industry_strength": 15,
+        "technology": 10,
+        "supply_demand": 10,
+        "valuation_headroom": 10,
+        "price_confirmation": 5,
+        "catalyst": 5,
+        "evidence_quality": 5
+      },
+      "weighted_contributions": {
+        "fundamental_change": 13.33,
+        "expectation_revision": null,
+        "industry_strength": null,
+        "technology": 8.0,
+        "supply_demand": null,
+        "valuation_headroom": null,
+        "price_confirmation": 1.2239,
+        "catalyst": null,
+        "evidence_quality": 4.9873
+      },
+      "risk_deductions": {
+        "crowding_risk": 0.0,
+        "downside_risk": null
+      },
+      "score_coverage_pct": 40,
+      "missing_components": [
+        "expectation_revision",
+        "industry_strength",
+        "supply_demand",
+        "valuation_headroom",
+        "catalyst"
+      ],
+      "confidence": "LOW",
+      "score_status": "PARTIAL",
+      "score_semantics": "FIXED_WEIGHT_EVIDENCE_POINTS_NOT_INVESTMENT_RANKING; UNKNOWN_RISK_NOT_ASSUMED_ABSENT",
+      "stock_name": "胜宏科技",
+      "signal_types": [
+        "CAPACITY_AND_UTILIZATION",
+        "CUSTOMER_AND_ORDER",
+        "M&A_AND_CAPITAL_OPERATION",
+        "PRODUCT_COMMERCIALIZATION",
+        "REVENUE_PROFIT_MARGIN",
+        "SHAREHOLDER_MANAGEMENT_ACTION",
+        "TECHNOLOGY_BREAKTHROUGH",
+        "VALUATION_FUNDAMENTAL_DIVERGENCE"
+      ],
+      "main_driver": {
+        "signal_type": "REVENUE_PROFIT_MARGIN",
+        "metric": "reported_earnings",
+        "observation_id": "b6ef9c29adca018e5ff5245de13eceb73eab5530b1adf91d657739e18ad027a3"
+      },
+      "verified_relations": [
+        {
+          "product": "HDI",
+          "relationship_type": "core_producer",
+          "revenue_exposure": null,
+          "profit_exposure": null,
+          "customer_exposure": null,
+          "capacity_exposure": null,
+          "evidence": "公司主要产品覆盖刚性电路板（多层板和 HDI 为核心）、柔性电路板（单双面板、多层板、刚挠结合板）全系列，广泛应用于人工智能、汽车电子（新能源）、新一代通信技术、大数据中心、工业互联、医疗仪器、计算机、航空航天等领域",
+          "evidence_date": "2026-08-28",
+          "source": "巨潮资讯",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225522515.PDF",
+          "source_path": "data/raw/opportunity_radar/body_receipts/e6f24de672394fe178a9ec3d3fec73db70d6dbaa3e6ff4a0e2091411b21f3eda.json",
+          "provenance": {
+            "sha256": "45e58c617255d054143aa1c12e40bc60fd9520533c8e10364510fba86bbcec8d",
+            "raw_sha256": "1f1a47ec94dd2d6b18db72e59e2920511cf15213ff5dde41ff302bfcd1c723d7",
+            "raw_path": "data/raw/opportunity_radar/bodies/1f1a47ec94dd2d6b18db72e59e2920511cf15213ff5dde41ff302bfcd1c723d7.pdf",
+            "kind": "SOURCE_BODY"
+          },
+          "confidence": 1.0,
+          "relation_status": "VERIFIED"
+        },
+        {
+          "product": "HDI",
+          "relationship_type": "core_producer",
+          "revenue_exposure": null,
+          "profit_exposure": null,
+          "customer_exposure": null,
+          "capacity_exposure": null,
+          "evidence": "Bhd. 资产收购未产生重大影响主要控股参股公司情况说明九、公司控制的结构化主体情况 □适用 不适用十、公司面临的风险和应对措施 1、宏观经济波动的风险公司的主营业务为印制线路板的研发、生产和销售，产品包括高端多层板、HDI 板、FPC、软硬结合板等",
+          "evidence_date": "2026-08-28",
+          "source": "巨潮资讯",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225522515.PDF",
+          "source_path": "data/raw/opportunity_radar/body_receipts/e6f24de672394fe178a9ec3d3fec73db70d6dbaa3e6ff4a0e2091411b21f3eda.json",
+          "provenance": {
+            "sha256": "45e58c617255d054143aa1c12e40bc60fd9520533c8e10364510fba86bbcec8d",
+            "raw_sha256": "1f1a47ec94dd2d6b18db72e59e2920511cf15213ff5dde41ff302bfcd1c723d7",
+            "raw_path": "data/raw/opportunity_radar/bodies/1f1a47ec94dd2d6b18db72e59e2920511cf15213ff5dde41ff302bfcd1c723d7.pdf",
+            "kind": "SOURCE_BODY"
+          },
+          "confidence": 1.0,
+          "relation_status": "VERIFIED"
+        }
+      ],
+      "expectation_revision": [],
+      "fundamental_change": {
+        "revenue_yoy": null,
+        "revenue_qoq": null,
+        "revenue_acceleration": null,
+        "profit_yoy": null,
+        "profit_qoq": null,
+        "profit_acceleration": null,
+        "gross_margin": null,
+        "gross_margin_change": null,
+        "net_margin": null,
+        "cash_flow": null,
+        "ROE": null,
+        "backlog": null,
+        "segment_growth": null,
+        "monthly_operation_data": null,
+        "observation_mode": "HISTORICAL_BACKFILL",
+        "revision_version": "1f1a47ec94dd2d6b18db72e59e2920511cf15213ff5dde41ff302bfcd1c723d7",
+        "update_frequency": "SOURCE_RELEASE",
+        "body_parsed": true,
+        "parser_version": "COMPANY_EVIDENCE_V2",
+        "historical_backfill": true,
+        "financial_metric": "earnings",
+        "current_value": 2856778938.24,
+        "prior_value": 2143119809.25,
+        "fundamental_change_pct": 33.30001084912512,
+        "comparison_basis": "REPORTED_YOY_NOT_EXPECTATION_REVISION",
+        "financial_scope": "CONSOLIDATED_REPORTED_TABLE",
+        "period_basis": "H1",
+        "freshness": {
+          "age_calendar_days": 61,
+          "max_age_days": 180,
+          "status": "WITHIN_WINDOW"
+        }
+      },
+      "valuation_fundamental_divergence": "FUNDAMENTALS_UP_PRICE_LAGGING",
+      "price_confirmation": {
+        "revenue": null,
+        "profit": null,
+        "margin": null,
+        "order": null,
+        "price": null,
+        "supply_demand": null,
+        "expectation_revision": null,
+        "return_1d": null,
+        "return_5d": null,
+        "return_20d": null,
+        "PE": null,
+        "PB": null,
+        "PS": null,
+        "valuation_percentile": null,
+        "sector_relative_valuation": null,
+        "observation_mode": "DERIVED_CURRENT_AS_OF",
+        "revision_version": "3bc114bb625eb3319082b39756661e6a491489c8ade9d5024b913686df1c30a7",
+        "update_frequency": "SOURCE_RELEASE",
+        "stock_return_1d": 3.57289999999999,
+        "stock_return_5d": -4.024182999271975,
+        "stock_return_20d": -25.52264027653248,
+        "stock_return_60d": -14.211929596002914,
+        "sector_return_20d": null,
+        "relative_return_20d": null,
+        "earnings_revision_20d": null,
+        "revenue_revision_20d": null,
+        "margin_revision": null,
+        "valuation_change_20d": null,
+        "pe_ttm": null,
+        "pe_forward": null,
+        "pb": null,
+        "ps": null,
+        "fundamental_change_score": 66.65000542456256,
+        "price_reaction_score": 24.47735972346752,
+        "amount": 4189142828.4700003,
+        "turnover_rate": null,
+        "price_source_date": "2026-10-28",
+        "price_basis": "COMPOUNDED_EXCHANGE_PCT_CHG_NOT_TOTAL_RETURN",
+        "missing_windows": [],
+        "conflicting_days": [],
+        "fundamental_delta": 33.30001084912512,
+        "fundamental_change_basis": "REPORTED_YOY_NOT_EXPECTATION",
+        "fundamental_observation_id": "b6ef9c29adca018e5ff5245de13eceb73eab5530b1adf91d657739e18ad027a3",
+        "divergence_candidate": "FUNDAMENTALS_UP_PRICE_LAGGING",
+        "historical_backfill": false,
+        "evidence_scope": "DESCRIPTIVE_FUNDAMENTALS_PRICE_COMPARISON_NOT_UNDERVALUATION",
+        "missing_data": [
+          "sector_return_20d",
+          "relative_return_20d",
+          "earnings_revision_20d",
+          "revenue_revision_20d",
+          "margin_revision",
+          "valuation_change_20d",
+          "pe_ttm",
+          "pe_forward",
+          "pb",
+          "ps",
+          "valuation_percentile"
+        ],
+        "freshness": {
+          "age_calendar_days": 0,
+          "max_age_days": 4,
+          "status": "WITHIN_WINDOW"
+        }
+      },
+      "catalyst": [],
+      "risks": [
+        "PRIOR_EXPECTATION_UNAVAILABLE",
+        "VALUATION_VINTAGES_UNAVAILABLE",
+        "ECONOMIC_EXPOSURE_MAGNITUDE_UNKNOWN"
+      ],
+      "evidence": [
+        {
+          "observation_id": "5f0d71a3d5aa25d3604090769c7392cf0d7ff53eec13d6fe954e7fbde9027da5",
+          "url": null,
+          "source_path": "data/raw/opportunity_radar/price_windows/c49006519233f9fa14d2710ab3b66733530ed41d83bb713c0b38e7c00a47a179.json",
+          "provenance": {
+            "sha256": "3bc114bb625eb3319082b39756661e6a491489c8ade9d5024b913686df1c30a7",
+            "kind": "DERIVED_FROM_EXISTING_FACTSTORE_CAPTURED_NOW"
+          },
+          "published_at": "2026-10-28T23:06:25.550831+08:00",
+          "first_seen_at": "2026-10-28T23:06:25.550831+08:00",
+          "observation_mode": "DERIVED_CURRENT_AS_OF"
+        },
+        {
+          "observation_id": "0024fc41eaada16718e91c441100f75f5f1e96a305c2d3135f41f8ca25788d75",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225522515.PDF",
+          "source_path": "data/raw/opportunity_radar/body_receipts/e6f24de672394fe178a9ec3d3fec73db70d6dbaa3e6ff4a0e2091411b21f3eda.json",
+          "provenance": {
+            "sha256": "45e58c617255d054143aa1c12e40bc60fd9520533c8e10364510fba86bbcec8d",
+            "raw_sha256": "1f1a47ec94dd2d6b18db72e59e2920511cf15213ff5dde41ff302bfcd1c723d7",
+            "raw_path": "data/raw/opportunity_radar/bodies/1f1a47ec94dd2d6b18db72e59e2920511cf15213ff5dde41ff302bfcd1c723d7.pdf",
+            "kind": "SOURCE_BODY"
+          },
+          "published_at": "2026-08-28",
+          "first_seen_at": "2026-09-14T23:50:39.432599+08:00",
+          "observation_mode": "RETROSPECTIVE_SERIES"
+        },
+        {
+          "observation_id": "0b6e9e2e6938a85e9b47785324a8075acb43b999131aa98f39e149b2aed5b23f",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225522515.PDF",
+          "source_path": "data/raw/opportunity_radar/body_receipts/e6f24de672394fe178a9ec3d3fec73db70d6dbaa3e6ff4a0e2091411b21f3eda.json",
+          "provenance": {
+            "sha256": "45e58c617255d054143aa1c12e40bc60fd9520533c8e10364510fba86bbcec8d",
+            "raw_sha256": "1f1a47ec94dd2d6b18db72e59e2920511cf15213ff5dde41ff302bfcd1c723d7",
+            "raw_path": "data/raw/opportunity_radar/bodies/1f1a47ec94dd2d6b18db72e59e2920511cf15213ff5dde41ff302bfcd1c723d7.pdf",
+            "kind": "SOURCE_BODY"
+          },
+          "published_at": "2026-08-28",
+          "first_seen_at": "2026-09-14T23:50:39.432599+08:00",
+          "observation_mode": "RETROSPECTIVE_SERIES"
+        }
+      ],
+      "candidate_scope": "EVIDENCE_SCREEN_NOT_OVERNIGHT_EVENT_OR_STOCK_RECOMMENDATION",
+      "evidence_location": "FULL_PACKET_AND_SOURCE_RECEIPTS_FOR_COMPLETE_SUPPORT"
+    },
+    {
+      "entity": "002463",
+      "theme": "PCB/CCL",
+      "stock_code": "002463",
+      "candidate_type": "COMPANY_SPECIFIC_CANDIDATE",
+      "signal_type": "VALUATION_FUNDAMENTAL_DIVERGENCE",
+      "observation_id": "d2970458f0247448b3fad1579a369e555205e16967141fba2b3b2ae04b306a36",
+      "source_date": "2026-10-28",
+      "signal_first_seen_date": "2026-10-28",
+      "first_seen_at": "2026-10-28T23:06:25.550831+08:00",
+      "direction": "INCREASE",
+      "changes": {},
+      "source_tier": 2,
+      "objective_opportunity_score": null,
+      "fundamental_change_score": null,
+      "expectation_revision_score": null,
+      "industry_strength_score": null,
+      "technology_score": 80.0,
+      "supply_demand_score": null,
+      "valuation_headroom_score": null,
+      "price_confirmation_score": 33.56247838822549,
+      "catalyst_score": null,
+      "evidence_quality_score": 99.76744186046511,
+      "crowding_risk_score": 0,
+      "downside_risk_score": null,
+      "score_version": "objective_evidence.1",
+      "score_weights": {
+        "fundamental_change": 20,
+        "expectation_revision": 20,
+        "industry_strength": 15,
+        "technology": 10,
+        "supply_demand": 10,
+        "valuation_headroom": 10,
+        "price_confirmation": 5,
+        "catalyst": 5,
+        "evidence_quality": 5
+      },
+      "weighted_contributions": {
+        "fundamental_change": null,
+        "expectation_revision": null,
+        "industry_strength": null,
+        "technology": 8.0,
+        "supply_demand": null,
+        "valuation_headroom": null,
+        "price_confirmation": 1.6781,
+        "catalyst": null,
+        "evidence_quality": 4.9884
+      },
+      "risk_deductions": {
+        "crowding_risk": 0.0,
+        "downside_risk": null
+      },
+      "score_coverage_pct": 20,
+      "missing_components": [
+        "fundamental_change",
+        "expectation_revision",
+        "industry_strength",
+        "supply_demand",
+        "valuation_headroom",
+        "catalyst"
+      ],
+      "confidence": "LOW",
+      "score_status": "INSUFFICIENT_EVIDENCE",
+      "score_semantics": "FIXED_WEIGHT_EVIDENCE_POINTS_NOT_INVESTMENT_RANKING; UNKNOWN_RISK_NOT_ASSUMED_ABSENT",
+      "stock_name": "沪电股份",
+      "signal_types": [
+        "CAPACITY_AND_UTILIZATION",
+        "CUSTOMER_AND_ORDER",
+        "M&A_AND_CAPITAL_OPERATION",
+        "PRODUCT_COMMERCIALIZATION",
+        "REVENUE_PROFIT_MARGIN",
+        "SHAREHOLDER_MANAGEMENT_ACTION",
+        "TECHNOLOGY_BREAKTHROUGH",
+        "VALUATION_FUNDAMENTAL_DIVERGENCE"
+      ],
+      "main_driver": {
+        "signal_type": "VALUATION_FUNDAMENTAL_DIVERGENCE",
+        "metric": "fundamental_price_features",
+        "observation_id": "d2970458f0247448b3fad1579a369e555205e16967141fba2b3b2ae04b306a36"
+      },
+      "verified_relations": [
+        {
+          "product": null,
+          "relationship_type": "PRODUCER",
+          "revenue_exposure": null,
+          "profit_exposure": null,
+          "customer_exposure": null,
+          "capacity_exposure": null,
+          "evidence": "4、原物料供应及价格波动风险公司日常生产所用主要原物料包括覆铜板、半固化片、铜箔、铜球、金盐、干膜和油墨等，报告期内原物料占公司主营业务成本的比例超过50%，上述主要原材料价格受国际市场铜、石油等大宗商品的影响较大",
+          "evidence_date": null,
+          "source": "巨潮资讯",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225502252.PDF",
+          "source_path": "data/raw/opportunity_radar/body_receipts/d84be21c1db3036133ab1226abada1aba43cf455373e5f9765ffbab06eb7e49f.json",
+          "provenance": {
+            "sha256": "ee7b18a19028eb5d2409b844ae483dad6c7a2ce8aa3c2ad6450bc6b1a5cfde93",
+            "raw_sha256": "2ce08d3cf4621f4370eb9940d98892eae2f775572f5a4c9fd0ac8748c9b55920",
+            "raw_path": "data/raw/opportunity_radar/bodies/2ce08d3cf4621f4370eb9940d98892eae2f775572f5a4c9fd0ac8748c9b55920.pdf",
+            "kind": "SOURCE_BODY"
+          },
+          "confidence": 1.0,
+          "relation_status": null
+        },
+        {
+          "product": null,
+          "relationship_type": "PRODUCER",
+          "revenue_exposure": null,
+          "profit_exposure": null,
+          "customer_exposure": null,
+          "capacity_exposure": null,
+          "evidence": "(三十六)营业收入和营业成本1.营业收入和营业成本情况项目本期金额上期金额收入成本收入成本主营业务12,994,548,6487,728,900,4448,155,254,1015,182,134,199其他业务694,878,856660,587,262338,617,782326,655,770合计13,689,427,5048,389,487,7068",
+          "evidence_date": null,
+          "source": "巨潮资讯",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225502252.PDF",
+          "source_path": "data/raw/opportunity_radar/body_receipts/d84be21c1db3036133ab1226abada1aba43cf455373e5f9765ffbab06eb7e49f.json",
+          "provenance": {
+            "sha256": "ee7b18a19028eb5d2409b844ae483dad6c7a2ce8aa3c2ad6450bc6b1a5cfde93",
+            "raw_sha256": "2ce08d3cf4621f4370eb9940d98892eae2f775572f5a4c9fd0ac8748c9b55920",
+            "raw_path": "data/raw/opportunity_radar/bodies/2ce08d3cf4621f4370eb9940d98892eae2f775572f5a4c9fd0ac8748c9b55920.pdf",
+            "kind": "SOURCE_BODY"
+          },
+          "confidence": 1.0,
+          "relation_status": null
+        }
+      ],
+      "expectation_revision": [],
+      "fundamental_change": null,
+      "valuation_fundamental_divergence": null,
+      "price_confirmation": {
+        "revenue": null,
+        "profit": null,
+        "margin": null,
+        "order": null,
+        "price": null,
+        "supply_demand": null,
+        "expectation_revision": null,
+        "return_1d": null,
+        "return_5d": null,
+        "return_20d": null,
+        "PE": null,
+        "PB": null,
+        "PS": null,
+        "valuation_percentile": null,
+        "sector_relative_valuation": null,
+        "observation_mode": "DERIVED_CURRENT_AS_OF",
+        "revision_version": "3bc114bb625eb3319082b39756661e6a491489c8ade9d5024b913686df1c30a7",
+        "update_frequency": "SOURCE_RELEASE",
+        "stock_return_1d": 5.413299999999999,
+        "stock_return_5d": -9.045841984728654,
+        "stock_return_20d": -16.437521611774507,
+        "stock_return_60d": -1.115655413853478,
+        "sector_return_20d": null,
+        "relative_return_20d": null,
+        "earnings_revision_20d": null,
+        "revenue_revision_20d": null,
+        "margin_revision": null,
+        "valuation_change_20d": null,
+        "pe_ttm": null,
+        "pe_forward": null,
+        "pb": null,
+        "ps": null,
+        "fundamental_change_score": null,
+        "price_reaction_score": 33.56247838822549,
+        "amount": 5612956708.139999,
+        "turnover_rate": null,
+        "price_source_date": "2026-10-28",
+        "price_basis": "COMPOUNDED_EXCHANGE_PCT_CHG_NOT_TOTAL_RETURN",
+        "missing_windows": [],
+        "conflicting_days": [],
+        "fundamental_delta": null,
+        "fundamental_change_basis": "REPORTED_YOY_NOT_EXPECTATION",
+        "fundamental_observation_id": null,
+        "divergence_candidate": null,
+        "historical_backfill": false,
+        "evidence_scope": "DESCRIPTIVE_FUNDAMENTALS_PRICE_COMPARISON_NOT_UNDERVALUATION",
+        "missing_data": [
+          "sector_return_20d",
+          "relative_return_20d",
+          "earnings_revision_20d",
+          "revenue_revision_20d",
+          "margin_revision",
+          "valuation_change_20d",
+          "pe_ttm",
+          "pe_forward",
+          "pb",
+          "ps",
+          "valuation_percentile",
+          "fundamental_change_score"
+        ],
+        "freshness": {
+          "age_calendar_days": 0,
+          "max_age_days": 4,
+          "status": "WITHIN_WINDOW"
+        }
+      },
+      "catalyst": [],
+      "risks": [
+        "PRIOR_EXPECTATION_UNAVAILABLE",
+        "VALUATION_VINTAGES_UNAVAILABLE",
+        "ECONOMIC_EXPOSURE_MAGNITUDE_UNKNOWN"
+      ],
+      "evidence": [
+        {
+          "observation_id": "d2970458f0247448b3fad1579a369e555205e16967141fba2b3b2ae04b306a36",
+          "url": null,
+          "source_path": "data/raw/opportunity_radar/price_windows/c49006519233f9fa14d2710ab3b66733530ed41d83bb713c0b38e7c00a47a179.json",
+          "provenance": {
+            "sha256": "3bc114bb625eb3319082b39756661e6a491489c8ade9d5024b913686df1c30a7",
+            "kind": "DERIVED_FROM_EXISTING_FACTSTORE_CAPTURED_NOW"
+          },
+          "published_at": "2026-10-28T23:06:25.550831+08:00",
+          "first_seen_at": "2026-10-28T23:06:25.550831+08:00",
+          "observation_mode": "DERIVED_CURRENT_AS_OF"
+        },
+        {
+          "observation_id": "01a02baefd41e31e172664d570207efa171d7925910ec749f23abbc80aa3eb70",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225502252.PDF",
+          "source_path": "data/raw/opportunity_radar/body_receipts/d84be21c1db3036133ab1226abada1aba43cf455373e5f9765ffbab06eb7e49f.json",
+          "provenance": {
+            "sha256": "ee7b18a19028eb5d2409b844ae483dad6c7a2ce8aa3c2ad6450bc6b1a5cfde93",
+            "raw_sha256": "2ce08d3cf4621f4370eb9940d98892eae2f775572f5a4c9fd0ac8748c9b55920",
+            "raw_path": "data/raw/opportunity_radar/bodies/2ce08d3cf4621f4370eb9940d98892eae2f775572f5a4c9fd0ac8748c9b55920.pdf",
+            "kind": "SOURCE_BODY"
+          },
+          "published_at": "2026-08-26",
+          "first_seen_at": "2026-09-14T00:47:16.944211+08:00",
+          "observation_mode": "RETROSPECTIVE_SERIES"
+        },
+        {
+          "observation_id": "01c5716397d4ea4131d9f2295de2484aad70428d348a3f7f5c5c20cca4aa599e",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225502252.PDF",
+          "source_path": "data/raw/opportunity_radar/body_receipts/d84be21c1db3036133ab1226abada1aba43cf455373e5f9765ffbab06eb7e49f.json",
+          "provenance": {
+            "sha256": "ee7b18a19028eb5d2409b844ae483dad6c7a2ce8aa3c2ad6450bc6b1a5cfde93",
+            "raw_sha256": "2ce08d3cf4621f4370eb9940d98892eae2f775572f5a4c9fd0ac8748c9b55920",
+            "raw_path": "data/raw/opportunity_radar/bodies/2ce08d3cf4621f4370eb9940d98892eae2f775572f5a4c9fd0ac8748c9b55920.pdf",
+            "kind": "SOURCE_BODY"
+          },
+          "published_at": "2026-08-26",
+          "first_seen_at": "2026-09-14T00:47:16.944211+08:00",
+          "observation_mode": "RETROSPECTIVE_SERIES"
+        }
+      ],
+      "candidate_scope": "EVIDENCE_SCREEN_NOT_OVERNIGHT_EVENT_OR_STOCK_RECOMMENDATION",
+      "evidence_location": "FULL_PACKET_AND_SOURCE_RECEIPTS_FOR_COMPLETE_SUPPORT"
+    },
+    {
+      "entity": "NVIDIA",
+      "theme": "光通信",
+      "stock_code": "NVDA.US",
+      "candidate_type": "COMPANY_SPECIFIC_CANDIDATE",
+      "signal_type": "TECHNOLOGY_BREAKTHROUGH",
+      "observation_id": "d7de519b31533d2dd4e5f630540173c58b1772267ba1df43ed91f90f887e5bd8",
+      "source_date": "2026-05-31",
+      "signal_first_seen_date": "2026-10-13",
+      "first_seen_at": "2026-10-13T23:56:26.915022+08:00",
+      "direction": "INCREASE",
+      "changes": {},
+      "source_tier": 1,
+      "objective_opportunity_score": null,
+      "fundamental_change_score": null,
+      "expectation_revision_score": null,
+      "industry_strength_score": null,
+      "technology_score": 80.0,
+      "supply_demand_score": null,
+      "valuation_headroom_score": null,
+      "price_confirmation_score": null,
+      "catalyst_score": null,
+      "evidence_quality_score": 100.0,
+      "crowding_risk_score": null,
+      "downside_risk_score": null,
+      "score_version": "objective_evidence.1",
+      "score_weights": {
+        "fundamental_change": 20,
+        "expectation_revision": 20,
+        "industry_strength": 15,
+        "technology": 10,
+        "supply_demand": 10,
+        "valuation_headroom": 10,
+        "price_confirmation": 5,
+        "catalyst": 5,
+        "evidence_quality": 5
+      },
+      "weighted_contributions": {
+        "fundamental_change": null,
+        "expectation_revision": null,
+        "industry_strength": null,
+        "technology": 8.0,
+        "supply_demand": null,
+        "valuation_headroom": null,
+        "price_confirmation": null,
+        "catalyst": null,
+        "evidence_quality": 5.0
+      },
+      "risk_deductions": {
+        "crowding_risk": null,
+        "downside_risk": null
+      },
+      "score_coverage_pct": 15,
+      "missing_components": [
+        "fundamental_change",
+        "expectation_revision",
+        "industry_strength",
+        "supply_demand",
+        "valuation_headroom",
+        "price_confirmation",
+        "catalyst"
+      ],
+      "confidence": "LOW",
+      "score_status": "INSUFFICIENT_EVIDENCE",
+      "score_semantics": "FIXED_WEIGHT_EVIDENCE_POINTS_NOT_INVESTMENT_RANKING; UNKNOWN_RISK_NOT_ASSUMED_ABSENT",
+      "stock_name": "NVIDIA",
+      "signal_types": [
+        "TECHNOLOGY_BREAKTHROUGH"
+      ],
+      "main_driver": {
+        "signal_type": "TECHNOLOGY_BREAKTHROUGH",
+        "metric": "technology_stage:CPO",
+        "observation_id": "d7de519b31533d2dd4e5f630540173c58b1772267ba1df43ed91f90f887e5bd8"
+      },
+      "verified_relations": [],
+      "expectation_revision": [],
+      "fundamental_change": null,
+      "valuation_fundamental_divergence": null,
+      "price_confirmation": null,
+      "catalyst": [],
+      "risks": [
+        "PRIOR_EXPECTATION_UNAVAILABLE",
+        "VERIFIED_ECONOMIC_RELATION_UNAVAILABLE",
+        "VALUATION_VINTAGES_UNAVAILABLE",
+        "ECONOMIC_EXPOSURE_MAGNITUDE_UNKNOWN"
+      ],
+      "evidence": [
+        {
+          "observation_id": "01c1721c5ea5084e947e42f11a81c88f26b935cb1fd28ed6480da3425549eab8",
+          "url": "https://nvidianews.nvidia.com/news/vera-rubin-full-production-agentic-ai-factory",
+          "source_path": "data/raw/opportunity_radar/body_receipts/f0fb467a443dc12848a23fa4ed3bf70c7d7248eaf2d19cb39657e4dce7ad8f4b.json",
+          "provenance": {
+            "sha256": "087208b829444fbd746510ec9f58f01dbad7482c33485be4acfc92e630e6c0f7",
+            "raw_sha256": "fd8be47f78ddc8f2c25c5ac09475fcf97f98c6580c812a2f825dc8603f8bee15",
+            "raw_path": "data/raw/opportunity_radar/bodies/fd8be47f78ddc8f2c25c5ac09475fcf97f98c6580c812a2f825dc8603f8bee15.bin",
+            "kind": "SOURCE_BODY"
+          },
+          "published_at": "2026-05-31",
+          "first_seen_at": "2026-10-28T23:05:46.152886+08:00",
+          "observation_mode": "HISTORICAL_BACKFILL"
+        },
+        {
+          "observation_id": "18d6de89b9d5dd7737ffe22ddb0c197bfb37b78f561c32a7bd75ad80e843e75b",
+          "url": "https://nvidianews.nvidia.com/news/vera-rubin-full-production-agentic-ai-factory",
+          "source_path": "data/raw/opportunity_radar/body_receipts/89fdd7fd24b7f40740ed684f418d1935d39b6f6be97beba61619d41fc1dbcce0.json",
+          "provenance": {
+            "sha256": "74a0223db4fa5ffd9ecaee6c6f4c2609edbb50a20853a046597eb9e6a706c2e5",
+            "raw_sha256": "ab863dd6c878cb2e47f6c0332ebd06981fabced497c50292d6c5a873e05983ed",
+            "raw_path": "data/raw/opportunity_radar/bodies/ab863dd6c878cb2e47f6c0332ebd06981fabced497c50292d6c5a873e05983ed.bin",
+            "kind": "SOURCE_BODY"
+          },
+          "published_at": "2026-05-31",
+          "first_seen_at": "2026-09-29T16:26:43.742421+08:00",
+          "observation_mode": "HISTORICAL_BACKFILL"
+        },
+        {
+          "observation_id": "196303be0da1a0ee9af6d4c19ddba4c03625003a40933c8953063dc4864035c5",
+          "url": "https://nvidianews.nvidia.com/news/vera-rubin-full-production-agentic-ai-factory",
+          "source_path": "data/raw/opportunity_radar/body_receipts/29de62f7936b81755f7b73084adbec630051bf11c1d55571f18ccb14dd831e21.json",
+          "provenance": {
+            "sha256": "9116997d4bab17607ce3b14272b7099b0c235e8fe126eab0b7edc96e46be47e7",
+            "raw_sha256": "eb641b0b099fbe1844688209409a025ed24baafb3e94f5cbe253fbbe82724e87",
+            "raw_path": "data/raw/opportunity_radar/bodies/eb641b0b099fbe1844688209409a025ed24baafb3e94f5cbe253fbbe82724e87.bin",
+            "kind": "SOURCE_BODY"
+          },
+          "published_at": "2026-05-31",
+          "first_seen_at": "2026-09-14T23:49:35.576446+08:00",
+          "observation_mode": "HISTORICAL_BACKFILL"
+        }
+      ],
+      "candidate_scope": "EVIDENCE_SCREEN_NOT_OVERNIGHT_EVENT_OR_STOCK_RECOMMENDATION",
+      "evidence_location": "FULL_PACKET_AND_SOURCE_RECEIPTS_FOR_COMPLETE_SUPPORT"
+    }
+  ],
+  "factor41_mapping": [
+    {
+      "observation_id": "0932e31249e3de7ab6b9dd0fa2e57d327f1a44fd17a3192a4858786dfb9c996e",
+      "mapped_factor_ids": [
+        4
+      ],
+      "mapping_method": "CATEGORY_ASSOCIATION_NOT_CAUSAL",
+      "mapping_source": "src/domain/constants.py:DRIVER_TYPES",
+      "mapping_confidence": "LOW"
+    },
+    {
+      "observation_id": "5587fa906071cd944d363251960dce48fddf165466a8f55eec0e2650915929da",
+      "mapped_factor_ids": [
+        22
+      ],
+      "mapping_method": "CATEGORY_ASSOCIATION_NOT_CAUSAL",
+      "mapping_source": "src/domain/constants.py:DRIVER_TYPES",
+      "mapping_confidence": "LOW"
+    },
+    {
+      "observation_id": "5ce195386c7950664dfc8a2fbb95c57fe79c770ea9e2ec7b7e8d445cf85f5fee",
+      "mapped_factor_ids": [
+        17
+      ],
+      "mapping_method": "CATEGORY_ASSOCIATION_NOT_CAUSAL",
+      "mapping_source": "src/domain/constants.py:DRIVER_TYPES",
+      "mapping_confidence": "LOW"
+    },
+    {
+      "observation_id": "6f98a8eb31381ca27cee605e2aed08d690af698cb52f1e151d50e102211d2d2f",
+      "mapped_factor_ids": [
+        34,
+        35,
+        36,
+        38
+      ],
+      "mapping_method": "CATEGORY_ASSOCIATION_NOT_CAUSAL",
+      "mapping_source": "src/domain/constants.py:DRIVER_TYPES",
+      "mapping_confidence": "LOW"
+    },
+    {
+      "observation_id": "91a10a684908486167c597b70ef6b5e3e0680ced063428fb07e727b40a43c50e",
+      "mapped_factor_ids": [
+        23
+      ],
+      "mapping_method": "CATEGORY_ASSOCIATION_NOT_CAUSAL",
+      "mapping_source": "src/domain/constants.py:DRIVER_TYPES",
+      "mapping_confidence": "LOW"
+    },
+    {
+      "observation_id": "b56e580de3b324e238316112414c6de1be45d82f3e69668be30306a740017ff7",
+      "mapped_factor_ids": [
+        7,
+        11
+      ],
+      "mapping_method": "CATEGORY_ASSOCIATION_NOT_CAUSAL",
+      "mapping_source": "src/domain/constants.py:DRIVER_TYPES",
+      "mapping_confidence": "LOW"
+    },
+    {
+      "observation_id": "b6ef9c29adca018e5ff5245de13eceb73eab5530b1adf91d657739e18ad027a3",
+      "mapped_factor_ids": [
+        24,
+        25,
+        26
+      ],
+      "mapping_method": "CATEGORY_ASSOCIATION_NOT_CAUSAL",
+      "mapping_source": "src/domain/constants.py:DRIVER_TYPES",
+      "mapping_confidence": "LOW"
+    },
+    {
+      "observation_id": "d2970458f0247448b3fad1579a369e555205e16967141fba2b3b2ae04b306a36",
+      "mapped_factor_ids": [
+        33
+      ],
+      "mapping_method": "CATEGORY_ASSOCIATION_NOT_CAUSAL",
+      "mapping_source": "src/domain/constants.py:DRIVER_TYPES",
+      "mapping_confidence": "LOW"
+    },
+    {
+      "observation_id": "d45f51b1d52bf8d6930c277d6a3b25d29bce6c877e4c8b85e413d5ec318b3994",
+      "mapped_factor_ids": [
+        15,
+        16,
+        18
+      ],
+      "mapping_method": "CATEGORY_ASSOCIATION_NOT_CAUSAL",
+      "mapping_source": "src/domain/constants.py:DRIVER_TYPES",
+      "mapping_confidence": "LOW"
+    },
+    {
+      "observation_id": "d7de519b31533d2dd4e5f630540173c58b1772267ba1df43ed91f90f887e5bd8",
+      "mapped_factor_ids": [
+        1,
+        3
+      ],
+      "mapping_method": "CATEGORY_ASSOCIATION_NOT_CAUSAL",
+      "mapping_source": "src/domain/constants.py:DRIVER_TYPES",
+      "mapping_confidence": "LOW"
+    }
+  ],
+  "signal_history": [],
+  "lead_time_statistics": {
+    "rule": {
+      "relative_return_5d_min": 3.0,
+      "breadth_min": 0.6,
+      "amount_ratio_20d_min": 1.2,
+      "evaluation_window_trading_days": 20,
+      "version": "radar-confirmation.1"
+    },
+    "records": [
+      {
+        "signal_first_seen_date": "2026-10-14",
+        "signal_type": "MACRO_LIQUIDITY_FX_RATES",
+        "entity": "PPI_yoy",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-14",
+        "signal_type": "MACRO_LIQUIDITY_FX_RATES",
+        "entity": "CPI_yoy",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-09-14",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "磷酸铁锂（普通动力型）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-09-24",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "焦煤（主焦煤）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-26",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "焦炭（准一级冶金焦）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-26",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "液化天然气（LNG）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-09-15",
+        "signal_type": "SUPPLY_DEMAND",
+        "entity": "原煤",
+        "theme": "原煤",
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-26",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "聚丙烯（拉丝料）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-26",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "顺丁胶（BR9000）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-26",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "聚乙烯（LLDPE，熔融指数2薄膜料）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-19",
+        "signal_type": "CAPACITY_AND_UTILIZATION",
+        "entity": "汽车制造业",
+        "theme": "汽车制造业",
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-26",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "甲醇（优等品）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-09-11",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "液化石油气（LPG）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-09",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "天然橡胶（标准胶SCRWF）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-19",
+        "signal_type": "CAPACITY_AND_UTILIZATION",
+        "entity": "其中：煤炭开采和洗选业",
+        "theme": "其中：煤炭开采和洗选业",
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-09",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "钾肥（港口62%白色氯化钾）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-09-11",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "磷肥（55%磷酸一铵）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-09",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "大豆（黄豆）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-09-24",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "生猪（外三元）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-19",
+        "signal_type": "CAPACITY_AND_UTILIZATION",
+        "entity": "电气机械和器材制造业",
+        "theme": "电气机械和器材制造业",
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-09-24",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "无烟煤（洗中块）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-09",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "烧碱（液碱，32%）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-19",
+        "signal_type": "CAPACITY_AND_UTILIZATION",
+        "entity": "有色金属冶炼和压延加工业",
+        "theme": "有色金属冶炼和压延加工业",
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-26",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "锌锭（0#）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-19",
+        "signal_type": "CAPACITY_AND_UTILIZATION",
+        "entity": "黑色金属冶炼和压延加工业",
+        "theme": "黑色金属冶炼和压延加工业",
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-09-11",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "山西优混（5500大卡）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-19",
+        "signal_type": "CAPACITY_AND_UTILIZATION",
+        "entity": "电力、热力、燃气及水生产和供应业",
+        "theme": "电力、热力、燃气及水生产和供应业",
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-26",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "纸浆（进口针叶浆）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-09-11",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "硫酸（98%）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-09-24",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "农药（草甘膦，95%原药）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-26",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "铝锭（A00）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-19",
+        "signal_type": "CAPACITY_AND_UTILIZATION",
+        "entity": "非金属矿物制品业",
+        "theme": "非金属矿物制品业",
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-19",
+        "signal_type": "CAPACITY_AND_UTILIZATION",
+        "entity": "医药制造业",
+        "theme": "医药制造业",
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-09-11",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "柴油（0#国VI）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-09-11",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "纯苯（石油苯，工业级）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-09",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "浮法平板玻璃（5/6mm）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-26",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "涤纶长丝（POY150D/48F）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-19",
+        "signal_type": "CAPACITY_AND_UTILIZATION",
+        "entity": "计算机、通信和其他电子设备制造业",
+        "theme": "计算机、通信和其他电子设备制造业",
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-19",
+        "signal_type": "SUPPLY_DEMAND",
+        "entity": "天然气",
+        "theme": "天然气",
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-09-14",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "普通硅酸盐水泥（P.O42.5散装）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-26",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "汽油（95#国VI）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-26",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "白糖（国标一级白砂糖）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-09-14",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "玉米（黄玉米二等）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-09-11",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "复合肥（硫酸钾复合肥，氮磷钾含量45%）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-19",
+        "signal_type": "CAPACITY_AND_UTILIZATION",
+        "entity": "专用设备制造业",
+        "theme": "专用设备制造业",
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-19",
+        "signal_type": "SUPPLY_DEMAND",
+        "entity": "原油",
+        "theme": "原油",
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-09-11",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "小麦（国标三等）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-09-11",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "冰醋酸（99.5%及以上）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-10-09",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "尿素（中小颗粒）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      },
+      {
+        "signal_first_seen_date": "2026-09-24",
+        "signal_type": "COMMODITY_PRICE",
+        "entity": "热轧普通板卷（4.75—11.5mm，Q235）",
+        "theme": null,
+        "company": null,
+        "market_confirmation_date": null,
+        "lead_trading_days": null,
+        "pre_existing_market_confirmation": null,
+        "confirmation_search_scope": "20 prior and 20 subsequent trading sessions; first observed rule match",
+        "evaluation_status": "RIGHT_CENSORED_OR_DATA_UNAVAILABLE",
+        "survived": null,
+        "independent_source_confirmation": null
+      }
+    ],
+    "signal_count": 276,
+    "evaluable_count": 0,
+    "market_confirmation_rate": null,
+    "median_lead_time": null,
+    "false_positive_rate": null,
+    "signal_survival_rate": null,
+    "signal_decay_rate": null,
+    "source_confirmation_rate": null,
+    "status": "DATA_UNAVAILABLE",
+    "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded",
+    "by_signal_type": {
+      "COMMODITY_PRICE": {
+        "signal_count": 62,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      },
+      "SUPPLY_DEMAND": {
+        "signal_count": 3,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      },
+      "CAPACITY_AND_UTILIZATION": {
+        "signal_count": 19,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      },
+      "POLICY_AND_FISCAL": {
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      },
+      "TECHNOLOGY_BREAKTHROUGH": {
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      },
+      "PRODUCT_COMMERCIALIZATION": {
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      },
+      "CUSTOMER_AND_ORDER": {
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      },
+      "REVENUE_PROFIT_MARGIN": {
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      },
+      "EXPECTATION_REVISION": {
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      },
+      "INDUSTRY_COMPETITION": {
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      },
+      "M&A_AND_CAPITAL_OPERATION": {
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      },
+      "SHAREHOLDER_MANAGEMENT_ACTION": {
+        "signal_count": 2,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      },
+      "OVERSEAS_LEAD": {
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      },
+      "MACRO_LIQUIDITY_FX_RATES": {
+        "signal_count": 3,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      },
+      "VALUATION_FUNDAMENTAL_DIVERGENCE": {
+        "signal_count": 0,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      },
+      "MARKET_STRUCTURE_AND_FLOW": {
+        "signal_count": 187,
+        "evaluable_count": 0,
+        "market_confirmation_rate": null,
+        "median_lead_time": null,
+        "false_positive_rate": null,
+        "signal_survival_rate": null,
+        "signal_decay_rate": null,
+        "source_confirmation_rate": null,
+        "status": "DATA_UNAVAILABLE",
+        "denominator_policy": "20 observed subsequent trading sessions; censored/missing observations excluded"
+      }
+    }
+  },
+  "data_gaps": [
+    {
+      "status": "UNAVAILABLE",
+      "reason": "WITHDRAWN_PARSER_VERSION_OBSERVATIONS_EXCLUDED",
+      "count": 1174
+    },
+    {
+      "signal_type": "MARKET_STRUCTURE_AND_FLOW",
+      "observation_id": "fea5b243539b0951f0ddf14202270eda39d179a1f33be71a03ae6308717a2dae",
+      "status": "PARTIAL",
+      "reason": "published_at"
+    },
+    {
+      "signal_type": "REVENUE_PROFIT_MARGIN",
+      "observation_id": "017662bd11b9e071c2f019d1b6ab77e44aae6177d8a8bd07e5d52757642b208f",
+      "status": "PARTIAL",
+      "reason": "quantitative_or_body_evidence"
+    },
+    {
+      "signal_type": "MARKET_STRUCTURE_AND_FLOW",
+      "observation_id": "fd41cf5bd9c5fb661086be359c329f76962818b3fc742609b2d39dc5bd077ffe",
+      "status": "PARTIAL",
+      "reason": "INCOMPLETE_TRADING_DAY_SERIES;published_at"
+    },
+    {
+      "signal_type": "COMMODITY_PRICE",
+      "observation_id": "bcfaee262776c7b070467a7e34cd97ffed2d23fe5d2a56fe8da6d19b84dc976f",
+      "status": "PARTIAL",
+      "reason": "published_at"
+    },
+    {
+      "signal_type": "SHAREHOLDER_MANAGEMENT_ACTION",
+      "observation_id": "ffe4b5e6f39181b83b0e55f5afae0bdd982431d6a8fcd19b283a6c4be7327a2f",
+      "status": "PARTIAL",
+      "reason": "quantitative_or_body_evidence"
+    },
+    {
+      "signal_type": "M&A_AND_CAPITAL_OPERATION",
+      "observation_id": "b71f6bd1424ffbf817df03cd2423298029e8c0c71e7523318e18bdca2d7c3e38",
+      "status": "PARTIAL",
+      "reason": "quantitative_or_body_evidence"
+    },
+    {
+      "signal_type": "CUSTOMER_AND_ORDER",
+      "observation_id": "ce91a5744522758fc08c560f41fc0828354ab6c0fb4f96090fdbf393c64e44c7",
+      "status": "PARTIAL",
+      "reason": "quantitative_or_body_evidence"
+    },
+    {
+      "signal_type": "POLICY_AND_FISCAL",
+      "observation_id": "b95ae22cee833f9da8a7dc770218ce8cee1141c396e1121c69fafef19db4b793",
+      "status": "PARTIAL",
+      "reason": "quantitative_or_body_evidence"
+    }
+  ],
+  "source_manifest": [
+    {
+      "path": "data/market_packets/2026-09-03.json",
+      "url": null,
+      "source": "Eastmoney limit pools via AKShare",
+      "provenance": {
+        "sha256": "5c5281639b927d0703a191241e7730875072bb95a6c74bbb31ba5d20002a2683",
+        "kind": "ARCHIVED_MARKET_FACT"
+      },
+      "source_tier": 3
+    },
+    {
+      "path": "data/raw/opportunity_radar/body_receipts/e6f24de672394fe178a9ec3d3fec73db70d6dbaa3e6ff4a0e2091411b21f3eda.json",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225522515.PDF",
+      "source": "巨潮资讯",
+      "provenance": {
+        "sha256": "45e58c617255d054143aa1c12e40bc60fd9520533c8e10364510fba86bbcec8d",
+        "raw_sha256": "1f1a47ec94dd2d6b18db72e59e2920511cf15213ff5dde41ff302bfcd1c723d7",
+        "raw_path": "data/raw/opportunity_radar/bodies/1f1a47ec94dd2d6b18db72e59e2920511cf15213ff5dde41ff302bfcd1c723d7.pdf",
+        "kind": "SOURCE_BODY"
+      },
+      "source_tier": 1
+    },
+    {
+      "path": "data/raw/opportunity_radar/body_receipts/a3d86efdd0c1f6e16da8070115ce8ac24ccfa25f75c0aa1ad1966273a2cba4e1.json",
+      "url": "https://nvidianews.nvidia.com/news/vera-rubin-full-production-agentic-ai-factory",
+      "source": "NVIDIA_NEWSROOM",
+      "provenance": {
+        "sha256": "aaefbde9cb7d2b01178a8b6a09a3dd6f4c6dba74d854abf2524bf42676043b80",
+        "raw_sha256": "ec9b766598245d3a368e72684cdd26f360d3fcd49f79069e0fb00305b1796d2f",
+        "raw_path": "data/raw/opportunity_radar/bodies/ec9b766598245d3a368e72684cdd26f360d3fcd49f79069e0fb00305b1796d2f.bin",
+        "kind": "SOURCE_BODY"
+      },
+      "source_tier": 1
+    },
+    {
+      "path": "data/raw/opportunity_radar/body_receipts/1437f5b6a2f445b430579cec06d19cbd28f697ffcdf3f81ea5c57a8c57196b7e.json",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261014_1965476.html",
+      "source": "NBS",
+      "provenance": {
+        "sha256": "41d2184a919039d80205cc3dc44bf0bac49e67299f388e7f5643ec8a6094a727",
+        "raw_sha256": "22e3e579d61dab0bbed26f55844d9e008110e7e07354c80ce73067875a09daba",
+        "raw_path": "data/raw/opportunity_radar/bodies/22e3e579d61dab0bbed26f55844d9e008110e7e07354c80ce73067875a09daba.bin",
+        "kind": "SOURCE_BODY"
+      },
+      "source_tier": 1
+    },
+    {
+      "path": "data/raw/opportunity_radar/body_receipts/07eba9835ad8c341c73db0459658f92c4bc89c1b5b4dd858efd36d93f01e97ca.json",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261019_1965613.html",
+      "source": "NBS",
+      "provenance": {
+        "sha256": "09c841782fe3982fea83915a68c4a833bd26149f52ca12ae8f4b3aa58256cba4",
+        "raw_sha256": "966dc49ed6650f6f0f649021f0f90a4455172ee82028e302323379d2bc0ce93a",
+        "raw_path": "data/raw/opportunity_radar/bodies/966dc49ed6650f6f0f649021f0f90a4455172ee82028e302323379d2bc0ce93a.bin",
+        "kind": "SOURCE_BODY"
+      },
+      "source_tier": 1
+    },
+    {
+      "path": "data/raw/opportunity_radar/body_receipts/d2557f0d300ce589cdd697542567d099bd4a6fff1a419092372a56eb0971e265.json",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261019_1965611.html",
+      "source": "NBS",
+      "provenance": {
+        "sha256": "a26114e312fbde4380def86152a8bd7ecf038bcee7a8d6ce832f96e2cd0e3ef4",
+        "raw_sha256": "16d1b3681a88112e345cc82fd8e289a50c10f862c832303adf12c53b1026a21a",
+        "raw_path": "data/raw/opportunity_radar/bodies/16d1b3681a88112e345cc82fd8e289a50c10f862c832303adf12c53b1026a21a.bin",
+        "kind": "SOURCE_BODY"
+      },
+      "source_tier": 1
+    },
+    {
+      "path": "data/raw/opportunity_radar/body_receipts/3b5ca44cfa39a6ed133517b13881f2088b49c3bb381ec7408bc1ed7b7510fa71.json",
+      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap05_O",
+      "source": "TPEX",
+      "provenance": {
+        "sha256": "be480dbe541bbc1d766a825fd74c694cd9878e2e7017966d4e55ba3b4cc5bcf5",
+        "raw_sha256": "a27fea120daa8ef4543bcbf6e31426cad2e0201111ee8d97916fbb5fce2727a6",
+        "raw_path": "data/raw/opportunity_radar/bodies/a27fea120daa8ef4543bcbf6e31426cad2e0201111ee8d97916fbb5fce2727a6.bin",
+        "kind": "SOURCE_BODY"
+      },
+      "source_tier": 2
+    },
+    {
+      "path": "data/raw/opportunity_radar/body_receipts/d7e6fd46f3fed1c3e9c78edb8528ea2fafef258d39921a435e7967b2580a2a0e.json",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261023_1965679.html",
+      "source": "NBS",
+      "provenance": {
+        "sha256": "2d7793c124a8108a91d2c1310b5c61dcc46a355d4198ec59baae1ed7a82edb09",
+        "raw_sha256": "f0d9d6256a48a96c1b971ff15babf6df40938063d97221703a08d7a0df9fee3e",
+        "raw_path": "data/raw/opportunity_radar/bodies/f0d9d6256a48a96c1b971ff15babf6df40938063d97221703a08d7a0df9fee3e.bin",
+        "kind": "SOURCE_BODY"
+      },
+      "source_tier": 1
+    },
+    {
+      "path": "data/raw/opportunity_radar/body_receipts/7f171a18c7e4a880c721a7347276e541af630d6bfe8804c3c995c1f0993c062c.json",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225507131.PDF",
+      "source": "巨潮资讯",
+      "provenance": {
+        "sha256": "17738479632d748b5010e5a018e7a8ddf38a665c4c125854b4c799387c120b0c",
+        "raw_sha256": "2af3806a34001579fb14ea4b4a27698383841bd39a4f836519fa76a7d712f169",
+        "raw_path": "data/raw/opportunity_radar/bodies/2af3806a34001579fb14ea4b4a27698383841bd39a4f836519fa76a7d712f169.pdf",
+        "kind": "SOURCE_BODY"
+      },
+      "source_tier": 1
+    },
+    {
+      "path": "data/raw/opportunity_radar/price_windows/c49006519233f9fa14d2710ab3b66733530ed41d83bb713c0b38e7c00a47a179.json",
+      "url": null,
+      "source": "EXISTING_FACTSTORE_DAILY",
+      "provenance": {
+        "sha256": "3bc114bb625eb3319082b39756661e6a491489c8ade9d5024b913686df1c30a7",
+        "kind": "DERIVED_FROM_EXISTING_FACTSTORE_CAPTURED_NOW"
+      },
+      "source_tier": 2
+    }
+  ],
+  "compact_metadata": {
+    "selection": "source_tier, absolute_change, freshness, completeness, stable_id",
+    "available_counts": {
+      "commodity_observations": 75,
+      "supply_demand_observations": 6,
+      "capacity_utilization_observations": 159,
+      "policy_observations": 5,
+      "technology_breakthrough_observations": 21,
+      "product_commercialization_observations": 798,
+      "customer_order_observations": 393,
+      "fundamental_change_observations": 414,
+      "expectation_revision_observations": 2,
+      "industry_competition_observations": 18,
+      "capital_operation_observations": 149,
+      "shareholder_management_observations": 200,
+      "overseas_lead_observations": 16,
+      "macro_observations": 3,
+      "valuation_fundamental_divergence_candidates": 35,
+      "market_structure_observations": 247,
+      "positive_change_candidates": 88,
+      "negative_risk_candidates": 188,
+      "theme_candidates": 32,
+      "company_specific_candidates": 38,
+      "industry_transmission_mapping": 239
+    },
+    "retained_counts": {
+      "commodity_observations": 1,
+      "supply_demand_observations": 1,
+      "capacity_utilization_observations": 1,
+      "policy_observations": 0,
+      "technology_breakthrough_observations": 1,
+      "product_commercialization_observations": 0,
+      "customer_order_observations": 0,
+      "fundamental_change_observations": 1,
+      "expectation_revision_observations": 1,
+      "industry_competition_observations": 0,
+      "capital_operation_observations": 0,
+      "shareholder_management_observations": 0,
+      "overseas_lead_observations": 1,
+      "macro_observations": 1,
+      "valuation_fundamental_divergence_candidates": 1,
+      "market_structure_observations": 1,
+      "positive_change_candidates": 2,
+      "negative_risk_candidates": 2,
+      "theme_candidates": 1,
+      "company_specific_candidates": 4,
+      "industry_transmission_mapping": 50
+    },
+    "full_packet_required_for_complete_history": true,
+    "compact_size_warning": false,
+    "largest_modules": [
+      "industry_transmission_mapping",
+      "company_specific_candidates",
+      "lead_time_statistics",
+      "source_manifest",
+      "expectation_revision_observations"
+    ]
+  }
+}
