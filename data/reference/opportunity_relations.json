@@ -9524,5 +9524,41 @@
     "verification_basis": "ISSUER_OWN_PRODUCT_BODY",
     "observation_mode": "LIVE_OBSERVED",
     "parser_version": "COMPANY_EVIDENCE_V2"
+  },
+  {
+    "source": "巨潮资讯",
+    "url": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225649948.PDF",
+    "source_path": "data/raw/opportunity_radar/body_receipts/25a7f1560379a12ecf1b437fc9161a6d9267a53d7fedfc39e5c19bf58e57ecf4.json",
+    "first_seen_at": "2026-10-30T23:02:28.439309+08:00",
+    "provenance": {
+      "sha256": "ea1813e57a71b13267e4af96482285bbb562cd5e34d9f28346cd7e79a4940ad5",
+      "raw_sha256": "9333464019e1d4be4cb3e1b858e73eb2f41161dc8c616c3ddbed63d7f68c58e9",
+      "raw_path": "data/raw/opportunity_radar/bodies/9333464019e1d4be4cb3e1b858e73eb2f41161dc8c616c3ddbed63d7f68c58e9.pdf",
+      "kind": "SOURCE_BODY"
+    },
+    "source_tier": 1,
+    "published_at": "2026-10-30",
+    "source_date": "2026-10-30",
+    "event_date": "2026-10-30",
+    "from": "印制电路板",
+    "to": "科翔股份",
+    "stock_code": "300903",
+    "stock_name": "科翔股份",
+    "company_name": "科翔股份",
+    "upstream_theme": "PCB/CCL",
+    "downstream_theme": "PCB/CCL",
+    "relationship_type": "core_producer",
+    "product": "印制电路板",
+    "revenue_exposure": null,
+    "profit_exposure": null,
+    "customer_exposure": null,
+    "capacity_exposure": null,
+    "evidence": "第十一条公司聚焦高密度印制电路板的研发、生产和销售，坚持创新驱动， 通过技术进步、工艺优化和数字化转型，不断提升产品的可靠性、良率和绿色属性，严格产品质量管控，为客户提供快捷、安全、可靠的产品和服务",
+    "evidence_date": "2026-10-30",
+    "confidence": 1.0,
+    "relation_status": "VERIFIED",
+    "verification_basis": "ISSUER_OWN_PRODUCT_BODY",
+    "observation_mode": "LIVE_OBSERVED",
+    "parser_version": "COMPANY_EVIDENCE_V2"
   }
 ]
