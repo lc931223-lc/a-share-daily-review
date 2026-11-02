@@ -1,6 +1,6 @@
 {
   "date": "2026-09-08",
-  "run_id": "41490326235",
+  "run_id": "41491251509",
   "workflow_run_attempt": "1",
   "workflow_retry_count": 2,
   "credential_health": {
@@ -83,7 +83,7 @@
       },
       {
         "dataset": "tushare_stock_basic",
-        "status": "PASS",
+        "status": "FAIL",
         "data_date": "2026-09-08"
       },
       {
@@ -183,16 +183,16 @@
   "is_trade_day": true,
   "calendar_status": "CHECKED",
   "market_closed": true,
-  "pipeline_started_at": "2026-11-03T01:27:25.748417+08:00",
-  "pipeline_completed_at": "2026-11-03T01:27:27.658434+08:00",
+  "pipeline_started_at": "2026-11-03T01:34:03.394886+08:00",
+  "pipeline_completed_at": "2026-11-03T01:34:06.096036+08:00",
   "steps": {
     "daily_data_preflight": {
       "status": "PASS",
       "artifact_path": null,
       "source_date": null,
       "quality": "PASS",
-      "started_at": "2026-11-03T01:27:25.748417+08:00",
-      "completed_at": "2026-11-03T01:27:27.116539+08:00",
+      "started_at": "2026-11-03T01:34:03.394886+08:00",
+      "completed_at": "2026-11-03T01:34:05.162924+08:00",
       "error": null,
       "retry_count": 0,
       "reused": false,
@@ -203,8 +203,8 @@
       "artifact_path": null,
       "source_date": null,
       "quality": null,
-      "started_at": "2026-11-03T01:27:27.116753+08:00",
-      "completed_at": "2026-11-03T01:27:27.627181+08:00",
+      "started_at": "2026-11-03T01:34:05.163170+08:00",
+      "completed_at": "2026-11-03T01:34:06.039594+08:00",
       "error": "RuntimeError: Market Packet production gate failed: ['交易日判断', '涨跌停']",
       "retry_count": 2,
       "reused": false,
@@ -265,8 +265,8 @@
       "detail": "no probable plaintext secrets found"
     }
   ],
-  "started_at": "2026-11-03T01:27:25.748417+08:00",
-  "completed_at": "2026-11-03T01:27:27.658434+08:00",
+  "started_at": "2026-11-03T01:34:03.394886+08:00",
+  "completed_at": "2026-11-03T01:34:06.096036+08:00",
   "blocker": [
     "RuntimeError: Market Packet production gate failed: ['交易日判断', '涨跌停']"
   ],
@@ -347,7 +347,7 @@
       },
       {
         "dataset": "tushare_stock_basic",
-        "status": "PASS",
+        "status": "FAIL",
         "data_date": "2026-09-08"
       },
       {
