@@ -1,0 +1,11 @@
+{
+  "trade_date": "2026-11-09",
+  "snapshot": "EOD",
+  "observed_at": "2026-11-09T14:14:12.242837+08:00",
+  "status": "FAILED",
+  "run_id": "42571677099",
+  "retry_count": 1,
+  "sources": [],
+  "blocker": "MARKET_NOT_CLOSED",
+  "error_type": "ValueError"
+}
