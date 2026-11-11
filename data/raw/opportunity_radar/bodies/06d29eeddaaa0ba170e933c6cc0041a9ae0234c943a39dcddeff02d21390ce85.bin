@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta charset="utf-8">
+                        <link rel="alternate" type="application/rss+xml" title="Advanced Micro Devices, Inc. - Recent News" href="https://ir.amd.com/news-events/press-releases/rss" />
+                
+        <title>AMD Showcases 6th Gen AMD EPYC Processors to Lead Next Era of AI and Enterprise Computing :: Advanced Micro Devices, Inc. (AMD)</title>
+        
+        <link rel="canonical" href="https://ir.amd.com/news-events/press-releases/detail/1305/amd-showcases-6th-gen-amd-epyc-processors-to-lead-next-era-of-ai-and-enterprise-computing">
+<meta property="og:url" content="https://ir.amd.com/news-events/press-releases/detail/1305/amd-showcases-6th-gen-amd-epyc-processors-to-lead-next-era-of-ai-and-enterprise-computing">
+
+
+<meta property="og:site_name" content="Advanced Micro Devices, Inc.">
+<meta property="og:title" content="AMD Showcases 6th Gen AMD EPYC Processors to Lead Next Era of AI and Enterprise Computing">
+<meta property="og:type" content="website">
+
+<meta property="og:image" content="https://d1io3yog0oux5.cloudfront.net/_f84d3475a35717bff62b468359d9e1a2/amd/db/834/7308/social_image_resized.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:description" content="News Highlights:
+
+6th Gen AMD EPYC SP7 CPU-based platforms are now shipping from leading server OEMs and ODMs.
+6th Gen EPYC CPUs are expected to…...">
+<meta name="description" content="News Highlights:
+
+6th Gen AMD EPYC SP7 CPU-based platforms are now shipping from leading server OEMs and ODMs.
+6th Gen EPYC CPUs are expected to…...">
+
+
+
+<script type="application/ld+json">
+	{"@context":"http:\/\/schema.org","@type":"Corporation","name":"Advanced Micro Devices, Inc.","address":{"@type":"PostalAddress","streetAddress":"2485 Augustine Drive ","addressLocality":"Santa Clara, CA","postalCode":"95054","addressCountry":""},"legalName":"Advanced Micro Devices, Inc.","description":"For more than 55 years AMD has driven innovation in high-performance computing, graphics and visualization technologies \u2015 the building blocks for gaming, immersive platforms and the data center. Hundreds of millions of consumers, leading Fortune 500 businesses and cutting-edge scientific research facilities around the world rely on AMD technology daily to improve how they live, work and play. AMD employees around the world are focused on building great products that push the boundaries of what is possible.","tickerSymbol":": AMD","url":"https:\/\/ir.amd.com","logo":"https:\/\/d1io3yog0oux5.cloudfront.net\/_f84d3475a35717bff62b468359d9e1a2\/amd\/logo.png","image":"https:\/\/d1io3yog0oux5.cloudfront.net\/_f84d3475a35717bff62b468359d9e1a2\/amd\/db\/834\/7308\/social_image_resized.jpg","sameAs":[]}</script>
+
+<!-- Elastic Search -->
+        <meta class="elastic" name="published_time" content="2026-11-10">
+        <meta class="elastic" name="published_day" content="6167.71">
+ 
+    
+    <meta class="elastic" name="el_description" content="News Highlights:
+6th Gen AMD EPYC SP7 CPU-based platforms are now shipping from leading server OEMs and ODMs.
+6th Gen EPYC CPUs are expected to power cloud instances across all major, global cloud service providers,…">
+ 
+        <meta name="viewport" content="initial-scale=1.0, width=device-width">
+        
+                <link rel="preconnect" href="https://d1io3yog0oux5.cloudfront.net">
+        <link rel="preconnect" href="https://qmod.quotemedia.com">
+        
+                        <link href="https://d1io3yog0oux5.cloudfront.net/_f84d3475a35717bff62b468359d9e1a2/amd/files/theme/css/ir.stockpr.css" rel="stylesheet" type="text/css" media="screen" />
+                <link rel="stylesheet" href="https://d1io3yog0oux5.cloudfront.net/_f84d3475a35717bff62b468359d9e1a2/amd/files/theme/css/style.css">
+                        
+                <link rel="shortcut icon" href="https://d1io3yog0oux5.cloudfront.net/_f84d3475a35717bff62b468359d9e1a2/amd/files/theme/images/favicons/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://d1io3yog0oux5.cloudfront.net/_f84d3475a35717bff62b468359d9e1a2/amd/files/theme/images/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="https://d1io3yog0oux5.cloudfront.net/_f84d3475a35717bff62b468359d9e1a2/amd/files/theme/images/favicons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="https://d1io3yog0oux5.cloudfront.net/_f84d3475a35717bff62b468359d9e1a2/amd/files/theme/images/favicons/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="https://d1io3yog0oux5.cloudfront.net/_f84d3475a35717bff62b468359d9e1a2/amd/files/theme/images/favicons/manifest.json">
+        <link rel="mask-icon" href="https://d1io3yog0oux5.cloudfront.net/_f84d3475a35717bff62b468359d9e1a2/amd/files/theme/images/favicons/safari-pinned-tab.svg">
+        <meta name="theme-color" content="#ffffff">  
+    
+                
+<script type="text/plain" class="optanon-category-C0002">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', '', 'ir.amd.com');
+    
+    (function() {
+        var opts = {};
+        var prefix = "/investors";
+        if (location.hostname.indexOf('stockpr.com') == 0) {
+            opts.cookiePath = location.pathname.substring(0, location.pathname.indexOf('/', 1) + 1)
+            opts.page = prefix + location.pathname.substring(location.pathname.indexOf('/', 1));
+        } else if (location.hostname.match(/^ir\./)) {
+            opts.page = prefix + location.pathname;
+        }
+        ga('send', 'pageview', opts);
+    })();
+    
+    /**
+        * Function that tracks a click on an outbound link in Analytics.
+        * This function takes a valid URL string as an argument, and uses that URL string
+        * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+        * using 'navigator.sendBeacon' in browser that support it.
+        */
+        var trackOutboundLink = function(url,category) {
+            if (!category) category = 'outbound';
+           ga('send', 'event', category, 'click', url, {
+             'transport': 'beacon'
+           });
+        }
+        
+        // Add outbound link tracking in GA
+        jq('a').not('.fancybox').each(function(){
+            var href = jq(this).attr('href');
+            if (typeof href === "undefined") return;
+            if (href.indexOf('http') >= 0 
+                && ( href.indexOf(website_base_url) < 0 && href.indexOf(ir_base_url) < 0 && href.indexOf('eqcdn') < 0 && href.indexOf('amazonaws') < 0)) {
+                jq(this).attr('onclick', 'trackOutboundLink("' + href + '")');    
+            }else {
+                // It's not an outbound link, but if it's a link to a file, we want to track that.
+                if (href.match(/(\.pdf|\.jpg|\.png|\.gif|\.ppt|\.jpeg|\.mp3|\.mp4|\.wav|\.docx|\.doc|\.xsl|\.cslx)/g)) {
+                    jq(this).attr('onclick', 'trackOutboundLink("' + href + '", "documents-and-files")');
+                }
+            }
+        });
+</script>
+        <script type="text/plain" class="optanon-category-C0004">
+    _linkedin_partner_id = "78508";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script>
+<script type="text/plain" class="optanon-category-C0004">
+    (function(){var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})();
+</script>    </head>    <body class="pg-107610 page-type-ir-section-ir-news ir  has-sub-nav">
+        <div class="general-wrapper">
+            <nav id="header" class="affixed" aria-label="Main">
+    <div id="skipLinks">
+        <a href="#mainContent">Skip to main content</a>
+                <a class="sub-navigation-link" href="#sectionNav">Skip to section navigation</a>
+                <a href="#footer">Skip to footer</a>
+    </div>
+        <div class="logo-wrapper">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <div class="logo">
+                    <a href="/">
+                        <img src="https://d1io3yog0oux5.cloudfront.net/_f84d3475a35717bff62b468359d9e1a2/amd/db/867/8386/image.svg"
+                            width="110"
+                            height="26"
+                            alt="Advanced Micro Devices, Inc. IR Overview">
+                    </a>
+                                        <div class="ir-logo-text">Investor Relations</div>
+                                                        </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav-wrapper">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <button class="mobile-nav-trigger" id="showRight" aria-label="Expand main navigation" aria-expanded="false"
+                    aria-controls="mobile-nav">
+                    <span class="meat"></span>
+                    <span class="meat"></span>
+                    <span class="meat"></span>
+                </button>
+                <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right main-nav" id="mobile-nav" aria-label="Main Navigation">
+                    <ul class="main-menu">
+        <li class="" data-submenu-id="submenu-overview">
+        <a href="/" 
+        target="_self"
+                >IR Overview</a>
+            </li>
+        <li class="has-children active" data-submenu-id="submenu-news-events">
+        <a href="/news-events" 
+        target="_self"
+        aria-current="true"        >News &amp; Events</a>
+                <ul id="submenu-news-events">
+                        <li class="active active-landing">
+                <a href="/news-events/press-releases" 
+                target="_self"
+                aria-current="page"                    >Press Releases</a>
+            </li>
+                        <li class="">
+                <a href="/news-events/ir-calendar" 
+                target="_self"
+                                    >IR Calendar</a>
+            </li>
+                        <li class="">
+                <a href="/news-events/financial-analyst-day" 
+                target="_self"
+                                    >Financial Analyst Day</a>
+            </li>
+                        <li class="">
+                <a href="/news-events/annual-meeting-of-stockholders" 
+                target="_self"
+                                    >Annual Meeting of Stockholders</a>
+            </li>
+                    </ul>
+            </li>
+        <li class="has-children" data-submenu-id="submenu-stock-data">
+        <a href="/stock-data" 
+        target="_self"
+                >Stock Data</a>
+                <ul id="submenu-stock-data">
+                        <li class="">
+                <a href="/stock-data/stock-data" 
+                target="_self"
+                                    >Stock Data</a>
+            </li>
+                        <li class="">
+                <a href="/stock-data/price-history" 
+                target="_self"
+                                    >Price History</a>
+            </li>
+                        <li class="">
+                <a href="/stock-data/stock-split-history" 
+                target="_self"
+                                    >Stock Split History</a>
+            </li>
+                        <li class="">
+                <a href="/stock-data/analyst-coverage" 
+                target="_self"
+                                    >Analyst Coverage</a>
+            </li>
+                        <li class="">
+                <a href="/stock-data/transfer-agent" 
+                target="_self"
+                                    >Transfer Agent</a>
+            </li>
+                    </ul>
+            </li>
+        <li class="has-children" data-submenu-id="submenu-financial-information">
+        <a href="/financial-information" 
+        target="_self"
+                >Financial Information</a>
+                <ul id="submenu-financial-information">
+                        <li class="">
+                <a href="/financial-information/financial-results" 
+                target="_self"
+                                    >Financial Results</a>
+            </li>
+                        <li class="">
+                <a href="/financial-information/sec-filings" 
+                target="_self"
+                                    >SEC Filings</a>
+            </li>
+                    </ul>
+            </li>
+        <li class="has-children" data-submenu-id="submenu-governance">
+        <a href="/governance" 
+        target="_self"
+                >Governance</a>
+                <ul id="submenu-governance">
+                        <li class="">
+                <a href="/governance/board-of-directors" 
+                target="_self"
+                                    >Board of Directors</a>
+            </li>
+                        <li class="">
+                <a href="https://www.amd.com/en/corporate/leadership.html" 
+                target="_blank"
+                                    rel="noopener">Leadership</a>
+            </li>
+                        <li class="">
+                <a href="/governance/board-committees" 
+                target="_self"
+                                    >Board Committees</a>
+            </li>
+                        <li class="">
+                <a href="/governance/governance-documents" 
+                target="_self"
+                                    >Governance Documents</a>
+            </li>
+                        <li class="">
+                <a href="https://www.amd.com/en/corporate/corporate-responsibility.html" 
+                target="_blank"
+                                    rel="noopener">Corporate Responsibility</a>
+            </li>
+                    </ul>
+            </li>
+        <li class="has-children last-item" data-submenu-id="submenu-contacts-faq">
+        <a href="/contacts-faq" 
+        target="_self"
+                >Contacts &amp; FAQ</a>
+                <ul id="submenu-contacts-faq">
+                        <li class="">
+                <a href="/contacts-faq/contacts" 
+                target="_self"
+                                    >Contacts</a>
+            </li>
+                        <li class="">
+                <a href="/contacts-faq/email-alerts" 
+                target="_self"
+                                    >Email Alerts</a>
+            </li>
+                        <li class="">
+                <a href="/contacts-faq/faq" 
+                target="_self"
+                                    >FAQ</a>
+            </li>
+                    </ul>
+            </li>
+    </ul>                </nav>
+            </div>
+        </div>
+    </div>
+</nav>
+
+            <div class="eq-container">
+                <header class="page-banner overlay dark" style="background: url(https://d1io3yog0oux5.cloudfront.net/_f84d3475a35717bff62b468359d9e1a2/amd/db/938/9068/image_resized.jpg);background-position: 50% 50%;background-repeat: no-repeat;background-size: cover;background-color: #333;">
+    	<div class="container">
+	    <div class="row justify-content-start text-left">
+	        <div class="col-lg-10">
+                            <span class="heading--h1">
+                <!-- If a page banner is on a specific Press Release, display Press Release instead of Press Releases. -->
+                                    Press Release
+                <!-- If NOT then display the page banner title normally for Press Releases and all other pages. -->
+                                </span>
+	            	    </div>
+        </div>
+    </div>
+    </header>                                <nav id="sectionNav" class="sub-navigation-wrapper" aria-label="News &amp; Events Section">
+    <div class="sub-navigation affixed">
+    	<div class="container">
+            <a class="visible-xs visible-sm mobile-sub-nav-trigger collapsed" role="button" data-toggle="collapse" data-target="#sub-navigation">
+                <div class="trigger-container">
+            		<div class="meat"></div>
+              		<div class="meat"></div>
+              		<div class="meat"></div>
+              	</div>
+            	News &amp; Events            </a>
+            <div class="collapse sb-nav clearfix"  id="sub-navigation">
+                <h3>News &amp; Events</h3>
+                <ul>
+                                        <li class="active active-landing">
+                        <a href="/news-events/press-releases"
+                            target="_self"
+                                                        aria-current="page"                        >Press Releases</a>
+                                            </li>
+                	                    <li class="">
+                        <a href="/news-events/ir-calendar"
+                            target="_self"
+                                                                                >IR Calendar</a>
+                                            </li>
+                	                    <li class="">
+                        <a href="/news-events/financial-analyst-day"
+                            target="_self"
+                                                                                >Financial Analyst Day</a>
+                                            </li>
+                	                    <li class="">
+                        <a href="/news-events/annual-meeting-of-stockholders"
+                            target="_self"
+                                                                                >Annual Meeting of Stockholders</a>
+                                            </li>
+                	                </ul>
+            </div>
+        </div>
+    </div>
+</nav>                                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-12">
+                            <main id="mainContent" class="main-content has-tertiary-nav">
+                                    <article class="full-news-article">
+        <h1 class="article-heading">AMD Showcases 6th Gen AMD EPYC Processors to Lead Next Era of AI and Enterprise Computing</h1>
+        <div class="related-documents-line hidden-print row justify-content-between align-items-center">  
+            <time datetime="2026-11-10T12:00:00" class="date">
+                November 10, 2026 12:00 pm EST            </time>
+                            <a href="https://d1io3yog0oux5.cloudfront.net/_f84d3475a35717bff62b468359d9e1a2/amd/news/2026-11-10_AMD_Showcases_6th_Gen_AMD_EPYC_Processors_to_Lead__1305.pdf"
+                               class="link pull-right"
+                   title="PDF: AMD Showcases 6th Gen AMD EPYC Processors to Lead Next Era of AI and Enterprise Computing"
+                   target="_blank">
+                   <span class="eqicon-PDF" aria-hidden="true"></span>Download as PDF
+                </a>
+        </div>
+        
+        
+    	<p><strong role="heading" aria-level="2">News Highlights:</strong></p>
+<ul type="disc">
+<li style="margin-bottom: 5.5pt;">6<sup>th</sup> Gen AMD EPYC SP7 CPU-based platforms are now shipping from leading server OEMs and ODMs.</li>
+<li style="margin-bottom: 5.5pt;">6<sup>th</sup> Gen EPYC CPUs are expected to power cloud instances across all major, global cloud service providers, with recent announcements from Microsoft Azure and OCI showcasing leadership agent orchestration, concurrent agent sandboxes, as well as web and enterprise applications.</li>
+<li style="margin-bottom: 5.5pt;">Powered by the new AMD “Zen 6” architecture, 6<sup>th</sup> Gen EPYC CPUs deliver a broad portfolio of workload-optimized server CPUs spanning agentic AI, enterprise, cloud computing, HPC and general-purpose computing.<br><br></li>
+</ul>
+<p>SANTA CLARA, Calif., Nov. 10, 2026 (GLOBE NEWSWIRE) -- AMD (NASDAQ: AMD) today announced the general availability of the 6<sup>th</sup> Gen AMD EPYC™ server SP7 processors, based on the new “Zen 6” architecture, extending its historical server CPU performance leadership as AI creates new demands across the data center. Systems powered by the new CPUs are shipping from leading server vendors, and cloud instances from Microsoft Azure and OCI will be generally available soon.</p>
+<p>Across five generations, AMD EPYC processors have repeatedly raised the standard for server CPU performance, energy efficiency and platform choice, culminating in 5<sup>th</sup> Gen AMD EPYC™ processors becoming the fastest-ramping and highest-volume EPYC generation in AMD history. Now, 6<sup>th</sup> Gen AMD EPYC server CPUs extend AMD CPU leadership, running AI agents, accelerated infrastructure and critical enterprise applications, helping customers expand computing capacity that runs their businesses.</p>
+<p><strong class="">More:</strong> <a href="https://newsroom.amd.com/news/2026-in-depth-embedded-epyc-venice/" target="_blank" rel="noopener">AMD Launches 6th Gen AMD EPYC Embedded Processors, Extending CPU Leadership</a> (News) | <a href="https://newsroom.amd.com/press-kits/6th-gen-epyc-venice/" target="_blank" rel="noopener">AMD In Depth: EPYC ‘Venice’</a> (Press Kit, Videos, Photos)</p>
+<p>“AI is significantly expanding the role of the CPU across every layer of the data center,” said Dan McNamara, senior vice president and general manager, Compute and Enterprise AI, AMD. “With 6<sup>th</sup> Gen AMD EPYC, customers can standardize on the proven x86 foundation while choosing a workload-optimized solution to run more agents, keep accelerated infrastructure fed, and power the business-critical applications they depend on.”</p>
+<p><strong role="heading" aria-level="2">World’s Best Server CPU Portfolio for the Modern Data Center</strong></p>
+<p>6<sup>th</sup> Gen AMD EPYC is the world’s best server CPU portfolio,<sup>i</sup> providing a workload-optimized stack that delivers leadership performance across a diversity of applications while improving infrastructure economics and preserving the flexibility of the broad x86 ecosystem.</p>
+<p>Agentic AI adds even more diversity to a data center as a single workflow can run agents, call models, retrieve data, execute code and interact with the databases and applications enterprises already depend on. The 6<sup>th</sup> Gen AMD EPYC portfolio is designed for that reality, matching CPU density, frequency, bandwidth and efficiency to each job while preserving one common software, security and operational foundation. That workload-optimized approach delivers advantages across critical areas including agentic AI, enterprise services and rack-scale solutions.</p>
+<ul type="disc">
+<li style="margin-bottom: 5.5pt;"><strong role="heading" aria-level="3" class="">Power More Enterprise and Cloud Services: </strong>The 6th Gen AMD EPYC™ 9996 CPU is the world’s best general-purpose processor, delivering leadership performance, performance per CPU watt, performance per CPU dollar and performance per socket. An AMD EPYC 9996 CPU-based system delivers up to 3.7x more performance compared with an Nvidia Vera CPU-based system and up to 2.2x the performance and 2.0x the performance per dollar of an Intel® Xeon® 6980P system.<sup>ii</sup> For customers, that can translate into more applications, transactions and users supported by each server, helping create capacity for new workloads within existing data center power and footprint limitations.</li>
+<li style="margin-bottom: 5.5pt;"><strong role="heading" aria-level="3" class="">Lead Across Every Tier of Agentic AI:</strong> Agentic AI infrastructure spans three distinct CPU roles – general-purpose services, GPU host nodes, and agent sandboxes – and 6th Gen AMD EPYC provides a workload-optimized processor for each. High-frequency host-node processors, with up to 5.3 GHz, can deliver up to 1.8x the LLM output throughput of previous generation EPYC processors<sup>iii</sup> and high-density AMD EPYC processors can provide up to ~3.3x agents-per-CPU-watt advantage over Nvidia Vera and ~2.5x over Intel Xeon 6980P for hosting agent sandboxes.<sup>iv</sup> Additionally, for agent sandboxes, AMD EPYC 9996 CPU-based servers can support an estimated ~1.18x as many agents per rack within the same 35 kilowatt power envelope as systems using default power-management settings.<sup>v</sup></li>
+</ul>
+<p>The competitive choice is increasingly straightforward. With 6th Gen AMD EPYC, customers do not have to settle for a one-size-fits-all CPU in a data center that is anything but uniform. AMD EPYC delivers the performance, choice and ecosystem support needed to move AI from answers to action and prepare for what comes next.</p>
+<p><strong role="heading" aria-level="2">From the Server to Rack-Scale AI</strong></p>
+<p>6th Gen AMD EPYC extends its leadership from individual servers to AMD Helion™ agentic AI racks, giving customers three deployment options matched to how and where they operate: AMD Helion Liquid, designed to sit side-by-side with AMD Helios™ rackscale solution in large-scale agentic AI deployments, for maximum agent density; AMD Helion Air for expanding agent capacity within existing air-cooled data centers; and AMD Helion Air Inference for combining CPU execution and local GPU inference in one rack. AMD has worked across the server ecosystem to help develop the high-density AMD Helion rack with some configurations reaching up to 73,728 threads in one rack, delivering the most agents available in a rack. Customers can choose the balance of CPU and GPU capacity, cooling and connectivity that fits their infrastructure as agent demand grows.</p>
+<p><strong role="heading" aria-level="2">Broad Ecosystem Support and Availability</strong></p>
+<p>Systems powered by 6th Gen AMD EPYC server processors are shipping from leading server vendors:</p>
+<ul type="disc">
+<li style="margin-bottom: 5.5pt;"><a href="https://newsroom.amd.com/news/amd-meta-advance-strategic-partnership-power-metas-ai-infrastructure/" rel="nofollow noopener" target="_blank">Meta</a> is working with AMD as a lead customer and has been validating 6th Gen AMD EPYC CPU-based platforms as the companies prepare for deployment at scale.</li>
+<li style="margin-bottom: 5.5pt;"><a href="https://aka.ms/HDv2BlogPreview" rel="nofollow noopener" target="_blank">Microsoft</a> Azure is bringing 6th Gen AMD EPYC to customers across the AI infrastructure stack, with Azure HDv2 now in preview for AI data processing, agentic AI and HPC; Azure HXv2 for EDA and technical computing; and Azure ND MI455X v7, based on AMD Helios, for production-scale AI inference.</li>
+<li style="margin-bottom: 5.5pt;">AMD recently shared updates to its multigeneration collaboration with <a href="https://newsroom.amd.com/news/amd-expands-ai-cloud-infrastructure-oracle/" rel="nofollow noopener" target="_blank">Oracle Cloud Infrastructure</a> (OCI). OCI Compute E7 cloud compute instances will be powered by 6th Gen AMD EPYC server processors, supporting enterprise applications and the CPU services surrounding AI models.<br><br></li>
+</ul>
+<p>With 6th Gen AMD EPYC, AMD is extending five generations of server CPU leadership into the agentic AI era; delivering more compute, better economics and more choice from the server to the rack. Across enterprise, cloud, HPC and AI infrastructure, EPYC provides a broad portfolio built for the workloads customers run today and what comes next.</p>
+<p><strong role="heading" aria-level="2">Supporting Resources:</strong></p>
+<ul type="disc">
+<li style="margin-bottom: 5.5pt;">Learn more about <a href="https://www.amd.com/en/products/processors/server/epyc/9006-series.html" rel="nofollow noopener" target="_blank">6th Gen AMD EPYC CPUs</a></li>
+<li style="margin-bottom: 5.5pt;">Learn more about <a href="https://newsroom.amd.com/news/2026-in-depth-embedded-epyc-venice/" rel="nofollow noopener" target="_blank">6th Gen AMD EPYC Embedded SP7 CPUs</a></li>
+<li style="margin-bottom: 5.5pt;">Learn more about <a href="https://www.amd.com/en/products/rackscale-solutions/helion.html" rel="nofollow noopener" target="_blank">AMD Helion Agentic AI Rack</a><br><br></li>
+</ul>
+<p><strong role="heading" aria-level="2">About AMD</strong></p>
+<p>AMD (NASDAQ: AMD) drives innovation in high-performance and AI computing to solve the world’s most important challenges. Today, AMD technology powers billions of experiences across cloud and AI infrastructure, embedded systems, AI PCs and gaming. With a broad portfolio of AI-optimized CPUs, GPUs, networking and software, AMD delivers full-stack AI solutions that provide the performance and scalability needed for a new era of intelligent computing. Learn more at <a href="https://www.amd.com/" rel="nofollow noopener" target="_blank">www.amd.com</a>.</p>
+<p class="" role="heading" aria-level="3">CAUTIONARY STATEMENT</p>
+<p>This press release contains forward-looking statements concerning Advanced Micro Devices, Inc. (AMD) such as the features, functionality, performance, availability, timing and expected benefits of AMD products including the 6<sup>th</sup> Gen AMD EPYC™ Server SP7 processors, which are made pursuant to the Safe Harbor provisions of the Private Securities Litigation Reform Act of 1995. Forward-looking statements are commonly identified by words such as "would," "may," "expects," "believes," "plans," "intends," "projects" and other terms with similar meaning. Investors are cautioned that the forward-looking statements in this press release are based on current beliefs, assumptions and expectations, speak only as of the date of this press release and involve risks and uncertainties that could cause actual results to differ materially from current expectations. Such statements are subject to certain known and unknown risks and uncertainties, many of which are difficult to predict and are generally beyond AMD's control, that could cause actual results and other future events to differ materially from those expressed in, or implied or projected by, the forward-looking information and statements. Material factors that could cause actual results to differ materially from current expectations include, without limitation, the following: impact of government actions and regulations such as export regulations, national-security-based regulations, import tariffs, trade protection measures, and licensing requirements; competitive markets in which AMD’s products are sold; the cyclical nature of the semiconductor industry; market conditions of the industries in which AMD products are sold; AMD’s ability to introduce products on a timely basis with expected features and performance levels; loss of a significant customer; economic and market uncertainty; quarterly and seasonal sales patterns; AMD's ability to adequately protect its technology or other intellectual property; unfavorable currency exchange rate fluctuations; ability of third party manufacturers to manufacture AMD's products on a timely basis in sufficient quantities and using competitive technologies; availability of essential equipment, materials, components (such as memory supply), substrates or manufacturing processes; ability to achieve expected manufacturing yields for AMD’s products; AMD's ability to generate revenue from its semi-custom SoC products; potential security vulnerabilities; potential security incidents including IT outages, data loss, data breaches and cyberattacks; uncertainties involving the ordering and shipment of AMD’s products; AMD’s reliance on third-party intellectual property to design and introduce new products; AMD's reliance on third-party companies for design, manufacture and supply of motherboards, software, memory and other computer platform components; AMD's reliance on Microsoft and other software vendors' support to design and develop software to run on AMD’s products; AMD’s reliance on third-party distributors and add-in-board partners; impact of modification or interruption of AMD’s internal business processes and information systems; compatibility of AMD’s products with some or all industry-standard software and hardware; costs related to defective products; failure to maintain an efficient supply chain as customer demand changes; AMD's ability to rely on third party supply-chain logistics functions; AMD’s ability to effectively control sales of its products on the gray market; impact of climate change on AMD’s business; AMD’s ability to realize its deferred tax assets; potential tax liabilities; current and future claims and litigation; impact of environmental laws, conflict minerals related provisions and other laws or regulations; evolving expectations from governments, investors, customers and other stakeholders regarding corporate responsibility matters; issues related to the responsible use of AI; restrictions imposed by agreements governing AMD’s notes, the guarantees of Xilinx’s notes and the revolving credit agreement; AMD’s ability to satisfy financial obligations under guarantees, leases and other commercial commitments; impact of acquisitions, joint ventures and/or investments on AMD’s business and AMD’s ability to integrate acquired businesses; impact of any impairment of the combined company’s assets; political, legal and economic risks and natural disasters; future impairments of technology license purchases; AMD’s ability to attract and retain key employees; and AMD’s stock price volatility, including the potential impact on the fair value of customer warrants and AMD's GAAP earnings. Investors are urged to review in detail the risks and uncertainties in AMD’s Securities and Exchange Commission filings, including but not limited to AMD’s most recent reports on Forms 10-K and 10-Q.</p>
+<p><sup>i</sup> EPYC-029E: Claim of “best CPU for cloud, enterprise, and AI” is based on AMD’s assessment of the best overall combination of projected performance, thread density, enterprise workload results, AI benchmark performance, energy efficiency, memory subsystem capabilities, I/O capabilities, process technology, and built-in security features among evaluated general-purpose enterprise server CPUs as of 7/23/2026. “Best” reflects the strongest overall combination across the evaluated cloud, enterprise, and AI criteria and does not imply leadership in every individual workload or metric. Products not available for comparable testing or not positioned as general-purpose enterprise server CPUs were not included.</p>
+<p><sup>ii</sup> "9xx6-004C: SPECrate®2017_int_base comparison based on published scores from www.spec.org as of 11/05/2026 and AMD internal estimates for 2P NVIDIA Vera and 2P Arm AGI as of 10/10/2026. Highest performing 2P server CPU based on the highest published 2P SPECrate®2017_int_base score and the highest published score per CPU (per socket). Results and configurations below are in the format of: [processor], [cores], [Default CPU Power or TDP], [1Ku price in USD], [score], [score / CPU W], [score / 1Ku price in USD], [score / core], [Link to score]<br>2P AMD EPYC 9996, 512C, 600W, $14904 USD, 5470, 9.117, 0.367, 10.68, https://www.spec.org/cpu2017/results/res2026q4/cpu2017-20261020-52013.html<br>2P AMD EPYC 9965, 384C, 500W, $11988 USD, 3260, 6.520, 0.272, 8.49, https://www.spec.org/cpu2017/results/res2026q4/cpu2017-20261005-51950.html<br>2P Intel Xeon 6990E+, 576C, 450W, $14995 USD, 3050, 6.778, 0.203, 5.30, https://www.spec.org/cpu2017/results/res2026q2/cpu2017-20260518-51499.html<br>2P Intel Xeon 6980P, 256C, 500W, $13955 USD, 2510, 5.020, 0.180, 9.80, https://www.spec.org/cpu2017/results/res2025q4/cpu2017-20251126-50522.html<br>2P NVIDIA Vera, 176C, 450W, pricing not published, AMD estimate 1459, 3.242, n/a, 8.29<br>2P Arm AGI, 272C, 300W, pricing not published, AMD estimate 1944, 6.480, n/a, 7.15<br>NVIDIA Vera and Arm AGI scores are AMD internal estimates based on AMD engineering projections and subject to change; NVIDIA Vera estimate based on published Phoronix testing, https://www.phoronix.com/review/nvidia-vera-benchmarks/. Pricing not published for NVIDIA Vera or Arm AGI. Intel CPU W and prices at https://ark.intel.com/ as of 11/05/2026.<br>Starting with the 6th Gen AMD EPYC™ server processor family, AMD uses Default CPU Power to describe processor power consumption, succeeding AMD's historical TDP reference. Default CPU Power reflects total power consumed across the processor's compute and I/O dies for the stated performance target. Default CPU Power and TDP may both serve as processor power references for product comparison, platform planning, and performance-per-watt analysis.<br>SPEC®, SPEC CPU®, SPECrate® and SPECint® are registered trademarks of the Standard Performance Evaluation Corporation. See www.spec.org for more information.<br>AMD CPU prices as of 11/05/2026.<br>Results may vary due to factors including system configurations, software versions and BIOS settings."</p>
+<p><sup>iii</sup> 9xx6-022: Model-weight CPU-offload LLM inference output throughput comparison based on AMD internal testing measured on a PCIe Gen 5 x16 host link and estimated projected to PCIe Gen 6 x16 by host-to-GPU link bandwidth, as of 7/13/2026. Comparison is a 6th Gen AMD EPYC 96c HF processor host node (PCIe Gen 6, 5GHz) versus a 5th Gen AMD EPYC 9575F (PCIe Gen 5, 5GHz), with a 6th Gen Intel Xeon 6960P host node as a competitive reference. All measured systems were run 2-socket (full node) with SMT disabled. Workload: Qwen3-30B-A3B, BF16 weights (approximately 61 GB resident), tensor-parallel=1, 1024 input tokens, 256 output tokens, vLLM CPU-offload, median of n=3 iterations, measured on 1x NVIDIA B200. Measured Gen 5 output throughput for the 5th Gen AMD EPYC 9575F was 148.4, 114.8, 93.8, and 61.7 tokens per second at 6, 9, 12, and 20 GB of offloaded weights, with PCIe receive bandwidth pinned at 89 to 95 percent of the Gen 5 x16 ceiling and host DRAM read bandwidth below 10 percent of its 614 GB/s ceiling, establishing the PCIe link (not host memory) as the throughput limiter. Because decode is PCIe-transfer-bound, doubling host-to-GPU bandwidth (Gen 5 x16 at 64 GB/s per direction to Gen 6 x16 at 128 GB/s per direction) projects a 1.8x to 1.9x throughput ceiling for the 6th Gen AMD EPYC 96c HF processor. Measured Gen 5 output throughput for the 6th Gen Intel Xeon 6960P was 104.9 and 82.3 tokens per second at 9 and 12 GB of offloaded weights (median of n=3 iterations, same NVIDIA B200 host and vLLM configuration), versus 114.8 and 93.8 tokens per second for the 5th Gen AMD EPYC 9575F at the same offload points, so the 5th Gen AMD EPYC 9575F delivers 1.09x and 1.14x the 6th Gen Intel Xeon 6960P output throughput (up to 1.1x). Memory configuration was 24x 128 GB DDR5-6400 (AMD) and 24x 64 GB DDR5-6400 (Intel); host DRAM utilization remained below 10 percent throughout, so memory capacity was not the throughput limiter. Preliminary performance estimates based on AMD engineering projections or measurements as of 7/13/2026 and subject to change. PCIe is a registered trademark of PCI-SIG Corporation.</p>
+<p><sup>iv</sup> "9xx6-014B: Comparison based on published Top-of-stack core counts and CPU W, Default CPU Power for 6th Gen EPYC, and TDPs for 5th Gen EPYC, Intel® Xeon®, and Nvidia Vera for estimated Highest Agents / CPU W across AMD EPYC™ 256C at 400W, AMD EPYC™ 9965 (500W TDP), Nvidia Vera (450W TDP), ARM AGI (300W TDP), Intel® Xeon® 6980P (500W TDP), and Intel Xeon 6990E+ (450W TDP) powered servers as of 7/22/2026. 2 threads per core (SMT). 1 thread per core for ARM AGI.</p>
+<p>Agent counts are estimates derived from available CPU thread resources used as a proxy under a consistent theoretical workload. Actual agent capacity and throughput will vary based on workload, model, memory, software, orchestration, and system configuration.</p>
+<p>Starting with the 6th Gen AMD EPYC™ server processor family, AMD uses Default CPU Power to describe processor power consumption, succeeding AMD's historical TDP reference. Default CPU Power reflects total power consumed across the processor's compute and I/O dies for the stated performance target. Default CPU Power and TDP may both serve as processor power references for product comparison, platform planning, and performance-per-watt analysis. Intel Xeon TDP from ark.intel.com. Nvidia Vera TDP from https://developer.nvidia.com/blog/nvidia-vera-cpu-sets-a-new-standard-for-agentic-workloads-in-ai-factories/. ARM AGI Specifications from https://www.arm.com/products/cloud-datacenter/arm-agi-cpu#Specifications "</p>
+<p><sup>v</sup> 9xx6-086A: Agents per rack comparison based on AMD analysis as of November 2026 of AMD EPYC™ 9996 (256 cores, SMT on, 600W Default CPU Power) servers with 16 DDR5-8000 RDIMMs per socket in a 35 kW rack (maximum 20 servers per rack).<br>Default provisioning (830W combined SOC and DIMM power per socket): 16 servers per rack, 1.00x agents per rack.<br>UPP with a 10% lower combined SOC and DIMM power limit (747W per socket): 17.8 servers per rack, 1.11x agents per rack.<br>UPP with a 15% lower combined SOC and DIMM power limit (706W per socket): 18.8 servers per rack, 1.18x agents per rack.<br>Agents per watt with UPP: AMD EPYC 9996 (256 cores, SMT on, 600W Default CPU Power) is estimated to provide ~1.9x the agents per CPU W of Arm AGI (136 cores, 1 thread per core, 300W TDP). With UPP at a 15% lower combined SOC and DIMM power limit, the estimated agents per rack watt increase by 1.18x, for an estimated ~2.2x agents per watt advantage. Arm AGI specifications from https://www.arm.com/products/cloud-datacenter/arm-agi-cpu#Specifications.<br>Servers per rack are estimated by scaling the number of servers that fit in the rack power envelope inversely with the per-server power limit, without rounding to whole servers.<br>Estimated average per-server performance reduction of 0% at the 10% lower limit and 1% at the 15% lower limit, based on AMD internal testing of a 5th Gen AMD EPYC™ 128-core 500W processor running SPEC CPU®2017 integer workloads.<br>Agent counts are estimates derived from available CPU thread resources used as a proxy under a consistent theoretical workload. Actual agent capacity and throughput will vary based on workload, model, memory, software, orchestration, and system configuration.<br>UPP power savings and performance impact depend on measured DIMM power and will vary with workload and operating conditions. System manufacturers may vary configurations, yielding different results.<br>Preliminary performance estimates based on AMD engineering projections or measurements as of November 5, 2026 and subject to change. SPEC® and SPEC CPU® are registered trademarks of the Standard Performance Evaluation Corporation. See www.spec.org for more information.</p>
+<br>
+<pre class="">Contact:
+Aaron Grabein
+AMD Communications
+aaron.grabein@amd.com&nbsp;
+
+Liz Stine
+AMD Investor Relations
+liz.stine@amd.com&nbsp;</pre>
+<p><a href="https://www.globenewswire.com/NewsRoom/AttachmentNg/9782a337-07ac-424b-9c5a-f9cde47d8d55"><img src="https://ml.globenewswire.com/media/9782a337-07ac-424b-9c5a-f9cde47d8d55/small/amd-logo-black-jpg.jpg" border="0" width="150" height="58" alt="AMD logo" class=""></a></p>
+Source: Advanced Micro Devices, Inc.    	<p class="spr-ir-news-article-date">Released November 10, 2026</p>
+    </article>
+                                                                </main>
+                        </div>    
+                    </div>
+                </div><!-- //container-->
+            </div>
+            <footer id="footer" >
+    <div class="footer-main">
+    	<div class="container">
+    	    <div class="row">
+    	        <div class="col-md-6">
+    	            <div class="logo-wrapper">
+            	        <a href="/">
+                            <img src="https://d1io3yog0oux5.cloudfront.net/_f84d3475a35717bff62b468359d9e1a2/amd/db/867/8386/image.svg"
+                                class="footer-logo"
+                                width="182"
+                                height="44"
+                                alt="Advanced Micro Devices, Inc. IR Overview">
+                        </a>
+                		<div class="ir-logo-text">Investor Relations</div>
+            		</div>
+    	        </div>
+    	        <div class="col-md-6">
+                                <div class="col-lg-auto">
+                    <nav id="social-navigation" class="footer-social">
+                        <ul>
+                                                    <li
+                                                        >
+                                <a href="https://www.linkedin.com/company/amd/" target="_blank" rel="noopener" class="">
+                                                                    <img class="icon-img-link" src="https://d1io3yog0oux5.cloudfront.net/_f84d3475a35717bff62b468359d9e1a2/amd/db/836/9074/icon/icon-linkedin.svg" alt="Visit us on LinkedIn" />
+                                                                </a>
+                                                	    		                            </li>
+                                                    <li
+                            class="dropdown--menu"                            >
+                                <a href="https://x.com/amd" target="_blank" rel="noopener" class="">
+                                                                    <img class="icon-img-link" src="https://d1io3yog0oux5.cloudfront.net/_f84d3475a35717bff62b468359d9e1a2/amd/db/836/9076/icon/X_logo_2023_original.svg" alt="Visit us on X" />
+                                                                </a>
+                                                				<ul class="dropdown-menu dropdown-menu-end">
+                					<li>
+                						<div class="dropdown-pointer"></div>
+                					</li>
+                					<li>
+                                        <ul class="dropdown-menu-content">
+                                            <li>
+                                                <a class="dropdown-item" href="https://x.com/AMD" target="_blank">AMD</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="https://x.com/AIatAMD" target="_blank">AI</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="https://x.com/AMDServer" target="_blank">Server</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="https://x.com/AMDRyzen" target="_blank">Ryzen</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="https://x.com/AMDRadeon" target="_blank">Radeon</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="https://x.com/AMDEmbedded" target="_blank">Embedded</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="https://x.com/AMDGaming" target="_blank">Gaming</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                    			</ul>
+                    			                	    		                            </li>
+                                                    <li
+                                                        >
+                                <a href="https://www.instagram.com/amd" target="_blank" rel="noopener" class="">
+                                                                    <img class="icon-img-link" src="https://d1io3yog0oux5.cloudfront.net/_f84d3475a35717bff62b468359d9e1a2/amd/db/836/9073/icon/icon-instagram.svg" alt="Visit us on Instagram" />
+                                                                </a>
+                                                	    		                            </li>
+                                                    <li
+                            class="dropdown--menu"                            >
+                                <a href="https://www.youtube.com/user/amd?reload=9&amp;sub_confirmation=1" target="_blank" rel="noopener" class="">
+                                                                    <img class="icon-img-link" src="https://d1io3yog0oux5.cloudfront.net/_f84d3475a35717bff62b468359d9e1a2/amd/db/836/9077/icon/icon-youtube.svg" alt="Visit us on YouTube" />
+                                                                </a>
+                                                	    		                    			<ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <div class="dropdown-pointer"></div>
+                                    </li>
+                                    <li>
+                    					<ul class="dropdown-menu-content">
+                    						<li>
+                    					   		<a class="dropdown-item" href="https://www.youtube.com/user/amd" target="_blank">AMD</a>
+                                            </li>
+                    						<li>
+                    					   		<a class="dropdown-item" href="https://www.youtube.com/@AMDDevCentral" target="_blank">Developers</a>
+                                            </li>
+                    						<li>
+                    						    <a class="dropdown-item" href="https://www.youtube.com/@Gaming-AMD" target="_blank">Gaming</a>
+                                            </li>
+                    					</ul>
+                					</li>
+                				</ul>
+                				                            </li>
+                                                    <li
+                                                        >
+                                <a href="https://www.facebook.com/amd" target="_blank" rel="noopener" class="">
+                                                                    <img class="icon-img-link" src="https://d1io3yog0oux5.cloudfront.net/_f84d3475a35717bff62b468359d9e1a2/amd/db/836/9072/icon/icon-facebook.svg" alt="Visit us on Facebook" />
+                                                                </a>
+                                                	    		                            </li>
+                                                    <li
+                                                        >
+                                <a href="https://www.amd.com/en/corporate/subscriptions" target="_blank" rel="noopener" class="">
+                                                                    <img class="icon-img-link" src="https://d1io3yog0oux5.cloudfront.net/_f84d3475a35717bff62b468359d9e1a2/amd/db/836/9078/icon/footer-email.svg" alt="Visit us on Subscriptions" />
+                                                                </a>
+                                                	    		                            </li>
+                                                </ul>
+                    </nav>
+                </div>
+                    	        </div>
+    	    </div>
+	    </div>
+	    	    <div class="container-fluid">
+    	    <div class="row justify-content-center">
+                <div class="col-lg-auto">
+                    <div class="footer-links">
+            			<a href="https://www.amd.com/en/legal/copyright.html" target="_blank" rel="noopener">Terms and Conditions</a>
+<a href="https://www.amd.com/en/corporate/privacy" target="_blank" rel="noopener">Privacy</a>
+<a href="https://www.amd.com/en/corporate/trademarks" target="_blank" rel="noopener">Trademarks</a>
+<a href="https://www.amd.com/content/dam/amd/en/documents/corporate/cr/supply-chain-transparency.pdf" target="_blank" rel="noopener">Supply Chain Transparency</a>
+<a href="https://www.amd.com/en/corporate/competition" target="_blank" rel="noopener">Fair &amp; Open Competition</a>
+<a href="https://www.amd.com/system/files/documents/amd-uk-tax-strategy.pdf" target="_blank" rel="noopener">UK Tax Strategy</a>
+<a href="/accessibility-statement">Accessibility Statement</a>
+<a href="https://www.amd.com/en/corporate/cookies" target="_blank" rel="noopener">Cookies Policy</a>
+                        <a class="ot-sdk-show-settings" id="ot-sdk-btn">Cookies Settings</a>
+                    </div>
+                </div>
+    	        <div class="col-12 center">
+                    <p class="copyright">&copy; <time datetime="2026">2026</time> Advanced Micro Devices, Inc. </p>                            
+    	        </div>
+	        </div>
+    	</div>
+	</div>
+</footer>
+<script id="companyVars" type="application/json">
+{
+    "asset_url": "https:\/\/d1io3yog0oux5.cloudfront.net\/_f84d3475a35717bff62b468359d9e1a2\/amd",
+    "website_base_url": "https:\/\/ir.amd.com",
+    "ir_base_url": "",
+    "hCaptchaSiteKey": "778a5748-d323-4b73-a06c-9625642de8bc",
+    "isQmod": false,
+    "autorefresh": false,
+    "userSnapEnabled" : false}
+</script>
+
+
+<script src="https://d1io3yog0oux5.cloudfront.net/_f84d3475a35717bff62b468359d9e1a2/amd/files/theme/js/_js/all.js"></script>
+
+<script type="text/javascript" async="" src="https://download.amd.com/js/analytics/analyticsinit.js"></script>
+
+<noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=78508&fmt=gif" />
+</noscript>        </div><!-- //general-wrapper-->
+    </body>
+</html>
