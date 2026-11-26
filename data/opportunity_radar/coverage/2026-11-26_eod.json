@@ -1,0 +1,379 @@
+{
+  "matrix": [
+    {
+      "signal_type": "COMMODITY_PRICE",
+      "schema_supported": true,
+      "live_source_count": 2,
+      "historical_source_count": 2,
+      "point_in_time_available": true,
+      "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+      "source_tier": [
+        1,
+        3
+      ],
+      "production_status": "PARTIAL",
+      "latest_observation_date": "2026-11-26",
+      "observation_count": 6152,
+      "evidence_observation_count": 6152,
+      "stale_observation_count": 5984,
+      "backfill_observation_count": 3373,
+      "major_gaps": [
+        "published_at"
+      ]
+    },
+    {
+      "signal_type": "SUPPLY_DEMAND",
+      "schema_supported": true,
+      "live_source_count": 1,
+      "historical_source_count": 0,
+      "point_in_time_available": true,
+      "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+      "source_tier": [
+        1
+      ],
+      "production_status": "PARTIAL",
+      "latest_observation_date": "2026-11-16",
+      "observation_count": 24,
+      "evidence_observation_count": 24,
+      "stale_observation_count": 12,
+      "backfill_observation_count": 0,
+      "major_gaps": [
+        "CONTINUOUS_COVERAGE_NOT_PROVEN"
+      ]
+    },
+    {
+      "signal_type": "CAPACITY_AND_UTILIZATION",
+      "schema_supported": true,
+      "live_source_count": 2,
+      "historical_source_count": 2,
+      "point_in_time_available": true,
+      "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+      "source_tier": [
+        1
+      ],
+      "production_status": "PARTIAL",
+      "latest_observation_date": "2026-10-19",
+      "observation_count": 178,
+      "evidence_observation_count": 178,
+      "stale_observation_count": 23,
+      "backfill_observation_count": 137,
+      "major_gaps": [
+        "CONTINUOUS_COVERAGE_NOT_PROVEN"
+      ]
+    },
+    {
+      "signal_type": "POLICY_AND_FISCAL",
+      "schema_supported": true,
+      "live_source_count": 1,
+      "historical_source_count": 1,
+      "point_in_time_available": true,
+      "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+      "source_tier": [
+        1
+      ],
+      "production_status": "PARTIAL",
+      "latest_observation_date": "2026-09-11",
+      "observation_count": 5,
+      "evidence_observation_count": 3,
+      "stale_observation_count": 0,
+      "backfill_observation_count": 0,
+      "major_gaps": [
+        "quantitative_or_body_evidence"
+      ]
+    },
+    {
+      "signal_type": "TECHNOLOGY_BREAKTHROUGH",
+      "schema_supported": true,
+      "live_source_count": 0,
+      "historical_source_count": 2,
+      "point_in_time_available": true,
+      "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+      "source_tier": [
+        1
+      ],
+      "production_status": "PARTIAL",
+      "latest_observation_date": "2026-08-28",
+      "observation_count": 30,
+      "evidence_observation_count": 30,
+      "stale_observation_count": 0,
+      "backfill_observation_count": 30,
+      "major_gaps": [
+        "CONTINUOUS_COVERAGE_NOT_PROVEN"
+      ]
+    },
+    {
+      "signal_type": "PRODUCT_COMMERCIALIZATION",
+      "schema_supported": true,
+      "live_source_count": 1,
+      "historical_source_count": 2,
+      "point_in_time_available": true,
+      "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+      "source_tier": [
+        1
+      ],
+      "production_status": "PARTIAL",
+      "latest_observation_date": "2026-09-11",
+      "observation_count": 801,
+      "evidence_observation_count": 801,
+      "stale_observation_count": 0,
+      "backfill_observation_count": 798,
+      "major_gaps": [
+        "CONTINUOUS_COVERAGE_NOT_PROVEN"
+      ]
+    },
+    {
+      "signal_type": "CUSTOMER_AND_ORDER",
+      "schema_supported": true,
+      "live_source_count": 1,
+      "historical_source_count": 2,
+      "point_in_time_available": true,
+      "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+      "source_tier": [
+        1
+      ],
+      "production_status": "PARTIAL",
+      "latest_observation_date": "2026-09-11",
+      "observation_count": 405,
+      "evidence_observation_count": 400,
+      "stale_observation_count": 0,
+      "backfill_observation_count": 369,
+      "major_gaps": [
+        "quantitative_or_body_evidence"
+      ]
+    },
+    {
+      "signal_type": "REVENUE_PROFIT_MARGIN",
+      "schema_supported": true,
+      "live_source_count": 1,
+      "historical_source_count": 2,
+      "point_in_time_available": true,
+      "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+      "source_tier": [
+        1
+      ],
+      "production_status": "PARTIAL",
+      "latest_observation_date": "2026-09-11",
+      "observation_count": 416,
+      "evidence_observation_count": 415,
+      "stale_observation_count": 0,
+      "backfill_observation_count": 412,
+      "major_gaps": [
+        "quantitative_or_body_evidence"
+      ]
+    },
+    {
+      "signal_type": "EXPECTATION_REVISION",
+      "schema_supported": true,
+      "live_source_count": 1,
+      "historical_source_count": 2,
+      "point_in_time_available": true,
+      "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+      "source_tier": [
+        1
+      ],
+      "production_status": "PARTIAL",
+      "latest_observation_date": "2026-11-03",
+      "observation_count": 105,
+      "evidence_observation_count": 105,
+      "stale_observation_count": 82,
+      "backfill_observation_count": 100,
+      "major_gaps": [
+        "CONTINUOUS_COVERAGE_NOT_PROVEN"
+      ]
+    },
+    {
+      "signal_type": "INDUSTRY_COMPETITION",
+      "schema_supported": true,
+      "live_source_count": 0,
+      "historical_source_count": 2,
+      "point_in_time_available": true,
+      "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+      "source_tier": [
+        1
+      ],
+      "production_status": "PARTIAL",
+      "latest_observation_date": "2026-08-26",
+      "observation_count": 34,
+      "evidence_observation_count": 34,
+      "stale_observation_count": 27,
+      "backfill_observation_count": 34,
+      "major_gaps": [
+        "CONTINUOUS_COVERAGE_NOT_PROVEN"
+      ]
+    },
+    {
+      "signal_type": "M&A_AND_CAPITAL_OPERATION",
+      "schema_supported": true,
+      "live_source_count": 1,
+      "historical_source_count": 2,
+      "point_in_time_available": true,
+      "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+      "source_tier": [
+        1
+      ],
+      "production_status": "PARTIAL",
+      "latest_observation_date": "2026-09-11",
+      "observation_count": 154,
+      "evidence_observation_count": 146,
+      "stale_observation_count": 0,
+      "backfill_observation_count": 69,
+      "major_gaps": [
+        "quantitative_or_body_evidence"
+      ]
+    },
+    {
+      "signal_type": "SHAREHOLDER_MANAGEMENT_ACTION",
+      "schema_supported": true,
+      "live_source_count": 1,
+      "historical_source_count": 2,
+      "point_in_time_available": true,
+      "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+      "source_tier": [
+        1
+      ],
+      "production_status": "PARTIAL",
+      "latest_observation_date": "2026-09-11",
+      "observation_count": 233,
+      "evidence_observation_count": 223,
+      "stale_observation_count": 0,
+      "backfill_observation_count": 152,
+      "major_gaps": [
+        "quantitative_or_body_evidence"
+      ]
+    },
+    {
+      "signal_type": "OVERSEAS_LEAD",
+      "schema_supported": true,
+      "live_source_count": 2,
+      "historical_source_count": 0,
+      "point_in_time_available": true,
+      "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+      "source_tier": [
+        2
+      ],
+      "production_status": "PARTIAL",
+      "latest_observation_date": "2026-11-17",
+      "observation_count": 222,
+      "evidence_observation_count": 222,
+      "stale_observation_count": 97,
+      "backfill_observation_count": 0,
+      "major_gaps": [
+        "CONTINUOUS_COVERAGE_NOT_PROVEN"
+      ]
+    },
+    {
+      "signal_type": "MACRO_LIQUIDITY_FX_RATES",
+      "schema_supported": true,
+      "live_source_count": 1,
+      "historical_source_count": 0,
+      "point_in_time_available": true,
+      "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+      "source_tier": [
+        1
+      ],
+      "production_status": "PARTIAL",
+      "latest_observation_date": "2026-11-09",
+      "observation_count": 9,
+      "evidence_observation_count": 9,
+      "stale_observation_count": 4,
+      "backfill_observation_count": 0,
+      "major_gaps": [
+        "CONTINUOUS_COVERAGE_NOT_PROVEN"
+      ]
+    },
+    {
+      "signal_type": "VALUATION_FUNDAMENTAL_DIVERGENCE",
+      "schema_supported": true,
+      "live_source_count": 0,
+      "historical_source_count": 1,
+      "point_in_time_available": true,
+      "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+      "source_tier": [
+        2
+      ],
+      "production_status": "PARTIAL",
+      "latest_observation_date": "2026-11-26",
+      "observation_count": 1820,
+      "evidence_observation_count": 1820,
+      "stale_observation_count": 1610,
+      "backfill_observation_count": 0,
+      "major_gaps": [
+        "CONTINUOUS_COVERAGE_NOT_PROVEN"
+      ]
+    },
+    {
+      "signal_type": "MARKET_STRUCTURE_AND_FLOW",
+      "schema_supported": true,
+      "live_source_count": 0,
+      "historical_source_count": 2,
+      "point_in_time_available": true,
+      "point_in_time_scope": "SINCE_ACTUAL_FIRST_SEEN_ONLY",
+      "source_tier": [
+        3
+      ],
+      "production_status": "PARTIAL",
+      "latest_observation_date": "2026-09-11",
+      "observation_count": 533,
+      "evidence_observation_count": 533,
+      "stale_observation_count": 533,
+      "backfill_observation_count": 0,
+      "major_gaps": [
+        "published_at"
+      ]
+    }
+  ],
+  "category_coverage_ratio": 1.0,
+  "live_source_count": 7,
+  "tier1_observation_count": 2844,
+  "company_body_parsed_count": 56,
+  "historical_point_in_time_days": 51,
+  "technology_chain_coverage": {
+    "存储": {
+      "observation_count": 1441,
+      "scope": "DOCUMENT_OR_ISSUER_TOTAL_REVENUE_NOT_COMPLETE_PRODUCT_METRICS"
+    },
+    "光通信": {
+      "observation_count": 716,
+      "scope": "DOCUMENT_OR_ISSUER_TOTAL_REVENUE_NOT_COMPLETE_PRODUCT_METRICS"
+    },
+    "PCB/CCL": {
+      "observation_count": 602,
+      "scope": "DOCUMENT_OR_ISSUER_TOTAL_REVENUE_NOT_COMPLETE_PRODUCT_METRICS"
+    },
+    "MLCC": {
+      "observation_count": 244,
+      "scope": "DOCUMENT_OR_ISSUER_TOTAL_REVENUE_NOT_COMPLETE_PRODUCT_METRICS"
+    },
+    "探针/测试": {
+      "observation_count": 497,
+      "scope": "DOCUMENT_OR_ISSUER_TOTAL_REVENUE_NOT_COMPLETE_PRODUCT_METRICS"
+    },
+    "先进封装": {
+      "observation_count": 453,
+      "scope": "DOCUMENT_OR_ISSUER_TOTAL_REVENUE_NOT_COMPLETE_PRODUCT_METRICS"
+    }
+  },
+  "signal_type_counts": {
+    "CUSTOMER_AND_ORDER": 405,
+    "SHAREHOLDER_MANAGEMENT_ACTION": 233,
+    "POLICY_AND_FISCAL": 5,
+    "MARKET_STRUCTURE_AND_FLOW": 533,
+    "M&A_AND_CAPITAL_OPERATION": 154,
+    "COMMODITY_PRICE": 6152,
+    "REVENUE_PROFIT_MARGIN": 416,
+    "PRODUCT_COMMERCIALIZATION": 801,
+    "CAPACITY_AND_UTILIZATION": 178,
+    "SUPPLY_DEMAND": 24,
+    "MACRO_LIQUIDITY_FX_RATES": 9,
+    "OVERSEAS_LEAD": 222,
+    "TECHNOLOGY_BREAKTHROUGH": 30,
+    "INDUSTRY_COMPETITION": 34,
+    "EXPECTATION_REVISION": 105,
+    "VALUATION_FUNDAMENTAL_DIVERGENCE": 1820
+  },
+  "verified_relation_count": 257,
+  "company_alpha_count": 38,
+  "morning_candidate_count": 276,
+  "compact_size": 185895,
+  "full_size": 14531040
+}
