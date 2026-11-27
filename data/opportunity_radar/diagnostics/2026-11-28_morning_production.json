@@ -1,0 +1,9 @@
+{
+  "trade_date": "2026-11-28",
+  "snapshot": "MORNING",
+  "observed_at": "2026-11-28T02:07:51.177118+08:00",
+  "status": "SKIPPED_NON_TRADING_DAY",
+  "run_id": "46046934769",
+  "retry_count": 0,
+  "sources": []
+}
